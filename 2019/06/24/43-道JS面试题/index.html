@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/6 | PowerDong</title>
+  <title>43 道JS面试题 | PowerDong</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="PowerDong">
-<meta property="og:url" content="http://yoursite.com/archives/2019/06/index.html">
+  <meta name="description" content="1. 下面代码输出是什么? 12345678function sayHi() &amp;#123;  console.log(name);  console.log(age);  var name = &amp;quot;Lydia&amp;quot;;  let age = 21;&amp;#125;sayHi();   A: Lydia 和 undefined B: Lydia 和 ReferenceError C: Ref">
+<meta name="keywords" content="JS,面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="43 道JS面试题">
+<meta property="og:url" content="http://yoursite.com/2019/06/24/43-道JS面试题/index.html">
 <meta property="og:site_name" content="PowerDong">
+<meta property="og:description" content="1. 下面代码输出是什么? 12345678function sayHi() &amp;#123;  console.log(name);  console.log(age);  var name = &amp;quot;Lydia&amp;quot;;  let age = 21;&amp;#125;sayHi();   A: Lydia 和 undefined B: Lydia 和 ReferenceError C: Ref">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-06-24T10:19:53.066Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PowerDong">
+<meta name="twitter:title" content="43 道JS面试题">
+<meta name="twitter:description" content="1. 下面代码输出是什么? 12345678function sayHi() &amp;#123;  console.log(name);  console.log(age);  var name = &amp;quot;Lydia&amp;quot;;  let age = 21;&amp;#125;sayHi();   A: Lydia 和 undefined B: Lydia 和 ReferenceError C: Ref">
   
     <link rel="alternative" href="/atom.xml" title="PowerDong" type="application/atom+xml">
   
@@ -142,36 +147,98 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-43-道JS面试题" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/myBlog/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/myBlog/2019/06/24/43-道JS面试题/" class="archive-article-date">
-  	<time datetime="2019-06-24T08:51:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-24</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/myBlog/2019/06/24/43-道JS面试题/">43 道JS面试题</a>
+    <h1 class="article-title" itemprop="name">
+      43 道JS面试题
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/myBlog/2019/06/24/43-道JS面试题/" class="archive-article-date">
+  	<time datetime="2019-06-24T08:51:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>1. 下面代码输出是什么?</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function sayHi() &#123;</span><br><span class="line">  console.log(name);</span><br><span class="line">  console.log(age);</span><br><span class="line">  var name = &quot;Lydia&quot;;</span><br><span class="line">  let age = 21;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sayHi();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>A: <code>Lydia</code> 和 <code>undefined</code></li>
+<li>B: <code>Lydia</code> 和 <code>ReferenceError</code></li>
+<li>C: <code>ReferenceError</code> 和 <code>21</code></li>
+<li>D: <code>undefined</code> 和 <code>ReferenceError</code>  <details>
+<summary>答案</summary>
+  答案：D
+  <br>
+  在函数中，我们首先使用<code>var</code>关键字声明了<code>name</code>变量。这意味着变量在创建阶段会被提升(<code>JavaScript</code>会在创建变量阶段为其分配内存空间),默认值为<code>undefined</code>,知道我们实行执行到使用该变量的行。我们还没有为<code>name</code>变量赋值，所以它仍然保持<code>undefined</code>的值。
+  <br>
+  使用<code>let</code>关键字（和<code>const</code>）声明的变量也会存在变量提升，但与<code>var</code>不同，初始化没有被提升。 在我们声明（初始化）它们之前，它们是不可访问的。 这被称为“暂时死区”。 当我们在声明变量之前尝试访问变量时，<code>JavaScript</code>会抛出一个<code>ReferenceError</code>。
+  </details>
+
+</li>
+</ul>
+<p>关于 <code>let</code>、<code>var</code>和<code>function</code>:</p>
+<ul>
+<li><code>let</code>的’创建’过程被提升了，但是初始化没有提升。</li>
+<li><code>var</code>的’创建’和’初始化’都被提升了</li>
+<li><code>function</code>的’创建’、’初始化’和’赋值’都被提升了。</li>
+</ul>
+<p><strong>2. 下面代码的输出是什么?</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for (var i = 0; i &lt; 3; i++) &#123;</span><br><span class="line">  setTimeout(() =&gt; console.log(i), 1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">for (let i = 0; i &lt; 3; i++) &#123;</span><br><span class="line">  setTimeout(() =&gt; console.log(i), 1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>A: <code>0 1 2</code> and <code>0 1 2</code></li>
+<li>B: <code>0 1 2</code> and <code>3 3 3</code></li>
+<li>C: <code>3 3 3</code> and <code>0 1 2</code></li>
+</ul>
+<details>
+    <summary>答案</summary>
+    答案: C
+    <br>
+    由于<code>JavaScript</code>中的事件执行机制，<code>setTimeout</code>函数真正被执行时，循环已经走完。 由于第一个循环中的变量<code>i</code>是使用<code>var</code>关键字声明的，因此该值是全局的。 在循环期间，我们每次使用一元运算符<code>++</code>都会将<code>i</code>的值增加1。 因此在第一个例子中，当调用<code>setTimeout</code>函数时，<code>i</code>已经被赋值为3。
+    在第二个循环中，使用<code>let</code>关键字声明变量<code>i</code>：使用<code>let</code>（和<code>const</code>）关键字声明的变量是具有块作用域的（块是<code>{}</code>之间的任何东西）。 在每次迭代期间，<code>i</code>将被创建为一个新值，并且每个值都会存在于循环内的块级作用域。
+</details>
+
+<a id="more"></a>
+
+<p><strong>3. 下面代码的输出是什么?</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const shape = &#123;</span><br><span class="line">  radius: 10,</span><br><span class="line">  diameter() &#123;</span><br><span class="line">    return this.radius * 2;</span><br><span class="line">  &#125;,</span><br><span class="line">  perimeter: () =&gt; 2 * Math.PI * this.radius</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">shape.diameter();</span><br><span class="line">shape.perimeter();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>A: <code>20</code> and <code>62.83185307179586</code></li>
+<li>B: <code>20</code> and <code>NaN</code></li>
+<li>C: <code>20</code> and <code>63</code></li>
+<li>D: <code>NaN</code> and <code>63</code></li>
+</ul>
+<details>
+    <summary>答案</summary>
+    答案: B
+    <br>
+    请注意，<code>diameter</code>是普通函数，而<code>perimeter</code>是箭头函数。
+    <br>
+    对于箭头函数，<code>this</code>关键字指向是它所在上下文（定义时的位置）的环境，与普通函数不同！ 这意味着当我们调用<code>perimeter</code>时，它不是指向<code>shape</code>对象，而是指其定义时的环境（window）。没有值<code>radius</code>属性，返回<code>undefined</code>。
+</details>
+
+
+<blockquote>
+<p>博客声明:所有转载的文章、图片仅用于作者本人收藏学习目的，被要求或认为适当时，将标注署名与来源。若不愿某一作品被转用，请及时通知本站，本站将予以及时删除。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -187,7 +254,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -200,44 +267,104 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/24/43-道JS面试题/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/myBlog/2019/06/23/开始我的博客/" class="archive-article-date">
-  	<time datetime="2019-06-23T01:52:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-23</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/myBlog/2019/06/23/开始我的博客/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">开始我的博客</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/myBlog/2019/06/23/开始我的博客/">开始我的博客</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -262,8 +389,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
