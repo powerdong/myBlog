@@ -9,19 +9,19 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>初探Vue | PowerDong</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="初探Vue.js渐进式的开发框架通过不同的项目引用不同的模块  声明式渲染 组件系统 客户端路由 大规模状态管理 构建工具  Vue的特点响应的数据绑定 当数据发生改变，自动更新视图 利用Object.definePrototype中的getter/setter代理数据  视图组件 UI页面银蛇组件树 组件可重用，可维护  虚拟DOM 提供一种方便的的工具，是的开发效率得到保证 保证最小化DOM操">
+  <meta name="description" content="初探 Vue.js渐进式的开发框架通过不同的项目引用不同的模块  声明式渲染 组件系统 客户端路由 大规模状态管理 构建工具  Vue 的特点响应的数据绑定 当数据发生改变，自动更新视图 利用Object.definePrototype中的getter/setter代理数据  视图组件 UI 页面映射组件树 组件可重用，可维护  虚拟 DOM 提供一种方便的的工具，使得开发效率得到保证 保证最小化">
 <meta name="keywords" content="Vue,笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初探Vue">
 <meta property="og:url" content="http://yoursite.com/2019/06/25/初探Vue/index.html">
 <meta property="og:site_name" content="PowerDong">
-<meta property="og:description" content="初探Vue.js渐进式的开发框架通过不同的项目引用不同的模块  声明式渲染 组件系统 客户端路由 大规模状态管理 构建工具  Vue的特点响应的数据绑定 当数据发生改变，自动更新视图 利用Object.definePrototype中的getter/setter代理数据  视图组件 UI页面银蛇组件树 组件可重用，可维护  虚拟DOM 提供一种方便的的工具，是的开发效率得到保证 保证最小化DOM操">
+<meta property="og:description" content="初探 Vue.js渐进式的开发框架通过不同的项目引用不同的模块  声明式渲染 组件系统 客户端路由 大规模状态管理 构建工具  Vue 的特点响应的数据绑定 当数据发生改变，自动更新视图 利用Object.definePrototype中的getter/setter代理数据  视图组件 UI 页面映射组件树 组件可重用，可维护  虚拟 DOM 提供一种方便的的工具，使得开发效率得到保证 保证最小化">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://cn.vuejs.org/images/lifecycle.png">
-<meta property="og:updated_time" content="2019-06-25T10:45:52.944Z">
+<meta property="og:updated_time" content="2019-06-25T13:24:16.474Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初探Vue">
-<meta name="twitter:description" content="初探Vue.js渐进式的开发框架通过不同的项目引用不同的模块  声明式渲染 组件系统 客户端路由 大规模状态管理 构建工具  Vue的特点响应的数据绑定 当数据发生改变，自动更新视图 利用Object.definePrototype中的getter/setter代理数据  视图组件 UI页面银蛇组件树 组件可重用，可维护  虚拟DOM 提供一种方便的的工具，是的开发效率得到保证 保证最小化DOM操">
+<meta name="twitter:description" content="初探 Vue.js渐进式的开发框架通过不同的项目引用不同的模块  声明式渲染 组件系统 客户端路由 大规模状态管理 构建工具  Vue 的特点响应的数据绑定 当数据发生改变，自动更新视图 利用Object.definePrototype中的getter/setter代理数据  视图组件 UI 页面映射组件树 组件可重用，可维护  虚拟 DOM 提供一种方便的的工具，使得开发效率得到保证 保证最小化">
 <meta name="twitter:image" content="https://cn.vuejs.org/images/lifecycle.png">
   
   <link rel="alternative" href="/atom.xml" title="PowerDong" type="application/atom+xml">
@@ -172,7 +172,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="初探Vue-js"><a href="#初探Vue-js" class="headerlink" title="初探Vue.js"></a>初探Vue.js</h1><h2 id="渐进式的开发框架"><a href="#渐进式的开发框架" class="headerlink" title="渐进式的开发框架"></a>渐进式的开发框架</h2><p>通过不同的项目引用不同的模块</p>
+        <h1 id="初探-Vue-js"><a href="#初探-Vue-js" class="headerlink" title="初探 Vue.js"></a>初探 Vue.js</h1><h2 id="渐进式的开发框架"><a href="#渐进式的开发框架" class="headerlink" title="渐进式的开发框架"></a>渐进式的开发框架</h2><p>通过不同的项目引用不同的模块</p>
 <ul>
 <li>声明式渲染</li>
 <li>组件系统</li>
@@ -180,26 +180,26 @@
 <li>大规模状态管理</li>
 <li>构建工具</li>
 </ul>
-<h2 id="Vue的特点"><a href="#Vue的特点" class="headerlink" title="Vue的特点"></a>Vue的特点</h2><h3 id="响应的数据绑定"><a href="#响应的数据绑定" class="headerlink" title="响应的数据绑定"></a>响应的数据绑定</h3><ul>
+<h2 id="Vue-的特点"><a href="#Vue-的特点" class="headerlink" title="Vue 的特点"></a>Vue 的特点</h2><h3 id="响应的数据绑定"><a href="#响应的数据绑定" class="headerlink" title="响应的数据绑定"></a>响应的数据绑定</h3><ul>
 <li>当数据发生改变，自动更新视图</li>
 <li>利用<code>Object.definePrototype</code>中的<code>getter/setter</code>代理数据</li>
 </ul>
 <h3 id="视图组件"><a href="#视图组件" class="headerlink" title="视图组件"></a>视图组件</h3><ul>
-<li>UI页面银蛇组件树</li>
+<li>UI 页面映射组件树</li>
 <li>组件可重用，可维护</li>
 </ul>
-<h3 id="虚拟DOM"><a href="#虚拟DOM" class="headerlink" title="虚拟DOM"></a>虚拟DOM</h3><ol>
-<li>提供一种方便的的工具，是的开发效率得到保证</li>
-<li>保证最小化DOM操作，使得执行效率得到保证</li>
+<h3 id="虚拟-DOM"><a href="#虚拟-DOM" class="headerlink" title="虚拟 DOM"></a>虚拟 DOM</h3><ol>
+<li>提供一种方便的的工具，使得开发效率得到保证</li>
+<li>保证最小化 DOM 操作，使得执行效率得到保证</li>
 </ol>
 <a id="more"></a>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 构建虚拟DOM对象</span><br><span class="line"> * @param &#123;string&#125; tagName </span><br><span class="line"> * @param &#123;string&#125; prop </span><br><span class="line"> * @param &#123;string&#125; children </span><br><span class="line"> */</span><br><span class="line">function vElement(tagName,prop,children)&#123;</span><br><span class="line">    if(!(this instanceof vElement))&#123;</span><br><span class="line">        return new vElement(tagName,prop,children);</span><br><span class="line">    &#125;</span><br><span class="line">    if(Object.prototype.toString.call(prop) === &quot;[object Array]&quot;)&#123;</span><br><span class="line">        children = prop;</span><br><span class="line">        prop = &#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    this.tagName = tagName;</span><br><span class="line">    this.children = children;</span><br><span class="line">    this.prop = prop;</span><br><span class="line">    var count = 0;</span><br><span class="line">    this.children.forEach((child,index) =&gt; &#123;</span><br><span class="line">        if(child instanceof vElement)&#123;</span><br><span class="line">            count += child.count;</span><br><span class="line">        &#125;</span><br><span class="line">        count++;</span><br><span class="line">    &#125;);</span><br><span class="line">    this.count = count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 构建虚拟DOM对象</span><br><span class="line"> * @param &#123;string&#125; tagName</span><br><span class="line"> * @param &#123;string&#125; prop</span><br><span class="line"> * @param &#123;string&#125; children</span><br><span class="line"> */</span><br><span class="line">function vElement(tagName, prop, children) &#123;</span><br><span class="line">  if (!(this instanceof vElement)) &#123;</span><br><span class="line">    return new vElement(tagName, prop, children);</span><br><span class="line">  &#125;</span><br><span class="line">  if (Object.prototype.toString.call(prop) === &quot;[object Array]&quot;) &#123;</span><br><span class="line">    children = prop;</span><br><span class="line">    prop = &#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  this.tagName = tagName;</span><br><span class="line">  this.children = children;</span><br><span class="line">  this.prop = prop;</span><br><span class="line">  var count = 0;</span><br><span class="line">  this.children.forEach((child, index) =&gt; &#123;</span><br><span class="line">    if (child instanceof vElement) &#123;</span><br><span class="line">      count += child.count;</span><br><span class="line">    &#125;</span><br><span class="line">    count++;</span><br><span class="line">  &#125;);</span><br><span class="line">  this.count = count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 构建真实DOM树</span><br><span class="line"> */</span><br><span class="line">vElement.prototype.render = function()&#123;</span><br><span class="line">    var el = document.createElement(this.tagName);</span><br><span class="line">    var children = this.children;</span><br><span class="line">    var prop = this.prop;</span><br><span class="line">    for (const item in prop) &#123;</span><br><span class="line">        const curProp = prop[item];       </span><br><span class="line">        el.setAttribute(item,curProp);</span><br><span class="line">    &#125;</span><br><span class="line">    children.forEach((child,index) =&gt; &#123;</span><br><span class="line">        if(child instanceof vElement)&#123;</span><br><span class="line">            var childDom = child.render();</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            var childDom = document.createTextNode(child);</span><br><span class="line">        &#125;</span><br><span class="line">        el.appendChild(childDom);</span><br><span class="line">    &#125;);</span><br><span class="line">    return el;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 构建真实DOM树</span><br><span class="line"> */</span><br><span class="line">vElement.prototype.render = function() &#123;</span><br><span class="line">  var el = document.createElement(this.tagName);</span><br><span class="line">  var children = this.children;</span><br><span class="line">  var prop = this.prop;</span><br><span class="line">  for (const item in prop) &#123;</span><br><span class="line">    const curProp = prop[item];</span><br><span class="line">    el.setAttribute(item, curProp);</span><br><span class="line">  &#125;</span><br><span class="line">  children.forEach((child, index) =&gt; &#123;</span><br><span class="line">    if (child instanceof vElement) &#123;</span><br><span class="line">      var childDom = child.render();</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      var childDom = document.createTextNode(child);</span><br><span class="line">    &#125;</span><br><span class="line">    el.appendChild(childDom);</span><br><span class="line">  &#125;);</span><br><span class="line">  return el;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<h3 id="MVVM模式"><a href="#MVVM模式" class="headerlink" title="MVVM模式"></a>MVVM模式</h3><p>M:  <code>model</code>数据模型<br>V:  <code>View</code>视图模板<br>VM: <code>View-model</code>视图模型(中间层)</p>
-<h3 id="Vue实例"><a href="#Vue实例" class="headerlink" title="Vue实例"></a>Vue实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"demo"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- v-bind自定义属性 数组动态绑定多个class--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">v-bind:data</span>=<span class="string">"message"</span> <span class="attr">v-bind:id</span>=<span class="string">"id"</span> <span class="attr">v-bind:class</span>=<span class="string">"[myClass1,myClass2]"</span>&gt;</span>&#123;&#123;name&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- class通过对象设置  key为class名 value为bool true-&gt;设置  false-&gt;不设置 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 通过对象   动态添加删除class --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">v-bind:class</span>=<span class="string">"&#123;class:ifClass&#125;"</span>&gt;</span>&#123;&#123;age&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"input"</span>&gt;</span></span><br><span class="line">    &#123;&#123;changeName&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="MVVM-模式"><a href="#MVVM-模式" class="headerlink" title="MVVM 模式"></a>MVVM 模式</h3><p>M: <code>model</code>数据模型<br>V: <code>View</code>视图模板<br>VM: <code>View-model</code>视图模型(中间层)</p>
+<h3 id="Vue-实例"><a href="#Vue-实例" class="headerlink" title="Vue 实例"></a>Vue 实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"demo"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- v-bind自定义属性 数组动态绑定多个class--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">v-bind:data</span>=<span class="string">"message"</span> <span class="attr">v-bind:id</span>=<span class="string">"id"</span> <span class="attr">v-bind:class</span>=<span class="string">"[myClass1,myClass2]"</span></span></span><br><span class="line"><span class="tag">    &gt;</span>&#123;&#123;name&#125;&#125;<span class="tag">&lt;/<span class="name">span</span></span></span><br><span class="line"><span class="tag">  &gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- class通过对象设置  key为class名 value为bool true-&gt;设置  false-&gt;不设置 --&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 通过对象   动态添加删除class --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">v-bind:class</span>=<span class="string">"&#123;class:ifClass&#125;"</span>&gt;</span>&#123;&#123;age&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"input"</span> /&gt;</span></span><br><span class="line">  &#123;&#123;changeName&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el : <span class="string">"#demo"</span>,</span><br><span class="line">    data:&#123;</span><br><span class="line">        name:<span class="string">'powerdong'</span>,</span><br><span class="line">        message:<span class="string">'123'</span>,</span><br><span class="line">        age:<span class="string">'18'</span></span><br><span class="line">        id:<span class="string">'demo1'</span>,</span><br><span class="line">        myClass1:<span class="string">'c234'</span>,</span><br><span class="line">        myClass2:<span class="string">'c456'</span>,</span><br><span class="line">        ifClass:<span class="literal">true</span>,</span><br><span class="line">        input: <span class="string">'hello'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    computed:&#123;</span><br><span class="line">        <span class="comment">//计算属性</span></span><br><span class="line">        changeName:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.name + <span class="number">666</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
@@ -211,7 +211,7 @@
 </li>
 <li><code>v-if</code>=”bool”<ul>
 <li>元素的显示与隐藏</li>
-<li>dom节点的存在与否</li>
+<li>dom 节点的存在与否</li>
 </ul>
 </li>
 <li><code>v-for</code>=”array”<ul>
@@ -222,11 +222,11 @@
 </li>
 <li><code>v-on</code> 添加一个事件监听器<ul>
 <li><code>v-on:click</code>=”fnName”<ul>
-<li>在methods字段中设置方法</li>
+<li>在 methods 字段中设置方法</li>
 </ul>
 </li>
 <li><code>v-on:keyup.enter</code>=”fnName”<ul>
-<li>只有enter才触发</li>
+<li>只有 enter 才触发</li>
 <li>事件修饰符</li>
 </ul>
 </li>
@@ -237,11 +237,126 @@
 </ul>
 </li>
 </ul>
-<h3 id="Vue注册组件"><a href="#Vue注册组件" class="headerlink" title="Vue注册组件"></a>Vue注册组件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'todo-item'</span>,&#123;</span><br><span class="line">    props:[<span class="string">'todo'</span>],</span><br><span class="line">    template:<span class="string">'&lt;li&gt;&#123;&#123;todo.text&#125;&#125;&lt;/li&gt;'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="Vue-注册组件"><a href="#Vue-注册组件" class="headerlink" title="Vue 注册组件"></a>Vue 注册组件</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">"todo-item"</span>, &#123;</span><br><span class="line">  props: [<span class="string">"todo"</span>],</span><br><span class="line">  template: <span class="string">"&lt;li&gt;&#123;&#123;todo.text&#125;&#125;&lt;/li&gt;"</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 创建一个 todo-item 实例 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">todo-item</span>&gt;</span><span class="tag">&lt;/<span class="name">todo-item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 创建一个 todo-item 实例 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">todo-item</span>&gt;</span><span class="tag">&lt;/<span class="name">todo-item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><p><img src="https://cn.vuejs.org/images/lifecycle.png" alt="vue生命实例"></p>
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p><img src="https://cn.vuejs.org/images/lifecycle.png" alt="vue生命实例"></p>
+<h2 id="Style-和-Class"><a href="#Style-和-Class" class="headerlink" title="Style 和 Class"></a>Style 和 Class</h2><p><code>v-bind:style</code>是一个 <code>JavaScript</code> 对象。<code>CSS</code> 属性名可以用驼峰式或短横线分割来命名(这时需要用引号括起来)</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:style</span>=<span class="string">"&#123;color:activeColor, fontSize: fontSize + 'px'&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:style</span>=<span class="string">"styleObject"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">  activeColor: <span class="string">'red'</span>,</span><br><span class="line">  fontSize: <span class="number">30</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">data: &#123;</span><br><span class="line">  styleObject: &#123;</span><br><span class="line">    color: <span class="string">'red'</span>,</span><br><span class="line">    fontSize: <span class="string">'13px'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h2><p><code>v-if</code>和<code>v-else</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">"Math.random() &gt; 0.5"</span>&gt;</span></span><br><span class="line">  Now you see me</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else</span>&gt;</span></span><br><span class="line">  Now you don't</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong><code>v-else</code> 元素必须紧跟在带 <code>v-if</code> 或者<code>v-else-if</code> 的元素的后面，否则它将不会被识别。</strong></p>
+<p><code>v-else-if</code>(2.1.0新增)</p>
+<p><strong>类似于 <code>v-else</code>，<code>v-else-if</code> 也必须紧跟在带 <code>v-if</code> 或者 <code>v-else-if</code> 的元素之后。</strong></p>
+<h3 id="v-if-VS-v-show"><a href="#v-if-VS-v-show" class="headerlink" title="v-if VS v-show"></a><code>v-if</code> VS <code>v-show</code></h3><ul>
+<li><p><code>v-if</code> 是“真正”的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建。</p>
+</li>
+<li><p><code>v-if</code> 也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。</p>
+</li>
+<li><p>相比之下，<code>v-show</code> 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 <code>CSS</code> 进行切换。</p>
+</li>
+<li><p>一般来说，<code>v-if</code> 有更高的切换开销，而 <code>v-show</code> 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 <code>v-show</code> 较好；如果在运行时条件很少改变，则使用 <code>v-if</code> 较好。</p>
+</li>
+<li><p><strong>不推荐</strong>同时使用<code>v-if</code>和<code>v-for</code></p>
+</li>
+<li><p>当<code>v-if</code>与<code>v-for</code>一起使用时，<code>v-for</code>具有比<code>v-if</code>更高的优先级</p>
+</li>
+</ul>
+<h2 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h2><h3 id="用v-for把一个数组对应为一组元素"><a href="#用v-for把一个数组对应为一组元素" class="headerlink" title="用v-for把一个数组对应为一组元素"></a>用<code>v-for</code>把一个数组对应为一组元素</h3><ul>
+<li>在 <code>v-for</code> 块中，我们可以访问所有父作用域的属性。<code>v-for</code> 还支持一个可选的第二个参数，即当前项的索引。<ul>
+<li><code>v-for=&quot;(item, index) in items&quot;</code></li>
+<li>也可以用<code>of</code>替代<code>in</code>作为分隔符。</li>
+</ul>
+</li>
+<li><code>v-for</code>可以来遍历一个对象的属性<ul>
+<li><code>v-for=&quot;(value, name, index) in object&quot;&gt;</code></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>在遍历对象时，会按<code>Object.keys()</code>的结果遍历，但是<strong>不能</strong>保证它的结果在不同的<code>JavaScript</code>引擎下都一致</p>
+</blockquote>
+<ul>
+<li>建议尽可能在使用 <code>v-for</code> 时提供 <code>key</code> attribute，除非遍历输出的 DOM 内容非常简单，或者是刻意依赖默认行为以获取性<br>能上的提升。<ul>
+<li><code>v-for=&quot;item in items&quot; v-bind:key=&quot;item.id&quot;&gt;</code></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>不要使用对象或数组之类的非基本类型值作为<code>v-for</code>的<code>key</code>。请用字符串或数值类型的值。</p>
+</blockquote>
+<h4 id="变异方法"><a href="#变异方法" class="headerlink" title="变异方法"></a>变异方法</h4><ul>
+<li><code>push()</code> </li>
+<li><code>pop()</code></li>
+<li><code>shift()</code></li>
+<li><code>unshift()</code></li>
+<li><code>splice()</code></li>
+<li><code>sort()</code></li>
+<li><code>reverse()</code></li>
+</ul>
+<p>在使用数组的这些方法时，它们会触发视图的更新</p>
+<h4 id="替换数组"><a href="#替换数组" class="headerlink" title="替换数组"></a>替换数组</h4><p>变异方法，会改变调用了这些方法的原始数组。<br>想比之下，也有非变异方法<br>例如<code>filter()</code>、<code>concat()</code>和<code>slice()</code>。它们不会改变原始数组，而<strong>总是返回一个新数组</strong>。当使用非变异方法时，可以用新数组替换旧数组。</p>
+<h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    items: [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">vm.items[<span class="number">1</span>] = <span class="string">'x'</span> <span class="comment">// 不是响应性的</span></span><br><span class="line">vm.items.length = <span class="number">2</span> <span class="comment">// 不是响应性的</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="对象变更检测注意事项"><a href="#对象变更检测注意事项" class="headerlink" title="对象变更检测注意事项"></a>对象变更检测注意事项</h3><p>对于已经创建的实例，<code>Vue</code> 不允许动态添加根级别的响应式属性。但是，可以使用 <code>Vue.set(object, propertyName, value)</code> 方法向嵌套对象添加响应式属性。</p>
+<h2 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h2><h3 id="监听事件"><a href="#监听事件" class="headerlink" title="监听事件"></a>监听事件</h3><p>可以用<code>v-on</code>指令监听DOM事件，并在触发时运行一下<code>JavaScript</code>代码。</p>
+<h3 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符"></a>事件修饰符</h3><p>在事件处理程序中调用 <code>event.preventDefault()</code> 或 <code>event.stopPropagation()</code>是非常常见的需求。</p>
+<ul>
+<li><code>.stop</code></li>
+<li><code>.prevent</code></li>
+<li><code>.capture</code></li>
+<li><code>.self</code></li>
+<li><code>.once</code></li>
+<li><code>.passive</code></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 阻止单击事件继续传播 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:click.stop</span>=<span class="string">"doThis"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 提交事件不再重载页面 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">v-on:submit.prevent</span>=<span class="string">"onSubmit"</span>&gt;</span><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 修饰符可以串联 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:click.stop.prevent</span>=<span class="string">"doThat"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 只有修饰符 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">v-on:submit.prevent</span>&gt;</span><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 添加事件监听器时使用事件捕获模式 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 即元素自身触发的事件先在此处理，然后才交由内部元素进行处理 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-on:click.capture</span>=<span class="string">"doThis"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 只当在 event.target 是当前元素自身时触发处理函数 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 即事件不是从内部元素触发的 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-on:click.self</span>=<span class="string">"doThat"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 点击事件将只会触发一次  2.1.4新增--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:click.once</span>=<span class="string">"doThis"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 滚动事件的默认行为 (即滚动行为) 将会立即触发 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 而不会等待 `onScroll` 完成  --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 这其中包含 `event.preventDefault()` 的情况 2.3.0 新增--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-on:scroll.passive</span>=<span class="string">"onScroll"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>使用修饰符时，顺序很重要；相应的代码会以同样的顺序产生。因此，用 <code>v-on:click.prevent.self</code> 会阻止所有的点击，而 <code>v-on:click.self.prevent</code> 只会阻止对元素自身的点击。</p>
+</blockquote>
+<blockquote>
+<p>不要把 <code>.passive</code> 和 <code>.prevent</code> 一起使用，因为 <code>.prevent</code> 将会被忽略，同时浏览器可能会向你展示一个警告。请记住，<code>.passive</code> 会告诉浏览器你不想阻止事件的默认行为。</p>
+</blockquote>
+<h3 id="按键修饰符"><a href="#按键修饰符" class="headerlink" title="按键修饰符"></a>按键修饰符</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 只有在 `key` 是 `Enter` 时调用 `vm.submit()` --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-on:keyup.enter</span>=<span class="string">"submit"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>为什么在 HTML 中监听事件?</strong></p>
+<ul>
+<li>使用<code>v-on</code>有几个好处<ol>
+<li>扫一眼 <code>HTML</code> 模板便能轻松定位在 <code>JavaScript</code> 代码里对应的方法。</li>
+<li>因为你无须在 <code>JavaScript</code> 里手动绑定事件，你的 <code>ViewModel</code> 代码可以是非常纯粹的逻辑，和 DOM 完全解耦，更易于测试。</li>
+<li>当一个 <code>ViewModel</code> 被销毁时，所有的事件处理器都会自动被删除。你无须担心如何清理它们。</li>
+</ol>
+</li>
+</ul>
+<h2 id="表单输入绑定"><a href="#表单输入绑定" class="headerlink" title="表单输入绑定"></a>表单输入绑定</h2><h3 id="基础用法"><a href="#基础用法" class="headerlink" title="基础用法"></a>基础用法</h3><p>可以使用<code>v-model</code>指令在表单<code>&lt;input&gt;</code>、<code>&lt;textarea&gt;</code>及<code>&lt;select&gt;</code>元素上创建双向数据绑定。</p>
+<p>v-model 在内部为不同的输入元素使用不同的属性并抛出不同的事件：</p>
+<ul>
+<li><code>text</code> 和 <code>textarea</code> 元素使用 <code>value</code> 属性和 <code>input</code> 事件；</li>
+<li><code>checkbox</code> 和 <code>radio</code> 使用 <code>checked</code> 属性和 <code>change</code> 事件；</li>
+<li><code>select</code> 字段将 <code>value</code> 作为 <code>prop</code> 并将 <code>change</code> 作为事件。</li>
+</ul>
+<h4 id="复选框"><a href="#复选框" class="headerlink" title="复选框"></a>复选框</h4><p>单个复选框，绑定到布尔值<br>多个复选框，绑定到同一个数组</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">'example-3'</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">id</span>=<span class="string">"jack"</span> <span class="attr">value</span>=<span class="string">"Jack"</span> <span class="attr">v-model</span>=<span class="string">"checkedNames"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"jack"</span>&gt;</span>Jack<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">id</span>=<span class="string">"john"</span> <span class="attr">value</span>=<span class="string">"John"</span> <span class="attr">v-model</span>=<span class="string">"checkedNames"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"john"</span>&gt;</span>John<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">id</span>=<span class="string">"mike"</span> <span class="attr">value</span>=<span class="string">"Mike"</span> <span class="attr">v-model</span>=<span class="string">"checkedNames"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"mike"</span>&gt;</span>Mike<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>Checked names: &#123;&#123; checkedNames &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#example-3'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    checkedNames: []</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="单选框"><a href="#单选框" class="headerlink" title="单选框"></a>单选框</h4><p>单选框绑定到字符串上</p>
+<h4 id="选择框"><a href="#选择框" class="headerlink" title="选择框"></a>选择框</h4><p>单选时使用字符串<br>多选时绑定到一个数组</p>
+<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><h4 id="lazy"><a href="#lazy" class="headerlink" title=".lazy"></a><code>.lazy</code></h4><p>再默认情况下，v-model 在每次 <code>input</code> 事件触发后将输入框的值与数据进行同步 (除了上述输入法组合文字时)。你可以添加 <code>lazy</code> 修饰符，从而转变为使用 <code>change</code> 事件进行同步：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 在“change”时而非“input”时更新 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model.lazy</span>=<span class="string">"msg"</span> &gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="number"><a href="#number" class="headerlink" title=".number"></a><code>.number</code></h4><p>如果想自动将用户的输入值转为数值类型，可以给 <code>v-model</code> 添加 <code>number</code> 修饰符：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model.number</span>=<span class="string">"age"</span> <span class="attr">type</span>=<span class="string">"number"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果这个值无法被 <code>parseFloat()</code> 解析，则会返回原始的值。</p>
+<h4 id="trim"><a href="#trim" class="headerlink" title=".trim"></a>.trim</h4><p>如果要自动过滤用户输入的首尾空白字符，可以给 <code>v-model</code> 添加 <code>trim</code> 修饰符：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model.trim</span>=<span class="string">"msg"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <hr>
 <blockquote>
 <p>博客声明:所有转载的文章、图片仅用于作者本人收藏学习目的，被要求或认为适当时，将标注署名与来源。若不愿某一作品被转用，请及时通知本站，本站将予以及时删除。</p>
