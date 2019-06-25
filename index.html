@@ -147,33 +147,49 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-JavaScript手写常见代码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-初探Vue" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/06/24/JavaScript手写常见代码/">JavaScript手写常见代码</a>
+      <a class="article-title" href="/myBlog/2019/06/25/初探Vue/">初探Vue</a>
     </h1>
   
 
         
-        <a href="/myBlog/2019/06/24/JavaScript手写常见代码/" class="archive-article-date">
-  	<time datetime="2019-06-24T11:13:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-24</time>
+        <a href="/myBlog/2019/06/25/初探Vue/" class="archive-article-date">
+  	<time datetime="2019-06-25T07:49:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-
-
-<blockquote>
-<p>博客声明:所有转载的文章、图片仅用于作者本人收藏学习目的，被要求或认为适当时，将标注署名与来源。若不愿某一作品被转用，请及时通知本站，本站将予以及时删除。</p>
-</blockquote>
-
+        <h1 id="初探Vue-js"><a href="#初探Vue-js" class="headerlink" title="初探Vue.js"></a>初探Vue.js</h1><h2 id="渐进式的开发框架"><a href="#渐进式的开发框架" class="headerlink" title="渐进式的开发框架"></a>渐进式的开发框架</h2><p>通过不同的项目引用不同的模块</p>
+<ul>
+<li>声明式渲染</li>
+<li>组件系统</li>
+<li>客户端路由</li>
+<li>大规模状态管理</li>
+<li>构建工具</li>
+</ul>
+<h2 id="Vue的特点"><a href="#Vue的特点" class="headerlink" title="Vue的特点"></a>Vue的特点</h2><h3 id="响应的数据绑定"><a href="#响应的数据绑定" class="headerlink" title="响应的数据绑定"></a>响应的数据绑定</h3><ul>
+<li>当数据发生改变，自动更新视图</li>
+<li>利用<code>Object.definePrototype</code>中的<code>getter/setter</code>代理数据</li>
+</ul>
+<h3 id="视图组件"><a href="#视图组件" class="headerlink" title="视图组件"></a>视图组件</h3><ul>
+<li>UI页面银蛇组件树</li>
+<li>组件可重用，可维护</li>
+</ul>
+<h3 id="虚拟DOM"><a href="#虚拟DOM" class="headerlink" title="虚拟DOM"></a>虚拟DOM</h3><ol>
+<li>提供一种方便的的工具，是的开发效率得到保证</li>
+<li>保证最小化DOM操作，使得执行效率得到保证</li>
+</ol>
+        
+          <a class="article-more-a" href="/myBlog/2019/06/25/初探Vue/#more">more >></a>
+        
       
 
       
@@ -181,11 +197,37 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/06/24/JavaScript手写常见代码/">展开全文 >></a>
+          <a class="article-more-a" href="/myBlog/2019/06/25/初探Vue/">展开全文 >></a>
         </p>
       
 
@@ -495,6 +537,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
