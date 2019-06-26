@@ -7,20 +7,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>43 道JS面试题 | PowerDong-分享技术分享生活</title>
+  <title>Vue,初次见面 | PowerDong-分享技术分享生活</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 下面代码输出是什么? 12345678function sayHi() &amp;#123;  console.log(name);  console.log(age);  var name = &amp;quot;Lydia&amp;quot;;  let age = 21;&amp;#125;sayHi();   A: Lydia 和 undefined B: Lydia 和 ReferenceError C: Ref">
-<meta name="keywords" content="JS,面试">
+  <meta name="description" content="初探 Vue.js渐进式的开发框架通过不同的项目引用不同的模块  声明式渲染 组件系统 客户端路由 大规模状态管理 构建工具  Vue 的特点响应的数据绑定 当数据发生改变，自动更新视图 利用Object.definePrototype中的getter/setter代理数据  视图组件 UI 页面映射组件树 组件可重用，可维护  虚拟 DOM 提供一种方便的的工具，使得开发效率得到保证 保证最小化">
+<meta name="keywords" content="Vue,笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="43 道JS面试题">
-<meta property="og:url" content="http://yoursite.com/2019/06/24/43-道JS面试题/index.html">
+<meta property="og:title" content="Vue,初次见面">
+<meta property="og:url" content="http://yoursite.com/2019/06/25/Vue,初次见面/index.html">
 <meta property="og:site_name" content="PowerDong-分享技术分享生活">
-<meta property="og:description" content="1. 下面代码输出是什么? 12345678function sayHi() &amp;#123;  console.log(name);  console.log(age);  var name = &amp;quot;Lydia&amp;quot;;  let age = 21;&amp;#125;sayHi();   A: Lydia 和 undefined B: Lydia 和 ReferenceError C: Ref">
+<meta property="og:description" content="初探 Vue.js渐进式的开发框架通过不同的项目引用不同的模块  声明式渲染 组件系统 客户端路由 大规模状态管理 构建工具  Vue 的特点响应的数据绑定 当数据发生改变，自动更新视图 利用Object.definePrototype中的getter/setter代理数据  视图组件 UI 页面映射组件树 组件可重用，可维护  虚拟 DOM 提供一种方便的的工具，使得开发效率得到保证 保证最小化">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-25T13:59:24.191Z">
+<meta property="og:image" content="https://cn.vuejs.org/images/lifecycle.png">
+<meta property="og:updated_time" content="2019-06-26T02:16:07.123Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="43 道JS面试题">
-<meta name="twitter:description" content="1. 下面代码输出是什么? 12345678function sayHi() &amp;#123;  console.log(name);  console.log(age);  var name = &amp;quot;Lydia&amp;quot;;  let age = 21;&amp;#125;sayHi();   A: Lydia 和 undefined B: Lydia 和 ReferenceError C: Ref">
+<meta name="twitter:title" content="Vue,初次见面">
+<meta name="twitter:description" content="初探 Vue.js渐进式的开发框架通过不同的项目引用不同的模块  声明式渲染 组件系统 客户端路由 大规模状态管理 构建工具  Vue 的特点响应的数据绑定 当数据发生改变，自动更新视图 利用Object.definePrototype中的getter/setter代理数据  视图组件 UI 页面映射组件树 组件可重用，可维护  虚拟 DOM 提供一种方便的的工具，使得开发效率得到保证 保证最小化">
+<meta name="twitter:image" content="https://cn.vuejs.org/images/lifecycle.png">
   
   <link rel="alternative" href="/atom.xml" title="PowerDong-分享技术分享生活" type="application/atom+xml">
   
@@ -150,769 +152,210 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-43-道JS面试题" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Vue,初次见面" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      43 道JS面试题
+      Vue,初次见面
     </h1>
   
 
         
-        <a href="/myBlog/2019/06/24/43-道JS面试题/" class="archive-article-date">
-  	<time datetime="2019-06-24T08:51:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-24</time>
+        <a href="/myBlog/2019/06/25/Vue,初次见面/" class="archive-article-date">
+  	<time datetime="2019-06-25T07:49:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>1. 下面代码输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function sayHi() &#123;</span><br><span class="line">  console.log(name);</span><br><span class="line">  console.log(age);</span><br><span class="line">  var name = &quot;Lydia&quot;;</span><br><span class="line">  let age = 21;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sayHi();</span><br></pre></td></tr></table></figure>
-
+        <h1 id="初探-Vue-js"><a href="#初探-Vue-js" class="headerlink" title="初探 Vue.js"></a>初探 Vue.js</h1><h2 id="渐进式的开发框架"><a href="#渐进式的开发框架" class="headerlink" title="渐进式的开发框架"></a>渐进式的开发框架</h2><p>通过不同的项目引用不同的模块</p>
 <ul>
-<li>A: <code>Lydia</code> 和 <code>undefined</code></li>
-<li>B: <code>Lydia</code> 和 <code>ReferenceError</code></li>
-<li>C: <code>ReferenceError</code> 和 <code>21</code></li>
-<li>D: <code>undefined</code> 和 <code>ReferenceError</code>  <details>
-<summary>答案</summary>
-  答案：D
-  <br>
-  在函数中，我们首先使用<code>var</code>关键字声明了<code>name</code>变量。这意味着变量在创建阶段会被提升(<code>JavaScript</code>会在创建变量阶段为其分配内存空间),默认值为<code>undefined</code>,知道我们实行执行到使用该变量的行。我们还没有为<code>name</code>变量赋值，所以它仍然保持<code>undefined</code>的值。
-  <br>
-  使用<code>let</code>关键字（和<code>const</code>）声明的变量也会存在变量提升，但与<code>var</code>不同，初始化没有被提升。 在我们声明（初始化）它们之前，它们是不可访问的。 这被称为“暂时死区”。 当我们在声明变量之前尝试访问变量时，<code>JavaScript</code>会抛出一个<code>ReferenceError</code>。
-  </details>
-
-</li>
+<li>声明式渲染</li>
+<li>组件系统</li>
+<li>客户端路由</li>
+<li>大规模状态管理</li>
+<li>构建工具</li>
 </ul>
-<p>关于 <code>let</code>、<code>var</code>和<code>function</code>:</p>
-<ul>
-<li><code>let</code>的’创建’过程被提升了，但是初始化没有提升。</li>
-<li><code>var</code>的’创建’和’初始化’都被提升了</li>
-<li><code>function</code>的’创建’、’初始化’和’赋值’都被提升了。</li>
+<h2 id="Vue-的特点"><a href="#Vue-的特点" class="headerlink" title="Vue 的特点"></a>Vue 的特点</h2><h3 id="响应的数据绑定"><a href="#响应的数据绑定" class="headerlink" title="响应的数据绑定"></a>响应的数据绑定</h3><ul>
+<li>当数据发生改变，自动更新视图</li>
+<li>利用<code>Object.definePrototype</code>中的<code>getter/setter</code>代理数据</li>
 </ul>
-<p><strong>2. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for (var i = 0; i &lt; 3; i++) &#123;</span><br><span class="line">  setTimeout(() =&gt; console.log(i), 1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">for (let i = 0; i &lt; 3; i++) &#123;</span><br><span class="line">  setTimeout(() =&gt; console.log(i), 1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A: <code>0 1 2</code> and <code>0 1 2</code></li>
-<li>B: <code>0 1 2</code> and <code>3 3 3</code></li>
-<li>C: <code>3 3 3</code> and <code>0 1 2</code></li>
+<h3 id="视图组件"><a href="#视图组件" class="headerlink" title="视图组件"></a>视图组件</h3><ul>
+<li>UI 页面映射组件树</li>
+<li>组件可重用，可维护</li>
 </ul>
-<details>
-    <summary>答案</summary>
-    答案: C
-    <br>
-    由于<code>JavaScript</code>中的事件执行机制，<code>setTimeout</code>函数真正被执行时，循环已经走完。 由于第一个循环中的变量<code>i</code>是使用<code>var</code>关键字声明的，因此该值是全局的。 在循环期间，我们每次使用一元运算符<code>++</code>都会将<code>i</code>的值增加1。 因此在第一个例子中，当调用<code>setTimeout</code>函数时，<code>i</code>已经被赋值为3。
-    在第二个循环中，使用<code>let</code>关键字声明变量<code>i</code>：使用<code>let</code>（和<code>const</code>）关键字声明的变量是具有块作用域的（块是<code>{}</code>之间的任何东西）。 在每次迭代期间，<code>i</code>将被创建为一个新值，并且每个值都会存在于循环内的块级作用域。
-</details>
-
+<h3 id="虚拟-DOM"><a href="#虚拟-DOM" class="headerlink" title="虚拟 DOM"></a>虚拟 DOM</h3><ol>
+<li>提供一种方便的的工具，使得开发效率得到保证</li>
+<li>保证最小化 DOM 操作，使得执行效率得到保证</li>
+</ol>
 <a id="more"></a>
 
-<p><strong>3. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const shape = &#123;</span><br><span class="line">  radius: 10,</span><br><span class="line">  diameter() &#123;</span><br><span class="line">    return this.radius * 2;</span><br><span class="line">  &#125;,</span><br><span class="line">  perimeter: () =&gt; 2 * Math.PI * this.radius</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">shape.diameter();</span><br><span class="line">shape.perimeter();</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 构建虚拟DOM对象</span><br><span class="line"> * @param &#123;string&#125; tagName  根节点</span><br><span class="line"> * @param &#123;string&#125; prop     标签属性</span><br><span class="line"> * @param &#123;array&#125; children  子节点</span><br><span class="line"> */</span><br><span class="line">function vElement(tagName, prop, children) &#123;</span><br><span class="line">  if (!(this instanceof vElement)) &#123;</span><br><span class="line">    return new vElement(tagName, prop, children);</span><br><span class="line">  &#125;</span><br><span class="line">  if (Object.prototype.toString.call(prop) === &quot;[object Array]&quot;) &#123;</span><br><span class="line">    children = prop;</span><br><span class="line">    prop = &#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  this.tagName = tagName;</span><br><span class="line">  this.children = children;</span><br><span class="line">  this.prop = prop;</span><br><span class="line">  var count = 0;</span><br><span class="line">  this.children.forEach((child, index) =&gt; &#123;</span><br><span class="line">    if (child instanceof vElement) &#123;</span><br><span class="line">      count += child.count;</span><br><span class="line">    &#125;</span><br><span class="line">    count++;</span><br><span class="line">  &#125;);</span><br><span class="line">  this.count = count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 构建真实DOM树</span><br><span class="line"> */</span><br><span class="line">vElement.prototype.render = function() &#123;</span><br><span class="line">  var el = document.createElement(this.tagName);</span><br><span class="line">  var children = this.children;</span><br><span class="line">  var prop = this.prop;</span><br><span class="line">  for (const item in prop) &#123;</span><br><span class="line">    const curProp = prop[item];</span><br><span class="line">    el.setAttribute(item, curProp);</span><br><span class="line">  &#125;</span><br><span class="line">  children.forEach((child, index) =&gt; &#123;</span><br><span class="line">    if (child instanceof vElement) &#123;</span><br><span class="line">      var childDom = child.render();</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      var childDom = document.createTextNode(child);</span><br><span class="line">    &#125;</span><br><span class="line">    el.appendChild(childDom);</span><br><span class="line">  &#125;);</span><br><span class="line">  return el;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="MVVM-模式"><a href="#MVVM-模式" class="headerlink" title="MVVM 模式"></a>MVVM 模式</h3><p>M: <code>model</code>数据模型<br>V: <code>View</code>视图模板<br>VM: <code>View-model</code>视图模型(中间层)</p>
+<h3 id="Vue-实例"><a href="#Vue-实例" class="headerlink" title="Vue 实例"></a>Vue 实例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"demo"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- v-bind自定义属性 数组动态绑定多个class--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">v-bind:data</span>=<span class="string">"message"</span> <span class="attr">v-bind:id</span>=<span class="string">"id"</span> <span class="attr">v-bind:class</span>=<span class="string">"[myClass1,myClass2]"</span></span></span><br><span class="line"><span class="tag">    &gt;</span>&#123;&#123;name&#125;&#125;<span class="tag">&lt;/<span class="name">span</span></span></span><br><span class="line"><span class="tag">  &gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- class通过对象设置  key为class名 value为bool true-&gt;设置  false-&gt;不设置 --&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 通过对象   动态添加删除class --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">v-bind:class</span>=<span class="string">"&#123;class:ifClass&#125;"</span>&gt;</span>&#123;&#123;age&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"input"</span> /&gt;</span></span><br><span class="line">  &#123;&#123;changeName&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el : <span class="string">"#demo"</span>,</span><br><span class="line">    data:&#123;</span><br><span class="line">        name:<span class="string">'powerdong'</span>,</span><br><span class="line">        message:<span class="string">'123'</span>,</span><br><span class="line">        age:<span class="string">'18'</span></span><br><span class="line">        id:<span class="string">'demo1'</span>,</span><br><span class="line">        myClass1:<span class="string">'c234'</span>,</span><br><span class="line">        myClass2:<span class="string">'c456'</span>,</span><br><span class="line">        ifClass:<span class="literal">true</span>,</span><br><span class="line">        input: <span class="string">'hello'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    computed:&#123;</span><br><span class="line">        <span class="comment">//计算属性</span></span><br><span class="line">        changeName:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.name + <span class="number">666</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods:&#123;</span><br><span class="line">      <span class="comment">// 装方法</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>A: <code>20</code> and <code>62.83185307179586</code></li>
-<li>B: <code>20</code> and <code>NaN</code></li>
-<li>C: <code>20</code> and <code>63</code></li>
-<li>D: <code>NaN</code> and <code>63</code></li>
+<li><code>v-show</code>=”bool”<ul>
+<li>元素的显示与隐藏</li>
+<li>display</li>
 </ul>
-<details>
-    <summary>答案</summary>
-    答案: B
-    <br>
-    请注意，<code>diameter</code>是普通函数，而<code>perimeter</code>是箭头函数。
-    <br>
-    对于箭头函数，<code>this</code>关键字指向是它所在上下文（定义时的位置）的环境，与普通函数不同！ 这意味着当我们调用<code>perimeter</code>时，它不是指向<code>shape</code>对象，而是指其定义时的环境（window）。没有值<code>radius</code>属性，返回<code>undefined</code>。
-</details>
+</li>
+<li><code>v-if</code>=”bool”<ul>
+<li>元素的显示与隐藏</li>
+<li>dom 节点的存在与否</li>
+</ul>
+</li>
+<li><code>v-for</code>=”array”<ul>
+<li>列表渲染</li>
+<li>item in m</li>
+<li>通过数组的<code>push</code>方法可实现添加数据</li>
+</ul>
+</li>
+<li><code>v-on</code> 添加一个事件监听器<ul>
+<li><code>v-on:click</code>=”fnName”<ul>
+<li>在 methods 字段中设置方法</li>
+</ul>
+</li>
+<li><code>v-on:keyup.enter</code>=”fnName”<ul>
+<li>只有 enter 才触发</li>
+<li>事件修饰符</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>v-mode</code>=”value”<ul>
+<li>实现表单输入和应用状态之间的双向数据绑定</li>
+</ul>
+</li>
+</ul>
+<h2 id="Vue-注册组件"><a href="#Vue-注册组件" class="headerlink" title="Vue 注册组件"></a>Vue 注册组件</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">"todo-item"</span>, &#123;</span><br><span class="line">  props: [<span class="string">"todo"</span>],</span><br><span class="line">  template: <span class="string">"&lt;li&gt;&#123;&#123;todo.text&#125;&#125;&lt;/li&gt;"</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<p><strong>4. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">+true;</span><br><span class="line">!&quot;Lydia&quot;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 创建一个 todo-item 实例 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">todo-item</span>&gt;</span><span class="tag">&lt;/<span class="name">todo-item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p><img src="https://cn.vuejs.org/images/lifecycle.png" alt="vue生命实例"></p>
+<h2 id="Style-和-Class"><a href="#Style-和-Class" class="headerlink" title="Style 和 Class"></a>Style 和 Class</h2><p><code>v-bind:style</code>是一个 <code>JavaScript</code> 对象。<code>CSS</code> 属性名可以用驼峰式或短横线分割来命名(这时需要用引号括起来)</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:style</span>=<span class="string">"&#123;color:activeColor, fontSize: fontSize + 'px'&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:style</span>=<span class="string">"styleObject"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">  activeColor: <span class="string">'red'</span>,</span><br><span class="line">  fontSize: <span class="number">30</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">data: &#123;</span><br><span class="line">  styleObject: &#123;</span><br><span class="line">    color: <span class="string">'red'</span>,</span><br><span class="line">    fontSize: <span class="string">'13px'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h2><p><code>v-if</code>和<code>v-else</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">"Math.random() &gt; 0.5"</span>&gt;</span></span><br><span class="line">  Now you see me</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else</span>&gt;</span></span><br><span class="line">  Now you don't</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong><code>v-else</code> 元素必须紧跟在带 <code>v-if</code> 或者<code>v-else-if</code> 的元素的后面，否则它将不会被识别。</strong></p>
+<p><code>v-else-if</code>(2.1.0新增)</p>
+<p><strong>类似于 <code>v-else</code>，<code>v-else-if</code> 也必须紧跟在带 <code>v-if</code> 或者 <code>v-else-if</code> 的元素之后。</strong></p>
+<h3 id="v-if-VS-v-show"><a href="#v-if-VS-v-show" class="headerlink" title="v-if VS v-show"></a><code>v-if</code> VS <code>v-show</code></h3><ul>
+<li><p><code>v-if</code> 是“真正”的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建。</p>
+</li>
+<li><p><code>v-if</code> 也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。</p>
+</li>
+<li><p>相比之下，<code>v-show</code> 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 <code>CSS</code> 进行切换。</p>
+</li>
+<li><p>一般来说，<code>v-if</code> 有更高的切换开销，而 <code>v-show</code> 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 <code>v-show</code> 较好；如果在运行时条件很少改变，则使用 <code>v-if</code> 较好。</p>
+</li>
+<li><p><strong>不推荐</strong>同时使用<code>v-if</code>和<code>v-for</code></p>
+</li>
+<li><p>当<code>v-if</code>与<code>v-for</code>一起使用时，<code>v-for</code>具有比<code>v-if</code>更高的优先级</p>
+</li>
+</ul>
+<h2 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h2><h3 id="用v-for把一个数组对应为一组元素"><a href="#用v-for把一个数组对应为一组元素" class="headerlink" title="用v-for把一个数组对应为一组元素"></a>用<code>v-for</code>把一个数组对应为一组元素</h3><ul>
+<li>在 <code>v-for</code> 块中，我们可以访问所有父作用域的属性。<code>v-for</code> 还支持一个可选的第二个参数，即当前项的索引。<ul>
+<li><code>v-for=&quot;(item, index) in items&quot;</code></li>
+<li>也可以用<code>of</code>替代<code>in</code>作为分隔符。</li>
+</ul>
+</li>
+<li><code>v-for</code>可以来遍历一个对象的属性<ul>
+<li><code>v-for=&quot;(value, name, index) in object&quot;&gt;</code></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>在遍历对象时，会按<code>Object.keys()</code>的结果遍历，但是<strong>不能</strong>保证它的结果在不同的<code>JavaScript</code>引擎下都一致</p>
+</blockquote>
 <ul>
-<li>A: <code>1</code> and <code>false</code></li>
-<li>B: <code>false</code> and <code>NaN</code></li>
-<li>C: <code>false</code> and <code>false</code></li>
+<li>建议尽可能在使用 <code>v-for</code> 时提供 <code>key</code> attribute，除非遍历输出的 DOM 内容非常简单，或者是刻意依赖默认行为以获取性<br>能上的提升。<ul>
+<li><code>v-for=&quot;item in items&quot; v-bind:key=&quot;item.id&quot;&gt;</code></li>
 </ul>
-<details>
-  <summary>答案</summary>
-  答案: A
-  <br>
-  一元加号会尝试将<code>boolean</code>类型转换为数字类型。 <code>true</code>被转换为<code>1</code>，<code>false</code>被转换为<code>0</code>。
-  <br>
-  字符串<code>'Lydia'</code>是一个真值。 我们实际上要问的是“这个真值是假的吗？”。 这会返回<code>false</code>。
-</details>
+</li>
+</ul>
+<blockquote>
+<p>不要使用对象或数组之类的非基本类型值作为<code>v-for</code>的<code>key</code>。请用字符串或数值类型的值。</p>
+</blockquote>
+<h4 id="变异方法"><a href="#变异方法" class="headerlink" title="变异方法"></a>变异方法</h4><ul>
+<li><code>push()</code> </li>
+<li><code>pop()</code></li>
+<li><code>shift()</code></li>
+<li><code>unshift()</code></li>
+<li><code>splice()</code></li>
+<li><code>sort()</code></li>
+<li><code>reverse()</code></li>
+</ul>
+<p>在使用数组的这些方法时，它们会触发视图的更新</p>
+<h4 id="替换数组"><a href="#替换数组" class="headerlink" title="替换数组"></a>替换数组</h4><p>变异方法，会改变调用了这些方法的原始数组。<br>想比之下，也有非变异方法<br>例如<code>filter()</code>、<code>concat()</code>和<code>slice()</code>。它们不会改变原始数组，而<strong>总是返回一个新数组</strong>。当使用非变异方法时，可以用新数组替换旧数组。</p>
+<h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    items: [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">vm.items[<span class="number">1</span>] = <span class="string">'x'</span> <span class="comment">// 不是响应性的</span></span><br><span class="line">vm.items.length = <span class="number">2</span> <span class="comment">// 不是响应性的</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>5. 哪个选项是不正确的?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const bird = &#123;</span><br><span class="line">  size: &quot;small&quot;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const mouse = &#123;</span><br><span class="line">  name: &quot;Mickey&quot;,</span><br><span class="line">  small: true</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+<h3 id="对象变更检测注意事项"><a href="#对象变更检测注意事项" class="headerlink" title="对象变更检测注意事项"></a>对象变更检测注意事项</h3><p>对于已经创建的实例，<code>Vue</code> 不允许动态添加根级别的响应式属性。但是，可以使用 <code>Vue.set(object, propertyName, value)</code> 方法向嵌套对象添加响应式属性。</p>
+<h2 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h2><h3 id="监听事件"><a href="#监听事件" class="headerlink" title="监听事件"></a>监听事件</h3><p>可以用<code>v-on</code>指令监听DOM事件，并在触发时运行一下<code>JavaScript</code>代码。</p>
+<h3 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符"></a>事件修饰符</h3><p>在事件处理程序中调用 <code>event.preventDefault()</code> 或 <code>event.stopPropagation()</code>是非常常见的需求。</p>
 <ul>
-<li>A: <code>mouse.bird.size</code></li>
-<li>B: <code>mouse[bird.size]</code></li>
-<li>C: <code>mouse[bird[&quot;size&quot;]]</code></li>
-<li>D: All of them are valid</li>
+<li><code>.stop</code></li>
+<li><code>.prevent</code></li>
+<li><code>.capture</code></li>
+<li><code>.self</code></li>
+<li><code>.once</code></li>
+<li><code>.passive</code></li>
 </ul>
-<details>
-  <summary>答案</summary>
-  答案: A
-  在<code>JavaScript</code>中，所有对象键都是字符串（除了<code>Symbol</code>）。尽管有时我们可能不会给定字符串类型，但它们总是被转换为字符串。
-  <br>
-  <code>JavaScript</code>解释语句。当我们使用方括号表示法时，它会看到第一个左括号<code>[</code>，然后继续，直到找到右括号<code>]</code>。只有在那个时候，它才会对这个语句求值。
-  <br>
-  <code>mouse [bird.size]</code>：首先它会对<code>bird.size</code>求值，得到<code>small</code>。 <code>mouse [“small”]</code>返回<code>true</code>。
-  <br>
-  但是，使用点表示法，这不会发生。 <code>mouse</code>没有名为<code>bird</code>的键，这意味着<code>mouse.bird</code>是<code>undefined</code>。 然后，我们使用点符号来询问<code>size：mouse.bird.size</code>。 由于<code>mouse.bird</code>是<code>undefined</code>，我们实际上是在询问<code>undefined.size</code>。 这是无效的，并将抛出Cannot read property "size" of undefined。
-</details>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 阻止单击事件继续传播 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:click.stop</span>=<span class="string">"doThis"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 提交事件不再重载页面 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">v-on:submit.prevent</span>=<span class="string">"onSubmit"</span>&gt;</span><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 修饰符可以串联 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:click.stop.prevent</span>=<span class="string">"doThat"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 只有修饰符 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">v-on:submit.prevent</span>&gt;</span><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 添加事件监听器时使用事件捕获模式 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 即元素自身触发的事件先在此处理，然后才交由内部元素进行处理 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-on:click.capture</span>=<span class="string">"doThis"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 只当在 event.target 是当前元素自身时触发处理函数 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 即事件不是从内部元素触发的 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-on:click.self</span>=<span class="string">"doThat"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 点击事件将只会触发一次  2.1.4新增--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:click.once</span>=<span class="string">"doThis"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 滚动事件的默认行为 (即滚动行为) 将会立即触发 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 而不会等待 `onScroll` 完成  --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 这其中包含 `event.preventDefault()` 的情况 2.3.0 新增--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-on:scroll.passive</span>=<span class="string">"onScroll"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>6. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let c = &#123; greeting: &quot;Hey!&quot; &#125;;</span><br><span class="line">let d;</span><br><span class="line"></span><br><span class="line">d = c;</span><br><span class="line">c.greeting = &quot;Hello&quot;;</span><br><span class="line">console.log(d.greeting);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>使用修饰符时，顺序很重要；相应的代码会以同样的顺序产生。因此，用 <code>v-on:click.prevent.self</code> 会阻止所有的点击，而 <code>v-on:click.self.prevent</code> 只会阻止对元素自身的点击。</p>
+</blockquote>
+<blockquote>
+<p>不要把 <code>.passive</code> 和 <code>.prevent</code> 一起使用，因为 <code>.prevent</code> 将会被忽略，同时浏览器可能会向你展示一个警告。请记住，<code>.passive</code> 会告诉浏览器你不想阻止事件的默认行为。</p>
+</blockquote>
+<h3 id="按键修饰符"><a href="#按键修饰符" class="headerlink" title="按键修饰符"></a>按键修饰符</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 只有在 `key` 是 `Enter` 时调用 `vm.submit()` --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-on:keyup.enter</span>=<span class="string">"submit"</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+<p><strong>为什么在 HTML 中监听事件?</strong></p>
 <ul>
-<li>A: <code>Hello</code></li>
-<li>B: <code>undefined</code></li>
-<li>C: <code>ReferenceError</code></li>
-<li>D: <code>TypeError</code></li>
+<li>使用<code>v-on</code>有几个好处<ol>
+<li>扫一眼 <code>HTML</code> 模板便能轻松定位在 <code>JavaScript</code> 代码里对应的方法。</li>
+<li>因为你无须在 <code>JavaScript</code> 里手动绑定事件，你的 <code>ViewModel</code> 代码可以是非常纯粹的逻辑，和 DOM 完全解耦，更易于测试。</li>
+<li>当一个 <code>ViewModel</code> 被销毁时，所有的事件处理器都会自动被删除。你无须担心如何清理它们。</li>
+</ol>
+</li>
 </ul>
-<details>
-  <summary>答案</summary>
-   答案: A
-   <br>
-   在<code>JavaScript</code>中，当设置它们彼此相等时，所有对象都通过引用进行交互。   <br>
-    首先，变量 <code>c</code> 为对象保存一个值。 之后，我们将 <code>d</code> 指定为 <code>c</code> 与对象相同的引用。
-    <br>
-    更改一个对象时，可以更改所有对象。
-</details>
-
-<p><strong>7. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let a = 3;</span><br><span class="line">let b = new Number(3);</span><br><span class="line">let c = 3;</span><br><span class="line"></span><br><span class="line">console.log(a == b);</span><br><span class="line">console.log(a === b);</span><br><span class="line">console.log(b === c);</span><br></pre></td></tr></table></figure>
-
-<details>
-  <summary>答案</summary>
-  答案: C
-  <br>
-  <code>new Number()</code>是一个内置的函数构造函数。 虽然它看起来像一个数字，但它并不是一个真正的数字：它有一堆额外的功能，是一个对象。
-  <br>
-  当我们使用<code>==</code>运算符时，它只检查它是否具有相同的值。 他们都有<code>3</code>的值，所以它返回<code>true</code>
-  <br>
-  <code>==</code>会引发隐式类型转换，右侧的对象类型会自动拆箱为<code>Number</code>类型。然而，当我们使用<code>===</code>操作符时，类型和值都需要相等，<code>new Number()</code>不是一个数字，是一个对象类型。两者都返回 <code>false</code>。
-</details>
-
-<p><strong>8. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Chameleon &#123;</span><br><span class="line">  static colorChange(newColor) &#123;</span><br><span class="line">    this.newColor = newColor;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  constructor(&#123; newColor = &quot;green&quot; &#125; = &#123;&#125;) &#123;</span><br><span class="line">    this.newColor = newColor;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const freddie = new Chameleon(&#123; newColor: &quot;purple&quot; &#125;);</span><br><span class="line">freddie.colorChange(&quot;orange&quot;);</span><br></pre></td></tr></table></figure>
-
+<h2 id="表单输入绑定"><a href="#表单输入绑定" class="headerlink" title="表单输入绑定"></a>表单输入绑定</h2><h3 id="基础用法"><a href="#基础用法" class="headerlink" title="基础用法"></a>基础用法</h3><p>可以使用<code>v-model</code>指令在表单<code>&lt;input&gt;</code>、<code>&lt;textarea&gt;</code>及<code>&lt;select&gt;</code>元素上创建双向数据绑定。</p>
+<p>v-model 在内部为不同的输入元素使用不同的属性并抛出不同的事件：</p>
 <ul>
-<li>A: <code>orange</code></li>
-<li>B: <code>purple</code></li>
-<li>C: <code>green</code></li>
-<li>D: <code>TypeError</code></li>
+<li><code>text</code> 和 <code>textarea</code> 元素使用 <code>value</code> 属性和 <code>input</code> 事件；</li>
+<li><code>checkbox</code> 和 <code>radio</code> 使用 <code>checked</code> 属性和 <code>change</code> 事件；</li>
+<li><code>select</code> 字段将 <code>value</code> 作为 <code>prop</code> 并将 <code>change</code> 作为事件。</li>
 </ul>
-<details>
-  <summary>答案</summary>
-  答案: D
-  <br>
-  <code>colorChange</code>方法是静态的。 静态方法仅在创建它们的构造函数中存在，并且不能传递给任何子级。 由于<code>freddie</code>是一个子级对象，函数不会传递，所以在<code>freddie</code>实例上不存在<code>freddie</code>方法：抛出<code>TypeError</code>。    
-</details>
+<h4 id="复选框"><a href="#复选框" class="headerlink" title="复选框"></a>复选框</h4><p>单个复选框，绑定到布尔值<br>多个复选框，绑定到同一个数组</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">'example-3'</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">id</span>=<span class="string">"jack"</span> <span class="attr">value</span>=<span class="string">"Jack"</span> <span class="attr">v-model</span>=<span class="string">"checkedNames"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"jack"</span>&gt;</span>Jack<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">id</span>=<span class="string">"john"</span> <span class="attr">value</span>=<span class="string">"John"</span> <span class="attr">v-model</span>=<span class="string">"checkedNames"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"john"</span>&gt;</span>John<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">id</span>=<span class="string">"mike"</span> <span class="attr">value</span>=<span class="string">"Mike"</span> <span class="attr">v-model</span>=<span class="string">"checkedNames"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"mike"</span>&gt;</span>Mike<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>Checked names: &#123;&#123; checkedNames &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>9. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let greeting;</span><br><span class="line">greetign = &#123;&#125;; // Typo!</span><br><span class="line">console.log(greetign);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#example-3'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    checkedNames: []</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>A: <code>{}</code></li>
-<li>B: <code>ReferenceError: greetign is not defined</code></li>
-<li>C: <code>undefined</code></li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: A
-  <br>
-  控制台会输出空对象，因为我们刚刚在全局对象上创建了一个空对象！ 当我们错误地将 greeting 输入为 greetign 时，JS 解释器实际上在浏览器中将其视为 global.greetign = {}（或 window.greetign = {}）。
-  为了避免这种情况，我们可以使用“use strict”。 这可以确保在将变量赋值之前必须声明变量。
-</details>
+<h4 id="单选框"><a href="#单选框" class="headerlink" title="单选框"></a>单选框</h4><p>单选框绑定到字符串上</p>
+<h4 id="选择框"><a href="#选择框" class="headerlink" title="选择框"></a>选择框</h4><p>单选时使用字符串<br>多选时绑定到一个数组</p>
+<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><h4 id="lazy"><a href="#lazy" class="headerlink" title=".lazy"></a><code>.lazy</code></h4><p>再默认情况下，v-model 在每次 <code>input</code> 事件触发后将输入框的值与数据进行同步 (除了上述输入法组合文字时)。你可以添加 <code>lazy</code> 修饰符，从而转变为使用 <code>change</code> 事件进行同步：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 在“change”时而非“input”时更新 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model.lazy</span>=<span class="string">"msg"</span> &gt;</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>10. 当我们这样做时会发生什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function bark() &#123;</span><br><span class="line">  console.log(&quot;Woof!&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bark.animal = &quot;dog&quot;;</span><br></pre></td></tr></table></figure>
+<h4 id="number"><a href="#number" class="headerlink" title=".number"></a><code>.number</code></h4><p>如果想自动将用户的输入值转为数值类型，可以给 <code>v-model</code> 添加 <code>number</code> 修饰符：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model.number</span>=<span class="string">"age"</span> <span class="attr">type</span>=<span class="string">"number"</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>A: <code>Nothing, this is totally fine!</code></li>
-<li>B: <code>SyntaxError. You cannot add properties to a function this way.</code></li>
-<li>C: <code>undefined</code></li>
-<li>D: <code>ReferenceError</code></li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: A
-  <br>
-  这在 JavaScript 中是可能的，因为函数也是对象！（原始类型之外的所有东西都是对象）
-  函数是一种特殊类型的对象。您自己编写的代码并不是实际的函数。 该函数是具有属性的对象，此属性是可调用的。
-</details>
-
-<p><strong>11. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Person(firstName, lastName) &#123;</span><br><span class="line">  this.firstName = firstName;</span><br><span class="line">  this.lastName = lastName;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const member = new Person(&quot;Lydia&quot;, &quot;Hallie&quot;);</span><br><span class="line">Person.getFullName = () =&gt; this.firstName + this.lastName;</span><br><span class="line"></span><br><span class="line">console.log(member.getFullName());</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A: <code>TypeError</code></li>
-<li>B: <code>SyntaxError</code></li>
-<li>C: <code>Lydia Hallie</code></li>
-<li>D: <code>undefined undefined</code></li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: A
-  <br>
-  您不能像使用常规对象那样向构造函数添加属性。 如果要一次向所有对象添加功能，则必须使用原型。 所以在这种情况下应该这样写：
-  Person.prototype.getFullName = function () {
-  return `${this.firstName} ${this.lastName}`;
-  }
-  这样会使 member.getFullName()是可用的，为什么样做是对的？ 假设我们将此方法添加到构造函数本身。 也许不是每个 Person 实例都需要这种方法。这会浪费大量内存空间，因为它们仍然具有该属性，这占用了每个实例的内存空间。 相反，如果我们只将它添加到原型中，我们只需将它放在内存中的一个位置，但它们都可以访问它！
-</details>
-
-<p><strong>12. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function Person(firstName, lastName) &#123;</span><br><span class="line">  this.firstName = firstName;</span><br><span class="line">  this.lastName = lastName;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const lydia = new Person(&quot;Lydia&quot;, &quot;Hallie&quot;);</span><br><span class="line">const sarah = Person(&quot;Sarah&quot;, &quot;Smith&quot;);</span><br><span class="line"></span><br><span class="line">console.log(lydia);</span><br><span class="line">console.log(sarah);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A: <code>Person {firstName: &quot;Lydia&quot;, lastName: &quot;Hallie&quot;} and undefined</code></li>
-<li>B: <code>Person {firstName: &quot;Lydia&quot;, lastName: &quot;Hallie&quot;} and Person {firstName: &quot;Sarah&quot;, lastName: &quot;Smith&quot;}</code></li>
-<li>C: <code>Person {firstName: &quot;Lydia&quot;, lastName: &quot;Hallie&quot;} and {}</code></li>
-<li>D: <code>Person {firstName: &quot;Lydia&quot;, lastName: &quot;Hallie&quot;} and ReferenceError</code></li>
-</ul>
-<details>
-  <summary>答案</summary>  
-  答案: A
-  <br>
-  对于 sarah，我们没有使用 new 关键字。 使用 new 时，它指的是我们创建的新空对象。 但是，如果你不添加 new 它指的是全局对象！
-  我们指定了 this.firstName 等于'Sarah 和 this.lastName 等于 Smith。 我们实际做的是定义 global.firstName ='Sarah'和 global.lastName ='Smith。 sarah 本身的返回值是 undefined。
-</details>
-
-<p><strong>13. 所有对象都有原型.</strong></p>
-<ul>
-<li>A: 对</li>
-<li>B: 错误</li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: B
-  <br>
-  除基础对象外，所有对象都有原型。 基础对象可以访问某些方法和属性，例如.toString。 这就是您可以使用内置 JavaScript 方法的原因！ 所有这些方法都可以在原型上找到。 虽然 JavaScript 无法直接在您的对象上找到它，但它会沿着原型链向下寻找并在那里找到它，这使您可以访问它。
-  基础对象指原型链终点的对象。基础对象的原型是 null。
-</details>
-
-<p><strong>14. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function sum(a, b) &#123;</span><br><span class="line">  return a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sum(1, &quot;2&quot;);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A: <code>NaN</code></li>
-<li>B: <code>TypeError</code></li>
-<li>C: <code>&quot;12&quot;</code></li>
-<li>D: <code>3</code></li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: C
-  <br>
-  JavaScript 是一种动态类型语言：我们没有指定某些变量的类型。 在您不知情的情况下，值可以自动转换为另一种类型，称为隐式类型转换。 强制从一种类型转换为另一种类型。
-  在此示例中，JavaScript 将数字 1 转换为字符串，以使函数有意义并返回值。 在让数字类型（1）和字符串类型（'2'）相加时，该数字被视为字符串。 我们可以连接像“Hello”+“World”这样的字符串，所以这里发生的是“1”+“2”返回“12”。
-</details>
-
-<p><strong>15. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let number = 0;</span><br><span class="line">console.log(number++);</span><br><span class="line">console.log(++number);</span><br><span class="line">console.log(number);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A: <code>1 1 2</code></li>
-<li>B: <code>1 2 2</code></li>
-<li>C: <code>0 2 2</code></li>
-<li>D: <code>0 1 2</code></li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: C
-  <br>
-  后缀一元运算符++：
-  返回值（返回 0）
-  增加值（数字现在是 1）
-  <br>
-  前缀一元运算符++：
-  增加值（数字现在是 2）
-  返回值（返回 2）
-  所以返回 0 2 2。
-</details>
-
-<p><strong>16. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function getPersonInfo(one, two, three) &#123;</span><br><span class="line">  console.log(one);</span><br><span class="line">  console.log(two);</span><br><span class="line">  console.log(three);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const person = &quot;Lydia&quot;;</span><br><span class="line">const age = 21;</span><br><span class="line"></span><br><span class="line">getPersonInfo`$&#123;person&#125; is $&#123;age&#125; years old`;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A: <code>Lydia 21 [&quot;&quot;, &quot;is&quot;, &quot;years old&quot;]</code></li>
-<li>B: <code>[&quot;&quot;, &quot;is&quot;, &quot;years old&quot;] Lydia 21</code></li>
-<li>C: <code>Lydia [&quot;&quot;, &quot;is&quot;, &quot;years old&quot;] 21</code></li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: B
-  <br>
-  如果使用标记的模板字符串，则第一个参数的值始终是字符串值的数组。 其余参数获取传递到模板字符串中的表达式的值！
-</details>
-
-<p><strong>17. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function checkAge(data) &#123;</span><br><span class="line">  if (data === &#123; age: 18 &#125;) &#123;</span><br><span class="line">    console.log(&quot;You are an adult!&quot;);</span><br><span class="line">  &#125; else if (data == &#123; age: 18 &#125;) &#123;</span><br><span class="line">    console.log(&quot;You are still an adult.&quot;);</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    console.log(`Hmm.. You don&apos;t have an age I guess`);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">checkAge(&#123; age: 18 &#125;);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A: <code>You are an adult!</code></li>
-<li>B: <code>You are still an adult.</code></li>
-<li>C: <code>Hmm.. You don&#39;t have an age I guess</code></li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: C
-  <br>
-  在比较相等性，原始类型通过它们的值进行比较，而对象通过它们的引用进行比较。JavaScript 检查对象是否具有对内存中相同位置的引用。
-  我们作为参数传递的对象和我们用于检查相等性的对象在内存中位于不同位置，所以它们的引用是不同的。
-  <br>
-  这就是为什么{ age: 18 } === { age: 18 }和 { age: 18 } == { age: 18 } 返回 false 的原因。
-</details>
-
-<p><strong>18. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function getAge(...args) &#123;</span><br><span class="line">  console.log(typeof args);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getAge(21);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A: <code>&quot;number&quot;</code></li>
-<li>B: <code>&quot;array&quot;</code></li>
-<li>C: <code>&quot;object&quot;</code></li>
-<li>D: <code>&quot;NaN&quot;</code></li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: C
-  <br>
-  扩展运算符（... args）返回一个带参数的数组。 数组是一个对象，因此 typeof args 返回 object。
-</details>
-
-<p><strong>19. 事件传播的三个阶段是什么？?</strong></p>
-<ul>
-<li>A: 目标 &gt; 捕获 &gt; 冒泡</li>
-<li>B: 冒泡 &gt; 目标 &gt; 捕获</li>
-<li>C: 目标 &gt; 冒泡 &gt; 捕获</li>
-<li>D: 捕获 &gt; 目标 &gt; 冒泡</li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: D
-  <br>
-  在捕获阶段，事件通过父元素向下传递到目标元素。 然后它到达目标元素，冒泡开始。
-</details>
-
-<p><strong>20. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function getAge() &#123;</span><br><span class="line">  &quot;use strict&quot;;</span><br><span class="line">  age = 21;</span><br><span class="line">  console.log(age);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getAge();</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A: <code>21</code></li>
-<li>B: <code>undefined</code></li>
-<li>C: <code>ReferenceError</code></li>
-<li>D: <code>TypeError</code></li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: C
-  <br>
-  使用“use strict”，可以确保不会意外地声明全局变量。 我们从未声明变量 age，因为我们使用``use strict'，它会引发一个 ReferenceError。 如果我们不使用“use strict”，它就会起作用，因为属性 age`会被添加到全局对象中。
-</details>
-
-<p><strong>21. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const sum = eval(&quot;10*10+5&quot;);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A: <code>105</code></li>
-<li>B: <code>&quot;105&quot;</code></li>
-<li>C: <code>TypeError</code></li>
-<li>D: <code>&quot;10\*10+5&quot;</code></li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: A
-  <br>
-  eval 会为字符串传递的代码求值。 如果它是一个表达式，就像在这种情况下一样，它会计算表达式。 表达式为 10 \* 10 + 5 计算得到 105。
-</details>
-
-<p><strong>22. cool_secret 可以访问多长时间?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sessionStorage.setItem(&quot;cool_secret&quot;, 123);</span><br></pre></td></tr></table></figure>
-
-<p>A：永远，数据不会丢失。<br>B：用户关闭选项卡时。<br>C：当用户关闭整个浏览器时，不仅是选项卡。<br>D：用户关闭计算机时。</p>
-<details>
-  <summary>答案</summary>
-  答案: B
-  <br>
-  关闭选项卡后，将删除存储在 sessionStorage 中的数据。
-  如果使用 localStorage，数据将永远存在，除非例如调用 localStorage.clear()。
-</details>
-
-<p><strong>23. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var num = 8;</span><br><span class="line">var num = 10;</span><br><span class="line"></span><br><span class="line">console.log(num);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A: <code>8</code></li>
-<li>B: <code>10</code></li>
-<li>C: <code>SyntaxError</code></li>
-<li>D: <code>ReferenceError</code></li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: B
-  <br>
-  使用 var 关键字，您可以用相同的名称声明多个变量。然后变量将保存最新的值。
-  您不能使用 let 或 const 来实现这一点，因为它们是块作用域的。
-</details>
-
-<p><strong>24. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const obj = &#123; 1: &quot;a&quot;, 2: &quot;b&quot;, 3: &quot;c&quot; &#125;;</span><br><span class="line">const set = new Set([1, 2, 3, 4, 5]);</span><br><span class="line"></span><br><span class="line">obj.hasOwnProperty(&quot;1&quot;);</span><br><span class="line">obj.hasOwnProperty(1);</span><br><span class="line">set.has(&quot;1&quot;);</span><br><span class="line">set.has(1);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A: <code>false true false true</code></li>
-<li>B: <code>false true true true</code></li>
-<li>C: <code>true true false true</code></li>
-<li>D: <code>true true true true</code></li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: C
-  <br>
-  所有对象键（不包括 Symbols）都会被存储为字符串，即使你没有给定字符串类型的键。 这就是为什么 obj.hasOwnProperty（'1'）也返回 true。
-  上面的说法不适用于 Set。 在我们的 Set 中没有“1”：set.has（'1'）返回 false。 它有数字类型 1，set.has（1）返回 true。
-</details>
-
-<p><strong>25. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const obj = &#123; a: &quot;one&quot;, b: &quot;two&quot;, a: &quot;three&quot; &#125;;</span><br><span class="line">console.log(obj);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A:<code>{ a: &quot;one&quot;, b: &quot;two&quot; }</code></li>
-<li>B: <code>{ b: &quot;two&quot;, a: &quot;three&quot; }</code></li>
-<li>C: <code>{ a: &quot;three&quot;, b: &quot;two&quot; }</code></li>
-<li>D: <code>SyntaxError</code></li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: C
-  <br>
-  如果对象有两个具有相同名称的键，则将替前面的键。它仍将处于第一个位置，但具有最后指定的值。
-</details>
-
-<p><strong>26. JavaScript 全局执行上下文为你创建了两个东西:全局对象和 this 关键字.</strong></p>
-<ul>
-<li>A: 对</li>
-<li>B: 错误</li>
-<li>C: 视情况而定</li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: A
-  <br>
-  基本执行上下文是全局执行上下文:它是代码中随处可访问的内容。
-</details>
-
-<p><strong>27. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for (let i = 1; i &lt; 5; i++) &#123;</span><br><span class="line">  if (i === 3) continue;</span><br><span class="line">  console.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A: <code>1 2</code></li>
-<li>B: <code>1 2 3</code></li>
-<li>C: <code>1 2 4</code></li>
-<li>D: <code>1 3 4</code></li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: C
-  <br>
-  如果某个条件返回 true，则 continue 语句跳过迭代。
-</details>
-
-<p><strong>28. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String.prototype.giveLydiaPizza = () =&gt; &#123;</span><br><span class="line">  return &quot;Just give Lydia pizza already!&quot;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const name = &quot;Lydia&quot;;</span><br><span class="line"></span><br><span class="line">name.giveLydiaPizza();</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A: <code>&quot;Just give Lydia pizza already!&quot;</code></li>
-<li>B: <code>TypeError: not a function</code></li>
-<li>C: <code>SyntaxError</code></li>
-<li>D: <code>undefined</code></li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: A
-  <br>
-  String 是一个内置的构造函数，我们可以为它添加属性。 我刚给它的原型添加了一个方法。 原始类型的字符串自动转换为字符串对象，由字符串原型函数生成。 因此，所有字符串（字符串对象）都可以访问该方法！
-  当使用基本类型的字符串调用 giveLydiaPizza 时，实际上发生了下面的过程：
-  <br>
-  创建一个 String 的包装类型实例
-  在实例上调用 substring 方法
-  销毁实例
-</details>
-
-<p><strong>29. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const a = &#123;&#125;;</span><br><span class="line">const b = &#123; key: &quot;b&quot; &#125;;</span><br><span class="line">const c = &#123; key: &quot;c&quot; &#125;;</span><br><span class="line"></span><br><span class="line">a[b] = 123;</span><br><span class="line">a[c] = 456;</span><br><span class="line"></span><br><span class="line">console.log(a[b]);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A: <code>123</code></li>
-<li>B: <code>456</code></li>
-<li>C: <code>undefined</code></li>
-<li>D: <code>ReferenceError</code></li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: B
-  <br>
-  对象键自动转换为字符串。我们试图将一个对象设置为对象 a 的键，其值为 123。
-  但是，当对象自动转换为字符串化时，它变成了[Object object]。 所以我们在这里说的是 a["Object object"] = 123。 然后，我们可以尝试再次做同样的事情。 c 对象同样会发生隐式类型转换。那么，a["Object object"] = 456。
-  然后，我们打印 a[b]，它实际上是 a["Object object"]。 我们将其设置为 456，因此返回 456。
-</details>
-
-<p><strong>30. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const foo = () =&gt; console.log(&quot;First&quot;);</span><br><span class="line">const bar = () =&gt; setTimeout(() =&gt; console.log(&quot;Second&quot;));</span><br><span class="line">const baz = () =&gt; console.log(&quot;Third&quot;);</span><br><span class="line"></span><br><span class="line">bar();</span><br><span class="line">foo();</span><br><span class="line">baz();</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A: <code>First</code> <code>Second</code> <code>Third</code></li>
-<li>B: <code>First</code> <code>Third</code> <code>Second</code></li>
-<li>C: <code>Second</code> <code>First</code> <code>Third</code></li>
-<li>D: <code>Second</code> <code>Third</code> <code>First</code></li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: B
-  <br>
-  我们有一个 setTimeout 函数并首先调用它。 然而却最后打印了它。
-  这是因为在浏览器中，我们不只有运行时引擎，我们还有一个叫做 WebAPI 的东西。WebAPI 为我们提供了 setTimeout 函数，例如 DOM。
-  将 callback 推送到 WebAPI 后，setTimeout 函数本身（但不是回调！）从堆栈中弹出。
-  <br>
-  现在，调用 foo，并打印 First。
-  <br>
-  foo 从堆栈弹出，baz 被调用，并打印 Third。
-  <br>
-  WebAPI 不能只是在准备就绪时将内容添加到堆栈中。 相反，它将回调函数推送到一个称为任务队列的东西。
-  <br>
-  这是事件循环开始工作的地方。 事件循环查看堆栈和任务队列。 如果堆栈为空，则会占用队列中的第一个内容并将其推送到堆栈中。
-  <br>
-  bar 被调用，Second 被打印，它从栈中弹出。
-</details>
-
-<p><strong>31. 单击按钮时 event.target 是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div onclick=&quot;console.log(&apos;first div&apos;)&quot;&gt;</span><br><span class="line">  &lt;div onclick=&quot;console.log(&apos;second div&apos;)&quot;&gt;</span><br><span class="line">    &lt;button onclick=&quot;console.log(&apos;button&apos;)&quot;&gt;</span><br><span class="line">      Click!</span><br><span class="line">    &lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A: <code>div 外部</code></li>
-<li>B: <code>div 内部</code></li>
-<li>C: <code>button</code></li>
-<li>D: <code>所有嵌套元素的数组.</code></li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: C
-  <br>
-  导致事件的最深嵌套元素是事件的目标。 你可以通过 event.stopPropagation 停止冒泡
-</details>
-
-<p><strong>32. 单击下面的 html 片段打印的内容是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div onclick=&quot;console.log(&apos;div&apos;)&quot;&gt;</span><br><span class="line">  &lt;p onclick=&quot;console.log(&apos;p&apos;)&quot;&gt;</span><br><span class="line">    Click here!</span><br><span class="line">  &lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A: <code>p</code> <code>div</code></li>
-<li>B: <code>div</code> <code>p</code></li>
-<li>C: <code>p</code></li>
-<li>D: <code>div</code></li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: A
-  <br>
-  如果我们单击 p，我们会看到两个日志：p 和 div。在事件传播期间，有三个阶段：捕获，目标和冒泡。 默认情况下，事件处理程序在冒泡阶段执行（除非您将 useCapture 设置为 true）。 它从最深的嵌套元素向外延伸。
-</details>
-
-<p><strong>33. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const person = &#123; name: &quot;Lydia&quot; &#125;;</span><br><span class="line"></span><br><span class="line">function sayHi(age) &#123;</span><br><span class="line">  console.log(`$&#123;this.name&#125; is $&#123;age&#125;`);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sayHi.call(person, 21);</span><br><span class="line">sayHi.bind(person, 21);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A: <code>undefined is 21 Lydia is 21</code></li>
-<li>B: <code>function function</code></li>
-<li>C: <code>Lydia is 21 Lydia is 21</code></li>
-<li>D: <code>Lydia is 21 function</code></li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: D
-  <br>
-  使用两者，我们可以传递我们想要 this 关键字引用的对象。 但是，.call 方法会立即执行！
-  .bind 方法会返回函数的拷贝值，但带有绑定的上下文！ 它不会立即执行。
-</details>
-
-<p><strong>34. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function sayHi() &#123;</span><br><span class="line">  return (() =&gt; 0)();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">typeof sayHi();</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A: <code>&quot;object&quot;</code></li>
-<li>B: <code>&quot;number&quot;</code></li>
-<li>C: <code>&quot;function&quot;</code></li>
-<li>D: <code>&quot;undefined&quot;</code></li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: B
-  <br>
-  sayHi 函数返回立即调用的函数（IIFE）的返回值。 该函数返回 0，类型为数字。
-  仅供参考：只有 7 种内置类型：null，undefined，boolean，number，string，object 和 symbol。 function 不是一个类型，因为函数是对象，它的类型是 object。
-</details>
-
-<p><strong>35. 下面这些值哪些是假值?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">0;</span><br><span class="line">new Number(0);</span><br><span class="line">(&quot;&quot;);</span><br><span class="line">(&quot; &quot;);</span><br><span class="line">new Boolean(false);</span><br><span class="line">undefined;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A: <code>0, &#39;&#39;, undefined</code></li>
-<li>B: <code>0, new Number(0), &#39;&#39;, new Boolean(false), undefined</code></li>
-<li>C: <code>0, &#39;&#39;, new Boolean(false), undefined</code></li>
-<li>D: <code>所有都是假值</code></li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: A
-  <br>
-  JavaScript 中只有 6 个假值：
-
-<p>undefined<br>null<br>NaN<br>0
-‘’ (empty string)<br>false</p>
-<p>函数构造函数，如 new Number 和 new Boolean 都是真值。</p>
-</details>
-
-<p><strong>36. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(typeof typeof 1);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A: <code>&quot;number&quot;</code></li>
-<li>B: <code>&quot;string&quot;</code></li>
-<li>C: <code>&quot;object&quot;</code></li>
-<li>D: <code>&quot;undefined&quot;</code></li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: B
-  <br>
-  typeof 1 返回 "number".
-  typeof "number" 返回 "string"
-</details>
-
-<p><strong>37. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const numbers = [1, 2, 3];</span><br><span class="line">numbers[10] = 11;</span><br><span class="line">console.log(numbers);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A: <code>[1, 2, 3, 7 x null, 11]</code></li>
-<li>B: <code>[1, 2, 3, 11]</code></li>
-<li>C: <code>[1, 2, 3, 7 x empty, 11]</code></li>
-<li>D: <code>SyntaxError</code></li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: C
-  <br>
-  当你为数组中的元素设置一个超过数组长度的值时，JavaScript 会创建一个名为“空插槽”的东西。 这些位置的值实际上是 undefined，但你会看到类似的东西：
-  [1, 2, 3, 7 x empty, 11]
-  这取决于你运行它的位置（每个浏览器有可能不同）。
-</details>
-
-<p><strong>38. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">(() =&gt; &#123;</span><br><span class="line">  let x, y;</span><br><span class="line">  try &#123;</span><br><span class="line">    throw new Error();</span><br><span class="line">  &#125; catch (x) &#123;</span><br><span class="line">    (x = 1), (y = 2);</span><br><span class="line">    console.log(x);</span><br><span class="line">  &#125;</span><br><span class="line">  console.log(x);</span><br><span class="line">  console.log(y);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A: <code>1</code> <code>undefined</code> <code>2</code></li>
-<li>B: <code>undefined</code> <code>undefined</code> <code>undefined</code></li>
-<li>C: <code>1</code> <code>1</code> <code>2</code></li>
-<li>D: <code>1</code> <code>undefined</code> <code>undefined</code></li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: A
-  <br>
-  catch 块接收参数 x。当我们传递参数时，这与变量的 x 不同。这个变量 x 是属于 catch 作用域的。
-  之后，我们将这个块级作用域的变量设置为 1，并设置变量 y 的值。 现在，我们打印块级作用域的变量 x，它等于 1。
-  在 catch 块之外，x 仍然是 undefined，而 y 是 2。 当我们想在 catch 块之外的 console.log(x)时，它返回 undefined，而 y 返回 2。  
-</details>
-
-<p><strong>39. JavaScript 中的所有内容都是…</strong></p>
-<ul>
-<li>A：原始或对象</li>
-<li>B：函数或对象</li>
-<li>C：技巧问题！只有对象</li>
-<li>D：数字或对象</li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: A
-  <br>
-  JavaScript 只有原始类型和对象。
-  原始类型是 boolean，null，undefined，bigint，number，string 和 symbol。
-</details>
-
-<p><strong>40. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[[0, 1], [2, 3]].reduce(</span><br><span class="line">  (acc, cur) =&gt; &#123;</span><br><span class="line">    return acc.concat(cur);</span><br><span class="line">  &#125;,</span><br><span class="line">  [1, 2]</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A: <code>[0, 1, 2, 3, 1, 2]</code></li>
-<li>B: <code>[6, 1, 2]</code></li>
-<li>C: <code>[1, 2, 0, 1, 2, 3]</code></li>
-<li>D: <code>[1, 2, 6]</code></li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: C
-  <br>
-  [1,2]是我们的初始值。 这是我们开始执行 reduce 函数的初始值，以及第一个 acc 的值。 在第一轮中，acc 是[1,2]，cur 是[0,1]。 我们将它们连接起来，结果是[1,2,0,1]。
-  然后，acc 的值为[1,2,0,1]，cur 的值为[2,3]。 我们将它们连接起来，得到[1,2,0,1,2,3]。
-</details>
-
-<p><strong>41. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">!!null;</span><br><span class="line">!!&quot;&quot;;</span><br><span class="line">!!1;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A: <code>false</code> <code>true</code> <code>false</code></li>
-<li>B: <code>false</code> <code>false</code> <code>true</code></li>
-<li>C: <code>false</code> <code>true</code> <code>true</code></li>
-<li>D: <code>true</code> <code>true</code> <code>false</code></li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: B
-  <br>
-  null 是假值。 !null 返回 true。 !true 返回 false。
-  ""是假值。 !""返回 true。 !true 返回 false。
-  1 是真值。 !1 返回 false。 !false 返回 true。
-</details>
-
-<p><strong>42. setInterval 方法的返回值什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setInterval(() =&gt; console.log(&quot;Hi&quot;), 1000);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A：一个唯一的 id</li>
-<li>B：指定的毫秒数</li>
-<li>C：传递的函数</li>
-<li>D：undefined</li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: A
-  <br>
-  它返回一个唯一的 id。 此 id 可用于使用 clearInterval()函数清除该定时器。
-</details>
-
-<p><strong>43. 下面代码的返回值是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[...&quot;Lydia&quot;];</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A: <code>[&quot;L&quot;, &quot;y&quot;, &quot;d&quot;, &quot;i&quot;, &quot;a&quot;]</code></li>
-<li>B: <code>[&quot;Lydia&quot;]</code></li>
-<li>C: <code>[[], &quot;Lydia&quot;]</code></li>
-<li>D: <code>[[&quot;L&quot;, &quot;y&quot;, &quot;d&quot;, &quot;i&quot;, &quot;a&quot;]]</code></li>
-</ul>
-<details>
-  <summary>答案</summary>
-  答案: A
-  <br>
-  字符串是可迭代的。 扩展运算符将迭代的每个字符映射到一个元素
-</details>
+<p>如果这个值无法被 <code>parseFloat()</code> 解析，则会返回原始的值。</p>
+<h4 id="trim"><a href="#trim" class="headerlink" title=".trim"></a><code>.trim</code></h4><p>如果要自动过滤用户输入的首尾空白字符，可以给 <code>v-model</code> 添加 <code>trim</code> 修饰符：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model.trim</span>=<span class="string">"msg"</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <hr>
 <blockquote>
@@ -962,11 +405,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
@@ -978,7 +421,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/面试//" class="article-tag-list-link color3">面试</a>
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
@@ -1033,7 +476,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/24/43-道JS面试题/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/25/Vue,初次见面/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -1047,18 +490,18 @@
   
 <nav id="article-nav">
   
-    <a href="/myBlog/2019/06/25/Vue,初次见面/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/myBlog/2019/06/26/JavaScript手写代码/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Vue,初次见面
+          JavaScript手写代码
         
       </div>
     </a>
   
   
-    <a href="/myBlog/2019/06/23/开始我的博客/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">开始我的博客</div>
+    <a href="/myBlog/2019/06/24/43-道JS面试题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">43 道JS面试题</div>
       <i class="icon-circle-right"></i>
     </a>
   
