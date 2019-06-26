@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="PowerDong-分享技术分享生活">
 <meta property="og:description" content="组件注册组件名在注册一个组件的时候，我们始终需要给它一个名字。 1234Vue.component(&quot;my-component-name&quot;, &amp;#123;  // template: &quot;&amp;lt;div&amp;gt;我是一个组件&amp;lt;/div&amp;gt;&quot;,  // template:`&amp;lt;div&amp;gt;我是一个组件  &amp;lt;/div&amp;gt;`&amp;#125;);  该组件名就是Vue.component">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-26T08:30:08.130Z">
+<meta property="og:updated_time" content="2019-06-26T11:47:43.814Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue,继续深入">
 <meta name="twitter:description" content="组件注册组件名在注册一个组件的时候，我们始终需要给它一个名字。 1234Vue.component(&quot;my-component-name&quot;, &amp;#123;  // template: &quot;&amp;lt;div&amp;gt;我是一个组件&amp;lt;/div&amp;gt;&quot;,  // template:`&amp;lt;div&amp;gt;我是一个组件  &amp;lt;/div&amp;gt;`&amp;#125;);  该组件名就是Vue.component">
@@ -177,12 +177,12 @@
 <h3 id="全局注册"><a href="#全局注册" class="headerlink" title="全局注册"></a>全局注册</h3><p>只使用<code>Vue.component</code>来创建组件。这些组件是<strong>全局注册的</strong>。在它们注册后可以用在任何新创建的 Vue 根实例(<code>new Vue</code>)的模板中。在组件内部也可以相互使用。</p>
 <h3 id="局部注册"><a href="#局部注册" class="headerlink" title="局部注册"></a>局部注册</h3><p>全局注册往往是不够理想的。全局注册所有的组件意味着即便你已经不再使用一个组件了，它仍然会包含在最终的构建结果中。这造成用户下载的 JavaScript 的无谓的增加。</p>
 <p>可以通过普通的 JavaScript 对象来定义组件。</p>
+<a id="more"></a>
+
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ComponentA = &#123;</span><br><span class="line">  template:<span class="string">`&lt;div&gt;我是局部组件&lt;/div&gt;`</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> ComponentB = &#123;</span><br><span class="line">  <span class="comment">/* ... */</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el:<span class="string">"#demo,</span></span><br><span class="line"><span class="string">  components:&#123;</span></span><br><span class="line"><span class="string">    "</span>component<span class="string">":&#123;</span></span><br><span class="line"><span class="string">      template:`&lt;div&gt;我是局部组件&lt;/div&gt;`</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;)</span></span><br></pre></td></tr></table></figure>
 
 <p>然后在 <code>components</code> 选项中定义你想要使用的组件：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">"#app"</span>,</span><br><span class="line">  components: &#123;</span><br><span class="line">    <span class="string">"component-a"</span>: ComponentA,</span><br><span class="line">    <span class="string">"component-b"</span>: ComponentB</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<a id="more"></a>
 
 <h2 id="Prop"><a href="#Prop" class="headerlink" title="Prop"></a>Prop</h2><h3 id="Prop-的大小写"><a href="#Prop-的大小写" class="headerlink" title="Prop 的大小写"></a>Prop 的大小写</h3><p>HTML 中的特性名是大小写不敏感的，所以浏览器会把所有的大写字符解释为小写字符。这意味着在使用 DOM 中的模板时，camelCase 的 prop 名需要使用其等价的 kebab-case 命名。</p>
 <h3 id="Prop-类型"><a href="#Prop-类型" class="headerlink" title="Prop 类型"></a>Prop 类型</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">props: [<span class="string">"title"</span>, <span class="string">"likes"</span>, <span class="string">"isPublished"</span>, <span class="string">"commentIds"</span>, <span class="string">"author"</span>];</span><br></pre></td></tr></table></figure>
@@ -325,6 +325,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/myBlog/2019/06/26/事件循环和Promise/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          事件循环和Promise
+        
+      </div>
+    </a>
   
   
     <a href="/myBlog/2019/06/26/Vue-逐步了解/" id="article-nav-older" class="article-nav-link-wrap">
