@@ -174,23 +174,42 @@
         <blockquote>
 <p>JS 运行的环境称之为宿主环境。</p>
 </blockquote>
-<p>浏览器，服务器，桌面等…</p>
-<p>执行栈: call stack,一个数据结构，用于存放各种函数的执行环境，没一个函数执行之前，它的相关信息会加入到执行栈。<br>函数调用之前，创建执行环境，然后加入到执行栈；函数调用之后，销毁执行环境。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"a"</span>); <span class="comment">//  3  创建console函数环境</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">B</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"b"</span>); <span class="comment">// 5  创建console函数环境</span></span><br><span class="line">  &#125;</span><br><span class="line">  B(); <span class="comment">//  4  创建B函数环境</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"global"</span>); <span class="comment">// 1 函数环境</span></span><br><span class="line"></span><br><span class="line">A(); <span class="comment">// 2  创建A函数环境</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"global over"</span>); <span class="comment">//  6   创建console环境</span></span><br></pre></td></tr></table></figure>
+<p>宿主环境有浏览器，服务器，桌面等…</p>
+<blockquote>
+<p>执行栈: (call stack),一个数据结构，用于存放各种函数的执行环境，没一个函数执行之前，它的相关信息会加入到执行栈。</p>
+</blockquote>
+<p>函数调用之前，创建执行环境，然后加入到执行栈；函数调用之后，销毁执行环境。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function A() &#123;</span><br><span class="line">  console.log(&quot;a&quot;); //  3  创建console函数环境</span><br><span class="line">  function B() &#123;</span><br><span class="line">    console.log(&quot;b&quot;); // 5  创建console函数环境</span><br><span class="line">  &#125;</span><br><span class="line">  B(); //  4  创建B函数环境</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(&quot;global&quot;); // 1 函数环境</span><br><span class="line"></span><br><span class="line">A(); // 2  创建A函数环境</span><br><span class="line"></span><br><span class="line">console.log(&quot;global over&quot;); //  6   创建console环境</span><br></pre></td></tr></table></figure>
 
-<p>JS 引擎永远执行的是执行栈的最顶部。</p>
-<p>异步函数:某些函数不会立即执行，需要等到某个时机才会执行，这样的函数称之为异步函数。<br>比如事件处理函数。异步函数的执行时机，会被宿主环境控制。</p>
+<p><strong>JS 引擎永远执行的是执行栈的最顶部。</strong></p>
+<blockquote>
+<p><strong>异步函数</strong>:某些函数不会立即执行，需要等到某个时机才会执行，这样的函数称之为异步函数。<br>比如事件处理函数。异步函数的执行时机，会被宿主环境控制。</p>
+</blockquote>
 <h3 id="浏览器宿主环境中包含-5-个线程"><a href="#浏览器宿主环境中包含-5-个线程" class="headerlink" title="浏览器宿主环境中包含 5 个线程"></a>浏览器宿主环境中包含 5 个线程</h3><ol>
-<li>JS 引擎：负责执行执行栈的最顶部代码</li>
-<li>GUI 线程：负责渲染页面 (DOMContentLoaded,onLoad)</li>
-<li>事件监听线程：负责监听各种事件 (鼠标，键盘)</li>
-<li>计时线程：负责计时 (setTimeout)</li>
-<li>网络线程：负责网络通信 (http 请求)</li>
+<li><strong>JS 引擎</strong>：负责执行执行栈的最顶部代码</li>
+<li><strong>GUI 线程</strong>：负责渲染页面 (<code>DOMContentLoaded</code>,<code>onLoad</code>)</li>
+<li><strong>事件监听线程</strong>：负责监听各种事件 (鼠标，键盘)</li>
+<li><strong>计时线程</strong>：负责计时 (<code>setTimeout</code>)</li>
+<li><strong>网络线程</strong>：负责网络通信 (http 请求)</li>
 </ol>
-<p>当上面的线程发生了某些事情，如果该线程发现这件事情有处理程序，它会将该处理程序加入到一个叫做事件队列的内存。当 JS 引擎发现，执行栈中已经没有了任何内容后，会将事件队列中第一个函数加入到执行队列。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"1"</span>);     <span class="comment">//   2</span></span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"3"</span>);   <span class="comment">//    4</span></span><br><span class="line">  &#125;, <span class="number">0</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"2"</span>);     <span class="comment">//    3</span></span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);       <span class="comment">//  1 --- 999</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当上面的线程发生了某些事情，如果该线程发现这件事情有处理程序，它会将该处理程序加入到一个叫做事件队列的内存。当 <code>JS</code>引擎发现，执行栈中已经没有了任何内容后，会将事件队列中第一个函数加入到执行队列。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"1"</span>); <span class="comment">//   2</span></span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"3"</span>); <span class="comment">//    4</span></span><br><span class="line">  &#125;, <span class="number">0</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"2"</span>); <span class="comment">//    3</span></span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i); <span class="comment">//  1 --- 999</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>JS引擎</p>
+<blockquote>
+<p>JS 引擎对事件队列的取出执行方式，以及与宿主环境的配合，称之为<strong>事件循环</strong>。</p>
+</blockquote>
+<p>事件队列在不同的宿主环境中有所差异，大部分宿主环境会将事件队列进行细分。在浏览器中，事件队列分为两种</p>
+<ul>
+<li><strong>宏任务</strong>(队列)<ul>
+<li>计时器结束的回调、事件回调、<code>http</code> 回调等大部分异步函数进入宏队列</li>
+</ul>
+</li>
+<li><strong>微任务</strong>(队列)<ul>
+<li><code>Promise</code> 产生的回调进入微队列</li>
+</ul>
+</li>
+</ul>
+<p>当执行栈清空时，<code>JS</code> 引擎首先会将微任务中的所有任务依次执行结束，如果没有微任务，则执行宏任务。</p>
         
           <a class="article-more-a" href="/myBlog/2019/06/26/事件循环和Promise/#more">more >></a>
         
