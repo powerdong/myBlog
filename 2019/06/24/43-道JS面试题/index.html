@@ -1105,22 +1105,18 @@
 <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
 
 <script>
-  var gitalk = new Gitalk({
-    oauth: {
-      client_id: '0f5bf3239b190c1e353e',
-      client_secret: 'a5fb93c9d80f72e443d43643ae7a705e95a9145b',
-    },
-    repo: 'myBlog',
-    owner: 'powerdong',
-    admin: ['powerdong'],
-    id: md5(window.location.pathname),
-    // facebook-like distraction free mode
-    distractionFreeMode: false
-  })
-  gitalk.render('gitalk-container')
-
+    var gitalk = new Gitalk({
+            clientID: '0f5bf3239b190c1e353e',
+            clientSecret: 'a5fb93c9d80f72e443d43643ae7a705e95a9145b',
+            repo: '',
+            owner: '',
+            admin: [''],
+            id: md5(window.location.pathname),
+            // facebook-like distraction free mode
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
 </script>
-
   
 
 
