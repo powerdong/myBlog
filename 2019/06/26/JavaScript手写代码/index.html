@@ -10,17 +10,19 @@
   <title>JavaScript手写代码 | PowerDong-分享技术分享生活</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="手写路径 实现一个new操作符 实现一个JSON.stringify 实现一个JSON.parse 实现一个call或apply 实现一个Function.bind 实现一个继承 实现一个JS函数柯里化 手写一个Promise 手写防抖(Debounce)和节流(Throttle) 手写一个JS深拷贝 实现一个instanceOf    1. 实现一个new操作符 new 操作符做了这些事: 它">
-<meta name="keywords" content="JS,面试">
+<meta name="keywords" content="JS,代码,手写">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript手写代码">
 <meta property="og:url" content="http://yoursite.com/2019/06/26/JavaScript手写代码/index.html">
 <meta property="og:site_name" content="PowerDong-分享技术分享生活">
 <meta property="og:description" content="手写路径 实现一个new操作符 实现一个JSON.stringify 实现一个JSON.parse 实现一个call或apply 实现一个Function.bind 实现一个继承 实现一个JS函数柯里化 手写一个Promise 手写防抖(Debounce)和节流(Throttle) 手写一个JS深拷贝 实现一个instanceOf    1. 实现一个new操作符 new 操作符做了这些事: 它">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-26T01:58:13.305Z">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/3/28/169c500344dfe50a?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
+<meta property="og:updated_time" content="2019-06-27T01:44:10.068Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript手写代码">
 <meta name="twitter:description" content="手写路径 实现一个new操作符 实现一个JSON.stringify 实现一个JSON.parse 实现一个call或apply 实现一个Function.bind 实现一个继承 实现一个JS函数柯里化 手写一个Promise 手写防抖(Debounce)和节流(Throttle) 手写一个JS深拷贝 实现一个instanceOf    1. 实现一个new操作符 new 操作符做了这些事: 它">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/3/28/169c500344dfe50a?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
   
   <link rel="alternative" href="/atom.xml" title="PowerDong-分享技术分享生活" type="application/atom+xml">
   
@@ -191,31 +193,30 @@
 <li>它创建了一个全新的对象</li>
 <li>它会被执行<code>[[Prototype]]</code>(也就是<code>__proto__</code>)链接</li>
 <li>它使<code>this</code>指向新创建的对象</li>
-<li>通过new创建的每个对象将最终被<code>[[Prototype]]</code>链接到这个函数的prototype对象上</li>
-<li>如果函数没有返回对象类型Object(包含Function、Array、Date、RegExp、Error)，那么new表达式中的函数调用将返回该对象引用</li>
+<li>通过 new 创建的每个对象将最终被<code>[[Prototype]]</code>链接到这个函数的 prototype 对象上</li>
+<li>如果函数没有返回对象类型 Object(包含 Function、Array、Date、RegExp、Error)，那么 new 表达式中的函数调用将返回该对象引用</li>
 </ul>
 </li>
 </ul>
 <a id="more"></a>
 
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function New(func) &#123;</span><br><span class="line">    // 创建一个全新的对象</span><br><span class="line">    var res = &#123;&#125;;</span><br><span class="line">    if(func.prototype !== null)&#123;</span><br><span class="line">        // 通过new创建的每个对象将链接到这个函数的prototype对象上</span><br><span class="line">        res.__proto__ = func.prototype;</span><br><span class="line">    &#125;</span><br><span class="line">    // 使this指向新创建的对象</span><br><span class="line">    var ret = func.apply(res, Array.prototype.slice.call(arguments,1));</span><br><span class="line">    if((typeof ret === &apos;object&apos; || typeof ret === &apos;function&apos;) &amp;&amp; ret !== null)&#123;</span><br><span class="line">        // 返回该对象引用</span><br><span class="line">        return ret</span><br><span class="line">    &#125;</span><br><span class="line">    return res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var obj = New(A,1,2);</span><br><span class="line">// equals to</span><br><span class="line">var obj = new A(1,2);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function New(func) &#123;</span><br><span class="line">  // 创建一个全新的对象</span><br><span class="line">  var res = &#123;&#125;;</span><br><span class="line">  if (func.prototype !== null) &#123;</span><br><span class="line">    // 通过new创建的每个对象将链接到这个函数的prototype对象上</span><br><span class="line">    res.__proto__ = func.prototype;</span><br><span class="line">  &#125;</span><br><span class="line">  // 使this指向新创建的对象</span><br><span class="line">  var ret = func.apply(res, Array.prototype.slice.call(arguments, 1));</span><br><span class="line">  if ((typeof ret === &quot;object&quot; || typeof ret === &quot;function&quot;) &amp;&amp; ret !== null) &#123;</span><br><span class="line">    // 返回该对象引用</span><br><span class="line">    return ret;</span><br><span class="line">  &#125;</span><br><span class="line">  return res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var obj = New(A, 1, 2);</span><br><span class="line">// equals to</span><br><span class="line">var obj = new A(1, 2);</span><br></pre></td></tr></table></figure>
 
 <h2 id="2-实现一个JSON-stringify"><a href="#2-实现一个JSON-stringify" class="headerlink" title="2. 实现一个JSON.stringify"></a>2. 实现一个<code>JSON.stringify</code></h2><blockquote>
 <p>JSON.stringify(value[, replacer [, space]]);</p>
 </blockquote>
 <ul>
 <li>Boolean|Number|String 类型会自动转换对应的原始值</li>
-<li>undefined、任意函数以及Symbol，会被忽略(出现在非数组对象的属性值中时)，或者被转换成null(出现在数组中时)</li>
+<li>undefined、任意函数以及 Symbol，会被忽略(出现在非数组对象的属性值中时)，或者被转换成 null(出现在数组中时)</li>
 <li>不可枚举的属性会被忽略</li>
 <li>如果一个对象的属性值通过某种间接的方式指回该对象本身，及循环引用，属性也会被忽略</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">function jsonStringify(obj) &#123;</span><br><span class="line">    let type = typeof obj;</span><br><span class="line">    if(type !== &apos;object&apos;)&#123;</span><br><span class="line">        // Boolean|Number|String 类型会自动转换对应的原始值</span><br><span class="line">        if(/string|undefined|function/.test(type))&#123;</span><br><span class="line">            obj = &apos;&quot;&apos; + obj + &apos;&quot;&apos;;   </span><br><span class="line">        &#125;</span><br><span class="line">        return String(obj);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        let json = [];</span><br><span class="line">        let arr = Array.isArray(obj);</span><br><span class="line">        for (let k in obj) &#123;</span><br><span class="line">            let v = obj[k];</span><br><span class="line">            let type = typeof v;</span><br><span class="line">            if(/string|undefined|function/.test(type))&#123;</span><br><span class="line">                v = &apos;&quot;&apos; + v + &apos;&quot;&apos;;</span><br><span class="line">            &#125;else if(type === &quot;object&quot;)&#123;</span><br><span class="line">                v = jsonStringify(v);</span><br><span class="line">            &#125;</span><br><span class="line">            json.push((arr ? &quot;&quot; : &apos;&quot;&apos; + k + &apos;&quot;:&apos;) + String(v));</span><br><span class="line">        &#125;</span><br><span class="line">        return (arr ? &quot;[&quot; : &quot;&#123;&quot;) + String(json) + (arr ? &quot;]&quot; : &quot;&#125;&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">jsonStringify(&#123;x : 5&#125;) // &quot;&#123;&quot;x&quot;:5&#125;&quot;</span><br><span class="line">jsonStringify([1, &quot;false&quot;, false]) // &quot;[1,&quot;false&quot;,false]&quot;</span><br><span class="line">jsonStringify(&#123;b: undefined&#125;) // &quot;&#123;&quot;b&quot;:&quot;undefined&quot;&#125;&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">function jsonStringify(obj) &#123;</span><br><span class="line">    let type = typeof obj;</span><br><span class="line">    if(type !== &apos;object&apos;)&#123;</span><br><span class="line">        // Boolean|Number|String 类型会自动转换对应的原始值</span><br><span class="line">        if(/string|undefined|function/.test(type))&#123;</span><br><span class="line">            obj = &apos;&quot;&apos; + obj + &apos;&quot;&apos;;</span><br><span class="line">        &#125;</span><br><span class="line">        return String(obj);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        let json = [];</span><br><span class="line">        let arr = Array.isArray(obj);</span><br><span class="line">        for (let k in obj) &#123;</span><br><span class="line">            let v = obj[k];</span><br><span class="line">            let type = typeof v;</span><br><span class="line">            if(/string|undefined|function/.test(type))&#123;</span><br><span class="line">                v = &apos;&quot;&apos; + v + &apos;&quot;&apos;;</span><br><span class="line">            &#125;else if(type === &quot;object&quot;)&#123;</span><br><span class="line">                v = jsonStringify(v);</span><br><span class="line">            &#125;</span><br><span class="line">            json.push((arr ? &quot;&quot; : &apos;&quot;&apos; + k + &apos;&quot;:&apos;) + String(v));</span><br><span class="line">        &#125;</span><br><span class="line">        return (arr ? &quot;[&quot; : &quot;&#123;&quot;) + String(json) + (arr ? &quot;]&quot; : &quot;&#125;&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">jsonStringify(&#123;x : 5&#125;) // &quot;&#123;&quot;x&quot;:5&#125;&quot;</span><br><span class="line">jsonStringify([1, &quot;false&quot;, false]) // &quot;[1,&quot;false&quot;,false]&quot;</span><br><span class="line">jsonStringify(&#123;b: undefined&#125;) // &quot;&#123;&quot;b&quot;:&quot;undefined&quot;&#125;&quot;</span><br></pre></td></tr></table></figure>
 
 <h2 id="3-实现一个JSON-parse"><a href="#3-实现一个JSON-parse" class="headerlink" title="3. 实现一个JSON.parse"></a>3. 实现一个<code>JSON.parse</code></h2><blockquote>
 <p>JSON.parse(text,reviver)</p>
 </blockquote>
-<p>用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。提供可选的reviver函数用以在返回之前对得到的对象执行变换(操作)</p>
+<p>用来解析 JSON 字符串，构造由字符串描述的 JavaScript 值或对象。提供可选的 reviver 函数用以在返回之前对得到的对象执行变换(操作)</p>
 <h3 id="3-1-第一种：直接调用-eval"><a href="#3-1-第一种：直接调用-eval" class="headerlink" title="3.1 第一种：直接调用 eval"></a>3.1 第一种：直接调用 <code>eval</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function jsonParse(opt) &#123;</span><br><span class="line">    return eval(&apos;(&apos; + opt +&apos;)&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">jsonParse(jsonStringify(&#123;x : 5&#125;))</span><br><span class="line">// Object &#123;x:5&#125;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
@@ -225,16 +226,74 @@
 <blockquote>
 <p><code>var func = new Function(arg1,arg2,..., functionBody);</code></p>
 </blockquote>
-<p>在转换JSON的实际应用中，只需要这么做</p>
+<p>在转换 JSON 的实际应用中，只需要这么做</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var jsonStr = &apos;&#123;&quot;age&quot;:20,&quot;name&quot; : &quot;PowerDong&quot;&#125;&apos;;</span><br><span class="line">var json = (new Function(&apos;return&apos; + jsonStr))();</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p><code>eval</code>和<code>Function</code>都有着动态编译js代码的作用，但是在实际的编程中并不推荐使用</p>
+<p><code>eval</code>和<code>Function</code>都有着动态编译 js 代码的作用，但是在实际的编程中并不推荐使用</p>
 </blockquote>
+<h2 id="4-实现一个call或apply"><a href="#4-实现一个call或apply" class="headerlink" title="4. 实现一个call或apply"></a>4. 实现一个<code>call</code>或<code>apply</code></h2><p><code>call</code>语法:</p>
+<blockquote>
+<p><code>fun.call(thisArg,arg1,arg2,...)</code>,调用一个函数，其具有一个指定的<code>this</code>值和分别的提供的参数(参数列表)。</p>
+</blockquote>
+<p><code>apply</code>语法:</p>
+<blockquote>
+<p><code>fun.apply(thisArg,[argsArray]</code>,调用一个函数，以及作为一个数组(或类似数组的对象)提供平的参数。</p>
+</blockquote>
+<h3 id="4-1-Function-call按套路实现"><a href="#4-1-Function-call按套路实现" class="headerlink" title="4.1 Function.call按套路实现"></a>4.1 <code>Function.call</code>按套路实现</h3><p><strong><code>call</code>核心</strong>:</p>
+<ul>
+<li>将函数设为对象的属性</li>
+<li>执行并删除这个函数</li>
+<li>指定<code>this</code>到函数并传入给定参数执行函数</li>
+<li>如果不传入参数，默认指向为 window</li>
+</ul>
+<h4 id="4-1-1-简单版"><a href="#4-1-1-简单版" class="headerlink" title="4.1.1 简单版"></a>4.1.1 简单版</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var foo = &#123;</span><br><span class="line">  value: 1,</span><br><span class="line">  bar: function() &#123;</span><br><span class="line">    console.log(this.value);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">foo.bar(); //1</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-1-2-完善版"><a href="#4-1-2-完善版" class="headerlink" title="4.1.2 完善版"></a>4.1.2 完善版</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//默认指向window</span><br><span class="line">Function.prototype.myCall = function(content = window)&#123;</span><br><span class="line">    //指定this到函数</span><br><span class="line">    content.fn = this;</span><br><span class="line">    let args = [...arguments].slice(1);</span><br><span class="line">    //执行函数</span><br><span class="line">    let result = content.fn(...args);</span><br><span class="line">    //删除函数</span><br><span class="line">    delete content.fn;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br><span class="line">let foo = &#123;</span><br><span class="line">    value : 1;</span><br><span class="line">&#125;</span><br><span class="line">function bar(name,age)&#123;</span><br><span class="line">    console.log(name);</span><br><span class="line">    console.log(age);</span><br><span class="line">    console.log(this.value);</span><br><span class="line">&#125;</span><br><span class="line">bar.myCall(foo,&apos;dong&apos;,&apos;18&apos;);// dong  18  1</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-Function-apply的模拟实现"><a href="#4-2-Function-apply的模拟实现" class="headerlink" title="4.2 Function.apply的模拟实现"></a>4.2 <code>Function.apply</code>的模拟实现</h3><p><code>apply()</code>的实现和<code>call()</code>类似，只是参数形式不同。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//默认指向window</span><br><span class="line">Function.prototype.myApply = function(content = window) &#123;</span><br><span class="line">  //指定this到函数</span><br><span class="line">  content.fn = this;</span><br><span class="line">  let result;</span><br><span class="line">  // 判断是否有第二个参数</span><br><span class="line">  if (arguments[1]) &#123;</span><br><span class="line">    result = content.fn(...arguments[1]);</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    result = content.fn();</span><br><span class="line">  &#125;</span><br><span class="line">  delete content.fn;</span><br><span class="line">  return result;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-实现一个Function-bind"><a href="#5-实现一个Function-bind" class="headerlink" title="5. 实现一个Function.bind()"></a>5. 实现一个<code>Function.bind()</code></h2><p><code>bind()</code>方法:</p>
+<blockquote>
+<p>会创建一个新函数。当这个新函数被调用时，bind()的第一个参数将作为他运行时的<code>this</code>，之后的一序列参数将会在传递的实参前传入作为他的参数。</p>
+</blockquote>
+<p>此外，<code>bind</code>实现需要考虑实例化后对原型链的影响。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Function.prototype.myBind = function(content) &#123;</span><br><span class="line">  if (typeof this != &quot;function&quot;) &#123;</span><br><span class="line">    throw Error(&quot;not a function&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">  // 若没问参数类型则从这开始写</span><br><span class="line">  let fn = this;</span><br><span class="line">  let args = [...arguments].slice(1);</span><br><span class="line"></span><br><span class="line">  let resFn = function() &#123;</span><br><span class="line">    return fn.apply(</span><br><span class="line">      this instanceof resFn ? this : content,</span><br><span class="line">      args.concat(...arguments)</span><br><span class="line">    );</span><br><span class="line">  &#125;;</span><br><span class="line">  function tmp() &#123;&#125;</span><br><span class="line">  tmp.prototype = this.prototype;</span><br><span class="line">  resFn.prototype = new tmp();</span><br><span class="line"></span><br><span class="line">  return resFn;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-实现一个继承"><a href="#6-实现一个继承" class="headerlink" title="6. 实现一个继承"></a>6. 实现一个继承</h2><p><strong>寄生组合式继承:</strong></p>
+<p>核心实现是:<strong>用一个<code>F</code>空的构造函数去取代执行了<code>Parent</code>这个构造函数</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">function Parent(name) &#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">&#125;</span><br><span class="line">Parent.prototype.sayName = function() &#123;</span><br><span class="line">  console.log(&quot;parent name:&quot;, this.name);</span><br><span class="line">&#125;;</span><br><span class="line">function Child(name, parentName) &#123;</span><br><span class="line">  Parent.call(this, parentName);</span><br><span class="line">  this.name = name;</span><br><span class="line">&#125;</span><br><span class="line">function create(proto) &#123;</span><br><span class="line">  function F() &#123;&#125;</span><br><span class="line">  F.prototype = proto;</span><br><span class="line">  return new F();</span><br><span class="line">&#125;</span><br><span class="line">Child.prototype = create(Parent.prototype);</span><br><span class="line">Child.prototype.sayName = function() &#123;</span><br><span class="line">  console.log(&quot;child name:&quot;, this.name);</span><br><span class="line">&#125;;</span><br><span class="line">Child.prototype.constructor = Child;</span><br><span class="line"></span><br><span class="line">var parent = new Parent(&quot;father&quot;);</span><br><span class="line">parent.sayName(); // parent name: father</span><br><span class="line"></span><br><span class="line">var child = new Child(&quot;son&quot;, &quot;father&quot;);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//圣杯模式(继承)</span><br><span class="line">function inherit(Target,Origin) &#123;</span><br><span class="line">    function F() &#123;&#125;</span><br><span class="line">    F.prototype = Origin.prototype;</span><br><span class="line">    Target.prototype = new F();</span><br><span class="line">    Target.prototype.constuctor = Target;</span><br><span class="line">    Target.prototype.uber = Origin.prototype;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-实现一个JS函数柯里化"><a href="#7-实现一个JS函数柯里化" class="headerlink" title="7. 实现一个JS函数柯里化"></a>7. 实现一个JS函数柯里化</h2><p><strong>什么是柯里化?</strong></p>
+<blockquote>
+<p>在计算机科学中，柯里化(Currying)是把接受多个参数的函数变换成接受一个单一参数(最初函数的第一个参数)的函数，并且返回接受余下的参数且返回结果的新函数的技术。</p>
+</blockquote>
+<h3 id="7-1-通用版"><a href="#7-1-通用版" class="headerlink" title="7.1 通用版"></a>7.1 通用版</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">function curry(fn, args) &#123;</span><br><span class="line">    var length = fn.length;</span><br><span class="line">    var args = args || [];</span><br><span class="line">    return function()&#123;</span><br><span class="line">        newArgs = args.concat(Array.prototype.slice.call(arguments));</span><br><span class="line">        if (newArgs.length &lt; length) &#123;</span><br><span class="line">            return curry.call(this,fn,newArgs);</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            return fn.apply(this,newArgs);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function multiFn(a, b, c) &#123;</span><br><span class="line">    return a * b * c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var multi = curry(multiFn);</span><br><span class="line"></span><br><span class="line">multi(2)(3)(4);</span><br><span class="line">multi(2,3,4);</span><br><span class="line">multi(2)(3,4);</span><br><span class="line">multi(2,3)(4);</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-2-ES6写法"><a href="#7-2-ES6写法" class="headerlink" title="7.2 ES6写法"></a>7.2 <code>ES6写法</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const curry = (fn, arr = []) </span><br><span class="line">            =&gt; (...args) </span><br><span class="line">            =&gt; (arg </span><br><span class="line">            =&gt; arg.length === fn.length? fn(...arg): curry(fn, arg))</span><br><span class="line">            ([...arr, ...args])</span><br><span class="line"></span><br><span class="line">let curryTest=curry((a,b,c,d)=&gt;a+b+c+d)</span><br><span class="line">curryTest(1,2,3)(4) //返回10</span><br><span class="line">curryTest(1,2)(4)(3) //返回10</span><br><span class="line">curryTest(1,2)(3,4) //返回10</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-手写一个Promise"><a href="#8-手写一个Promise" class="headerlink" title="8. 手写一个Promise"></a>8. 手写一个<code>Promise</code></h2><p><code>Promise</code>规范:</p>
+<ul>
+<li>三种状态<code>pending</code>|<code>resolved</code>|<code>rejected</code></li>
+<li>当处于<code>pending</code>状态的时候，可以转移到<code>resolved</code>或者<code>rejected</code>状态</li>
+<li>当处于<code>resolved</code>状态或者<code>rejected</code>状态的时候，就不可变</li>
+</ul>
+<h3 id="8-1-Promise流程图分析"><a href="#8-1-Promise流程图分析" class="headerlink" title="8.1 Promise流程图分析"></a>8.1 <code>Promise</code>流程图分析</h3><p><img src="https://user-gold-cdn.xitu.io/2019/3/28/169c500344dfe50a?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="Promise"></p>
+<p><strong><code>Promise</code>用法:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var promise = new Promise((resolve,reject) =&gt; &#123;</span><br><span class="line">    if (操作成功) &#123;</span><br><span class="line">        resolve(value)</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        reject(error)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">promise.then(function (value) &#123;</span><br><span class="line">    // resolve</span><br><span class="line">&#125;,function (value) &#123;</span><br><span class="line">    // rejected</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-2-手写"><a href="#8-2-手写" class="headerlink" title="8.2 手写"></a>8.2 手写</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">function mPromise(constructor)&#123;</span><br><span class="line">    let self = this;</span><br><span class="line">    self.status = &quot;pending&quot;;        // 定义状态改变前的状态</span><br><span class="line">    self.value  = undefined;        // 定义状态为resolved的时候的状态</span><br><span class="line">    self.reason = undefined;        // 定义状态为rejected的时候的状态</span><br><span class="line">    function resolved(value)&#123;</span><br><span class="line">        //两个 === &quot;pending&quot; ，保证了状态的改变是不可逆的</span><br><span class="line">        if(self.status === &quot;pending&quot;)&#123;</span><br><span class="line">            self.value = value;</span><br><span class="line">            self.status = &quot;resolved;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    function rejected(reason)&#123;</span><br><span class="line">        //两个 === &quot;pending&quot; ，保证了状态的改变是不可逆的</span><br><span class="line">        if(self.status === &quot;pending&quot;)&#123;</span><br><span class="line">            self.reason = reason;</span><br><span class="line">            self.status = &quot;rejected&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    // 捕获构造异常</span><br><span class="line">    try&#123;</span><br><span class="line">        constructor(resolved,rejected);</span><br><span class="line">    &#125;catch(e)&#123;</span><br><span class="line">        rejected(e);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>同时，需要在<code>myPromise</code>的原型上定义链式调用的<code>then</code>方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">myPromise.prototype.then = function(resolved,rejected)&#123;</span><br><span class="line">    let self = this;</span><br><span class="line">    switch(self.status)&#123;</span><br><span class="line">        case &quot;resolved&quot; :</span><br><span class="line">            resolved(self.value);</span><br><span class="line">            break;</span><br><span class="line">        case &quot;rejected&quot; :</span><br><span class="line">            rejected(self.reason);</span><br><span class="line">            break;</span><br><span class="line">        default;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <hr>
 <blockquote>
 <p>博客声明:所有转载的文章、图片仅用于作者本人收藏学习目的，被要求或认为适当时，将标注署名与来源。若不愿某一作品被转用，请及时通知本站，本站将予以及时删除。</p>
-</blockquote>
+<pre><code></code></pre></blockquote>
 
       
 
@@ -283,7 +342,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">代码</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">手写</a>
         		</li>
       		
 		</ul>
@@ -295,7 +358,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/面试//" class="article-tag-list-link color3">面试</a>
+        			<a href="/myBlog/categories/代码//" class="article-tag-list-link color3">代码</a>
         		</li>
       		
 		</ul>
@@ -497,19 +560,35 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">知识点</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">代码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">手写</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
             
             <div class="clearfix"></div>

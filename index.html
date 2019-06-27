@@ -189,27 +189,7 @@
 <li><strong>JS 引擎</strong>：负责执行执行栈的最顶部代码</li>
 <li><strong>GUI 线程</strong>：负责渲染页面 (<code>DOMContentLoaded</code>,<code>onLoad</code>)</li>
 <li><strong>事件监听线程</strong>：负责监听各种事件 (鼠标，键盘)</li>
-<li><strong>计时线程</strong>：负责计时 (<code>setTimeout</code>)</li>
-<li><strong>网络线程</strong>：负责网络通信 (http 请求)</li>
 </ol>
-<p>当上面的线程发生了某些事情，如果该线程发现这件事情有处理程序，它会将该处理程序加入到一个叫做事件队列的内存。当 <code>JS</code>引擎发现，执行栈中已经没有了任何内容后，会将事件队列中第一个函数加入到执行队列。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"1"</span>); <span class="comment">//   2</span></span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"3"</span>); <span class="comment">//    4</span></span><br><span class="line">  &#125;, <span class="number">0</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"2"</span>); <span class="comment">//    3</span></span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i); <span class="comment">//  1 --- 999</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>JS 引擎对事件队列的取出执行方式，以及与宿主环境的配合，称之为<strong>事件循环</strong>。</p>
-</blockquote>
-<p>事件队列在不同的宿主环境中有所差异，大部分宿主环境会将事件队列进行细分。在浏览器中，事件队列分为两种</p>
-<ul>
-<li><strong>宏任务</strong>(队列)<ul>
-<li>计时器结束的回调、事件回调、<code>http</code> 回调等大部分异步函数进入宏队列</li>
-</ul>
-</li>
-<li><strong>微任务</strong>(队列)<ul>
-<li><code>Promise</code> 产生的回调进入微队列  </li>
-</ul>
-</li>
-</ul>
-<p>当执行栈清空时，<code>JS</code> 引擎首先会将微任务中的所有任务依次执行结束，如果没有微任务，则执行宏任务。</p>
         
           <a class="article-more-a" href="/myBlog/2019/06/26/事件循环和Promise/#more">more >></a>
         
@@ -229,7 +209,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">试题</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">知识点</a>
         		</li>
       		
 		</ul>
@@ -241,7 +225,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/面试//" class="article-tag-list-link color3">面试</a>
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
@@ -520,8 +504,8 @@
 <li>它创建了一个全新的对象</li>
 <li>它会被执行<code>[[Prototype]]</code>(也就是<code>__proto__</code>)链接</li>
 <li>它使<code>this</code>指向新创建的对象</li>
-<li>通过new创建的每个对象将最终被<code>[[Prototype]]</code>链接到这个函数的prototype对象上</li>
-<li>如果函数没有返回对象类型Object(包含Function、Array、Date、RegExp、Error)，那么new表达式中的函数调用将返回该对象引用</li>
+<li>通过 new 创建的每个对象将最终被<code>[[Prototype]]</code>链接到这个函数的 prototype 对象上</li>
+<li>如果函数没有返回对象类型 Object(包含 Function、Array、Date、RegExp、Error)，那么 new 表达式中的函数调用将返回该对象引用</li>
 </ul>
 </li>
 </ul>
@@ -544,7 +528,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">代码</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">手写</a>
         		</li>
       		
 		</ul>
@@ -556,7 +544,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/面试//" class="article-tag-list-link color3">面试</a>
+        			<a href="/myBlog/categories/代码//" class="article-tag-list-link color3">代码</a>
         		</li>
       		
 		</ul>
@@ -783,6 +771,10 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">试题</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
         		</li>
       		
@@ -795,7 +787,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/面试//" class="article-tag-list-link color3">面试</a>
+        			<a href="/myBlog/categories/试题//" class="article-tag-list-link color3">试题</a>
         		</li>
       		
 		</ul>
@@ -987,19 +979,35 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">知识点</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">代码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">手写</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
             
             <div class="clearfix"></div>
