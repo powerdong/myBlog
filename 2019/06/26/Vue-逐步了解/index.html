@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="PowerDong-分享技术&amp;生活">
 <meta property="og:description" content="声明式渲染 命令式编程:命令”机器”如何去做事情(how),这样不管你想要的是什么(what),它都会按照你的命令实现 声明式编程:告诉”机器”你想要的是什么(what)，让机器想出如何去做(how)  三大模板html 模板  v-html=”标签” 字符串模板template:”hello world“ 使用模板字符串拼接 12345&amp;lt;script type=&quot;x/template&quot; i">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-26T05:46:28.899Z">
+<meta property="og:updated_time" content="2019-06-27T12:46:01.903Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue,逐步了解">
 <meta name="twitter:description" content="声明式渲染 命令式编程:命令”机器”如何去做事情(how),这样不管你想要的是什么(what),它都会按照你的命令实现 声明式编程:告诉”机器”你想要的是什么(what)，让机器想出如何去做(how)  三大模板html 模板  v-html=”标签” 字符串模板template:”hello world“ 使用模板字符串拼接 12345&amp;lt;script type=&quot;x/template&quot; i">
@@ -205,6 +205,27 @@
 <h3 id="通过Prop向子组件传递数据"><a href="#通过Prop向子组件传递数据" class="headerlink" title="通过Prop向子组件传递数据"></a>通过<code>Prop</code>向子组件传递数据</h3><p><code>Prop</code>是你可以在组件上注册的一些自定义特性。当一个值传递给一个<code>prop</code>特性的时候，他就变成了那个组件实例的一个属性。我们可以用一个<code>props</code>选项将其包含在该组件可接受的<code>prop</code>列表中。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'blog-post'</span>,&#123;</span><br><span class="line">    props:[<span class="string">'title],</span></span><br><span class="line"><span class="string">    template:'</span>&lt;h3&gt;&#123;&#123;title&#125;&#125;&lt;<span class="regexp">/h3&gt;</span></span><br><span class="line"><span class="regexp">&#125;)</span></span><br></pre></td></tr></table></figure>
 
+<h2 id="组件注册"><a href="#组件注册" class="headerlink" title="组件注册"></a>组件注册</h2><h3 id="组件名"><a href="#组件名" class="headerlink" title="组件名"></a>组件名</h3><p>在注册一个组件的时候，我们始终需要给它一个名字。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">"my-component-name"</span>, &#123;</span><br><span class="line">  <span class="comment">// template: "&lt;div&gt;我是一个组件&lt;/div&gt;",</span></span><br><span class="line">  <span class="comment">// template:`&lt;div&gt;我是一个组件  &lt;/div&gt;`</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>该组件名就是<code>Vue.component</code>的第一个参数(推荐字母全小写且必须包含一个连字符)</p>
+<h3 id="全局注册"><a href="#全局注册" class="headerlink" title="全局注册"></a>全局注册</h3><p>只使用<code>Vue.component</code>来创建组件。这些组件是<strong>全局注册的</strong>。在它们注册后可以用在任何新创建的 Vue 根实例(<code>new Vue</code>)的模板中。在组件内部也可以相互使用。</p>
+<h3 id="局部注册"><a href="#局部注册" class="headerlink" title="局部注册"></a>局部注册</h3><p>全局注册往往是不够理想的。全局注册所有的组件意味着即便你已经不再使用一个组件了，它仍然会包含在最终的构建结果中。这造成用户下载的 JavaScript 的无谓的增加。</p>
+<p>可以通过普通的 JavaScript 对象来定义组件。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ComponentA = &#123;</span><br><span class="line">  template:<span class="string">`&lt;div&gt;我是局部组件&lt;/div&gt;`</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> ComponentB = &#123;</span><br><span class="line">  <span class="comment">/* ... */</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el:<span class="string">"#demo,</span></span><br><span class="line"><span class="string">  components:&#123;</span></span><br><span class="line"><span class="string">    "</span>component<span class="string">":&#123;</span></span><br><span class="line"><span class="string">      template:`&lt;div&gt;我是局部组件&lt;/div&gt;`</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;)</span></span><br></pre></td></tr></table></figure>
+
+<p>然后在 <code>components</code> 选项中定义你想要使用的组件：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">"#app"</span>,</span><br><span class="line">  components: &#123;</span><br><span class="line">    <span class="string">"component-a"</span>: ComponentA,</span><br><span class="line">    <span class="string">"component-b"</span>: ComponentB</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="Prop"><a href="#Prop" class="headerlink" title="Prop"></a>Prop</h2><h3 id="Prop-的大小写"><a href="#Prop-的大小写" class="headerlink" title="Prop 的大小写"></a>Prop 的大小写</h3><p>HTML 中的特性名是大小写不敏感的，所以浏览器会把所有的大写字符解释为小写字符。这意味着在使用 DOM 中的模板时，camelCase 的 prop 名需要使用其等价的 kebab-case 命名。</p>
+<h3 id="Prop-类型"><a href="#Prop-类型" class="headerlink" title="Prop 类型"></a>Prop 类型</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">props: [<span class="string">"title"</span>, <span class="string">"likes"</span>, <span class="string">"isPublished"</span>, <span class="string">"commentIds"</span>, <span class="string">"author"</span>];</span><br></pre></td></tr></table></figure>
+
+<p>如果希望每个 prop 都有指定的值类型，可以用对象的形式列出 prop。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">props: &#123;</span><br><span class="line">  title: &#123;</span><br><span class="line">    <span class="comment">// 类型</span></span><br><span class="line">    type:<span class="built_in">String</span>,</span><br><span class="line">    <span class="comment">// 默认值</span></span><br><span class="line">    <span class="keyword">default</span>:<span class="string">"hello"</span>,</span><br><span class="line">    <span class="comment">// 是否必填</span></span><br><span class="line">    required:<span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  likes: &#123;</span><br><span class="line">    <span class="comment">//多个可能的类型 </span></span><br><span class="line">    type:[<span class="built_in">String</span>,<span class="built_in">Number</span>]</span><br><span class="line">  &#125;,</span><br><span class="line">  isPublished: <span class="built_in">Boolean</span>,</span><br><span class="line">  commentIds: <span class="built_in">Array</span>,</span><br><span class="line">  author: <span class="built_in">Object</span>,</span><br><span class="line">  callback: <span class="built_in">Function</span>,</span><br><span class="line">  contactsPromise: <span class="built_in">Promise</span> <span class="comment">// or any other constructor</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="传递静态或动态的-Prop"><a href="#传递静态或动态的-Prop" class="headerlink" title="传递静态或动态的 Prop"></a>传递静态或动态的 Prop</h3><p>可以给 prop 传入一个静态的值，也可以通过<code>v-bind</code>动态赋值</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 静态 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">blog-post</span> <span class="attr">title</span>=<span class="string">"My journey with Vue"</span>&gt;</span><span class="tag">&lt;/<span class="name">blog-post</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 动态 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">blog-post</span> <span class="attr">v-bind:title</span>=<span class="string">"post.title"</span>&gt;</span><span class="tag">&lt;/<span class="name">blog-post</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <hr>
 <blockquote>
 <p>博客声明:所有转载的文章、图片仅用于作者本人收藏学习目的，被要求或认为适当时，将标注署名与来源。若不愿某一作品被转用，请及时通知本站，本站将予以及时删除。</p>
@@ -217,7 +238,7 @@
           <a href="javascript:;" class="page-reward-btn tooltip-top">
             <div class="tooltip tooltip-east">
             <span class="tooltip-item">
-              赏
+              打赏
             </span>
             <span class="tooltip-content">
               <span class="tooltip-text">
@@ -338,11 +359,11 @@
   
 <nav id="article-nav">
   
-    <a href="/myBlog/2019/06/26/Vue-继续深入/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/myBlog/2019/06/26/事件循环/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Vue,继续深入
+          事件循环
         
       </div>
     </a>
@@ -493,14 +514,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
@@ -510,6 +523,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">知识点</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
