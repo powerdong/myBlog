@@ -10,7 +10,7 @@
   <title>深究Js隐式类型转换 | PowerDong-分享技术&amp;生活</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="起因凡事都有个来源和起因，这个题不是我在哪篇文章看到的，也不是我瞎乱造出来的，是在看一个重学 Js 类型转换视频中老师使用console.log({} + []) 在控制台输出了[object Object]，不过看了人家的视频自己也需要动手敲一下嘛，于是我没有在编辑器里边编辑，偷了个懒直接在控制台里边编辑打印。巧了 竟然返回结果不一样！！ 对结果出乎意料，本着实事求是的精神，探寻事物的本质，不断">
-<meta name="keywords" content="笔记,JS,试题">
+<meta name="keywords" content="JS,试题,笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深究Js隐式类型转换">
 <meta property="og:url" content="http://yoursite.com/2019/07/04/Js隐式类型转换/index.html">
@@ -18,7 +18,7 @@
 <meta property="og:description" content="起因凡事都有个来源和起因，这个题不是我在哪篇文章看到的，也不是我瞎乱造出来的，是在看一个重学 Js 类型转换视频中老师使用console.log({} + []) 在控制台输出了[object Object]，不过看了人家的视频自己也需要动手敲一下嘛，于是我没有在编辑器里边编辑，偷了个懒直接在控制台里边编辑打印。巧了 竟然返回结果不一样！！ 对结果出乎意料，本着实事求是的精神，探寻事物的本质，不断">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/04/ZN3qi9.png">
-<meta property="og:updated_time" content="2019-07-10T01:33:38.851Z">
+<meta property="og:updated_time" content="2019-07-11T00:53:38.251Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深究Js隐式类型转换">
 <meta name="twitter:description" content="起因凡事都有个来源和起因，这个题不是我在哪篇文章看到的，也不是我瞎乱造出来的，是在看一个重学 Js 类型转换视频中老师使用console.log({} + []) 在控制台输出了[object Object]，不过看了人家的视频自己也需要动手敲一下嘛，于是我没有在编辑器里边编辑，偷了个懒直接在控制台里边编辑打印。巧了 竟然返回结果不一样！！ 对结果出乎意料，本着实事求是的精神，探寻事物的本质，不断">
@@ -52,11 +52,11 @@
 <div class="overlay" style="background: #4d4d4d"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
-		<a href="/" class="profilepic">
+		<a href="/myBlog" class="profilepic">
 			<img src="https://s2.ax1x.com/2019/06/23/ZCKwcV.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">李浩栋</a></h1>
+		  <h1 class="header-author"><a href="/myBlog">李浩栋</a></h1>
 		</hgroup>
 		
 		<p class="header-subtitle">不服，争取</p>
@@ -364,7 +364,7 @@
 
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log([] == <span class="number">1</span>); <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">0</span> == []); <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log([<span class="number">1</span>] == <span class="literal">true</span>); <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log([<span class="number">1</span>, <span class="string">"a"</span>, <span class="number">3</span>] == <span class="string">"1,a,3"</span>); <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log([] == <span class="literal">undefined</span>); <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(&#123; <span class="attr">a</span>: <span class="number">1</span> &#125; == <span class="number">1</span>); <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">null</span> == [<span class="literal">null</span>]); <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log([] == []); <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(&#123;&#125; == &#123;&#125;); <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log([] == []); <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(&#123;&#125; == &#123;&#125;); <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 这里需要抛出一个有意思的现象，读者可以自行验证</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">null</span> &lt;= <span class="number">0</span>); <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">null</span> &gt;= <span class="number">0</span>); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>总结</strong></p>
 <ul>
@@ -485,15 +485,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">试题</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
@@ -729,14 +729,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
@@ -745,7 +737,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -753,11 +745,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">代码</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">代码</a>
               </li>
             
             <div class="clearfix"></div>

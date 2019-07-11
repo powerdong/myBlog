@@ -10,14 +10,14 @@
   <title>事件循环 | PowerDong-分享技术&amp;生活</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="事件循环和Promise JS 运行的环境称之为宿主环境。  宿主环境有浏览器，服务器，桌面等…  执行栈: (call stack),一个数据结构，用于存放各种函数的执行环境，没一个函数执行之前，它的相关信息会加入到执行栈。  函数调用之前，创建执行环境，然后加入到执行栈；函数调用之后，销毁执行环境。 12345678910111213function A() &amp;#123;  console.l">
-<meta name="keywords" content="笔记,JS,试题">
+<meta name="keywords" content="JS,试题,笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="事件循环">
 <meta property="og:url" content="http://yoursite.com/2019/06/26/事件循环/index.html">
 <meta property="og:site_name" content="PowerDong-分享技术&amp;生活">
 <meta property="og:description" content="事件循环和Promise JS 运行的环境称之为宿主环境。  宿主环境有浏览器，服务器，桌面等…  执行栈: (call stack),一个数据结构，用于存放各种函数的执行环境，没一个函数执行之前，它的相关信息会加入到执行栈。  函数调用之前，创建执行环境，然后加入到执行栈；函数调用之后，销毁执行环境。 12345678910111213function A() &amp;#123;  console.l">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-06T12:01:16.734Z">
+<meta property="og:updated_time" content="2019-07-10T13:32:51.236Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="事件循环">
 <meta name="twitter:description" content="事件循环和Promise JS 运行的环境称之为宿主环境。  宿主环境有浏览器，服务器，桌面等…  执行栈: (call stack),一个数据结构，用于存放各种函数的执行环境，没一个函数执行之前，它的相关信息会加入到执行栈。  函数调用之前，创建执行环境，然后加入到执行栈；函数调用之后，销毁执行环境。 12345678910111213function A() &amp;#123;  console.l">
@@ -50,11 +50,11 @@
 <div class="overlay" style="background: #4d4d4d"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
-		<a href="/" class="profilepic">
+		<a href="/myBlog" class="profilepic">
 			<img src="https://s2.ax1x.com/2019/06/23/ZCKwcV.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">李浩栋</a></h1>
+		  <h1 class="header-author"><a href="/myBlog">李浩栋</a></h1>
 		</hgroup>
 		
 		<p class="header-subtitle">不服，争取</p>
@@ -216,7 +216,7 @@
 <h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a><code>Promise</code></h2><p><code>Promise</code> 对象表示任务，它用一种标准格式处理异步任务。</p>
 <p><code>Promise</code> 构造函数中传入的任务函数会被立即执行(同步)。<code>resolve</code> 和 <code>reject</code> 是异步执行。</p>
 <p><code>resolve</code> 调用后，把任务标记为成功，可以通过 <code>Promise</code> 对象的 <code>then</code> 函数注册处理程序，该程序会在任务标记为成功后执行，是异步的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(function() &#123;</span><br><span class="line">  console.log(&quot;A&quot;);</span><br><span class="line">&#125;, 0);</span><br><span class="line">var obj = &#123;</span><br><span class="line">  func: function() &#123;</span><br><span class="line">    setTimeout(function() &#123;</span><br><span class="line">      console.log(&quot;B&quot;);</span><br><span class="line">    &#125;, 0);</span><br><span class="line">    return new Promise(resolve =&gt; &#123;</span><br><span class="line">      console.log(&quot;C&quot;);</span><br><span class="line">      resolve();</span><br><span class="line">      console.log(&quot;D&quot;);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">obj.func().then(function() &#123;</span><br><span class="line">  console.log(&quot;E&quot;);</span><br><span class="line">&#125;);</span><br><span class="line">console.log(&quot;F&quot;);</span><br><span class="line"></span><br><span class="line">// C  D  F  E  A  B</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"A"</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  func: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"B"</span>);</span><br><span class="line">    &#125;, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"C"</span>);</span><br><span class="line">      resolve();</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"D"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">obj.func().then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"E"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"F"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// C  D  F  E  A  B</span></span><br></pre></td></tr></table></figure>
 
 <hr>
 <blockquote>
@@ -266,15 +266,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">试题</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
@@ -510,14 +510,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
@@ -526,7 +518,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -534,11 +526,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">代码</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">代码</a>
               </li>
             
             <div class="clearfix"></div>
