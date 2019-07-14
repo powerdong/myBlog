@@ -151,6 +151,236 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-原型和原型链" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/07/14/原型和原型链/">原型和原型链</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/07/14/原型和原型链/" class="archive-article-date">
+  	<time datetime="2019-07-14T11:05:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="理解原型设计模式以及-JavaScript-中的原型规则"><a href="#理解原型设计模式以及-JavaScript-中的原型规则" class="headerlink" title="理解原型设计模式以及 JavaScript 中的原型规则"></a>理解原型设计模式以及 JavaScript 中的原型规则</h3><h4 id="什么是原型模式"><a href="#什么是原型模式" class="headerlink" title="什么是原型模式"></a>什么是原型模式</h4><p><strong>原型模式(Prototype pattern)</strong>:<code>通俗点讲就是创建一个共享的原型,并通过拷贝这些原型创建新的对象。 用于创建重复的对象,这种类型的设计模式属于创建型模式,它提供了一种创建对象得比错选择。</code></p>
+<h4 id="实现原型模式"><a href="#实现原型模式" class="headerlink" title="实现原型模式"></a>实现原型模式</h4><p>我们可以通过 JavaScript 特有的原型集成特性去实现原型模式,也就是创建一个对象作为另一个对象的 prototype 属性值,我们可以通过 Object.create(prototype,optionalDescriptorObjects)来实现原型继承。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fatherPrototype = &#123;</span><br><span class="line">  init: <span class="function"><span class="keyword">function</span>(<span class="params">money</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.selfMoney = money;</span><br><span class="line">  &#125;,</span><br><span class="line">  getMoney: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"取钱"</span> + <span class="keyword">this</span>.selfMoney);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sonMoney</span>(<span class="params">Smoney</span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">  F.prototype = fatherPrototype;</span><br><span class="line">  <span class="keyword">var</span> f = <span class="keyword">new</span> F();</span><br><span class="line">  f.init(Smoney);</span><br><span class="line">  <span class="keyword">return</span> f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sonGetMoney = sonMoney(<span class="string">"20"</span>);</span><br><span class="line">sonGetMoney.getMoney();</span><br><span class="line"><span class="comment">//儿子取钱取得是他爹的</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>原型模式,就是创建一个共享的原型,通过拷贝这个原型来创建新的类,用于创建重复的对象,带来性能上的提升。</strong></p>
+        
+          <a class="article-more-a" href="/myBlog/2019/07/14/原型和原型链/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/07/14/原型和原型链/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-语法和API" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/07/12/语法和API/">语法和API</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/07/12/语法和API/" class="archive-article-date">
+  	<time datetime="2019-07-12T11:00:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="理解-ECMAScript-和-JavaScript-的关系"><a href="#理解-ECMAScript-和-JavaScript-的关系" class="headerlink" title="理解 ECMAScript 和 JavaScript 的关系"></a>理解 ECMAScript 和 JavaScript 的关系</h3><ul>
+<li><strong>Ecma International</strong><ul>
+<li>一个制定技术标准的组织</li>
+</ul>
+</li>
+<li><strong>ECMA-262</strong><ul>
+<li>由 Ecma International 发布。它包含了脚本语言的标准。</li>
+<li>不妨把 ECMA-262 看做 ECMAScript 的编号。</li>
+</ul>
+</li>
+<li><strong>ECMAScript</strong><ul>
+<li>由 ECMA-262 制定的标准,用于实现通用的脚本语言。</li>
+<li>ECMAScript 提供了脚本语言需要遵守的规则、细节和规范</li>
+</ul>
+</li>
+<li><strong>JavaScript</strong><ul>
+<li>通用脚本编程语言,它遵循了 ECMAScript 标准<ul>
+<li>换句话说,JavaScript 是 ECMAScript 的方言。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>JavaScript 引擎</strong><ul>
+<li>理解并执行 JavaScript 代码的解释器</li>
+<li>浏览器中会有 JavaScript 引擎,比如 Chrome 有 V8,Firefox 有 SpiderMonkey,Edge 有 Chakra。JavaScript 引擎处理 JavaScript 代码,类似于人对语言的处理。</li>
+</ul>
+</li>
+<li><strong>浏览器性能差异</strong><ul>
+<li>两个浏览器都可以理解 JavaScript 代码,但是其中一个浏览器会快一些,因为它的 JavaScript 引擎的实现方式更加高效。</li>
+</ul>
+</li>
+<li><strong>浏览器支持差异</strong><ul>
+<li>尽管浏览器的 JavaScript 引擎都能理解 JavaScript,但是有些浏览器的理解能力更强 ,它们对 JavaScript 的支持是不一样的。</li>
+</ul>
+</li>
+<li><strong>ECMAScript 6</strong><ul>
+<li>ECMA-262 的第六个版本(同义词：ES6、ES2015andECMAScript 2015)</li>
+</ul>
+</li>
+<li><strong>先有鸡还是先有蛋</strong><ul>
+<li>JavaScript 是 1996 年创造的,它在 1997 年提交给 Ecma International,因此才有了 ECMAScript。同时 JavaScript 遵循 ECMAScript 标准,因此 JavaScript 是 ECMAScript 的实例。</li>
+<li>因此：ECMAScript 是基于 JavaScript 的,而 JavaScript 也是基于 ECMAScript 的,两个密不可分。</li>
+</ul>
+</li>
+</ul>
+        
+          <a class="article-more-a" href="/myBlog/2019/07/12/语法和API/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/07/12/语法和API/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-变量和类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -992,232 +1222,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/myBlog/2019/06/26/Vue-逐步了解/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JavaScript手写代码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/06/26/JavaScript手写代码/">JavaScript手写代码</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/06/26/JavaScript手写代码/" class="archive-article-date">
-  	<time datetime="2019-06-26T00:21:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><strong>手写路径</strong><ul>
-<li>实现一个<code>new</code>操作符</li>
-<li>实现一个<code>JSON.stringify</code></li>
-<li>实现一个<code>JSON.parse</code></li>
-<li>实现一个<code>call</code>或<code>apply</code></li>
-<li>实现一个<code>Function.bind</code></li>
-<li>实现一个继承</li>
-<li>实现一个<code>JS</code>函数柯里化</li>
-<li>手写一个<code>Promise</code></li>
-<li>手写防抖(<code>Debounce</code>)和节流(<code>Throttle</code>)</li>
-<li>手写一个<code>JS深拷贝</code></li>
-<li>实现一个<code>instanceOf</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="1-实现一个new操作符"><a href="#1-实现一个new操作符" class="headerlink" title="1. 实现一个new操作符"></a>1. 实现一个<code>new</code>操作符</h2><ul>
-<li>new 操作符做了这些事:<ul>
-<li>它创建了一个全新的对象</li>
-<li>它会被执行<code>[[Prototype]]</code>(也就是<code>__proto__</code>)链接</li>
-<li>它使<code>this</code>指向新创建的对象</li>
-<li>通过 new 创建的每个对象将最终被<code>[[Prototype]]</code>链接到这个函数的 prototype 对象上</li>
-<li>如果函数没有返回对象类型 Object(包含 Function、Array、Date、RegExp、Error)，那么 new 表达式中的函数调用将返回该对象引用</li>
-</ul>
-</li>
-</ul>
-        
-          <a class="article-more-a" href="/myBlog/2019/06/26/JavaScript手写代码/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">代码</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/代码//" class="article-tag-list-link color3">代码</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/06/26/JavaScript手写代码/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Vue,初次见面" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/06/25/Vue,初次见面/">Vue,初次见面</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/06/25/Vue,初次见面/" class="archive-article-date">
-  	<time datetime="2019-06-25T07:49:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="初探-Vue-js"><a href="#初探-Vue-js" class="headerlink" title="初探 Vue.js"></a>初探 Vue.js</h1><h2 id="渐进式的开发框架"><a href="#渐进式的开发框架" class="headerlink" title="渐进式的开发框架"></a>渐进式的开发框架</h2><p>通过不同的项目引用不同的模块</p>
-<ul>
-<li>声明式渲染</li>
-<li>组件系统</li>
-<li>客户端路由</li>
-<li>大规模状态管理</li>
-<li>构建工具</li>
-</ul>
-<h2 id="Vue-的特点"><a href="#Vue-的特点" class="headerlink" title="Vue 的特点"></a>Vue 的特点</h2><h3 id="响应的数据绑定"><a href="#响应的数据绑定" class="headerlink" title="响应的数据绑定"></a>响应的数据绑定</h3><ul>
-<li>当数据发生改变，自动更新视图</li>
-<li>利用<code>Object.definePrototype</code>中的<code>getter/setter</code>代理数据</li>
-</ul>
-<h3 id="视图组件"><a href="#视图组件" class="headerlink" title="视图组件"></a>视图组件</h3><ul>
-<li>UI 页面映射组件树</li>
-<li>组件可重用，可维护</li>
-</ul>
-<h3 id="虚拟-DOM"><a href="#虚拟-DOM" class="headerlink" title="虚拟 DOM"></a>虚拟 DOM</h3><ol>
-<li>提供一种方便的的工具，使得开发效率得到保证</li>
-<li>保证最小化 DOM 操作，使得执行效率得到保证</li>
-</ol>
-        
-          <a class="article-more-a" href="/myBlog/2019/06/25/Vue,初次见面/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/06/25/Vue,初次见面/">展开全文 >></a>
         </p>
       
 
