@@ -7,20 +7,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>语法和API | PowerDong-分享技术&amp;生活</title>
+  <title>执行机制 | PowerDong-分享技术&amp;生活</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="理解 ECMAScript 和 JavaScript 的关系 Ecma International 一个制定技术标准的组织   ECMA-262 由 Ecma International 发布。它包含了脚本语言的标准。 不妨把 ECMA-262 看做 ECMAScript 的编号。   ECMAScript 由 ECMA-262 制定的标准,用于实现通用的脚本语言。 ECMAScript 提供了脚">
+  <meta name="description" content="为何 try 里面放 return,finally 还会执行,理解其内部机制try-catch 是捕捉异常的神奇,不管是调试还是防止软件崩溃,都离不开它。 1234567891011function test()&amp;#123;    try&amp;#123;        console.log(1);    &amp;#125;finally&amp;#123;        condole.log(2);    &amp;#">
 <meta name="keywords" content="笔记,JS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="语法和API">
-<meta property="og:url" content="http://yoursite.com/2019/07/12/语法和API/index.html">
+<meta property="og:title" content="执行机制">
+<meta property="og:url" content="http://yoursite.com/2019/07/15/执行机制/index.html">
 <meta property="og:site_name" content="PowerDong-分享技术&amp;生活">
-<meta property="og:description" content="理解 ECMAScript 和 JavaScript 的关系 Ecma International 一个制定技术标准的组织   ECMA-262 由 Ecma International 发布。它包含了脚本语言的标准。 不妨把 ECMA-262 看做 ECMAScript 的编号。   ECMAScript 由 ECMA-262 制定的标准,用于实现通用的脚本语言。 ECMAScript 提供了脚">
+<meta property="og:description" content="为何 try 里面放 return,finally 还会执行,理解其内部机制try-catch 是捕捉异常的神奇,不管是调试还是防止软件崩溃,都离不开它。 1234567891011function test()&amp;#123;    try&amp;#123;        console.log(1);    &amp;#125;finally&amp;#123;        condole.log(2);    &amp;#">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-15T00:50:51.367Z">
+<meta property="og:updated_time" content="2019-07-15T00:50:49.946Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="语法和API">
-<meta name="twitter:description" content="理解 ECMAScript 和 JavaScript 的关系 Ecma International 一个制定技术标准的组织   ECMA-262 由 Ecma International 发布。它包含了脚本语言的标准。 不妨把 ECMA-262 看做 ECMAScript 的编号。   ECMAScript 由 ECMA-262 制定的标准,用于实现通用的脚本语言。 ECMAScript 提供了脚">
+<meta name="twitter:title" content="执行机制">
+<meta name="twitter:description" content="为何 try 里面放 return,finally 还会执行,理解其内部机制try-catch 是捕捉异常的神奇,不管是调试还是防止软件崩溃,都离不开它。 1234567891011function test()&amp;#123;    try&amp;#123;        console.log(1);    &amp;#125;finally&amp;#123;        condole.log(2);    &amp;#">
   
   <link rel="alternative" href="/atom.xml" title="PowerDong-分享技术&amp;生活" type="application/atom+xml">
   
@@ -150,183 +150,135 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-语法和API" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-执行机制" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      语法和API
+      执行机制
     </h1>
   
 
         
-        <a href="/myBlog/2019/07/12/语法和API/" class="archive-article-date">
-  	<time datetime="2019-07-12T11:00:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-12</time>
+        <a href="/myBlog/2019/07/15/执行机制/" class="archive-article-date">
+  	<time datetime="2019-07-15T00:44:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="理解-ECMAScript-和-JavaScript-的关系"><a href="#理解-ECMAScript-和-JavaScript-的关系" class="headerlink" title="理解 ECMAScript 和 JavaScript 的关系"></a>理解 ECMAScript 和 JavaScript 的关系</h3><ul>
-<li><strong>Ecma International</strong><ul>
-<li>一个制定技术标准的组织</li>
-</ul>
-</li>
-<li><strong>ECMA-262</strong><ul>
-<li>由 Ecma International 发布。它包含了脚本语言的标准。</li>
-<li>不妨把 ECMA-262 看做 ECMAScript 的编号。</li>
-</ul>
-</li>
-<li><strong>ECMAScript</strong><ul>
-<li>由 ECMA-262 制定的标准,用于实现通用的脚本语言。</li>
-<li>ECMAScript 提供了脚本语言需要遵守的规则、细节和规范</li>
-</ul>
-</li>
-<li><strong>JavaScript</strong><ul>
-<li>通用脚本编程语言,它遵循了 ECMAScript 标准<ul>
-<li>换句话说,JavaScript 是 ECMAScript 的方言。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>JavaScript 引擎</strong><ul>
-<li>理解并执行 JavaScript 代码的解释器</li>
-<li>浏览器中会有 JavaScript 引擎,比如 Chrome 有 V8,Firefox 有 SpiderMonkey,Edge 有 Chakra。JavaScript 引擎处理 JavaScript 代码,类似于人对语言的处理。</li>
-</ul>
-</li>
-<li><strong>浏览器性能差异</strong><ul>
-<li>两个浏览器都可以理解 JavaScript 代码,但是其中一个浏览器会快一些,因为它的 JavaScript 引擎的实现方式更加高效。</li>
-</ul>
-</li>
-<li><strong>浏览器支持差异</strong><ul>
-<li>尽管浏览器的 JavaScript 引擎都能理解 JavaScript,但是有些浏览器的理解能力更强 ,它们对 JavaScript 的支持是不一样的。</li>
-</ul>
-</li>
-<li><strong>ECMAScript 6</strong><ul>
-<li>ECMA-262 的第六个版本(同义词：ES6、ES2015andECMAScript 2015)</li>
-</ul>
-</li>
-<li><strong>先有鸡还是先有蛋</strong><ul>
-<li>JavaScript 是 1996 年创造的,它在 1997 年提交给 Ecma International,因此才有了 ECMAScript。同时 JavaScript 遵循 ECMAScript 标准,因此 JavaScript 是 ECMAScript 的实例。</li>
-<li>因此：ECMAScript 是基于 JavaScript 的,而 JavaScript 也是基于 ECMAScript 的,两个密不可分。</li>
-</ul>
-</li>
-</ul>
+        <h3 id="为何-try-里面放-return-finally-还会执行-理解其内部机制"><a href="#为何-try-里面放-return-finally-还会执行-理解其内部机制" class="headerlink" title="为何 try 里面放 return,finally 还会执行,理解其内部机制"></a>为何 try 里面放 return,finally 还会执行,理解其内部机制</h3><p>try-catch 是捕捉异常的神奇,不管是调试还是防止软件崩溃,都离不开它。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">    &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">        condole.log(<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(test());</span><br><span class="line">&lt;!-- <span class="number">1</span>  <span class="number">2</span> --&gt;</span><br><span class="line"><span class="comment">//结果：它按顺序执行了</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在 try 中加入 return 语句</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'try'</span>;</span><br><span class="line">    &#125;<span class="keyword">catch</span>(e)&#123;</span><br><span class="line">        <span class="comment">//TODO</span></span><br><span class="line">    &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(test());</span><br><span class="line">&lt;!-- <span class="number">1</span> <span class="number">2</span> <span class="keyword">try</span> --&gt;</span><br><span class="line"><span class="comment">//在 try和 catch的代码块中,如果碰到 return语句,那么在 return之前,会先执行finally中的内容</span></span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
 
 
-<h3 id="掌握-JavaScript-提供的全局对象、全局函数、全局属性"><a href="#掌握-JavaScript-提供的全局对象、全局函数、全局属性" class="headerlink" title="掌握 JavaScript 提供的全局对象、全局函数、全局属性"></a>掌握 JavaScript 提供的全局对象、全局函数、全局属性</h3><p><strong>JavaScript 全局对象</strong><br><code>全局属性和函数可用于所有内建的JavaScript对象。</code></p>
-<p><strong>全局对象的描述</strong></p>
-<blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在 finally中也加入 return语句</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'try'</span>;</span><br><span class="line">    &#125;<span class="keyword">catch</span>(e)&#123;</span><br><span class="line">        <span class="comment">//TODO</span></span><br><span class="line">    &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'finally'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(test());</span><br><span class="line">&lt;!-- <span class="number">1</span> <span class="number">2</span> <span class="keyword">finally</span> --&gt;</span><br><span class="line"><span class="comment">//按照上一条规则,finally是会先执行的,所以如果 finally里有 return语句,那么就真的return了。</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="结论："><a href="#结论：" class="headerlink" title="结论："></a>结论：</h4><blockquote>
 <ol>
-<li>全局对象是预定义的对象,作为 JavaScript 的全局函数和全局属性的占位符。通过使用全局对象,可以访问所有其他所有预定义的对象、函数和属性。全局对象不是任何对象的属性,所以它没有名称。</li>
-<li>在顶层 JavaScript 代码中,可以用关键字 this 引用全局对象。但通常不必用这种方式引用全局对象,因为全局对象是作用域链的头,这意味着所有非限定性的变量和函数名都会作为该对象的属性来查询。例如,当 JavaScript 代码引用 parseInt() 函数时,它引用的是全局对象的 parseInt 属性。全局对象是作用域链的头,还意味着在顶层 JavaScript 代码中声明的所有变量都将成为全局对象的属性。</li>
-<li>全局对象只是一个对象,而不是类。既没有构造函数,也无法实例化一个新的全局对象。</li>
-<li>在 JavaScript 代码嵌入一个特殊环境中时,全局对象通常具有环境特定的属性。实际上,ECMAScript 标准没有规定全局对象的类型,JavaScript 的实现或嵌入的 JavaScript 都可以把任意类型的对象作为全局对象,只要该对象定义了这里列出的基本属性和函数。例如,在允许通过 LiveConnect 或相关的技术来脚本化 Java 的 JavaScript 实现中,全局对象被赋予了这里列出的 java 和 Package 属性以及 getClass() 方法。而在客户端 JavaScript 中,全局对象就是 Window 对象,表示允许 JavaScript 代码的 Web 浏览器窗口。</li>
+<li>不管有没有异常,finally 块中代码都会执行</li>
+<li>当 try 和 catch 中有 return 时,finally 仍然会执行</li>
+<li>finally 是在 return 后面的表达式运算后执行的(此时并没有返回运算后的值,而是先把要返回的值保存起来,管 finally 中的代码怎么样,返回的值都不会改变,仍然是之前保存的值),<br><strong>所以函数返回值是在 finally 执行前确定的。</strong></li>
+<li>finally 中最好不要包含 return,否则程序会提前退出,返回值不是 try 或 catch 中保存的返回值。</li>
 </ol>
 </blockquote>
-<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><ol>
-<li>全局环境的 this 会指向全局对象 window,此时 this===window;</li>
-<li>全局变量会挂载在 window 对象下,会成为 window 下的一个属性。</li>
-<li>如果你没有使用严格模式并给一个未声明的变量赋值的话,JS 会自动创建一个全局变量。</li>
-</ol>
-<h3 id="应用-map、reduce、filter-等高阶函数解决问题"><a href="#应用-map、reduce、filter-等高阶函数解决问题" class="headerlink" title="应用 map、reduce、filter 等高阶函数解决问题"></a>应用 map、reduce、filter 等高阶函数解决问题</h3><h4 id="高阶函数-Higher-order-function"><a href="#高阶函数-Higher-order-function" class="headerlink" title="高阶函数 Higher-order function"></a>高阶函数 Higher-order function</h4><ul>
-<li>至少满足以下条件：<ul>
-<li>函数可以作为参数被传递</li>
-<li>函数可以作为返回值被输出</li>
-</ul>
-</li>
-</ul>
-<p>常见的高阶函数有：<code>Map</code>、<code>Reduce</code>、<code>Filter</code>、<code>Sort</code>;</p>
-<ol>
-<li><strong>Map</strong></li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array.map(<span class="function"><span class="keyword">function</span>(<span class="params">ele, index, arr</span>) </span>&#123;&#125;, thisValue); <span class="comment">//浅克隆</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>任何执行 try 或者 catch 中的 return 语句之前,都会先执行 finally 语句(如果 finally 存在的话)</strong></p>
+</blockquote>
+<h4 id="内部机制"><a href="#内部机制" class="headerlink" title="内部机制"></a>内部机制</h4><p>在 try 语句中,在执行 return 语句时,要返回的结果已经准备好了,就在此时,程序转到 finally 执行了。在转去之前,try 中先把要返回的结果存放到不同于 x 的局部变量中去,执行完 finally 之后,再从中取出返回结果。<br>因此,即使 finally 中对变量 x 进行了改变,但是不会影响返回结果。<br>他应该使用栈保存返回值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//测试</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> 	<span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">try</span>&#123;</span><br><span class="line">		x++;</span><br><span class="line">		<span class="keyword">return</span> x;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">finally</span>&#123;</span><br><span class="line">	    ++x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(test());</span><br><span class="line">&lt;!-- <span class="number">2</span> --&gt;</span><br></pre></td></tr></table></figure>
 
+<h3 id="JavaScript-如何实现异步编程-可以详细描述-EventLoop-机制"><a href="#JavaScript-如何实现异步编程-可以详细描述-EventLoop-机制" class="headerlink" title="JavaScript 如何实现异步编程,可以详细描述 EventLoop 机制"></a>JavaScript 如何实现异步编程,可以详细描述 EventLoop 机制</h3><blockquote>
+<p>同步编程：即是一种典型的请求——响应模型,当请求调用一个函数或方法后,需等待其响应返回,然后执行后续代码。</p>
+</blockquote>
+<p>一般情况下,同步编程,即是按照代码顺序依次执行,能很好的保证程序的执行,但在某些场景下,比如加载文件内容,请求数据等需要返回大量的内容时,耗费时间较长,此时程序不能继续向下运行,这显然是不友好的。这正需要异步编程大显身手！</p>
 <blockquote>
-<p>map()不会改变原数组</p>
+<p>异步编程：不同于同步编程的请求——响应模式,其是一种事件驱动编程,请求调用函数或方法后,无需立即等待响应,可以继续执行其他任务,而在之前任务响应返回后可以通过状态、通知和回调来通知调用者。</p>
 </blockquote>
 <blockquote>
-<p>用变量接收返回值,可以用做浅克隆</p>
-</blockquote>
-<hr>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 深度克隆</span></span><br><span class="line"><span class="comment"> * @param &#123;*&#125; Target 目标对象</span></span><br><span class="line"><span class="comment"> * @param &#123;*&#125; Option 克隆源</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">Target, Option</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (Option != <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> prop <span class="keyword">in</span> Option) &#123;</span><br><span class="line">      <span class="keyword">var</span> src = Target[prop];</span><br><span class="line">      <span class="keyword">var</span> copy = Option[prop];</span><br><span class="line">      <span class="keyword">if</span> (copy &amp;&amp; <span class="keyword">typeof</span> copy == <span class="string">"object"</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">Object</span>.prototype.toString.call(copy) == <span class="string">"[object Array]"</span>) &#123;</span><br><span class="line">          src = [];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          src = &#123;&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        Target[prop] = deepClone(src, copy);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        Target[prop] = copy;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> Target;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li><strong>reduce</strong></li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">array.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">preValue, ele, index, arr</span>), <span class="title">initialValue</span>)</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">//<span class="title">initialValue</span> :传初始值;</span></span><br><span class="line"><span class="function">// 如果不传,第一次<span class="title">pre</span>打印数值第一位,<span class="title">ele</span>是第二位</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>reduce()对于空数组是不会执行回调函数</p>
+<p>通常实现异步方式是多线程,如 C#,即同时开启多个线程,不同操作能并行执行。</p>
 </blockquote>
 <blockquote>
-<p>累加器<br>return preValue + ele;</p>
+<p>JavaScript 语言试单线程,单线程在程序执行时,所走的程序路径是按照连续顺序排下来的。前面必须处理好,后面才会执行。前面代码报错,后面的程序将不会执行。</p>
+<p>JavaScript 单线程异步编程可以实现多任务并发执行。 - 并行：指同一时刻内多任务同时进行 - 并发：指在同一时间段内,多任务同时进行着,但是某一时刻,只有某一任务执行。</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*底层实现</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Array</span>.prototype.Reduce = <span class="function"><span class="keyword">function</span>(<span class="params">func,init</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> previous = init,</span><br><span class="line">        k = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(init === <span class="literal">undefined</span>)&#123;</span><br><span class="line">        previous = <span class="keyword">this</span>[<span class="number">0</span>];</span><br><span class="line">        k = <span class="number">1</span>; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(k; k&lt;<span class="keyword">this</span>.length; k++)&#123;</span><br><span class="line">        previous = func(previous, <span class="keyword">this</span>[k], k);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> previous;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li><strong>filter</strong></li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array.filter(<span class="function"><span class="keyword">function</span>(<span class="params">ele,index,arr</span>)</span>&#123;&#125;, thisValue)</span><br></pre></td></tr></table></figure>
-
+<h4 id="并发模型"><a href="#并发模型" class="headerlink" title="并发模型"></a>并发模型</h4><p>JavaScript 异步编程使得多个任务可以并发执行,而实现这一功能的基础是 JavaScript 拥有一个基于事件循环的并发模型</p>
 <blockquote>
-<p>filter()不会改变原始数组</p>
-</blockquote>
-<blockquote>
-<p>筛选出符合条件的项,组成新数组</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*底层实现</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Array</span>.prototype.Filter = <span class="function"><span class="keyword">function</span>(<span class="params">func</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> arr = [];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i&lt;<span class="keyword">this</span>.length; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(func(<span class="keyword">this</span>[i], i)&#123;</span><br><span class="line">            arr.push(<span class="keyword">this</span>[i]);</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li><strong>forEach</strong></li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">ele,index,arr</span>)</span>&#123;&#125;, thisValue)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>原数组不变,无返回值</p>
-</blockquote>
-<blockquote>
-<p>map()与forEach()语法一致,能用forEach()做到的,map()同样可以,但是存在区别。</p>
-</blockquote>
 <ul>
-<li>区别：<ul>
-<li>forEach()返回值undefined,不可以链式调用；</li>
-<li>map()返回一个新数组,原数组不会改变。</li>
+<li>堆栈与队列<ul>
+<li>堆：内存中某一未被阻止的区域,通常存储对象(引用类型);</li>
+<li>栈：后进先出的顺序存储数据结构,通常存储函数参数和基本类型数值变量(按值访问);</li>
+<li>队列：先进先出顺序存储数据结构</li>
 </ul>
 </li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*底层实现</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Array</span>.prototype.ForEach = <span class="function"><span class="keyword">function</span>(<span class="params">func</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i&lt;<span class="keyword">this</span>.length; i++)&#123;</span><br><span class="line">        func(<span class="keyword">this</span>[i], i)&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="setInterval-需要注意的点-使用-settimeout-实现-setInterval"><a href="#setInterval-需要注意的点-使用-settimeout-实现-setInterval" class="headerlink" title="setInterval 需要注意的点,使用 settimeout 实现 setInterval"></a>setInterval 需要注意的点,使用 settimeout 实现 setInterval</h3><h4 id="精准问题"><a href="#精准问题" class="headerlink" title="精准问题"></a>精准问题</h4><p>setTimeout的问题在于它并不是精准的,例如使用setTimeout设定一个任务在10ms后执行,但是在9ms后,有一个任务占用了5ms的cpu时间片,再次轮到定时器执行时,时间已经过期了4ms。<br>setInterval存在两个问题：</p>
-<ol>
-<li>时间间隔可能会跳过</li>
-<li>时间间隔可能小于定时器设定的时间</li>
-</ol>
-<h4 id="需要注意的点"><a href="#需要注意的点" class="headerlink" title="需要注意的点"></a>需要注意的点</h4><ul>
-<li>setTimeout有最小时间间隔限制,HTML5标准为4ms,小于4ms按照4ms处理,但是每个浏览器实现的最小间隔都不同</li>
-<li>因为JS引擎只有一个线程,所以他将会强制异步事件排队执行</li>
-<li>如果setInterval的回调执行时间长于指定的延迟,setInterval将无间隔的一个接一个执行</li>
-<li>this的指向问题可以通过bind函数,定义变量,箭头函数的方式来解决</li>
+</blockquote>
+<h4 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h4><p>JavaScript 引擎负责解析,执行 JavaScript 代码,但它不能单独运行,而需要一个宿主环境,一般为浏览器。调用 Javascript 引擎完成多个 javaScript 代码块的调度,执行,这种机制就称为事件循环。</p>
+<ul>
+<li>JavaScript 执行环境中存在的两个结构需要了解： <ul>
+<li>消息队列:也叫任务队列,存储待处理消息及对应的回调函数或事件处理程序。 </li>
+<li>执行栈：也叫执行上下文栈,JavaScript 执行栈,顾名思义,是由执行上下文组成,当函数调用时,创建并插入一个执行上下文,通常称为栈帧,存储着函数参数和局部变量,当该函数执行结束时,弹出该执行栈帧。</li>
 </ul>
-<h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><p>setTimeout含义是定时器,到达一定的时间触发一次,但是setInterval含义是计时器,到达一定时间触发一次,并且会持续触发</p>
-<h4 id="相互之间的转换"><a href="#相互之间的转换" class="headerlink" title="相互之间的转换"></a>相互之间的转换</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">run</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    run();</span><br><span class="line">  &#125;,<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  run();</span><br><span class="line">&#125;,<span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="事件循环流程"><a href="#事件循环流程" class="headerlink" title="事件循环流程"></a>事件循环流程</h4><blockquote>
+<ol>
+<li>宿主环境为 JavaScript 创建线程时,会创建堆(heap)和栈(stack),堆内存储 JavaScript 对象,栈内存储执行上下文；</li>
+<li>栈内执行上下文的同步任务按序执行,执行完即退栈,而当异步任务执行时,该异步任务进入等待状态（不入栈）,同时通知线程：当触发该事件时（或该异步操作响应返回时）,需向消息队列插入一个事件消息；</li>
+<li>当事件触发或响应返回时,线程向消息队列插入该事件消息（包含事件及回调）；</li>
+<li>当栈内同步任务执行完毕后,线程从消息队列取出一个事件消息,其对应异步任务（函数）入栈,执行回调函数,如果未绑定回调,这个消息会被丢弃,执行完任务后退栈；</li>
+<li>当线程空闲（即执行栈清空）时继续拉取消息队列下一轮消息（next tick,事件循环流转一次称为一次 tick）。</li>
+</ol>
+</blockquote>
+<h4 id="setTimeout"><a href="#setTimeout" class="headerlink" title="setTimeout"></a>setTimeout</h4><p>在<code>setTimeout</code>异步回调函数里当我们输出异步任务注册到执行的时间,发现并不等于我们指定的时间,而且多次执行时间隔也不同！</p>
+<ul>
+<li>在读取消息队列的消息时,得等同步任务完成,这个是需要耗费时间的</li>
+<li>消息队列先进先出原则,读取此异步事件消息之前,可能还存在其他消息,执行也需要消耗</li>
+</ul>
+<p>所以异步执行时间不精确是必然的。</p>
+<h4 id="JavaScript-异步实现"><a href="#JavaScript-异步实现" class="headerlink" title="JavaScript 异步实现"></a>JavaScript 异步实现</h4><p>关于 JavaScript 的异步实现,以前有：回调函数,发布订阅模式,Promise 三类,而在 ES6 中提出了生成器(Generator)方式实现。</p>
+<h3 id="宏任务和微任务分别有哪些"><a href="#宏任务和微任务分别有哪些" class="headerlink" title="宏任务和微任务分别有哪些"></a>宏任务和微任务分别有哪些</h3><p>JavaScript 中,有两类任务队列：宏任务队列(macro tasks)和微任务队列(micro tasks)。宏任务队列可以有多个,微任务队列只有一个。</p>
+<p>微任务和宏任务皆为异步任务,他们都属于一个队列,主要区别在于他们的执行顺序,Event Loop 的走向和取值。</p>
+<ul>
+<li>宏任务：script(全局任务),setTimeout,setInterval,setImmediate,I/O,UI rendering。</li>
+<li>微任务：process.nextTick,Promise,Object.observer,MutationObserver。</li>
+</ul>
+<h3 id="分析一个复杂的异步嵌套逻辑"><a href="#分析一个复杂的异步嵌套逻辑" class="headerlink" title="分析一个复杂的异步嵌套逻辑"></a>分析一个复杂的异步嵌套逻辑</h3><p>JavaScript 语言的执行环境是单线程的。</p>
+<p>这种执行模式实现简单,执行环境相对单纯。但随着前端业务日渐复杂,事物和请求等日渐增多,这种单线程执行方式在复杂的业务下势必效率低下。</p>
+<p>为避免和解决这种问题,JS 语言将任务执行模式分为异步和同步。”同步模式”就是后一个任务等待前一个任务结束,然后再执行,程序的执行顺序与任务的排列顺序是一致的、同步的;”异步模式”则完全不同,每一个任务有一个或多个回调函数,前一个任务结束后,不是执行后一个任务,而是执行回调函数,后一个任务则是不等前一个任务结束就执行,所以程序的执行顺序与任务的排列顺序是不一致的,异步的。</p>
+<p>“异步模式”非常重要。在浏览器端,避免浏览器失去响应,最好的例子就是 Ajax 操作。</p>
+<h4 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h4><p>异步编程最基本的方法。</p>
+<p>回调函数就是一个参数,将这个函数作为参数传到另一个函数里面,当那个函数执行完之后,再执行传进去的这个函数。这个过程就叫做回调。</p>
+<p>在 JavaScript 中,回调函数具体的定义为：函数 A 作为参数(函数引用)传递到另一个函数 B 中,并且这个函数 B 执行函数 A。我们就说函数 A 叫做回调函数。如果没有名称(函数表达式),就叫做匿名回调函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义主函数,回调函数作为参数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">  callback();</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"我是主函数"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义回调函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">B</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  setTimeout(<span class="string">"console.log('我是回调函数')"</span>, <span class="number">3000</span>); <span class="comment">//模仿耗时操作</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//调用主函数,将函数B传进去</span></span><br><span class="line">A(B);</span><br><span class="line"></span><br><span class="line"><span class="comment">//输出结果</span></span><br><span class="line">我是主函数;</span><br><span class="line">我是回调函数;</span><br></pre></td></tr></table></figure>
 
-<h3 id="JavaScript-提供的正则表达式-API、可以使用正则表达式解决常见问题"><a href="#JavaScript-提供的正则表达式-API、可以使用正则表达式解决常见问题" class="headerlink" title="JavaScript 提供的正则表达式 API、可以使用正则表达式解决常见问题"></a>JavaScript 提供的正则表达式 API、可以使用正则表达式解决常见问题</h3><p>详情请点击<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions" title="点击查看" target="_blank" rel="noopener">正则表达式</a></p>
-<h3 id="JavaScript-异常处理的方式-统一的异常处理方案"><a href="#JavaScript-异常处理的方式-统一的异常处理方案" class="headerlink" title="JavaScript 异常处理的方式,统一的异常处理方案"></a>JavaScript 异常处理的方式,统一的异常处理方案</h3><p>详情请点击<a href="https://segmentfault.com/a/1190000011481099" title="点击查看" target="_blank" rel="noopener">异常处理的方式</a></p>
-<p>由于JavaScript引擎是单线程的,因此一旦遇到异常,JavaScript引擎通常会停止执行,阻塞后续代码并抛出一个异常信息,因此对于可预见的异常,我们应该捕捉并正确展示给用户或开发者。</p>
-<h4 id="Error对象"><a href="#Error对象" class="headerlink" title="Error对象"></a>Error对象</h4><p><code>throw</code>和<code>Promise.reject()</code>可以抛出字符串类型的异常,而且可以抛出一个<code>Error</code>对象类型的异常。<br>一个<code>Error</code>对象类型的异常不仅包含一个异常信息,同时也包含一个追溯栈,这样你就可以很容易通过追溯栈找到代码出错的行数了。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建自己的异常构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyError</span>(<span class="params">message</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> instance = <span class="keyword">new</span> <span class="built_in">Error</span>(message);</span><br><span class="line">  instance.name = <span class="string">'MyError'</span>;</span><br><span class="line">  <span class="built_in">Object</span>.setPrototypeOf(instance, <span class="built_in">Object</span>.getPrototypeOf(<span class="keyword">this</span>));</span><br><span class="line">  <span class="keyword">return</span> instance;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MyError.prototype = <span class="built_in">Object</span>.create(<span class="built_in">Error</span>.prototype,&#123;</span><br><span class="line">  <span class="keyword">constructor</span>:&#123;</span><br><span class="line">    value:MyError,</span><br><span class="line">    enumerable:<span class="literal">false</span>,</span><br><span class="line">    writable:<span class="literal">true</span>,</span><br><span class="line">    configurable:<span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">Object</span>.setPrototypeOf) &#123;</span><br><span class="line">  <span class="built_in">Object</span>.setPrototypeOf(MyError,<span class="built_in">Error</span>);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">  MyError.__proto__ = <span class="built_in">Error</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> MyError;</span><br></pre></td></tr></table></figure>
+<p>上面的代码中,我们先定义了主函数和回调函数,然后再去调用主函数,将回调函数传进去。</p>
+<p>定义主函数的时候,我们让代码先去执行 callback()回调函数,但输出结果却是后输出回调函数的内容。这就说明了主函数不用等待回调函数执行完,可以接着执行自己的代码。所以一般回调函数都用在耗时操作上面。比如 ajax 请求,比如处理文件等。</p>
+<h4 id="补充回调函数应用场合和优缺点："><a href="#补充回调函数应用场合和优缺点：" class="headerlink" title="补充回调函数应用场合和优缺点："></a>补充回调函数应用场合和优缺点：</h4><ul>
+<li>资源加载：动态加载 js 文件后执行回调,加载 iframe 后执行回调,ajax 操作回调,图片加载完成执行回调,AJAX 等等。</li>
+<li>DOM 事件及 Node.js 事件基于回调机制(Node.js 回调可能出现多层回调嵌套的问题)。</li>
+<li>setTimeout 的延时时间为 0,这个 hack 经常被用到,setTimeout 调用的函数其实就是一个 callback 的体现。</li>
+<li>链式调用：链式调用的时候,在赋值器(setter)方法中(或者本身没有返回值的方法中)很容易实现链式调用,而取值器(getter)相对来说不好实现链式调用,因为你需要取值器返回你需要的数据,而不是 this 指针,如果要实现链式方法,可以用回调函数来实现。</li>
+<li>setTimeout、setInterval 的函数调用得到其返回值。由于两个函数都是异步的,即：他们的调用时序和程序的主流程是相对独立的,所以没有办法在主体里面等待他们的返回值,它们被打开的时候程序也不会停下来等待,否则也就失去了 setTimeout 及 setInterval 的意义了,所以用 return 已经没有意义了,只能使用 callback。callback 的意义在于将 Timer 的执行结果通知给代理函数进行及时处理。</li>
+</ul>
+<p>回调函数这种方式的优点是比较容易理解,可以绑定多个事件,每个事件可以指定多个回调函数,而且可以”去耦合”,有利于实现模块化。缺点就是整个程序都要变成事件驱动型,运行流程会变得很不清晰。</p>
+<h3 id="如何在保证页面运行流畅的情况下处理海量数据"><a href="#如何在保证页面运行流畅的情况下处理海量数据" class="headerlink" title="如何在保证页面运行流畅的情况下处理海量数据"></a>如何在保证页面运行流畅的情况下处理海量数据</h3><blockquote>
+<p>10w 条记录的数组,一次性渲染到页面,如何处理可以不冻结 ul？</p>
+</blockquote>
+<p>可能在看到这个问题的第一眼,我们会想到用<code>append</code>,不过在循环添加过程中,都会修改 DOM 结构,并且由于数据量大,导致循环执行时间长,浏览器的渲染帧率过低。</p>
+<p>事实上,包含 10W 个<code>li</code>的长列表,用户不会立即看到全部,只会看到少部分。因此,对于大部分的<code>li</code>的渲染工作,我们可以延时完成。</p>
+<p>我们可以从<strong>减少 DOM 操作次数</strong>和<strong>缩短循环时间</strong>两个方面减少主线程阻塞的时间。</p>
+<p>我们知道可以通过<code>DocumentFragment</code>的使用,减少 DOM 操作次数,降低回流对性能的影响。</p>
+<p>在缩短循环时间方面,我们可以通过<strong>分治</strong>的思想,将<code>li</code>分批插入到页面中,并且我们通过<code>requestAniminationFrame</code>在页面重绘前插入新节点。</p>
+<h4 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h4><p>如果我们想监听海量元素,推荐方法是使用 JavaScript 的事件机制,实现事件委托,这样可以显著减少 DOM 事件注册的数量。</p>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> ulContainer = <span class="built_in">document</span>.getElementById(<span class="string">"list-with-big-data"</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 防御性编程</span></span><br><span class="line">  <span class="keyword">if</span> (!ulContainer) &#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> total = <span class="number">100000</span>; <span class="comment">// 插入数据的总数</span></span><br><span class="line">  <span class="keyword">const</span> batchSize = <span class="number">4</span>; <span class="comment">// 每次批量插入的节点个数,个数越多,界面越卡顿</span></span><br><span class="line">  <span class="keyword">const</span> batchCount = total / batchSize; <span class="comment">// 批处理的次数</span></span><br><span class="line">  <span class="keyword">let</span> batchDone = <span class="number">0</span>; <span class="comment">// 已完成的批处理个数</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">appendItems</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 使用 DocumentFragment 减少 DOM 操作次数,对已有元素不进行回流</span></span><br><span class="line">    <span class="keyword">const</span> fragment = <span class="built_in">document</span>.createDocumentFragment();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; batchSize; i++) &#123;</span><br><span class="line">      <span class="keyword">const</span> liItem = <span class="built_in">document</span>.createElement(<span class="string">"li"</span>);</span><br><span class="line">      liItem.innerText = batchDone * batchSize + i + <span class="number">1</span>;</span><br><span class="line">      fragment.appendChild(liItem);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 每次批处理只修改 1 次 DOM</span></span><br><span class="line">    ulContainer.appendChild(fragment);</span><br><span class="line">    batchDone++;</span><br><span class="line">    doAppendBatch();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">doAppendBatch</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (batchDone &lt; batchCount) &#123;</span><br><span class="line">      <span class="comment">// 在重绘之前,分批插入新节点</span></span><br><span class="line">      <span class="built_in">window</span>.requestAnimationFrame(appendItems);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// kickoff</span></span><br><span class="line">  doAppendBatch();</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 使用 事件委托 ,利用 JavaScript 的事件机制,实现对海量元素的监听,有效减少事件注册的数量</span></span><br><span class="line">  ulContainer.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> target = e.target;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (target.tagName === <span class="string">"LI"</span>) &#123;</span><br><span class="line">      alert(target.innerText);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
 
-<h4 id="Try-Catch"><a href="#Try-Catch" class="headerlink" title="Try / Catch"></a>Try / Catch</h4><p><code>try/catch</code> 主要用于捕捉异常。<code>try/catch</code>语句包含了一个<code>try</code>块,和至少有一个<code>catch</code>块或者一个<code>finally</code>块。</p>
-<p><code>try</code>块中放入可能产生异常的语句或函数</p>
-<p><code>catch</code>块中包含要执行的语句,当<code>try</code>块中抛出异常时,<code>catch</code>块会捕捉到这个异常信息,并执行<code>catch</code>块中的代码,如果<code>try</code>块中没有异常抛出,这<code>catch</code>块将会跳过。</p>
-<p><code>finally</code>块在<code>try</code>块和<code>catch</code>块之后执行。无论是否有异常抛出或者是否被捕获它总是执行。当在<code>finally</code>块中抛出异常信息时会覆盖掉<code>try</code>块中的异常信息。</p>
-<h4 id="统一异常处理"><a href="#统一异常处理" class="headerlink" title="统一异常处理"></a>统一异常处理</h4><p>代码中抛出的异常,一种是要展示给用户,一种是展示给开发者。</p>
-<p>对于展示给用户的异常,一般使用<code>alert</code>或<code>toast</code>,对于展示给开发者的异常,一般输出到控制台。</p>
 <hr>
 <blockquote>
 <p>‘摘抄’不是单纯的“粘贴-&gt;复制”，而是眼到，手到，心到的一字一句敲打下来。</p>
@@ -449,7 +401,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/12/语法和API/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/15/执行机制/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -463,18 +415,9 @@
   
 <nav id="article-nav">
   
-    <a href="/myBlog/2019/07/14/原型和原型链/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          原型和原型链
-        
-      </div>
-    </a>
   
-  
-    <a href="/myBlog/2019/07/09/变量和类型/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">变量和类型</div>
+    <a href="/myBlog/2019/07/14/原型和原型链/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">原型和原型链</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -501,7 +444,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#理解-ECMAScript-和-JavaScript-的关系"><span class="toc-number">1.</span> <span class="toc-text">理解 ECMAScript 和 JavaScript 的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#掌握-JavaScript-提供的全局对象、全局函数、全局属性"><span class="toc-number">2.</span> <span class="toc-text">掌握 JavaScript 提供的全局对象、全局函数、全局属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#总结："><span class="toc-number">2.1.</span> <span class="toc-text">总结：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用-map、reduce、filter-等高阶函数解决问题"><span class="toc-number">3.</span> <span class="toc-text">应用 map、reduce、filter 等高阶函数解决问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#高阶函数-Higher-order-function"><span class="toc-number">3.1.</span> <span class="toc-text">高阶函数 Higher-order function</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setInterval-需要注意的点-使用-settimeout-实现-setInterval"><span class="toc-number">4.</span> <span class="toc-text">setInterval 需要注意的点,使用 settimeout 实现 setInterval</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#精准问题"><span class="toc-number">4.1.</span> <span class="toc-text">精准问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#需要注意的点"><span class="toc-number">4.2.</span> <span class="toc-text">需要注意的点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#区别"><span class="toc-number">4.3.</span> <span class="toc-text">区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#相互之间的转换"><span class="toc-number">4.4.</span> <span class="toc-text">相互之间的转换</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript-提供的正则表达式-API、可以使用正则表达式解决常见问题"><span class="toc-number">5.</span> <span class="toc-text">JavaScript 提供的正则表达式 API、可以使用正则表达式解决常见问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript-异常处理的方式-统一的异常处理方案"><span class="toc-number">6.</span> <span class="toc-text">JavaScript 异常处理的方式,统一的异常处理方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Error对象"><span class="toc-number">6.1.</span> <span class="toc-text">Error对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Try-Catch"><span class="toc-number">6.2.</span> <span class="toc-text">Try / Catch</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#统一异常处理"><span class="toc-number">6.3.</span> <span class="toc-text">统一异常处理</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#为何-try-里面放-return-finally-还会执行-理解其内部机制"><span class="toc-number">1.</span> <span class="toc-text">为何 try 里面放 return,finally 还会执行,理解其内部机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#结论："><span class="toc-number">1.1.</span> <span class="toc-text">结论：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#内部机制"><span class="toc-number">1.2.</span> <span class="toc-text">内部机制</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript-如何实现异步编程-可以详细描述-EventLoop-机制"><span class="toc-number">2.</span> <span class="toc-text">JavaScript 如何实现异步编程,可以详细描述 EventLoop 机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#并发模型"><span class="toc-number">2.1.</span> <span class="toc-text">并发模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#事件循环"><span class="toc-number">2.2.</span> <span class="toc-text">事件循环</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#事件循环流程"><span class="toc-number">2.3.</span> <span class="toc-text">事件循环流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#setTimeout"><span class="toc-number">2.4.</span> <span class="toc-text">setTimeout</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JavaScript-异步实现"><span class="toc-number">2.5.</span> <span class="toc-text">JavaScript 异步实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#宏任务和微任务分别有哪些"><span class="toc-number">3.</span> <span class="toc-text">宏任务和微任务分别有哪些</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析一个复杂的异步嵌套逻辑"><span class="toc-number">4.</span> <span class="toc-text">分析一个复杂的异步嵌套逻辑</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#回调函数"><span class="toc-number">4.1.</span> <span class="toc-text">回调函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#补充回调函数应用场合和优缺点："><span class="toc-number">4.2.</span> <span class="toc-text">补充回调函数应用场合和优缺点：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何在保证页面运行流畅的情况下处理海量数据"><span class="toc-number">5.</span> <span class="toc-text">如何在保证页面运行流畅的情况下处理海量数据</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#事件绑定"><span class="toc-number">5.1.</span> <span class="toc-text">事件绑定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解决方案"><span class="toc-number">5.2.</span> <span class="toc-text">解决方案</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>

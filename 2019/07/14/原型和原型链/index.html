@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="PowerDong-分享技术&amp;生活">
 <meta property="og:description" content="理解原型设计模式以及 JavaScript 中的原型规则什么是原型模式原型模式(Prototype pattern):通俗点讲就是创建一个共享的原型,并通过拷贝这些原型创建新的对象。 用于创建重复的对象,这种类型的设计模式属于创建型模式,它提供了一种创建对象得比错选择。 实现原型模式我们可以通过 JavaScript 特有的原型集成特性去实现原型模式,也就是创建一个对象作为另一个对象的 proto">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-14T11:07:30.300Z">
+<meta property="og:updated_time" content="2019-07-15T00:50:51.367Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型和原型链">
 <meta name="twitter:description" content="理解原型设计模式以及 JavaScript 中的原型规则什么是原型模式原型模式(Prototype pattern):通俗点讲就是创建一个共享的原型,并通过拷贝这些原型创建新的对象。 用于创建重复的对象,这种类型的设计模式属于创建型模式,它提供了一种创建对象得比错选择。 实现原型模式我们可以通过 JavaScript 特有的原型集成特性去实现原型模式,也就是创建一个对象作为另一个对象的 proto">
@@ -383,6 +383,15 @@
   
 <nav id="article-nav">
   
+    <a href="/myBlog/2019/07/15/执行机制/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          执行机制
+        
+      </div>
+    </a>
+  
   
     <a href="/myBlog/2019/07/12/语法和API/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">语法和API</div>
@@ -404,6 +413,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#理解原型设计模式以及-JavaScript-中的原型规则"><span class="toc-number">1.</span> <span class="toc-text">理解原型设计模式以及 JavaScript 中的原型规则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是原型模式"><span class="toc-number">1.1.</span> <span class="toc-text">什么是原型模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实现原型模式"><span class="toc-number">1.2.</span> <span class="toc-text">实现原型模式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#instanceof-的底层实现原理-手动实现一个-instanceof"><span class="toc-number">2.</span> <span class="toc-text">instanceof 的底层实现原理,手动实现一个 _instanceof</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现继承的几种方式以及他们的优缺点"><span class="toc-number">3.</span> <span class="toc-text">实现继承的几种方式以及他们的优缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#new-一个对象的详细过程-手动实现一个-new-操作符"><span class="toc-number">4.</span> <span class="toc-text">new 一个对象的详细过程,手动实现一个 new 操作符</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -537,15 +559,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
