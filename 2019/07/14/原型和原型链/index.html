@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="PowerDong-分享技术&amp;生活">
 <meta property="og:description" content="理解原型设计模式以及 JavaScript 中的原型规则什么是原型模式原型模式(Prototype pattern):通俗点讲就是创建一个共享的原型,并通过拷贝这些原型创建新的对象。 用于创建重复的对象,这种类型的设计模式属于创建型模式,它提供了一种创建对象得比错选择。 实现原型模式我们可以通过 JavaScript 特有的原型集成特性去实现原型模式,也就是创建一个对象作为另一个对象的 proto">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-15T00:50:51.367Z">
+<meta property="og:updated_time" content="2019-07-16T00:33:49.449Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型和原型链">
 <meta name="twitter:description" content="理解原型设计模式以及 JavaScript 中的原型规则什么是原型模式原型模式(Prototype pattern):通俗点讲就是创建一个共享的原型,并通过拷贝这些原型创建新的对象。 用于创建重复的对象,这种类型的设计模式属于创建型模式,它提供了一种创建对象得比错选择。 实现原型模式我们可以通过 JavaScript 特有的原型集成特性去实现原型模式,也就是创建一个对象作为另一个对象的 proto">
@@ -170,21 +170,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="理解原型设计模式以及-JavaScript-中的原型规则"><a href="#理解原型设计模式以及-JavaScript-中的原型规则" class="headerlink" title="理解原型设计模式以及 JavaScript 中的原型规则"></a>理解原型设计模式以及 JavaScript 中的原型规则</h3><h4 id="什么是原型模式"><a href="#什么是原型模式" class="headerlink" title="什么是原型模式"></a>什么是原型模式</h4><p><strong>原型模式(Prototype pattern)</strong>:<code>通俗点讲就是创建一个共享的原型,并通过拷贝这些原型创建新的对象。 用于创建重复的对象,这种类型的设计模式属于创建型模式,它提供了一种创建对象得比错选择。</code></p>
-<h4 id="实现原型模式"><a href="#实现原型模式" class="headerlink" title="实现原型模式"></a>实现原型模式</h4><p>我们可以通过 JavaScript 特有的原型集成特性去实现原型模式,也就是创建一个对象作为另一个对象的 prototype 属性值,我们可以通过 Object.create(prototype,optionalDescriptorObjects)来实现原型继承。</p>
+        <h2 id="理解原型设计模式以及-JavaScript-中的原型规则"><a href="#理解原型设计模式以及-JavaScript-中的原型规则" class="headerlink" title="理解原型设计模式以及 JavaScript 中的原型规则"></a>理解原型设计模式以及 JavaScript 中的原型规则</h2><h3 id="什么是原型模式"><a href="#什么是原型模式" class="headerlink" title="什么是原型模式"></a>什么是原型模式</h3><p><strong>原型模式(Prototype pattern)</strong>:<code>通俗点讲就是创建一个共享的原型,并通过拷贝这些原型创建新的对象。 用于创建重复的对象,这种类型的设计模式属于创建型模式,它提供了一种创建对象得比错选择。</code></p>
+<h3 id="实现原型模式"><a href="#实现原型模式" class="headerlink" title="实现原型模式"></a>实现原型模式</h3><p>我们可以通过 JavaScript 特有的原型集成特性去实现原型模式,也就是创建一个对象作为另一个对象的 prototype 属性值,我们可以通过 Object.create(prototype,optionalDescriptorObjects)来实现原型继承。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fatherPrototype = &#123;</span><br><span class="line">  init: <span class="function"><span class="keyword">function</span>(<span class="params">money</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.selfMoney = money;</span><br><span class="line">  &#125;,</span><br><span class="line">  getMoney: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"取钱"</span> + <span class="keyword">this</span>.selfMoney);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sonMoney</span>(<span class="params">Smoney</span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">  F.prototype = fatherPrototype;</span><br><span class="line">  <span class="keyword">var</span> f = <span class="keyword">new</span> F();</span><br><span class="line">  f.init(Smoney);</span><br><span class="line">  <span class="keyword">return</span> f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sonGetMoney = sonMoney(<span class="string">"20"</span>);</span><br><span class="line">sonGetMoney.getMoney();</span><br><span class="line"><span class="comment">//儿子取钱取得是他爹的</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>原型模式,就是创建一个共享的原型,通过拷贝这个原型来创建新的类,用于创建重复的对象,带来性能上的提升。</strong></p>
 <a id="more"></a>
 
-<h3 id="instanceof-的底层实现原理-手动实现一个-instanceof"><a href="#instanceof-的底层实现原理-手动实现一个-instanceof" class="headerlink" title="instanceof 的底层实现原理,手动实现一个 _instanceof"></a>instanceof 的底层实现原理,手动实现一个 _instanceof</h3><p>先来看个例子</p>
+<h2 id="instanceof-的底层实现原理-手动实现一个-instanceof"><a href="#instanceof-的底层实现原理-手动实现一个-instanceof" class="headerlink" title="instanceof 的底层实现原理,手动实现一个 _instanceof"></a>instanceof 的底层实现原理,手动实现一个 _instanceof</h2><p>先来看个例子</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params">score</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.score = score;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Student.prototype = <span class="keyword">new</span> Person(<span class="string">"李明"</span>, <span class="number">22</span>);</span><br><span class="line"><span class="keyword">var</span> s = <span class="keyword">new</span> Student(<span class="number">99</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(s <span class="keyword">instanceof</span> Student); <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(s <span class="keyword">instanceof</span> Person); <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(s <span class="keyword">instanceof</span> <span class="built_in">Object</span>); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
 
 <p>检测对象 A 是不是另一个对象 B 的实例的原理：<strong>查看对象 B 的 prototype 属性指向的原型对象是否在对象 A 的原型上,若在则返回 true,若不在则返回 false。</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_instanceof</span>(<span class="params">ins, cons</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (ins.__proto__ === <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (ins.__proto__ === cons.prototype) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ins = ins.__proto__;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>_instanceof 实际上是根据原型链向上追溯,子类找不到找父类,直到 ins.__proto__指向的就是 cons.prototype,否则,当 ins 已经追溯到 Object.prototype,由于 Object.prototype 是没有__proto__的,所以当 ins.__proto__ === null 时,就说明我们的循环到最后也没有成功使 ins.__proto__ === cons.prototype,那么 ins 就不是 cons 或 cons 的子类实例化出来的对象,函数返回 false。</p>
-<h3 id="实现继承的几种方式以及他们的优缺点"><a href="#实现继承的几种方式以及他们的优缺点" class="headerlink" title="实现继承的几种方式以及他们的优缺点"></a>实现继承的几种方式以及他们的优缺点</h3><ul>
+<h2 id="实现继承的几种方式以及他们的优缺点"><a href="#实现继承的几种方式以及他们的优缺点" class="headerlink" title="实现继承的几种方式以及他们的优缺点"></a>实现继承的几种方式以及他们的优缺点</h2><ul>
 <li>构造继承</li>
 <li>原型继承</li>
 <li>实例继承</li>
@@ -236,7 +236,7 @@
 
 </li>
 </ul>
-<h3 id="new-一个对象的详细过程-手动实现一个-new-操作符"><a href="#new-一个对象的详细过程-手动实现一个-new-操作符" class="headerlink" title="new 一个对象的详细过程,手动实现一个 new 操作符"></a>new 一个对象的详细过程,手动实现一个 new 操作符</h3><p><strong><code>new</code>运算符</strong>创建一个用户定义的对象类型的实例。<br>使用<code>new</code>命令时,它后面的函数依次执行下面的步骤。</p>
+<h2 id="new-一个对象的详细过程-手动实现一个-new-操作符"><a href="#new-一个对象的详细过程-手动实现一个-new-操作符" class="headerlink" title="new 一个对象的详细过程,手动实现一个 new 操作符"></a>new 一个对象的详细过程,手动实现一个 new 操作符</h2><p><strong><code>new</code>运算符</strong>创建一个用户定义的对象类型的实例。<br>使用<code>new</code>命令时,它后面的函数依次执行下面的步骤。</p>
 <ul>
 <li>创建一个空对象,作为将要返回的对象实例。</li>
 <li>将这个空对象的原型,指向构造函数的<code>prototype</code>属性。</li>
@@ -421,7 +421,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#理解原型设计模式以及-JavaScript-中的原型规则"><span class="toc-number">1.</span> <span class="toc-text">理解原型设计模式以及 JavaScript 中的原型规则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是原型模式"><span class="toc-number">1.1.</span> <span class="toc-text">什么是原型模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实现原型模式"><span class="toc-number">1.2.</span> <span class="toc-text">实现原型模式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#instanceof-的底层实现原理-手动实现一个-instanceof"><span class="toc-number">2.</span> <span class="toc-text">instanceof 的底层实现原理,手动实现一个 _instanceof</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现继承的几种方式以及他们的优缺点"><span class="toc-number">3.</span> <span class="toc-text">实现继承的几种方式以及他们的优缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#new-一个对象的详细过程-手动实现一个-new-操作符"><span class="toc-number">4.</span> <span class="toc-text">new 一个对象的详细过程,手动实现一个 new 操作符</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#理解原型设计模式以及-JavaScript-中的原型规则"><span class="toc-number">1.</span> <span class="toc-text">理解原型设计模式以及 JavaScript 中的原型规则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是原型模式"><span class="toc-number">1.1.</span> <span class="toc-text">什么是原型模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现原型模式"><span class="toc-number">1.2.</span> <span class="toc-text">实现原型模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#instanceof-的底层实现原理-手动实现一个-instanceof"><span class="toc-number">2.</span> <span class="toc-text">instanceof 的底层实现原理,手动实现一个 _instanceof</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现继承的几种方式以及他们的优缺点"><span class="toc-number">3.</span> <span class="toc-text">实现继承的几种方式以及他们的优缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#new-一个对象的详细过程-手动实现一个-new-操作符"><span class="toc-number">4.</span> <span class="toc-text">new 一个对象的详细过程,手动实现一个 new 操作符</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -551,7 +551,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -567,11 +567,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -580,6 +580,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Css</a>
               </li>
             
             <div class="clearfix"></div>

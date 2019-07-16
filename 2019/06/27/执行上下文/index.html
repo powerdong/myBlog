@@ -18,7 +18,7 @@
 <meta property="og:description" content="首先明确几个概念:  EC:函数执行环境(或执行上下文) ECS:执行环境栈 VO:变量对象 AO:活动对象 scope chain: 作用域链  EC (执行上下文) 每当控制器转到 ECMAScript 可执行代码的时候，就会进入到一个执行上下文  那什么是可执行代码呢? 可执行代码的类型 全局代码(Global code) 这种类型的代码是在”程序”级处理的:例如加载外部的 js 文件或者本">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://image-static.segmentfault.com/387/150/3871505191-58edec89d4df1_articlex">
-<meta property="og:updated_time" content="2019-07-01T02:49:19.371Z">
+<meta property="og:updated_time" content="2019-07-16T00:25:12.756Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="执行上下文">
 <meta name="twitter:description" content="首先明确几个概念:  EC:函数执行环境(或执行上下文) ECS:执行环境栈 VO:变量对象 AO:活动对象 scope chain: 作用域链  EC (执行上下文) 每当控制器转到 ECMAScript 可执行代码的时候，就会进入到一个执行上下文  那什么是可执行代码呢? 可执行代码的类型 全局代码(Global code) 这种类型的代码是在”程序”级处理的:例如加载外部的 js 文件或者本">
@@ -459,6 +459,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#EC-执行上下文"><span class="toc-number">1.</span> <span class="toc-text">EC (执行上下文)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#可执行代码的类型"><span class="toc-number">1.1.</span> <span class="toc-text">可执行代码的类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ECS-执行环境栈"><span class="toc-number">2.</span> <span class="toc-text">ECS (执行环境栈)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VO-变量对象-AO-活动对象"><span class="toc-number">3.</span> <span class="toc-text">VO (变量对象) / AO (活动对象)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#EC-建立的细节"><span class="toc-number">3.1.</span> <span class="toc-text">EC 建立的细节</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解释器执行代码的伪逻辑"><span class="toc-number">3.2.</span> <span class="toc-text">解释器执行代码的伪逻辑</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#提升-Hoisting"><span class="toc-number">4.</span> <span class="toc-text">提升 (Hoisting)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -583,7 +596,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -599,11 +612,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -612,6 +625,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Css</a>
               </li>
             
             <div class="clearfix"></div>
