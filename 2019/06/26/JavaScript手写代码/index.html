@@ -9,19 +9,19 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>JavaScript手写代码 | PowerDong-分享技术&amp;生活</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="手写路径 实现一个new操作符 实现一个JSON.stringify 实现一个JSON.parse 实现一个call或apply 实现一个Function.bind 实现一个继承 实现一个JS函数柯里化 手写一个Promise 手写防抖(Debounce)和节流(Throttle) 手写一个JS深拷贝 实现一个instanceOf    1. 实现一个new操作符 new 操作符做了这些事: 它">
+  <meta name="description" content="1. 实现一个new操作符 new 操作符做了这些事: 它创建了一个全新的对象 它会被执行[[Prototype]](也就是__proto__)链接 它使this指向新创建的对象 通过 new 创建的每个对象将最终被[[Prototype]]链接到这个函数的 prototype 对象上 如果函数没有返回对象类型 Object(包含 Function、Array、Date、RegExp、Error)">
 <meta name="keywords" content="JS,代码">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript手写代码">
 <meta property="og:url" content="http://yoursite.com/2019/06/26/JavaScript手写代码/index.html">
 <meta property="og:site_name" content="PowerDong-分享技术&amp;生活">
-<meta property="og:description" content="手写路径 实现一个new操作符 实现一个JSON.stringify 实现一个JSON.parse 实现一个call或apply 实现一个Function.bind 实现一个继承 实现一个JS函数柯里化 手写一个Promise 手写防抖(Debounce)和节流(Throttle) 手写一个JS深拷贝 实现一个instanceOf    1. 实现一个new操作符 new 操作符做了这些事: 它">
+<meta property="og:description" content="1. 实现一个new操作符 new 操作符做了这些事: 它创建了一个全新的对象 它会被执行[[Prototype]](也就是__proto__)链接 它使this指向新创建的对象 通过 new 创建的每个对象将最终被[[Prototype]]链接到这个函数的 prototype 对象上 如果函数没有返回对象类型 Object(包含 Function、Array、Date、RegExp、Error)">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/3/28/169c500344dfe50a?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
-<meta property="og:updated_time" content="2019-07-02T02:05:12.487Z">
+<meta property="og:updated_time" content="2019-07-18T09:43:04.965Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript手写代码">
-<meta name="twitter:description" content="手写路径 实现一个new操作符 实现一个JSON.stringify 实现一个JSON.parse 实现一个call或apply 实现一个Function.bind 实现一个继承 实现一个JS函数柯里化 手写一个Promise 手写防抖(Debounce)和节流(Throttle) 手写一个JS深拷贝 实现一个instanceOf    1. 实现一个new操作符 new 操作符做了这些事: 它">
+<meta name="twitter:description" content="1. 实现一个new操作符 new 操作符做了这些事: 它创建了一个全新的对象 它会被执行[[Prototype]](也就是__proto__)链接 它使this指向新创建的对象 通过 new 创建的每个对象将最终被[[Prototype]]链接到这个函数的 prototype 对象上 如果函数没有返回对象类型 Object(包含 Function、Array、Date、RegExp、Error)">
 <meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/3/28/169c500344dfe50a?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
   
   <link rel="alternative" href="/atom.xml" title="PowerDong-分享技术&amp;生活" type="application/atom+xml">
@@ -172,23 +172,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li><strong>手写路径</strong><ul>
-<li>实现一个<code>new</code>操作符</li>
-<li>实现一个<code>JSON.stringify</code></li>
-<li>实现一个<code>JSON.parse</code></li>
-<li>实现一个<code>call</code>或<code>apply</code></li>
-<li>实现一个<code>Function.bind</code></li>
-<li>实现一个继承</li>
-<li>实现一个<code>JS</code>函数柯里化</li>
-<li>手写一个<code>Promise</code></li>
-<li>手写防抖(<code>Debounce</code>)和节流(<code>Throttle</code>)</li>
-<li>手写一个<code>JS深拷贝</code></li>
-<li>实现一个<code>instanceOf</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="1-实现一个new操作符"><a href="#1-实现一个new操作符" class="headerlink" title="1. 实现一个new操作符"></a>1. 实现一个<code>new</code>操作符</h2><ul>
+        <h2 id="1-实现一个new操作符"><a href="#1-实现一个new操作符" class="headerlink" title="1. 实现一个new操作符"></a>1. 实现一个<code>new</code>操作符</h2><ul>
 <li>new 操作符做了这些事:<ul>
 <li>它创建了一个全新的对象</li>
 <li>它会被执行<code>[[Prototype]]</code>(也就是<code>__proto__</code>)链接</li>
@@ -495,6 +479,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-实现一个new操作符"><span class="toc-number">1.</span> <span class="toc-text">1. 实现一个new操作符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-实现一个JSON-stringify"><span class="toc-number">2.</span> <span class="toc-text">2. 实现一个JSON.stringify</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-实现一个JSON-parse"><span class="toc-number">3.</span> <span class="toc-text">3. 实现一个JSON.parse</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-第一种：直接调用-eval"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 第一种：直接调用 eval</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-第二种：Function"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 第二种：Function</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-实现一个call或apply"><span class="toc-number">4.</span> <span class="toc-text">4. 实现一个call或apply</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-Function-call按套路实现"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 Function.call按套路实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-1-简单版"><span class="toc-number">4.1.1.</span> <span class="toc-text">4.1.1 简单版</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-2-完善版"><span class="toc-number">4.1.2.</span> <span class="toc-text">4.1.2 完善版</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-Function-apply的模拟实现"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 Function.apply的模拟实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-实现一个Function-bind"><span class="toc-number">5.</span> <span class="toc-text">5. 实现一个Function.bind()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-实现一个继承"><span class="toc-number">6.</span> <span class="toc-text">6. 实现一个继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-实现一个-JS-函数柯里化"><span class="toc-number">7.</span> <span class="toc-text">7. 实现一个 JS 函数柯里化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-通用版"><span class="toc-number">7.1.</span> <span class="toc-text">7.1 通用版</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-ES6写法"><span class="toc-number">7.2.</span> <span class="toc-text">7.2 ES6写法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-手写一个Promise"><span class="toc-number">8.</span> <span class="toc-text">8. 手写一个Promise</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-Promise流程图分析"><span class="toc-number">8.1.</span> <span class="toc-text">8.1 Promise流程图分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-手写"><span class="toc-number">8.2.</span> <span class="toc-text">8.2 手写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-大厂专供版"><span class="toc-number">8.3.</span> <span class="toc-text">8.3 大厂专供版</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-防抖-Debounce-和-节流-Throttle"><span class="toc-number">9.</span> <span class="toc-text">9 防抖 (Debounce) 和 节流 (Throttle)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#9-1-防抖-Debounce-实现"><span class="toc-number">9.1.</span> <span class="toc-text">9.1 防抖 (Debounce) 实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#原理及实现"><span class="toc-number">9.1.1.</span> <span class="toc-text">原理及实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2-节流-Throttle-实现"><span class="toc-number">9.2.</span> <span class="toc-text">9.2 节流 (Throttle) 实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#原理及实现-1"><span class="toc-number">9.2.1.</span> <span class="toc-text">原理及实现</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-手写一个深拷贝"><span class="toc-number">10.</span> <span class="toc-text">10. 手写一个深拷贝</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-乞丐版"><span class="toc-number">10.1.</span> <span class="toc-text">10.1 乞丐版</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-2-网传圣杯模式"><span class="toc-number">10.2.</span> <span class="toc-text">10.2 网传圣杯模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简约版实现"><span class="toc-number">10.3.</span> <span class="toc-text">简约版实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-实现一个instanceOf"><span class="toc-number">11.</span> <span class="toc-text">11. 实现一个instanceOf</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -635,15 +632,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">试题</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Css</a>
               </li>
              
               <li class="article-tag-list-item">
