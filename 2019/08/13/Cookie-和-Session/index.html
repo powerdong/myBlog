@@ -7,19 +7,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 试题 | PowerDong-分享技术&amp;生活</title>
+  <title>Cookie 和 Session | PowerDong-分享技术&amp;生活</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是一个个人博客，分享一些前端技术、面试题、面试技巧等，用来提高自己和帮助他人。">
-<meta name="keywords" content="前端,web,前端面试,面试，面试技巧，技巧">
-<meta property="og:type" content="website">
-<meta property="og:title" content="PowerDong-分享技术&amp;生活">
-<meta property="og:url" content="http://yoursite.com/tags/试题/index.html">
+  <meta name="description" content="Cookie什么是 CookieCookie 是由服务端生成，发送给 User-Agent(一般是浏览器)，(服务器告诉浏览器设置一下 Cookie)，浏览器会将 Cookie 以 key/value 保存到某个目录下的文本文件内，下次请求同一网站时就发送该 Cookie 给服务器(前提是浏览器设置为启用 Cookie)。  Cookie 就是一个小型文件(浏览器对 Cookie 的内存大小是有限">
+<meta name="keywords" content="缓存,面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cookie 和 Session">
+<meta property="og:url" content="http://yoursite.com/2019/08/13/Cookie-和-Session/index.html">
 <meta property="og:site_name" content="PowerDong-分享技术&amp;生活">
-<meta property="og:description" content="这是一个个人博客，分享一些前端技术、面试题、面试技巧等，用来提高自己和帮助他人。">
+<meta property="og:description" content="Cookie什么是 CookieCookie 是由服务端生成，发送给 User-Agent(一般是浏览器)，(服务器告诉浏览器设置一下 Cookie)，浏览器会将 Cookie 以 key/value 保存到某个目录下的文本文件内，下次请求同一网站时就发送该 Cookie 给服务器(前提是浏览器设置为启用 Cookie)。  Cookie 就是一个小型文件(浏览器对 Cookie 的内存大小是有限">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/13/mpb24A.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/13/m9kgL4.png">
+<meta property="og:updated_time" content="2019-08-13T02:29:45.252Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PowerDong-分享技术&amp;生活">
-<meta name="twitter:description" content="这是一个个人博客，分享一些前端技术、面试题、面试技巧等，用来提高自己和帮助他人。">
+<meta name="twitter:title" content="Cookie 和 Session">
+<meta name="twitter:description" content="Cookie什么是 CookieCookie 是由服务端生成，发送给 User-Agent(一般是浏览器)，(服务器告诉浏览器设置一下 Cookie)，浏览器会将 Cookie 以 key/value 保存到某个目录下的文本文件内，下次请求同一网站时就发送该 Cookie 给服务器(前提是浏览器设置为启用 Cookie)。  Cookie 就是一个小型文件(浏览器对 Cookie 的内存大小是有限">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/08/13/mpb24A.png">
   
   <link rel="alternative" href="/atom.xml" title="PowerDong-分享技术&amp;生活" type="application/atom+xml">
   
@@ -149,250 +153,304 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Cookie-和-Session" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Cookie 和 Session
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/08/13/Cookie-和-Session/" class="archive-article-date">
+  	<time datetime="2019-08-13T00:41:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-13</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><h3 id="什么是-Cookie"><a href="#什么是-Cookie" class="headerlink" title="什么是 Cookie"></a>什么是 Cookie</h3><p>Cookie 是由服务端生成，发送给 User-Agent(一般是浏览器)，(服务器告诉浏览器设置一下 Cookie)，浏览器会将 Cookie 以 key/value 保存到某个目录下的文本文件内，下次请求同一网站时就发送该 Cookie 给服务器(前提是浏览器设置为启用 Cookie)。</p>
+<blockquote>
+<p>Cookie 就是一个小型文件(浏览器对 Cookie 的内存大小是有限制的————用来记录一些信息)</p>
+</blockquote>
+<h3 id="为什么会有-Cookie"><a href="#为什么会有-Cookie" class="headerlink" title="为什么会有 Cookie"></a>为什么会有 Cookie</h3><p>Web 应用程序是使用 HTTP 协议传输数据的。<br><strong>HTTP 协议是无状态的协议。</strong><br>一旦数据交换完毕，客户端与服务端的连接就会关闭，再次交换数据需要建立新的连接。这就意味着服务器无法从连接上跟踪会话。</p>
+<blockquote>
+<p>用户在登陆页面后，一段时间内重新打开页面不用输入自动登录(<strong>Cookie 具有保质期</strong>)</p>
+</blockquote>
+<h3 id="Cookie-的原理"><a href="#Cookie-的原理" class="headerlink" title="Cookie 的原理"></a>Cookie 的原理</h3><p>第一次访问网站的时候，浏览器发出请求，服务器响应请求后，会将 Cookie 放到响应请求中，在浏览器第二次发请求时，会把 Cookie 带过去，服务端会辨别用户身份，当然<strong>服务器也可以修改 Cookie 内容。</strong></p>
+<a id="more"></a>
+
+<h3 id="Cookie-的属性"><a href="#Cookie-的属性" class="headerlink" title="Cookie 的属性"></a>Cookie 的属性</h3><p>这是我做的一个使用 Cookie 记录小方块的位置信息的 demo, 图中显示了众多 Cookie 属性<br><img src="https://s2.ax1x.com/2019/08/13/mpb24A.png" alt="mpb24A.png"></p>
+<h4 id="name"><a href="#name" class="headerlink" title="name"></a>name</h4><p>这个显而易见，就是代表 Cookie 的名字，一个域名下绑定的 Cookie， <strong>name 不能相同，相同的 name 对应的值会被覆盖掉。</strong></p>
+<h4 id="value"><a href="#value" class="headerlink" title="value"></a>value</h4><p>这个就是每个 Cookie 拥有的一个属性，他<strong>表示 Cookie 的值</strong></p>
+<h4 id="domain"><a href="#domain" class="headerlink" title="domain"></a>domain</h4><p>这个是指的域名，<strong>代表的是 Cookie 绑定的域名</strong>，如果没有设置，就会自动绑定到执行语句的当前域。</p>
+<h4 id="path"><a href="#path" class="headerlink" title="path"></a>path</h4><p>path 这个属性默认就是 ‘/‘,这个值<strong>匹配的是 web 的路由</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 默认路径</span><br><span class="line">www.baidu.com</span><br><span class="line">// blog 路径</span><br><span class="line">www.baidu.com/blog</span><br></pre></td></tr></table></figure>
+
+<p><strong>当你路径设置成 <code>/blog</code> 的时候，其实他会给 <code>/blog</code>、<code>/blogaaa</code> 等等的绑定 Cookie</strong></p>
+<h4 id="Expires-Max-Age"><a href="#Expires-Max-Age" class="headerlink" title="Expires / Max-Age"></a>Expires / Max-Age</h4><p>这个属性是 Cookie 的有效期，<strong>一般浏览器的 Cookie 都是默认存储的，当关闭浏览器结束这个会话的时候，这个 Cookie 也就会被删除。</strong><br>如果你想要 Cookie 存在一段时间，可以通过<strong>设置 Max-Age 属性以秒为单位</strong>。当值为正数时，Cookie 会在 Max-Age 秒之后被删除，<strong>当 Max-Age 为负数时，表示的是临时存储</strong>，不会生出 Cookie 文件，只会存在浏览器内存中，且只会在打开的浏览器窗口或者子窗口有效。一旦浏览器关闭，Cookie 就会消失，<strong>当 Max-Age 为 0 时，删除 Cookie。</strong></p>
+<h4 id="Secure"><a href="#Secure" class="headerlink" title="Secure"></a>Secure</h4><p>这个属性译为安全，HTTP 不仅是无状态的，还是不安全的协议，容易被劫持。当这个 <strong>Secure 属性设置为 true 时，此 Cookie 只会在 HTTPS 和 SSL 等安全协议下传输。</strong></p>
+<blockquote>
+<p>这个属性并不能对客户端 Cookie 进行加密，不能保证绝对的安全性</p>
+</blockquote>
+<h4 id="HttpOnly"><a href="#HttpOnly" class="headerlink" title="HttpOnly"></a>HttpOnly</h4><p>如果这个 <strong>HttpOnly 属性设置为 true，就不能通过 js 脚本来获取 Cookie 的值</strong>，能有效的防止 XSS 攻击</p>
+<h3 id="Cookie-内存大小受限制"><a href="#Cookie-内存大小受限制" class="headerlink" title="Cookie 内存大小受限制"></a>Cookie 内存大小受限制</h3><p>Cookie 有个数和大小的限制，<strong>大小一般是 4k</strong></p>
+<blockquote>
+<p>Cookie 在本地，可以被更改文件，敏感数据不要放在 Cookie 里</p>
+</blockquote>
+<h3 id="Cookie-的使用"><a href="#Cookie-的使用" class="headerlink" title="Cookie 的使用"></a>Cookie 的使用</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//读取浏览器中的cookie</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>.cookie);</span><br><span class="line"><span class="comment">//写入cookie</span></span><br><span class="line"><span class="built_in">document</span>.cookie = <span class="string">"name=lambda;path=/;domain=.baidu.com"</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h2><h3 id="什么是-Session"><a href="#什么是-Session" class="headerlink" title="什么是 Session"></a>什么是 Session</h3><p>在计算机中，尤其是在网络应用中，称为“会话控制”。 <a href="https://baike.baidu.com/item/Session/479100" target="_blank" rel="noopener">Session</a> 对象存储特定用户会话所需的属性及配置信息。这样，当用户在应用程序的 Web 页之间跳转时，存储在 <a href="https://baike.baidu.com/item/Session/479100" target="_blank" rel="noopener">Session</a> 对象中的变量将不会丢失，而是在整个用户会话中一直存在下去</p>
+<h2 id="Cookie-和-Session-有什么不同"><a href="#Cookie-和-Session-有什么不同" class="headerlink" title="Cookie 和 Session 有什么不同"></a>Cookie 和 Session 有什么不同</h2><ul>
+<li><strong>作用范围不同</strong><ul>
+<li>Cookie 保存在客户端(浏览器)</li>
+<li>Session 保存在服务器端</li>
+</ul>
+</li>
+<li><strong>存取方式的不同</strong><ul>
+<li>Cookie 只能保存 ASCII</li>
+<li>Session 可以存任何数据类型，一般情况下我们可以在 Session 中保存一些常用变量信息，比如说 UserId 等</li>
+</ul>
+</li>
+<li><strong>有效期不同</strong><ul>
+<li>Cookie 可设置为长时间保持，比如我们经常使用的默认登陆功能</li>
+<li>Session 一般失效时间较短，客户端关闭或者 Session 超时都会失效</li>
+</ul>
+</li>
+<li><strong>隐私策略不同</strong><ul>
+<li>Cookie 存储在客户端，比较容易遭到不法获取，比如将用户名密码存放在 Cookie 导致信息被窃取</li>
+<li>Session 存储在服务端，安全性相对 Cookie 要好一些</li>
+</ul>
+</li>
+<li><strong>存储大小不同</strong><ul>
+<li>单个 Cookie 保存的数据不能超过 4K</li>
+<li>Session 可存储数据远高于 Cookie</li>
+</ul>
+</li>
+</ul>
+<h2 id="为什么需要-Cookie-和-Session，他们有什么关联"><a href="#为什么需要-Cookie-和-Session，他们有什么关联" class="headerlink" title="为什么需要 Cookie 和 Session，他们有什么关联"></a>为什么需要 Cookie 和 Session，他们有什么关联</h2><h3 id="为什么需要-Cookie"><a href="#为什么需要-Cookie" class="headerlink" title="为什么需要 Cookie"></a>为什么需要 Cookie</h3><p>我们都知道浏览器是没有状态的(HTTP 协议无状态)，这意味着浏览器并不知道是张三还是李四在和服务端打交道。这个时候就需要有一个机制来告诉服务端，本次操作用户是否登录，是哪个用户在执行的操作，那这套机制的实现就需要 Cookie 和 Session 的配合。</p>
+<h3 id="Cookie-和-Session-如何配合"><a href="#Cookie-和-Session-如何配合" class="headerlink" title="Cookie 和 Session 如何配合"></a>Cookie 和 Session 如何配合</h3><p><img src="https://s2.ax1x.com/2019/08/13/m9kgL4.png" alt="m9kgL4.png"></p>
+<p>用户第一次请求服务器的时候，服务器根据用户提交的相关信息，创建对应的 Session,请求返回时将此 Session 的唯一标识信息 SessionID 返回给浏览器，浏览器接收到服务器返回的 SessionID 信息后，会将此信息存入到 Cookie 中，同时 Cookie 记录此 SessionID 属于哪个域名</p>
+<p>当用户第二次访问服务器的时候，请求会自动判断此域名下是否存在 Cookie 信息，如果存在自动将 Cookie 信息也发送给服务端，服务端会从 Cookie 中获取 SessionID，在根据 SessionID 查找对应的 Session 信息，如果没有找到，说明用户没有登陆或者说登录失效，如果找到 Session 证明用户已经登录可执行后面操作。</p>
+<h2 id="如果浏览器中禁止了-Cookie，如何保障整个机制的正常运转"><a href="#如果浏览器中禁止了-Cookie，如何保障整个机制的正常运转" class="headerlink" title="如果浏览器中禁止了 Cookie，如何保障整个机制的正常运转"></a>如果浏览器中禁止了 Cookie，如何保障整个机制的正常运转</h2><ol>
+<li>每次请求中都携带一个 SessionID 的参数，也可以 POST 的方式提交，也可以在请求的地址后面拼接<code>?SessionID=123...</code></li>
+<li>Token 机制。Token 机制多用于 APP 客户端和服务器交互的模式，也可用于 Web 端做用户状态管理</li>
+</ol>
+<h2 id="如何考虑分布式-Session-问题"><a href="#如何考虑分布式-Session-问题" class="headerlink" title="如何考虑分布式 Session 问题"></a>如何考虑分布式 Session 问题</h2><p>在互联网公司为了可以支撑更大的流量，后端往往需要多台服务器共同来支撑前端用户请求，那如果用户在 A 服务器登录了，第二次请求跑到服务 B 就会出现登录失效问题。</p>
+<p>分布式 Session 一般会有以下几种解决方案：</p>
+<ul>
+<li>Nginx ip_hash 策略，服务端使用 Nginx 代理，每个请求按访问 IP 的 hash 分配，这样来自同一 IP 固定访问一个后台服务器，避免了在服务器 A 创建 Session，第二次分发到服务器 B 的现象。</li>
+<li>Session 复制，任何一个服务器上的 Session 发生改变（增删改），该节点会把这个 Session 的所有内容序列化，然后广播给所有其它节点。</li>
+<li>共享 Session，服务端无状态话，将用户的 Session 等信息使用缓存中间件来统一管理，保障分发到每一个服务器的响应结果都一致。</li>
+</ul>
+<p><strong>建议采用第三种方案。</strong></p>
+<hr>
+<blockquote>
+<p>‘摘抄’不是单纯的“粘贴-&gt;复制”，而是眼到，手到，心到的一字一句敲打下来。</p>
+</blockquote>
+<blockquote>
+<p>博客声明:所有转载的文章、图片仅用于作者本人收藏学习目的，被要求或认为适当时，将标注署名与来源。若不愿某一作品被转用，请及时通知本站，本站将予以及时删除。</p>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              打赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢您的支持<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="../../../../img/zhifubao.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="../../../../img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/myBlog/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/myBlog/2019/07/04/Js隐式类型转换/" class="archive-article-date">
-  	<time datetime="2019-07-04T00:17:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/myBlog/2019/07/04/Js隐式类型转换/">深究Js隐式类型转换</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">缓存</a>
         		</li>
       		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">试题</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/myBlog/2019/06/27/执行上下文/" class="archive-article-date">
-  	<time datetime="2019-06-27T01:49:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/myBlog/2019/06/27/执行上下文/">执行上下文</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">试题</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/myBlog/2019/06/26/事件循环/" class="archive-article-date">
-  	<time datetime="2019-06-26T11:57:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/myBlog/2019/06/26/事件循环/">事件循环</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">试题</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/myBlog/2019/06/24/43-道JS面试题/" class="archive-article-date">
-  	<time datetime="2019-06-24T08:51:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/myBlog/2019/06/24/43-道JS面试题/">43 道JS面试题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">试题</a>
-        		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/试题//" class="article-tag-list-link color3">试题</a>
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/13/Cookie-和-Session/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/myBlog/2029/08/06/Vue高仿网易云音乐/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          【置顶】Vue高仿网易云音乐
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/myBlog/2019/08/11/网络-JSONP/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">网络-JSONP</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+  <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: '0f5bf3239b190c1e353e',
+            clientSecret: 'a5fb93c9d80f72e443d43643ae7a705e95a9145b',
+            repo: 'myBlog',
+            owner: 'powerdong',
+            admin: ['powerdong'],
+            id: md5(window.location.pathname),
+            // facebook-like distraction free mode
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+  
 
 
           </div>
@@ -419,9 +477,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
