@@ -151,6 +151,313 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-瀑布流" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/07/18/瀑布流/">瀑布流(无限滚动)</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/07/18/瀑布流/" class="archive-article-date">
+  	<time datetime="2019-07-18T00:49:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="瀑布流"><a href="#瀑布流" class="headerlink" title="瀑布流"></a>瀑布流</h2><blockquote>
+<p>瀑布流:又称瀑布流式布局。是比较流行的一种网站页面布局，视觉表现为参差不齐的多栏布局，随着页面滚动条向下滚动，这种布局还会不断加载数据块并附加至当前尾部。</p>
+</blockquote>
+<p><img src="https://www.w3cplus.com/sites/default/files/blogs/2017/1704/pinterest-masonry.png" alt="瀑布流"></p>
+<p>我们要创建一个瀑布流插件，尽量的可以再多处使用。</p>
+<h3 id="开始布局"><a href="#开始布局" class="headerlink" title="开始布局"></a>开始布局</h3><p>首先先创建好一个外层标签，用来包裹我们的图片元素</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"water"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>所有的瀑布流元素都会存放到这个<code>div</code>标签中<br>在添加图片时需要动态设置新图片的位置，由于图片高度不定，这里采用绝对定位方式布局。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/myBlog/2019/07/18/瀑布流/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/07/18/瀑布流/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-响应式布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/07/17/响应式布局/">响应式布局</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/07/17/响应式布局/" class="archive-article-date">
+  	<time datetime="2019-07-17T00:25:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>响应式布局指的是同一个页面在不同屏幕尺寸下有不同的布局。传统的开发方式是 PC 端开发一套，手机端再开发一套，而使用响应式布局只要开发一套就够，缺点是<code>css</code>比较重。对于不同的屏幕大小，大致可分为<code>iPhone5/SE</code>,<code>iphone6/7/8</code>,<code>iphone 6/7/8 plus</code>,<code>ipad pro</code>,<code>dell台式宽屏(1440 X 900)</code>。</p>
+<ul>
+<li>响应式设计与自适应设计的区别<ul>
+<li>响应式开发一套界面，通过监测视口分辨率，针对不同客户端在客户端做代码处理，来展示不同的布局和内容</li>
+<li>自适应需要开发多套界面，通过检测视口分辨率，来判断当前访问的设备是 PC 端、平板、手机，从而请求服务层，返回不同的页面。</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/07/17/ZqJWJH.jpg" alt="ZqJWJH.jpg"></p>
+<h2 id="响应式布局的实现步骤"><a href="#响应式布局的实现步骤" class="headerlink" title="响应式布局的实现步骤"></a>响应式布局的实现步骤</h2><h3 id="设置-Meta-标签"><a href="#设置-Meta-标签" class="headerlink" title="设置 Meta 标签"></a>设置 Meta 标签</h3><p>大多数移动浏览器将 HTML 页面放大为宽的视图(viewport)以符合屏幕分辨率。你可以使用视图的<code>meta</code>标签来进行重置。下面的视图标签告诉浏览器，使用的设备的宽度作为视图宽度，并禁止初始的缩放。在<code>&lt;head&gt;</code>标签里加入这个<code>meta</code>标签。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span></span></span><br><span class="line"><span class="tag">  <span class="attr">name</span>=<span class="string">"viewport"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"</span></span></span><br><span class="line"><span class="tag">/&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- user-scalable = no 属性能够解决 iPad 切换横屏之后触摸才能回到具体尺寸的问题。 --&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="设置媒体查询"><a href="#设置媒体查询" class="headerlink" title="设置媒体查询"></a>设置媒体查询</h3><p><code>css3</code>媒体查询可以让我们针对不同的媒体类型定义不同的样式，当重置浏览器窗口大小的过程中，页面也会根据浏览器的宽度和高度重新渲染页面。</p>
+        
+          <a class="article-more-a" href="/myBlog/2019/07/17/响应式布局/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Css</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/07/17/响应式布局/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-CSS相关" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/07/16/CSS相关/">CSS相关</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/07/16/CSS相关/" class="archive-article-date">
+  	<time datetime="2019-07-16T01:20:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="CSS-盒模型-在不同浏览器的差异"><a href="#CSS-盒模型-在不同浏览器的差异" class="headerlink" title="CSS 盒模型,在不同浏览器的差异"></a>CSS 盒模型,在不同浏览器的差异</h2><p><strong>W3C 中的盒子模型的宽：包括 margin + border + padding + width;</strong></p>
+<p><code>W = margin * 2 + border * 2 + padding * 2 + width;</code><br><code>H = margin * 2 + border * 2 + padding * 2 + hight;</code></p>
+<p><strong>IE 中的盒子模型的宽：包括 margin + border + padding + width;</strong></p>
+<p><code>W = margin * 2 + width;</code><br><code>H = margin * 2 + height;</code></p>
+<p><strong>两者的区别</strong></p>
+<ul>
+<li>IE 盒子模型的 content 部分包含了 border 和 padding。</li>
+</ul>
+<p><strong>那么应该选择哪种盒子模型呢？</strong></p>
+<ul>
+<li>当然是“标准 w3c 盒子模型”了。</li>
+<li>在网页顶部加上<code>doctype</code>声明,所有的浏览器都会采用标准的 w3c 盒子模型去解释你的盒子,网页就能在各个浏览器中显示一致了。</li>
+</ul>
+<h2 id="CSS-所有选择器及其优先级、使用场景-哪些可以继承-如何运用-at-规则"><a href="#CSS-所有选择器及其优先级、使用场景-哪些可以继承-如何运用-at-规则" class="headerlink" title="CSS 所有选择器及其优先级、使用场景,哪些可以继承,如何运用 at 规则"></a>CSS 所有选择器及其优先级、使用场景,哪些可以继承,如何运用 at 规则</h2><h3 id="优先级是如何计算的？"><a href="#优先级是如何计算的？" class="headerlink" title="优先级是如何计算的？"></a>优先级是如何计算的？</h3><p>优先级就是分配给指定的 CSS 声明的一个权重,它由匹配的选择器中的每一种选择器类型的数值决定。<br>而当优先级与多个 CSS 声明中任意一个声明的优先级相等的时候,CSS 中最后的那个声明会被应用到元素上。<br>当同一个元素有多个声明的时候,优先级才会有意义。因为每一个直接作用于元素的 CSS 规则总是会接管/覆盖(take over)该元素从祖先元素继承而来的规则。</p>
+        
+          <a class="article-more-a" href="/myBlog/2019/07/16/CSS相关/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Css</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/07/16/CSS相关/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-HTML相关" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -891,346 +1198,6 @@
 
 
   
-    <article id="post-作用域和闭包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/07/01/作用域和闭包/">作用域和闭包</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/07/01/作用域和闭包/" class="archive-article-date">
-  	<time datetime="2019-07-01T00:17:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="理解词法作用域和动态作用域"><a href="#理解词法作用域和动态作用域" class="headerlink" title="理解词法作用域和动态作用域"></a>理解词法作用域和动态作用域</h2><h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><p>作用域是指程序源代码中定义变量的区域。<br>作用域规定了如何查找变量,也就是确定当前执行代码对变量的访问权限。<br>JavaScript 采用词法作用域(lexical scoping),也就是静态作用域。</p>
-<h3 id="静态作用域与动态作用域"><a href="#静态作用域与动态作用域" class="headerlink" title="静态作用域与动态作用域"></a>静态作用域与动态作用域</h3><p>因为 JavaScript 采用的是词法作用域,函数的作用域在函数定义的时候就决定了,而词法作用域相对的是动态作用域,函数的作用域是在函数调用的时候才决定的。</p>
-<h2 id="理解-JavaScript-的作用域和作用域链"><a href="#理解-JavaScript-的作用域和作用域链" class="headerlink" title="理解 JavaScript 的作用域和作用域链"></a>理解 JavaScript 的作用域和作用域链</h2><h3 id="什么是作用域？"><a href="#什么是作用域？" class="headerlink" title="什么是作用域？"></a>什么是作用域？</h3><p>作用域是在运行时代码中的某些特定部分中变量,函数和对象的可访问性。换句话说,作用于决定了代码区块中变量和其他资源的可见性。<br>作用域就是一个独立的地盘,让变量不会外泄,暴露出去。<br>作用域最大的用处就是隔离变量,不同作用域下同名变量不会有冲突。<br>ES6 之前 JavaScript 没有块级作用域,只有全局作用域和函数作用域。ES6 的到来,为我们提供了’块级作用域’,可通过新增命令 let 和 const 来体现。</p>
-<ul>
-<li>全局作用域和函数作用域<ul>
-<li>最外层函数和最外层函数外面定义的变量拥有全局作用域</li>
-<li>所有未定义直接赋值的变量自动声明为拥有全局作用域</li>
-<li>所有 window 对象的属性拥有全局作用域</li>
-</ul>
-</li>
-</ul>
-        
-          <a class="article-more-a" href="/myBlog/2019/07/01/作用域和闭包/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/07/01/作用域和闭包/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-记一次小程序开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/06/29/记一次小程序开发/">记一次小程序开发</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/06/29/记一次小程序开发/" class="archive-article-date">
-  	<time datetime="2019-06-29T13:06:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在上周看了微信小程序的介绍后，就想着要开发一个服务于自己的小程序，也在另一方面可以有一次小程序的开发实践经验。</p>
-<h2 id="微信小程序"><a href="#微信小程序" class="headerlink" title="微信小程序"></a>微信小程序</h2><p>小程序是一种<strong>不需要下载安装即可使用</strong>的应用(其实是需要下载的,只不过是非常小的一个应用,加载时间可忽略)</p>
-<p>应用将无处不在，随时可用，但又无需安装卸载。</p>
-<ul>
-<li>小程序适用简单的，用完即走的应用</li>
-<li>小程序适合低频的应用</li>
-<li>小程序适合性能要求不高的应用</li>
-</ul>
-<p><strong>小程序是单向数据绑定</strong></p>
-<h2 id="萌生想法"><a href="#萌生想法" class="headerlink" title="萌生想法"></a>萌生想法</h2><blockquote>
-<p>如果你想看实例源代码可以移步<a href="https://github.com/powerdong/weatherProgram" target="_blank" rel="noopener">天气小程序 git 仓库</a></p>
-</blockquote>
-<p>之前在学习网络请求时有过请求一个天气接口，获取到了天气的相关信息</p>
-<p>由此，想利用现有的知识构建一个天气小程序。</p>
-<h2 id="开始实施"><a href="#开始实施" class="headerlink" title="开始实施"></a>开始实施</h2><ul>
-<li>到<a href="https://mp.weixin.qq.com/" target="_blank" rel="noopener">微信公众平台</a>注册一个账号</li>
-<li>在左侧的开发选项中的<strong>开发设置</strong>中找到<code>AppID</code></li>
-<li>下载<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html" target="_blank" rel="noopener">微信 web 开发者工具</a></li>
-<li>登陆工具后创建项目，将之前复制的<code>AppID</code>填写到对应的内容项中。</li>
-</ul>
-<p>在新创建的文件夹中以<code>app</code>开头的文件都是全局配置文件，首先在<code>app.json</code>中的<code>pages</code>属性中增加<code>&quot;pages/index/index&quot;</code>保存后会自动生成相应的文件，<code>index</code>文件夹作为我们的首页。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"pages"</span>: [</span><br><span class="line">    <span class="string">"pages/index/index"</span>, //首页</span><br><span class="line">    <span class="string">"pages/place/index"</span> //搜索页</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"window"</span>: &#123;</span><br><span class="line">    "backgroundTextStyle": "light", //下拉 loading 的样式</span><br><span class="line">    "navigationBarBackgroundColor": "#0078D7", //顶部导航的背景颜色</span><br><span class="line">    "navigationBarTitleText": "通天气", //通用导航标题</span><br><span class="line">    "navigationBarTextStyle": "white" // 导航标题颜色</span><br><span class="line">  &#125;,</span><br><span class="line">  "permission": &#123;</span><br><span class="line">    "scope.userLocation": &#123;</span><br><span class="line">      // 使用wx.getLocation时需要配置</span><br><span class="line">      "desc": "你的位置信息将用于定位城市天气信息的展示" //请求位置信息时要展示的</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  "sitemapLocation": "sitemap.json" //指明sitemap.json位置</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>首先查看了当前一些天气小程序(腾讯天气，彩云天气，墨迹天气等)，吸取该小程序的页面搭建样式，从华为手机的桌面天气应用中也有学习</p>
-<h3 id="收集素材"><a href="#收集素材" class="headerlink" title="收集素材"></a>收集素材</h3><blockquote>
-<p>本小程序计划天气样式使用字体图标</p>
-</blockquote>
-<p>从 <a href="https://www.iconfont.cn/" target="_blank" rel="noopener">iconfont</a> 网站上查询到了一些图标，然后下载到本地，配置到 <code>app.wxss</code> 用来页面引用</p>
-<p>在一个<a href="http://bapaboli.lofter.com/post/910b8_6499be" target="_blank" rel="noopener">设计网站</a>收集了一些天气背景图，裁剪后用于显示，美化页面</p>
-        
-          <a class="article-more-a" href="/myBlog/2019/06/29/记一次小程序开发/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/06/29/记一次小程序开发/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-执行上下文" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/06/27/执行上下文/">执行上下文</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/06/27/执行上下文/" class="archive-article-date">
-  	<time datetime="2019-06-27T01:49:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>首先明确几个概念:</strong></p>
-<ul>
-<li><code>EC</code>:函数执行环境(或执行上下文)</li>
-<li><code>ECS</code>:执行环境栈</li>
-<li><code>VO</code>:变量对象</li>
-<li><code>AO</code>:活动对象</li>
-<li><code>scope chain</code>: 作用域链</li>
-</ul>
-<h2 id="EC-执行上下文"><a href="#EC-执行上下文" class="headerlink" title="EC (执行上下文)"></a>EC (执行上下文)</h2><blockquote>
-<p>每当控制器转到 ECMAScript 可执行代码的时候，就会进入到一个执行上下文</p>
-</blockquote>
-<p>那什么是可执行代码呢?</p>
-<h3 id="可执行代码的类型"><a href="#可执行代码的类型" class="headerlink" title="可执行代码的类型"></a>可执行代码的类型</h3><ul>
-<li>全局代码(<code>Global code</code>)<ul>
-<li>这种类型的代码是在”程序”级处理的:例如加载外部的 js 文件或者本地<code>&lt;script&gt;&lt;/script&gt;</code>标签内的代码。<strong>全局代码不包括任何 function 体内的代码</strong>。这个是默认的代码运行环境，一旦代码被载入，引擎最先进入的就是这个环境。</li>
-</ul>
-</li>
-<li>函数代码(<code>Function code</code>)<ul>
-<li>任何一个函数体内的代码，但是需要注意的是，<strong>具体的函数体内的代码是不包括内部函数的代码。</strong></li>
-</ul>
-</li>
-<li>Eval 代码(<code>Eval code</code>)<ul>
-<li>eval 内部的代码</li>
-</ul>
-</li>
-</ul>
-        
-          <a class="article-more-a" href="/myBlog/2019/06/27/执行上下文/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">试题</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/06/27/执行上下文/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/myBlog/">&laquo; Prev</a><a class="page-number" href="/myBlog/">1</a><span class="page-number current">2</span><a class="page-number" href="/myBlog/page/3/">3</a><a class="extend next" rel="next" href="/myBlog/page/3/">Next &raquo;</a>
@@ -1324,19 +1291,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Css</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1352,23 +1319,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">代码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1376,7 +1327,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">TCP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
             
             <div class="clearfix"></div>
