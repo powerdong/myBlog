@@ -9,18 +9,24 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Css3.0-动画 | PowerDong-分享技术&amp;生活</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Css3 动画transform 形状变换transition 过度动画animation 动画Css 动画性能优化">
+  <meta name="description" content="Css3 动画transform 形状变换 CSS3 转换可以可以对元素进行移动、缩放、转动、拉长或拉伸。   transform 可以实现元素的形状，角度，位置等的变化。 rotate(ndeg) 以 x/y/z 为轴进行选装，默认为 z rotateX(ndeg) rotateY(ndeg) rotateZ(ndeg) rotate3d(x, y, z, angle)   scale(n) 以">
 <meta name="keywords" content="Css,笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Css3.0-动画">
 <meta property="og:url" content="http://yoursite.com/2019/08/19/Css3-0-动画/index.html">
 <meta property="og:site_name" content="PowerDong-分享技术&amp;生活">
-<meta property="og:description" content="Css3 动画transform 形状变换transition 过度动画animation 动画Css 动画性能优化">
+<meta property="og:description" content="Css3 动画transform 形状变换 CSS3 转换可以可以对元素进行移动、缩放、转动、拉长或拉伸。   transform 可以实现元素的形状，角度，位置等的变化。 rotate(ndeg) 以 x/y/z 为轴进行选装，默认为 z rotateX(ndeg) rotateY(ndeg) rotateZ(ndeg) rotate3d(x, y, z, angle)   scale(n) 以">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-19T00:39:49.107Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/19/mlskMd.gif">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/19/mlc8Ld.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/19/mlctot.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/19/ml2Fb9.gif">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/19/ml4C7Q.gif">
+<meta property="og:updated_time" content="2019-08-19T02:49:56.797Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Css3.0-动画">
-<meta name="twitter:description" content="Css3 动画transform 形状变换transition 过度动画animation 动画Css 动画性能优化">
+<meta name="twitter:description" content="Css3 动画transform 形状变换 CSS3 转换可以可以对元素进行移动、缩放、转动、拉长或拉伸。   transform 可以实现元素的形状，角度，位置等的变化。 rotate(ndeg) 以 x/y/z 为轴进行选装，默认为 z rotateX(ndeg) rotateY(ndeg) rotateZ(ndeg) rotate3d(x, y, z, angle)   scale(n) 以">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/08/19/mlskMd.gif">
   
   <link rel="alternative" href="/atom.xml" title="PowerDong-分享技术&amp;生活" type="application/atom+xml">
   
@@ -170,9 +176,168 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Css3-动画"><a href="#Css3-动画" class="headerlink" title="Css3 动画"></a>Css3 动画</h2><h3 id="transform-形状变换"><a href="#transform-形状变换" class="headerlink" title="transform 形状变换"></a>transform 形状变换</h3><h3 id="transition-过度动画"><a href="#transition-过度动画" class="headerlink" title="transition 过度动画"></a>transition 过度动画</h3><h3 id="animation-动画"><a href="#animation-动画" class="headerlink" title="animation 动画"></a>animation 动画</h3><h3 id="Css-动画性能优化"><a href="#Css-动画性能优化" class="headerlink" title="Css 动画性能优化"></a>Css 动画性能优化</h3><a id="more"></a>
+        <h2 id="Css3-动画"><a href="#Css3-动画" class="headerlink" title="Css3 动画"></a>Css3 动画</h2><h3 id="transform-形状变换"><a href="#transform-形状变换" class="headerlink" title="transform 形状变换"></a>transform 形状变换</h3><blockquote>
+<p>CSS3 转换可以可以对元素进行移动、缩放、转动、拉长或拉伸。</p>
+</blockquote>
+<ul>
+<li><code>transform</code> 可以实现元素的形状，角度，位置等的变化。<ul>
+<li><code>rotate(ndeg)</code> 以 x/y/z 为轴进行选装，默认为 z<ul>
+<li><code>rotateX(ndeg)</code></li>
+<li><code>rotateY(ndeg)</code></li>
+<li><code>rotateZ(ndeg)</code></li>
+<li><code>rotate3d(x, y, z, angle)</code></li>
+</ul>
+</li>
+<li><code>scale(n)</code> 以 x/y 为轴进行缩放<ul>
+<li><code>scale(x, y)</code> 接受两个值，如果第二个参数未提供，则第二个参数使用第一个参数的值</li>
+<li><code>scaleX(n)</code>, <code>scaleY(n)</code> 值是数字表示倍数，不加任何单位</li>
+<li><code>scaleZ(n)</code></li>
+<li><code>scale3d(x, y, z)</code></li>
+</ul>
+</li>
+<li><code>skew(ndeg)</code> 对元素进行倾斜扭曲<ul>
+<li><code>skew(x, y)</code> 接受两个值，第一个参数对应 X 轴，第二个参数对应 Y 轴。如果第二个参数未提供，则默认值是 0</li>
+<li><code>skewX()</code>, <code>skewY()</code></li>
+</ul>
+</li>
+<li><code>translate()</code> 可以移动的距离，相对于自身位置<ul>
+<li><code>translate(x,[y])</code></li>
+<li><code>translateX()</code></li>
+<li><code>translateY()</code></li>
+<li><code>translateZ()</code></li>
+<li><code>translate3d(x, y, z)</code></li>
+</ul>
+</li>
+<li><code>transform-origin</code> 变换原点<ul>
+<li>任何一个元素都有一个中心点，默认情况下，其中心点是居于元素 X 轴和 Y 轴的 50% 处。</li>
+<li>值用百分比或关键字(top center)表示</li>
+</ul>
+</li>
+<li><code>transform-style</code>: 指定嵌套元素是怎样在三维空间中呈现<ul>
+<li>flat 2D 平面呈现</li>
+<li>preserve-3d 3D 空间中呈现</li>
+<li><strong>使用此属性必须先使用 <code>transform</code> 属性</strong></li>
+<li><strong>需要设置在父元素中，高于任何嵌套的变形元素</strong></li>
+<li><strong>设置了 <code>transform-style: preserve-3d</code> 的元素，就不能防止子元素溢出设置 <code>overflow: hidden</code>；否则会导致 preserve-3d 失效</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
 
-<hr>
+<h4 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">100px</span> auto;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#f40</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate</span>(-37deg);</span><br><span class="line">  <span class="comment">/* transform: skew(7deg); */</span></span><br><span class="line">  <span class="comment">/* transform: scale(1.5); */</span></span><br><span class="line">  <span class="comment">/* transform: translate(-32px); */</span></span><br><span class="line">  <span class="comment">/* transform-origin: bottom; */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.ax1x.com/2019/08/19/mlskMd.gif" alt="mlskMd.gif"></p>
+<h3 id="transition-过渡"><a href="#transition-过渡" class="headerlink" title="transition 过渡"></a>transition 过渡</h3><blockquote>
+<p>CSS3 中，我们为了添加某种效果可以从一种样式转变到另一个的时候，无需使用 Flash 动画或 JavaScript。</p>
+</blockquote>
+<p><code>transition</code> 属性是 Css3 的一个复合属性，主要包括以下几个子属性</p>
+<ul>
+<li><code>transition-property</code>: 指定过渡或动态模拟的 Css 属性，默认为 all</li>
+<li><code>transition-duration</code> : 指定过渡所需要的时间</li>
+<li><code>transition-timing-function</code> : 指定过渡函数</li>
+<li><code>transition-delay</code> : 指定开始出现的延迟时间</li>
+</ul>
+<p><strong><code>transition</code> 过度动画可以参与的过度的属性</strong><br><img src="https://s2.ax1x.com/2019/08/19/mlc8Ld.png" alt="mlc8Ld.png"><br><strong><code>transition</code> 过渡函数可以选择的值</strong><br><img src="https://s2.ax1x.com/2019/08/19/mlctot.png" alt="mlctot.png"></p>
+<h4 id="代码示例-1"><a href="#代码示例-1" class="headerlink" title="代码示例"></a>代码示例</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">101px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10px</span> auto;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#f40</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translateX</span>(100px);</span><br><span class="line">  <span class="attribute">transition</span>: transform <span class="number">1s</span> <span class="number">1s</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.ax1x.com/2019/08/19/ml2Fb9.gif" alt="ml2Fb9.gif"></p>
+<h3 id="animation-动画"><a href="#animation-动画" class="headerlink" title="animation 动画"></a>animation 动画</h3><blockquote>
+<p>CSS3 可以创建动画，它可以取代许多网页动画图像、Flash 动画和 JavaScript 实现的效果。</p>
+</blockquote>
+<ul>
+<li><code>@keyframes</code> name {0% ; 100% ;}<ul>
+<li>创建动画</li>
+<li>指定一个 CSS 样式和动画将逐步从目前的样式更改为新的样式</li>
+</ul>
+</li>
+<li><code>animation</code> 动画，为 Css3 的复合属性，主要包括以下属性<ul>
+<li><code>animation-name</code> 此属性未执行动画的 keyframes 名<ul>
+<li>当在 <code>@keyframes</code> 创建动画，把它绑定到一个选择器，否则动画不会有任何效果。</li>
+</ul>
+</li>
+<li><code>animation-duration</code> 动画执行时间<ul>
+<li>必须定义动画的名称和动画的持续时间。如果省略的持续时间，动画将无法运行，因为默认值是 0。</li>
+</ul>
+</li>
+<li><code>animation-time-function</code> 过渡函数速率(默认是 <code>ease</code>)</li>
+<li><code>animation-delay</code> 动画延迟时间 默认是 0</li>
+<li><code>animation-direction</code>:<ul>
+<li>normal 默认值</li>
+<li>reverse 反向播放</li>
+<li>alternate 动画在奇数次正向播放，在偶数次反向播放</li>
+<li>alternate-reverse 动画在奇数次反向播放，在偶数次正向播放</li>
+</ul>
+</li>
+<li><code>animation-iteration-count</code>: 规定动画播放次数，默认是 1<ul>
+<li>number 一个数字，定义应该播放多少次动画</li>
+<li>infinity 动画无限次播放</li>
+</ul>
+</li>
+<li><code>animation-fill-mode</code>: 当动画不播放时（当动画完成时，或当动画有一个延迟未开始播放时），要应用到元素的样式。<ul>
+<li>none 默认值</li>
+<li>forwards 表示动画在结束后继续应用最后的关键帧的位置</li>
+<li>backwards 会在向元素应用动画样式时迅速应用动画的初始帧（结合延迟 1s 来看）</li>
+<li>both 动画遵循 forwards 和 backwards 的规则。</li>
+</ul>
+</li>
+<li><code>animation-play-state</code>:动画是否正在运行或已暂停。<ul>
+<li>paused 暂停动画</li>
+<li>running 正在运行的动画</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="代码示例-2"><a href="#代码示例-2" class="headerlink" title="代码示例"></a>代码示例</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10px</span> auto;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#f40</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translateX</span>(100px);</span><br><span class="line">  <span class="comment">/* animation: name duration timing-function delay iteration-count direction fill-mode; */</span></span><br><span class="line">  <span class="attribute">animation</span>: transform <span class="number">2s</span> ease-in <span class="number">1s</span> <span class="number">3</span> normal none;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">keyframes</span> transform &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateX</span>(100px);</span><br><span class="line">  &#125;</span><br><span class="line">  100% &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateX</span>(0px);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.ax1x.com/2019/08/19/ml4C7Q.gif" alt="ml4C7Q.gif"></p>
+<h3 id="perspective-景深"><a href="#perspective-景深" class="headerlink" title="perspective 景深"></a>perspective 景深</h3><blockquote>
+<p>perspective 指定了观察者与 z=0 平面的距离，使具有三维位置变换的元素产生透视效果。 z&gt;0 的三维元素比正常大，而 z&lt;0 时则比正常小，大小程度由该属性的值决定。</p>
+</blockquote>
+<p>可以简单的把 <code>perspective</code> 理解成人距离显示器的距离，此值越大的效果越差，越小效果越好。</p>
+<p>假设你距离 100 米和 1 米的距离去看一个边长一米的正方体。</p>
+<p><strong><code>perspective</code> 的值要大于 3d 物体的值</strong></p>
+<ul>
+<li>number 元素距离视图的距离，以像素计</li>
+<li>none 默认值。与 0 相同，不设置透视</li>
+</ul>
+<p>在 3D 变形中，除了 <code>perspective</code> 属性可以激活一个 3D 空间之外，在 3D 变形的函数中的 <code>perspective()</code> 也可以激活 3D 空间。</p>
+<ul>
+<li>它们不同的地方是<ul>
+<li>perspective 用在舞台元素(变形元素们的共同父级)</li>
+<li>perspective() 就是用在当前变形元素上，并且可以与其他的 transform 函数一起使用</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.stage</span> &#123;</span><br><span class="line">  <span class="attribute">perspective</span>: <span class="number">600px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.stage</span> <span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">perspective</span>(600px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意:</strong>当有多个变形元素时，第一种只有一个透视点，第二种每一个变形元素都有一个透视点。</p>
+<p>在元素运动过程中，<code>backface-visibility: visible | hidden</code> 控制能否展示元素的背面</p>
+<p>3d 旋转 —— 我们转的不只是元素本身，元素在转，坐标轴其实也在转</p>
+<blockquote>
+<p>两个相同的元素，其中一个设置了 <code>rotateY(180deg)</code>，然后同时设置 <code>translateZ(100px)</code>；这时，他们在空间的距离是 200px，而不是 0</p>
+</blockquote>
+<h3 id="Css-动画性能优化"><a href="#Css-动画性能优化" class="headerlink" title="Css 动画性能优化"></a>Css 动画性能优化</h3><h4 id="尽可能多的利用硬件能力，如使用-3D-变形来开启-GPU-加速"><a href="#尽可能多的利用硬件能力，如使用-3D-变形来开启-GPU-加速" class="headerlink" title="尽可能多的利用硬件能力，如使用 3D 变形来开启 GPU 加速"></a>尽可能多的利用硬件能力，如使用 3D 变形来开启 <a href="https://baike.baidu.com/item/%E5%9B%BE%E5%BD%A2%E5%A4%84%E7%90%86%E5%99%A8/8694767?fromtitle=gpu&fromid=105524" target="_blank" rel="noopener">GPU</a> 加速</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-webkit-transform: translate3d(0, 0, 0);</span><br><span class="line">-moz-transform: translate3d(0, 0, 0);</span><br><span class="line">-ms-transform: translate3d(0, 0, 0);</span><br><span class="line">transform: translate3d(0, 0, 0);</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong>如果动画过程有闪烁(通常发生在动画开始的时候)，可以尝试</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">-webkit-backface-visibility</span>: <span class="selector-tag">hidden</span>;</span><br><span class="line"><span class="selector-tag">-moz-backface-visibility</span>: <span class="selector-tag">hidden</span>;</span><br><span class="line"><span class="selector-tag">-ms-backface-visibility</span>: <span class="selector-tag">hidden</span>;</span><br><span class="line"><span class="selector-tag">backface-visibility</span>: <span class="selector-tag">hidden</span>;</span><br><span class="line"><span class="selector-tag">-webkit-perspective</span>: 1000;</span><br><span class="line"><span class="selector-tag">-moz-perspective</span>: 1000;</span><br><span class="line"><span class="selector-tag">-ms-perspective</span>: 1000;</span><br><span class="line"><span class="selector-tag">perspective</span>: 1000;</span><br></pre></td></tr></table></figure>
+
+<p>一个元素通过 <code>transform3d</code> 右移 500px 的动画流畅度会明显优于使用 left 属性</p>
+<blockquote>
+<p>3D 变形会消耗更多的内存与功耗，应确实有性能问题时才去使用它，兼在权衡</p>
+</blockquote>
+<h4 id="尽可能少的使用-box-shadows-与-gradients"><a href="#尽可能少的使用-box-shadows-与-gradients" class="headerlink" title="尽可能少的使用 box-shadows 与 gradients"></a>尽可能少的使用 <code>box-shadows</code> 与 <code>gradients</code></h4><p>这两个都是页面性能杀手，能避免尽量避免</p>
+<h4 id="尽可能的让动画元素不在文档流中，以减少重排"><a href="#尽可能的让动画元素不在文档流中，以减少重排" class="headerlink" title="尽可能的让动画元素不在文档流中，以减少重排"></a>尽可能的让动画元素不在文档流中，以减少重排</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">position</span>: <span class="selector-tag">fixed</span>;</span><br><span class="line"><span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="优化-DOM-reflow"><a href="#优化-DOM-reflow" class="headerlink" title="优化 DOM reflow"></a>优化 DOM reflow</h4><hr>
 <blockquote>
 <p>‘摘抄’不是单纯的“粘贴-&gt;复制”，而是眼到，手到，心到的一字一句敲打下来。</p>
 </blockquote>
@@ -308,7 +473,7 @@
   
 <nav id="article-nav">
   
-    <a href="/myBlog/2019/08/19/Css3-0-布局/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/myBlog/2019/08/20/Css3-0-布局/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -346,7 +511,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Css3-动画"><span class="toc-number">1.</span> <span class="toc-text">Css3 动画</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#transform-形状变换"><span class="toc-number">1.1.</span> <span class="toc-text">transform 形状变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#transition-过度动画"><span class="toc-number">1.2.</span> <span class="toc-text">transition 过度动画</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#animation-动画"><span class="toc-number">1.3.</span> <span class="toc-text">animation 动画</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Css-动画性能优化"><span class="toc-number">1.4.</span> <span class="toc-text">Css 动画性能优化</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Css3-动画"><span class="toc-number">1.</span> <span class="toc-text">Css3 动画</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#transform-形状变换"><span class="toc-number">1.1.</span> <span class="toc-text">transform 形状变换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#代码示例"><span class="toc-number">1.1.1.</span> <span class="toc-text">代码示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#transition-过渡"><span class="toc-number">1.2.</span> <span class="toc-text">transition 过渡</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#代码示例-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">代码示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#animation-动画"><span class="toc-number">1.3.</span> <span class="toc-text">animation 动画</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#代码示例-2"><span class="toc-number">1.3.1.</span> <span class="toc-text">代码示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#perspective-景深"><span class="toc-number">1.4.</span> <span class="toc-text">perspective 景深</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Css-动画性能优化"><span class="toc-number">1.5.</span> <span class="toc-text">Css 动画性能优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#尽可能多的利用硬件能力，如使用-3D-变形来开启-GPU-加速"><span class="toc-number">1.5.1.</span> <span class="toc-text">尽可能多的利用硬件能力，如使用 3D 变形来开启 GPU 加速</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#尽可能少的使用-box-shadows-与-gradients"><span class="toc-number">1.5.2.</span> <span class="toc-text">尽可能少的使用 box-shadows 与 gradients</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#尽可能的让动画元素不在文档流中，以减少重排"><span class="toc-number">1.5.3.</span> <span class="toc-text">尽可能的让动画元素不在文档流中，以减少重排</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#优化-DOM-reflow"><span class="toc-number">1.5.4.</span> <span class="toc-text">优化 DOM reflow</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -476,19 +641,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -516,6 +681,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">代码</a>
               </li>
              
@@ -525,10 +694,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">TCP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
             
             <div class="clearfix"></div>
