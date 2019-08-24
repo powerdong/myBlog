@@ -10,7 +10,7 @@
   <title>浏览器渲染原理 | PowerDong-分享技术&amp;生活</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="引入提到页面渲染，最重要的就是关键渲染路径 通常我们在编写页面时，只需要编写 HTML、Css、JavaScript 屏幕上就会显示出漂亮的页面，但浏览器是如何使用我们的代码在屏幕上渲染像素的呢?浏览器将 HTML、Css、JavaScript 转换为屏幕上所呈现的实际像素，这期间所经历的一系列步骤，叫做关键渲染路径(Critical Rendering Path) 浏览器渲染页面的过程从耗时的角">
-<meta name="keywords" content="前端,web,前端面试,面试，面试技巧，技巧">
+<meta name="keywords" content="笔记,渲染">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浏览器渲染原理">
 <meta property="og:url" content="http://yoursite.com/2019/08/22/浏览器渲染原理/index.html">
@@ -18,7 +18,7 @@
 <meta property="og:description" content="引入提到页面渲染，最重要的就是关键渲染路径 通常我们在编写页面时，只需要编写 HTML、Css、JavaScript 屏幕上就会显示出漂亮的页面，但浏览器是如何使用我们的代码在屏幕上渲染像素的呢?浏览器将 HTML、Css、JavaScript 转换为屏幕上所呈现的实际像素，这期间所经历的一系列步骤，叫做关键渲染路径(Critical Rendering Path) 浏览器渲染页面的过程从耗时的角">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/24/mymf3T.png">
-<meta property="og:updated_time" content="2019-08-24T07:27:24.415Z">
+<meta property="og:updated_time" content="2019-08-24T07:39:39.279Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器渲染原理">
 <meta name="twitter:description" content="引入提到页面渲染，最重要的就是关键渲染路径 通常我们在编写页面时，只需要编写 HTML、Css、JavaScript 屏幕上就会显示出漂亮的页面，但浏览器是如何使用我们的代码在屏幕上渲染像素的呢?浏览器将 HTML、Css、JavaScript 转换为屏幕上所呈现的实际像素，这期间所经历的一系列步骤，叫做关键渲染路径(Critical Rendering Path) 浏览器渲染页面的过程从耗时的角">
@@ -222,7 +222,9 @@
 <blockquote>
 <p>script 标签的位置很重要，实际使用时应将资源放在页面底部</p>
 </blockquote>
-<h3 id="defer-和-async"><a href="#defer-和-async" class="headerlink" title="defer 和 async"></a>defer 和 async</h3><p><strong>注意:async 与 defer 属性对于 inline-script 都是无效的</strong></p>
+<h3 id="defer-和-async"><a href="#defer-和-async" class="headerlink" title="defer 和 async"></a>defer 和 async</h3><blockquote>
+<p><strong>注意:async 与 defer 属性对于 inline-script 都是无效的</strong></p>
+</blockquote>
 <h4 id="defer"><a href="#defer" class="headerlink" title="defer"></a>defer</h4><p>defer 属性表示延迟执行引入的 JavaScript，在这段代码加载时 HTML 并未停止解析，这两个过程是并行的。<strong>当整个 DOM 解析完毕且 defer-script 也加载完成后，执行 defer-script 里的 JavaScript 代码。</strong></p>
 <blockquote>
 <p>执行结果放在 HTML 标签解析完成之后</p>
@@ -300,7 +302,33 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">渲染</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -547,7 +575,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -555,7 +587,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
               </li>
              
               <li class="article-tag-list-item">
