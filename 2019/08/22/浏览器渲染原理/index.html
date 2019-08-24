@@ -9,18 +9,20 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>浏览器渲染原理 | PowerDong-分享技术&amp;生活</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="‘摘抄’不是单纯的“粘贴-&amp;gt;复制”，而是眼到，手到，心到的一字一句敲打下来。   博客声明:所有转载的文章、图片仅用于作者本人收藏学习目的，被要求或认为适当时，将标注署名与来源。若不愿某一作品被转用，请及时通知本站，本站将予以及时删除。">
+  <meta name="description" content="引入提到页面渲染，最重要的就是关键渲染路径 通常我们在编写页面时，只需要编写 HTML、Css、JavaScript 屏幕上就会显示出漂亮的页面，但浏览器是如何使用我们的代码在屏幕上渲染像素的呢?浏览器将 HTML、Css、JavaScript 转换为屏幕上所呈现的实际像素，这期间所经历的一系列步骤，叫做关键渲染路径(Critical Rendering Path) 浏览器渲染页面的过程从耗时的角">
 <meta name="keywords" content="前端,web,前端面试,面试，面试技巧，技巧">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浏览器渲染原理">
 <meta property="og:url" content="http://yoursite.com/2019/08/22/浏览器渲染原理/index.html">
 <meta property="og:site_name" content="PowerDong-分享技术&amp;生活">
-<meta property="og:description" content="‘摘抄’不是单纯的“粘贴-&amp;gt;复制”，而是眼到，手到，心到的一字一句敲打下来。   博客声明:所有转载的文章、图片仅用于作者本人收藏学习目的，被要求或认为适当时，将标注署名与来源。若不愿某一作品被转用，请及时通知本站，本站将予以及时删除。">
+<meta property="og:description" content="引入提到页面渲染，最重要的就是关键渲染路径 通常我们在编写页面时，只需要编写 HTML、Css、JavaScript 屏幕上就会显示出漂亮的页面，但浏览器是如何使用我们的代码在屏幕上渲染像素的呢?浏览器将 HTML、Css、JavaScript 转换为屏幕上所呈现的实际像素，这期间所经历的一系列步骤，叫做关键渲染路径(Critical Rendering Path) 浏览器渲染页面的过程从耗时的角">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-20T03:25:02.479Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/24/mymf3T.png">
+<meta property="og:updated_time" content="2019-08-24T07:27:24.415Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器渲染原理">
-<meta name="twitter:description" content="‘摘抄’不是单纯的“粘贴-&amp;gt;复制”，而是眼到，手到，心到的一字一句敲打下来。   博客声明:所有转载的文章、图片仅用于作者本人收藏学习目的，被要求或认为适当时，将标注署名与来源。若不愿某一作品被转用，请及时通知本站，本站将予以及时删除。">
+<meta name="twitter:description" content="引入提到页面渲染，最重要的就是关键渲染路径 通常我们在编写页面时，只需要编写 HTML、Css、JavaScript 屏幕上就会显示出漂亮的页面，但浏览器是如何使用我们的代码在屏幕上渲染像素的呢?浏览器将 HTML、Css、JavaScript 转换为屏幕上所呈现的实际像素，这期间所经历的一系列步骤，叫做关键渲染路径(Critical Rendering Path) 浏览器渲染页面的过程从耗时的角">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/08/24/mymf3T.png">
   
   <link rel="alternative" href="/atom.xml" title="PowerDong-分享技术&amp;生活" type="application/atom+xml">
   
@@ -170,8 +172,88 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
+        <h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p>提到页面渲染，最重要的就是关键渲染路径</p>
+<p>通常我们在编写页面时，只需要编写 HTML、Css、JavaScript 屏幕上就会显示出漂亮的页面，但浏览器是如何使用我们的代码在屏幕上渲染像素的呢?<br>浏览器将 HTML、Css、JavaScript 转换为屏幕上所呈现的实际像素，这期间所经历的一系列步骤，叫做<strong>关键渲染路径(Critical Rendering Path)</strong></p>
+<h2 id="浏览器渲染页面的过程"><a href="#浏览器渲染页面的过程" class="headerlink" title="浏览器渲染页面的过程"></a>浏览器渲染页面的过程</h2><p>从耗时的角度，浏览器请求，加载，渲染一个页面，时间花在下面五项</p>
+<ul>
+<li>DNS 查询</li>
+<li>TCP 连接</li>
+<li>HTTP 请求及响应</li>
+<li>服务器响应</li>
+<li>客户端渲染</li>
+</ul>
+<p>本文讨论第五个部分，即<strong>浏览器对内容的渲染</strong></p>
+<a id="more"></a>
 
+<ol>
+<li>处理 HTML 生成 DOM 树</li>
+<li>处理 Css 生成 CssDOM 树</li>
+<li>将两树合并成 render 树</li>
+<li>对 render 树进行布局计算</li>
+<li>将 render 树中的每个节点绘制到屏幕上</li>
+</ol>
+<blockquote>
+<p>如果 DOM 或 CssDOM 被修改，以上过程需要重复执行，这样才能计算出那些像素在屏幕上进行重新渲染。</p>
+</blockquote>
+<h3 id="细化分析"><a href="#细化分析" class="headerlink" title="细化分析"></a>细化分析</h3><ol>
+<li>浏览器把获取到的 HTML 代码解析成一个 DOM 树，<strong>HTML 中的每个 tag 都是 DOM 树中的 一个节点，根节点就是我们常用的 <code>document</code> 对象</strong>，当然这里包含使用 js 动态创建的 DOM 节点</li>
+<li>浏览器把所有样式(主要包括 Css 和浏览器的默认样式设置)解析成样式结构体，<strong>在解析的过程中会去掉浏览器不能识别的样式</strong>，生成 CssDOM 树</li>
+<li>DOM tree 和 CssDOM tree 合并成 render tree， render tree 中每个 node 都有自己的 style，而且 render tree 不包含隐藏的节点(比如<code>display: none</code>的节点，还有无样式的<code>&lt;head&gt;</code>节点)，因为这些节点不会用于呈现，而且不会影响呈现的。<strong>注意：<code>visibility: hidden</code>隐藏元素还是会包含到 render tree 中，因为<code>visibility: hidden</code>会影响布局(layout),会占有空间</strong></li>
+<li>render tree 构建完毕之后根据样式计算布局，布局阶段的输出结果都称为”盒模型”(box-model)。盒模型精准表达了窗口每个元素的位置和大小，而且所有的相对度量单位都被转换成了屏幕上的绝对像素位置(根据 Css2 的标准，render tree 中的每个节点都称为 box),box 所有属性:width,height,margin,padding,left,border…</li>
+<li>将这些信息渲染为屏幕上每个真实的像素点，这个阶段称为”绘制”，或者”栅格化”。</li>
+</ol>
+<p><img src="https://s2.ax1x.com/2019/08/24/mymf3T.png" alt="mymf3T.png"></p>
+<h3 id="渲染阻塞"><a href="#渲染阻塞" class="headerlink" title="渲染阻塞"></a>渲染阻塞</h3><blockquote>
+<p>现代的浏览器总是并行加载资源。</p>
+</blockquote>
+<p>当 HTML 解析器被脚本阻塞时，解析器虽然会停止构建 DOM，但仍会识别该脚本后面的资源，并进行预加载。</p>
+<ol>
+<li><strong>默认情况下，Css 被视为阻塞渲染的资源，这意味着浏览器将不会渲染任何已处理的内容，直到 CssDOM 构建完毕</strong></li>
+<li>JavaScript 不仅可以读取和修改 DOM 属性，还可以读取和修改 CssDOM 属性</li>
+</ol>
+<blockquote>
+<p>存在阻塞的 Css 资源时，浏览器会延迟 JavaScript 的执行和 DOM 构建</p>
+</blockquote>
+<ol>
+<li><strong>当浏览器遇到一个 script 标记时，DOM 构建将暂停，直至脚本完成执行</strong></li>
+<li>JavaScript 可以查询和修改 DOM 与 CssDOM</li>
+<li><strong>CssDOM 构建时，JavaScript 执行将暂停，直至 CssDOM 就绪</strong></li>
+</ol>
+<blockquote>
+<p>script 标签的位置很重要，实际使用时应将资源放在页面底部</p>
+</blockquote>
+<h3 id="defer-和-async"><a href="#defer-和-async" class="headerlink" title="defer 和 async"></a>defer 和 async</h3><p><strong>注意:async 与 defer 属性对于 inline-script 都是无效的</strong></p>
+<h4 id="defer"><a href="#defer" class="headerlink" title="defer"></a>defer</h4><p>defer 属性表示延迟执行引入的 JavaScript，在这段代码加载时 HTML 并未停止解析，这两个过程是并行的。<strong>当整个 DOM 解析完毕且 defer-script 也加载完成后，执行 defer-script 里的 JavaScript 代码。</strong></p>
+<blockquote>
+<p>执行结果放在 HTML 标签解析完成之后</p>
+</blockquote>
+<h4 id="async"><a href="#async" class="headerlink" title="async"></a>async</h4><p>async 属于异步加载 JavaScript，在这段代码加载时 HTML 并未停止解析，这两个过程是并行的。<strong>当 async-script 加载完成后，会立即执行 async-script 里的 JavaScript 代码。</strong></p>
+<blockquote>
+<p>执行结果可能在 HTML 标签解析完成之前或之后</p>
+</blockquote>
+<h3 id="动态创建标签"><a href="#动态创建标签" class="headerlink" title="动态创建标签"></a>动态创建标签</h3><p>当使用<code>document.createElement(&#39;script&#39;)</code>创建的 script 默认是异步的</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>.createElement(<span class="string">"script"</span>).async); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="重绘重排"><a href="#重绘重排" class="headerlink" title="重绘重排"></a>重绘重排</h2><blockquote>
+<p>重排重绘会影响性能</p>
+</blockquote>
+<ol>
+<li>我们计算它们在当前设备中的准确位置和尺寸。这正是布局阶段要做的工作，该阶段在英语中也被称为 <strong>“回流”(reflow)</strong>,当 render tree 中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等给便需要重新构建。也会回流(其实我觉得叫重新布局简单明了些)。每个页面至少需要一次回流，就是在页面第一次加载的时候。</li>
+<li><strong>重绘(repaints)</strong>当 render tree 中的一些元素需要更新属性，而这些属性只是影响元素的外观，风格，而不会影响布局，比如<code>background-color</code>,则就称为重绘</li>
+</ol>
+<h3 id="触发重排的方法"><a href="#触发重排的方法" class="headerlink" title="触发重排的方法"></a>触发重排的方法</h3><p>以下这些属性和方法需要返回最新的布局信息，重新计算渲染树，就会造成回流，触发重排以返回正确的值。建议将他们合并到一起操作，可以减少回流的次数。这些属性包括：<code>offsetTop</code>、<code>offsetLeft</code>、 <code>offsetWidth</code>、<code>offsetHeight</code>；<code>scrollTop</code>、<code>scrollLeft</code>、<code>scrollWidth</code>、<code>scrollHeight</code>；<code>clientTop</code>、<code>clientLeft</code>、<code>clientWidth</code>、<code>clientHeight</code>；<code>getComputedStyle()</code> 、<code>currentStyle()</code></p>
+<blockquote>
+<p>提高网页性能，就是要降低”重排”和”重绘”的频率和成本，尽量少触发重新渲染。</p>
+</blockquote>
+<p>DOM 变动和样式变动，都会触发重新渲染。但是，浏览器已经很智能了，会尽量把所有的变动集中在一起，排成一个队列，然后一次性执行，尽量避免多次重新渲染.</p>
+<h3 id="优化办法"><a href="#优化办法" class="headerlink" title="优化办法"></a>优化办法</h3><blockquote>
+<p>理论上的优化办法</p>
+</blockquote>
+<ol>
+<li>DOM 的多个读操作，(或多个写操作)，应该放在一起，不要两个读操作之间插入一个写操作</li>
+<li>离线操作 DOM。如使用隐藏元素 <code>document.createDocumentFragment()</code>,<code>cloneNode()</code></li>
+<li>修改样式的时候添加类名，或一次性添加到 <code>dom.style.cssText</code>上等</li>
+</ol>
 <hr>
 <blockquote>
 <p>‘摘抄’不是单纯的“粘贴-&gt;复制”，而是眼到，手到，心到的一字一句敲打下来。</p>
@@ -465,11 +547,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -486,10 +572,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">TCP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
               </li>
             
             <div class="clearfix"></div>
