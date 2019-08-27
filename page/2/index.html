@@ -151,6 +151,137 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-网络-TCP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/07/22/网络-TCP/">网络-TCP</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/07/22/网络-TCP/" class="archive-article-date">
+  	<time datetime="2019-07-22T00:35:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h2><p>浏览器有一个很重要的概念————同源策略</p>
+<blockquote>
+<p><strong>同源策略</strong>限制了从同一个源加载的文档或脚本如何与来自另一个源的资源进行交互。这是一个用于隔离潜在恶意文件的重要安全机制。</p>
+</blockquote>
+<p>同源是指：<strong>域名</strong>、<strong>协议</strong>、<strong>端口</strong>相同。不同源的客户端脚本(<code>js</code>、<code>ActionScript</code>)在没明确授权的情况下，不能读写对方的资源。</p>
+<p><img src="https://s2.ax1x.com/2019/07/22/eCseMQ.png" alt="eCseMQ.png"></p>
+<ul>
+<li><p><code>http</code> 与 <code>https</code> 下的默认端口可省略</p>
+<ul>
+<li><code>http</code> =&gt; 80</li>
+<li><code>https</code> =&gt; 443</li>
+</ul>
+</li>
+</ul>
+<p><strong>域名是倒着解析的</strong></p>
+<ol>
+<li><code>.com</code>顶级域名</li>
+<li><code>baidu.com</code> (一)二级域名</li>
+<li><code>zhidao.baidu.com</code> (二)三级域名</li>
+<li><code>www</code> 二级域名前缀，表示万维网维护的</li>
+<li><code>www.baidu.com</code> 属于特殊的三级域名</li>
+</ol>
+<blockquote>
+<p><code>zhidao.baidu.com</code> 属于百度自己维护的网络地址</p>
+</blockquote>
+<ul>
+<li>com、org、net 属于顶级域名，是在全世界范围内解析的，cn、hk 是在一个地区解析的。<ul>
+<li>cn 中国</li>
+<li>.com (商业机构)</li>
+<li>.net (从事互联网服务的机构)</li>
+<li>.org (非盈利性组织)</li>
+<li>.com.cn (国内商业机构)</li>
+<li>.net.cn (国内互联网机构)</li>
+<li>.org.cn (国内非盈利性组织)</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>如果把 IP 地址比作一间房子，端口就是出入这间房子的门。真正的房子只有几个门，但是一个 IP 地址的端口可以有多个。</p>
+<p>浏览网页服务默认的<a href="https://baike.baidu.com/item/%E7%AB%AF%E5%8F%A3%E5%8F%B7" target="_blank" rel="noopener">端口号</a>都是 80,因此只需输入网址即可，不用输入”:80”</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/myBlog/2019/07/22/网络-TCP/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">网络</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">TCP</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/07/22/网络-TCP/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-页面常用布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1090,124 +1221,9 @@
 
 
   
-    <article id="post-我的第一个vue实例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/07/07/我的第一个vue实例/">我的第一个vue实例</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/07/07/我的第一个vue实例/" class="archive-article-date">
-  	<time datetime="2019-07-07T11:09:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>初出茅庐摸不着头脑</p>
-<p>vue 的入门学习阶段告一段落了，刚刚学完的 vue 还热乎着，趁着这个热乎劲随即找了一个 vueDemo 进行练习。然而没有什么头绪，然后阅读了作者的源码，重新到官网上看了相关的例子和介绍，感觉自己目前立马需要做一个例子来练练手。</p>
-<h2 id="寻找资源"><a href="#寻找资源" class="headerlink" title="寻找资源"></a>寻找资源</h2><blockquote>
-<p>如果你想看实例源代码可以移步<a href="https://github.com/powerdong/vuePractice" target="_blank" rel="noopener">我的第一个Vue实例git仓库</a>   </p>
-</blockquote>
-<p>然后到慕课网找相关的 vue 项目教学，找到了一个基于 <code>Vue2.5 开发的去哪儿网 App</code>，看了项目介绍和评价，感觉适合现阶段的我去练习。</p>
-<p>随机立马跟随老师的节奏，进行重学 vue，认真学习每一节的课程，记录相关的笔记，又重新看了相关的文档，第二次看和第一次看确实有些不同的见解。经过几天的学习，基础入门阶段已经完成，进入课程的第二阶段，就是项目实践阶段。</p>
-<h2 id="着手实践"><a href="#着手实践" class="headerlink" title="着手实践"></a>着手实践</h2><p>首先进行项目环境搭建，这里采用 vue 官方提供的 <code>vue-cli</code> 这个脚手架工具，用的默认 <code>webpack</code> 打包工具，初始化了本地项目。</p>
-<blockquote>
-<p>如果没有安装 <code>node</code> 的话需要到 <code>node</code> 官方下载安装。</p>
-</blockquote>
-<p>成功安装完 node 后，执行下面命令进行全局安装这个包</p>
-<blockquote>
-<p><code>npm install -g vue</code></p>
-</blockquote>
-<p>安装之后，你就可以在命令行中访问 <code>vue</code> 命令。你可以通过简单运行 <code>vue</code>，看看是否展示出了一份所有可用命令的帮助信息，来验证它是否安装成功。</p>
-<blockquote>
-<p><code>vue -V</code> 可以查看当前 vue 版本号</p>
-</blockquote>
-<p>打开你创建的项目文件夹，在命令行输入(意思是使用 webpack 打包工具初始化’demo’这个项目包)</p>
-<blockquote>
-<p><code>vue init webpack demo</code></p>
-</blockquote>
-<p>初始化完成后我们就可以在 src 目录下进行编写相关的代码</p>
-<p>之后建议先在 git 上面创建远程仓库，进行远程与本地连接，用来版本控制，也可以较安全的编辑代码，防止因为出错还可以使用 git 的回流功能返回之前的代码。</p>
-        
-          <a class="article-more-a" href="/myBlog/2019/07/07/我的第一个vue实例/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/07/07/我的第一个vue实例/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/myBlog/">&laquo; Prev</a><a class="page-number" href="/myBlog/">1</a><span class="page-number current">2</span><a class="page-number" href="/myBlog/page/3/">3</a><a class="extend next" rel="next" href="/myBlog/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/myBlog/">&laquo; Prev</a><a class="page-number" href="/myBlog/">1</a><span class="page-number current">2</span><a class="page-number" href="/myBlog/page/3/">3</a><a class="page-number" href="/myBlog/page/4/">4</a><a class="extend next" rel="next" href="/myBlog/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -1326,10 +1342,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
@@ -1347,6 +1359,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">代码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -7,20 +7,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>HTML相关 | PowerDong-分享技术&amp;生活</title>
+  <title>HTML5-Canvas | PowerDong-分享技术&amp;生活</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="从规范的角度理解HTML,从分类和语义的角度使用标签HTML语义化是什么?语义化是指根据内容的结构化(内容语义化),选择合适的标签(代码语义化),便于开发者阅读和写出更优雅的代码的同时,让浏览器的爬虫和机器很好地解析。 为什么要语义化?  有利于SEO(搜索引擎优化(Search Engine Optimization)),有助于爬虫爬取更多有效的信息,爬虫是依赖于标签来确定上下文和各个关键字的权">
+  <meta name="description" content="简介Canvas 是 HTML5 新增的一个标签属性，一个可以使用脚本在其中绘制图像的 HTML 元素。它可以用来制作照片或者制作简单的动画，甚至可以进行实时的视频处理和渲染。Canvas 是由 HTML 代码配合高度和宽度属性而定义出的可绘制区域。JavaScript 代码可以访问该区域，类似于其他通用的 API，通过一套完整的绘图函数来动态生成图形。 应用场景 游戏 图表 动画 HTML5 动">
 <meta name="keywords" content="笔记,HTML">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTML相关">
-<meta property="og:url" content="http://yoursite.com/2019/07/16/HTML相关/index.html">
+<meta property="og:title" content="HTML5-Canvas">
+<meta property="og:url" content="http://yoursite.com/2019/08/27/HTML5-Canvas/index.html">
 <meta property="og:site_name" content="PowerDong-分享技术&amp;生活">
-<meta property="og:description" content="从规范的角度理解HTML,从分类和语义的角度使用标签HTML语义化是什么?语义化是指根据内容的结构化(内容语义化),选择合适的标签(代码语义化),便于开发者阅读和写出更优雅的代码的同时,让浏览器的爬虫和机器很好地解析。 为什么要语义化?  有利于SEO(搜索引擎优化(Search Engine Optimization)),有助于爬虫爬取更多有效的信息,爬虫是依赖于标签来确定上下文和各个关键字的权">
+<meta property="og:description" content="简介Canvas 是 HTML5 新增的一个标签属性，一个可以使用脚本在其中绘制图像的 HTML 元素。它可以用来制作照片或者制作简单的动画，甚至可以进行实时的视频处理和渲染。Canvas 是由 HTML 代码配合高度和宽度属性而定义出的可绘制区域。JavaScript 代码可以访问该区域，类似于其他通用的 API，通过一套完整的绘图函数来动态生成图形。 应用场景 游戏 图表 动画 HTML5 动">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-16T00:30:54.842Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/27/mhxZM4.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/27/mhzstx.gif">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/27/m4pJQU.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/27/m4PJQf.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/27/m4mVSJ.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/27/m4ng8e.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/27/m4KZlQ.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/27/m411b9.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/27/m48o90.png">
+<meta property="og:updated_time" content="2019-08-27T02:42:10.727Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HTML相关">
-<meta name="twitter:description" content="从规范的角度理解HTML,从分类和语义的角度使用标签HTML语义化是什么?语义化是指根据内容的结构化(内容语义化),选择合适的标签(代码语义化),便于开发者阅读和写出更优雅的代码的同时,让浏览器的爬虫和机器很好地解析。 为什么要语义化?  有利于SEO(搜索引擎优化(Search Engine Optimization)),有助于爬虫爬取更多有效的信息,爬虫是依赖于标签来确定上下文和各个关键字的权">
+<meta name="twitter:title" content="HTML5-Canvas">
+<meta name="twitter:description" content="简介Canvas 是 HTML5 新增的一个标签属性，一个可以使用脚本在其中绘制图像的 HTML 元素。它可以用来制作照片或者制作简单的动画，甚至可以进行实时的视频处理和渲染。Canvas 是由 HTML 代码配合高度和宽度属性而定义出的可绘制区域。JavaScript 代码可以访问该区域，类似于其他通用的 API，通过一套完整的绘图函数来动态生成图形。 应用场景 游戏 图表 动画 HTML5 动">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/08/27/mhxZM4.png">
   
   <link rel="alternative" href="/atom.xml" title="PowerDong-分享技术&amp;生活" type="application/atom+xml">
   
@@ -150,200 +160,147 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-HTML相关" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-HTML5-Canvas" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      HTML相关
+      HTML5-Canvas
     </h1>
   
 
         
-        <a href="/myBlog/2019/07/16/HTML相关/" class="archive-article-date">
-  	<time datetime="2019-07-16T00:26:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-16</time>
+        <a href="/myBlog/2019/08/27/HTML5-Canvas/" class="archive-article-date">
+  	<time datetime="2019-08-27T00:11:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="从规范的角度理解HTML-从分类和语义的角度使用标签"><a href="#从规范的角度理解HTML-从分类和语义的角度使用标签" class="headerlink" title="从规范的角度理解HTML,从分类和语义的角度使用标签"></a>从规范的角度理解HTML,从分类和语义的角度使用标签</h2><h3 id="HTML语义化是什么"><a href="#HTML语义化是什么" class="headerlink" title="HTML语义化是什么?"></a>HTML语义化是什么?</h3><p>语义化是指根据内容的结构化(内容语义化),选择合适的标签(代码语义化),便于开发者阅读和写出更优雅的代码的同时,让浏览器的爬虫和机器很好地解析。</p>
-<h3 id="为什么要语义化"><a href="#为什么要语义化" class="headerlink" title="为什么要语义化?"></a>为什么要语义化?</h3><blockquote>
-<ul>
-<li>有利于SEO(搜索引擎优化(Search Engine Optimization)),有助于爬虫爬取更多有效的信息,爬虫是依赖于标签来确定上下文和各个关键字的权重</li>
-<li>语义化的HTML在没有CSS的情况下也能呈现较好的内容结构和代码结构</li>
-<li>方便其他设备的解析</li>
-<li>便于团队开发和维护</li>
-</ul>
-</blockquote>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Canvas 是 HTML5 新增的一个标签属性，一个可以使用脚本在其中绘制图像的 HTML 元素。它可以用来制作照片或者制作简单的动画，甚至可以进行实时的视频处理和渲染。Canvas 是由 HTML 代码配合高度和宽度属性而定义出的可绘制区域。JavaScript 代码可以访问该区域，类似于其他通用的 API，通过一套完整的绘图函数来动态生成图形。</p>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><ol>
+<li>游戏</li>
+<li>图表</li>
+<li>动画</li>
+<li>HTML5 动效(codepen.io)</li>
+</ol>
 <a id="more"></a>
 
-<h3 id="易混淆的HTML标签"><a href="#易混淆的HTML标签" class="headerlink" title="易混淆的HTML标签"></a>易混淆的HTML标签</h3><ul>
-<li>i标签</li>
+<h2 id="如何使用-Canvas"><a href="#如何使用-Canvas" class="headerlink" title="如何使用 Canvas"></a>如何使用 Canvas</h2><ul>
+<li>添加 <code>canvas</code> 标签</li>
 </ul>
-<p><i>i标签效果</i>,i标签通常表示因为某种原因和正常文本不同的文本,例如专业术语,外语短语或排版用的文字。通常表现为斜体。</p>
-<ul>
-<li>em标签</li>
-</ul>
-<p><em>em标签效果</em>,em表示强调的文本,视觉上也是斜体效果。</p>
-<ul>
-<li>strong标签</li>
-</ul>
-<p><strong>strong效果</strong>,以加粗的形式展现。表示这个文本的重要性,在HTMl4中表示特别强调,HTML5中描述为“strong importance for its contents”。</p>
-<ul>
-<li>b标签</li>
-</ul>
-<p><b>b标签效果</b>,表示的风格不同于正常的文本,没有表达任何特殊的重要性和相关性。通常用于关键回顾,回顾中的产品名称,或者是其他需要表现为粗体的文本。另一个例子就是标志每个段落的lead sentence。</p>
-<ul>
-<li>mark标签</li>
-</ul>
-<p><mark>mark标签效果</mark>,表现为高亮文本。例如我们在网页查找关键字时,找到的结果就会以高亮的形式展现。<br>mark元素通常是表现跨越不同的上下文种的相关文本。</p>
-<h3 id="HTML5新标签"><a href="#HTML5新标签" class="headerlink" title="HTML5新标签"></a>HTML5新标签</h3><ul>
-<li>section</li>
-</ul>
-<section>section标签效果</section>,表示文档中的一个区域(或节),比如,内容中的一个专辑组,一般来说会有包含一个标题(heading)。一般通过是否包含一个标签(h1-h6)作为子节点来辨识每一个section 。一般来说,一个section 应该出现在文档大纲中。
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"myCanvas"</span> <span class="attr">width</span>=<span class="string">"500"</span> <span class="attr">height</span>=<span class="string">"500"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>article</li>
+<li>获得 <code>canvas</code> 元素</li>
 </ul>
-<article>article标签效果</article>,article元素表示文档、页面、应用或网站中的独立结构,其意在成为可独立分配的或可复用的结构,如在发布中,他可能是论坛帖子、杂志新闻、博客、用户提交的评论、交互式组件、或者其他独立的内容项目。
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"myCanvas"</span>);</span><br></pre></td></tr></table></figure>
 
-<p><a href="http://www.html5jscss.com/html5-semantics-section.html" target="_blank" rel="noopener">HTML5新增了哪些语义标签</a>;</p>
-<h3 id="写HTML代码时应注意什么"><a href="#写HTML代码时应注意什么" class="headerlink" title="写HTML代码时应注意什么?"></a>写HTML代码时应注意什么?</h3><ul>
-<li>尽可能少的使用无语义的标签div和span</li>
-<li>在语义不明显时既可以使用div或者p时,尽量使用p,因为p在默认情况下有上下间距,对兼容特殊终端有利</li>
-<li>不要使用纯样式标签,如：b,font,u等,改用css设置</li>
-<li>需要强调的文本,可以包含在strong或者em标签中(浏览器预设样式,能用css指定就不用他们),strong默认样式是加粗(不要用b),em是斜体(不用i)</li>
-<li>使用表格时,标题要用caption,表头用thead,主体部分用tbody包围,尾部用tfoot包围。表头和一般单元格要区分开,表头用th,单元格用td</li>
-<li>表单域要用fieldset标签包起来,并用legend标签说明表单的用途</li>
-<li>每个input标签对应的说明文本都需要使用label标签,并且通过input标签设置id属性,在label标签中设置for来让说明文本和相对应的input关联起来。</li>
-</ul>
-<h2 id="常用页面标签的默认样式、自带属性、不同浏览器的差异、处理浏览器兼容问题的方式"><a href="#常用页面标签的默认样式、自带属性、不同浏览器的差异、处理浏览器兼容问题的方式" class="headerlink" title="常用页面标签的默认样式、自带属性、不同浏览器的差异、处理浏览器兼容问题的方式"></a>常用页面标签的默认样式、自带属性、不同浏览器的差异、处理浏览器兼容问题的方式</h2><ul>
-<li><code>li</code>：默认以列表显示</li>
-<li><code>head</code>：默认不显示</li>
-<li><code>table</code>：默认为表格显示</li>
-<li><code>tr</code>：默认为表格行显示</li>
-<li><code>thead</code>：默认为表格头部分组显示</li>
-<li><code>tbody</code>：默认为表格行分组显示</li>
-<li><code>tfoot</code>：默认为表格底部分组显示</li>
-<li><code>col</code>：默认为表格列显示</li>
-<li><code>colgroup</code>：默认为表格列分组显示</li>
-<li><code>td,th</code>：默认为单元格显示</li>
-<li><code>caption</code>：默认为表格标题显示,呈现居中状态</li>
-<li><code>th</code>：默认为表格标题显示,呈现加粗居中状态</li>
-<li><code>body</code>：默认8px的外边距,行高默认1.12</li>
-<li><code>h1</code>：默认字体大小2em,上下外边距0.67em</li>
-<li><code>h2</code>：默认字体大小1.5em,上下外边距0.75em</li>
-<li><code>h3</code>：默认字体大小为1.17em,上下外边距0.83em</li>
-<li><code>h4</code>, <code>p</code>,<code>blockquote</code>, <code>ul</code>, <code>fieldset</code>, <code>form</code>, <code>ol</code>, <code>dl</code>, <code>dir</code>, <code>menu</code>：默认上下外边距1.12em</li>
-<li><code>h5</code>：默认字体大小为0.83em,上下外边距1.5em</li>
-<li><code>h6</code>：默认字体大小为0.75em,上下外边距1.67em</li>
-<li><code>h1</code>, <code>h2</code>,<code>h3</code>, <code>h4</code>, <code>h5</code>, <code>h6</code>, <code>b</code>,<code>strong</code>：默认字体加粗效果</li>
-<li><code>blockquote</code> ：默认左右边距40px</li>
-<li><code>i</code>, <code>cite</code>,<code>em</code>,<code>var</code>, <code>address</code>：默认字体类型为italic</li>
-<li><code>pre</code>, <code>tt</code>,<code>code</code>, <code>kbd</code>, <code>samp</code>:默认字体为monospace</li>
-<li><code>pre</code>：默认支持显示空格 {white-space: pre }</li>
-<li><code>button</code>,<code>textarea</code>, <code>input</code>, <code>object</code>, <code>select</code>：行级块元素</li>
-<li><code>big</code>：默认字体大小为1.17em</li>
-<li><code>small</code>,<code>sub</code>, <code>sup</code>：默认字体大小为0.83em</li>
-<li><code>sub</code>：定义sub元素默认为下标显示</li>
-<li><code>sup</code>：定义sup元素默认为上标显示</li>
-<li><code>table</code>:设置相邻的表格单元格的边界之间的距离2px</li>
-<li><code>thead</code>,<code>tbody</code>, <code>tfoot</code>：定义表头、主体表、表脚元素默认为垂直对齐</li>
-<li><code>td</code>, <code>th</code>：定义单元格、列标题默认为垂直对齐默认为继承</li>
-<li><code>s</code>, <code>strike</code>,<code>del</code>：定义这些元素默认为删除线显示</li>
-<li><code>hr</code>：定义分割线默认为1px宽的3D凹边效果</li>
-<li><code>ol</code>, <code>ul</code>,<code>dir</code>, <code>menu</code>, <code>dd</code>：默认左外边距为40px</li>
-<li><code>ol</code>：默认以数字排序</li>
-<li><code>u</code>, <code>ins</code>：默认带下划线</li>
-</ul>
-<h3 id="浏览器默认样式"><a href="#浏览器默认样式" class="headerlink" title="浏览器默认样式"></a>浏览器默认样式</h3><p><a href="http://developer.doyoe.com/default-style/" target="_blank" rel="noopener">浏览器默认样式对照表</a></p>
-<h2 id="元信息类标签-head、title、meta-的使用目的和配置方法"><a href="#元信息类标签-head、title、meta-的使用目的和配置方法" class="headerlink" title="元信息类标签(head、title、meta)的使用目的和配置方法"></a>元信息类标签(head、title、meta)的使用目的和配置方法</h2><h3 id="Head中的全局属性"><a href="#Head中的全局属性" class="headerlink" title="Head中的全局属性"></a>Head中的全局属性</h3><h4 id="base"><a href="#base" class="headerlink" title="base"></a>base</h4><p>base标签指定了一个url地址作为基准,那么当前文档中的所有超链接都遵循这一规则,在a中设置访问目标的相对地址,浏览器会自动解析出一个完成的链接地址,若a中的href为空,浏览器也会根据base所给的url进行访问。<br><strong>注意:</strong>base标签需放在包含url地址的语句前面。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">base</span> <span class="attr">href</span>=<span class="string">"https://www.baidu.com/"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="link"><a href="#link" class="headerlink" title="link"></a>link</h4><p>link标签:用于引入外部文档,常用到引用css样式或icon图标<br>其中:rel属性是link标签的核心<br>注意:在HTML中,<code>&lt;link&gt;</code>标签没有结束标签<br>在XHTML中,<code>&lt;link&gt;</code>标签必须被正确的关闭</p>
-<p><strong>charset属性规定被链接文档的字符编码方式</strong><br><strong>href属性规定被链接文档的位置(URL)</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"index.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>media属性规定被链接文档将显示在什么设备上</strong></p>
-<p>media属性有:</p>
 <ul>
-<li>screen <ul>
-<li>计算机屏幕(默认)</li>
+<li>获得 <code>canvas</code> 上下文对象</li>
 </ul>
-</li>
-<li>tty<ul>
-<li>电传打字机以及类似的使用等宽字符网格的媒介。</li>
-</ul>
-</li>
-<li>tv<ul>
-<li>电视机类型设备（低分辨率、有限的滚屏能力）。</li>
-</ul>
-</li>
-<li>projection<ul>
-<li>放映机</li>
-</ul>
-</li>
-<li>handheld<ul>
-<li>手持设备(小屏幕、有限带宽)</li>
-</ul>
-</li>
-<li>print<ul>
-<li>打印预览模式/打印页面</li>
-</ul>
-</li>
-<li>braille<ul>
-<li>盲人点字法反馈设备</li>
-</ul>
-</li>
-<li>aural<ul>
-<li>语音合成器</li>
-</ul>
-</li>
-<li>all<ul>
-<li>适用于所有设备</li>
-</ul>
-</li>
-</ul>
-<p><strong>rel 属性规定当前文档与被链接文档之间的关系</strong></p>
-<p>只有rel属性的”stylesheet”值得到了所有浏览器的支持。其他值只得到了部分地支持</p>
-<h4 id="title"><a href="#title" class="headerlink" title="title"></a>title</h4><p>浏览器会议特殊的方式来使用标题,当把文档加入链接列表或收藏夹时,文档标题将成为该链接的默认名称<br><code>&lt;title&gt;</code>标签是<code>&lt;head&gt;</code>标签中唯一要求包含的东西。</p>
-<p><strong>1. dir</strong><br>属性为rtl和ltr规定元素中内容的文本方向-正向和反向<br><strong>2. lang</strong><br>规定元素中内容的语言代码<br><strong>3. xml:lang</strong><br>规定XHTML文档中元素内容的语言代码</p>
-<h3 id="meta"><a href="#meta" class="headerlink" title="meta"></a>meta</h3><p>主要用于描述网页,与之对应的属性值为content,content中的内容主要是便于搜索引擎机器人查找信息和分类信息用的</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"参数"</span> <span class="attr">content</span>=<span class="string">"具体的参数值"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ctx = canvas.getContext(<span class="string">"2d"</span>);</span><br><span class="line"><span class="comment">// 有两个参数getContext()可以采取。一个是渲染2D元素的标准2d上下文。另一种使用的webGL技术仍处于起步阶段。因此，大多数情况下，您可以在任何地方找到第二个画布的上下文（截至目前）</span></span><br></pre></td></tr></table></figure>
 
-<ol>
-<li>keywords 关键字</li>
-<li>description 网站内容描述</li>
-<li>robots 机器人向导(content的参数值有all,none,index,noindex,follow,nofollow)</li>
-<li>author 作者</li>
-<li>renderer 渲染模式</li>
-<li>viewport(视图模式)【对手机端而言很重要可把content=”width-device=width”,则宽度为使用手机的宽度】</li>
-<li>http-equiv属性【http-equiv顾名思义,相当于http的文件头作用,它可以向浏览器传回一些有用的信息,以帮助正确和精确地显示网页内容,与之对应的属性值为content,content中的内容其实就是各个参数的变量值。】</li>
+<h3 id="两个对象"><a href="#两个对象" class="headerlink" title="两个对象"></a>两个对象</h3><ol>
+<li>元素对象(canvas 元素)和上下文对象(通过<code>getContext(&#39;2d)</code>方法获取到的 <code>CanvasRenderingContext2D</code> 对象)</li>
+<li>元素对象相对于我们的画布，上下文对象相当于画笔，我们接下来的所有操作是基于上下文对象的。</li>
 </ol>
-<h2 id="HTML5离线缓存原理"><a href="#HTML5离线缓存原理" class="headerlink" title="HTML5离线缓存原理"></a>HTML5离线缓存原理</h2><h3 id="什么是离线缓存"><a href="#什么是离线缓存" class="headerlink" title="什么是离线缓存?"></a>什么是离线缓存?</h3><p>HTML5引入离线缓存(Application Cache),这意味着web应用可进行缓存,并可在没有因特网连接时进行访问。</p>
-<h3 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h3><ul>
-<li>离线浏览<ul>
-<li>用户可在应用离线时使用他们</li>
-</ul>
-</li>
-<li>速度<ul>
-<li>已缓存资源加载得更快</li>
-</ul>
-</li>
-<li>减少服务器负载<ul>
-<li>浏览器将只从服务器下载更新过或更改过的资源</li>
+<h3 id="线段"><a href="#线段" class="headerlink" title="线段"></a>线段</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ctx.moveTo(x, y); <span class="comment">// 移动到x, y坐标点</span></span><br><span class="line">ctx.lineTO(x, y); <span class="comment">// 从当前点绘制直线到x, y点</span></span><br><span class="line">ctx.stroke(); <span class="comment">// 描边</span></span><br><span class="line">ctx.lineWidth() = <span class="number">20</span>; <span class="comment">// 设置线段宽度</span></span><br><span class="line">ctx.closePath(); <span class="comment">// 闭合当前路径 和 回到起始点是有区别的</span></span><br><span class="line">ctx.fill(); <span class="comment">// 填充</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>注意:</strong><ul>
+<li><code>fill</code> 和 <code>stroke</code>方法都是作用在当前的所有子路径</li>
+<li>完成一条路径后要重新开始另一条路径时必须使用 <code>beginPath()</code> 方法，beginPath 开始子路径的一个新的集合</li>
 </ul>
 </li>
 </ul>
-<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>h5游戏及一些页面内容不经常会变动,相对较为固定的内容</p>
-<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>HTML5的离线存储是基于一个manifest文件(缓存清单文件,后缀为.appcache)的缓存机制(不是存储技术),通过这个文件上的清单解析离线存储资源,这些资源就会像cookie一样被存储了下来。之后当网络在处于离线状态时,浏览器会通过被离线存储的数据进行页面展示。</p>
-<h3 id="与传统浏览器缓存区别"><a href="#与传统浏览器缓存区别" class="headerlink" title="与传统浏览器缓存区别"></a>与传统浏览器缓存区别</h3><p>离线缓存是针对整个应用,浏览器缓存是单个文件。<br>离线缓存断网了还是可以打开页面,浏览器缓存不行。<br>离线缓存可以主动通知浏览器更新资源。</p>
-<h2 id="可以使用Canvas-API、SVG等绘制高性能的动画"><a href="#可以使用Canvas-API、SVG等绘制高性能的动画" class="headerlink" title="可以使用Canvas API、SVG等绘制高性能的动画"></a>可以使用Canvas API、SVG等绘制高性能的动画</h2><p><a href="http://taobaofed.org/blog/2016/02/22/canvas-performance/" target="_blank" rel="noopener">Canvas 最佳实践（性能篇）</a></p>
-<p><a href="http://svgtrick.com/tricks/36a0ec0ceae53384be137cbd099f3004" target="_blank" rel="noopener">高性能 SVG 优化清单</a></p>
+<h4 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"myCanvas"</span> <span class="attr">width</span>=<span class="string">"500"</span> <span class="attr">height</span>=<span class="string">"500"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"myCanvas"</span>);</span><br><span class="line"><span class="keyword">const</span> ctx = canvas.getContext(<span class="string">"2d"</span>);</span><br><span class="line">ctx.lineWidth = <span class="number">20</span>;</span><br><span class="line">ctx.moveTo(<span class="number">100</span>, <span class="number">50</span>);</span><br><span class="line">ctx.lineTo(<span class="number">100</span>, <span class="number">100</span>);</span><br><span class="line">ctx.lineTo(<span class="number">50</span>, <span class="number">100</span>);</span><br><span class="line">ctx.closePath();</span><br><span class="line">ctx.strokeStyle = <span class="string">"red"</span>;</span><br><span class="line">ctx.stroke();</span><br><span class="line">ctx.moveTo(<span class="number">200</span>, <span class="number">200</span>);</span><br><span class="line">ctx.strokeStyle = <span class="string">"#000"</span>;</span><br><span class="line">ctx.stroke();</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.ax1x.com/2019/08/27/mhxZM4.png" alt="mhxZM4.png"></p>
+<h3 id="矩形"><a href="#矩形" class="headerlink" title="矩形"></a>矩形</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 绘制矩形路径 左上角坐标为(x, y)，宽 高为dx dy。</span></span><br><span class="line">ctx.rect(x, y, dx, dy);</span><br><span class="line"><span class="comment">// 填充向一个矩形区域填充颜色。 左上角坐标为(x, y)，宽 高为dx dy。</span></span><br><span class="line">ctx.fillRect(x, y, dx, dy);</span><br><span class="line"><span class="comment">// 绘制一个矩形区域的边框。 左上角坐标为(x, y)，宽 高为w h。</span></span><br><span class="line">ctx.strokeRect(x, y, w, h);</span><br><span class="line"><span class="comment">// 擦除指定矩形区域的像素颜色，等同于把早先的绘制效果都去除。</span></span><br><span class="line">ctx.clearRect(x, y, dx, dy);</span><br></pre></td></tr></table></figure>
+
+<h4 id="代码示例-1"><a href="#代码示例-1" class="headerlink" title="代码示例"></a>代码示例</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"myCanvas"</span> <span class="attr">width</span>=<span class="string">"500"</span> <span class="attr">height</span>=<span class="string">"500"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"myCanvas"</span>);</span><br><span class="line"><span class="keyword">const</span> ctx = canvas.getContext(<span class="string">"2d"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> y = <span class="number">100</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">draw</span>(<span class="params">y</span>) </span>&#123;</span><br><span class="line">  ctx.fillRect(<span class="number">100</span>, y, <span class="number">20</span>, <span class="number">20</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> timer = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  ctx.clearRect(<span class="number">0</span>, <span class="number">0</span>, <span class="number">500</span>, <span class="number">500</span>);</span><br><span class="line">  draw(y);</span><br><span class="line">  y += <span class="number">10</span>;</span><br><span class="line">  <span class="keyword">if</span> (y &gt; <span class="number">480</span>) &#123;</span><br><span class="line">    clearInterval(timer);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;, <span class="number">50</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.ax1x.com/2019/08/27/mhzstx.gif" alt="mhzstx.gif"></p>
+<h3 id="弧形"><a href="#弧形" class="headerlink" title="弧形"></a>弧形</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arc(x, y, r, 起始弧度, 结束弧度, 弧形的方向); <span class="comment">// 弧形方向为 true 逆时针， false 顺时针</span></span><br><span class="line"><span class="comment">// 角以弧度计</span></span><br><span class="line"><span class="built_in">Math</span>.PI / <span class="number">180</span> * angle ==&gt; 弧度</span><br></pre></td></tr></table></figure>
+
+<h4 id="代码示例-2"><a href="#代码示例-2" class="headerlink" title="代码示例"></a>代码示例</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"myCanvas"</span> <span class="attr">width</span>=<span class="string">"500"</span> <span class="attr">height</span>=<span class="string">"500"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"myCanvas"</span>);</span><br><span class="line"><span class="keyword">const</span> ctx = canvas.getContext(<span class="string">"2d"</span>);</span><br><span class="line"><span class="comment">// 圆形</span></span><br><span class="line">ctx.beginPath();</span><br><span class="line">ctx.arc(<span class="number">100</span>, <span class="number">100</span>, <span class="number">50</span>, <span class="number">0</span>, (<span class="built_in">Math</span>.PI / <span class="number">180</span>) * <span class="number">360</span>, <span class="literal">true</span>);</span><br><span class="line">ctx.stroke();</span><br><span class="line">ctx.closePath();</span><br><span class="line"><span class="comment">// 小扇形</span></span><br><span class="line">ctx.beginPath();</span><br><span class="line">ctx.moveTo(<span class="number">250</span>, <span class="number">100</span>);</span><br><span class="line">ctx.arc(<span class="number">250</span>, <span class="number">100</span>, <span class="number">50</span>, <span class="number">0</span>, (<span class="built_in">Math</span>.PI / <span class="number">180</span>) * <span class="number">45</span>, <span class="literal">false</span>);</span><br><span class="line">ctx.lineTo(<span class="number">250</span>, <span class="number">100</span>);</span><br><span class="line">ctx.stroke();</span><br><span class="line">ctx.closePath();</span><br><span class="line"><span class="comment">// 大扇形</span></span><br><span class="line">ctx.beginPath();</span><br><span class="line">ctx.moveTo(<span class="number">200</span>, <span class="number">200</span>);</span><br><span class="line">ctx.arc(<span class="number">200</span>, <span class="number">200</span>, <span class="number">50</span>, <span class="number">0</span>, (<span class="built_in">Math</span>.PI / <span class="number">180</span>) * <span class="number">45</span>, <span class="literal">true</span>);</span><br><span class="line">ctx.lineTo(<span class="number">200</span>, <span class="number">200</span>);</span><br><span class="line">ctx.stroke();</span><br><span class="line">ctx.closePath();</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.ax1x.com/2019/08/27/m4pJQU.png" alt="m4pJQU.png"></p>
+<h3 id="圆角"><a href="#圆角" class="headerlink" title="圆角"></a>圆角</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ctx.arcTo(x1, y1, x2, y2, r); <span class="comment">// 绘制的弧线与当前点和 x1, y1 和 x2, y2连接都相切</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="代码示例-3"><a href="#代码示例-3" class="headerlink" title="代码示例"></a>代码示例</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"myCanvas"</span> <span class="attr">width</span>=<span class="string">"500"</span> <span class="attr">height</span>=<span class="string">"500"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"myCanvas"</span>);</span><br><span class="line"><span class="keyword">const</span> ctx = canvas.getContext(<span class="string">"2d"</span>);</span><br><span class="line"><span class="comment">// 绘制圆角矩形</span></span><br><span class="line">ctx.beginPath();</span><br><span class="line">ctx.moveTo(<span class="number">150</span>, <span class="number">50</span>);</span><br><span class="line">ctx.arcTo(<span class="number">200</span>, <span class="number">50</span>, <span class="number">200</span>, <span class="number">150</span>, <span class="number">30</span>);</span><br><span class="line">ctx.arcTo(<span class="number">200</span>, <span class="number">150</span>, <span class="number">100</span>, <span class="number">150</span>, <span class="number">30</span>);</span><br><span class="line">ctx.arcTo(<span class="number">100</span>, <span class="number">150</span>, <span class="number">100</span>, <span class="number">50</span>, <span class="number">30</span>);</span><br><span class="line">ctx.arcTo(<span class="number">100</span>, <span class="number">50</span>, <span class="number">200</span>, <span class="number">50</span>, <span class="number">30</span>);</span><br><span class="line">ctx.closePath();</span><br><span class="line">ctx.stroke();</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.ax1x.com/2019/08/27/m4PJQf.png" alt="m4PJQf.png"></p>
+<h3 id="贝塞尔曲线"><a href="#贝塞尔曲线" class="headerlink" title="贝塞尔曲线"></a>贝塞尔曲线</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 二次贝塞尔曲线</span></span><br><span class="line"><span class="comment">// x1, y1 控制点 ex, ey 结束点</span></span><br><span class="line">quadraticCurveTo(x1, y1, ex, ey);</span><br><span class="line"><span class="comment">// 三次贝塞尔曲线</span></span><br><span class="line"><span class="comment">// x1, y1, x2, y2 控制点 ex, ey 结束点</span></span><br><span class="line">bezierCurveTo(x1, y1, x2, y2, ex, ey);</span><br></pre></td></tr></table></figure>
+
+<h3 id="坐标轴转换"><a href="#坐标轴转换" class="headerlink" title="坐标轴转换"></a>坐标轴转换</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">translate(dx, dy); <span class="comment">// 重新映射画布上的(0, 0)位置</span></span><br><span class="line">scale(sx, sy); <span class="comment">// 缩放当前绘图</span></span><br><span class="line">rotate(<span class="built_in">Math</span>.PI); <span class="comment">// 旋转当前的绘图</span></span><br><span class="line">save(); <span class="comment">// 保存当前图像状态的一份拷贝</span></span><br><span class="line">restore(); <span class="comment">// 从栈中弹出存储的图像状态并恢复</span></span><br><span class="line">setTransform(a, b, c, d, e, f); <span class="comment">// 先重置再变换</span></span><br><span class="line"><span class="comment">// 参数：水平旋转 水平倾斜 垂直倾斜 垂直缩放 水平移动 垂直移动</span></span><br><span class="line">transform(a, b, c, d, e, f); <span class="comment">// 在之前的基础上变换</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="填充图案"><a href="#填充图案" class="headerlink" title="填充图案"></a>填充图案</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">createPattern(image, <span class="string">"repeat | repeat-x | repeat-y | no-repeat"</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 必须在填充渐变的区域里定义渐变，否则没效果</span></span><br><span class="line"><span class="comment">// 线性渐变</span></span><br><span class="line">createLinearGradient(x1, y1, x2, y2);</span><br><span class="line"><span class="comment">// 径向渐变</span></span><br><span class="line">createRedialGradient(x1, y1, x2, y2);</span><br><span class="line">bg.addColorStop(p, color);</span><br></pre></td></tr></table></figure>
+
+<h4 id="代码示例-4"><a href="#代码示例-4" class="headerlink" title="代码示例"></a>代码示例</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"myCanvas"</span> <span class="attr">width</span>=<span class="string">"500"</span> <span class="attr">height</span>=<span class="string">"500"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"myCanvas"</span>);</span><br><span class="line"><span class="keyword">const</span> ctx = canvas.getContext(<span class="string">"2d"</span>);</span><br><span class="line"><span class="comment">// 线性渐变</span></span><br><span class="line"><span class="keyword">let</span> gradient = ctx.createLinearGradient(<span class="number">0</span>, <span class="number">0</span>, <span class="number">200</span>, <span class="number">0</span>);</span><br><span class="line">gradient.addColorStop(<span class="number">0</span>, <span class="string">"green"</span>);</span><br><span class="line">gradient.addColorStop(<span class="number">1</span>, <span class="string">"white"</span>);</span><br><span class="line">ctx.fillStyle = gradient;</span><br><span class="line">ctx.fillRect(<span class="number">10</span>, <span class="number">10</span>, <span class="number">200</span>, <span class="number">100</span>);</span><br><span class="line"><span class="comment">// 径向渐变</span></span><br><span class="line"><span class="keyword">let</span> gradient1 = ctx.createRadialGradient(<span class="number">280</span>, <span class="number">280</span>, <span class="number">50</span>, <span class="number">300</span>, <span class="number">300</span>, <span class="number">200</span>);</span><br><span class="line">gradient1.addColorStop(<span class="number">0</span>, <span class="string">"white"</span>);</span><br><span class="line">gradient1.addColorStop(<span class="number">1</span>, <span class="string">"green"</span>);</span><br><span class="line">ctx.fillStyle = gradient1;</span><br><span class="line">ctx.fillRect(<span class="number">200</span>, <span class="number">200</span>, <span class="number">300</span>, <span class="number">300</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.ax1x.com/2019/08/27/m4mVSJ.png" alt="m4mVSJ.png"></p>
+<h3 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ctx.shadowColor; <span class="comment">// 阴影的颜色，默认为black</span></span><br><span class="line">ctx.shadowOffsetX; <span class="comment">// 阴影的水平位移，默认为0</span></span><br><span class="line">ctx.shadowOffsetY; <span class="comment">// 阴影的垂直位移，默认为0</span></span><br><span class="line">ctx.shadowBlur; <span class="comment">// 阴影的模糊程度，默认为0</span></span><br><span class="line"><span class="comment">// 这里的阴影偏移量不受坐标系变换的影响</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fillText(); <span class="comment">// 在指定位置绘制实心字符</span></span><br><span class="line">strokeText(); <span class="comment">// 在指定位置绘制空心字符</span></span><br><span class="line">ctx.font; <span class="comment">// 指定字型大小和字体，默认值为 10px sans-serif</span></span><br><span class="line">ctx.textAlign; <span class="comment">// 文本的对齐方式，默认值为start</span></span><br><span class="line">ctx.direction; <span class="comment">// 文本的方向，默认值为inherit</span></span><br><span class="line">ctx.textBaseline; <span class="comment">// 文本的垂直位置，默认值为alphabetic</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.ax1x.com/2019/08/27/m4ng8e.png" alt="m4ng8e.png"></p>
+<h4 id="代码示例-5"><a href="#代码示例-5" class="headerlink" title="代码示例"></a>代码示例</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"myCanvas"</span> <span class="attr">width</span>=<span class="string">"500"</span> <span class="attr">height</span>=<span class="string">"500"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"myCanvas"</span>);</span><br><span class="line"><span class="keyword">const</span> ctx = canvas.getContext(<span class="string">"2d"</span>);</span><br><span class="line">ctx.font = <span class="string">"Bold 20px Arial"</span>;</span><br><span class="line">ctx.strokeText(<span class="string">"Hello world"</span>, <span class="number">50</span>, <span class="number">50</span>);</span><br><span class="line">ctx.fillText(<span class="string">"Hello world"</span>, <span class="number">100</span>, <span class="number">100</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.ax1x.com/2019/08/27/m4KZlQ.png" alt="m4KZlQ.png"></p>
+<h3 id="线段样式"><a href="#线段样式" class="headerlink" title="线段样式"></a>线段样式</h3><ul>
+<li>lineGap 指定线条末端的样式<ul>
+<li>butt（默认值，末端为矩形）</li>
+<li>round（末端为圆形）</li>
+<li>square（末端为突出的矩形，矩形宽度不变，高度为线条宽度的一半）。</li>
+</ul>
+</li>
+<li>lineJoin 指定线段交点的样式<ul>
+<li>round（交点为扇形）</li>
+<li>bevel（交点为三角形底边）</li>
+<li>miter（默认值，交点为菱形)</li>
+</ul>
+</li>
+<li>ctx.miterLimit 指定交点菱形的长度，默认为 10</li>
+</ul>
+<p>当 lineJoin 是 miter 时，用于控制斜接部分的长度，如果斜接长度超过 miterLimit 的值，变成 bevel</p>
+<h4 id="代码示例-6"><a href="#代码示例-6" class="headerlink" title="代码示例"></a>代码示例</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"myCanvas"</span> <span class="attr">width</span>=<span class="string">"500"</span> <span class="attr">height</span>=<span class="string">"500"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"myCanvas"</span>);</span><br><span class="line"><span class="keyword">const</span> ctx = canvas.getContext(<span class="string">"2d"</span>);</span><br><span class="line">ctx.lineWidth = <span class="number">20</span>;</span><br><span class="line">ctx.lineJoin = <span class="string">"miter"</span>;</span><br><span class="line">ctx.miterLimit = <span class="number">20</span>;</span><br><span class="line">ctx.moveTo(<span class="number">100</span>, <span class="number">100</span>);</span><br><span class="line">ctx.lineTo(<span class="number">200</span>, <span class="number">100</span>);</span><br><span class="line">ctx.lineTo(<span class="number">100</span>, <span class="number">110</span>);</span><br><span class="line">ctx.closePath();</span><br><span class="line">ctx.stroke();</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.ax1x.com/2019/08/27/m411b9.png" alt="m411b9.png"></p>
+<h3 id="裁剪"><a href="#裁剪" class="headerlink" title="裁剪"></a>裁剪</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 当前路径外的区域不在绘制</span></span><br><span class="line">ctx.clip();</span><br><span class="line"><span class="comment">// 可在clip() 前用save()方法保存，后续通过restore()方法恢复</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="代码示例-7"><a href="#代码示例-7" class="headerlink" title="代码示例"></a>代码示例</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"myCanvas"</span> <span class="attr">width</span>=<span class="string">"500"</span> <span class="attr">height</span>=<span class="string">"500"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"myCanvas"</span>);</span><br><span class="line"><span class="keyword">const</span> ctx = canvas.getContext(<span class="string">"2d"</span>);</span><br><span class="line">ctx.beginPath();</span><br><span class="line">ctx.arc(<span class="number">200</span>, <span class="number">200</span>, <span class="number">50</span>, <span class="number">0</span>, <span class="built_in">Math</span>.PI * <span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line">ctx.closePath();</span><br><span class="line">ctx.clip();</span><br><span class="line">ctx.fillRect(<span class="number">100</span>, <span class="number">100</span>, <span class="number">300</span>, <span class="number">300</span>);</span><br><span class="line">ctx.strokeRect(<span class="number">100</span>, <span class="number">100</span>, <span class="number">400</span>, <span class="number">400</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.ax1x.com/2019/08/27/m48o90.png" alt="m48o90.png"></p>
+<h3 id="全局透明度"><a href="#全局透明度" class="headerlink" title="全局透明度"></a>全局透明度</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ctx.globalAlpha = <span class="string">"0.5"</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="绘制图片"><a href="#绘制图片" class="headerlink" title="绘制图片"></a>绘制图片</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第一个参数是img(image,canvas,video)</span></span><br><span class="line"><span class="comment">// 要在 onload 后再绘制</span></span><br><span class="line">ctx.drawImage();</span><br><span class="line"><span class="comment">// 3 个参数</span></span><br><span class="line"><span class="comment">// 起始点坐标</span></span><br><span class="line">x, y;</span><br><span class="line"><span class="comment">// 5个参数</span></span><br><span class="line"><span class="comment">// 起始点坐标及图片所存区域的宽高</span></span><br><span class="line">x, y, dx, dy;</span><br><span class="line"><span class="comment">// 9个参数</span></span><br><span class="line"><span class="comment">// 前四个为所绘制目标元素的起始点和宽高，后四个为canvas绘制的起始点和大小</span></span><br><span class="line">x1, y1, dx1, dy1, x2, y2, w2, h2;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> img = <span class="keyword">new</span> Image();</span><br><span class="line">img.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  ctx.drawImage();</span><br><span class="line">&#125;;</span><br><span class="line">img.src = <span class="string">""</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="如何解决-Canvas-高分屏模糊问题"><a href="#如何解决-Canvas-高分屏模糊问题" class="headerlink" title="如何解决 Canvas 高分屏模糊问题"></a>如何解决 Canvas 高分屏模糊问题</h2><p>在分辨率比较高的屏幕，例如 ip6/6s/mac 等机器上，因为 canvas 绘制的是位图，所以会导致模糊，解决方法是根据屏幕分辨率修改 canvas 样式代码中的宽和高与 canvas 的 width 和 height 属性的比例</p>
 <hr>
 <blockquote>
 <p>‘摘抄’不是单纯的“粘贴-&gt;复制”，而是眼到，手到，心到的一字一句敲打下来。</p>
@@ -466,7 +423,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/16/HTML相关/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/27/HTML5-Canvas/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -480,18 +437,18 @@
   
 <nav id="article-nav">
   
-    <a href="/myBlog/2019/07/16/CSS相关/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/myBlog/3019/08/06/Vue高仿网易云音乐/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          CSS相关
+          【置顶】Vue高仿网易云音乐
         
       </div>
     </a>
   
   
-    <a href="/myBlog/2019/07/15/执行机制/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">执行机制</div>
+    <a href="/myBlog/2019/08/22/浏览器渲染原理/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">浏览器渲染原理</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -510,19 +467,6 @@
             </div>
         </div>
         
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#从规范的角度理解HTML-从分类和语义的角度使用标签"><span class="toc-number">1.</span> <span class="toc-text">从规范的角度理解HTML,从分类和语义的角度使用标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML语义化是什么"><span class="toc-number">1.1.</span> <span class="toc-text">HTML语义化是什么?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么要语义化"><span class="toc-number">1.2.</span> <span class="toc-text">为什么要语义化?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#易混淆的HTML标签"><span class="toc-number">1.3.</span> <span class="toc-text">易混淆的HTML标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML5新标签"><span class="toc-number">1.4.</span> <span class="toc-text">HTML5新标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#写HTML代码时应注意什么"><span class="toc-number">1.5.</span> <span class="toc-text">写HTML代码时应注意什么?</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用页面标签的默认样式、自带属性、不同浏览器的差异、处理浏览器兼容问题的方式"><span class="toc-number">2.</span> <span class="toc-text">常用页面标签的默认样式、自带属性、不同浏览器的差异、处理浏览器兼容问题的方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#浏览器默认样式"><span class="toc-number">2.1.</span> <span class="toc-text">浏览器默认样式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#元信息类标签-head、title、meta-的使用目的和配置方法"><span class="toc-number">3.</span> <span class="toc-text">元信息类标签(head、title、meta)的使用目的和配置方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Head中的全局属性"><span class="toc-number">3.1.</span> <span class="toc-text">Head中的全局属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#base"><span class="toc-number">3.1.1.</span> <span class="toc-text">base</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#link"><span class="toc-number">3.1.2.</span> <span class="toc-text">link</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#title"><span class="toc-number">3.1.3.</span> <span class="toc-text">title</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#meta"><span class="toc-number">3.2.</span> <span class="toc-text">meta</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML5离线缓存原理"><span class="toc-number">4.</span> <span class="toc-text">HTML5离线缓存原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是离线缓存"><span class="toc-number">4.1.</span> <span class="toc-text">什么是离线缓存?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优势"><span class="toc-number">4.2.</span> <span class="toc-text">优势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用场景"><span class="toc-number">4.3.</span> <span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#原理"><span class="toc-number">4.4.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#与传统浏览器缓存区别"><span class="toc-number">4.5.</span> <span class="toc-text">与传统浏览器缓存区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可以使用Canvas-API、SVG等绘制高性能的动画"><span class="toc-number">5.</span> <span class="toc-text">可以使用Canvas API、SVG等绘制高性能的动画</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
         
     </div>
 </aside>
