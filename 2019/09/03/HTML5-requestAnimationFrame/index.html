@@ -7,19 +7,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: JS | PowerDong-分享技术&amp;生活</title>
+  <title>HTML5-requestAnimationFrame | PowerDong-分享技术&amp;生活</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是一个个人博客，分享一些前端技术、面试题、面试技巧等，用来提高自己和帮助他人。">
-<meta name="keywords" content="前端,web,前端面试,面试，面试技巧，技巧">
-<meta property="og:type" content="website">
-<meta property="og:title" content="PowerDong-分享技术&amp;生活">
-<meta property="og:url" content="http://yoursite.com/tags/JS/page/2/index.html">
+  <meta name="description" content="在 Web 应用中，实现动画效果的方法比较多，JavaScript 中可以通过定时器 setTimeout 来实现，Css3 可以使用 transition 和 animation 来实现，HTML5 中的 canvas 也可以实现。除此之外，HTML5 还提供了一个专门用于请求动画的 API，即 requestAnimationFrame(rAF) 顾名思义就是请求动画帧。 屏幕绘制频率屏幕绘制">
+<meta name="keywords" content="html,笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5-requestAnimationFrame">
+<meta property="og:url" content="http://yoursite.com/2019/09/03/HTML5-requestAnimationFrame/index.html">
 <meta property="og:site_name" content="PowerDong-分享技术&amp;生活">
-<meta property="og:description" content="这是一个个人博客，分享一些前端技术、面试题、面试技巧等，用来提高自己和帮助他人。">
+<meta property="og:description" content="在 Web 应用中，实现动画效果的方法比较多，JavaScript 中可以通过定时器 setTimeout 来实现，Css3 可以使用 transition 和 animation 来实现，HTML5 中的 canvas 也可以实现。除此之外，HTML5 还提供了一个专门用于请求动画的 API，即 requestAnimationFrame(rAF) 顾名思义就是请求动画帧。 屏幕绘制频率屏幕绘制">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://s2.ax1x.com/2019/09/03/nF8UJS.gif">
+<meta property="og:updated_time" content="2019-09-03T02:08:33.436Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PowerDong-分享技术&amp;生活">
-<meta name="twitter:description" content="这是一个个人博客，分享一些前端技术、面试题、面试技巧等，用来提高自己和帮助他人。">
+<meta name="twitter:title" content="HTML5-requestAnimationFrame">
+<meta name="twitter:description" content="在 Web 应用中，实现动画效果的方法比较多，JavaScript 中可以通过定时器 setTimeout 来实现，Css3 可以使用 transition 和 animation 来实现，HTML5 中的 canvas 也可以实现。除此之外，HTML5 还提供了一个专门用于请求动画的 API，即 requestAnimationFrame(rAF) 顾名思义就是请求动画帧。 屏幕绘制频率屏幕绘制">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/09/03/nF8UJS.gif">
   
   <link rel="alternative" href="/atom.xml" title="PowerDong-分享技术&amp;生活" type="application/atom+xml">
   
@@ -149,56 +152,112 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-HTML5-requestAnimationFrame" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/myBlog/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/myBlog/2019/06/26/事件循环/" class="archive-article-date">
-  	<time datetime="2019-06-26T11:57:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-26</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/myBlog/2019/06/26/事件循环/">事件循环</a>
+    <h1 class="article-title" itemprop="name">
+      HTML5-requestAnimationFrame
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/myBlog/2019/09/03/HTML5-requestAnimationFrame/" class="archive-article-date">
+  	<time datetime="2019-09-03T01:17:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在 Web 应用中，实现动画效果的方法比较多，JavaScript 中可以通过定时器 setTimeout 来实现，Css3 可以使用 transition 和 animation 来实现，HTML5 中的 canvas 也可以实现。除此之外，HTML5 还提供了一个专门用于请求动画的 API，即 <code>requestAnimationFrame(rAF)</code> 顾名思义就是请求动画帧。</p>
+<h2 id="屏幕绘制频率"><a href="#屏幕绘制频率" class="headerlink" title="屏幕绘制频率"></a>屏幕绘制频率</h2><p><strong>屏幕绘制频率</strong>即图像在屏幕上更新的速度，也是屏幕上图像每秒钟出现的次数，它的单位是赫兹(HZ),对于一般的笔记本电脑，这个频率大概是60HZ。因此，<strong>当你对着电脑屏幕什么也不做的情况下，显示器也会以以每秒60次的频率在不断地更新屏幕上的图像</strong>，那么我们为什么感觉不到这个变化呢？那是因为人的眼睛有 <strong><a href="https://baike.baidu.com/item/%E8%A7%86%E8%A7%89%E6%9A%82%E7%95%99/5125149?fr=aladdin" target="_blank" rel="noopener">视觉停留效应</a></strong> 即前一刻画面留在大脑印象还没消失，紧接着后幅画面就跟上来了，这中间只隔了16.7ms(1000/60≈16.7)，所以会让你误以为屏幕上的图像是静止不动的。</p>
+<a id="more"></a>
+
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p><code>window.requestAnimationFrame()</code>告诉浏览器——你希望执行一个动画，并且要求浏览器在下次重绘之前调用指定的回调函数更新动画。该方法需要传入一个毁掉函数作为参数，该回调函数会在浏览器下次重绘之前执行。</p>
+<p>该函数有返回值，建议使用一个ID进行标识，没有别的意义，可以传给<code>window.cancelAnimationFrame()</code>取消回调函数</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
+<li>页面刷新前执行一次</li>
+<li>1000ms 60fps -&gt; 16ms</li>
+<li><code>cancelAnimationFrame</code> 用来取消</li>
+<li>用法和 setTimeout 类似</li>
+<li>兼容性查看<a href="https://caniuse.com/#search=requestAnimationFrame" target="_blank" rel="noopener">caniuse</a></li>
+</ol>
+<blockquote>
+<p>若你想在浏览器下次重绘之前继续更新下一帧动画，那么回调函数自身必须再次调用window.requestAnimationFrame()</p>
+</blockquote>
+<h2 id="兼容"><a href="#兼容" class="headerlink" title="兼容"></a>兼容</h2><p>对于不同的浏览器，requestAnimationFrame 这个api的名字也略有差异，针对低版本浏览器，这里写出对应的兼容性写法封装。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// requestAnimationFrame 的封装</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 针对不同内核的浏览器的API写法不同进行兼容</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">window</span>.requestAnimaFrame = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">window</span>.requestAnimationFrame ||</span><br><span class="line">        <span class="built_in">window</span>.webkitRequestAnimationFrame ||</span><br><span class="line">        <span class="built_in">window</span>.mozRequestAnimationFrame ||</span><br><span class="line">        <span class="function"><span class="keyword">function</span> (<span class="params">callback</span>) </span>&#123;</span><br><span class="line">          <span class="built_in">window</span>.setTimeout(callback, <span class="number">1000</span> / <span class="number">60</span>)</span><br><span class="line">        &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// cancelAnimationFrame</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 针对不同内核的浏览器的API写法不同进行兼容</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">window</span>.cancelAnimFrame = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">window</span>.cancelAnimationFrame ||</span><br><span class="line">        <span class="built_in">window</span>.webkitCancelAnimationFrame ||</span><br><span class="line">        <span class="built_in">window</span>.mozCancelAnimationFrame ||</span><br><span class="line">        <span class="function"><span class="keyword">function</span> (<span class="params">id</span>) </span>&#123;</span><br><span class="line">          <span class="built_in">window</span>.clearTimeout(id)</span><br><span class="line">        &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"a"</span> <span class="attr">style</span>=<span class="string">"width: 100px; </span></span></span><br><span class="line"><span class="tag"><span class="string">            height: 100px;</span></span></span><br><span class="line"><span class="tag"><span class="string">            background-color: red;</span></span></span><br><span class="line"><span class="tag"><span class="string">            position: absolute;"</span></span></span><br><span class="line"><span class="tag">            &gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">/**</span><br><span class="line"> * 定义一个div盒子，动画设置向右平移 500px</span><br><span class="line"> * </span><br><span class="line"> * 注：这里使用的requestAnimaFrame和cancelAnimFrame方法名为自己封装的方法</span><br><span class="line"> */</span><br><span class="line"><span class="javascript"><span class="keyword">let</span> start = <span class="number">0</span>,</span></span><br><span class="line">    end = 500,</span><br><span class="line"><span class="javascript">    ele = <span class="built_in">document</span>.querySelector(<span class="string">'#a'</span>),</span></span><br><span class="line">    req;</span><br><span class="line"><span class="javascript"><span class="keyword">let</span> f = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line">  start += 10</span><br><span class="line"><span class="javascript">  ele.style.left = start + <span class="string">'px'</span></span></span><br><span class="line"><span class="javascript">  <span class="comment">// 距离页面左边的距离</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">let</span> left = ele.getBoundingClientRect().left</span></span><br><span class="line"><span class="javascript">  <span class="keyword">if</span>(left &lt; end) &#123;</span></span><br><span class="line">    req = requestAnimaFrame(f)</span><br><span class="line"><span class="javascript">  &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line">    cancelAnimFrame(req)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.ax1x.com/2019/09/03/nF8UJS.gif" alt="nF8UJS.gif"></p>
+<hr>
+<blockquote>
+<p>‘摘抄’不是单纯的“粘贴-&gt;复制”，而是眼到，手到，心到的一字一句敲打下来。</p>
+</blockquote>
+<blockquote>
+<p>博客声明:所有转载的文章、图片仅用于作者本人收藏学习目的，被要求或认为适当时，将标注署名与来源。若不愿某一作品被转用，请及时通知本站，本站将予以及时删除。</p>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              打赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢您的支持<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="../../../../img/zhifubao.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="../../../../img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">试题</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -211,130 +270,134 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/03/HTML5-requestAnimationFrame/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/myBlog/2019/06/26/JavaScript手写代码/" class="archive-article-date">
-  	<time datetime="2019-06-26T00:21:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-26</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/myBlog/3019/08/06/Vue高仿网易云音乐/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          【置顶】Vue高仿网易云音乐
+        
+      </div>
+    </a>
+  
+  
+    <a href="/myBlog/2019/09/01/HTML5-多媒体/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HTML5-多媒体</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/myBlog/2019/06/26/JavaScript手写代码/">JavaScript手写代码</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">代码</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/代码//" class="article-tag-list-link color3">代码</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/myBlog/2019/06/24/43-道JS面试题/" class="archive-article-date">
-  	<time datetime="2019-06-24T08:51:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/myBlog/2019/06/24/43-道JS面试题/">43 道JS面试题</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">试题</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/试题//" class="article-tag-list-link color3">试题</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/myBlog/tags/JS/">&laquo; Prev</a><a class="page-number" href="/myBlog/tags/JS/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+
+  
+
+  
+  <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: '0f5bf3239b190c1e353e',
+            clientSecret: 'a5fb93c9d80f72e443d43643ae7a705e95a9145b',
+            repo: 'myBlog',
+            owner: 'powerdong',
+            admin: ['powerdong'],
+            id: md5(window.location.pathname),
+            // facebook-like distraction free mode
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
   
 
 
@@ -362,9 +425,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

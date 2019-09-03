@@ -151,6 +151,101 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-原型和原型链" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/07/14/原型和原型链/">原型和原型链</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/07/14/原型和原型链/" class="archive-article-date">
+  	<time datetime="2019-07-14T11:05:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="理解原型设计模式以及-JavaScript-中的原型规则"><a href="#理解原型设计模式以及-JavaScript-中的原型规则" class="headerlink" title="理解原型设计模式以及 JavaScript 中的原型规则"></a>理解原型设计模式以及 JavaScript 中的原型规则</h2><h3 id="什么是原型模式"><a href="#什么是原型模式" class="headerlink" title="什么是原型模式"></a>什么是原型模式</h3><p><strong>原型模式(Prototype pattern)</strong>:<code>通俗点讲就是创建一个共享的原型,并通过拷贝这些原型创建新的对象。 用于创建重复的对象,这种类型的设计模式属于创建型模式,它提供了一种创建对象得比错选择。</code></p>
+<h3 id="实现原型模式"><a href="#实现原型模式" class="headerlink" title="实现原型模式"></a>实现原型模式</h3><p>我们可以通过 JavaScript 特有的原型集成特性去实现原型模式,也就是创建一个对象作为另一个对象的 prototype 属性值,我们可以通过 Object.create(prototype,optionalDescriptorObjects)来实现原型继承。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fatherPrototype = &#123;</span><br><span class="line">  init: <span class="function"><span class="keyword">function</span>(<span class="params">money</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.selfMoney = money;</span><br><span class="line">  &#125;,</span><br><span class="line">  getMoney: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"取钱"</span> + <span class="keyword">this</span>.selfMoney);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sonMoney</span>(<span class="params">Smoney</span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">  F.prototype = fatherPrototype;</span><br><span class="line">  <span class="keyword">var</span> f = <span class="keyword">new</span> F();</span><br><span class="line">  f.init(Smoney);</span><br><span class="line">  <span class="keyword">return</span> f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sonGetMoney = sonMoney(<span class="string">"20"</span>);</span><br><span class="line">sonGetMoney.getMoney();</span><br><span class="line"><span class="comment">//儿子取钱取得是他爹的</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>原型模式,就是创建一个共享的原型,通过拷贝这个原型来创建新的类,用于创建重复的对象,带来性能上的提升。</strong></p>
+        
+          <a class="article-more-a" href="/myBlog/2019/07/14/原型和原型链/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/07/14/原型和原型链/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-语法和API" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1158,106 +1253,6 @@
 
 
   
-    <article id="post-JavaScript手写代码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/06/26/JavaScript手写代码/">JavaScript手写代码</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/06/26/JavaScript手写代码/" class="archive-article-date">
-  	<time datetime="2019-06-26T00:21:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-实现一个new操作符"><a href="#1-实现一个new操作符" class="headerlink" title="1. 实现一个new操作符"></a>1. 实现一个<code>new</code>操作符</h2><ul>
-<li>new 操作符做了这些事:<ul>
-<li>它创建了一个全新的对象</li>
-<li>它会被执行<code>[[Prototype]]</code>(也就是<code>__proto__</code>)链接</li>
-<li>它使<code>this</code>指向新创建的对象</li>
-<li>通过 new 创建的每个对象将最终被<code>[[Prototype]]</code>链接到这个函数的 prototype 对象上</li>
-<li>如果函数没有返回对象类型 Object(包含 Function、Array、Date、RegExp、Error)，那么 new 表达式中的函数调用将返回该对象引用</li>
-</ul>
-</li>
-</ul>
-        
-          <a class="article-more-a" href="/myBlog/2019/06/26/JavaScript手写代码/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">代码</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/代码//" class="article-tag-list-link color3">代码</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/06/26/JavaScript手写代码/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/myBlog/page/2/">&laquo; Prev</a><a class="page-number" href="/myBlog/">1</a><a class="page-number" href="/myBlog/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/myBlog/page/4/">4</a><a class="extend next" rel="next" href="/myBlog/page/4/">Next &raquo;</a>
@@ -1359,7 +1354,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1367,11 +1362,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color4">Css</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1380,6 +1375,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1399,7 +1398,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">代码</a>
+                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1407,7 +1406,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
+                <a href="javascript:void(0)" class="js-tag color3">代码</a>
               </li>
             
             <div class="clearfix"></div>
