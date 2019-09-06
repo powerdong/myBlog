@@ -7,19 +7,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 面试 | PowerDong-分享技术&amp;生活</title>
+  <title>HTML5-客户端存储 | PowerDong-分享技术&amp;生活</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是一个个人博客，分享一些前端技术、面试题、面试技巧等，用来提高自己和帮助他人。">
-<meta name="keywords" content="前端,web,前端面试,面试，面试技巧，技巧">
-<meta property="og:type" content="website">
-<meta property="og:title" content="PowerDong-分享技术&amp;生活">
-<meta property="og:url" content="http://yoursite.com/tags/面试/index.html">
+  <meta name="description" content="在前端开发过程中，为了方便服务器更方便的交互或者提升用户体验，我们会在客户端(用户)的本地保存一部分数据，比如cookie/Storage。在设备不能上网的情况下，我们可以通过使用本地存储是的程序正常运行。 开发离线 Web 应用需要几个步骤，首先是确保应用知道设备能否上网，再做出下一步操作。最好有一块本地存储的数据，无论设备能否上网，都不妨碍读写。 HTML5 及其相关的 API 让离线开发应用">
+<meta name="keywords" content="HTML,笔记,缓存">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5-客户端存储">
+<meta property="og:url" content="http://yoursite.com/2019/09/06/HTML5-客户端存储/index.html">
 <meta property="og:site_name" content="PowerDong-分享技术&amp;生活">
-<meta property="og:description" content="这是一个个人博客，分享一些前端技术、面试题、面试技巧等，用来提高自己和帮助他人。">
+<meta property="og:description" content="在前端开发过程中，为了方便服务器更方便的交互或者提升用户体验，我们会在客户端(用户)的本地保存一部分数据，比如cookie/Storage。在设备不能上网的情况下，我们可以通过使用本地存储是的程序正常运行。 开发离线 Web 应用需要几个步骤，首先是确保应用知道设备能否上网，再做出下一步操作。最好有一块本地存储的数据，无论设备能否上网，都不妨碍读写。 HTML5 及其相关的 API 让离线开发应用">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-06T01:45:16.545Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PowerDong-分享技术&amp;生活">
-<meta name="twitter:description" content="这是一个个人博客，分享一些前端技术、面试题、面试技巧等，用来提高自己和帮助他人。">
+<meta name="twitter:title" content="HTML5-客户端存储">
+<meta name="twitter:description" content="在前端开发过程中，为了方便服务器更方便的交互或者提升用户体验，我们会在客户端(用户)的本地保存一部分数据，比如cookie/Storage。在设备不能上网的情况下，我们可以通过使用本地存储是的程序正常运行。 开发离线 Web 应用需要几个步骤，首先是确保应用知道设备能否上网，再做出下一步操作。最好有一块本地存储的数据，无论设备能否上网，都不妨碍读写。 HTML5 及其相关的 API 让离线开发应用">
   
   <link rel="alternative" href="/atom.xml" title="PowerDong-分享技术&amp;生活" type="application/atom+xml">
   
@@ -149,52 +150,216 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-HTML5-客户端存储" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/myBlog/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/myBlog/2019/08/13/Cookie-和-Session/" class="archive-article-date">
-  	<time datetime="2019-08-13T00:41:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-13</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/myBlog/2019/08/13/Cookie-和-Session/">Cookie 和 Session</a>
+    <h1 class="article-title" itemprop="name">
+      HTML5-客户端存储
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/myBlog/2019/09/06/HTML5-客户端存储/" class="archive-article-date">
+  	<time datetime="2019-09-05T23:53:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在前端开发过程中，为了方便服务器更方便的交互或者提升用户体验，我们会在客户端(用户)的本地保存一部分数据，比如<code>cookie/Storage</code>。在设备不能上网的情况下，我们可以通过使用本地存储是的程序正常运行。</p>
+<p>开发离线 Web 应用需要几个步骤，首先是确保应用知道设备能否上网，再做出下一步操作。最好有一块本地存储的数据，无论设备能否上网，都不妨碍读写。</p>
+<p>HTML5 及其相关的 API 让离线开发应用成为了现实。</p>
+<h2 id="离线检测"><a href="#离线检测" class="headerlink" title="离线检测"></a>离线检测</h2><p>要知道设备是否在连网状态，HTML5 定义了一个 <code>navigator.onLine</code> 属性，这个属性返回一个 Boolean 值。</p>
+<ul>
+<li>当为 true 时，表示设备处于在线状态(能上网)</li>
+<li>当为 false 表示当前设备处于离线状态(不能上网)</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (navigator.onLine) &#123;</span><br><span class="line">  <span class="comment">// 在线 正常工作</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">// 离线 执行离线任务</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>由于 <code>navigator.onLine</code> 存在一定的兼容性问题，因此除了 <code>navigator.onLine</code> 属性之外，为了更好的确定网络是否可用，HTML5 还定义了两个事件 <strong><code>online</code></strong> 和 <strong><code>offline</code></strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"online"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 在线 正常工作</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"offline"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 离线 执行离线任务</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在实际应用中，最好在页面加载后，先取得应用的状态，然后通过上述两个事件执行后续的函数。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="客户端存储"><a href="#客户端存储" class="headerlink" title="客户端存储"></a>客户端存储</h2><p>在常见的前端开发过程中，大家常用的就是 <strong><code>Cookie</code></strong>、<strong><code>LocalStorage</code></strong>、<strong><code>SessionStorage</code></strong>。这里就为大家来总结一下这三种存储方式的异同点，如有错误，欢迎指正。</p>
+<h3 id="三者异同点"><a href="#三者异同点" class="headerlink" title="三者异同点"></a>三者异同点</h3><ul>
+<li><p>相同点</p>
+<ul>
+<li>三者都是通过键值对的集合进行存储</li>
+<li>三者都会在浏览器中进行保存，并且有大小、同源策略的限制</li>
+</ul>
+</li>
+<li><p>不同点</p>
+<ul>
+<li><strong>主要用途不同</strong><ul>
+<li>Cookie 主要用于标识用户 ID</li>
+<li>Web Storage 主要用于浏览器存储数据</li>
+</ul>
+</li>
+<li><strong>操作频率不同</strong><ul>
+<li>一般不会频繁的操作 Cookie</li>
+<li>但是会频繁操作 Web Storage</li>
+</ul>
+</li>
+<li><strong>存储容量不同</strong><ul>
+<li>Cookie 大小一般为 4k 左右</li>
+<li>Web Storage 每个源支持 5MB 左右</li>
+</ul>
+</li>
+<li><strong>请求方式不同</strong><ul>
+<li>Cookie 通过 HTTP 请求</li>
+<li>Web Storage 由脚本提交</li>
+</ul>
+</li>
+<li><strong>有效期不同</strong><ul>
+<li>Cookie 可以设置有效期，在当前有效期内有效</li>
+<li>SessionStorage 在当前页面关闭前有效</li>
+<li>LocalStorage 永久有效，直到通过脚本或者清除缓存来清除它</li>
+</ul>
+</li>
+<li><strong>页面能否共享</strong><ul>
+<li>SessionStorage 不能共享</li>
+<li>LocalStorage 在同源文档中可以共享</li>
+<li>Cookie 在同源，且在 path 规则下文档共享</li>
+</ul>
+</li>
+<li><strong>拥有的 API 不同</strong><ul>
+<li>Cookie 通过 <code>document.cookie</code> 设置和读取 cookie</li>
+<li>Storage 通过 <code>localStorage.name = &#39;lambda&#39;</code>存储单个值<ul>
+<li>通过 <code>localStorage.info = JSON.stringify({name:&#39;lambda&#39;,gender: &#39;man&#39;})</code> 来存储一个对象</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><h2 id="Cookie-可以用来做什么"><a href="#Cookie-可以用来做什么" class="headerlink" title="Cookie 可以用来做什么"></a>Cookie 可以用来做什么</h2><blockquote>
+<p>Cookie 是一种存储在用户电脑上用来记录一些有状态的信息(小数据)</p>
+</blockquote>
+<ul>
+<li>记录购物车中商品的 ID</li>
+<li>记录用户登陆的账号密码(记住密码功能)</li>
+</ul>
+<p>由于 Cookie 的大小限制，对于较复杂的需求 Cookie 是满足不了的</p>
+<p>如果您需要更多的了解 Cookie 可以查看 <a href="https://powerdong.github.io/myBlog/2019/08/13/Cookie-%E5%92%8C-Session/" target="_blank" rel="noopener">Cookie 和 Session</a></p>
+<h3 id="Web-Storage"><a href="#Web-Storage" class="headerlink" title="Web Storage"></a>Web Storage</h3><p>Web Storage 的目的时客服由 Cookie 带来的限制，当数据需要被严格控制在客户端上时，无须持续地将数据发回服务器，Web Storage 的两个主要目标是：</p>
+<ul>
+<li>提供一种在 Cookie 之外存储会话数据的路径</li>
+<li>提供一种存储大量可以跨会话存在的数据的机制</li>
+</ul>
+<p>Web Storage 中定义了两种对象: SessionStorage 和 LocalStorage，是 Storage 对象的示例。</p>
+<h4 id="Storage-对象的-API"><a href="#Storage-对象的-API" class="headerlink" title="Storage 对象的 API"></a>Storage 对象的 API</h4><ul>
+<li>Storage.length: 返回存储的数据项数量</li>
+<li>Storage.key(keyIndex)：取得对应索引的键名</li>
+<li>Storage.getItem(keyName)：取得对应键名的值</li>
+<li>Storage.setItem(keyName,keyValue)：增加或更新一个数据项</li>
+<li>Storage.removeItem(keyName)：删除对应键名的数据项</li>
+<li>Storage.clear()：清空所有存储的数据项</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><table style="text-align:center">
+<tr style="font-weight:700;background:#f0f0f0">
+    <td>特性</td>
+    <td>Cookie</td>
+    <td>LocalStorage</td>
+    <td>SessionStorage</td>
+</tr>
+<tr>
+    <td style="font-weight:900">数据的生命周期</td>
+    <td>一般由服务器生成，可设置失效时间<br>如果在浏览器端生成Cookie，默认是关闭浏览器后失效</td>
+    <td>除非被清除，否则永久保存</td>
+    <td>仅在当前会话下有效，关闭页面或浏览器后清除</td>
+</tr>
+<tr style="background:#eee">
+    <td style="font-weight:900">存放数据大小</td>
+    <td>4k左右</td>
+    <td colspan="2">一般为5MB</td>
+</tr>
+<tr>
+    <td style="font-weight:900">与服务器端通信</td>
+    <td>每次都会携带在HTTP请求头中，如果Cookie保存过多的数据会带来性能问题</td>
+    <td colspan="2">仅在客户端(即浏览器中保存，不参与和服务器的通信)</td>
+</tr>
+<tr style="background:#eee">
+    <td style="font-weight:900">易用性</td>
+    <td>需要程序员自己封装，原生的Cookie接口不好用</td>
+    <td colspan="2">原生接口可以接受，亦可再次封装Object和Array有更好的支持</td>
+</tr>
+</table>
+
+<hr>
+<blockquote>
+<p>‘摘抄’不是单纯的“粘贴-&gt;复制”，而是眼到，手到，心到的一字一句敲打下来。</p>
+</blockquote>
+<blockquote>
+<p>博客声明:所有转载的文章、图片仅用于作者本人收藏学习目的，被要求或认为适当时，将标注署名与来源。若不愿某一作品被转用，请及时通知本站，本站将予以及时删除。</p>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              打赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢您的支持<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="../../../../img/zhifubao.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="../../../../img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">缓存</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">缓存</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -207,74 +372,135 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/06/HTML5-客户端存储/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/myBlog/2019/06/24/43-道JS面试题/" class="archive-article-date">
-  	<time datetime="2019-06-24T08:51:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-24</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/myBlog/3019/08/06/Vue高仿网易云音乐/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          【置顶】Vue高仿网易云音乐
+        
+      </div>
+    </a>
+  
+  
+    <a href="/myBlog/2019/09/03/HTML5-requestAnimationFrame/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HTML5-requestAnimationFrame</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/myBlog/2019/06/24/43-道JS面试题/">43 道JS面试题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">试题</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/试题//" class="article-tag-list-link color3">试题</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
+  <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: '0f5bf3239b190c1e353e',
+            clientSecret: 'a5fb93c9d80f72e443d43643ae7a705e95a9145b',
+            repo: 'myBlog',
+            owner: 'powerdong',
+            admin: ['powerdong'],
+            id: md5(window.location.pathname),
+            // facebook-like distraction free mode
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+  
 
 
           </div>
@@ -301,9 +527,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/13/mpb24A.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/13/m9kgL4.png">
-<meta property="og:updated_time" content="2019-08-13T02:32:34.148Z">
+<meta property="og:updated_time" content="2019-09-06T01:02:45.228Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cookie 和 Session">
 <meta name="twitter:description" content="Cookie什么是 CookieCookie 是由服务端生成，发送给 User-Agent(一般是浏览器)，(服务器告诉浏览器设置一下 Cookie)，浏览器会将 Cookie 以 key/value 保存到某个目录下的文本文件内，下次请求同一网站时就发送该 Cookie 给服务器(前提是浏览器设置为启用 Cookie)。  Cookie 就是一个小型文件(浏览器对 Cookie 的内存大小是有限">
@@ -202,7 +202,13 @@
 <blockquote>
 <p>Cookie 在本地，可以被更改文件，敏感数据不要放在 Cookie 里</p>
 </blockquote>
-<h3 id="Cookie-的使用"><a href="#Cookie-的使用" class="headerlink" title="Cookie 的使用"></a>Cookie 的使用</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//读取浏览器中的cookie</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>.cookie);</span><br><span class="line"><span class="comment">//写入cookie</span></span><br><span class="line"><span class="built_in">document</span>.cookie = <span class="string">"name=lambda;path=/;domain=.baidu.com"</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="Cookie-的使用"><a href="#Cookie-的使用" class="headerlink" title="Cookie 的使用"></a>Cookie 的使用</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 检测是否启用了cookie</span></span><br><span class="line">navigator.cookieEnabled</span><br><span class="line"><span class="comment">//读取浏览器中的cookie</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>.cookie);</span><br><span class="line"><span class="comment">//写入cookie</span></span><br><span class="line"><span class="built_in">document</span>.cookie = <span class="string">"name=lambda;path=/;domain=.baidu.com"</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="获取-Cookie-函数封装"><a href="#获取-Cookie-函数封装" class="headerlink" title="获取 Cookie 函数封装"></a>获取 Cookie 函数封装</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取Cookie</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCookie</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> name = name + <span class="string">'='</span></span><br><span class="line">  <span class="keyword">let</span> Cookies = <span class="built_in">document</span>.cookie.split(<span class="string">';'</span>)</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i &lt; Cookies.length; i++) &#123;</span><br><span class="line">    <span class="keyword">let</span> Cookie = Cookies[i]</span><br><span class="line">    <span class="keyword">while</span>(Cookie.charAt(<span class="number">0</span>) == <span class="string">''</span>) &#123;</span><br><span class="line">      Cookie = Cookie.substring(<span class="number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(Cookie.indexOf(name) != <span class="number">-1</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> Cookie.substring(name.length, Cookie.length)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">""</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设置 Cookie</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setCookie</span> (<span class="params">name, value, expires, path, domain, secure</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> cookieText = <span class="built_in">encodeURIComponent</span>(name) + <span class="string">'='</span> + <span class="built_in">encodeURIComponent</span>(value)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (expires <span class="keyword">instanceof</span> <span class="built_in">Date</span>) &#123;</span><br><span class="line">      cookieText += <span class="string">"; expires="</span> + expires.toGMTString();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (path) &#123;</span><br><span class="line">      cookieText += <span class="string">"; path="</span> + path;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (domain) &#123;</span><br><span class="line">      cookieText += <span class="string">"; domain="</span> + domain;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (secure) &#123;</span><br><span class="line">      cookieText += <span class="string">"; secure"</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">document</span>.cookie = cookieText;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 删除 Cookie</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deleteCookie</span> (<span class="params">name, path, domain, secure</span>) </span>&#123;</span><br><span class="line">  setCookie(name, <span class="string">""</span>, <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">0</span>), path, domain, secure)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h2><h3 id="什么是-Session"><a href="#什么是-Session" class="headerlink" title="什么是 Session"></a>什么是 Session</h3><p>在计算机中，尤其是在网络应用中，称为“会话控制”。 <a href="https://baike.baidu.com/item/Session/479100" target="_blank" rel="noopener">Session</a> 对象存储特定用户会话所需的属性及配置信息。这样，当用户在应用程序的 Web 页之间跳转时，存储在 <a href="https://baike.baidu.com/item/Session/479100" target="_blank" rel="noopener">Session</a> 对象中的变量将不会丢失，而是在整个用户会话中一直存在下去</p>
 <h2 id="Cookie-和-Session-有什么不同"><a href="#Cookie-和-Session-有什么不同" class="headerlink" title="Cookie 和 Session 有什么不同"></a>Cookie 和 Session 有什么不同</h2><ul>
@@ -539,15 +545,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -555,11 +553,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">html</a>
+                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -571,7 +573,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -587,11 +593,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -599,7 +601,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
+                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
               </li>
             
             <div class="clearfix"></div>
