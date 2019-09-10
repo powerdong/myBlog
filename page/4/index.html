@@ -151,6 +151,245 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-记一次小程序开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/06/29/记一次小程序开发/">记一次小程序开发</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/06/29/记一次小程序开发/" class="archive-article-date">
+  	<time datetime="2019-06-29T13:06:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在上周看了微信小程序的介绍后，就想着要开发一个服务于自己的小程序，也在另一方面可以有一次小程序的开发实践经验。</p>
+<h2 id="微信小程序"><a href="#微信小程序" class="headerlink" title="微信小程序"></a>微信小程序</h2><p>小程序是一种<strong>不需要下载安装即可使用</strong>的应用(其实是需要下载的,只不过是非常小的一个应用,加载时间可忽略)</p>
+<p>应用将无处不在，随时可用，但又无需安装卸载。</p>
+<ul>
+<li>小程序适用简单的，用完即走的应用</li>
+<li>小程序适合低频的应用</li>
+<li>小程序适合性能要求不高的应用</li>
+</ul>
+<p><strong>小程序是单向数据绑定</strong></p>
+<h2 id="萌生想法"><a href="#萌生想法" class="headerlink" title="萌生想法"></a>萌生想法</h2><blockquote>
+<p>如果你想看实例源代码可以移步<a href="https://github.com/powerdong/weatherProgram" target="_blank" rel="noopener">天气小程序 git 仓库</a></p>
+</blockquote>
+<p>之前在学习网络请求时有过请求一个天气接口，获取到了天气的相关信息</p>
+<p>由此，想利用现有的知识构建一个天气小程序。</p>
+<h2 id="开始实施"><a href="#开始实施" class="headerlink" title="开始实施"></a>开始实施</h2><ul>
+<li>到<a href="https://mp.weixin.qq.com/" target="_blank" rel="noopener">微信公众平台</a>注册一个账号</li>
+<li>在左侧的开发选项中的<strong>开发设置</strong>中找到<code>AppID</code></li>
+<li>下载<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html" target="_blank" rel="noopener">微信 web 开发者工具</a></li>
+<li>登陆工具后创建项目，将之前复制的<code>AppID</code>填写到对应的内容项中。</li>
+</ul>
+<p>在新创建的文件夹中以<code>app</code>开头的文件都是全局配置文件，首先在<code>app.json</code>中的<code>pages</code>属性中增加<code>&quot;pages/index/index&quot;</code>保存后会自动生成相应的文件，<code>index</code>文件夹作为我们的首页。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"pages"</span>: [</span><br><span class="line">    <span class="string">"pages/index/index"</span>, //首页</span><br><span class="line">    <span class="string">"pages/place/index"</span> //搜索页</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"window"</span>: &#123;</span><br><span class="line">    "backgroundTextStyle": "light", //下拉 loading 的样式</span><br><span class="line">    "navigationBarBackgroundColor": "#0078D7", //顶部导航的背景颜色</span><br><span class="line">    "navigationBarTitleText": "通天气", //通用导航标题</span><br><span class="line">    "navigationBarTextStyle": "white" // 导航标题颜色</span><br><span class="line">  &#125;,</span><br><span class="line">  "permission": &#123;</span><br><span class="line">    "scope.userLocation": &#123;</span><br><span class="line">      // 使用wx.getLocation时需要配置</span><br><span class="line">      "desc": "你的位置信息将用于定位城市天气信息的展示" //请求位置信息时要展示的</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  "sitemapLocation": "sitemap.json" //指明sitemap.json位置</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>首先查看了当前一些天气小程序(腾讯天气，彩云天气，墨迹天气等)，吸取该小程序的页面搭建样式，从华为手机的桌面天气应用中也有学习</p>
+<h3 id="收集素材"><a href="#收集素材" class="headerlink" title="收集素材"></a>收集素材</h3><blockquote>
+<p>本小程序计划天气样式使用字体图标</p>
+</blockquote>
+<p>从 <a href="https://www.iconfont.cn/" target="_blank" rel="noopener">iconfont</a> 网站上查询到了一些图标，然后下载到本地，配置到 <code>app.wxss</code> 用来页面引用</p>
+<p>在一个<a href="http://bapaboli.lofter.com/post/910b8_6499be" target="_blank" rel="noopener">设计网站</a>收集了一些天气背景图，裁剪后用于显示，美化页面</p>
+        
+          <a class="article-more-a" href="/myBlog/2019/06/29/记一次小程序开发/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/06/29/记一次小程序开发/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-执行上下文" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/06/27/执行上下文/">执行上下文</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/06/27/执行上下文/" class="archive-article-date">
+  	<time datetime="2019-06-27T01:49:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>首先明确几个概念:</strong></p>
+<ul>
+<li><code>EC</code>:函数执行环境(或执行上下文)</li>
+<li><code>ECS</code>:执行环境栈</li>
+<li><code>VO</code>:变量对象</li>
+<li><code>AO</code>:活动对象</li>
+<li><code>scope chain</code>: 作用域链</li>
+</ul>
+<h2 id="EC-执行上下文"><a href="#EC-执行上下文" class="headerlink" title="EC (执行上下文)"></a>EC (执行上下文)</h2><blockquote>
+<p>每当控制器转到 ECMAScript 可执行代码的时候，就会进入到一个执行上下文</p>
+</blockquote>
+<p>那什么是可执行代码呢?</p>
+<h3 id="可执行代码的类型"><a href="#可执行代码的类型" class="headerlink" title="可执行代码的类型"></a>可执行代码的类型</h3><ul>
+<li>全局代码(<code>Global code</code>)<ul>
+<li>这种类型的代码是在”程序”级处理的:例如加载外部的 js 文件或者本地<code>&lt;script&gt;&lt;/script&gt;</code>标签内的代码。<strong>全局代码不包括任何 function 体内的代码</strong>。这个是默认的代码运行环境，一旦代码被载入，引擎最先进入的就是这个环境。</li>
+</ul>
+</li>
+<li>函数代码(<code>Function code</code>)<ul>
+<li>任何一个函数体内的代码，但是需要注意的是，<strong>具体的函数体内的代码是不包括内部函数的代码。</strong></li>
+</ul>
+</li>
+<li>Eval 代码(<code>Eval code</code>)<ul>
+<li>eval 内部的代码</li>
+</ul>
+</li>
+</ul>
+        
+          <a class="article-more-a" href="/myBlog/2019/06/27/执行上下文/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">试题</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/06/27/执行上下文/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-事件循环" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -996,6 +1235,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
@@ -1013,10 +1256,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">代码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
               </li>
              
               <li class="article-tag-list-item">
