@@ -151,6 +151,114 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Web-modules-前端模块化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/09/17/Web-modules-前端模块化/">Web-modules 前端模块化</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/09/17/Web-modules-前端模块化/" class="archive-article-date">
+  	<time datetime="2019-09-17T00:07:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>模块化的开发方式可以提高代码的服用效率，方便进行代码的管理。模块化主要体现的是一种分而治之的思想。<a href="https://baike.baidu.com/item/%E5%88%86%E8%80%8C%E6%B2%BB%E4%B9%8B%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">分而治之</a>是复杂系统开发和维护的基石，模块化则是前段最流行的分治阶段。</p>
+<p><img src="https://s2.ax1x.com/2019/09/17/n4PnU0.jpg" alt="n4PnU0.jpg"></p>
+<h2 id="模块化简介"><a href="#模块化简介" class="headerlink" title="模块化简介"></a>模块化简介</h2><p>具有相同属性和行为的事物的集合，在前端中，将一些属性比较类似和行为比较类似的内容放在同一个 JS 文件里面，把这个 JS 文件称为一个模块，为了每个 JS 文件只关注自身有关的事情，让每个 JS 文件各行其职</p>
+<p>模块化要有几个特点：<strong>独立</strong>，<strong>完整</strong>，<strong>依赖关系</strong></p>
+<p>在最开始的阶段，JS 并没有模块化机制，各种 JS 到处飞，也就是所谓的野生代码，得不到妥善的管理。后来前端圈开始制定规范，最耳熟能详的是<code>CommonJS</code>和<code>AMD</code>。<strong><code>node.js</code></strong>就是<code>CommonJS</code>规范的产物。但是由于<code>CommonJS</code>同步加载更适合服务端，所以迫切需要一个关于客户端的规范，既又出现了很多客户端，耳熟能详的<code>AMD</code></p>
+<h3 id="模块化的实现"><a href="#模块化的实现" class="headerlink" title="模块化的实现"></a>模块化的实现</h3><ul>
+<li>函数</li>
+<li>对象的写法</li>
+<li>匿名函数、返回对象</li>
+<li>以来传入实参</li>
+<li><strong>以上缺点依赖关系不好处理，需要按顺序加载，可能会阻塞页面</strong></li>
+</ul>
+<h3 id="模块化的好处"><a href="#模块化的好处" class="headerlink" title="模块化的好处"></a>模块化的好处</h3><ul>
+<li>避免命名冲突</li>
+<li>更好的分离，按需加载</li>
+<li>更高复用性</li>
+<li>高可维护性</li>
+</ul>
+        
+          <a class="article-more-a" href="/myBlog/2019/09/17/Web-modules-前端模块化/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">模块化</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/09/17/Web-modules-前端模块化/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-HTML5-DeviceMotionEvent" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -172,11 +280,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="事件介绍"><a href="#事件介绍" class="headerlink" title="事件介绍"></a>事件介绍</h2><ol>
-<li>deviceorientation 提供设备的物理方向信息，表示为一系列本地坐标系的旋角。</li>
-<li>devicemotion 提供设备的加速信息，表示为定义在设备上的坐标系中的卡尔迪坐标。其还提供了设备在坐标系中的自转速率。若可行的话，事件应该提供设备重心处的加速信息。</li>
-<li>compassneedscalibration 用于通知 Web 站点使用罗盘信息校准上述事件。</li>
+<li><code>deviceorientation</code> 提供设备的物理方向信息，表示为一系列本地坐标系的旋角。</li>
+<li><code>devicemotion</code> 提供设备的加速信息，表示为定义在设备上的坐标系中的卡尔迪坐标。其还提供了设备在坐标系中的自转速率。若可行的话，事件应该提供设备重心处的加速信息。</li>
+<li><code>compassneedscalibration</code> 用于通知 Web 站点使用罗盘信息校准上述事件。</li>
 </ol>
-<h2 id="用法简介"><a href="#用法简介" class="headerlink" title="用法简介"></a>用法简介</h2><h3 id="deviceorientation"><a href="#deviceorientation" class="headerlink" title="deviceorientation"></a>deviceorientation</h3><p>注册一个 deviceorientation 事件的接收器</p>
+<h2 id="用法简介"><a href="#用法简介" class="headerlink" title="用法简介"></a>用法简介</h2><h3 id="deviceorientation"><a href="#deviceorientation" class="headerlink" title="deviceorientation"></a>deviceorientation</h3><p>注册一个 <strong>deviceorientation</strong> 事件的接收器</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"deviceorientation"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e);</span><br><span class="line">  <span class="comment">// 处理event.alpha、event.beta及event.gamma</span></span><br><span class="line">  <span class="built_in">document</span>.querySelector(<span class="string">"#item"</span>).innerHTML = <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;p&gt; 设备沿z轴上的旋转角度<span class="subst">$&#123;e.alpha&#125;</span> &lt;/p&gt;</span></span><br><span class="line"><span class="string">  &lt;p&gt; 设备在x轴上的旋转角度，描述设备由前向后旋转的情况 <span class="subst">$&#123;e.beta&#125;</span>  &lt;/p&gt;</span></span><br><span class="line"><span class="string">  &lt;p&gt;表示设备在y轴上的旋转角度，描述设备由左向右旋转的情况<span class="subst">$&#123;e.gamma&#125;</span> &lt;/p&gt;</span></span><br><span class="line"><span class="string">  &lt;p&gt;与北方向的角度差值，正北为0度，正东为90度，正南为180度，正西为270度<span class="subst">$&#123;e.webkitCompassHeading&#125;</span>&lt;/p&gt;</span></span><br><span class="line"><span class="string">  &lt;p&gt;指北针的精确度，表示偏差为正负多少度<span class="subst">$&#123;e.webkitCompassAccuracy&#125;</span> &lt;/p&gt;</span></span><br><span class="line"><span class="string">  `</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <blockquote>
@@ -276,7 +384,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>HTML5 提供了 geolocation API，用于提供位置相关服务。</p>
+        <p>HTML5 提供了 <strong>geolocation API</strong>，用于提供位置相关服务。</p>
 <p>地理位置 API 通过<code>window.navigator.geolocation</code>提供。在使用之前需要进行判断该对象是否存在，如果存在的话，那么位置信息可用</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="string">"geolocation"</span> <span class="keyword">in</span> navigator) &#123;</span><br><span class="line">  <span class="comment">/* 地理位置信息可用 */</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">/* 地理位置信息不可用 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         
@@ -1061,107 +1169,6 @@
 
 
   
-    <article id="post-浏览器渲染原理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/08/22/浏览器渲染原理/">浏览器渲染原理</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/08/22/浏览器渲染原理/" class="archive-article-date">
-  	<time datetime="2019-08-22T00:24:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p>提到页面渲染，最重要的就是关键渲染路径</p>
-<p>通常我们在编写页面时，只需要编写 HTML、Css、JavaScript 屏幕上就会显示出漂亮的页面，但浏览器是如何使用我们的代码在屏幕上渲染像素的呢?<br>浏览器将 HTML、Css、JavaScript 转换为屏幕上所呈现的实际像素，这期间所经历的一系列步骤，叫做<strong>关键渲染路径(Critical Rendering Path)</strong></p>
-<h2 id="浏览器渲染页面的过程"><a href="#浏览器渲染页面的过程" class="headerlink" title="浏览器渲染页面的过程"></a>浏览器渲染页面的过程</h2><p>从耗时的角度，浏览器请求，加载，渲染一个页面，时间花在下面五项</p>
-<ul>
-<li>DNS 查询</li>
-<li>TCP 连接</li>
-<li>HTTP 请求及响应</li>
-<li>服务器响应</li>
-<li>客户端渲染</li>
-</ul>
-<p>本文讨论第五个部分，即<strong>浏览器对内容的渲染</strong></p>
-        
-          <a class="article-more-a" href="/myBlog/2019/08/22/浏览器渲染原理/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">渲染</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/08/22/浏览器渲染原理/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/myBlog/page/2/">2</a><a class="page-number" href="/myBlog/page/3/">3</a><a class="page-number" href="/myBlog/page/4/">4</a><a class="extend next" rel="next" href="/myBlog/page/2/">Next &raquo;</a>
@@ -1271,7 +1278,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1283,7 +1290,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1296,6 +1303,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
               </li>
              
               <li class="article-tag-list-item">

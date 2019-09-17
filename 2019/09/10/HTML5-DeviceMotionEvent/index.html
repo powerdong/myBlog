@@ -18,7 +18,7 @@
 <meta property="og:description" content="事件介绍 deviceorientation 提供设备的物理方向信息，表示为一系列本地坐标系的旋角。 devicemotion 提供设备的加速信息，表示为定义在设备上的坐标系中的卡尔迪坐标。其还提供了设备在坐标系中的自转速率。若可行的话，事件应该提供设备重心处的加速信息。 compassneedscalibration 用于通知 Web 站点使用罗盘信息校准上述事件。  用法简介deviceori">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s2.ax1x.com/2019/09/10/nNsGMF.png">
-<meta property="og:updated_time" content="2019-09-10T03:26:26.630Z">
+<meta property="og:updated_time" content="2019-09-10T03:29:10.766Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML5-DeviceMotionEvent">
 <meta name="twitter:description" content="事件介绍 deviceorientation 提供设备的物理方向信息，表示为一系列本地坐标系的旋角。 devicemotion 提供设备的加速信息，表示为定义在设备上的坐标系中的卡尔迪坐标。其还提供了设备在坐标系中的自转速率。若可行的话，事件应该提供设备重心处的加速信息。 compassneedscalibration 用于通知 Web 站点使用罗盘信息校准上述事件。  用法简介deviceori">
@@ -173,11 +173,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="事件介绍"><a href="#事件介绍" class="headerlink" title="事件介绍"></a>事件介绍</h2><ol>
-<li>deviceorientation 提供设备的物理方向信息，表示为一系列本地坐标系的旋角。</li>
-<li>devicemotion 提供设备的加速信息，表示为定义在设备上的坐标系中的卡尔迪坐标。其还提供了设备在坐标系中的自转速率。若可行的话，事件应该提供设备重心处的加速信息。</li>
-<li>compassneedscalibration 用于通知 Web 站点使用罗盘信息校准上述事件。</li>
+<li><code>deviceorientation</code> 提供设备的物理方向信息，表示为一系列本地坐标系的旋角。</li>
+<li><code>devicemotion</code> 提供设备的加速信息，表示为定义在设备上的坐标系中的卡尔迪坐标。其还提供了设备在坐标系中的自转速率。若可行的话，事件应该提供设备重心处的加速信息。</li>
+<li><code>compassneedscalibration</code> 用于通知 Web 站点使用罗盘信息校准上述事件。</li>
 </ol>
-<h2 id="用法简介"><a href="#用法简介" class="headerlink" title="用法简介"></a>用法简介</h2><h3 id="deviceorientation"><a href="#deviceorientation" class="headerlink" title="deviceorientation"></a>deviceorientation</h3><p>注册一个 deviceorientation 事件的接收器</p>
+<h2 id="用法简介"><a href="#用法简介" class="headerlink" title="用法简介"></a>用法简介</h2><h3 id="deviceorientation"><a href="#deviceorientation" class="headerlink" title="deviceorientation"></a>deviceorientation</h3><p>注册一个 <strong>deviceorientation</strong> 事件的接收器</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"deviceorientation"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e);</span><br><span class="line">  <span class="comment">// 处理event.alpha、event.beta及event.gamma</span></span><br><span class="line">  <span class="built_in">document</span>.querySelector(<span class="string">"#item"</span>).innerHTML = <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;p&gt; 设备沿z轴上的旋转角度<span class="subst">$&#123;e.alpha&#125;</span> &lt;/p&gt;</span></span><br><span class="line"><span class="string">  &lt;p&gt; 设备在x轴上的旋转角度，描述设备由前向后旋转的情况 <span class="subst">$&#123;e.beta&#125;</span>  &lt;/p&gt;</span></span><br><span class="line"><span class="string">  &lt;p&gt;表示设备在y轴上的旋转角度，描述设备由左向右旋转的情况<span class="subst">$&#123;e.gamma&#125;</span> &lt;/p&gt;</span></span><br><span class="line"><span class="string">  &lt;p&gt;与北方向的角度差值，正北为0度，正东为90度，正南为180度，正西为270度<span class="subst">$&#123;e.webkitCompassHeading&#125;</span>&lt;/p&gt;</span></span><br><span class="line"><span class="string">  &lt;p&gt;指北针的精确度，表示偏差为正负多少度<span class="subst">$&#123;e.webkitCompassAccuracy&#125;</span> &lt;/p&gt;</span></span><br><span class="line"><span class="string">  `</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <blockquote>
@@ -202,7 +202,7 @@
 <h3 id="compassneedscalibration"><a href="#compassneedscalibration" class="headerlink" title="compassneedscalibration"></a>compassneedscalibration</h3><p>使用自定义界面通知用户校准罗盘</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"compassneedscalibration"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  alert(<span class="string">"您的罗盘需要校准，请将设备沿数字8方向移动。"</span>);</span><br><span class="line">  event.preventDefault();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<h3 id="devicemotion"><a href="#devicemotion" class="headerlink" title="devicemotion"></a>devicemotion</h3><p>注册一个 devicemotion 时间的接收器</p>
+<h3 id="devicemotion"><a href="#devicemotion" class="headerlink" title="devicemotion"></a>devicemotion</h3><p>注册一个 <strong>devicemotion</strong> 时间的接收器</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"devicemotion"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(event);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <ul>
@@ -355,6 +355,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/myBlog/2019/09/17/Web-modules-前端模块化/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Web-modules 前端模块化
+        
+      </div>
+    </a>
   
   
     <a href="/myBlog/2019/09/10/HTML5-Geolocation/" id="article-nav-older" class="article-nav-link-wrap">
@@ -518,7 +527,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -530,7 +539,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -543,6 +552,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
               </li>
              
               <li class="article-tag-list-item">
