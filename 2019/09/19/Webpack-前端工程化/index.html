@@ -26,7 +26,10 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/09/20/nXpZXq.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/09/20/nXm2b4.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/09/20/nXMHfA.png">
-<meta property="og:updated_time" content="2019-09-20T03:13:45.352Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/09/21/nvT4bQ.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/09/21/nvbIVe.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/09/21/nvqCPs.png">
+<meta property="og:updated_time" content="2019-09-21T01:06:50.255Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Webpack-前端工程化">
 <meta name="twitter:description" content="历史状况Web 前端开发这几年发展非常迅速，非常多的开发框架和构建工具的涌现，敬爱的前端攻城狮，可能你昨天还在用的工具、插件，到了今天可能就过时了。到了今天，外面的世界已经变了。  当你在遇到一个 Bug 需要修复时，没有比工程化推广更迫切的事情了  需要解决的问题工具和语言虽然差异大，但是解决的都是相似的问题，大概有以下几点  扩展 JavaScript、HTML、Css 本身的语言能力 解决重">
@@ -196,13 +199,17 @@
 <a id="more"></a>
 
 <h2 id="什么是前端工程化"><a href="#什么是前端工程化" class="headerlink" title="什么是前端工程化"></a>什么是前端工程化</h2><p>所谓工程化，可以简单认为是将框架的职责拓宽再拓宽，主旨是帮业务团队更好的完成需求，工程化会预测一些常碰到的问题，将之扼杀在摇篮，而这种路径是可重用的，是具有可持续性。</p>
+<blockquote>
 <p>比如第一个优化去除冗余，是在多次去除冗余代码，思考冗余出现的原因而最终思考得出一个避免冗余的方案。</p>
+</blockquote>
 <p><img src="https://s2.ax1x.com/2019/09/20/nOI3pF.jpg" alt="nOI3pF.jpg"></p>
 <h2 id="自动化构建工具"><a href="#自动化构建工具" class="headerlink" title="自动化构建工具"></a>自动化构建工具</h2><p>说到构建工具，我们往往会在前面加上(<strong>自动化</strong>)三个字，因为构建工具就是用来让我们不再做机械重复的事情，解放我们的双手。</p>
 <p>要完成前端工程化，少不了工程构建工具，<code>requireJS</code>与<code>grunt</code>的出现，改变了业界前端代码的编写习惯，同时他们也是推动前端工程化的一个基础</p>
 <p><code>requireJS</code>是一伟大的模块加载器，他的出现让 JavaScript 制作多人维护的大型项目成为可能。<br><code>grunt</code>是一款 JavaScript 构建工具，主要完成编译、压缩、合并等一系列工作，后续又出了<code>Gulp</code>、<code>WebPack</code>等构建工具。</p>
 <p><strong><code>WebPack</code> 具有<code>Gulp</code>、<code>grunt</code>对于静态资源自动化构建的能力，但更重要的是，<code>WebPack</code> 弥补了<code>requireJS</code>在模块化方面的缺陷，同时兼容 AMD 与 CMD 的模块加载规范，具有更强大的 JS 模块化功能。</strong></p>
-<h2 id="两种模式"><a href="#两种模式" class="headerlink" title="两种模式"></a>两种模式</h2><h3 id="开发模式"><a href="#开发模式" class="headerlink" title="开发模式"></a>开发模式</h3><p>开发模式比较简单，主要就是监听文件变化，自动进行打包、合并的操作</p>
+<h2 id="两种模式"><a href="#两种模式" class="headerlink" title="两种模式"></a>两种模式</h2><h3 id="开发模式"><a href="#开发模式" class="headerlink" title="开发模式"></a>开发模式</h3><blockquote>
+<p>开发模式比较简单，主要就是监听文件变化，自动进行打包、合并的操作</p>
+</blockquote>
 <h3 id="生产模式"><a href="#生产模式" class="headerlink" title="生产模式"></a>生产模式</h3><p>参考我们得技术栈与需求，我们的静态文件都要发布到 cdn 上，而且<strong>必须有 md5 版本号</strong>，方便快速发布(<strong>cdn 更新极其缓慢，所以更新必须使用新的文件名</strong>)</p>
 <blockquote>
 <p>生产模式主要增加了文件压缩、文件 md5 名修改、替换 HTML 等操作</p>
@@ -231,10 +238,10 @@
 <li>内置有<code>source map</code>，即使打包在一起依旧方便调试</li>
 </ul>
 <blockquote>
-<p><strong>任何静态资源都可以视作模块，然后模块之间也可以相互依赖，通过WebPack对模块进行处理后，可以打包我们想要的静态资源</strong></p>
+<p><strong>任何静态资源都可以视作模块，然后模块之间也可以相互依赖，通过 WebPack 对模块进行处理后，可以打包我们想要的静态资源</strong></p>
 </blockquote>
-<h3 id="使用WebPack"><a href="#使用WebPack" class="headerlink" title="使用WebPack"></a>使用WebPack</h3><ul>
-<li><p>新建WebPackDemo文件夹，使用<code>npm init</code>命令生成<code>package.json</code>文件。</p>
+<h3 id="使用-WebPack"><a href="#使用-WebPack" class="headerlink" title="使用 WebPack"></a>使用 WebPack</h3><ul>
+<li><p>新建 WebPackDemo 文件夹，使用<code>npm init</code>命令生成<code>package.json</code>文件。</p>
 </li>
 <li><p>使用<code>npm install webpack -D</code>安装 <code>webpack</code></p>
 </li>
@@ -242,7 +249,7 @@
 <p><img src="https://s2.ax1x.com/2019/09/20/nOqPkn.png" alt="nOqPkn.png"></p>
 <ul>
 <li>在文件夹下创建<code>webpack.config.js</code>文件，编写配置文件<ul>
-<li>entry: 是页面入口文件配置(HTML文件引入的唯一的js文件)</li>
+<li>entry: 是页面入口文件配置(HTML 文件引入的唯一的 js 文件)</li>
 <li>output: 对应输出项配置(path: 入口文件最终要输出到哪里，filename: 输出文件的名称，publicPath: 公共资源路径)</li>
 </ul>
 </li>
@@ -254,29 +261,58 @@
 <ul>
 <li>webpack 打包当前项目操作指令 <code>npx webpack</code></li>
 </ul>
-<p>会在项目文件夹中生成一个out文件夹，里边会有编译后的index.js。</p>
-<h4 id="Webpack-loader加载器"><a href="#Webpack-loader加载器" class="headerlink" title="Webpack loader加载器"></a>Webpack loader加载器</h4><p><strong>loader意义</strong><br>这些加载器主要做一些预处理的工作，比如less等，这里我们以css和babel编译E2015为例</p>
-<p><strong>安装loader</strong><br>我们第一步就是先要安装好各个需要使用的loader。<br>运行以下命令进行安装<code>npm install babel-loader babel babel-core css-loader style-loader  -D</code></p>
-<p>添加css文件，在js文件中引用之后使用WebPack打包</p>
+<p>会在项目文件夹中生成一个 out 文件夹，里边会有编译后的 index.js。</p>
+<h4 id="Webpack-loader-加载器"><a href="#Webpack-loader-加载器" class="headerlink" title="Webpack loader 加载器"></a>Webpack loader 加载器</h4><p><strong>loader 意义</strong><br>这些加载器主要做一些预处理的工作，比如 less 等，这里我们以 css 和 babel 编译 E2015 为例</p>
+<p><strong>安装 loader</strong><br>我们第一步就是先要安装好各个需要使用的 loader。<br>运行以下命令进行安装<code>npm install babel-loader babel babel-core css-loader style-loader -D</code></p>
+<p>添加 css 文件，在 js 文件中引用之后使用 WebPack 打包</p>
 <p><img src="https://s2.ax1x.com/2019/09/20/nXS9JJ.png" alt="nXS9JJ.png"></p>
 <blockquote>
-<p>如果编译过程中出现报错<br>Error: Cannot find module ‘@babel/core’<br> babel-loader@8 requires Babel 7.x (the package ‘@babel/core’). If you’d like to use Babel 6.x (‘babel-core’), you should install ‘babel-loader@7’.<br>使用命令 <code>npm install babel-loader@7</code></p>
+<p>如果编译过程中出现报错<br>Error: Cannot find module ‘@babel/core’<br>babel-loader@8 requires Babel 7.x (the package ‘@babel/core’). If you’d like to use Babel 6.x (‘babel-core’), you should install ‘babel-loader@7’.<br>使用命令 <code>npm install babel-loader@7</code></p>
 </blockquote>
 <p>编译完成后查看<code>index.html</code>，查看源码后发现<code>head</code>标签里多出了<code>style</code>标签，里面正是我们想要的样式。<br><img src="https://s2.ax1x.com/2019/09/20/nXpZXq.png" alt="nXpZXq.png"></p>
-<h4 id="图片打包"><a href="#图片打包" class="headerlink" title="图片打包"></a>图片打包</h4><p>我们之前也说过，WebPack对于静态资源来说，也是看做模块来加载的，Css我们是已经看过了。那么图片是怎么作为模块打包加载进来的呢？这里我们可以想到，图片我们是<code>url-loader</code>加载的，我们在Css文件里的url属性，其实就是一种封装处理过的require操作，当然我们还有一种方式就是直接对元素的src属性进行require赋值。</p>
+<h4 id="图片打包"><a href="#图片打包" class="headerlink" title="图片打包"></a>图片打包</h4><p>我们之前也说过，WebPack 对于静态资源来说，也是看做模块来加载的，Css 我们是已经看过了。那么图片是怎么作为模块打包加载进来的呢？这里我们可以想到，图片我们是<code>url-loader</code>加载的，我们在 Css 文件里的 url 属性，其实就是一种封装处理过的 require 操作，当然我们还有一种方式就是直接对元素的 src 属性进行 require 赋值。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install url-loader file-loader</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">'./1.jpg'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">"./1.jpg"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> img = <span class="built_in">document</span>.createElement(<span class="string">'img'</span>)</span><br><span class="line">img.src = <span class="built_in">require</span>(<span class="string">'./image/xxx.png'</span>)</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(img)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> img = <span class="built_in">document</span>.createElement(<span class="string">"img"</span>);</span><br><span class="line">img.src = <span class="built_in">require</span>(<span class="string">"./image/xxx.png"</span>);</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(img);</span><br></pre></td></tr></table></figure>
 
-<p>上述两种方法都会对符合要求的图片进行处理。而要求就是在url-loader后面通过query参数的方式实现的，这里就是说只有不大于<strong>8kb</strong>的图片才会打包处理成Base64格式的图片。</p>
+<p>上述两种方法都会对符合要求的图片进行处理。而要求就是在 url-loader 后面通过 query 参数的方式实现的，这里就是说只有不大于<strong>8kb</strong>的图片才会打包处理成 Base64 格式的图片。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  test: <span class="regexp">/.jpg|png|gif|svg$/</span>,</span><br><span class="line">  use: [<span class="string">'url-loader?limit=8192&amp;name=./[name].[ext]'</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><code>publicPath</code> 是像图片这种静态资源打包后的根路径，当浏览器需要引用输入静态资源文件时，这个配置项指定输入文件的公共URL地址。在loader中它被嵌入到script或者link标签或者对静态资源的引用里。当文件的href或者url()与它在磁盘上的路径不一致时就应当用publicPath，当你想定义一些或者所有文件放在不同的主机或CDN上时会有用。</p>
+<p><code>publicPath</code> 是像图片这种静态资源打包后的根路径，当浏览器需要引用输入静态资源文件时，这个配置项指定输入文件的公共 URL 地址。在 loader 中它被嵌入到 script 或者 link 标签或者对静态资源的引用里。当文件的 href 或者 url()与它在磁盘上的路径不一致时就应当用 publicPath，当你想定义一些或者所有文件放在不同的主机或 CDN 上时会有用。</p>
 <p><img src="https://s2.ax1x.com/2019/09/20/nXm2b4.png" alt="nXm2b4.png"></p>
 <p>编译后实现效果</p>
 <p><img src="https://s2.ax1x.com/2019/09/20/nXMHfA.png" alt="nXMHfA.png"></p>
+<h4 id="打包多个文件"><a href="#打包多个文件" class="headerlink" title="打包多个文件"></a>打包多个文件</h4><p>WebPack 不仅适用于 SPA 开发，对于多页面，多站点，WebPack 支持的很好，通过更改配置文件为多入口</p>
+<p>output 设置里面<code>[name]</code>代表 <code>entry</code> 的每一个键值，因此运行 WebPack 时候会输出对应多个文件，<code>out/page1.js</code>,<code>out/page2.js</code>,在<code>index.html</code>和<code>index2.html</code>两个页面分别引用。</p>
+<p><img src="https://s2.ax1x.com/2019/09/21/nvT4bQ.png" alt="nvT4bQ.png"></p>
+<h4 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h4><p>代码压缩插件：uglifyjs-webpack-plugin</p>
+<p>插件下载 <code>npm install uglifyjs-webpack-plugin --save-dev</code></p>
+<p>插件使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> UglifyJsPlugin = <span class="built_in">require</span>(<span class="string">"uglifyjs-webpack-plugin"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  optimization: &#123;</span><br><span class="line">    minimizer: [<span class="keyword">new</span> UglifyJsPlugin()]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>具体配置请访问:<a href="https://github.com/webpack-contrib/uglifyjs-webpack-plugin" target="_blank" rel="noopener">https://github.com/webpack-contrib/uglifyjs-webpack-plugin</a></p>
+<p><strong>页面分离：</strong>前端工程一项就是减少 http 请求，这表示需要把多个 js 合并成一个，但是，单个 JS 文件过大会影响浏览器下载文件的速度，由于现在浏览器并发 http 请求多达 6 个，可以利用这个特性，将复用第三方资源库奋力加载。</p>
+<p>模块分离插件：SplitChunksPlugin</p>
+<blockquote>
+<p>Originally, chunks (and modules imported inside them) were connected by a parent-child relationship in the internal webpack graph. The CommonsChunkPlugin was used to avoid duplicated dependencies across them, but further optimizations where not possible</p>
+<p>Since version 4 the CommonsChunkPlugin was removed in favor of optimization.splitChunks and optimization.runtimeChunk options.</p>
+</blockquote>
+<p>通过将公共模块拆出来，最终合成的文件能够在最开始的时候加载一次，便存起来到缓存中供后续使用。</p>
+<p>我们需要在<code>webpack.config.js</code>文件中添加下面的代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">splitChunks: &#123;</span><br><span class="line">    chunks: <span class="string">"async"</span>, <span class="comment">// initial、async和all</span></span><br><span class="line">    minSize: <span class="number">30000</span>, <span class="comment">// 形成一个新代码块最小的体积 默认是 3000</span></span><br><span class="line">    minChunks: <span class="number">1</span>, <span class="comment">// 在分割之前，这个代码块最小应该被引用的次数</span></span><br><span class="line">    maxAsyncRequests: <span class="number">5</span>, <span class="comment">// 按需加载时候最大的并行请求数。</span></span><br><span class="line">    maxInitialRequests: <span class="number">3</span>, <span class="comment">// 一个入口最大的并行请求数</span></span><br><span class="line">    automaticNameDelimiter: <span class="string">'~'</span>,</span><br><span class="line">    name: <span class="literal">true</span>, <span class="comment">// 打包的chunks的名字 字符串或者函数(函数可以根据条件自定义名字)</span></span><br><span class="line">    cacheGroups: &#123; <span class="comment">// 这里开始设置缓存的 chunks</span></span><br><span class="line">        vendors: &#123;</span><br><span class="line">            test: <span class="regexp">/[\\/]node_modules[\\/]/</span>,</span><br><span class="line">            priority: <span class="number">-10</span></span><br><span class="line">        &#125;,</span><br><span class="line">    <span class="keyword">default</span>: &#123;</span><br><span class="line">            minChunks: <span class="number">2</span>,</span><br><span class="line">            priority: <span class="number">-20</span>,</span><br><span class="line">            reuseExistingChunk: <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>具体配置请访问:<a href="https://www.webpackjs.com/plugins/split-chunks-plugin/" target="_blank" rel="noopener">https://www.webpackjs.com/plugins/split-chunks-plugin/</a></p>
+<h4 id="Css独立打包"><a href="#Css独立打包" class="headerlink" title="Css独立打包"></a>Css独立打包</h4><p>独立出Css样式，如果我们希望样式通过<code>&lt;link&gt;</code>引入，而不是放在<code>&lt;style&gt;</code>标签中，即使这样做会多一个请求。</p>
+<p>安装 <code>npm install mini-css-extract-plugin --save-dev</code></p>
+<p><img src="https://s2.ax1x.com/2019/09/21/nvbIVe.png" alt="nvbIVe.png"></p>
+<p>为了区分开<code>&lt;link&gt;</code>链接和用<code>&lt;style&gt;</code>，我们这里以Css后缀结尾的模块用插件。</p>
+<h4 id="WebPack-服务器"><a href="#WebPack-服务器" class="headerlink" title="WebPack 服务器"></a>WebPack 服务器</h4><blockquote>
+<p>Use webpack with a development server that provides live reloading. This should be used for development only.</p>
+</blockquote>
+<p>安装：<code>npm install webpack-dev-server --save-dev</code></p>
+<p><a href="https://imgchr.com/i/nvqCPs" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/09/21/nvqCPs.png" alt="nvqCPs.png"></a></p>
 <hr>
 <blockquote>
 <p>‘摘抄’不是单纯的“粘贴-&gt;复制”，而是眼到，手到，心到的一字一句敲打下来。</p>
@@ -559,7 +595,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -567,7 +603,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color4">Css</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -583,19 +619,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">试题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">模块化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+                <a href="javascript:void(0)" class="js-tag color3">试题</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -603,15 +631,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">代码</a>
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
+                <a href="javascript:void(0)" class="js-tag color3">代码</a>
               </li>
              
               <li class="article-tag-list-item">
