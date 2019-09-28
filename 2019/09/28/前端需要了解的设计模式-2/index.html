@@ -9,22 +9,22 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>前端需要了解的设计模式(2) | PowerDong-分享技术&amp;生活</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JS 中的设计模式本文章通过介绍常见模式的简介，UML 类图展示，代码示例方式介绍几种常见的设计模式 工厂模式 将 new 操作单独封装 遇到 new 时，就要考虑是否使用工厂模式 这种设计模式可以大大降低程序模块之间的耦合度，便于更加灵活的扩展和维护  工厂模式是一种使用工厂方法创建对象的设计模式，而不是指定创建对象的确切的类或构造函数  示例：当你在购买汉堡时，直接点餐，取餐，不会自己亲手做。">
+  <meta name="description" content="JS 中的设计模式本文章通过介绍常见模式的简介，UML 类图展示，代码示例方式介绍几种常见的设计模式 设计模式简介相关请访问前端需要了解的设计模式(1) 工厂模式 将 new 操作单独封装 遇到 new 时，就要考虑是否使用工厂模式 这种设计模式可以大大降低程序模块之间的耦合度，便于更加灵活的扩展和维护  工厂模式是一种使用工厂方法创建对象的设计模式，而不是指定创建对象的确切的类或构造函数  示例">
 <meta name="keywords" content="笔记,module">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端需要了解的设计模式(2)">
 <meta property="og:url" content="http://yoursite.com/2019/09/28/前端需要了解的设计模式-2/index.html">
 <meta property="og:site_name" content="PowerDong-分享技术&amp;生活">
-<meta property="og:description" content="JS 中的设计模式本文章通过介绍常见模式的简介，UML 类图展示，代码示例方式介绍几种常见的设计模式 工厂模式 将 new 操作单独封装 遇到 new 时，就要考虑是否使用工厂模式 这种设计模式可以大大降低程序模块之间的耦合度，便于更加灵活的扩展和维护  工厂模式是一种使用工厂方法创建对象的设计模式，而不是指定创建对象的确切的类或构造函数  示例：当你在购买汉堡时，直接点餐，取餐，不会自己亲手做。">
+<meta property="og:description" content="JS 中的设计模式本文章通过介绍常见模式的简介，UML 类图展示，代码示例方式介绍几种常见的设计模式 设计模式简介相关请访问前端需要了解的设计模式(1) 工厂模式 将 new 操作单独封装 遇到 new 时，就要考虑是否使用工厂模式 这种设计模式可以大大降低程序模块之间的耦合度，便于更加灵活的扩展和维护  工厂模式是一种使用工厂方法创建对象的设计模式，而不是指定创建对象的确切的类或构造函数  示例">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s2.ax1x.com/2019/09/28/uQPKjx.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/09/28/uQVQKA.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/09/28/uQMnoR.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/09/28/uQJPHS.png">
-<meta property="og:updated_time" content="2019-09-28T03:13:12.990Z">
+<meta property="og:updated_time" content="2019-09-28T03:18:28.100Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端需要了解的设计模式(2)">
-<meta name="twitter:description" content="JS 中的设计模式本文章通过介绍常见模式的简介，UML 类图展示，代码示例方式介绍几种常见的设计模式 工厂模式 将 new 操作单独封装 遇到 new 时，就要考虑是否使用工厂模式 这种设计模式可以大大降低程序模块之间的耦合度，便于更加灵活的扩展和维护  工厂模式是一种使用工厂方法创建对象的设计模式，而不是指定创建对象的确切的类或构造函数  示例：当你在购买汉堡时，直接点餐，取餐，不会自己亲手做。">
+<meta name="twitter:description" content="JS 中的设计模式本文章通过介绍常见模式的简介，UML 类图展示，代码示例方式介绍几种常见的设计模式 设计模式简介相关请访问前端需要了解的设计模式(1) 工厂模式 将 new 操作单独封装 遇到 new 时，就要考虑是否使用工厂模式 这种设计模式可以大大降低程序模块之间的耦合度，便于更加灵活的扩展和维护  工厂模式是一种使用工厂方法创建对象的设计模式，而不是指定创建对象的确切的类或构造函数  示例">
 <meta name="twitter:image" content="https://s2.ax1x.com/2019/09/28/uQPKjx.png">
   
   <link rel="alternative" href="/atom.xml" title="PowerDong-分享技术&amp;生活" type="application/atom+xml">
@@ -176,6 +176,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="JS-中的设计模式"><a href="#JS-中的设计模式" class="headerlink" title="JS 中的设计模式"></a>JS 中的设计模式</h2><p>本文章通过介绍常见模式的简介，UML 类图展示，代码示例方式介绍几种常见的设计模式</p>
+<p>设计模式简介相关请访问<a href="https://powerdong.github.io/myBlog/2019/09/24/%E5%89%8D%E7%AB%AF%E9%9C%80%E8%A6%81%E4%BA%86%E8%A7%A3%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F(1)/" target="_blank" rel="noopener">前端需要了解的设计模式(1)</a></p>
 <h3 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h3><ul>
 <li>将 <code>new</code> 操作单独封装</li>
 <li><strong>遇到 <code>new</code> 时，就要考虑是否使用工厂模式</strong></li>
@@ -587,7 +588,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
+                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -595,11 +596,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
+                <a href="javascript:void(0)" class="js-tag color3">试题</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">试题</a>
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -623,6 +624,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">代码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
@@ -632,10 +637,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">TCP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">代码</a>
               </li>
             
             <div class="clearfix"></div>
