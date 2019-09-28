@@ -151,6 +151,111 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-变量和类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/07/09/变量和类型/">变量和类型</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/07/09/变量和类型/" class="archive-article-date">
+  	<time datetime="2019-07-09T05:35:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JavaScript-规定了几种语言类型"><a href="#JavaScript-规定了几种语言类型" class="headerlink" title="JavaScript 规定了几种语言类型"></a>JavaScript 规定了几种语言类型</h2><p>详情请点击<a href="http://note.youdao.com/noteshare?id=90745a65f3ab66d6383c4c2174682017&sub=6EE107F89A5D46D19362566E68D39FAB" title="点击查看" target="_blank" rel="noopener">JavaScript 的数据类型及其检测</a></p>
+<p>Javascript 有两种数据类型,分别是<code>基本数据类型</code>和<code>引用数据类型</code>。其中基本数据类型包括 <code>Undefined</code>、<code>Null</code>、<code>Boolean</code>、<code>Number</code>、<code>String</code>、<code>Symbol</code> (ES6 新增,表示独一无二的值),而引用数据类型统称为 Object 对象,主要包括对象、数组和函数。</p>
+<h3 id="基础数据类型"><a href="#基础数据类型" class="headerlink" title="基础数据类型"></a>基础数据类型</h3><ol>
+<li>值是不可变的</li>
+<li>存放在栈区</li>
+<li>值的比较</li>
+</ol>
+<h3 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h3><ol>
+<li>值是可变的</li>
+<li>同时保存在栈内存和堆内存</li>
+<li>比较是引用的比较</li>
+</ol>
+<h3 id="检验数据类型"><a href="#检验数据类型" class="headerlink" title="检验数据类型"></a>检验数据类型</h3><p><strong>1.typeof</strong></p>
+<p>typeof 返回一个表示数据类型的字符串,返回结果包括：<code>number</code>、<code>boolean</code>、<code>string</code>、<code>symbol</code>、<code>object</code>、<code>undefined</code>、<code>function</code> 等 7 种数据类型,但不能判断 null、array 等<br>数组和对象返回的都是 object,这时就需要使用 instanceof 来判断</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">typeof Symbol(); // symbol 有效</span><br><span class="line">typeof &apos;&apos;; // string 有效</span><br><span class="line">typeof 1; // number 有效</span><br><span class="line">typeof true; //boolean 有效</span><br><span class="line">typeof undefined; //undefined 有效</span><br><span class="line">typeof new Function(); // function 有效</span><br><span class="line">typeof null; //object 无效</span><br><span class="line">typeof [] ; //object 无效</span><br><span class="line">typeof new Date(); //object 无效</span><br><span class="line">typeof new RegExp(); //object 无效</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/myBlog/2019/07/09/变量和类型/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/07/09/变量和类型/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-我的第一个vue实例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1128,139 +1233,6 @@
 
 
   
-    <article id="post-43-道JS面试题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/06/24/43-道JS面试题/">43 道JS面试题</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/06/24/43-道JS面试题/" class="archive-article-date">
-  	<time datetime="2019-06-24T08:51:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>1. 下面代码输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function sayHi() &#123;</span><br><span class="line">  console.log(name);</span><br><span class="line">  console.log(age);</span><br><span class="line">  var name = &quot;Lydia&quot;;</span><br><span class="line">  let age = 21;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sayHi();</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A: <code>Lydia</code> 和 <code>undefined</code></li>
-<li>B: <code>Lydia</code> 和 <code>ReferenceError</code></li>
-<li>C: <code>ReferenceError</code> 和 <code>21</code></li>
-<li>D: <code>undefined</code> 和 <code>ReferenceError</code>  <details>
-<summary>答案</summary>
-  答案：D
-  <br>
-  在函数中，我们首先使用<code>var</code>关键字声明了<code>name</code>变量。这意味着变量在创建阶段会被提升(<code>JavaScript</code>会在创建变量阶段为其分配内存空间),默认值为<code>undefined</code>,知道我们实行执行到使用该变量的行。我们还没有为<code>name</code>变量赋值，所以它仍然保持<code>undefined</code>的值。
-  <br>
-  使用<code>let</code>关键字（和<code>const</code>）声明的变量也会存在变量提升，但与<code>var</code>不同，初始化没有被提升。 在我们声明（初始化）它们之前，它们是不可访问的。 这被称为“暂时死区”。 当我们在声明变量之前尝试访问变量时，<code>JavaScript</code>会抛出一个<code>ReferenceError</code>。
-  </details>
-
-</li>
-</ul>
-<p>关于 <code>let</code>、<code>var</code>和<code>function</code>:</p>
-<ul>
-<li><code>let</code>的’创建’过程被提升了，但是初始化没有提升。</li>
-<li><code>var</code>的’创建’和’初始化’都被提升了</li>
-<li><code>function</code>的’创建’、’初始化’和’赋值’都被提升了。</li>
-</ul>
-<p><strong>2. 下面代码的输出是什么?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for (var i = 0; i &lt; 3; i++) &#123;</span><br><span class="line">  setTimeout(() =&gt; console.log(i), 1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">for (let i = 0; i &lt; 3; i++) &#123;</span><br><span class="line">  setTimeout(() =&gt; console.log(i), 1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A: <code>0 1 2</code> and <code>0 1 2</code></li>
-<li>B: <code>0 1 2</code> and <code>3 3 3</code></li>
-<li>C: <code>3 3 3</code> and <code>0 1 2</code></li>
-</ul>
-<details>
-    <summary>答案</summary>
-    答案: C
-    <br>
-    由于<code>JavaScript</code>中的事件执行机制，<code>setTimeout</code>函数真正被执行时，循环已经走完。 由于第一个循环中的变量<code>i</code>是使用<code>var</code>关键字声明的，因此该值是全局的。 在循环期间，我们每次使用一元运算符<code>++</code>都会将<code>i</code>的值增加1。 因此在第一个例子中，当调用<code>setTimeout</code>函数时，<code>i</code>已经被赋值为3。
-    在第二个循环中，使用<code>let</code>关键字声明变量<code>i</code>：使用<code>let</code>（和<code>const</code>）关键字声明的变量是具有块作用域的（块是<code>{}</code>之间的任何东西）。 在每次迭代期间，<code>i</code>将被创建为一个新值，并且每个值都会存在于循环内的块级作用域。
-</details>
-        
-          <a class="article-more-a" href="/myBlog/2019/06/24/43-道JS面试题/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">试题</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/试题//" class="article-tag-list-link color3">试题</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/06/24/43-道JS面试题/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/myBlog/page/3/">&laquo; Prev</a><a class="page-number" href="/myBlog/">1</a><a class="page-number" href="/myBlog/page/2/">2</a><a class="page-number" href="/myBlog/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/myBlog/page/5/">5</a><a class="extend next" rel="next" href="/myBlog/page/5/">Next &raquo;</a>
@@ -1374,7 +1346,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1382,7 +1354,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1402,14 +1382,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">代码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
@@ -1422,7 +1394,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
+                <a href="javascript:void(0)" class="js-tag color3">代码</a>
               </li>
             
             <div class="clearfix"></div>

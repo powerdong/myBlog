@@ -151,6 +151,118 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-前端需要了解的设计模式-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/09/28/前端需要了解的设计模式-2/">前端需要了解的设计模式(2)</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/09/28/前端需要了解的设计模式-2/" class="archive-article-date">
+  	<time datetime="2019-09-28T00:21:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JS-中的设计模式"><a href="#JS-中的设计模式" class="headerlink" title="JS 中的设计模式"></a>JS 中的设计模式</h2><p>本文章通过介绍常见模式的简介，UML 类图展示，代码示例方式介绍几种常见的设计模式</p>
+<h3 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h3><ul>
+<li>将 <code>new</code> 操作单独封装</li>
+<li><strong>遇到 <code>new</code> 时，就要考虑是否使用工厂模式</strong></li>
+<li>这种设计模式可以大大降低程序模块之间的耦合度，便于更加灵活的扩展和维护</li>
+</ul>
+<p>工厂模式是一种使用工厂方法创建对象的设计模式，而不是指定创建对象的确切的类或构造函数</p>
+<blockquote>
+<p>示例：当你在购买汉堡时，直接点餐，取餐，不会自己亲手做。商店要”封装”做汉堡的工作，做好直接给买家</p>
+</blockquote>
+<p><img src="https://s2.ax1x.com/2019/09/28/uQPKjx.png" alt="uQPKjx.png"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 工厂模式</span></span><br><span class="line"><span class="comment"> * 创建一个产品类，通过不断的 new 产品生产产品</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Product</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(name) &#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name</span><br><span class="line">  &#125;</span><br><span class="line">  init() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`创建一个：<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span>`</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  fn1() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`使用了fn1方法`</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  fn2() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`使用了fn2方法`</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Creator</span> </span>&#123;</span><br><span class="line">  create(name) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Product(name)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">let</span> creator = <span class="keyword">new</span> Creator()</span><br><span class="line"><span class="keyword">let</span> product = creator.create(<span class="string">'Hamburger'</span>)</span><br><span class="line">product.init() <span class="comment">//创建一个：Hamburger</span></span><br><span class="line">product.fn1() <span class="comment">//使用了fn1方法</span></span><br></pre></td></tr></table></figure>
+
+<p>如上述代码，函数<code>Product</code>能接受一个参数 name。通过函数<code>Creator</code>的<code>create</code>方法可以创建一个<code>Product</code>实例。可以无数次调用这个函数每次返回都会包含三个方法。</p>
+<p>工厂模式是为了解决多个类似对象声明的问题，也是为了解决实例化对象产生重复的问题。</p>
+<ul>
+<li><strong>优点：</strong>能解决多个相似的问题</li>
+<li><strong>缺点：</strong>不能知道对象的识别问题(对象的类型不知道)</li>
+</ul>
+<blockquote>
+<p>应用场景：jQuery 中的$、Vue.component 异步组件、React.createElement 等</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/myBlog/2019/09/28/前端需要了解的设计模式-2/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">module</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/09/28/前端需要了解的设计模式-2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-前端需要了解的设计模式(1)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -172,7 +284,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>本专题将会介绍当前前端需要了解的设计模式，通过理解面向对象，UML 类图的关系展现，设计原则介绍，各个模式如何使用五个方面进行讨论学习。</p>
-<p>这是专题一，其他专题请访问<br><a href>前端需要了解的设计模式(2)</a><br><a href>前端需要了解的设计模式(3)</a></p>
+<p>这是专题一，其他专题请访问<br><a href>前端需要了解的设计模式(2)</a></p>
 <p>当你开始一个新项目时，你不会立即开始编码。首先必须定义项目的目的和范围，然后列出项目功能和项目说明书。在你可以编码或者你正在处理更复杂的项目之后，你应该选择最适合你项目的设计模式。</p>
 <h2 id="什么是设计模式"><a href="#什么是设计模式" class="headerlink" title="什么是设计模式"></a>什么是设计模式</h2><p>在软件工程中，设计模式是软件设计中常见问题可重用的解决方案。设计模式代表着经验丰富的软件开发人员使用的最佳实践。设计模式可以被认为是编程模板。</p>
 <h2 id="设计模式的目的"><a href="#设计模式的目的" class="headerlink" title="设计模式的目的"></a>设计模式的目的</h2><p>设计模式是为了更好的代码重用性，可读性，可靠性，可维护性。</p>
@@ -1070,104 +1182,6 @@
 
 
   
-    <article id="post-HTML5-多媒体" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/09/01/HTML5-多媒体/">HTML5-多媒体</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/09/01/HTML5-多媒体/" class="archive-article-date">
-  	<time datetime="2019-09-01T01:11:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Web-中的音频和视频"><a href="#Web-中的音频和视频" class="headerlink" title="Web 中的音频和视频"></a>Web 中的音频和视频</h2><blockquote>
-<p>自 21 世纪初以来，我们的带宽开始能够支持任意类型的视频在早些时候，传统的 web 技术（如 HTML ）不能够在 Web 中嵌入音频和视频，所以一些像 Flash 的专利技术在处理这些内容上变得很受欢迎。这些技术能够正常的工作，但是却有着一系列的问题，包括无法很好的支持 HTML/CSS 特性、安全问题，以及可行性问题。</p>
-</blockquote>
-<p>传统的解决方案能够解决许多这样的问题，前提是它能够正确的工作,幸运的是，几年之后 HTML5 标准提出，其中有许多的新特性，包括 <code>&lt;video&gt;</code> 和 <code>&lt;audio&gt;</code> 标签，以及一些 JavaScript 和 APIs 用于对其进行控制。</p>
-<h2 id="lt-audio-gt-音频标签"><a href="#lt-audio-gt-音频标签" class="headerlink" title="&lt;audio&gt; 音频标签"></a><code>&lt;audio&gt;</code> 音频标签</h2><p>我们可以在 html 文件中使用 <code>&lt;audio&gt;</code> 标签来插入一个音频文件。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- src 属性指向你想要嵌入网页当中的资源 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">src</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><h4 id="autoplay-自动播放"><a href="#autoplay-自动播放" class="headerlink" title="autoplay 自动播放"></a><code>autoplay</code> 自动播放</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 这个属性会使音频和视频内容立即播放，即使页面的其他部分还没有加载完全。 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">autoplay</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/myBlog/2019/09/01/HTML5-多媒体/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/09/01/HTML5-多媒体/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/myBlog/page/2/">2</a><a class="page-number" href="/myBlog/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/myBlog/page/5/">5</a><a class="extend next" rel="next" href="/myBlog/page/2/">Next &raquo;</a>
@@ -1281,7 +1295,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1289,7 +1303,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1309,14 +1331,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">代码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
@@ -1329,7 +1343,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
+                <a href="javascript:void(0)" class="js-tag color3">代码</a>
               </li>
             
             <div class="clearfix"></div>
