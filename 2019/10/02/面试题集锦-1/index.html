@@ -7,20 +7,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>HTML5-多媒体 | PowerDong-分享技术&amp;生活</title>
+  <title>面试题集锦(1) | PowerDong-分享技术&amp;生活</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Web 中的音频和视频 自 21 世纪初以来，我们的带宽开始能够支持任意类型的视频在早些时候，传统的 web 技术（如 HTML ）不能够在 Web 中嵌入音频和视频，所以一些像 Flash 的专利技术在处理这些内容上变得很受欢迎。这些技术能够正常的工作，但是却有着一系列的问题，包括无法很好的支持 HTML/CSS 特性、安全问题，以及可行性问题。  传统的解决方案能够解决许多这样的问题，前提是它">
-<meta name="keywords" content="HTML,笔记">
+  <meta name="description" content="为什么官方建议数据异步请求在mounted事件进行?很多人觉得在created 事件里面把数据请求到，然后一起生成虚拟 DOM，再渲染会更好。实际上呢，请求是需要时间的，而且这个时间具有不稳定性，很可能 vue 的虚拟 DOM 准备好了，你的数据才请求到，然后又得更新一遍虚拟DOM，再渲染，极大地延长了白屏时间，用户体验很不好。而在 mounted 事件请求数据呢，静态页面会先渲染好，等数据好了，">
+<meta name="keywords" content="笔记,面试">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTML5-多媒体">
-<meta property="og:url" content="http://yoursite.com/2019/09/01/HTML5-多媒体/index.html">
+<meta property="og:title" content="面试题集锦(1)">
+<meta property="og:url" content="http://yoursite.com/2019/10/02/面试题集锦-1/index.html">
 <meta property="og:site_name" content="PowerDong-分享技术&amp;生活">
-<meta property="og:description" content="Web 中的音频和视频 自 21 世纪初以来，我们的带宽开始能够支持任意类型的视频在早些时候，传统的 web 技术（如 HTML ）不能够在 Web 中嵌入音频和视频，所以一些像 Flash 的专利技术在处理这些内容上变得很受欢迎。这些技术能够正常的工作，但是却有着一系列的问题，包括无法很好的支持 HTML/CSS 特性、安全问题，以及可行性问题。  传统的解决方案能够解决许多这样的问题，前提是它">
+<meta property="og:description" content="为什么官方建议数据异步请求在mounted事件进行?很多人觉得在created 事件里面把数据请求到，然后一起生成虚拟 DOM，再渲染会更好。实际上呢，请求是需要时间的，而且这个时间具有不稳定性，很可能 vue 的虚拟 DOM 准备好了，你的数据才请求到，然后又得更新一遍虚拟DOM，再渲染，极大地延长了白屏时间，用户体验很不好。而在 mounted 事件请求数据呢，静态页面会先渲染好，等数据好了，">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-01T03:39:38.433Z">
+<meta property="og:updated_time" content="2019-10-02T02:44:10.153Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HTML5-多媒体">
-<meta name="twitter:description" content="Web 中的音频和视频 自 21 世纪初以来，我们的带宽开始能够支持任意类型的视频在早些时候，传统的 web 技术（如 HTML ）不能够在 Web 中嵌入音频和视频，所以一些像 Flash 的专利技术在处理这些内容上变得很受欢迎。这些技术能够正常的工作，但是却有着一系列的问题，包括无法很好的支持 HTML/CSS 特性、安全问题，以及可行性问题。  传统的解决方案能够解决许多这样的问题，前提是它">
+<meta name="twitter:title" content="面试题集锦(1)">
+<meta name="twitter:description" content="为什么官方建议数据异步请求在mounted事件进行?很多人觉得在created 事件里面把数据请求到，然后一起生成虚拟 DOM，再渲染会更好。实际上呢，请求是需要时间的，而且这个时间具有不稳定性，很可能 vue 的虚拟 DOM 准备好了，你的数据才请求到，然后又得更新一遍虚拟DOM，再渲染，极大地延长了白屏时间，用户体验很不好。而在 mounted 事件请求数据呢，静态页面会先渲染好，等数据好了，">
   
   <link rel="alternative" href="/atom.xml" title="PowerDong-分享技术&amp;生活" type="application/atom+xml">
   
@@ -150,148 +150,533 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-HTML5-多媒体" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-面试题集锦-1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      HTML5-多媒体
+      面试题集锦(1)
     </h1>
   
 
         
-        <a href="/myBlog/2019/09/01/HTML5-多媒体/" class="archive-article-date">
-  	<time datetime="2019-09-01T01:11:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-01</time>
+        <a href="/myBlog/2019/10/02/面试题集锦-1/" class="archive-article-date">
+  	<time datetime="2019-10-02T00:35:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Web-中的音频和视频"><a href="#Web-中的音频和视频" class="headerlink" title="Web 中的音频和视频"></a>Web 中的音频和视频</h2><blockquote>
-<p>自 21 世纪初以来，我们的带宽开始能够支持任意类型的视频在早些时候，传统的 web 技术（如 HTML ）不能够在 Web 中嵌入音频和视频，所以一些像 Flash 的专利技术在处理这些内容上变得很受欢迎。这些技术能够正常的工作，但是却有着一系列的问题，包括无法很好的支持 HTML/CSS 特性、安全问题，以及可行性问题。</p>
-</blockquote>
-<p>传统的解决方案能够解决许多这样的问题，前提是它能够正确的工作,幸运的是，几年之后 HTML5 标准提出，其中有许多的新特性，包括 <code>&lt;video&gt;</code> 和 <code>&lt;audio&gt;</code> 标签，以及一些 JavaScript 和 APIs 用于对其进行控制。</p>
-<h2 id="lt-audio-gt-音频标签"><a href="#lt-audio-gt-音频标签" class="headerlink" title="&lt;audio&gt; 音频标签"></a><code>&lt;audio&gt;</code> 音频标签</h2><p>我们可以在 html 文件中使用 <code>&lt;audio&gt;</code> 标签来插入一个音频文件。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- src 属性指向你想要嵌入网页当中的资源 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">src</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        <h2 id="为什么官方建议数据异步请求在mounted事件进行"><a href="#为什么官方建议数据异步请求在mounted事件进行" class="headerlink" title="为什么官方建议数据异步请求在mounted事件进行?"></a>为什么官方建议数据异步请求在<code>mounted</code>事件进行?</h2><p>很多人觉得在<code>created</code> 事件里面把数据请求到，然后一起生成虚拟 <code>DOM</code>，再渲染会更好。实际上呢，请求是需要时间的，而且这个时间具有不稳定性，很可能 vue 的虚拟 DOM 准备好了，你的数据才请求到，然后又得更新一遍虚拟<code>DOM</code>，再渲染，极大地延长了白屏时间，用户体验很不好。<strong>而在 mounted 事件请求数据呢，静态页面会先渲染好，等数据好了，再更新部分 DOM 即可。</strong></p>
+<h2 id="子组件修改父组件传过来的值"><a href="#子组件修改父组件传过来的值" class="headerlink" title="子组件修改父组件传过来的值"></a>子组件修改父组件传过来的值</h2><p>v-model 在使用的时候很像双向绑定的，但是 Vue 是单项数据流，<code>v-model</code> 只是语法糖而已：父组件用<code>v-bind</code>将值传给子组件，子组件通过<code>change/input</code>事件触发修改父组件的值。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"inputValue"</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 等价于 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">:value</span>=<span class="string">"inputValue"</span> @<span class="attr">change</span>=<span class="string">"inputValue"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><h4 id="autoplay-自动播放"><a href="#autoplay-自动播放" class="headerlink" title="autoplay 自动播放"></a><code>autoplay</code> 自动播放</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 这个属性会使音频和视频内容立即播放，即使页面的其他部分还没有加载完全。 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">autoplay</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>v-model 不仅仅能在<code>input</code>上用，在组件上也能使用<code>vue</code>组件间传递数据是单向的，即数据总是由父组件传递到子组件，子组件在其内部可以有自己维护的数据，但它无权修改父组件传递给它的数据，我们也可以参照<code>v-model</code>语法糖进行修改父组件的值，但是每次都这样写太麻烦了，vue 提供了一个修饰符<code>.sync</code>,用法如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">child</span> <span class="attr">:value.sync</span>=<span class="string">"inputValue"</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 子组件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">  export default&#123;</span><br><span class="line">    props:&#123;</span><br><span class="line">      //props可以设置值得类型，默认值，是否必传以及校验函</span><br><span class="line">      value:&#123;</span><br><span class="line">        type: [String, Number],</span><br><span class="line">        required: true</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    //用一个变量中转，子组件中就用_value就不会直接修改父组件的值</span><br><span class="line">    computed: &#123;</span><br><span class="line">      _value: &#123;</span><br><span class="line">        get() &#123;</span><br><span class="line">            return this.value;</span><br><span class="line">        &#125;,</span><br><span class="line">        set(val) &#123;</span><br><span class="line">            this.$emit('update:value', val);</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<a id="more"></a>
-
-<h4 id="controls-设置控件"><a href="#controls-设置控件" class="headerlink" title="controls 设置控件"></a><code>controls</code> 设置控件</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 用户必须能够控制视频和音频的回放功能。</span></span><br><span class="line"><span class="comment">    可以使用浏览器提供的控制接口，同时你也可以使用合适的 JavaScript API构建控制接口</span></span><br><span class="line"><span class="comment">    至少，这些媒体应该包括开始和停止，以及调整音量的功能。</span></span><br><span class="line"><span class="comment"> --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">autoplay</span> <span class="attr">controls</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="preload-预加载"><a href="#preload-预加载" class="headerlink" title="preload 预加载"></a><code>preload</code> 预加载</h4><p>规定是在否在页面加载后载入资源，这个属性有三个值可选</p>
-<ul>
-<li><code>&quot;none&quot;</code>:不缓冲，不需要加载数据</li>
-<li><code>&quot;metadata&quot;</code>: 仅缓存文件的元数据，诸如时长，比特率，帧大小这样的元数据，而不是媒体内容徐亚加载的</li>
-<li><code>&quot;auto&quot;</code>: 页面加载后缓存媒体文件，浏览器应当加载它认为适量的媒体内容</li>
+<h2 id="get-post-的理解和他们之间的区别"><a href="#get-post-的理解和他们之间的区别" class="headerlink" title="get/post 的理解和他们之间的区别"></a>get/post 的理解和他们之间的区别</h2><h3 id="http"><a href="#http" class="headerlink" title="http"></a>http</h3><ul>
+<li><strong>超文本传输协议（HTTP）的设计目的是保证客户机与服务器之间的通信。</strong> HTTP 的工作方式是客户机与服务器之间的请求-应答协议。web 浏览器可能是客户端，而计算机上的网络应用程序也可能作为服务器端</li>
 </ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">preload</span>=<span class="string">"auto"</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="loop-循环播放"><a href="#loop-循环播放" class="headerlink" title="loop 循环播放"></a>loop 循环播放</h4><p>是否可以让音频或者视频文件</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">loop</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span> &gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="muted"><a href="#muted" class="headerlink" title="muted"></a>muted</h4><p>会导致媒体播放时，默认关闭声音。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">muted</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span> &gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="多格式支持"><a href="#多格式支持" class="headerlink" title="多格式支持"></a>多格式支持</h3><p>对于不同的浏览器对视频或者音频格式的支持不同</p>
-<p>像 MP3、MP4、WebM这些术语叫做<strong>容器格式</strong>,他们是用不同的方式来播放音频或视频的。也就是说这些容器是用不同的音频轨道、视频轨道、元数据来呈现媒体文件的。</p>
-<p>视频和音频都有不同的格式</p>
-<ul>
-<li>WebM 容器通常包括了 Ogg Vorbis 音频和 VP8/VP9 视频<ul>
-<li>主要在 FireFox 和 Chrome 当中支持</li>
+<h3 id="http-方法"><a href="#http-方法" class="headerlink" title="http 方法"></a>http 方法</h3><ul>
+<li><strong>HEAD</strong>: 与 GET 相同，但只返回 HTTP 报头，不返回文档主体</li>
+<li><strong>PUT</strong>:上传指定的 URI 表示</li>
+<li><strong>DELETE</strong>: 删除指定资源</li>
+<li><strong>OPTIONS</strong>: 返回服务器支持的 HTTP 方法</li>
+<li><strong>CONNECT</strong>: 把请求连接转换到透明的 TCP/IP 通道</li>
+<li><strong>POST</strong>: 向指定的资源提交要被处理的数</li>
 </ul>
-</li>
-<li>MP4 容器通常包括 AAC 以及 MP3 音频和 H.264 视频<ul>
-<li>主要在 Internet Explorer 和 Safari 当中支持</li>
-</ul>
-</li>
-<li>老式的 Ogg 容器往往支持 Ogg Vorbis  音频和 Ogg Theora 视频<ul>
-<li>主要在 Firefox 和 Chrome 当中支持，<strong>不过这个容器已经被更强大的 WebM 容器所取代</strong></li>
-</ul>
-</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">id</span>=<span class="string">"music"</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"music.mp3"</span> <span class="attr">type</span>=<span class="string">"audio/mpeg"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"music.ogg"</span> <span class="attr">type</span>=<span class="string">'audio/ogg"'</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>现在我们将 src 属性从 <code>&lt;audio&gt;</code> 标签中移除，转而将它放在几个单独的标签 <code>&lt;source&gt;</code> 当中。在这个例子当中，浏览器将会检查 <code>&lt;source&gt;</code> 标签，并且播放第一个与其自身 <code>codec</code> 相匹配的媒体</p>
-<p>视频应当包括 WebM 和 MP4 两种格式，这两种在目前已经足够支持大多数平台和浏览器。</p>
-<p>每个 <code>&lt;source&gt;</code> 标签页含有一个 <code>type</code> 属性，这个属性是可选的,但是建议添加上这个属性——它包含了<code>&lt;source&gt;</code> 标签文件的 <code>MIME types</code>,同时在浏览器检索的时候也会迅速的跳过那些不支持的格式，找到能正确播放的格式。</p>
-<h2 id="lt-video-gt-视频标签"><a href="#lt-video-gt-视频标签" class="headerlink" title="&lt;video&gt; 视频标签"></a><code>&lt;video&gt;</code> 视频标签</h2><p><code>&lt;audio&gt;</code> 标签与 <code>&lt;video&gt;</code> 标签的使用方式几乎完全相同,有一些细微的差别我们下边一一介绍</p>
-<h2 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h2><h3 id="width-height"><a href="#width-height" class="headerlink" title="width/height"></a>width/height</h3><p>控制视频的尺寸，可以使用属性，也可以使用 Css 来控制视频的尺寸。无论哪种方式，视频都会保持它原始的<strong>纵横比</strong>。如果你设置的尺寸没有保持视频原始的长宽比，那么视频的边框将会拉伸，而未被视频内容填充的部分，将会显示默认的背景颜色。</p>
-<h3 id="poster"><a href="#poster" class="headerlink" title="poster"></a>poster</h3><p>当时视频不可用时，使用一张图片替代，否则是空白</p>
-<p>指向了一个图像的URL，这个图像会在视频播放前显示。通常用于粗略的预览或者广告。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">poster</span>=<span class="string">"封面.jpg"</span> <span class="attr">controls</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span>&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查询字符串（名称/值对）是在 POST 请求的 HTTP 消息主体中发送</span></span><br><span class="line">POST /test/demo_form.asp HTTP/<span class="number">1.</span></span><br><span class="line">Host: w3schools.co</span><br><span class="line">name1=value1&amp;name2=value</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>当我们使用了 <code>autoplay</code> 属性时，当页面一加载就播放视频的话，就不会看到 <code>poster</code> 的效果了。</p>
+<p>GET: 从指定的资源请求数据</p>
 </blockquote>
-<h2 id="脚本化"><a href="#脚本化" class="headerlink" title="脚本化"></a>脚本化</h2><p>当我们在元素上设置了 <code>controls</code> 属性时，浏览器会显示原生的浏览器控件，当你想要修改这些样式的时候，可以通过隐藏本地控件， JavaScript API 来进行相应的设置。</p>
-<h3 id="获取-Dom"><a href="#获取-Dom" class="headerlink" title="获取 Dom"></a>获取 Dom</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取到对应的 `dom` 元素</span></span><br><span class="line"><span class="keyword">let</span> audio = <span class="built_in">document</span>.getElementById(<span class="string">'audio'</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用 js 创建标签</span></span><br><span class="line"><span class="comment">// audio 可以使用 new 操作符</span></span><br><span class="line"><span class="keyword">let</span> audio = <span class="keyword">new</span> Audio(<span class="string">'音频文件'</span>)</span><br><span class="line"><span class="keyword">let</span> video = <span class="built_in">document</span>.createElement(<span class="string">'video'</span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="自定义控件"><a href="#自定义控件" class="headerlink" title="自定义控件"></a>自定义控件</h3><p>为了设置当前的控件样式，需要将默认的控件删除。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">audio.removeAttribute(<span class="string">'controls'</span>);</span><br><span class="line"><span class="comment">// 使用属性 Boolean 值</span></span><br><span class="line">audio.controls = <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 其他的属性设置</span></span><br><span class="line">audio.loop = <span class="string">'loop'</span></span><br><span class="line">audio.preload = <span class="string">'auto'</span></span><br><span class="line">audio.autoplay = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="播放与暂停"><a href="#播放与暂停" class="headerlink" title="播放与暂停"></a>播放与暂停</h3><p>通过使用<code>play()</code>和<code>pause()</code>方法来控制音频视频的播放和暂停,通过<code>paused</code>属性查询媒体播放状态</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (audio.paused) &#123;</span><br><span class="line">  audio.play()</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  audio.pause()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>我们使用if语句来检查视频是否暂停。如果视频已暂停，<code>audio.paused</code>属性返回true，包括在第一次加载时处于0的时间段都是视频的暂停状态。</p>
-<p>当我们在想实现视频停止功能时，点击停止，视频停止播放，播放时间返回0。无奈的是在 API 中并没有停止的方法，我们可以通过设置<code>currentTime</code>属性来设置当前的播放位置,将它设置为0，将会立刻跳到该位置。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">stop</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  audio.pause()</span><br><span class="line">  audio.currentTime = <span class="number">0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="播放速率"><a href="#播放速率" class="headerlink" title="播放速率"></a>播放速率</h3><p>我们可以通过设置播放速率，进而实现快退快进的功能。<br>playbackRate设置媒体文件播放时的速率。这用于实现让用户控制快放、慢放等。 正常播放速率乘以该值表示当前的播放速率，所以1.0表示一个正常的播放速率。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 浮点数1.0 是 "正常速度"， 比 1.0 小的值使媒体文件播放的慢于正常速度，比1.0大的值使播放变得快于正常速度.</span></span><br><span class="line">audio.playbackRate = <span class="number">1.0</span></span><br></pre></td></tr></table></figure>
-
-<p>也可以通过定时器，通过设置当前播放时间来实现快进快退</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">backWard</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 快退</span></span><br><span class="line">  <span class="keyword">if</span>(audio.currentTime &lt;= <span class="number">3</span>) &#123;</span><br><span class="line">    <span class="comment">// 当资源已经回退到最初了</span></span><br><span class="line">    clearInterval(intervalRwd)</span><br><span class="line">    stop()</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    audio.currentTime -= <span class="number">3</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">forWard</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 快进</span></span><br><span class="line">  <span class="keyword">if</span>(audio.currentTime &gt;= audio.duration <span class="number">-3</span>) &#123;</span><br><span class="line">    <span class="comment">// 当资源已经快进到最后了</span></span><br><span class="line">    clearInterval(intervalFwd)</span><br><span class="line">    stop()</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      audio.currentTime += <span class="number">3</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="更新当前播放时间"><a href="#更新当前播放时间" class="headerlink" title="更新当前播放时间"></a>更新当前播放时间</h3><p>当需要设置播放器的显示时间时，我们将运行一个函数，以便在元素播放过程中<code>timeupdate</code>事件触发时更新当前播放时间和播放进度。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setTime</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 首先我们计算到当前的播放时间</span></span><br><span class="line">  <span class="keyword">let</span> minutes = <span class="built_in">Math</span>.floor(audio.currentTime / <span class="number">60</span>);</span><br><span class="line">  <span class="keyword">let</span> seconds = <span class="built_in">Math</span>.floor(audio.currentTime - minutes * <span class="number">60</span>);</span><br><span class="line">  <span class="keyword">let</span> minuteValue;</span><br><span class="line">  <span class="keyword">let</span> secondValue;</span><br><span class="line">  <span class="comment">// 进行格式转换，当分钟小于10的时候，在前面加0</span></span><br><span class="line">  <span class="keyword">if</span> (minutes &lt; <span class="number">10</span>) &#123;</span><br><span class="line">    minuteValue = <span class="string">'0'</span> + minutes;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    minuteValue = minutes;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 秒数的格式设置</span></span><br><span class="line">  <span class="keyword">if</span> (seconds &lt; <span class="number">10</span>) &#123;</span><br><span class="line">    secondValue = <span class="string">'0'</span> + seconds;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    secondValue = seconds;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 进行时间值拼接，展示到页面</span></span><br><span class="line">  <span class="keyword">let</span> audioTime = minuteValue + <span class="string">':'</span> + secondValue;</span><br><span class="line">  timer.textContent = audioTime;</span><br><span class="line">  <span class="comment">// 进度条的长度计算</span></span><br><span class="line">  <span class="keyword">let</span> barLength = timerWrapper.clientWidth * (audio.currentTime/audio.duration);</span><br><span class="line">  timerBar.style.width = barLength + <span class="string">'px'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="音量"><a href="#音量" class="headerlink" title="音量"></a>音量</h3><p>可以通过 <code>volume</code> 属性设置播放音量，介于0(静音)~1(最大音量)之间，默认为1。将 <code>muted</code> 属性设置为true则会进入静音属性(模式)，设置为false则会恢复之前指定的音量继续播放。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">audio.volume=<span class="number">0.2</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="缓冲-TimeRanges对象"><a href="#缓冲-TimeRanges对象" class="headerlink" title="缓冲 TimeRanges对象"></a>缓冲 TimeRanges对象</h3><p>played 属性返回 TimeRanges 对象，表示已经播放(看过)的时间段<br>已播范围指的是被播放音频/视频的时间范围。如果用户在音频/视频中跳跃，则会获得多个播放范围。</p>
-<p>buffered 属性返回 TimeRanges 对象，表示已经缓存的时间段<br>缓冲范围指的是已缓冲音视频的时间范围。如果用户在音视频中跳跃播放，会得到多个缓冲范围。</p>
-<p>seekable 属性返回 TimeRanges 对象，表示用户可以调转的时间段<br>可寻址范围指的是用户在音频/视频中可寻址（移动播放位置）的时间范围。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 返回起始时间点和结束时间点，单位是秒，其实参数为0</span></span><br><span class="line">audio.played.start(<span class="number">0</span>)</span><br><span class="line">audio.played.end(<span class="number">0</span>)</span><br><span class="line">audio.buffered.start(<span class="number">0</span>)</span><br><span class="line">audio.buffered.end(<span class="number">0</span>)</span><br><span class="line">audio.seekable.start(<span class="number">0</span>)</span><br><span class="line">audio.seekable.end(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="媒体播放状态"><a href="#媒体播放状态" class="headerlink" title="媒体播放状态"></a>媒体播放状态</h3><ul>
-<li>paused 为 true 时，表示播放器暂停</li>
-<li>seeking 为 true 时，表示播放器正在跳到一个新的播放点</li>
-<li>ended 为 true 时，播放器播放完媒体会停下来</li>
-</ul>
-<p>下面的代码确定当前缓存内容的百分比</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> percent_loaded = <span class="built_in">Math</span>.floor(song.buffered.end(<span class="number">0</span>) / song.duration * <span class="number">100</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><ul>
-<li>当音频/视频处于加载过程中时，会依次发生以下事件：<ul>
-<li>loadstart 当浏览器开始查找资源时触发</li>
-<li>durationchange 当资源时长已更改时</li>
-<li>loadedmetadata    当浏览器获取完媒体的元数据时触发    </li>
-<li>loadeddata 浏览器已经加载完当前帧数据，准备播放时触发</li>
-<li>progress 当浏览器正在下载资源时</li>
-<li>canplay 当浏览器可以播放资源时</li>
-<li>canplaythrough 当浏览器可在不因缓冲而停顿的情况下进行播放时</li>
+<h3 id="GET-和-POST-的区别"><a href="#GET-和-POST-的区别" class="headerlink" title="GET 和 POST 的区别"></a>GET 和 POST 的区别</h3><ul>
+<li><strong>GET</strong><ul>
+<li>GET 请求可被缓存</li>
+<li>GET 请求保留在浏览器历史记录中</li>
+<li>GET 请求可被收藏为书签</li>
+<li>GET 请求不应在处理敏感数据时使用</li>
+<li>GET 请求有长度限制(2048 字符)</li>
+<li>IE 和 Safari 浏览器限制 2k;</li>
+<li>Opera 限制 4k;</li>
+<li>Firefox，Chrome 限制 8k</li>
+<li>GET 请求只应当用于取回数据</li>
 </ul>
 </li>
-<li>play    当资源已经开始播放时</li>
-<li>pause 当资源暂停时</li>
-<li>retechange 当资源播放速度已更改时</li>
-<li>seeked 当用户已经移动/跳跃到音频/视频中的新位置时</li>
-<li>stalled 当浏览器尝试获取媒体数据，但数据不可用时</li>
-<li>volumechange 当音量发生改变时</li>
-<li>error    当在资源加载期间发生错误时</li>
-<li>ended 当播放结束时触发</li>
+<li><strong>POST</strong><ul>
+<li>POST 请求不会被缓存</li>
+<li>POST 请求不会保留在浏览器历史记录中</li>
+<li>POST 不能被收藏为书签</li>
+<li>POST 请求对数据长度没有要求</li>
 </ul>
-<h2 id="兼容文件"><a href="#兼容文件" class="headerlink" title="兼容文件"></a>兼容文件</h2><p>在使用资源文件时，需要考虑到当前浏览器是否支持当前的文件格式，我们可以使用<code>canPlayType()</code>方法来做兼容</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> Audio()</span><br><span class="line"><span class="keyword">if</span>(a.canPlayType(<span class="string">'audio/mp3'</span>))&#123;</span><br><span class="line">  a.src = <span class="string">'./audio.mp3'</span>;</span><br><span class="line">  a.play();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// indexOf实现</span></span><br><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>, <span class="number">1</span>, <span class="string">'1'</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> res = []</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = array.length; i &lt; len; i++) &#123;</span><br><span class="line">    <span class="keyword">var</span> current = array[i]</span><br><span class="line">    <span class="keyword">if</span> (res.indexOf(current) === <span class="number">-1</span>) &#123;</span><br><span class="line">      res.push(current)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(unique(array))</span><br><span class="line"></span><br><span class="line"><span class="comment">// 排序后去重</span></span><br><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>, <span class="number">1</span>, <span class="string">'1'</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> res = []</span><br><span class="line">  <span class="keyword">var</span> sortedArray = array.concat().sort()</span><br><span class="line">  <span class="keyword">var</span> seen</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = sortedArray.length; i &lt; len; i++) &#123;</span><br><span class="line">    <span class="comment">// 如果是第一个元素或者相邻的元素不相同</span></span><br><span class="line">    <span class="keyword">if</span> (!i || seen !== sortedArray[i]) &#123;</span><br><span class="line">      res.push(sortedArray[i])</span><br><span class="line">    &#125;</span><br><span class="line">    seen = sortedArray[i]</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(unique(array))</span><br><span class="line"></span><br><span class="line"><span class="comment">// filter实现</span></span><br><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="string">'1'</span>]</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> res = array.filter(<span class="function"><span class="keyword">function</span>(<span class="params">item, index, array</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> array.indexOf(item) === index</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(unique(array))</span><br><span class="line"></span><br><span class="line"><span class="comment">// 排序去重</span></span><br><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="string">'1'</span>]</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> array</span><br><span class="line">    .concat()</span><br><span class="line">    .sort()</span><br><span class="line">    .filter(<span class="function"><span class="keyword">function</span>(<span class="params">item, index, array</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> !index || item !== array[index - <span class="number">1</span>]</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(unique(array))</span><br><span class="line"></span><br><span class="line"><span class="comment">// Object键值对</span></span><br><span class="line"><span class="keyword">var</span> array = [&#123; <span class="attr">value</span>: <span class="number">1</span> &#125;, &#123; <span class="attr">value</span>: <span class="number">1</span> &#125;, &#123; <span class="attr">value</span>: <span class="number">2</span> &#125;]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> obj = &#123;&#125;</span><br><span class="line">  <span class="keyword">return</span> array.filter(<span class="function"><span class="keyword">function</span>(<span class="params">item, index, array</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> item + <span class="built_in">JSON</span>.stringify(item))</span><br><span class="line">    <span class="keyword">return</span> obj.hasOwnProperty(<span class="keyword">typeof</span> item + <span class="built_in">JSON</span>.stringify(item))</span><br><span class="line">      ? <span class="literal">false</span></span><br><span class="line">      : (obj[<span class="keyword">typeof</span> item + <span class="built_in">JSON</span>.stringify(item)] = <span class="literal">true</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(unique(array)) <span class="comment">// [&#123;value: 1&#125;, &#123;value: 2&#125;]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6 Set实现</span></span><br><span class="line"><span class="keyword">var</span> unique = <span class="function">(<span class="params">a</span>) =&gt;</span> [...new <span class="built_in">Set</span>(a)]</span><br></pre></td></tr></table></figure>
+
+<h2 id="什么是-CDN-和-CDN-的好处"><a href="#什么是-CDN-和-CDN-的好处" class="headerlink" title="什么是 CDN 和 CDN 的好处"></a>什么是 CDN 和 CDN 的好处</h2><blockquote>
+<p><strong>CDN:</strong> CDN 是将源站内容分发至最接近用户的节点，使用户可就近取得所需内容，提高用户访问的响应速度和成功率。解决因分布、带宽、服务器性能带来的访问延迟问题，适用于站点加速、点播、直播等场景。</p>
+</blockquote>
+<h3 id="好处："><a href="#好处：" class="headerlink" title="好处："></a>好处：</h3><ol>
+<li>多域名加载资源 一般情况下，浏览器都会对单个域名下的并发请求数（文件加载）进行限制，通常最多有 4 个，那么第 5 个加载项将会被阻塞，直到前面的某一个文件加载完毕。 因为 CDN 文件是存放在不同区域（不同 IP）的，所以对浏览器来说是可以同时加载页面所需的所有文件（远不止 4 个），从而提高页面加载速度。</li>
+<li>文件可能已经被加载过并保存有缓存 一些通用的 js 库或者是 css 样式库，如 jQuery，在网络中的使用是非常普遍的。当一个用户在浏览你的某一个网页的时候，很有可能他已经通过你网站使用的 CDN 访问过了其他的某一个网站，恰巧这个网站同样也使用了 jQuery，那么此时用户浏览器已经缓存有该 jQuery 文件（同 IP 的同名文件如果有缓存，浏览器会直接使用缓存文件，不会再进行加载），所以就不会再加载一次了，从而间接的提高了网站的访问速度率 你的网站做的再 NB 也不会 NB 过百度 NB 过 Google 吧？一个好的 CDNs 会提供更高的效率，更低的网络延时和更小的丢包率。</li>
+<li>分布式的数据中心 假如你的站点布置在北京，当一个香港或者更远的用户访问你的站点的时候，他的数据请求势必会很慢很慢。而 CDNs 则会让用户从离他最近的节点去加载所需的文件，所以加载速度提升就是理所当然的了。</li>
+<li>使用情况分析 一般情况下 CDNs 提供商（如百度云加速）都会提供数据统计功能，可以了解更多关于用户访问自己网站的情况，可以根据统计数据对自己的站点适时适当的做出些许调整。</li>
+<li>有效防止网站被攻击 一般情况下 CDNs 提供商也是会提供网站安全服务的</li>
+</ol>
+<h2 id="如何提高首频加载速度"><a href="#如何提高首频加载速度" class="headerlink" title="如何提高首频加载速度"></a>如何提高首频加载速度</h2><ol>
+<li>js 外联文件放到 body 底部，css 外联文件放到 head 内</li>
+<li>http 静态资源尽量用多个子域名</li>
+<li>服务器端提供 html 和 http 静态资源时最好开启 gzip</li>
+<li>在 js,css,img 等资源响应的 http headers 里设置 expires,last-modified</li>
+<li>尽量减少 http requests 的数量</li>
+<li>js/css/html/img 资源压缩</li>
+<li>使用 雪碧图(css sprites)，可以减少 img 请求次数</li>
+<li>大图使用 lazyload 懒加载</li>
+<li>避免 404，减少外联 js</li>
+<li>减少 cookie 大小可以提高获得响应的时间</li>
+<li>减少 dom elements 的数量</li>
+<li>使用异步脚本，动态创建脚本</li>
+</ol>
+<h2 id="浏览器内核-渲染引擎"><a href="#浏览器内核-渲染引擎" class="headerlink" title="浏览器内核(渲染引擎)"></a>浏览器内核(渲染引擎)</h2><ul>
+<li>IE/360/搜狗浏览器: Trident</li>
+<li>Chrome/Safari/Opera: WebKit(KHTML 的一个开源的分支) (虽然我们称 WebKit 为浏览器内核，但不太适合直接称渲染引擎，因为 WebKit 本身主要是由两个引擎构成的，一个正是渲染引擎“WebCore”，另一个则是 javascript 解释引擎“JSCore”，它们均是从 KDE 的渲染引擎 KHTML 及 javascript 解释引擎 KJS 衍生而来。) (在 13 年发布的 Chrome28.0.1469.0 版本开始，Chrome 放弃 Chromium 引擎转而使用最新的 Blink 引擎（基于 WebKit2——苹果公司于 2010 年推出的新的 WebKit 引擎），Blink 对比上一代的引擎精简了代码、改善了 DOM 框架，也提升了安全性。) (为了减少研发成本，Opera 在 2013 年 2 月宣布放弃 Presto，转而跟随 Chrome 使用 WebKit 分支的 Chromium 引擎作为自家浏览器核心引擎)</li>
+<li>Firefox/SeaMonkey: Gecko</li>
+</ul>
+<h2 id="页面导入样式时，使用-link-和-import-有什么区别？"><a href="#页面导入样式时，使用-link-和-import-有什么区别？" class="headerlink" title="页面导入样式时，使用 link 和@import 有什么区别？"></a>页面导入样式时，使用 link 和@import 有什么区别？</h2><ol>
+<li>link 属于 XHTML 标签，除了加载 CSS 外，还能用于定义 RSS, 定义 rel 连接属性等作用；而@import 是 CSS 提供的，只能用于加载 CSS;</li>
+<li>页面被加载的时，link 会同时被加载，而@import 引用的 CSS 会等到页面被加载完再加载;</li>
+<li>import 是 CSS2.1 提出的，只在 IE5 以上才能被识别，而 link 是 XHTML 标签，无兼容问题;</li>
+<li>link 支持使用 js 控制 DOM 去改变样式，而@import 不支持;</li>
+</ol>
+<h2 id="简述一下你对-HTML-语义化的理解？"><a href="#简述一下你对-HTML-语义化的理解？" class="headerlink" title="简述一下你对 HTML 语义化的理解？"></a>简述一下你对 HTML 语义化的理解？</h2><p><strong>用正确的标签做正确的事情。</strong></p>
+<ul>
+<li>html 语义化让页面的内容结构化，便于对浏览器、搜索引擎解析</li>
+<li>即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的</li>
+<li>搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO</li>
+<li>使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。</li>
+</ul>
+<h2 id="请描述一下-cookies，sessionStorage-和-localStorage-的区别？"><a href="#请描述一下-cookies，sessionStorage-和-localStorage-的区别？" class="headerlink" title="请描述一下 cookies，sessionStorage 和 localStorage 的区别？"></a>请描述一下 cookies，sessionStorage 和 localStorage 的区别？</h2><ul>
+<li><p>cookie 是网站为了标示用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密）。 cookie 数据始终在同源的 http 请求中携带（即使不需要），这会在浏览器和服务器间来回传递。</p>
+</li>
+<li><p>sessionStorage 和 localStorage 不会自动把数据发给服务器，仅在本地保存。</p>
+</li>
+<li><p><strong>存储大小：</strong></p>
+<ul>
+<li>cookie 数据大小不能超过 4k</li>
+<li>sessionStorage 和 localStorage 虽然也有存储大小的限制，但比 cookie 大得多，可以达到 5M 或更大</li>
+</ul>
+</li>
+<li><p><strong>有期时间：</strong></p>
+<ul>
+<li>localStorage 存储持久数据，浏览器关闭后数据不丢失除非主动删除数据；</li>
+<li>sessionStorage 数据在当前浏览器窗口关闭后自动删除。</li>
+<li>cookie 设置的 cookie 过期时间之前一直有效，即使窗口或浏览器关闭</li>
+</ul>
+</li>
+</ul>
+<h2 id="iframe-有那些缺点？"><a href="#iframe-有那些缺点？" class="headerlink" title="iframe 有那些缺点？"></a>iframe 有那些缺点？</h2><ul>
+<li>iframe 会阻塞主页面的 Onload 事件；</li>
+<li>搜索引擎的检索程序无法解读这种页面，不利于 SEO;</li>
+<li>iframe 和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载。 <strong>使用 iframe 之前需要考虑这两个缺点</strong>。</li>
+<li>如果需要使用 iframe，最好是通过 javascript 动态给 iframe 添加 src 属性值，这样可以绕开以上两个问题。</li>
+</ul>
+<h2 id="网页验证码是干嘛的，是为了解决什么安全问题？"><a href="#网页验证码是干嘛的，是为了解决什么安全问题？" class="headerlink" title="网页验证码是干嘛的，是为了解决什么安全问题？"></a>网页验证码是干嘛的，是为了解决什么安全问题？</h2><ul>
+<li>区分用户是计算机还是人的公共全自动程序。可以防止恶意破解密码、刷票、论坛灌水</li>
+<li>有效防止黑客对某一个特定注册用户用特定程序暴力破解方式进行不断的登陆尝试。</li>
+</ul>
+<h2 id="介绍一下标准的-CSS-的盒子模型？低版本-IE-的盒子模型有什么不同的？"><a href="#介绍一下标准的-CSS-的盒子模型？低版本-IE-的盒子模型有什么不同的？" class="headerlink" title="介绍一下标准的 CSS 的盒子模型？低版本 IE 的盒子模型有什么不同的？"></a>介绍一下标准的 CSS 的盒子模型？低版本 IE 的盒子模型有什么不同的？</h2><ul>
+<li>有两种， IE 盒子模型、W3C 盒子模型；</li>
+<li>盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border)；</li>
+<li>区 别： IE 的 content 部分把 border 和 padding 计算了进去;</li>
+</ul>
+<h2 id="position-的值-relative-和-absolute-定位原点是？"><a href="#position-的值-relative-和-absolute-定位原点是？" class="headerlink" title="position 的值 relative 和 absolute 定位原点是？"></a>position 的值 relative 和 absolute 定位原点是？</h2><ul>
+<li>absolute 生成绝对定位的元素，相对于值不为 static 的第一个父元素进行定位。</li>
+<li>fixed （老 IE 不支持） 生成绝对定位的元素，相对于浏览器窗口进行定位。</li>
+<li>relative 生成相对定位的元素，相对于其正常位置进行定位。 static 默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right z-index 声明）。</li>
+<li>inherit 规定从父元素继承 position 属性的值。</li>
+</ul>
+<h2 id="经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用-hack-的技巧-？"><a href="#经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用-hack-的技巧-？" class="headerlink" title="经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用 hack 的技巧 ？"></a>经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用 hack 的技巧 ？</h2><ul>
+<li><p>png24 位的图片在 iE6 浏览器上出现背景，解决方案是做成 png8.</p>
+</li>
+<li><p>浏览器默认的 margin 和 padding 不同。解决方案是加一个全局的<code>*{margin:0padding:0;}</code>来统一。</p>
+</li>
+<li><p>IE6 双边距 bug:块属性标签 float 后，又有横行的 margin 情况下，在 ie6 显示 margin 比设置的大。</p>
+</li>
+<li><p>浮动 ie 产生的双倍距离 <code>#box{ float:left; width:10px; margin:0 0 0 100px;}</code></p>
+<ul>
+<li>这种情况之下 IE 会产生 20px 的距离，解决方案是在 float 的标签样式控制中加入 <code>*display:inline;</code>将其转化为行内属性。(<code>*</code>这个符号只有 ie6 会识别)</li>
+</ul>
+</li>
+<li><p>渐进识别的方式，从总体中逐渐排除局部。</p>
+<ul>
+<li>首先，巧妙的使用“\9”这一标记，将 IE 游览器从所有情况中分离出来</li>
+<li>接着，再次使用“+”将 IE8 和 IE7、IE6 分离开来，这样 IE8 已经独立识别。</li>
+<li><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.bb&#123; background-color:red;/所有识别/</span><br><span class="line">background-color:#00deff\9; /IE6、7、8识别/</span><br><span class="line">+background-color:#a200ff;/IE6、7识别/</span><br><span class="line">_background-color:#1e0bd1;/IE6识别/ &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>IE 下,可以使用获取常规属性的方法来获取自定义属性, 也可以使用 getAttribute()获取自定义属性;</p>
+</li>
+<li><p>Firefox 下,只能使用 getAttribute()获取自定义属性。 解决方法:统一通过 getAttribute()获取自定义属性。</p>
+</li>
+<li><p>IE 下,even 对象有 x,y 属性,但是没有 pageX,pageY 属性; Firefox 下,event 对象有 pageX,pageY 属性,但是没有 x,y 属性。</p>
+<ul>
+<li><strong>解决方法：（条件注释）缺点是在 IE 浏览器下可能会增加额外的 HTTP 请求数。</strong></li>
+</ul>
+</li>
+<li><p><strong>Chrome 中文界面下默认会将小于 12px 的文本强制按照 12px 显示, 可通过加入 CSS 属性 -webkit-text-size-adjust: none;</strong></p>
+</li>
+<li><p>解决超链接访问过后 hover 样式就不出现了 被点击访问过的超链接样式不在具有 hover 和 active 了</p>
+<ul>
+<li>解决方法是改变 CSS 属性的排列顺序: <code>L-V-H-A : a:link {} a:visited {} a:hover {} a:active {}</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="CSS-优化、提高性能的方法有哪些？"><a href="#CSS-优化、提高性能的方法有哪些？" class="headerlink" title="CSS 优化、提高性能的方法有哪些？"></a>CSS 优化、提高性能的方法有哪些？</h2><p>关键选择器（key selector）。选择器的最后面的部分为关键选择器（即用来匹配目标元素的部分）； 如果规则拥有 ID 选择器作为其关键选择器，则不要为规则增加标签。过滤掉无关的规则（这样样式系统就不会浪费时间去匹配它们了）； 提取项目的通用公有样式，增强可复用性，按模块编写组件；增强项目的协同开发性、可维护性和可扩展性; 使用预处理工具或构建工具（gulp 对 css 进行语法检查、自动补前缀、打包压缩、自动优雅降级）；</p>
+<h3 id="如何修改-chrome-记住密码后自动填充表单的黄色背景-？"><a href="#如何修改-chrome-记住密码后自动填充表单的黄色背景-？" class="headerlink" title="如何修改 chrome 记住密码后自动填充表单的黄色背景 ？"></a>如何修改 chrome 记住密码后自动填充表单的黄色背景 ？</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-webkit-autofill</span>,</span><br><span class="line"><span class="selector-tag">textarea</span><span class="selector-pseudo">:-webkit-autofill</span>,</span><br><span class="line"><span class="selector-tag">select</span><span class="selector-pseudo">:-webkit-autofill</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="built_in">rgb</span>(250, 255, 189); <span class="comment">/* #FAFFBD; */</span></span><br><span class="line">  <span class="attribute">background-image</span>: none;</span><br><span class="line">  <span class="attribute">color</span>: <span class="built_in">rgb</span>(0, 0, 0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="让页面里的字体变清晰，变细用-CSS-怎么做？"><a href="#让页面里的字体变清晰，变细用-CSS-怎么做？" class="headerlink" title="让页面里的字体变清晰，变细用 CSS 怎么做？"></a>让页面里的字体变清晰，变细用 CSS 怎么做？</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">-webkit-font-smoothing</span>: <span class="selector-tag">antialiased</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="让-overflow-scroll-平滑滚动？"><a href="#让-overflow-scroll-平滑滚动？" class="headerlink" title="让 overflow:scroll 平滑滚动？"></a>让 overflow:scroll 平滑滚动？</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">-webkit-overflow-scrolling</span>: <span class="selector-tag">touch</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="如何将浮点数点左边的数每三位添加一个逗号，如-12000000-11-转化为『12-000-000-11』"><a href="#如何将浮点数点左边的数每三位添加一个逗号，如-12000000-11-转化为『12-000-000-11』" class="headerlink" title="如何将浮点数点左边的数每三位添加一个逗号，如 12000000.11 转化为『12,000,000.11』?"></a>如何将浮点数点左边的数每三位添加一个逗号，如 12000000.11 转化为『12,000,000.11』?</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">commafy</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    num &amp;&amp;</span><br><span class="line">    num.toString().replace(<span class="regexp">/(\d)(?=(\d&#123;3&#125;)+\.)/g</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$<span class="number">1</span>, $<span class="number">2</span></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> $<span class="number">2</span> + <span class="string">','</span></span><br><span class="line">    &#125;)</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Javascript-作用链域"><a href="#Javascript-作用链域" class="headerlink" title="Javascript 作用链域?"></a>Javascript 作用链域?</h2><ul>
+<li>全局函数无法查看局部函数的内部细节，但局部函数可以查看其上层的函数细节，直至全局细节。</li>
+<li>当需要从局部函数查找某一属性或方法时，如果当前作用域没有找到，就会上溯到上层作用域查找， 直至全局函数，<strong>这种组织形式就是作用域链。</strong></li>
+</ul>
+<h2 id="谈谈-This-对象的理解。"><a href="#谈谈-This-对象的理解。" class="headerlink" title="谈谈 This 对象的理解。"></a>谈谈 This 对象的理解。</h2><ul>
+<li>this 总是指向函数的直接调用者（而非间接调用者）；</li>
+<li>如果有 new 关键字，this 指向 new 出来的那个对象；</li>
+<li>在事件中，this 指向触发这个事件的对象，<ul>
+<li><strong>特殊的是，IE 中的 attachEvent 中的 this 总是指向全局对象 Window；</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="eval-是做什么的？"><a href="#eval-是做什么的？" class="headerlink" title="eval 是做什么的？"></a>eval 是做什么的？</h2><p>它的功能是把对应的字符串解析成 JS 代码并运行； 应该避免使用 eval，不安全，<strong>非常耗性能</strong>（2 次，一次解析成 js 语句，一次执行）。<br>由 JSON 字符串转换为 JSON 对象的时候可以用 eval，var obj =eval(‘(‘+ str +’)’);</p>
+<h2 id="什么是-window-对象-什么是-document-对象"><a href="#什么是-window-对象-什么是-document-对象" class="headerlink" title="什么是 window 对象? 什么是 document 对象?"></a>什么是 window 对象? 什么是 document 对象?</h2><ul>
+<li>window 对象是指浏览器打开的窗口。</li>
+<li>document 对象是 Documentd 对象（HTML 文档对象）的一个只读引用，window 对象的一个属性。</li>
+</ul>
+<h2 id="“1”-“2”-“3”-map-parseInt-答案是多少？"><a href="#“1”-“2”-“3”-map-parseInt-答案是多少？" class="headerlink" title="[“1”, “2”, “3”].map(parseInt) 答案是多少？"></a>[“1”, “2”, “3”].map(parseInt) 答案是多少？</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">;[<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>].map(<span class="built_in">parseInt</span>)</span><br><span class="line"><span class="comment">// 答案也就是：[1, NaN, NaN]</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">;[<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>].map(<span class="built_in">parseInt</span>)</span><br><span class="line"><span class="comment">//  parseInt('1', 0) -&gt; 1   //radix=0,以10为基数解析 1*10^1+0*10^0=10</span></span><br><span class="line"><span class="comment">//  parseInt('2', 1) -&gt; NaN //radix=1&lt;2,返回NaN</span></span><br><span class="line"><span class="comment">//  parseInt('3', 2) -&gt; NaN //3无法转成二进制</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//即遍历后结果为 [1,NaN,NaN]</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="什么是闭包（closure），为什么要用它？"><a href="#什么是闭包（closure），为什么要用它？" class="headerlink" title="什么是闭包（closure），为什么要用它？"></a>什么是闭包（closure），为什么要用它？</h2><p>闭包是指有权访问另一个函数作用域中变量的函数，创建闭包的最常见的方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量,利用闭包可以突破作用链域，将函数内部的变量和方法传递到外部。</p>
+<h2 id="javascript-代码中的”use-strict”-是什么意思-使用它区别是什么？"><a href="#javascript-代码中的”use-strict”-是什么意思-使用它区别是什么？" class="headerlink" title="javascript 代码中的”use strict”;是什么意思 ? 使用它区别是什么？"></a>javascript 代码中的”use strict”;是什么意思 ? 使用它区别是什么？</h2><p>使 JS 编码更加规范化的模式,消除 Javascript 语法的一些不合理、不严谨之处，减少一些怪异行为。 默认支持的糟糕特性都会被禁用，比如不能用 with，也不能在意外的情况下给全局变量赋值; 全局变量的显示声明,函数必须声明在顶层，不允许在非函数代码块内声明函数,<code>arguments.callee</code> 也不允许使用； 保证代码运行的安全,限制函数中的 <code>arguments</code> 修改; 提高编译器效率，增加运行速度；</p>
+<h2 id="如何判断一个对象是否属于某个类？"><a href="#如何判断一个对象是否属于某个类？" class="headerlink" title="如何判断一个对象是否属于某个类？"></a>如何判断一个对象是否属于某个类？</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (a <span class="keyword">instanceof</span> Person) &#123;</span><br><span class="line">  alert(<span class="string">'yes'</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 判断对象类型最好的方式</span></span><br><span class="line"><span class="comment">// 对于 Object 对象，直接调用 toString()  就能返回 [object Object] 。</span></span><br><span class="line"><span class="comment">// 而对于其他对象，则需要通过 call / apply 来调用才能返回正确的类型信息。</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="string">''</span>) <span class="comment">// [object String]</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="number">1</span>) <span class="comment">// [object Number]</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">true</span>) <span class="comment">// [object Boolean]</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="built_in">Symbol</span>()) <span class="comment">//[object Symbol]</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">undefined</span>) <span class="comment">// [object Undefined]</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">null</span>) <span class="comment">// [object Null]</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">new</span> <span class="built_in">Function</span>()) <span class="comment">// [object Function]</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">new</span> <span class="built_in">Date</span>()) <span class="comment">// [object Date]</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call([]) <span class="comment">// [object Array]</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">new</span> <span class="built_in">RegExp</span>()) <span class="comment">// [object RegExp]</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">new</span> <span class="built_in">Error</span>()) <span class="comment">// [object Error]</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="built_in">document</span>) <span class="comment">// [object HTMLDocument]</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="built_in">window</span>) <span class="comment">//[object global] window 是全局对象 global 的引用</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="new-一个对象的过程"><a href="#new-一个对象的过程" class="headerlink" title="new 一个对象的过程"></a>new 一个对象的过程</h2><ol>
+<li>创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。</li>
+<li>属性和方法被加入到 this 引用的对象中。</li>
+<li>新创建的对象由 this 所引用，并且最后隐式的返回 this 。</li>
+</ol>
+<h2 id="Ajax-解决浏览器缓存问题"><a href="#Ajax-解决浏览器缓存问题" class="headerlink" title="Ajax 解决浏览器缓存问题"></a>Ajax 解决浏览器缓存问题</h2><ol>
+<li>在 ajax 发送请求前加上 <code>anyAjaxObj.setRequestHeader(&quot;If-Modified-Since&quot;,&quot;0&quot;)</code></li>
+<li>在 ajax 发送请求前加上 <code>anyAjaxObj.setRequestHeader(&quot;Cache-Control&quot;,&quot;no-cache&quot;)</code></li>
+<li>在 URL 后面加上一个随机数： <code>&quot;fresh=&quot; + Math.random();</code></li>
+<li>在 URL 后面加上时间戳：<code>&quot;nowtime=&quot; + new Date().getTime();</code></li>
+<li>如果是使用 jQuery，直接这样就可以了 <code>$.ajaxSetup({cache:false})</code>这样页面的所有 ajax 都会执行这条语句就是不需要保存缓存记录。</li>
+</ol>
+<h2 id="如何解决跨域问题"><a href="#如何解决跨域问题" class="headerlink" title="如何解决跨域问题?"></a>如何解决跨域问题?</h2><p><code>jsonp</code>、 <code>iframe</code>、<code>window.name</code>、<code>window.postMessage</code>、服务器上设置代理页面</p>
+<p><a href="https://powerdong.github.io/myBlog/2019/08/11/%E7%BD%91%E7%BB%9C-JSONP/" target="_blank" rel="noopener">jsonp</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe" target="_blank" rel="noopener">iframe</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/name" target="_blank" rel="noopener">window.name</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/postMessage" target="_blank" rel="noopener">window.postMessage</a></p>
+<h2 id="模块化开发怎么做"><a href="#模块化开发怎么做" class="headerlink" title="模块化开发怎么做"></a>模块化开发怎么做</h2><p>立即执行函数,不暴露私有成员</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> module1 = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> _count = <span class="number">0</span></span><br><span class="line">  <span class="keyword">var</span> m1 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> m2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    m1: m1,</span><br><span class="line">    m2: m2</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+
+<h2 id="AMD（Modules-Asynchronous-Definition）、CMD（Common-Module-Definition）规范区别？"><a href="#AMD（Modules-Asynchronous-Definition）、CMD（Common-Module-Definition）规范区别？" class="headerlink" title="AMD（Modules/Asynchronous-Definition）、CMD（Common Module Definition）规范区别？"></a>AMD（Modules/Asynchronous-Definition）、CMD（Common Module Definition）规范区别？</h2><ul>
+<li>对于依赖的模块，AMD 是提前执行，CMD 是延迟执行。不过 RequireJS 从 2.0 开始，也改成可以延迟执行（根据写法不同，处理方式不同）。</li>
+<li>CMD 推崇依赖就近，AMD 推崇依赖前置。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// CMD</span></span><br><span class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params">require, exports, module</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="built_in">require</span>(<span class="string">'./a'</span>)</span><br><span class="line">  a.doSomething()</span><br><span class="line">  <span class="comment">// 此处略去 100 行</span></span><br><span class="line">  <span class="keyword">var</span> b = <span class="built_in">require</span>(<span class="string">'./b'</span>) <span class="comment">// 依赖可以就近书写</span></span><br><span class="line">  b.doSomething()</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// AMD 默认推荐</span></span><br><span class="line">define([<span class="string">'./a'</span>, <span class="string">'./b'</span>], <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 依赖必须一开始就写好</span></span><br><span class="line">  a.doSomething()</span><br><span class="line">  <span class="comment">// 此处略去 100 行</span></span><br><span class="line">  b.doSomething()</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="requireJS-的核心原理是什么？（如何动态加载的？如何避免多次加载的？如何-缓存的？）-百度"><a href="#requireJS-的核心原理是什么？（如何动态加载的？如何避免多次加载的？如何-缓存的？）-百度" class="headerlink" title="requireJS 的核心原理是什么？（如何动态加载的？如何避免多次加载的？如何 缓存的？）(百度)"></a>requireJS 的核心原理是什么？（如何动态加载的？如何避免多次加载的？如何 缓存的？）(百度)</h3><ol>
+<li>概念<br>requireJS 是基于 AMD 模块加载规范，使用回调函数来解决模块加载的问题。</li>
+<li>原理<br>requireJS 是使用创建 script 元素，通过指定 script 元素的 src 属性来实现加载模块的。</li>
+<li>特点<ol>
+<li>实现 js 文件的异步加载，避免网页失去响应</li>
+<li>管理模块之间的依赖，便于代码的编写和维护</li>
+</ol>
+</li>
+<li>项目优化<ol>
+<li>r.js 是基于 requirejs 模块化的基础上进一步的压缩和打包成一个 js，请求数大大减少，便于优化</li>
+</ol>
+</li>
+</ol>
+<h2 id="如何实现一个模块加载器"><a href="#如何实现一个模块加载器" class="headerlink" title="如何实现一个模块加载器"></a>如何实现一个模块加载器</h2><p><a href="https://purplebamboo.github.io/2015/01/17/javascript-module/" target="_blank" rel="noopener">参考连接</a></p>
+<h2 id="列举几条-JavaScript-的基本代码规范"><a href="#列举几条-JavaScript-的基本代码规范" class="headerlink" title="列举几条 JavaScript 的基本代码规范"></a>列举几条 JavaScript 的基本代码规范</h2><ol>
+<li>不要在同一行声明多个变量</li>
+<li>如果你不知道数组的长度，使用 push</li>
+<li>请使用 <code>===</code>/<code>!==</code> 来比较 true/false 或者数值</li>
+<li>对字符串使用单引号 <code>&#39;&#39;</code>(因为大多时候我们的字符串。特别 html 会出现”)</li>
+<li>使用对象字面量替代 <code>new Array</code> 这种形式</li>
+<li>绝对不要在一个非函数块里声明一个函数，把那个函数赋给一个变量。浏览器允许你这么做，但是它们解析不同</li>
+<li>不要使用全局函数</li>
+<li>总是使用 var 来声明变量，如果不这么做将导致产生全局变量，我们要避免污染全局命名空间</li>
+<li>Switch 语句必须带有 default 分支</li>
+<li>使用多行注释，包括描述，指定类型以及参数值和返回值</li>
+<li>函数不应该有时候有返回值，有时候没有返回值</li>
+<li>语句结束一定要加分号</li>
+<li>for 循环必须使用大括号</li>
+<li>if 语句必须使用大括号</li>
+<li>for-in 循环中的变量应该使用 let 关键字明确限定作用域，从而避免作用域污染</li>
+<li>避免单个字符名，让你的变量名有描述意义</li>
+<li>当命名对象、函数和实例时使用驼峰命名规则</li>
+<li>给对象原型分配方法，而不是用一个新的对象覆盖原型，覆盖原型会使继承出现问题</li>
+</ol>
+<h2 id="DOM-操作——怎样添加、移除、移动、复制、创建和查找节点"><a href="#DOM-操作——怎样添加、移除、移动、复制、创建和查找节点" class="headerlink" title="DOM 操作——怎样添加、移除、移动、复制、创建和查找节点?"></a>DOM 操作——怎样添加、移除、移动、复制、创建和查找节点?</h2><h3 id="创建新节点"><a href="#创建新节点" class="headerlink" title="创建新节点"></a>创建新节点</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">createDocumentFragment() <span class="comment">//创建一个DOM片段</span></span><br><span class="line">createElement() <span class="comment">//创建一个具体的元素</span></span><br><span class="line">createTextNode() <span class="comment">//创建一个文本节点`</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="添加、移除、替换、插入"><a href="#添加、移除、替换、插入" class="headerlink" title="添加、移除、替换、插入"></a>添加、移除、替换、插入</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">appendChild()</span><br><span class="line">removeChild()</span><br><span class="line">replaceChild()</span><br><span class="line">insertBefore() <span class="comment">//在已有的子节点前插入一个新的子节点</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">getElementsByTagName() <span class="comment">//通过标签名称</span></span><br><span class="line">getElementsByName() <span class="comment">//通过元素的Name属性的值(IE容错能力较强，会得到一个数组，其中包括id等于name值的)</span></span><br><span class="line">getElementById() <span class="comment">//通过元素Id，唯一性</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="jquery-实现原理"><a href="#jquery-实现原理" class="headerlink" title="jquery 实现原理"></a>jquery 实现原理</h2><p><a href="https://www.zhangxinxu.com/wordpress/2013/07/jquery-%E5%8E%9F%E7%90%86-%E6%9C%BA%E5%88%B6/" target="_blank" rel="noopener">参考链接</a></p>
+<h2 id="jquery-中如何将数组转化为-json-字符串，然后再转化回来？"><a href="#jquery-中如何将数组转化为-json-字符串，然后再转化回来？" class="headerlink" title="jquery 中如何将数组转化为 json 字符串，然后再转化回来？"></a>jquery 中如何将数组转化为 json 字符串，然后再转化回来？</h2><p>jQuery 中没有提供这个功能，所以你需要先编写两个 jQuery 的扩展：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$.fn.stringifyArray = <span class="function"><span class="keyword">function</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">return</span> <span class="built_in">JSON</span>.stringify(array)</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> $.fn.parseArray = <span class="function"><span class="keyword">function</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">return</span> <span class="built_in">JSON</span>.parse(array)</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> 然后调用：</span><br><span class="line"> $.fn.stringifyArray(array)</span><br></pre></td></tr></table></figure>
+
+<h2 id="jquery-的-extend-深复制和浅复制原理"><a href="#jquery-的-extend-深复制和浅复制原理" class="headerlink" title="jquery 的 $.extend 深复制和浅复制原理"></a>jquery 的 $.extend 深复制和浅复制原理</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 浅复制</span></span><br><span class="line">$ = &#123;</span><br><span class="line">  extend: <span class="function"><span class="keyword">function</span>(<span class="params">target, options</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (name <span class="keyword">in</span> options) &#123;</span><br><span class="line">      target[name] = options[name]</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> target</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 深复制</span></span><br><span class="line">$ = &#123;</span><br><span class="line">  extend: <span class="function"><span class="keyword">function</span>(<span class="params">deep, target, options</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (name <span class="keyword">in</span> options) &#123;</span><br><span class="line">      copy = options[name]</span><br><span class="line">      <span class="keyword">if</span> (deep &amp;&amp; copy <span class="keyword">instanceof</span> <span class="built_in">Array</span>) &#123;</span><br><span class="line">        target[name] = $.extend(deep, [], copy)</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (deep &amp;&amp; copy <span class="keyword">instanceof</span> <span class="built_in">Object</span>) &#123;</span><br><span class="line">        target[name] = $.extend(deep, &#123;&#125;, copy)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        target[name] = options[name]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> target</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="jquery-extend-与-jquery-fn-extend-的区别？"><a href="#jquery-extend-与-jquery-fn-extend-的区别？" class="headerlink" title="jquery.extend 与 jquery.fn.extend 的区别？"></a>jquery.extend 与 jquery.fn.extend 的区别？</h2><ul>
+<li>jquery.extend 为 jquery 类添加类方法，可以理解为添加静态方法</li>
+<li>jquery.fn.extend: 源码中 jquery.fn = jquery.prototype，所以对 jquery.fn 的扩展，就是为 jquery 类添加成员函数</li>
+<li>使用： jquery.extend 扩展，需要通过 jquery 类来调用，</li>
+<li>而 jquery.fn.extend 扩展，所有 jquery 实例都可以直接调用。</li>
+</ul>
+<h2 id="如何判断当前脚本运行在浏览器还是-node-环境中？（阿里）"><a href="#如何判断当前脚本运行在浏览器还是-node-环境中？（阿里）" class="headerlink" title="如何判断当前脚本运行在浏览器还是 node 环境中？（阿里）"></a>如何判断当前脚本运行在浏览器还是 node 环境中？（阿里）</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span> === <span class="built_in">window</span> ? <span class="string">'browser'</span> : <span class="string">'node'</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="实现一个页面操作不会整页刷新的网站，并且能在浏览器前进、后退时正确响应。给出你的技术实现方案？"><a href="#实现一个页面操作不会整页刷新的网站，并且能在浏览器前进、后退时正确响应。给出你的技术实现方案？" class="headerlink" title="实现一个页面操作不会整页刷新的网站，并且能在浏览器前进、后退时正确响应。给出你的技术实现方案？"></a>实现一个页面操作不会整页刷新的网站，并且能在浏览器前进、后退时正确响应。给出你的技术实现方案？</h2><p><a href="https://www.haorooms.com/post/ajax_historybackprev" target="_blank" rel="noopener">参考链接</a></p>
+<h2 id="把-Script-标签-放在页面的最底部的-body-封闭之前-和封闭之后有什么区别？浏览器会如何解析它们？"><a href="#把-Script-标签-放在页面的最底部的-body-封闭之前-和封闭之后有什么区别？浏览器会如何解析它们？" class="headerlink" title="把 Script 标签 放在页面的最底部的 body 封闭之前 和封闭之后有什么区别？浏览器会如何解析它们？"></a>把 Script 标签 放在页面的最底部的 body 封闭之前 和封闭之后有什么区别？浏览器会如何解析它们？</h2><p><strong>之前推荐的方法（已过时）：</strong> 之前解决这个问题的方法是把 script 标签放到 body 标签之后 ，这确保了解析到<code>&lt;/body&gt;</code>之前都不会被 script 中断。这个方法是有问题的: 浏览器在整个文档解析完成之前都不能下载 script 文件，如果文档很大的话，解析完 HTML，用户依然要等待 script 文件下载并执行完成之后，才能操作这个网站。</p>
+<p><strong>现在推荐的解决方案：</strong> 现在浏览器 script 标签支持 async 和 defer 属性. 应用这些属性当 script 被下载时，浏览器更安全而且可以并行下载（下载 script 并不阻断 HTML 解析）。</p>
+<ol>
+<li>async 标记的 Script 异步执行下载，并执行。这意味着 script 下载时并不阻塞 HTML 的解析，并且下载结束 script 马上执行。</li>
+<li>defer 标签的 script 顺序执行。这种方式也不会阻断浏览器解析 HTML。<ul>
+<li>跟 async 不同, defer scripts 在整个文档里的 script 都被下载完才顺序执行。</li>
+</ul>
+</li>
+</ol>
+<h2 id="JQuery-一个对象可以同时绑定多个事件，这是如何实现的？"><a href="#JQuery-一个对象可以同时绑定多个事件，这是如何实现的？" class="headerlink" title="JQuery 一个对象可以同时绑定多个事件，这是如何实现的？"></a>JQuery 一个对象可以同时绑定多个事件，这是如何实现的？</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//多个事件同一个函数：</span></span><br><span class="line">$(<span class="string">'div'</span>).on(<span class="string">'click mouseover'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;)</span><br><span class="line"><span class="comment">//多个事件不同函数</span></span><br><span class="line">$(<span class="string">'div'</span>).on(&#123;</span><br><span class="line">  click: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">  mouseover: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="什么是前端路由？前端路由的-实现原理"><a href="#什么是前端路由？前端路由的-实现原理" class="headerlink" title="什么是前端路由？前端路由的 实现原理"></a>什么是前端路由？前端路由的 实现原理</h2><p><a href="http://www.voidcn.com/article/p-fowvpjan-dx.html" target="_blank" rel="noopener">参考链接</a></p>
+<h2 id="检测浏览器版本版本有哪些方式？"><a href="#检测浏览器版本版本有哪些方式？" class="headerlink" title="检测浏览器版本版本有哪些方式？"></a>检测浏览器版本版本有哪些方式？</h2><p>功能检测、userAgent 特征检测</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">比如：navigator.userAgent</span><br><span class="line">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="什么是-Polyfill"><a href="#什么是-Polyfill" class="headerlink" title="什么是 Polyfill?"></a>什么是 Polyfill?</h2><p>polyfill 是“在旧版浏览器上复制标准 API 的 JavaScript 补充”,可以动态地加载 JavaScript 代码或库，在不支持这些标准 API 的浏览器中模拟它们。 例如，geolocation（地理位置）polyfill 可以在 navigator 对象上添加全局的 geolocation 对象，还能添加 getCurrentPosition 函数以及“坐标”回调对象， 所有这些都是 W3C 地理位置 API 定义的对象和函数。因为 polyfill 模拟标准 API，所以能够以一种面向所有浏览器未来的方式针对这些 API 进行开发， 一旦对这些 API 的支持变成绝对大多数，则可以方便地去掉 polyfill，无需做任何额外工作。</p>
+<h2 id="我们给一个-dom-同时绑定两个点击事件，一个用捕获，一个用冒泡。会执行几次事件，会先执行冒泡还是捕获？"><a href="#我们给一个-dom-同时绑定两个点击事件，一个用捕获，一个用冒泡。会执行几次事件，会先执行冒泡还是捕获？" class="headerlink" title="我们给一个 dom 同时绑定两个点击事件，一个用捕获，一个用冒泡。会执行几次事件，会先执行冒泡还是捕获？"></a>我们给一个 dom 同时绑定两个点击事件，一个用捕获，一个用冒泡。会执行几次事件，会先执行冒泡还是捕获？</h2><blockquote>
+<p>按照 W3C 的标准，先发生捕获事件，后发生冒泡事件。所有事件的顺序是：其他元素捕获阶段事件 -&gt; 本元素代码顺序事件 -&gt; 其他元素冒泡阶段事件</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// div-capture &gt; btn-bubble &gt; btn-capture &gt; div-bubble</span></span><br><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>)</span><br><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.querySelector(<span class="string">'div'</span>)</span><br><span class="line"></span><br><span class="line">btn.addEventListener(</span><br><span class="line">  <span class="string">'click'</span>,</span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'bubble'</span>, <span class="string">'btn'</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="literal">false</span></span><br><span class="line">)</span><br><span class="line">btn.addEventListener(</span><br><span class="line">  <span class="string">'click'</span>,</span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'capture'</span>, <span class="string">'btn'</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="literal">true</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">div.addEventListener(</span><br><span class="line">  <span class="string">'click'</span>,</span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'bubble'</span>, <span class="string">'div'</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="literal">false</span></span><br><span class="line">)</span><br><span class="line">div.addEventListener(</span><br><span class="line">  <span class="string">'click'</span>,</span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'capture'</span>, <span class="string">'div'</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="literal">true</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Webpack-热更新实现原理"><a href="#Webpack-热更新实现原理" class="headerlink" title="Webpack 热更新实现原理?"></a>Webpack 热更新实现原理?</h2><ul>
+<li>Webpack 编译期，为需要热更新的 entry 注入热更新代码(EventSource 通信)</li>
+<li>页面首次打开后，服务端与客户端通过 EventSource 建立通信渠道，把下一次的 hash 返回前端</li>
+<li>客户端获取到 hash，这个 hash 将作为下一次请求服务端 hot-update.js 和 hot-update.json 的 hash</li>
+<li>修改页面代码后，Webpack 监听到文件修改后，开始编译，编译完成后，发送 build 消息给客户端</li>
+<li>客户端获取到 hash，成功后客户端构造 hot-update.js script 链接，然后插入主文档</li>
+<li>hot-update.js 插入成功后，执行 hotAPI 的 createRecord 和 reload 方法，获取到 Vue 组件的 render 方法，重新 render 组件， 继而实现 UI 无刷新更新。</li>
+</ul>
+<h2 id="函数节流和防抖"><a href="#函数节流和防抖" class="headerlink" title="函数节流和防抖"></a>函数节流和防抖</h2><p><a href="https://powerdong.github.io/myBlog/2019/06/26/JavaScript%E6%89%8B%E5%86%99%E4%BB%A3%E7%A0%81/#9-%E9%98%B2%E6%8A%96-Debounce-%E5%92%8C-%E8%8A%82%E6%B5%81-Throttle" target="_blank" rel="noopener">参考链接</a></p>
+<h2 id="页面重构怎么操作？"><a href="#页面重构怎么操作？" class="headerlink" title="页面重构怎么操作？"></a>页面重构怎么操作？</h2><p><strong>网站重构：</strong> 在不改变外部行为的前提下，简化结构、添加可读性，而在网站前端保持一致的行为。 也就是说是在不改变 UI 的情况下，对网站进行优化，在扩展的同时保持一致的 UI。</p>
+<p><strong>对于传统的网站来说重构通常是</strong>：</p>
+<ul>
+<li>表格(table)布局改为 DIV+CSS 使网站前端兼容于现代浏览器(针对于不合规范的 CSS、如对 IE6 有效的) 对于移动平台的优化 针对于 SEO 进行优化 深层次的网站重构应该考虑的方面</li>
+<li>减少代码间的耦合 让代码保持弹性 严格按规范编写代码 设计可扩展的 API 代替旧有的框架、语言(如 VB) 增强用户体验 通常来说对于速度的优化也包含在重构中</li>
+<li>压缩 JS、CSS、image 等前端资源(通常是由服务器来解决) 程序的性能优化(如数据读写) 采用 CDN 来加速资源加载 对于 JS DOM 的优化 HTTP 服务器的文件缓存</li>
+</ul>
+<h2 id="列举-IE-与其他浏览器不一样的特性"><a href="#列举-IE-与其他浏览器不一样的特性" class="headerlink" title="列举 IE 与其他浏览器不一样的特性"></a>列举 IE 与其他浏览器不一样的特性</h2><p><strong>事件不同之处：</strong></p>
+<p>触发事件的元素被认为是目标（target）。而在 IE 中，目标包含在 event 对象的 srcElement 属性；</p>
+<p>获取字符代码、如果按键代表一个字符（shift、ctrl、alt 除外），IE 的 keyCode 会返回字符代码（Unicode），DOM 中按键的代码和字符是分离的，要获取字符代码，需要使用 charCode 属性；</p>
+<p>阻止某个事件的默认行为，IE 中阻止某个事件的默认行为，必须将 returnValue 属性设置为 false，Mozilla 中，需要调用 preventDefault() 方法；</p>
+<p>停止事件冒泡，IE 中阻止事件进一步冒泡，需要设置 cancelBubble 为 true，Mozilla 中，需要调用 stopPropagation()；</p>
+<h2 id="对-Node-的优点和缺点提出了自己的看法？"><a href="#对-Node-的优点和缺点提出了自己的看法？" class="headerlink" title="对 Node 的优点和缺点提出了自己的看法？"></a>对 Node 的优点和缺点提出了自己的看法？</h2><ul>
+<li><p><strong>（优点）</strong></p>
+<ul>
+<li>因为 Node 是基于事件驱动和无阻塞的，所以非常适合处理并发请求， 因此构建在 Node 上的代理服务器相比其他技术实现（如 Ruby）的服务器表现要好得多。</li>
+<li>此外，与 Node 代理服务器交互的客户端代码是由 javascript 语言编写的， 因此客户端和服务器端都用同一种语言编写，这是非常美妙的事情。</li>
+</ul>
+</li>
+<li><p><strong>（缺点）</strong></p>
+<ul>
+<li>Node 是一个相对新的开源项目，所以不太稳定，它总是一直在变， 而且缺少足够多的第三方库支持。看起来，就像是 Ruby/Rails 当年的样子。</li>
+</ul>
+</li>
+</ul>
+<h2 id="你有用过哪些前端性能优化的方法？"><a href="#你有用过哪些前端性能优化的方法？" class="headerlink" title="你有用过哪些前端性能优化的方法？"></a>你有用过哪些前端性能优化的方法？</h2><ol>
+<li>减少 http 请求次数：CSS Sprites, JS、CSS 源码压缩、图片大小控制合适；网页 Gzip，CDN 托管，data 缓存 ，图片服务器。</li>
+<li>前端模板 JS+数据，减少由于 HTML 标签导致的带宽浪费，前端用变量保存 AJAX 请求结果，每次操作本地变量，不用请求，减少请求次数</li>
+<li>用 innerHTML 代替 DOM 操作，减少 DOM 操作次数，优化 javascript 性能。</li>
+<li>当需要设置的样式很多时设置 className 而不是直接操作 style。</li>
+<li>少用全局变量、缓存 DOM 节点查找的结果。减少 IO 读取操作。</li>
+<li>避免使用 CSS Expression（css 表达式)又称 Dynamic properties(动态属性)。</li>
+<li>图片预加载，将样式表放在顶部，将脚本放在底部 加上时间戳。</li>
+<li>避免在页面的主体布局中使用 table，table 要等其中的内容完全下载之后才会显示出来，显示比 div+css 布局慢。</li>
+</ol>
+<p>对普通的网站有一个统一的思路，就是尽量向前端优化、减少数据库操作、减少磁盘 IO。向前端优化指的是，<strong>在不影响功能和体验的情况下，能在浏览器执行的不要在服务端执行</strong>，能在缓存服务器上直接返回的不要到应用服务器，程序能直接取得的结果不要到外部取得，本机内能取得的数据不要到远程取，内存能取到的不要到磁盘取，缓存中有的不要去数据库查询。减少数据库操作指减少更新次数、缓存结果减少查询次数、将数据库执行的操作尽可能的让你的程序完成（例如 join 查询），减少磁盘 IO 指尽量不使用文件系统作为缓存、减少读写文件次数等。程序优化永远要优化慢的部分，换语言是无法“优化”的。</p>
+<h2 id="http-1"><a href="#http-1" class="headerlink" title="http"></a>http</h2><ul>
+<li><p><strong>1(信息类)</strong>：表示接收到请求并且继续处理 100——客户必须继续发出请求 101——客户要求服务器根据请求转换 HTTP 协议版本</p>
+</li>
+<li><p><strong>2(响应成功)</strong>：表示动作被成功接收、理解和接受</p>
+<ul>
+<li>200——表明该请求被成功地完成，所请求的资源发送回客户端</li>
+<li>201——提示知道新文件的 URL</li>
+<li>202——接受和处理、但处理未完成</li>
+<li>203——返回信息不确定或不完整</li>
+<li>204——请求收到，但返回信息为空</li>
+<li>205——服务器完成了请求，用户代理必须复位当前已经浏览过的文件</li>
+<li>206——服务器已经完成了部分用户的 GET 请求</li>
+</ul>
+</li>
+<li><p><strong>3(重定向类)</strong>：为了完成指定的动作，必须接受进一步处理</p>
+<ul>
+<li>300——请求的资源可在多处得到</li>
+<li>301——本网页被永久性转移到另一个 URL</li>
+<li>302——请求的网页被转移到一个新的地址，但客户访问仍继续通过原始 URL 地址，重定向，新的 URL 会在 response 中的 Location 中返回，浏览器将会使用新的 URL 发出新的 Request。</li>
+<li>303——建议客户访问其他 URL 或访问方式</li>
+<li>304——自从上次请求后，请求的网页未修改过，服务器返回此响应时，不会返回网页内容，代表上次的文档已经被缓存了，还可以继续使用</li>
+<li>305——请求的资源必须从服务器指定的地址得到</li>
+<li>306——前一版本 HTTP 中使用的代码，现行版本中不再使用</li>
+<li>307——申明请求的资源临时性删除</li>
+</ul>
+</li>
+<li><p><strong>4(客户端错误类)</strong>：请求包含错误语法或不能正确执行</p>
+<ul>
+<li>400——客户端请求有语法错误，不能被服务器所理解</li>
+<li>401——请求未经授权，这个状态代码必须和 WWW-Authenticate 报头域一起使用<ul>
+<li>HTTP 401.1 - 未授权：登录失败</li>
+<li>HTTP 401.2 - 未授权：服务器配置问题导致登录失败</li>
+<li>HTTP 401.3 - ACL 禁止访问资源</li>
+<li>HTTP 401.4 - 未授权：授权被筛选器拒绝</li>
+<li>HTTP 401.5 - 未授权：ISAPI 或 CGI 授权失败</li>
+</ul>
+</li>
+<li>402——保留有效 ChargeTo 头响应</li>
+<li>403——禁止访问，服务器收到请求，但是拒绝提供服务<ul>
+<li>HTTP 403.1 禁止访问：禁止可执行访问</li>
+<li>HTTP 403.2 - 禁止访问：禁止读访问</li>
+<li>HTTP 403.3 - 禁止访问：禁止写访问</li>
+<li>HTTP 403.4 - 禁止访问：要求 SSL</li>
+<li>HTTP 403.5 - 禁止访问：要求 SSL 128</li>
+<li>HTTP 403.6 - 禁止访问：IP 地址被拒绝</li>
+<li>HTTP 403.7 - 禁止访问：要求客户证书</li>
+<li>HTTP 403.8 - 禁止访问：禁止站点访问</li>
+<li>HTTP 403.9 - 禁止访问：连接的用户过多</li>
+<li>HTTP 403.10 - 禁止访问：配置无效</li>
+<li>HTTP 403.11 - 禁止访问：密码更改</li>
+<li>HTTP 403.12 - 禁止访问：映射器拒绝访问</li>
+<li>HTTP 403.13 - 禁止访问：客户证书已被吊销</li>
+<li>HTTP 403.15 - 禁止访问：客户访问许可过多</li>
+<li>HTTP 403.16 - 禁止访问：客户证书不可信或者无效</li>
+<li>HTTP 403.17 - 禁止访问：客户证书已经到期或者尚未生效</li>
+</ul>
+</li>
+<li>404——一个 404 错误表明可连接服务器，但服务器无法取得所请求的网页，请求资源不存在。<strong>eg：输入了错误的 URL</strong></li>
+<li>405——用户在 Request-Line 字段定义的方法不允许</li>
+<li>406——根据用户发送的 Accept 拖，请求资源不可访问</li>
+<li>407——类似 401，用户必须首先在代理服务器上得到授权</li>
+<li>408——客户端没有在用户指定的饿时间内完成请求</li>
+<li>409——对当前资源状态，请求不能完成</li>
+<li>410——服务器上不再有此资源且无进一步的参考地址</li>
+<li>411——服务器拒绝用户定义的 Content-Length 属性请求</li>
+<li>412——一个或多个请求头字段在当前请求中错误</li>
+<li>413——请求的资源大于服务器允许的大小</li>
+<li>414——请求的资源 URL 长于服务器允许的长度</li>
+<li>415——请求资源不支持请求项目格式</li>
+<li>416——请求中包含 Range 请求头字段，在当前请求资源范围内没有 range 指示值，请求也不包含 If-Range 请求头字段</li>
+<li>417——服务器不满足请求 Expect 头字段指定的期望值，如果是代理服务器，可能是下一级服务器不能满足请求长。</li>
+</ul>
+</li>
+<li><p><strong>5(服务端错误类)</strong>：服务器不能正确执行一个正确的请求</p>
+<ul>
+<li>HTTP 500 - 服务器遇到错误，无法完成请求<ul>
+<li>HTTP 500.100 - 内部服务器错误 - ASP 错误</li>
+<li>HTTP 500-11 服务器关闭</li>
+<li>HTTP 500-12 应用程序重新启动</li>
+<li>HTTP 500-13 - 服务器太忙</li>
+<li>HTTP 500-14 - 应用程序无效</li>
+<li>HTTP 500-15 - 不允许请求 global.asa</li>
+<li>Error 501 - 未实现</li>
+</ul>
+</li>
+<li>HTTP 502 - 网关错误</li>
+<li>HTTP 503：由于超载或停机维护，服务器目前无法使用，一段时间后可能恢复正常</li>
+</ul>
+</li>
+</ul>
+<h2 id="一个页面从输入-URL-到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）"><a href="#一个页面从输入-URL-到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）" class="headerlink" title="一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）"></a>一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）</h2><p>而高手可以根据自己擅长的领域自由发挥，从 URL 规范、HTTP 协议、DNS、CDN、数据库查询、 到浏览器流式解析、CSS 规则构建、layout、paint、onload/domready、JS 执行、JS API 绑定等等；</p>
+<p>详细版：</p>
+<ol>
+<li>浏览器会开启一个线程来处理这个请求，对 URL 分析判断如果是 http 协议就按照 Web 方式来处理;</li>
+<li>调用浏览器内核中的对应方法，比如 WebView 中的 loadUrl 方法;</li>
+<li>通过 DNS 解析获取网址的 IP 地址，设置 UA 等信息发出第二个 GET 请求;</li>
+<li>进行 HTTP 协议会话，客户端发送报头(请求报头);</li>
+<li>进入到 web 服务器上的 Web Server，如 Apache、Tomcat、Node.JS 等服务器;</li>
+<li>进入部署好的后端应用，如 PHP、Java、JavaScript、Python 等，找到对应的请求处理;</li>
+<li>处理结束回馈报头，此处如果浏览器访问过，缓存上有对应资源，会与服务器最后修改时间对比，一致则返回 304;</li>
+<li>浏览器开始下载 html 文档(响应报头，状态码 200)，同时使用缓存;</li>
+<li>文档树建立，根据标记请求所需指定 MIME 类型的文件（比如 css、js）,同时设置了 cookie;</li>
+<li>页面开始渲染 DOM，JS 根据 DOM API 操作 DOM,执行事件绑定等，页面显示完成。</li>
+</ol>
+<h2 id="邮箱验证"><a href="#邮箱验证" class="headerlink" title="邮箱验证"></a>邮箱验证</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> pattern = <span class="regexp">/^([A-Za-z0-9_\-\.\u4e00-\u9fa5])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]&#123;2,8&#125;)\$/</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="ajax-实现原理及方法使用"><a href="#ajax-实现原理及方法使用" class="headerlink" title="ajax 实现原理及方法使用"></a>ajax 实现原理及方法使用</h2><ul>
+<li><strong>readyState 属性有五个状态值。</strong><ul>
+<li>0：是 uninitialized，未初始化。已经创建了 XMLHttpRequest 对象但是未初始化。</li>
+<li>1：是 loading.已经开始准备好要发送了。</li>
+<li>2：已经发送，但是还没有收到响应。</li>
+<li>3：正在接受响应，但是还不完整。</li>
+<li>4：接受响应完毕。</li>
+</ul>
+</li>
+<li>responseText：服务器返回的响应文本。只有当 readyState&gt;=3 的时候才有值，根据</li>
+<li>readyState 的状态值，可以知道，当 readyState=3，返回的响应文本不完整，只有<ul>
+<li>readyState=4，完全返回，才能接受全部的响应文本。</li>
+</ul>
+</li>
+<li>responseXML：response as Dom Document object。响应信息是 xml，可以解析为 Dom 对象。</li>
+<li>status：服务器的 Http 状态码，若是 200，则表示 OK，404，表示为未找到。</li>
+<li>statusText：服务器 http 状态码的文本。比如 OK，Not Found。</li>
+</ul>
+<h2 id="js-实现继承"><a href="#js-实现继承" class="headerlink" title="js 实现继承"></a>js 实现继承</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/Inheritance" target="_blank" rel="noopener">参考链接</a></p>
+<h2 id="闭包使用的优缺点"><a href="#闭包使用的优缺点" class="headerlink" title="闭包使用的优缺点"></a>闭包使用的优缺点</h2><ul>
+<li>优点：<ul>
+<li>1.保护函数内部变量的安全，加强了封装性</li>
+<li>2.在内存中维持一个变量</li>
+<li>3.设计私有方法和变量</li>
+<li>4.可以读取函数内部的变量</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>1.导致内存泄漏，使用不当会造成额外的内存占用</li>
+<li>2.可以改变父函数的变量，所以使用时要谨慎</li>
+</ul>
+</li>
+</ul>
+<h2 id="canvas-和-svg-区别"><a href="#canvas-和-svg-区别" class="headerlink" title="canvas 和 svg 区别"></a>canvas 和 svg 区别</h2><ol>
+<li>从图像类别区分，Canvas 是基于像素的位图，而 SVG 却是基于矢量图形。可以简单的把两者的区别看成 photoshop 与 illustrator 的区别。</li>
+<li>从结构上说，Canvas 没有图层的概念，所有的修改整个画布都要重新渲染，而 SVG 则可以对单独的标签进行修改。</li>
+<li>从操作对象上说，Canvas 是基于 HTML canvas 标签，通过宿主提供的 Javascript API 对整个画布进行操作的，而 SVG 则是基于 XML 元素的。</li>
+<li>从功能上讲，SVG 发布日期较早，所以功能相对 Canvas 比较完善。</li>
+<li>关于动画，Canvas 更适合做基于位图的动画，而 SVG 则适合图表的展示。</li>
+<li>从搜索引擎角度分析，由于 svg 是有大量标签组成，所以可以通过给标签添加属性，便于爬虫搜索</li>
+</ol>
+<h2 id="开启硬件加速"><a href="#开启硬件加速" class="headerlink" title="开启硬件加速"></a>开启硬件加速</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//目前，像 Chrome/Firefox/Safari/IE9+以及最新版本 Opera 都支持硬件加速</span><br><span class="line">// 当检测到某个 DOM 元素应用了某些 CSS 规则时就会自动开启，从而解决页面闪白，保证动画流畅。</span><br><span class="line"><span class="selector-class">.css</span> &#123;</span><br><span class="line">  <span class="attribute">-webkit-transform</span>: <span class="built_in">translate3d</span>(0, 0, 0);</span><br><span class="line">  <span class="attribute">-moz-transform</span>: <span class="built_in">translate3d</span>(0, 0, 0);</span><br><span class="line">  <span class="attribute">-ms-transform</span>: <span class="built_in">translate3d</span>(0, 0, 0);</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translate3d</span>(0, 0, 0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="button-注意事项"><a href="#button-注意事项" class="headerlink" title="button 注意事项"></a>button 注意事项</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span>元素一定要写上 type 属性不然会默认提交表单，出现想不到的 bug</span><br></pre></td></tr></table></figure>
+
+<h2 id="移动端-html-标签几个体验优化"><a href="#移动端-html-标签几个体验优化" class="headerlink" title="移动端 html 标签几个体验优化"></a>移动端 html 标签几个体验优化</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span>,</span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">overflow-x</span>: hidden;</span><br><span class="line">  <span class="comment">/* 手机上写会有兼容性问题，如果子级如果是绝对定位有运动到屏幕外的话 ios7 系统会出现留白 */</span></span><br><span class="line">  <span class="attribute">-webkit-overflow-scrolling</span>: touch;</span><br><span class="line">  <span class="comment">/* 流畅滚动,ios7下会有滑一下滑不动的情况，所以需要写上/ */</span></span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="comment">/* 直接子级如果是绝对定位有运动到屏幕外的话，会出现留白  */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="手机上的多行省略"><a href="#手机上的多行省略" class="headerlink" title="手机上的多行省略"></a>手机上的多行省略</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.overflow-hidden</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: box <span class="meta">!important</span>;</span><br><span class="line">  <span class="attribute">display</span>: -webkit-box <span class="meta">!important</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">text-overflow</span>: ellipsis;</span><br><span class="line">  <span class="attribute">-webkit-box-orient</span>: vertical;</span><br><span class="line">  <span class="attribute">-webkit-line-clamp</span>: <span class="number">4</span>; <span class="comment">/*第几行出现省略号*/</span></span><br><span class="line">  <span class="comment">/* text-align:justify;不能和溢出隐藏的代码一起写，会有 bug */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="长时间按住页面闪退"><a href="#长时间按住页面闪退" class="headerlink" title="长时间按住页面闪退"></a>长时间按住页面闪退</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.element</span> &#123;</span><br><span class="line">  <span class="comment">/* </span></span><br><span class="line"><span class="comment">  这个CSS 属性禁用了默认的callout展示， </span></span><br><span class="line"><span class="comment">  callout是指当触摸并按住一个元素的时候出现的提示。</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="attribute">-webkit-touch-callout</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="改变输入框内提示文字颜色"><a href="#改变输入框内提示文字颜色" class="headerlink" title="改变输入框内提示文字颜色"></a>改变输入框内提示文字颜色</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">::-webkit-input-placeholder</span> &#123;</span><br><span class="line">  <span class="comment">/*webkitbrowsers*/</span></span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#999</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-pseudo">:-moz-placeholder</span> &#123;</span><br><span class="line">  <span class="comment">/*mozillafirefox4to18*/</span></span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#999</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-pseudo">::-moz-placeholder</span> &#123;</span><br><span class="line">  <span class="comment">/*mozillafirefox19+*/</span></span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#999</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-pseudo">:-ms-input-placeholder</span> &#123;</span><br><span class="line">  <span class="comment">/*internetexplorer10+*/</span></span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#999</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:focus</span><span class="selector-pseudo">::-webkit-input-placeholder</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#999</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="自动播放音乐"><a href="#自动播放音乐" class="headerlink" title="自动播放音乐"></a>自动播放音乐</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//JS 绑定自动播放（操作 window 时，播放音乐）</span></span><br><span class="line">$(<span class="built_in">window</span>).one(<span class="string">'touchstart'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  music.play()</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//微信下兼容处理</span></span><br><span class="line"><span class="built_in">document</span>.addEventListener(</span><br><span class="line">  <span class="string">'WeixinJSBridgeReady'</span>,</span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    music.play()</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="literal">false</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h2 id="消除-translation-闪屏"><a href="#消除-translation-闪屏" class="headerlink" title="消除 translation 闪屏"></a>消除 translation 闪屏</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 消除 transition 闪屏 */</span></span><br><span class="line"><span class="selector-class">.css</span> &#123;</span><br><span class="line">  <span class="attribute">-webkit-transform-style</span>: preserve-<span class="number">3</span>d;</span><br><span class="line">  <span class="attribute">-webkit-backface-visibility</span>: hidden;</span><br><span class="line">  <span class="attribute">-webkit-perspective</span>: <span class="number">1000</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
 
 <hr>
 <blockquote>
@@ -344,11 +729,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
         		</li>
       		
 		</ul>
@@ -360,7 +745,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        			<a href="/myBlog/categories/面试//" class="article-tag-list-link color3">面试</a>
         		</li>
       		
 		</ul>
@@ -415,7 +800,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/01/HTML5-多媒体/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/02/面试题集锦-1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -429,18 +814,9 @@
   
 <nav id="article-nav">
   
-    <a href="/myBlog/2019/09/03/HTML5-requestAnimationFrame/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          HTML5-requestAnimationFrame
-        
-      </div>
-    </a>
   
-  
-    <a href="/myBlog/2019/08/30/HTML5-SVG/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">HTML5-SVG</div>
+    <a href="/myBlog/2019/09/28/前端需要了解的设计模式(2)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端需要了解的设计模式(2)</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -459,6 +835,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么官方建议数据异步请求在mounted事件进行"><span class="toc-number">1.</span> <span class="toc-text">为什么官方建议数据异步请求在mounted事件进行?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#子组件修改父组件传过来的值"><span class="toc-number">2.</span> <span class="toc-text">子组件修改父组件传过来的值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#get-post-的理解和他们之间的区别"><span class="toc-number">3.</span> <span class="toc-text">get/post 的理解和他们之间的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#http"><span class="toc-number">3.1.</span> <span class="toc-text">http</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#http-方法"><span class="toc-number">3.2.</span> <span class="toc-text">http 方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GET-和-POST-的区别"><span class="toc-number">3.3.</span> <span class="toc-text">GET 和 POST 的区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数组去重"><span class="toc-number">4.</span> <span class="toc-text">数组去重</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是-CDN-和-CDN-的好处"><span class="toc-number">5.</span> <span class="toc-text">什么是 CDN 和 CDN 的好处</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#好处："><span class="toc-number">5.1.</span> <span class="toc-text">好处：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何提高首频加载速度"><span class="toc-number">6.</span> <span class="toc-text">如何提高首频加载速度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器内核-渲染引擎"><span class="toc-number">7.</span> <span class="toc-text">浏览器内核(渲染引擎)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#页面导入样式时，使用-link-和-import-有什么区别？"><span class="toc-number">8.</span> <span class="toc-text">页面导入样式时，使用 link 和@import 有什么区别？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简述一下你对-HTML-语义化的理解？"><span class="toc-number">9.</span> <span class="toc-text">简述一下你对 HTML 语义化的理解？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#请描述一下-cookies，sessionStorage-和-localStorage-的区别？"><span class="toc-number">10.</span> <span class="toc-text">请描述一下 cookies，sessionStorage 和 localStorage 的区别？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#iframe-有那些缺点？"><span class="toc-number">11.</span> <span class="toc-text">iframe 有那些缺点？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网页验证码是干嘛的，是为了解决什么安全问题？"><span class="toc-number">12.</span> <span class="toc-text">网页验证码是干嘛的，是为了解决什么安全问题？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍一下标准的-CSS-的盒子模型？低版本-IE-的盒子模型有什么不同的？"><span class="toc-number">13.</span> <span class="toc-text">介绍一下标准的 CSS 的盒子模型？低版本 IE 的盒子模型有什么不同的？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#position-的值-relative-和-absolute-定位原点是？"><span class="toc-number">14.</span> <span class="toc-text">position 的值 relative 和 absolute 定位原点是？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用-hack-的技巧-？"><span class="toc-number">15.</span> <span class="toc-text">经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用 hack 的技巧 ？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-优化、提高性能的方法有哪些？"><span class="toc-number">16.</span> <span class="toc-text">CSS 优化、提高性能的方法有哪些？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#如何修改-chrome-记住密码后自动填充表单的黄色背景-？"><span class="toc-number">16.1.</span> <span class="toc-text">如何修改 chrome 记住密码后自动填充表单的黄色背景 ？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#让页面里的字体变清晰，变细用-CSS-怎么做？"><span class="toc-number">16.2.</span> <span class="toc-text">让页面里的字体变清晰，变细用 CSS 怎么做？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#让-overflow-scroll-平滑滚动？"><span class="toc-number">16.3.</span> <span class="toc-text">让 overflow:scroll 平滑滚动？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何将浮点数点左边的数每三位添加一个逗号，如-12000000-11-转化为『12-000-000-11』"><span class="toc-number">17.</span> <span class="toc-text">如何将浮点数点左边的数每三位添加一个逗号，如 12000000.11 转化为『12,000,000.11』?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Javascript-作用链域"><span class="toc-number">18.</span> <span class="toc-text">Javascript 作用链域?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#谈谈-This-对象的理解。"><span class="toc-number">19.</span> <span class="toc-text">谈谈 This 对象的理解。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#eval-是做什么的？"><span class="toc-number">20.</span> <span class="toc-text">eval 是做什么的？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是-window-对象-什么是-document-对象"><span class="toc-number">21.</span> <span class="toc-text">什么是 window 对象? 什么是 document 对象?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#“1”-“2”-“3”-map-parseInt-答案是多少？"><span class="toc-number">22.</span> <span class="toc-text">[“1”, “2”, “3”].map(parseInt) 答案是多少？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是闭包（closure），为什么要用它？"><span class="toc-number">23.</span> <span class="toc-text">什么是闭包（closure），为什么要用它？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript-代码中的”use-strict”-是什么意思-使用它区别是什么？"><span class="toc-number">24.</span> <span class="toc-text">javascript 代码中的”use strict”;是什么意思 ? 使用它区别是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何判断一个对象是否属于某个类？"><span class="toc-number">25.</span> <span class="toc-text">如何判断一个对象是否属于某个类？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#new-一个对象的过程"><span class="toc-number">26.</span> <span class="toc-text">new 一个对象的过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ajax-解决浏览器缓存问题"><span class="toc-number">27.</span> <span class="toc-text">Ajax 解决浏览器缓存问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何解决跨域问题"><span class="toc-number">28.</span> <span class="toc-text">如何解决跨域问题?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模块化开发怎么做"><span class="toc-number">29.</span> <span class="toc-text">模块化开发怎么做</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AMD（Modules-Asynchronous-Definition）、CMD（Common-Module-Definition）规范区别？"><span class="toc-number">30.</span> <span class="toc-text">AMD（Modules/Asynchronous-Definition）、CMD（Common Module Definition）规范区别？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#requireJS-的核心原理是什么？（如何动态加载的？如何避免多次加载的？如何-缓存的？）-百度"><span class="toc-number">30.1.</span> <span class="toc-text">requireJS 的核心原理是什么？（如何动态加载的？如何避免多次加载的？如何 缓存的？）(百度)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何实现一个模块加载器"><span class="toc-number">31.</span> <span class="toc-text">如何实现一个模块加载器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#列举几条-JavaScript-的基本代码规范"><span class="toc-number">32.</span> <span class="toc-text">列举几条 JavaScript 的基本代码规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM-操作——怎样添加、移除、移动、复制、创建和查找节点"><span class="toc-number">33.</span> <span class="toc-text">DOM 操作——怎样添加、移除、移动、复制、创建和查找节点?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建新节点"><span class="toc-number">33.1.</span> <span class="toc-text">创建新节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加、移除、替换、插入"><span class="toc-number">33.2.</span> <span class="toc-text">添加、移除、替换、插入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查找"><span class="toc-number">33.3.</span> <span class="toc-text">查找</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jquery-实现原理"><span class="toc-number">34.</span> <span class="toc-text">jquery 实现原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jquery-中如何将数组转化为-json-字符串，然后再转化回来？"><span class="toc-number">35.</span> <span class="toc-text">jquery 中如何将数组转化为 json 字符串，然后再转化回来？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jquery-的-extend-深复制和浅复制原理"><span class="toc-number">36.</span> <span class="toc-text">jquery 的 $.extend 深复制和浅复制原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jquery-extend-与-jquery-fn-extend-的区别？"><span class="toc-number">37.</span> <span class="toc-text">jquery.extend 与 jquery.fn.extend 的区别？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何判断当前脚本运行在浏览器还是-node-环境中？（阿里）"><span class="toc-number">38.</span> <span class="toc-text">如何判断当前脚本运行在浏览器还是 node 环境中？（阿里）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现一个页面操作不会整页刷新的网站，并且能在浏览器前进、后退时正确响应。给出你的技术实现方案？"><span class="toc-number">39.</span> <span class="toc-text">实现一个页面操作不会整页刷新的网站，并且能在浏览器前进、后退时正确响应。给出你的技术实现方案？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#把-Script-标签-放在页面的最底部的-body-封闭之前-和封闭之后有什么区别？浏览器会如何解析它们？"><span class="toc-number">40.</span> <span class="toc-text">把 Script 标签 放在页面的最底部的 body 封闭之前 和封闭之后有什么区别？浏览器会如何解析它们？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JQuery-一个对象可以同时绑定多个事件，这是如何实现的？"><span class="toc-number">41.</span> <span class="toc-text">JQuery 一个对象可以同时绑定多个事件，这是如何实现的？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是前端路由？前端路由的-实现原理"><span class="toc-number">42.</span> <span class="toc-text">什么是前端路由？前端路由的 实现原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#检测浏览器版本版本有哪些方式？"><span class="toc-number">43.</span> <span class="toc-text">检测浏览器版本版本有哪些方式？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是-Polyfill"><span class="toc-number">44.</span> <span class="toc-text">什么是 Polyfill?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#我们给一个-dom-同时绑定两个点击事件，一个用捕获，一个用冒泡。会执行几次事件，会先执行冒泡还是捕获？"><span class="toc-number">45.</span> <span class="toc-text">我们给一个 dom 同时绑定两个点击事件，一个用捕获，一个用冒泡。会执行几次事件，会先执行冒泡还是捕获？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Webpack-热更新实现原理"><span class="toc-number">46.</span> <span class="toc-text">Webpack 热更新实现原理?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数节流和防抖"><span class="toc-number">47.</span> <span class="toc-text">函数节流和防抖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#页面重构怎么操作？"><span class="toc-number">48.</span> <span class="toc-text">页面重构怎么操作？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#列举-IE-与其他浏览器不一样的特性"><span class="toc-number">49.</span> <span class="toc-text">列举 IE 与其他浏览器不一样的特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对-Node-的优点和缺点提出了自己的看法？"><span class="toc-number">50.</span> <span class="toc-text">对 Node 的优点和缺点提出了自己的看法？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#你有用过哪些前端性能优化的方法？"><span class="toc-number">51.</span> <span class="toc-text">你有用过哪些前端性能优化的方法？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http-1"><span class="toc-number">52.</span> <span class="toc-text">http</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一个页面从输入-URL-到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）"><span class="toc-number">53.</span> <span class="toc-text">一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#邮箱验证"><span class="toc-number">54.</span> <span class="toc-text">邮箱验证</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ajax-实现原理及方法使用"><span class="toc-number">55.</span> <span class="toc-text">ajax 实现原理及方法使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#js-实现继承"><span class="toc-number">56.</span> <span class="toc-text">js 实现继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#闭包使用的优缺点"><span class="toc-number">57.</span> <span class="toc-text">闭包使用的优缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#canvas-和-svg-区别"><span class="toc-number">58.</span> <span class="toc-text">canvas 和 svg 区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开启硬件加速"><span class="toc-number">59.</span> <span class="toc-text">开启硬件加速</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#button-注意事项"><span class="toc-number">60.</span> <span class="toc-text">button 注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#移动端-html-标签几个体验优化"><span class="toc-number">61.</span> <span class="toc-text">移动端 html 标签几个体验优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#手机上的多行省略"><span class="toc-number">62.</span> <span class="toc-text">手机上的多行省略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#长时间按住页面闪退"><span class="toc-number">63.</span> <span class="toc-text">长时间按住页面闪退</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#改变输入框内提示文字颜色"><span class="toc-number">64.</span> <span class="toc-text">改变输入框内提示文字颜色</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自动播放音乐"><span class="toc-number">65.</span> <span class="toc-text">自动播放音乐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#消除-translation-闪屏"><span class="toc-number">66.</span> <span class="toc-text">消除 translation 闪屏</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
