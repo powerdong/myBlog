@@ -1048,12 +1048,12 @@
 </li>
 </ul>
 <ol>
-<li>http2 采用的二进制文本传输数据，而非 http1 文本格式，二进制在协议的解析和扩展更好 </li>
-<li>数据压缩：对信息头采用了 HPACK 进行压缩传输，节省了信息头带来的网络流量 </li>
-<li>多路复用：一个连接可以并发处理多个请求 </li>
+<li>http2 采用的二进制文本传输数据，而非 http1 文本格式，二进制在协议的解析和扩展更好</li>
+<li>数据压缩：对信息头采用了 HPACK 进行压缩传输，节省了信息头带来的网络流量</li>
+<li>多路复用：一个连接可以并发处理多个请求</li>
 <li>服务器推送：我们对支持 HTTP2.0 的 web server 请求数据的时候，服务器会顺便把一些客户端需要的资源一起推送到客户端，免得客户端再次创建连接发送请求到服务器端获取。这种方式非常合适加载静态资源</li>
 </ol>
-<h3 id="七、web-缓存"><a href="#七、web-缓存" class="headerlink" title="七、web 缓存"></a>七、web 缓存</h3><p>web 缓存就是存在于客户端与服务器之间的一个副本、当你第一个发出请求后，缓存根据请求保存输出内容的副本 </p>
+<h3 id="七、web-缓存"><a href="#七、web-缓存" class="headerlink" title="七、web 缓存"></a>七、web 缓存</h3><p>web 缓存就是存在于客户端与服务器之间的一个副本、当你第一个发出请求后，缓存根据请求保存输出内容的副本</p>
 <ul>
 <li>缓存的好处<ul>
 <li>减少不必要的请求</li>
@@ -1066,7 +1066,7 @@
 <li>sql 注入原理：通郭 sql 命令插入到 web 表单递交或者输入活命，达到欺骗服务器执行的恶意 sql 命令<ul>
 <li><strong>防范：</strong></li>
 <li><ol>
-<li>对用户输入进行校验 </li>
+<li>对用户输入进行校验</li>
 </ol>
 </li>
 <li><ol start="2">
@@ -1079,7 +1079,7 @@
 <li>举例子：在论坛放置一个看是安全的链接，窃取 cookie 中的用户信息</li>
 <li>防范：</li>
 <li><ol>
-<li>尽量采用 post 而不使用 get 提交表单 </li>
+<li>尽量采用 post 而不使用 get 提交表单</li>
 </ol>
 </li>
 <li><ol start="2">
@@ -1100,8 +1100,8 @@
 <li>CSRF 代替用户完成指定的动作，需要知道其他页面的代码和数据包</li>
 </ol>
 <h3 id="九、CDN（内容分发网络）"><a href="#九、CDN（内容分发网络）" class="headerlink" title="九、CDN（内容分发网络）"></a>九、CDN（内容分发网络）</h3><ol>
-<li>尽可能的避开互联网有可能影响数据传输速度和稳定性的瓶颈和环节。使内容传输的更快更稳定。 </li>
-<li>关键技术：内容存储和分发技术中 </li>
+<li>尽可能的避开互联网有可能影响数据传输速度和稳定性的瓶颈和环节。使内容传输的更快更稳定。</li>
+<li>关键技术：内容存储和分发技术中</li>
 <li>基本原理：广泛采用各种缓存服务器，将这些缓存服务器分布到用户访问相对的地区或者网络中。当用户访问网络时利用全局负载技术<br>将用户的访问指向距离最近的缓存服务器，由缓存服务器直接相应用户的请求（全局负载技术）</li>
 </ol>
 <h3 id="十、TCP-三次握手-客服端和服务器端都需要确认各自可收发）"><a href="#十、TCP-三次握手-客服端和服务器端都需要确认各自可收发）" class="headerlink" title="十、TCP 三次握手 (客服端和服务器端都需要确认各自可收发）"></a>十、TCP 三次握手 (客服端和服务器端都需要确认各自可收发）</h3><p>客服端发 c 起请求连接服务器端 s 确认，服务器端也发起连接确认客服端确认。</p>
@@ -1111,11 +1111,11 @@
 <li>第三次握手： 服务器端确认客服端收到了自己发送的报文段</li>
 </ul>
 <h3 id="十一、从输入-url-到获取页面的完整过程"><a href="#十一、从输入-url-到获取页面的完整过程" class="headerlink" title="十一、从输入 url 到获取页面的完整过程"></a>十一、从输入 url 到获取页面的完整过程</h3><ol>
-<li>查询 NDS(域名解析),获取域名对应的 IP 地址 查询浏览器缓存 </li>
-<li>浏览器与服务器建立 tcp 链接（三次握手） </li>
-<li>浏览器向服务器发送 http 请求(请求和传输数据） </li>
-<li>服务器接受到这个请求后，根据路经参数，经过后端的一些处理生成 html 代码返回给浏览器 </li>
-<li>浏览器拿到完整的 html 页面代码开始解析和渲染，如果遇到外部的 css 或者 js，图片一样的步骤 </li>
+<li>查询 NDS(域名解析),获取域名对应的 IP 地址 查询浏览器缓存</li>
+<li>浏览器与服务器建立 tcp 链接（三次握手）</li>
+<li>浏览器向服务器发送 http 请求(请求和传输数据）</li>
+<li>服务器接受到这个请求后，根据路经参数，经过后端的一些处理生成 html 代码返回给浏览器</li>
+<li>浏览器拿到完整的 html 页面代码开始解析和渲染，如果遇到外部的 css 或者 js，图片一样的步骤</li>
 <li>浏览器根据拿到的资源对页面进行渲染，把一个完整的页面呈现出来</li>
 </ol>
 <h3 id="十二、浏览器渲染原理及流程"><a href="#十二、浏览器渲染原理及流程" class="headerlink" title="十二、浏览器渲染原理及流程"></a>十二、浏览器渲染原理及流程</h3><blockquote>
@@ -1124,9 +1124,9 @@
 <p>流程：解析 html 以及构建 dom 树 -&gt; 构建 render 树 -&gt; 布局 render 树 -&gt; 绘制 render 树</p>
 <p><strong>概念：</strong></p>
 <ol>
-<li>构建 DOM 树： 渲染引擎解析 HTML 文档，首先将标签转换成 DOM 树中的 DOM node(包括 js 生成的标签)生成内容树 </li>
-<li>构建渲染树： 解析对应的 css 样式文件信息（包括 js 生成的样式和外部的 css） </li>
-<li>布局渲染树：从根节点递归调用，计算每一个元素的大小，位置等。给出每个节点所在的屏幕的精准位置 </li>
+<li>构建 DOM 树： 渲染引擎解析 HTML 文档，首先将标签转换成 DOM 树中的 DOM node(包括 js 生成的标签)生成内容树</li>
+<li>构建渲染树： 解析对应的 css 样式文件信息（包括 js 生成的样式和外部的 css）</li>
+<li>布局渲染树：从根节点递归调用，计算每一个元素的大小，位置等。给出每个节点所在的屏幕的精准位置</li>
 <li>绘制渲染树：遍历渲染树，使用 UI 后端层来绘制每一个节点</li>
 </ol>
 <p><strong>重绘：</strong><br>当盒子的位置、大小以及其他属性，例如颜色、字体大小等到确定下来之后，浏览器便把这些颜色都按照各自的特性绘制一遍，将内容呈现在页面上</p>
@@ -1136,7 +1136,7 @@
 <p>重排（重构/回流/reflow）： 当渲染书中的一部分（或全部）因为元素的规模尺寸，布局，隐藏等改变而需要重新构建，这就是回流。<br>每个页面都需要一次回流，就是页面第一次渲染的时候</p>
 <p><strong>重排一定会影响重绘，但是重绘不一定会影响重排</strong></p>
 <h3 id="十三、为什么-css-放在顶部而-js-写在后面"><a href="#十三、为什么-css-放在顶部而-js-写在后面" class="headerlink" title="十三、为什么 css 放在顶部而 js 写在后面"></a>十三、为什么 css 放在顶部而 js 写在后面</h3><ol>
-<li>浏览器预先加载 css 后，可以不必等待 HTML 加载完毕就可以渲染页面了 </li>
+<li>浏览器预先加载 css 后，可以不必等待 HTML 加载完毕就可以渲染页面了</li>
 <li>其实 HTML 渲染并不会等到完全加载完在渲染页面，而是一边解析 DOM 一边渲染。</li>
 <li>js 写在尾部，主要是因为 js 主要扮演事件处理的功能，一方面很多操作是在页面渲染后才执行的。另一方面可以节省加载时间，使页面能够更加的加载，提高用户的良好体验</li>
 </ol>
@@ -1149,75 +1149,101 @@
 <li>Session: 服务器端使用的一种记录客户状态的机制（session_id 存在 set_cookie 发送到客服端，保存为 cookie）</li>
 <li>localStorage: h5 的本地存储，数据永久保存在客服端</li>
 </ol>
-<h3 id="cookie，sessionStorage，localStorage"><a href="#cookie，sessionStorage，localStorage" class="headerlink" title="cookie，sessionStorage，localStorage"></a>cookie，sessionStorage，localStorage</h3><p>1、cookie，sessionStorage，localStorage 是存放在客户端，session 对象数据是存放在服务器上<br>实际上浏览器和服务器之间仅需传递 session id 即可，服务器根据 session-id 找到对应的用户 session 对象<br>session 存储数据更安全一些，一般存放用户信息，浏览器只适合存储一般的数据<br>2、cookie 数据始终在同源的 http 请求中携带，在浏览器和服务器来回传递，里面存放着 session-id<br>sessionStorage，localStorage 仅在本地保存<br>3、大小限制区别，cookie 数据不超过 4kb，localStorage 在谷歌浏览中 2.6MB<br>4、数据有效期不同，cookie 在设置的（服务器设置）有效期内有效，不管窗口和浏览器关闭<br>sessionStorage 仅在当前浏览器窗口关闭前有效，关闭即销毁（临时存储）<br>localStorage 始终有效<br>SessionStorage 和 localStorage 区别：<br>1.sessionStorage 用于本地存储一个会话（session）中的数据，这些数据只有在用一个会话的页面中才能被访问（也就是说在第一次通信过程中）<br>并且在会话结束后数据也随之销毁，不是一个持久的本地存储，会话级别的储存<br>2.localStorage 用于持久化的本地存储，除非主动删除数据，否则不会过期<br>token、cookie、session 三者的理解？？？！！！<br>1、token 就是令牌，比如你授权(登录)一个程序时,他就是个依据,判断你是否已经授权该软件（最好的身份认证，安全性好，且是唯一的）<br>用户身份的验证方式</p>
-<p>2、cookie 是写在客户端一个 txt 文件，里面包括登录信息之类的，这样你下次在登录某个网站，就会自动调用 cookie 自动登录用户名<br>服务器生成，发送到浏览器、浏览器保存，下次请求再次发送给服务器（存放着登录信息）</p>
-<p>3、session 是一类用来客户端和服务器之间保存状态的解决方案，会话完成被销毁（代表的就是服务器和客户端的一次会话过程）<br>cookie 中存放着 sessionID，请求会发送这个 id。sesion 因为 request 对象而产生。<br>复制代码<br>基于 Token 的身份验证：（最简单的 token: uid 用户唯一的身份识别 + time 当前事件戳 + sign 签名）<br>1、用户通过用户名和密码发送请求<br>2、服务器端验证<br>3、服务器端返回一个带签名的 token，给客户端<br>4、客户端储存 token，并且每次用于发送请求<br>5、服务器验证 token 并且返回数据<br>每一次请求都需要 token<br>复制代码<br>cookie 与 session 区别<br>1、cookie 数据存放在客户的浏览器上，session 数据放在服务器上。<br>2、cookie 不是很安全，别人可以分析存放在本地的 COOKIE 并进行 COOKIE 欺骗考虑到安全应当使用 session。<br>3、session 会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能考虑到减轻服务器性能方面，应当使用 COOKIE。<br>4、单个 cookie 保存的数据不能超过 4K，很多浏览器都限制一个站点最多保存 20 个 cookie。<br>复制代码<br>session 与 token 区别<br>1、session 认证只是把简单的 User 的信息存储 Session 里面，sessionID 不可预测，一种认证手段。只存在服务端，不能共享到其他的网站和第三方 App<br>2、token 是 oAuth Token，提供的是认证和授权，认证针对用户，授权是针对 App，目的就是让某 APP 有权访问某用户的的信息。Token 是唯一的，<br>token 不能转移到其他的 App，也不能转到其他用户上。（适用于 App）<br>3、session 的状态是存在服务器端的，客户端只存在 session id， Token 状态是存储在客户端的<br>复制代码<br>Cookie 的弊端有哪些？？？（优势：保存客户端数据，分担了服务器存储的负担）<br>1、数量和长度的限制。每个特定的域名下最多生成 20 个 cookie（chorme 和 safari 没有限制）<br>2、安全性问题。<br>复制代码<br>设计模式</p>
-<p>一、观察者模式：juejin.im/post/5a14e9… juejin.im/post/5af05d…<br>在软件开发设计中是一个对象(subject)，维护一系列依赖他的对象（observer），当任何状态发生改变自动通知他们。强依赖关系<br>简单理解：数据发生改变时，对应的处理函数就会自动执行。一个 Subjet,用来维护 Observers,为某些 event 来通知（notify）观察者</p>
-<p>二、发布-订阅者 有一个信息中介，过滤 耦合性低<br>它定义了一种一对多的关系，可以使多个观察者对象对一个主题对象进行监听，当这个主题对象发生改变时，依赖的所有对象都会被通知到。</p>
-<p>-两者的区别： 1.观察者模式中，观察者知道 Subject ,两者是相关联的，而发发布订阅者只有通过信息代理进行通信 2.在发布订阅模式中，组件式松散耦合的。正好和观察者模式相反。 3.观察者大部分是同步的，比如事件的触发。Subject 就会调用观察者的方法。而发布订阅者大多数是异步的（） 4.观察者模式需要在单个应用程序地址空间中实现，而发布订阅者更像交叉应用模式。</p>
-<p>数据结构和算法<br>一、两个栈实现一个队列，两个队列实现一个栈 <a href="http://www.cnblogs.com/MrListening…" target="_blank" rel="noopener">www.cnblogs.com/MrListening…</a><br>二、红黑树（解决二叉树依次插入多个节点时的线型排列） juejin.im/post/5a27c6…<br>三、最小栈的实现（查找最小元素，用两个栈配合栈内元素的下标）juejin.im/post/5a2ff8…<br>四、十大排序 1.冒泡排序：重复走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把它们交换过来。<br>实现过程：1.比较相邻的元素。如果第一个比第二个大，就交换他们两个 2.对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对，这样在最后的元素应该会是最大的数 3.针对所有的元素重复以上的步骤，除了最后一个 4.重复步骤 1-3，直到排序完成。 2.选择排序：首先在未排序序列中找到最小值，放在排序序列的起始位置，然后，在从剩下未排序元素中继续寻找最小值，然后放在与排序序列的末尾<br>实现过程：</p>
-<p>3.插入排序：构建有序序列，对于未排序数据，在已排序序列中冲后向前扫描，找到相应位置并插入<br>实现过程：1.从第一个元素开始，该元素可以认为已经被排序 2.取出下一个元素，在已排序的元素序列中冲后向前扫描 3.如果该元素（以排序）大于新元素，将元素向后移一位 4.在取出一个元素，比较之前的，直到找到自己合适的位置</p>
-<p>4.桶排序：将数据分布到有限数量的桶里，每个桶在分别排序</p>
-<p>1.快速排序：快速排序使用分治法把一个串（list）分为两个子串（sub-lists）.具体算法实现<br>实现过程：1.从数组中挑出一个元素，成为一个基准 2.重新排列数组，所有元素比基准小的摆在基准前面，所有元素比基准大的摆在基准后面（相同的可以摆在一边）<br>这个分区退出之后，该基准就处于数列的中间位置。成为分区操作。 3.递归的把小于基准值的子数列和大于基准值元素的子数列排序<br>算法实现： function quickSort (arr) {<br>if （arr.length &lt;= 1） {return arr}<br>var destIndex = Math.floor(arr.length/2)<br>var left = [], right = [];<br>var dest = arr.splice(destIndex,1)[0];<br>for (var i =0;i&lt;arr.length;i++){<br>if (arr[i]&lt;dest) {<br>left.push(arr[i])<br>} else {<br>right.push(arr[i]) }<br>return quickSort(left).concat([dest],quickSort(right)</p>
-<p>2.堆排序：利用对这种数据结构所涉及的一种排序算法，堆积是一个近乎完全二叉树的结构，并同时满足堆积的性质：即子节点的键值或索引总是小于（或大于）它的父节点。<br>实现过程：1.<br>复制代码<br>五、数组去重 juejin.im/post/5aed61… 1.双重循环<br>2.indexOf 3.数组排序去重 最快你 Olong<br>复制代码<br>六、字符串<br>判断回文字符串：（递归的思想） 1.字符串分隔，倒转，聚合[…obj].reverse().join(‘’) 2.字符串头部和尾部，逐次向中间检测<br>实现：function isPalindrome(line) {<br>line += ‘’;<br>for (var i=0,j=line.length-1;i&lt;j;i++,j–) {<br>if (line.chartAt(i) !== line.chartAt(j) {<br>return false<br>} 3.递归<br>复制代码<br>七、二分查找（有序数组的查找）<br>二分查找可以解决已排序数组的查找问题，即只要数组中包含 T(要查找的值)，那么通过不断的缩小包含 T 的数据范围，就可以最终要找到的数<br>(1) 一开始,数据范围覆盖整个数组。<br>(2) 将数组的中间项与 T 进行比较，如果 T 比数组的中间项小，则到数组的前半部分继续查找，反之，则到数组的后半部分继续查找。<br>(3) 就这样，每次查找都可以排除一半元素，相当于范围缩小一半。这样反复比较，反复缩小范围，最终会在数组中找到 T<br>代码实现：function binarySearch (data, dest, start, end){<br>var end = end || data.length-1;<br>var start = start || 0;<br>var m = Math.floor((start+end)/2);<br>if (dest&lt;data[m]){<br>return binarySearch(data, dest, 0, m-1)<br>} else {<br>return binarySearch(data, dest, m+1, end)<br>}}<br>return false<br>复制代码<br>手写代码<br>一、动手实现一个 bind（原理通过 apply，call）<br>一句话概括：1.bind()返回一个新函数，并不会立即执行。<br>2.bind 的第一个参数将作为他运行时的 this，之后的一系列参数将会在传递的实参前传入作为他的参数<br>3.bind 返回函数作为构造函数，就是可以 new 的，bind 时指定的 this 值就会消失，但传入的参数依然生效<br>复制代码<br>Function.prototype.bind = function (obj, arg) {<br>var arg = Array.prototype.slice.call(arguments, 1);<br>var context = this;<br>var bound = function (newArg) {<br>arg = arg.concat(Array.prototype.slice.call(newArg);<br>return context.apply(obj, arg)<br>}
-var F = function () {} // 在 new 一个 bind 会生成新函数，必须的条件就是要继承原函数的原型，因此用到寄生继承来完成我们的过程<br>F.prototype = context.prototype;<br>bound.prototype = new F();<br>return bound;<br>}
-复制代码二、 AJAX （异步的 javascript 和 xml）<br>ajax 的原理：相当于在用户和服务器之间加一个中间层（ajax 引擎),使用户操作与服务器响应异步化。<br>优点：在不刷新整个页面的前提下与服务器通信维护数据。不会导致页面的重载<br>可以把前端服务器的任务转嫁到客服端来处理，减轻服务器负担，节省宽带<br>劣势：不支持 back。对搜索引擎的支持比较弱；不容易调试<br>怎么解决呢？通过 location.hash 值来解决 Ajax 过程中导致的浏览器前进后退按键失效，<br>解决以前被人常遇到的重复加载的问题。主要比较前后的 hash 值，看其是否相等，在判断是否触发 ajax<br>复制代码<br>function getData(url) {<br>var xhr = new XMLHttpRequest(); // 创建一个对象，创建一个异步调用的对象<br>xhr.open(‘get’, url, true) // 设置一个 http 请求，设置请求的方式，url 以及验证身份<br>xhr.send() //发送一个 http 请求<br>xhr.onreadystatechange = function () { //设置一个 http 请求状态的函数<br>if (xhr.readyState == 4 &amp;&amp; xhr.status ==200) {<br>console.log(xhr.responseText) // 获取异步调用返回的数据<br>}
-}<br>}
-Promise(getData(url)).resolve(data =&gt; data)</p>
-<pre><code>AJAX状态码：0 - （未初始化）还没有调用send()方法
-        1 - （载入）已调用send方法，正在发送请求
-        2 - （载入完成呢）send()方法执行完成
-        3 - （交互）正在解析相应内容
-        4 - （完成）响应内容解析完成，可以在客户端调用了</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 三、函数节流（throttle）</span><br></pre></td></tr></table></figure>
+<h3 id="cookie，SessionStorage，localStorage"><a href="#cookie，SessionStorage，localStorage" class="headerlink" title="cookie，SessionStorage，localStorage"></a>cookie，SessionStorage，localStorage</h3><ul>
+<li>cookie，SessionStorage，localStorage 是存放在客户端，session 对象数据是存放在服务器上<br>实际上浏览器和服务器之间仅需传递 session id 即可，服务器根据 session-id 找到对应的用户 session 对象<br>session 存储数据更安全一些，一般存放用户信息，浏览器只适合存储一般的数据</li>
+<li>cookie 数据始终在同源的 http 请求中携带，在浏览器和服务器来回传递，里面存放着 session-id<br>sessionStorage，localStorage 仅在本地保存</li>
+<li>大小限制区别，cookie 数据不超过 4kb，localStorage 在谷歌浏览中 2.6MB</li>
+<li>数据有效期不同，cookie 在设置的（服务器设置）有效期内有效，不管窗口和浏览器关闭<br>sessionStorage 仅在当前浏览器窗口关闭前有效，关闭即销毁（临时存储）<br>localStorage 始终有效</li>
+</ul>
+<h3 id="SessionStorage-和-localStorage-区别："><a href="#SessionStorage-和-localStorage-区别：" class="headerlink" title="SessionStorage 和 localStorage 区别："></a>SessionStorage 和 localStorage 区别：</h3><ul>
+<li>sessionStorage 用于本地存储一个会话（session）中的数据，这些数据只有在用一个会话的页面中才能被访问（也就是说在第一次通信过程中）<br>并且在会话结束后数据也随之销毁，不是一个持久的本地存储，会话级别的储存</li>
+<li>localStorage 用于持久化的本地存储，除非主动删除数据，否则不会过期</li>
+</ul>
+<h3 id="token、cookie、session-三者的理解"><a href="#token、cookie、session-三者的理解" class="headerlink" title="token、cookie、session 三者的理解"></a>token、cookie、session 三者的理解</h3><ul>
+<li>token 就是令牌，比如你授权(登录)一个程序时,他就是个依据,判断你是否已经授权该软件（最好的身份认证，安全性好，且是唯一的）<ul>
+<li>用户身份的验证方式</li>
+</ul>
+</li>
+<li>cookie 是写在客户端一个 txt 文件，里面包括登录信息之类的，这样你下次在登录某个网站，就会自动调用 cookie 自动登录用户名<ul>
+<li>服务器生成，发送到浏览器、浏览器保存，下次请求再次发送给服务器（存放着登录信息）</li>
+</ul>
+</li>
+<li>session 是一类用来客户端和服务器之间保存状态的解决方案，会话完成被销毁（代表的就是服务器和客户端的一次会话过程）<ul>
+<li>cookie 中存放着 sessionID，请求会发送这个 id。session 因为 request 对象而产生。</li>
+</ul>
+</li>
+</ul>
+<h3 id="基于-Token-的身份验证"><a href="#基于-Token-的身份验证" class="headerlink" title="基于 Token 的身份验证"></a>基于 Token 的身份验证</h3><p>（最简单的 token: uid 用户唯一的身份识别 + time 当前事件戳 + sign 签名）</p>
+<ol>
+<li>用户通过用户名和密码发送请求</li>
+<li>服务器端验证</li>
+<li>服务器端返回一个带签名的 token，给客户端</li>
+<li>客户端储存 token，并且每次用于发送请求</li>
+<li>服务器验证 token 并且返回数据<br>每一次请求都需要 token</li>
+</ol>
+<h3 id="cookie-与-session-区别"><a href="#cookie-与-session-区别" class="headerlink" title="cookie 与 session 区别"></a>cookie 与 session 区别</h3><ol>
+<li>cookie 数据存放在客户的浏览器上，session 数据放在服务器上。</li>
+<li>cookie 不是很安全，别人可以分析存放在本地的 COOKIE 并进行 COOKIE 欺骗考虑到安全应当使用 session。</li>
+<li>session 会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能考虑到减轻服务器性能方面，应当使用 COOKIE。</li>
+<li>单个 cookie 保存的数据不能超过 4K，很多浏览器都限制一个站点最多保存 20 个 cookie。</li>
+</ol>
+<h3 id="session-与-token-区别"><a href="#session-与-token-区别" class="headerlink" title="session 与 token 区别"></a>session 与 token 区别</h3><ol>
+<li>session 认证只是把简单的 User 的信息存储 Session 里面，sessionID 不可预测，一种认证手段。只存在服务端，不能共享到其他的网站和第三方 App</li>
+<li>token 是 oAuth Token，提供的是认证和授权，认证针对用户，授权是针对 App，目的就是让某 APP 有权访问某用户的的信息。Token 是唯一的，<br>token 不能转移到其他的 App，也不能转到其他用户上。（适用于 App）</li>
+<li>session 的状态是存在服务器端的，客户端只存在 session id， Token 状态是存储在客户端的</li>
+</ol>
+<h3 id="Cookie-的弊端有哪些"><a href="#Cookie-的弊端有哪些" class="headerlink" title="Cookie 的弊端有哪些"></a>Cookie 的弊端有哪些</h3><p>（优势：保存客户端数据，分担了服务器存储的负担）</p>
+<ol>
+<li>数量和长度的限制。每个特定的域名下最多生成 20 个 cookie（chrome 和 safari 没有限制）</li>
+<li>安全性问题。</li>
+</ol>
+<h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><h3 id="一、观察者模式"><a href="#一、观察者模式" class="headerlink" title="一、观察者模式"></a>一、观察者模式</h3><p>在软件开发设计中是一个对象(subject)，维护一系列依赖他的对象（observer），当任何状态发生改变自动通知他们。强依赖关系<br>简单理解：数据发生改变时，对应的处理函数就会自动执行。一个 Subject,用来维护 Observers,为某些 event 来通知（notify）观察者</p>
+<h3 id="二、发布-订阅者-有一个信息中介，过滤-耦合性低"><a href="#二、发布-订阅者-有一个信息中介，过滤-耦合性低" class="headerlink" title="二、发布-订阅者 有一个信息中介，过滤 耦合性低"></a>二、发布-订阅者 有一个信息中介，过滤 耦合性低</h3><p>它定义了一种一对多的关系，可以使多个观察者对象对一个主题对象进行监听，当这个主题对象发生改变时，依赖的所有对象都会被通知到。</p>
+<ul>
+<li><strong>两者的区别：</strong><ul>
+<li>观察者模式中，观察者知道 Subject ,两者是相关联的，而发发布订阅者只有通过信息代理进行通信</li>
+<li>在发布订阅模式中，组件式松散耦合的。正好和观察者模式相反。</li>
+<li>观察者大部分是同步的，比如事件的触发。Subject 就会调用观察者的方法。而发布订阅者大多数是异步的（）</li>
+<li>观察者模式需要在单个应用程序地址空间中实现，而发布订阅者更像交叉应用模式。</li>
+</ul>
+</li>
+</ul>
+<h2 id="手写代码"><a href="#手写代码" class="headerlink" title="手写代码"></a>手写代码</h2><h3 id="一、动手实现一个-bind（原理通过-apply，call）"><a href="#一、动手实现一个-bind（原理通过-apply，call）" class="headerlink" title="一、动手实现一个 bind（原理通过 apply，call）"></a>一、动手实现一个 bind（原理通过 apply，call）</h3><p>一句话概括：</p>
+<ol>
+<li>bind()返回一个新函数，并不会立即执行。</li>
+<li>bind 的第一个参数将作为他运行时的 this，之后的一系列参数将会在传递的实参前传入作为他的参数</li>
+<li>bind 返回函数作为构造函数，就是可以 new 的，bind 时指定的 this 值就会消失，但传入的参数依然生效</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.bind = <span class="function"><span class="keyword">function</span> (<span class="params">obj, arg</span>) </span>&#123;</span><br><span class="line"><span class="keyword">var</span> arg = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>);</span><br><span class="line"><span class="keyword">var</span> context = <span class="keyword">this</span>;</span><br><span class="line"><span class="keyword">var</span> bound = <span class="function"><span class="keyword">function</span> (<span class="params">newArg</span>) </span>&#123;</span><br><span class="line">arg = arg.concat(<span class="built_in">Array</span>.prototype.slice.call(newArg);</span><br><span class="line"><span class="keyword">return</span> context.apply(obj, arg)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125; <span class="comment">// 在 new 一个 bind 会生成新函数，必须的条件就是要继承原函数的原型，因此用到寄生继承来完成我们的过程</span></span><br><span class="line">F.prototype = context.prototype;</span><br><span class="line">bound.prototype = <span class="keyword">new</span> F();</span><br><span class="line"><span class="keyword">return</span> bound;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>function throttle (func, wait) {<br>var timeout;<br>var previous = 0;<br>return function () {<br>context = this;<br>args = arguments;<br>if (!timeout) {<br>timeout = setTimeout(() =&gt; {<br>timeout = null;<br>func.apply(context,args)<br>}, wait);<br>}
-}<br>}</p>
-<p>}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 四、函数防抖（dobounce）</span><br></pre></td></tr></table></figure>
+<h3 id="二、-AJAX-（异步的-javascript-和-xml）"><a href="#二、-AJAX-（异步的-javascript-和-xml）" class="headerlink" title="二、 AJAX （异步的 javascript 和 xml）"></a>二、 AJAX （异步的 javascript 和 xml）</h3><p>ajax 的原理：相当于在用户和服务器之间加一个中间层（ajax 引擎),使用户操作与服务器响应异步化。</p>
+<ul>
+<li><strong>优点：</strong><ul>
+<li>在不刷新整个页面的前提下与服务器通信维护数据。不会导致页面的重载</li>
+<li>可以把前端服务器的任务转嫁到客服端来处理，减轻服务器负担，节省宽带</li>
+</ul>
+</li>
+<li><strong>劣势：</strong><ul>
+<li>不支持 back。对搜索引擎的支持比较弱；不容易调试</li>
+</ul>
+</li>
+</ul>
+<p><strong>怎么解决呢</strong></p>
+<p>通过 location.hash 值来解决 Ajax 过程中导致的浏览器前进后退按键失效，<br>解决以前被人常遇到的重复加载的问题。主要比较前后的 hash 值，看其是否相等，在判断是否触发 ajax</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getData</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest() <span class="comment">// 创建一个对象，创建一个异步调用的对象</span></span><br><span class="line">  xhr.open(<span class="string">'get'</span>, url, <span class="literal">true</span>) <span class="comment">// 设置一个 http 请求，设置请求的方式，url 以及验证身份</span></span><br><span class="line">  xhr.send() <span class="comment">//发送一个 http 请求</span></span><br><span class="line">  xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//设置一个 http 请求状态的函数</span></span><br><span class="line">    <span class="keyword">if</span> (xhr.readyState == <span class="number">4</span> &amp;&amp; xhr.status == <span class="number">200</span>) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(xhr.responseText) <span class="comment">// 获取异步调用返回的数据</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">Promise</span>(getData(url)).resolve(<span class="function">(<span class="params">data</span>) =&gt;</span> data)</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * AJAX状态码：0 - （未初始化）还没有调用send()方法</span></span><br><span class="line"><span class="comment">    	     1 - （载入）已调用send方法，正在发送请求</span></span><br><span class="line"><span class="comment">    	     2 - （载入完成呢）send()方法执行完成</span></span><br><span class="line"><span class="comment">    	     3 - （交互）正在解析相应内容</span></span><br><span class="line"><span class="comment">    	     4 - （完成）响应内容解析完成，可以在客户端调用了</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 
-<p>function debounce (func, wait) {<br>var timeout;<br>return function() {<br>var context = this;<br>var args = arguments;<br>clearTimeout(timeout);<br>timeout = setTimeout(() =&gt; {<br>func.apply(context,args)<br>}, wait);<br>}
-}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 五、实现一个函数 clone，可以对 JavaScript 中的 5 种主要的数据类型（包括 Number、String、Object、Array、Boolean）进行值复制</span><br></pre></td></tr></table></figure>
+<h3 id="三、函数节流（throttle）"><a href="#三、函数节流（throttle）" class="headerlink" title="三、函数节流（throttle）"></a>三、函数节流（throttle）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span> (<span class="params">func, wait</span>) </span>&#123;</span><br><span class="line"><span class="keyword">var</span> timeout;</span><br><span class="line"><span class="keyword">var</span> previous = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">context = <span class="keyword">this</span>;</span><br><span class="line">args = <span class="built_in">arguments</span>;</span><br><span class="line"><span class="keyword">if</span> (!timeout) &#123;</span><br><span class="line">timeout = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">timeout = <span class="literal">null</span>;</span><br><span class="line">func.apply(context,args)</span><br><span class="line">&#125;, wait);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<pre><code>Object.prototype.clone = function() {
-  var newObject = this.constructor === Array ? [] : {}  //对象的深拷贝 获取对应的构造函数 [] 或者 {}
-  for (let e in this) { //遍历对象的属性 in  this[e]
-    newObject[e] = typeof this[e] === &apos;object&apos; ? this[e].clone() : this[e]  //对象中的属性如果还是对象 那就继续递归 否则就返回基本的数据类型
-  }
-  return newObject
-}</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 六、实现一个简单的 Promise https://juejin.im/post/5b2f02cd5188252b937548ab</span><br></pre></td></tr></table></figure>
+<h3 id="四、函数防抖（dobounce）"><a href="#四、函数防抖（dobounce）" class="headerlink" title="四、函数防抖（dobounce）"></a>四、函数防抖（dobounce）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">func, wait</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> timeout</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> context = <span class="keyword">this</span></span><br><span class="line">    <span class="keyword">var</span> args = <span class="built_in">arguments</span></span><br><span class="line">    clearTimeout(timeout)</span><br><span class="line">    timeout = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      func.apply(context, args)</span><br><span class="line">    &#125;, wait)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>class Promise {<br>constructor (executor) { // executor 里面有两个参数，一个叫 resolve（成功），一个叫 reject（失败）。<br>this.status = ‘pending’,<br>this.value = undefined;<br>this.reason = undefined;<br>// 成功存放的数组<br>this.onResolvedCallbacks = [];<br>// 失败存放法数组<br>this.onRejectedCallbacks = [];<br>let resolve = (value) =&gt; {<br>if (this.status == ‘pending’) {<br>this.status = ‘resolve’;<br>this.value = value;<br>this.onResolvedCallbacks.forEach(fn =&gt; fn())<br>}
-}</p>
-<pre><code>let reject = (reason) =&gt; {
-  if (this.status == &apos;pending&apos;) {
-    this.status = &apos;reject&apos;;
-    this.reason = reason;
-    this.onRejectedCallbacks.forEach(fn =&gt; fn())
-  }
-}
-try{
-  executor(resolve, reject);
-} catch (err) {
-  reject(err);
-}</code></pre><p>}
-then (onFullFilled,onRejected) {<br>if (this.status == ‘resolved’) {<br>onFullFilled(this.value)<br>}
-if (this.status == ‘rejectd’) {<br>onRejected(this.reason);<br>}
-if (this.status == ‘pending’) {<br>this.onResolvedCallbacks.push(()=&gt;{<br>onFullFilled(this.value);<br>})<br>this.onRejectedCallbacks.push(()=&gt; {<br>onRejected(this.reason);<br>})<br>}</p>
-<p>}
-}</p>
-<p>const p = new Promise((resolve, reject) =&gt; {<br>setTimeout(() =&gt; {<br>resolve(‘hello world’)<br>}, 1000);<br>})<br>p.then((data) =&gt;{<br>console.log(data)<br>},(err) =&gt;{<br>console.log(err);<br>})</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 七、发布订阅者模式（观察者模式）</span><br></pre></td></tr></table></figure>
+<h3 id="五、实现一个函数-clone，可以对-JavaScript-中的-5-种主要的数据类型（包括-Number、String、Object、Array、Boolean）进行值复制"><a href="#五、实现一个函数-clone，可以对-JavaScript-中的-5-种主要的数据类型（包括-Number、String、Object、Array、Boolean）进行值复制" class="headerlink" title="五、实现一个函数 clone，可以对 JavaScript 中的 5 种主要的数据类型（包括 Number、String、Object、Array、Boolean）进行值复制"></a>五、实现一个函数 clone，可以对 JavaScript 中的 5 种主要的数据类型（包括 Number、String、Object、Array、Boolean）进行值复制</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.clone = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> newObject = <span class="keyword">this</span>.constructor === <span class="built_in">Array</span> ? [] : &#123;&#125; <span class="comment">//对象的深拷贝 获取对应的构造函数 [] 或者 &#123;&#125;</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> e <span class="keyword">in</span> <span class="keyword">this</span>) &#123;</span><br><span class="line">    <span class="comment">//遍历对象的属性 in  this[e]</span></span><br><span class="line">    newObject[e] = <span class="keyword">typeof</span> <span class="keyword">this</span>[e] === <span class="string">'object'</span> ? <span class="keyword">this</span>[e].clone() : <span class="keyword">this</span>[e] <span class="comment">//对象中的属性如果还是对象 那就继续递归 否则就返回基本的数据类型</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> newObject</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>var event = {}; // 发布者<br>event.clientList = [] //发布者的缓存列表</p>
-<p>event.listen = function (fn) { // 增加订阅者函数<br>this.clientList.push(fn)<br>}</p>
-<p>event.trigger = function () { // 发布信息<br>for (var i =0;i&lt;this.clientList.length;i++) {<br>var fn = this.clientList[i];<br>fn.apply(this, arguments);<br>}
-}</p>
-<p>event.listen (function(time) {<br>console.log(‘正式上班时间为：’ +time)<br>})<br>event.trigger (‘2018/7’)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 八、手动写一个 node 服务器</span><br></pre></td></tr></table></figure>
+<h3 id="六、实现一个简单的-Promise"><a href="#六、实现一个简单的-Promise" class="headerlink" title="六、实现一个简单的 Promise"></a>六、实现一个简单的 Promise</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Promise</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(executor) &#123;</span><br><span class="line">    <span class="comment">// executor 里面有两个参数，一个叫 resolve（成功），一个叫 reject（失败）。</span></span><br><span class="line">    ;(<span class="keyword">this</span>.status = <span class="string">'pending'</span>), (<span class="keyword">this</span>.value = <span class="literal">undefined</span>)</span><br><span class="line">    <span class="keyword">this</span>.reason = <span class="literal">undefined</span></span><br><span class="line">    <span class="comment">// 成功存放的数组</span></span><br><span class="line">    <span class="keyword">this</span>.onResolvedCallbacks = []</span><br><span class="line">    <span class="comment">// 失败存放法数组</span></span><br><span class="line">    <span class="keyword">this</span>.onRejectedCallbacks = []</span><br><span class="line">    <span class="keyword">let</span> resolve = <span class="function">(<span class="params">value</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">this</span>.status == <span class="string">'pending'</span>) &#123;</span><br><span class="line">        <span class="keyword">this</span>.status = <span class="string">'resolve'</span></span><br><span class="line">        <span class="keyword">this</span>.value = value</span><br><span class="line">        <span class="keyword">this</span>.onResolvedCallbacks.forEach(<span class="function">(<span class="params">fn</span>) =&gt;</span> fn())</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> reject = <span class="function">(<span class="params">reason</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">this</span>.status == <span class="string">'pending'</span>) &#123;</span><br><span class="line">        <span class="keyword">this</span>.status = <span class="string">'reject'</span></span><br><span class="line">        <span class="keyword">this</span>.reason = reason</span><br><span class="line">        <span class="keyword">this</span>.onRejectedCallbacks.forEach(<span class="function">(<span class="params">fn</span>) =&gt;</span> fn())</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      executor(resolve, reject)</span><br><span class="line">    &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">      reject(err)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  then(onFullFilled, onRejected) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.status == <span class="string">'resolved'</span>) &#123;</span><br><span class="line">      onFullFilled(<span class="keyword">this</span>.value)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.status == <span class="string">'rejectd'</span>) &#123;</span><br><span class="line">      onRejected(<span class="keyword">this</span>.reason)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.status == <span class="string">'pending'</span>) &#123;</span><br><span class="line">      <span class="keyword">this</span>.onResolvedCallbacks.push(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        onFullFilled(<span class="keyword">this</span>.value)</span><br><span class="line">      &#125;)</span><br><span class="line">      <span class="keyword">this</span>.onRejectedCallbacks.push(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        onRejected(<span class="keyword">this</span>.reason)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    resolve(<span class="string">'hello world'</span>)</span><br><span class="line">  &#125;, <span class="number">1000</span>)</span><br><span class="line">&#125;)</span><br><span class="line">p.then(</span><br><span class="line">  (data) =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">  &#125;,</span><br><span class="line">  (err) =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
-<p>const http = require(‘http’);<br>const fs = require(‘fs’);<br>const server = http.createServer((req,res) =&gt; {<br>if (reu.url == ‘/‘) {<br>const indexFile = fs.createReadStream(‘./index.html’)<br>req.writeHead(200,{‘context-Type’:’text/html;charset = utf8})<br>indexFile.pipe(res)<br>}
-server.listen(8080)</p>
+<h3 id="七、发布订阅者模式（观察者模式）"><a href="#七、发布订阅者模式（观察者模式）" class="headerlink" title="七、发布订阅者模式（观察者模式）"></a>七、发布订阅者模式（观察者模式）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> event = &#123;&#125; <span class="comment">// 发布者</span></span><br><span class="line">event.clientList = [] <span class="comment">//发布者的缓存列表</span></span><br><span class="line"></span><br><span class="line">event.listen = <span class="function"><span class="keyword">function</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 增加订阅者函数</span></span><br><span class="line">  <span class="keyword">this</span>.clientList.push(fn)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">event.trigger = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 发布信息</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.clientList.length; i++) &#123;</span><br><span class="line">    <span class="keyword">var</span> fn = <span class="keyword">this</span>.clientList[i]</span><br><span class="line">    fn.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">event.listen(<span class="function"><span class="keyword">function</span>(<span class="params">time</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'正式上班时间为：'</span> + time)</span><br><span class="line">&#125;)</span><br><span class="line">event.trigger(<span class="string">'2018/7'</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="八、手动写一个-node-服务器"><a href="#八、手动写一个-node-服务器" class="headerlink" title="八、手动写一个 node 服务器"></a>八、手动写一个 node 服务器</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req,res</span>) =&gt;</span> &#123;</span><br><span class="line"><span class="keyword">if</span> (reu.url == <span class="string">'/'</span>) &#123;</span><br><span class="line"><span class="keyword">const</span> indexFile = fs.createReadStream(<span class="string">'./index.html'</span>)</span><br><span class="line">req.writeHead(<span class="number">200</span>,&#123;<span class="string">'context-Type'</span>:<span class="string">'text/html;charset = utf8&#125;)</span></span><br><span class="line"><span class="string">indexFile.pipe(res)</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">server.listen(8080)</span></span><br></pre></td></tr></table></figure>
+
 <hr>
 <blockquote>
 <p>‘摘抄’不是单纯的“粘贴-&gt;复制”，而是眼到，手到，心到的一字一句敲打下来。</p>
@@ -1225,8 +1251,6 @@ server.listen(8080)</p>
 <blockquote>
 <p>博客声明:所有转载的文章、图片仅用于作者本人收藏学习目的，被要求或认为适当时，将标注署名与来源。若不愿某一作品被转用，请及时通知本站，本站将予以及时删除。</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 
       
 
@@ -1240,11 +1264,11 @@ server.listen(8080)</p>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
@@ -1362,11 +1386,11 @@ server.listen(8080)</p>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
@@ -1458,11 +1482,11 @@ server.listen(8080)</p>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
@@ -2324,14 +2348,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
@@ -2344,11 +2360,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2360,15 +2384,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">模块化</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">module</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2380,19 +2408,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">TCP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
               </li>
             
             <div class="clearfix"></div>
