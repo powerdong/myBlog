@@ -7,22 +7,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>执行上下文 | PowerDong-分享技术&amp;生活</title>
+  <title>Archives: 2019/11 | PowerDong-分享技术&amp;生活</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="首先明确几个概念:  EC:函数执行环境(或执行上下文) ECS:执行环境栈 VO:变量对象 AO:活动对象 scope chain: 作用域链  EC (执行上下文) 每当控制器转到 ECMAScript 可执行代码的时候，就会进入到一个执行上下文  那什么是可执行代码呢? 可执行代码的类型 全局代码(Global code) 这种类型的代码是在”程序”级处理的:例如加载外部的 js 文件或者本">
-<meta name="keywords" content="JS,试题,笔记">
-<meta property="og:type" content="article">
-<meta property="og:title" content="执行上下文">
-<meta property="og:url" content="http://yoursite.com/2019/06/27/执行上下文/index.html">
+  <meta name="description" content="这是一个个人博客，分享一些前端技术、面试题、面试技巧等，用来提高自己和帮助他人。">
+<meta name="keywords" content="前端,web,前端面试,面试，面试技巧，技巧,JavaScript,Vue,HTML,Css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PowerDong-分享技术&amp;生活">
+<meta property="og:url" content="http://yoursite.com/archives/2019/11/index.html">
 <meta property="og:site_name" content="PowerDong-分享技术&amp;生活">
-<meta property="og:description" content="首先明确几个概念:  EC:函数执行环境(或执行上下文) ECS:执行环境栈 VO:变量对象 AO:活动对象 scope chain: 作用域链  EC (执行上下文) 每当控制器转到 ECMAScript 可执行代码的时候，就会进入到一个执行上下文  那什么是可执行代码呢? 可执行代码的类型 全局代码(Global code) 这种类型的代码是在”程序”级处理的:例如加载外部的 js 文件或者本">
+<meta property="og:description" content="这是一个个人博客，分享一些前端技术、面试题、面试技巧等，用来提高自己和帮助他人。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://image-static.segmentfault.com/387/150/3871505191-58edec89d4df1_articlex">
-<meta property="og:updated_time" content="2019-07-16T00:25:12.756Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="执行上下文">
-<meta name="twitter:description" content="首先明确几个概念:  EC:函数执行环境(或执行上下文) ECS:执行环境栈 VO:变量对象 AO:活动对象 scope chain: 作用域链  EC (执行上下文) 每当控制器转到 ECMAScript 可执行代码的时候，就会进入到一个执行上下文  那什么是可执行代码呢? 可执行代码的类型 全局代码(Global code) 这种类型的代码是在”程序”级处理的:例如加载外部的 js 文件或者本">
-<meta name="twitter:image" content="https://image-static.segmentfault.com/387/150/3871505191-58edec89d4df1_articlex">
+<meta name="twitter:title" content="PowerDong-分享技术&amp;生活">
+<meta name="twitter:description" content="这是一个个人博客，分享一些前端技术、面试题、面试技巧等，用来提高自己和帮助他人。">
   
   <link rel="alternative" href="/atom.xml" title="PowerDong-分享技术&amp;生活" type="application/atom+xml">
   
@@ -152,188 +149,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-执行上下文" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      执行上下文
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/myBlog/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/myBlog/2019/11/01/收集的JS使用技巧/" class="archive-article-date">
+  	<time datetime="2019-11-01T05:54:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-01</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/myBlog/2019/11/01/收集的JS使用技巧/">收集的JS使用技巧</a>
     </h1>
   
 
-        
-        <a href="/myBlog/2019/06/27/执行上下文/" class="archive-article-date">
-  	<time datetime="2019-06-27T01:49:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>首先明确几个概念:</strong></p>
-<ul>
-<li><code>EC</code>:函数执行环境(或执行上下文)</li>
-<li><code>ECS</code>:执行环境栈</li>
-<li><code>VO</code>:变量对象</li>
-<li><code>AO</code>:活动对象</li>
-<li><code>scope chain</code>: 作用域链</li>
-</ul>
-<h2 id="EC-执行上下文"><a href="#EC-执行上下文" class="headerlink" title="EC (执行上下文)"></a>EC (执行上下文)</h2><blockquote>
-<p>每当控制器转到 ECMAScript 可执行代码的时候，就会进入到一个执行上下文</p>
-</blockquote>
-<p>那什么是可执行代码呢?</p>
-<h3 id="可执行代码的类型"><a href="#可执行代码的类型" class="headerlink" title="可执行代码的类型"></a>可执行代码的类型</h3><ul>
-<li>全局代码(<code>Global code</code>)<ul>
-<li>这种类型的代码是在”程序”级处理的:例如加载外部的 js 文件或者本地<code>&lt;script&gt;&lt;/script&gt;</code>标签内的代码。<strong>全局代码不包括任何 function 体内的代码</strong>。这个是默认的代码运行环境，一旦代码被载入，引擎最先进入的就是这个环境。</li>
-</ul>
-</li>
-<li>函数代码(<code>Function code</code>)<ul>
-<li>任何一个函数体内的代码，但是需要注意的是，<strong>具体的函数体内的代码是不包括内部函数的代码。</strong></li>
-</ul>
-</li>
-<li>Eval 代码(<code>Eval code</code>)<ul>
-<li>eval 内部的代码</li>
-</ul>
-</li>
-</ul>
-<a id="more"></a>
-
-<h2 id="ECS-执行环境栈"><a href="#ECS-执行环境栈" class="headerlink" title="ECS (执行环境栈)"></a>ECS (执行环境栈)</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">i</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (i &lt; <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"begin:"</span> + i);</span><br><span class="line">  foo(i - <span class="number">1</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"end:"</span> + i);</span><br><span class="line">&#125;</span><br><span class="line">foo(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出:</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// begin:2</span></span><br><span class="line"><span class="comment">// begin:1</span></span><br><span class="line"><span class="comment">// begin:0</span></span><br><span class="line"><span class="comment">// end:0</span></span><br><span class="line"><span class="comment">// end:1</span></span><br><span class="line"><span class="comment">// end:2</span></span><br></pre></td></tr></table></figure>
-
-<p>由于浏览器中的 JS 解释器被实现为单线程，这也就意味着同一时间只能发生一件事情，其他行为将会放在叫做<em>执行栈</em>里面排队。</p>
-<blockquote>
-<p>当浏览器首次载入你的脚本，它将<strong>默认进入全局执行上下文</strong>。当在全局代码中调用一个函数，程序将暂停当前全局代码而进入调用的这个函数，并<strong>创建一个新的执行上下文，并将新创建的上下文压入执行栈的顶部。</strong></p>
-</blockquote>
-<blockquote>
-<p>如果在此函数中又有其他调用的函数执行，则相同的事情会再次上演。<strong>程序的进去执行新的内部函数，创建一个新的执行上下文并把它压入执行栈的顶部。浏览器总会执行位于栈顶的执行上下文，一旦当前上下文函数执行结束，它将从栈顶移出，并将上下文控制权交给其他的栈</strong>。这样，堆栈中的上下文就会依次执行并且弹出堆栈，直到回到全局的上下文。</p>
-</blockquote>
-<p>这是上述例子的输出流程图<br><img src="https://image-static.segmentfault.com/387/150/3871505191-58edec89d4df1_articlex" alt="流程图"></p>
-<h2 id="VO-变量对象-AO-活动对象"><a href="#VO-变量对象-AO-活动对象" class="headerlink" title="VO (变量对象) / AO (活动对象)"></a>VO (变量对象) / AO (活动对象)</h2><p>按照字面解释，AO 其实就是被激活的 VO</p>
-<blockquote>
-<p><strong>变量对象</strong> (Variable object) 是说 JS 的执行上下文中都有个对象用来存放执行上下文中可被访问但不能被<code>delete</code>的函数标示符、形参、变量声明等。它们会被挂在这个对象上，对象的属性对应它们的名字，对象属性的值对应它们的值。但这个对象是<br>规范上或者说是引擎实现上不可在 JS 环境中访问到活动对象。</p>
-</blockquote>
-<blockquote>
-<p><strong>激活对象</strong> (Activation object) 有了变量对象存放每个上下文中的东西，但是它什么时候能被访问到呢？就是没进入一个执行上下文时，这个执行上下文中的变量对象就被激活，也就是该上下文中的函数标示符、形参、变量声明等就可以被访问到了。</p>
-</blockquote>
-<h3 id="EC-建立的细节"><a href="#EC-建立的细节" class="headerlink" title="EC 建立的细节"></a><code>EC</code> 建立的细节</h3><ul>
-<li><p>创建阶段【当函数被调用，但未执行任何其内部的代码之前】</p>
-<ul>
-<li>创建作用域链 (Scope Chain)</li>
-<li>创建变量，函数和参数</li>
-<li>求”<code>this</code>“的值</li>
-</ul>
-</li>
-<li><p>执行阶段</p>
-</li>
-<li><p>初始化变量和值得引用，解释/执行代码</p>
-</li>
-</ul>
-<p><strong>我们可以将每个执行上下文抽象为一个对象，这个对象具有三个属性</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ECObj: &#123;</span><br><span class="line">    scopeChain:&#123;<span class="comment">/* 变量对象  +  所有父级执行上下文的变量对象 */</span>&#125;</span><br><span class="line">    variableObject: &#123;<span class="comment">/* 函数  arguments/参数  内部变量和函数声明 */</span>&#125;</span><br><span class="line">    <span class="keyword">this</span>: &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="解释器执行代码的伪逻辑"><a href="#解释器执行代码的伪逻辑" class="headerlink" title="解释器执行代码的伪逻辑"></a>解释器执行代码的伪逻辑</h3><ul>
-<li>查找调用函数的代码。</li>
-<li>执行代码之前，先进入创建上下文阶段<ul>
-<li>初始化作用域链</li>
-<li>创建变量对象:<ul>
-<li><strong>创建 arguments 对象</strong>，检查上下文，初始化参数名称和值并创建引用的复制</li>
-<li><strong>扫描上下文中的函数声明(而非函数表达式)</strong></li>
-<li>给发现的每一个函数，在变量对象上创建一个属性——确切的说是函数的名字——其有一个指向函数在内存中的引用。</li>
-<li><strong>如果函数的名字已经存在，引用指针将被重写。</strong>(后声明的函数覆盖之前声明的函数)</li>
-<li>扫描上下文的变量声明:</li>
-<li>给发现的每个变量声明，在变量对象上创建一个属性——就是变量的名字，并且将变量的值初始化为 undefined</li>
-<li>如果变量的名字已经在变量对象里存在，将不会进行任何操作并继续扫描。</li>
-<li><strong>求出上下文内部”this”的值</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>激活/代码执行阶段:<ul>
-<li>在当前上下文运行/解释函数代码，并随着代码一行行执行指派变量的值</li>
-</ul>
-</li>
-</ul>
-<p><strong>VO 对应的就是上述第二个阶段</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">i</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="string">"hello"</span>;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
-
-<p>当我们调用<code>foo(2)</code>时，整个创建阶段是这样的</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">ECObj = &#123;</span><br><span class="line">    scopChain: &#123;...&#125;,</span><br><span class="line">    variableObject:&#123;</span><br><span class="line">        <span class="built_in">arguments</span>:&#123;</span><br><span class="line">            <span class="number">0</span> : <span class="number">2</span>,</span><br><span class="line">            length:<span class="number">1</span></span><br><span class="line">        &#125;,</span><br><span class="line">        i:<span class="number">2</span>,</span><br><span class="line">        c:fn c,</span><br><span class="line">        a:<span class="literal">undefined</span>,</span><br><span class="line">        b:<span class="literal">undefined</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="keyword">this</span>:&#123;...&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在上下文创建阶段，VO 的初始化过程如下(函数的形参 ==&gt; 函数声明 ==&gt; 变量声明): - <strong>函数的形参</strong> (当进入函数执行上下文时) ———— 变量对象的一个属性，其属性名就是形参的名字，其值就是实参的值，对于没有传递的参数，其值为 undefined - <strong>函数声明</strong> (FunctionDeclaration FD) ———— 变量对象的一个属性，其属性名和值都是函数对象创建出来的，如果变量对象已经包含了相同名字的属性，则替换它的值。 - <strong>变量声明</strong> (VariableDeclaration var) ———— 变量对象的一个属性，其属性名即为变量名，其值为 undefined；如果变量名和已经声明的函数名或者函数的参数名相同，则不会影响已经存在的属性。</p>
-<p><strong>如何理解函数声明过程中<code>如果变量对象已经包含了相同名字的属性，则替换它的值</code>这句话?</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(<span class="number">20</span>); <span class="comment">//'function a ()&#123;&#125;'</span></span><br></pre></td></tr></table></figure>
-
-<p>根据上面的介绍，我们知道 VO 创建过程中，函数形参的优先级是高于函数的声明的，结果是函数体内部声明的<code>function a(){}</code>覆盖了函数形参<code>a</code>的声明，因此最后输出<code>a</code>是一个<code>function</code></p>
-<p> <strong>如何理解变量声明过程中<code>如果变量名和已经声明的函数名或者函数的参数名相同，则不会影响已经存在的属性</code>这句话?</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//与参数名相同</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo1</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line">foo1(<span class="number">20</span>); <span class="comment">// '20'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//与函数名相同</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">foo2(); <span class="comment">//'function a()&#123;&#125;'</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>函数声明比变量优先级要高，并且定义过程不会被变量覆盖，除非是赋值</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo1</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line">foo1(<span class="number">20</span>); <span class="comment">//'10'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo2</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line">foo2(<span class="number">20</span>); <span class="comment">// 'function a ()&#123;&#125;'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo3</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line">foo3(<span class="number">20</span>); <span class="comment">//'function a()&#123;&#125;  10'</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>AO 对应第三个阶段</strong><br>创建的过程仅负责处理定义属性的名字，而并不为它们指派具体的值，当然还有对形参/实参的处理。一单创建阶段完成，执行流进入函数并激活/代码执行阶段。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">ECObj = &#123;</span><br><span class="line">    scopeChain:&#123; ... &#125;,</span><br><span class="line">    variableObject:&#123;</span><br><span class="line">        <span class="built_in">arguments</span>:&#123;</span><br><span class="line">            <span class="number">0</span>:<span class="number">2</span>,</span><br><span class="line">            length:<span class="number">1</span></span><br><span class="line">        &#125;,</span><br><span class="line">        i:<span class="number">2</span>,</span><br><span class="line">        c:fn c,</span><br><span class="line">        a:<span class="string">'hello'</span>,</span><br><span class="line">        b:fn b</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="keyword">this</span>:&#123; ... &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="提升-Hoisting"><a href="#提升-Hoisting" class="headerlink" title="提升 (Hoisting)"></a>提升 (Hoisting)</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">typeof</span> foo); <span class="comment">// 函数指针</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">typeof</span> bar); <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> foo = <span class="string">"hello"</span>,</span><br><span class="line">    bar = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"world"</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"hello"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-
-<p>1.为什么我们在 foo 声明之前能访问它?<br>在<code>VO</code>的创建阶段，函数在该阶段就已经被创建在变量对象中，所以在函数开始执行之前，foo 已经被定义了。</p>
-<p>2.Foo 被声明了两次，为什么 foo 显示函数，而不是 undefined 或字符串呢?<br>在创建阶段，函数声明优先于变量被创建。而在变量创建中，发现<code>VO</code>已经存在形同名称的属性，则不会影响已经存在的属性。<br>因此，对<code>foo()</code>函数的引用首先被创建在活动对象，当我们执行到<code>var foo</code>时，发现<code>foo</code>属性名已经存在，所以代码什么都不做并继续执行。</p>
-<p>3.为什么 bar 的值是 undefined?<br><code>bar</code>采用的是函数表达式的方式来定义的，所以<code>bar</code>实际上是一个变量，变量的值是一个函数，在变量创建阶段他们被初始化为<code>undefined</code>。这也是函数表达式不会被提升的原因。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
-<li><code>EC</code>分为两个阶段，创建执行上下文和执行代码阶段。</li>
-<li>每个<code>EC</code>可以抽象为一个对象，这个对象具有三个属性，分别是:作用域链<code>Scope</code>，<code>VO|AO</code>（<code>AO</code>，<code>VO</code>只能有一个）以及<code>this</code>。</li>
-<li>函数<code>EC</code>中的<code>AO</code>在进入函数<code>EC</code>时，确定了 Arguments 对象的属性；在执行函数<code>EC</code>时，其他变量属性具有一体化。</li>
-<li><code>EC</code>创建的过程是有先后顺序的: 参数声明 =&gt; 函数声明 =&gt; 变量声明。</li>
-</ol>
-<hr>
-<blockquote>
-<p>‘摘抄’不是单纯的“粘贴-&gt;复制”，而是眼到，手到，心到的一字一句敲打下来。</p>
-</blockquote>
-<blockquote>
-<p>博客声明:所有转载的文章、图片仅用于作者本人收藏学习目的，被要求或认为适当时，将标注署名与来源。若不愿某一作品被转用，请及时通知本站，本站将予以及时删除。</p>
-</blockquote>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              打赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢您的支持<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="../../../../img/zhifubao.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="../../../../img/weixin.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -343,171 +188,36 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">试题</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">代码</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        			<a href="/myBlog/categories/代码//" class="article-tag-list-link color3">代码</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/27/执行上下文/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/myBlog/2019/06/29/记一次小程序开发/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          记一次小程序开发
-        
-      </div>
-    </a>
   
   
-    <a href="/myBlog/2019/06/26/事件循环/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">事件循环</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#EC-执行上下文"><span class="toc-number">1.</span> <span class="toc-text">EC (执行上下文)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#可执行代码的类型"><span class="toc-number">1.1.</span> <span class="toc-text">可执行代码的类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ECS-执行环境栈"><span class="toc-number">2.</span> <span class="toc-text">ECS (执行环境栈)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VO-变量对象-AO-活动对象"><span class="toc-number">3.</span> <span class="toc-text">VO (变量对象) / AO (活动对象)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#EC-建立的细节"><span class="toc-number">3.1.</span> <span class="toc-text">EC 建立的细节</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解释器执行代码的伪逻辑"><span class="toc-number">3.2.</span> <span class="toc-text">解释器执行代码的伪逻辑</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#提升-Hoisting"><span class="toc-number">4.</span> <span class="toc-text">提升 (Hoisting)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
-  <!-- Gitalk 评论框 -->
-<div id="gitalk-container"></div>
-
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
-
-<script>
-    var gitalk = new Gitalk({
-            clientID: '0f5bf3239b190c1e353e',
-            clientSecret: 'a5fb93c9d80f72e443d43643ae7a705e95a9145b',
-            repo: 'myBlog',
-            owner: 'powerdong',
-            admin: ['powerdong'],
-            id: md5(window.location.pathname),
-            // facebook-like distraction free mode
-            distractionFreeMode: false
-        })
-   gitalk.render('gitalk-container')
-</script>
-  
+    
 
 
           </div>
@@ -534,8 +244,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
