@@ -151,6 +151,110 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-CSS相关" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/07/16/CSS相关/">CSS相关</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/07/16/CSS相关/" class="archive-article-date">
+  	<time datetime="2019-07-16T01:20:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="CSS-盒模型-在不同浏览器的差异"><a href="#CSS-盒模型-在不同浏览器的差异" class="headerlink" title="CSS 盒模型,在不同浏览器的差异"></a>CSS 盒模型,在不同浏览器的差异</h2><p><strong>W3C 中的盒子模型的宽：包括 margin + border + padding + width;</strong></p>
+<p><code>W = margin * 2 + border * 2 + padding * 2 + width;</code><br><code>H = margin * 2 + border * 2 + padding * 2 + hight;</code></p>
+<p><strong>IE 中的盒子模型的宽：包括 margin + border + padding + width;</strong></p>
+<p><code>W = margin * 2 + width;</code><br><code>H = margin * 2 + height;</code></p>
+<p><strong>两者的区别</strong></p>
+<ul>
+<li>IE 盒子模型的 content 部分包含了 border 和 padding。</li>
+</ul>
+<p><strong>那么应该选择哪种盒子模型呢？</strong></p>
+<ul>
+<li>当然是“标准 w3c 盒子模型”了。</li>
+<li>在网页顶部加上<code>doctype</code>声明,所有的浏览器都会采用标准的 w3c 盒子模型去解释你的盒子,网页就能在各个浏览器中显示一致了。</li>
+</ul>
+<h2 id="CSS-所有选择器及其优先级、使用场景-哪些可以继承-如何运用-at-规则"><a href="#CSS-所有选择器及其优先级、使用场景-哪些可以继承-如何运用-at-规则" class="headerlink" title="CSS 所有选择器及其优先级、使用场景,哪些可以继承,如何运用 at 规则"></a>CSS 所有选择器及其优先级、使用场景,哪些可以继承,如何运用 at 规则</h2><h3 id="优先级是如何计算的？"><a href="#优先级是如何计算的？" class="headerlink" title="优先级是如何计算的？"></a>优先级是如何计算的？</h3><p>优先级就是分配给指定的 CSS 声明的一个权重,它由匹配的选择器中的每一种选择器类型的数值决定。<br>而当优先级与多个 CSS 声明中任意一个声明的优先级相等的时候,CSS 中最后的那个声明会被应用到元素上。<br>当同一个元素有多个声明的时候,优先级才会有意义。因为每一个直接作用于元素的 CSS 规则总是会接管/覆盖(take over)该元素从祖先元素继承而来的规则。</p>
+        
+          <a class="article-more-a" href="/myBlog/2019/07/16/CSS相关/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Css</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/07/16/CSS相关/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-HTML相关" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1111,126 +1215,6 @@
 
 
   
-    <article id="post-执行上下文" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/06/27/执行上下文/">执行上下文</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/06/27/执行上下文/" class="archive-article-date">
-  	<time datetime="2019-06-27T01:49:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>首先明确几个概念:</strong></p>
-<ul>
-<li><code>EC</code>:函数执行环境(或执行上下文)</li>
-<li><code>ECS</code>:执行环境栈</li>
-<li><code>VO</code>:变量对象</li>
-<li><code>AO</code>:活动对象</li>
-<li><code>scope chain</code>: 作用域链</li>
-</ul>
-<h2 id="EC-执行上下文"><a href="#EC-执行上下文" class="headerlink" title="EC (执行上下文)"></a>EC (执行上下文)</h2><blockquote>
-<p>每当控制器转到 ECMAScript 可执行代码的时候，就会进入到一个执行上下文</p>
-</blockquote>
-<p>那什么是可执行代码呢?</p>
-<h3 id="可执行代码的类型"><a href="#可执行代码的类型" class="headerlink" title="可执行代码的类型"></a>可执行代码的类型</h3><ul>
-<li>全局代码(<code>Global code</code>)<ul>
-<li>这种类型的代码是在”程序”级处理的:例如加载外部的 js 文件或者本地<code>&lt;script&gt;&lt;/script&gt;</code>标签内的代码。<strong>全局代码不包括任何 function 体内的代码</strong>。这个是默认的代码运行环境，一旦代码被载入，引擎最先进入的就是这个环境。</li>
-</ul>
-</li>
-<li>函数代码(<code>Function code</code>)<ul>
-<li>任何一个函数体内的代码，但是需要注意的是，<strong>具体的函数体内的代码是不包括内部函数的代码。</strong></li>
-</ul>
-</li>
-<li>Eval 代码(<code>Eval code</code>)<ul>
-<li>eval 内部的代码</li>
-</ul>
-</li>
-</ul>
-        
-          <a class="article-more-a" href="/myBlog/2019/06/27/执行上下文/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">试题</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/06/27/执行上下文/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/myBlog/page/3/">&laquo; Prev</a><a class="page-number" href="/myBlog/">1</a><a class="page-number" href="/myBlog/page/2/">2</a><a class="page-number" href="/myBlog/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/myBlog/page/5/">5</a><a class="extend next" rel="next" href="/myBlog/page/5/">Next &raquo;</a>
@@ -1336,6 +1320,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Css</a>
               </li>
              
@@ -1348,7 +1336,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1356,15 +1344,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">模块化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">TS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1372,15 +1356,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1388,11 +1364,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
               </li>
             
             <div class="clearfix"></div>
