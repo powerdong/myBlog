@@ -151,6 +151,111 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-HTML5-DeviceMotionEvent" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/09/10/HTML5-DeviceMotionEvent/">HTML5-DeviceMotionEvent</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/09/10/HTML5-DeviceMotionEvent/" class="archive-article-date">
+  	<time datetime="2019-09-10T02:36:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="事件介绍"><a href="#事件介绍" class="headerlink" title="事件介绍"></a>事件介绍</h2><ol>
+<li><code>deviceorientation</code> 提供设备的物理方向信息，表示为一系列本地坐标系的旋角。</li>
+<li><code>devicemotion</code> 提供设备的加速信息，表示为定义在设备上的坐标系中的卡尔迪坐标。其还提供了设备在坐标系中的自转速率。若可行的话，事件应该提供设备重心处的加速信息。</li>
+<li><code>compassneedscalibration</code> 用于通知 Web 站点使用罗盘信息校准上述事件。</li>
+</ol>
+<h2 id="用法简介"><a href="#用法简介" class="headerlink" title="用法简介"></a>用法简介</h2><h3 id="deviceorientation"><a href="#deviceorientation" class="headerlink" title="deviceorientation"></a>deviceorientation</h3><p>注册一个 <strong>deviceorientation</strong> 事件的接收器</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"deviceorientation"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e);</span><br><span class="line">  <span class="comment">// 处理event.alpha、event.beta及event.gamma</span></span><br><span class="line">  <span class="built_in">document</span>.querySelector(<span class="string">"#item"</span>).innerHTML = <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;p&gt; 设备沿z轴上的旋转角度<span class="subst">$&#123;e.alpha&#125;</span> &lt;/p&gt;</span></span><br><span class="line"><span class="string">  &lt;p&gt; 设备在x轴上的旋转角度，描述设备由前向后旋转的情况 <span class="subst">$&#123;e.beta&#125;</span>  &lt;/p&gt;</span></span><br><span class="line"><span class="string">  &lt;p&gt;表示设备在y轴上的旋转角度，描述设备由左向右旋转的情况<span class="subst">$&#123;e.gamma&#125;</span> &lt;/p&gt;</span></span><br><span class="line"><span class="string">  &lt;p&gt;与北方向的角度差值，正北为0度，正东为90度，正南为180度，正西为270度<span class="subst">$&#123;e.webkitCompassHeading&#125;</span>&lt;/p&gt;</span></span><br><span class="line"><span class="string">  &lt;p&gt;指北针的精确度，表示偏差为正负多少度<span class="subst">$&#123;e.webkitCompassAccuracy&#125;</span> &lt;/p&gt;</span></span><br><span class="line"><span class="string">  `</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>需要在手机端使用</p>
+</blockquote>
+<p><img src="https://s2.ax1x.com/2019/09/10/nNsGMF.png" alt="nNsGMF.png"></p>
+<blockquote>
+<p>安卓端不支持显示 <code>webkitCompassHeading</code> 和 <code>webkitCompassAccuracy</code> 小伙伴可以通过苹果手机访问获取</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/myBlog/2019/09/10/HTML5-DeviceMotionEvent/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/09/10/HTML5-DeviceMotionEvent/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-HTML5-Geolocation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -508,15 +613,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">缓存</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">缓存</a>
         		</li>
       		
 		</ul>
@@ -1057,139 +1162,6 @@
 
 
   
-    <article id="post-Css3-0-布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/08/20/Css3-0-布局/">Css3.0-布局</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/08/20/Css3-0-布局/" class="archive-article-date">
-  	<time datetime="2019-08-20T00:25:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Css3-布局"><a href="#Css3-布局" class="headerlink" title="Css3 布局"></a>Css3 布局</h2><h3 id="display-flex-弹性盒子"><a href="#display-flex-弹性盒子" class="headerlink" title="display:flex 弹性盒子"></a>display:flex 弹性盒子</h3><p>flex 为复合属性，且必须配合父元素 <code>display: flex</code> 使用</p>
-<blockquote>
-<p>弹性盒模型是 css3 的一种新的布局方式，是一种当前页面需要适应不同的屏幕大小及设备类型时确保拥有恰当的行为的布局方式。</p>
-</blockquote>
-<ul>
-<li><p><strong>以下 6 个属性设置在项目(子元素)上</strong></p>
-<ul>
-<li>flex-grow: 放大比例<ul>
-<li>根据所设置的比例分配盒子所剩余的空间</li>
-<li>左右两栏布局</li>
-<li>默认值 0</li>
-</ul>
-</li>
-<li>flex-shrink: 缩小比例<ul>
-<li>多出盒子的部分，按照比例的大小砍掉相应的大小</li>
-<li>即比例越大，被砍的越大</li>
-<li>默认值 1</li>
-</ul>
-</li>
-<li>flex-basis: 伸缩基准值(项目占据主轴的空间)<ul>
-<li>该属性设置元素的宽度或高度，当然 width 也可以用来设置宽度</li>
-<li><strong>如果元素上同时出现了 width 和 flex-basis，那么 flex-basis 会覆盖 width 的值</strong></li>
-</ul>
-</li>
-<li>flex: 是 flex-grow, flex-shrink 和 flex-basis 的简写<ul>
-<li>常用简化写法: <code>flex: 1 =&gt; flex: 1 1 0%</code></li>
-<li><strong>注意：</strong>flexbox 布局和原来的布局是两个概念，部分 Css 属性在 flexbox 盒子里面不起作用，(<code>float</code>、<code>clear</code>、<code>column</code>、<code>vertical-align</code>)等</li>
-</ul>
-</li>
-<li>order: 排列顺序<ul>
-<li>数值越小，排列越靠前</li>
-<li>默认为 0</li>
-</ul>
-</li>
-<li>align-self: 单个项目对齐方式<ul>
-<li>可覆盖 <code>align-items</code> 属性</li>
-<li>默认值为 auto，表示继承父元素的 <code>align-items</code> 属性，如果没有父元素，则等同于 <code>stretch</code></li>
-<li>align-self:auto | flex-start | flex-end | center | baseline | stretch</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-        
-          <a class="article-more-a" href="/myBlog/2019/08/20/Css3-0-布局/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Css</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/08/20/Css3-0-布局/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/myBlog/">&laquo; Prev</a><a class="page-number" href="/myBlog/">1</a><span class="page-number current">2</span><a class="page-number" href="/myBlog/page/3/">3</a><a class="page-number" href="/myBlog/page/4/">4</a><a class="page-number" href="/myBlog/page/5/">5</a><a class="extend next" rel="next" href="/myBlog/page/3/">Next &raquo;</a>
@@ -1283,6 +1255,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
@@ -1295,19 +1275,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1323,11 +1299,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TS</a>
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
+                <a href="javascript:void(0)" class="js-tag color3">TS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1335,7 +1311,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
+                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1343,15 +1319,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
               </li>
              
               <li class="article-tag-list-item">
