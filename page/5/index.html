@@ -151,6 +151,103 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Js隐式类型转换" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/07/04/Js隐式类型转换/">深究Js隐式类型转换</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/07/04/Js隐式类型转换/" class="archive-article-date">
+  	<time datetime="2019-07-04T00:17:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>凡事都有个来源和起因，这个题不是我在哪篇文章看到的，也不是我瞎乱造出来的，是在看一个重学 Js 类型转换视频中老师使用<code>console.log({} + [])</code> 在控制台输出了<code>[object Object]</code>，不过看了人家的视频自己也需要动手敲一下嘛，于是我没有在编辑器里边编辑，偷了个懒直接在控制台里边编辑打印。巧了 竟然返回结果不一样！！<br><img src="https://s2.ax1x.com/2019/07/04/ZN3qi9.png" alt="ZN3qi9.png"></p>
+<p>对结果出乎意料，本着实事求是的精神，探寻事物的本质，不断努力追根溯源，总算明白了最后的结果，最后的收获总算把 js 的隐式类型转换刨根问底的搞清楚了，也更加深入的明白了为什么 Js 是弱类型语言了。</p>
+<h2 id="开胃小菜"><a href="#开胃小菜" class="headerlink" title="开胃小菜"></a>开胃小菜</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Number</span>(&#123;<span class="number">1</span>:<span class="number">2</span>&#125;)</span><br><span class="line">[] + &#123;&#125;</span><br><span class="line">[] + <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="number">2</span> + [<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="number">10</span> + <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="literal">null</span> + <span class="literal">undefined</span></span><br><span class="line">[] - <span class="number">5</span></span><br><span class="line"><span class="string">'6'</span> * []</span><br><span class="line"><span class="literal">null</span> % <span class="literal">true</span></span><br><span class="line"><span class="literal">true</span>/[<span class="number">7</span>]</span><br><span class="line"><span class="string">"A"</span> - <span class="string">"A"</span> + <span class="number">2</span></span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/myBlog/2019/07/04/Js隐式类型转换/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">试题</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/07/04/Js隐式类型转换/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-作用域和闭包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -197,11 +294,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
         		</li>
       		
 		</ul>
@@ -432,15 +529,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">试题</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
@@ -545,15 +642,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">试题</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
@@ -1113,111 +1210,9 @@
 
 
   
-    <article id="post-Vue高仿网易云音乐" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/1019/08/06/Vue高仿网易云音乐/">【置顶】Vue高仿网易云音乐</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/1019/08/06/Vue高仿网易云音乐/" class="archive-article-date">
-  	<time datetime="1019-08-06T05:48:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>1019-08-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>此项目作为自己加深对 Vue2.x 使用和认识而编写，顺便进一步加深自己对移动端的知识，努力做到以假乱真的效果。个人独立开发，源码中有详细的注释，提供了许多有用的提示信息。<strong>项目目前正在编写实现</strong>，博客总结了一些在实现过程中遇到的问题和相关的编写方式分享。</p>
-<blockquote>
-<p><a href="https://github.com/powerdong/Music-player" target="_blank" rel="noopener">点我查看源码</a><br><a href="http://140.143.128.100:8080" target="_blank" rel="noopener">点我浏览器预览</a><br><strong>（PC 端建议开启 chrome 调试模式食用更佳，移动端直接在浏览器开启即可）</strong></p>
-</blockquote>
-<h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2><ul>
-<li>Vue 全家桶(使用 Vue-cli 作为构建工具)</li>
-<li>WebPack4.0</li>
-<li>ES6</li>
-<li>Less</li>
-<li>ESLint</li>
-<li><a href="https://binaryify.github.io/NeteaseCloudMusicApi/#/" target="_blank" rel="noopener">网易云音乐 API</a></li>
-</ul>
-        
-          <a class="article-more-a" href="/myBlog/1019/08/06/Vue高仿网易云音乐/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/1019/08/06/Vue高仿网易云音乐/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/myBlog/page/4/">&laquo; Prev</a><a class="page-number" href="/myBlog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/myBlog/page/3/">3</a><a class="page-number" href="/myBlog/page/4/">4</a><span class="page-number current">5</span>
+      <a class="extend prev" rel="prev" href="/myBlog/page/4/">&laquo; Prev</a><a class="page-number" href="/myBlog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/myBlog/page/3/">3</a><a class="page-number" href="/myBlog/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/myBlog/page/6/">6</a><a class="extend next" rel="next" href="/myBlog/page/6/">Next &raquo;</a>
     </nav>
   
 
@@ -1308,6 +1303,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存</a>
               </li>
              
@@ -1324,23 +1331,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">代码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1348,7 +1339,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
+                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1356,11 +1347,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
+                <a href="javascript:void(0)" class="js-tag color3">TS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TS</a>
+                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1368,7 +1363,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1376,7 +1371,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1384,7 +1379,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
+                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
               </li>
             
             <div class="clearfix"></div>

@@ -151,6 +151,119 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-面试题集锦-5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/11/13/面试题集锦-5/">面试题集锦(5)</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/11/13/面试题集锦-5/" class="archive-article-date">
+  	<time datetime="2019-11-13T00:11:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="CDN-相关"><a href="#CDN-相关" class="headerlink" title="CDN 相关"></a>CDN 相关</h2><p><img src="https://s2.ax1x.com/2019/11/10/MnT3Ks.png" alt="MnT3Ks.png"></p>
+<h3 id="如何理解-CDN-的"><a href="#如何理解-CDN-的" class="headerlink" title="如何理解 CDN 的"></a>如何理解 CDN 的</h3><p><strong>CDN:</strong> 中文名叫做「内容分发网络」，是将源站内容分发至最接近用户的节点，使用户可就近取得所需内容，提高用户访问的响应速度和成功率。解决因分布、带宽、服务器性能带来的访问延迟问题，适用于站点加速、点播、直播等场景。</p>
+<h3 id="访问原理"><a href="#访问原理" class="headerlink" title="访问原理"></a>访问原理</h3><ul>
+<li>首先我们在地址栏键入一个网址，浏览器发现本地没有关于这个网址的 DNS 缓存，所以向网站的 DNS 服务器发起请求。</li>
+<li>网站的 DNS 服务器设置了 CNAME，指向了某个 CDN 服务器，也就是我们常见的阿里云、腾讯云、Cloudflare 之类的，去请求 CDN 中的智能 DNS 均衡负载系统。</li>
+<li>均衡负载系统解析域名，把对用户响应最快的节点返回给用户，然后用户向该节点发出请求。</li>
+<li>如果是第一次访问该内容，CDN 服务器会向源站请求数据并缓存，否则的话，直接在缓存节点中找到该数据，将请求结果发给用户。</li>
+<li>对于最简单的 CDN 系统而言，只要一台 DNS 调度服务器和一个节点服务器即可，但在复杂的应用中，会存在多级缓存，多台 Cache 来协同工作。</li>
+</ul>
+<blockquote>
+<p>CDN 这个东西本质就是一个缓存，只是这个缓存离你特别特别的近，作为用户还是开发都能从中享受到一点福利</p>
+</blockquote>
+<h3 id="CDN-有什么好处"><a href="#CDN-有什么好处" class="headerlink" title="CDN 有什么好处"></a>CDN 有什么好处</h3><ul>
+<li>访问加速</li>
+<li>减轻源站（服务器）负载<ul>
+<li>一个非常简单就能想明白的问题，如果 CDN 已经能帮我返回数据了，那么请求就不会到达源站，源站（服务器）的负载就减轻了</li>
+</ul>
+</li>
+<li>抗住攻击<ul>
+<li>既然源站的负载被减轻了，那么在受到 DDOS 攻击的时候，也能谈笑风生</li>
+</ul>
+</li>
+</ul>
+        
+          <a class="article-more-a" href="/myBlog/2019/11/13/面试题集锦-5/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/面试//" class="article-tag-list-link color3">面试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/11/13/面试题集锦-5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-面试题集锦-4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -195,11 +308,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
         		</li>
       		
 		</ul>
@@ -623,11 +736,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
         		</li>
       		
 		</ul>
@@ -745,11 +858,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
         		</li>
       		
 		</ul>
@@ -841,11 +954,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
         		</li>
       		
 		</ul>
@@ -1104,112 +1217,9 @@
 
 
   
-    <article id="post-Webpack-前端工程化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/09/19/Webpack-前端工程化/">Webpack-前端工程化</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/09/19/Webpack-前端工程化/" class="archive-article-date">
-  	<time datetime="2019-09-19T00:13:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="历史状况"><a href="#历史状况" class="headerlink" title="历史状况"></a>历史状况</h2><p>Web 前端开发这几年发展非常迅速，非常多的开发框架和构建工具的涌现，敬爱的前端攻城狮，可能你昨天还在用的工具、插件，到了今天可能就过时了。到了今天，外面的世界已经变了。</p>
-<blockquote>
-<p>当你在遇到一个 Bug 需要修复时，没有比工程化推广更迫切的事情了</p>
-</blockquote>
-<h2 id="需要解决的问题"><a href="#需要解决的问题" class="headerlink" title="需要解决的问题"></a>需要解决的问题</h2><p>工具和语言虽然差异大，但是解决的都是相似的问题，大概有以下几点</p>
-<ul>
-<li>扩展 JavaScript、HTML、Css 本身的语言能力</li>
-<li>解决重复工作</li>
-<li>模板化、模块化</li>
-<li>解决功能复用和变更的问题</li>
-<li>解决开发和产品环境差异问题</li>
-<li>解决发布流程问题</li>
-</ul>
-        
-          <a class="article-more-a" href="/myBlog/2019/09/19/Webpack-前端工程化/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">工程化</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/09/19/Webpack-前端工程化/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/myBlog/page/2/">2</a><a class="page-number" href="/myBlog/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/myBlog/page/5/">5</a><a class="extend next" rel="next" href="/myBlog/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/myBlog/page/2/">2</a><a class="page-number" href="/myBlog/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/myBlog/page/6/">6</a><a class="extend next" rel="next" href="/myBlog/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -1300,6 +1310,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存</a>
               </li>
              
@@ -1316,23 +1338,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">代码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1340,7 +1346,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
+                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1348,11 +1354,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
+                <a href="javascript:void(0)" class="js-tag color3">TS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TS</a>
+                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1360,7 +1370,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1368,7 +1378,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1376,7 +1386,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
+                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
               </li>
             
             <div class="clearfix"></div>

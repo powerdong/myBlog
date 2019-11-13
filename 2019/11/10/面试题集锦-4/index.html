@@ -10,7 +10,7 @@
   <title>面试集锦(4) | PowerDong-分享技术&amp;生活</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="你对 MVVM 的理解 MVVM 是什么? MVVM 模式，顾名思义即 Model-View-ViewModel 模式。它萌芽于 2005 年微软推出的基于 Windows 的用户界面框架 WPF ，前端最早的 MVVM 框架 knockout 在 2010 年发布。   Model 层: 对应数据层的域模型，它主要做域模型的同步。通过 Ajax/fetch 等 API 完成客户端和服务端业务 M">
-<meta name="keywords" content="面试,笔记">
+<meta name="keywords" content="笔记,面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试集锦(4)">
 <meta property="og:url" content="http://yoursite.com/2019/11/10/面试题集锦-4/index.html">
@@ -18,12 +18,12 @@
 <meta property="og:description" content="你对 MVVM 的理解 MVVM 是什么? MVVM 模式，顾名思义即 Model-View-ViewModel 模式。它萌芽于 2005 年微软推出的基于 Windows 的用户界面框架 WPF ，前端最早的 MVVM 框架 knockout 在 2010 年发布。   Model 层: 对应数据层的域模型，它主要做域模型的同步。通过 Ajax/fetch 等 API 完成客户端和服务端业务 M">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s2.ax1x.com/2019/11/10/MnICdK.png">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/8/1/16c498ca0e16ac26?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
+<meta property="og:image" content="https://s2.ax1x.com/2019/11/11/MMc3j0.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/11/10/MnI3WQ.png">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/8/1/16c498ca0e055dc0?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
 <meta property="og:image" content="https://s2.ax1x.com/2019/11/10/MnImLt.png">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/9/2/165984beb3825f44?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
-<meta property="og:updated_time" content="2019-11-10T02:09:44.708Z">
+<meta property="og:updated_time" content="2019-11-11T03:44:24.004Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试集锦(4)">
 <meta name="twitter:description" content="你对 MVVM 的理解 MVVM 是什么? MVVM 模式，顾名思义即 Model-View-ViewModel 模式。它萌芽于 2005 年微软推出的基于 Windows 的用户界面框架 WPF ，前端最早的 MVVM 框架 knockout 在 2010 年发布。   Model 层: 对应数据层的域模型，它主要做域模型的同步。通过 Ajax/fetch 等 API 完成客户端和服务端业务 M">
@@ -253,7 +253,7 @@
 <td>组件销毁后调用</td>
 </tr>
 </tbody></table>
-<h3 id="生命周期示意图"><a href="#生命周期示意图" class="headerlink" title="生命周期示意图"></a>生命周期示意图</h3><p><img src="https://user-gold-cdn.xitu.io/2019/8/1/16c498ca0e16ac26?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="0"></p>
+<h3 id="生命周期示意图"><a href="#生命周期示意图" class="headerlink" title="生命周期示意图"></a>生命周期示意图</h3><p><img src="https://s2.ax1x.com/2019/11/11/MMc3j0.png" alt="MMc3j0.png"></p>
 <h3 id="异步请求适合在哪个生命周期调用？"><a href="#异步请求适合在哪个生命周期调用？" class="headerlink" title="异步请求适合在哪个生命周期调用？"></a>异步请求适合在哪个生命周期调用？</h3><p>官方实例的异步请求是在 mounted 生命周期中调用的，而实际上也可以在 created 生命周期中调用。</p>
 <p>实际上呢，请求是需要时间的，而且这个时间具有不稳定性，很可能 vue 的虚拟 DOM 准备好了，你的数据才请求到，然后又得更新一遍虚拟<code>DOM</code>，再渲染，极大地延长了白屏时间，用户体验很不好。<strong>而在 mounted 事件请求数据呢，静态页面会先渲染好，等数据好了，再更新部分 DOM 即可。</strong></p>
 <h2 id="Vue-组件如何通信？"><a href="#Vue-组件如何通信？" class="headerlink" title="Vue 组件如何通信？"></a>Vue 组件如何通信？</h2><p><img src="https://s2.ax1x.com/2019/11/10/MnI3WQ.png" alt="MnI3WQ.png"></p>
@@ -463,11 +463,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
         		</li>
       		
 		</ul>
@@ -547,6 +547,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/myBlog/2019/11/13/面试题集锦-5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          面试题集锦(5)
+        
+      </div>
+    </a>
   
   
     <a href="/myBlog/2019/11/04/NodeJs初探/" id="article-nav-older" class="article-nav-link-wrap">
@@ -707,6 +716,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存</a>
               </li>
              
@@ -723,23 +744,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">代码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -747,7 +752,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
+                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -755,11 +760,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
+                <a href="javascript:void(0)" class="js-tag color3">TS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TS</a>
+                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -767,7 +776,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -775,7 +784,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -783,7 +792,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
+                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
               </li>
             
             <div class="clearfix"></div>
