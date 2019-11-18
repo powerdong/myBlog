@@ -151,6 +151,762 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-NodeJs初探" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/09/24/NodeJs初探/">有理想，有抱负，冲——NodeJs</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/09/24/NodeJs初探/" class="archive-article-date">
+  	<time datetime="2019-09-24T01:22:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://s2.ax1x.com/2019/11/04/KvU50U.png" alt="KvU50U.png"></p>
+<h2 id="首先我们先了解一下-NodeJs-是什么"><a href="#首先我们先了解一下-NodeJs-是什么" class="headerlink" title="首先我们先了解一下 NodeJs 是什么"></a>首先我们先了解一下 NodeJs 是什么</h2><h3 id="NodeJs-是什么"><a href="#NodeJs-是什么" class="headerlink" title="NodeJs 是什么"></a>NodeJs 是什么</h3><blockquote>
+<p>Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行时。</p>
+</blockquote>
+<ul>
+<li><strong>什么是 V8？</strong></li>
+<li>V8 JavaScript 引擎是 Google 用于其 Chrome 浏览器的底层 JavaScript 引擎</li>
+<li>Google 使用 V8 创建了一个用 C++ 编写的超快解释器，该解释器拥有另一个独特特征；您可以下载该引擎并将其嵌入任何 应用程序。V8 JavaScript 引擎并不仅限于在一个浏览器中运行。因此，Node 实际上会使用 Google 编写的 V8 JavaScript 引擎，并将其重建为可在服务器上使用。</li>
+</ul>
+<p>NodeJs 并不是一门语言，Js 才是语言，NodeJs 是一个 JS 的 runtime，是一个运行时。</p>
+<h3 id="Node-可以用来做什么"><a href="#Node-可以用来做什么" class="headerlink" title="Node 可以用来做什么"></a>Node 可以用来做什么</h3><ul>
+<li><strong>Node 非常适合以下情况</strong>：</li>
+<li>在响应客户端之前，您预计可能有很高的流量，但所需的服务器端逻辑和处理不一定很多。</li>
+<li>Node 是一个程序，作为一个可以将其作为基础进行构建的可扩展 JavaScript 平台，Node 还能完成更多的任务。</li>
+<li>Node 完成了它提供高度可伸缩服务器的目标。它使用了 Google 的一个非常快速的 JavaScript 引擎，即 V8 引擎。它使用一个事件驱动设计来保持代码最小且易于阅读。所有这些因素促成了 Node 的理想目标，即编写一个高度可伸缩的解决方案变得比较容易。</li>
+</ul>
+<h3 id="阻塞"><a href="#阻塞" class="headerlink" title="阻塞"></a>阻塞</h3><p>I/O 时进程休眠，等待进程完成后进入到进入一步</p>
+<h3 id="非阻塞"><a href="#非阻塞" class="headerlink" title="非阻塞"></a>非阻塞</h3><p>I/O 时函数立即返回，进程不等待 I/O 完成</p>
+<h2 id="NodeJs-好在哪里"><a href="#NodeJs-好在哪里" class="headerlink" title="NodeJs 好在哪里"></a>NodeJs 好在哪里</h2><ul>
+<li>前端职责范围变大，统一开发体验</li>
+<li>在处理高并发，I/O 密集场景性能优势明显</li>
+<li>CPU 密集：压缩，解压，加密，解密 =&gt; CPU 运算</li>
+<li>I/O 密集：文件操作，网络操作，数据库</li>
+</ul>
+<h3 id="Web-常见场景"><a href="#Web-常见场景" class="headerlink" title="Web 常见场景"></a>Web 常见场景</h3><ul>
+<li>静态资源读取 =&gt; I/O 密集</li>
+<li>数据库操作</li>
+<li>渲染页面</li>
+<li><strong>这些场景用 JS 优势更加明显</strong></li>
+</ul>
+        
+          <a class="article-more-a" href="/myBlog/2019/09/24/NodeJs初探/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">NodeJs</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/09/24/NodeJs初探/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-初探-TypeScript" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/09/20/初探-TypeScript/">JS Plus 真香——初探 TypeScript</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/09/20/初探-TypeScript/" class="archive-article-date">
+  	<time datetime="2019-09-20T01:18:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://s2.ax1x.com/2019/11/03/KOo6Z4.png" alt="KOo6Z4.png"></p>
+<h2 id="TypeScript-简介"><a href="#TypeScript-简介" class="headerlink" title="TypeScript 简介"></a>TypeScript 简介</h2><p>TypeScript 由 Microsoft 开发和维护的一种开源编程语言。他支持 JavaScript 的所有语法和语义，同时通过作为 ECMAScript 的超集来提供一些额外的功能，如类型检测和更丰富的语法。下图显示了 TypeScript 与 ES5，ES2015，ES2016 之间的关系。</p>
+<p><img src="https://s2.ax1x.com/2019/11/03/KOaMIs.png" alt="KOaMIs.png"></p>
+<p><strong>TypeScript 是 JavaScript 的增强</strong></p>
+<p>添加了可选择类型标注，增强了代码的可读性和可维护性，提供不断发展 JavaScript 的特性。</p>
+<h2 id="使用-TypeScript-的原因"><a href="#使用-TypeScript-的原因" class="headerlink" title="使用 TypeScript 的原因"></a>使用 TypeScript 的原因</h2><p>JavaScript 是一门弱类型语言，变量的数据类型具有动态性，只有执行时才能确定变量的类型，这种后知后觉的认错方法会让开发者称为调试大师，但无益于编程能力的提升，还会降低开发效率。TypeScript 的类型机制可以有效杜绝由变量类型引起的误用问题，而且开发者可以控制对类型的监控程度，是严格限制变量类型还是宽松限制变量类型，都取决于开发者的开发需求。</p>
+<p>总体而言，这些付出相对于代码的健壮性和可维护性，都是值得的。</p>
+<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>因为我们目前的主流浏览器还不支持直接运行 ts 文件，我们需要将其转换为 js 文件再进行运行。</p>
+<h3 id="安装使用-TypeScript"><a href="#安装使用-TypeScript" class="headerlink" title="安装使用 TypeScript"></a>安装使用 TypeScript</h3><p>获得 TypeScript 工具的主要方法有两种：</p>
+<ul>
+<li>通过 npm（Node.js 程序包管理器）</li>
+<li>通过安装 TypeScript 的 Visual Studio 插件</li>
+</ul>
+        
+          <a class="article-more-a" href="/myBlog/2019/09/20/初探-TypeScript/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">TS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/09/20/初探-TypeScript/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-前端需要了解的设计模式(2)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/08/28/前端需要了解的设计模式(2)/">学会“套路”——设计模式(2)</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/08/28/前端需要了解的设计模式(2)/" class="archive-article-date">
+  	<time datetime="2019-08-28T00:21:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JS-中的设计模式"><a href="#JS-中的设计模式" class="headerlink" title="JS 中的设计模式"></a>JS 中的设计模式</h2><p>本文章通过介绍常见模式的简介，UML 类图展示，代码示例方式介绍几种常见的设计模式</p>
+<p><strong>设计模式简介相关请访问<a href="https://powerdong.github.io/myBlog/2019/09/24/%E5%89%8D%E7%AB%AF%E9%9C%80%E8%A6%81%E4%BA%86%E8%A7%A3%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F(1)/" target="_blank" rel="noopener">前端需要了解的设计模式(1)</a></strong></p>
+<h3 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h3><ul>
+<li>将 <code>new</code> 操作单独封装</li>
+<li><strong>遇到 <code>new</code> 时，就要考虑是否使用工厂模式</strong></li>
+<li>这种设计模式可以大大降低程序模块之间的耦合度，便于更加灵活的扩展和维护</li>
+</ul>
+<p>工厂模式是一种使用工厂方法创建对象的设计模式，而不是指定创建对象的确切的类或构造函数</p>
+<blockquote>
+<p>示例：当你在购买汉堡时，直接点餐，取餐，不会自己亲手做。商店要”封装”做汉堡的工作，做好直接给买家</p>
+</blockquote>
+<p><img src="https://s2.ax1x.com/2019/09/28/uQPKjx.png" alt="uQPKjx.png"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 工厂模式</span></span><br><span class="line"><span class="comment"> * 创建一个产品类，通过不断的 new 产品生产产品</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Product</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(name) &#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name</span><br><span class="line">  &#125;</span><br><span class="line">  init() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`创建一个：<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span>`</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  fn1() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`使用了fn1方法`</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  fn2() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`使用了fn2方法`</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Creator</span> </span>&#123;</span><br><span class="line">  create(name) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Product(name)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">let</span> creator = <span class="keyword">new</span> Creator()</span><br><span class="line"><span class="keyword">let</span> product = creator.create(<span class="string">'Hamburger'</span>)</span><br><span class="line">product.init() <span class="comment">//创建一个：Hamburger</span></span><br><span class="line">product.fn1() <span class="comment">//使用了fn1方法</span></span><br></pre></td></tr></table></figure>
+
+<p>如上述代码，函数<code>Product</code>能接受一个参数 name。通过函数<code>Creator</code>的<code>create</code>方法可以创建一个<code>Product</code>实例。可以无数次调用这个函数每次返回都会包含三个方法。</p>
+<p>工厂模式是为了解决多个类似对象声明的问题，也是为了解决实例化对象产生重复的问题。</p>
+<ul>
+<li><strong>优点：</strong>能解决多个相似的问题</li>
+<li><strong>缺点：</strong>不能知道对象的识别问题(对象的类型不知道)</li>
+</ul>
+<blockquote>
+<p>应用场景：jQuery 中的$、Vue.component 异步组件、React.createElement 等</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/myBlog/2019/08/28/前端需要了解的设计模式(2)/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">module</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/08/28/前端需要了解的设计模式(2)/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-前端需要了解的设计模式(1)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/08/26/前端需要了解的设计模式(1)/">不要花里胡哨，要一套一套——设计模式(1)</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/08/26/前端需要了解的设计模式(1)/" class="archive-article-date">
+  	<time datetime="2019-08-26T00:02:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本专题将会介绍当前前端需要了解的设计模式，通过理解面向对象，UML 类图的关系展现，设计原则介绍，各个模式如何使用五个方面进行讨论学习。</p>
+<p><strong>JS中的设计模式请访问<a href="https://powerdong.github.io/myBlog/2019/09/28/%E5%89%8D%E7%AB%AF%E9%9C%80%E8%A6%81%E4%BA%86%E8%A7%A3%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-2/" target="_blank" rel="noopener">前端需要了解的设计模式(2)</a></strong></p>
+<p>当你开始一个新项目时，你不会立即开始编码。首先必须定义项目的目的和范围，然后列出项目功能和项目说明书。在你可以编码或者你正在处理更复杂的项目之后，你应该选择最适合你项目的设计模式。</p>
+<h2 id="什么是设计模式"><a href="#什么是设计模式" class="headerlink" title="什么是设计模式"></a>什么是设计模式</h2><p>在软件工程中，设计模式是软件设计中常见问题可重用的解决方案。设计模式代表着经验丰富的软件开发人员使用的最佳实践。设计模式可以被认为是编程模板。</p>
+<h2 id="设计模式的目的"><a href="#设计模式的目的" class="headerlink" title="设计模式的目的"></a>设计模式的目的</h2><p>设计模式是为了更好的代码重用性，可读性，可靠性，可维护性。</p>
+        
+          <a class="article-more-a" href="/myBlog/2019/08/26/前端需要了解的设计模式(1)/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">module</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/08/26/前端需要了解的设计模式(1)/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Vue-刨根问底" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/08/19/Vue-刨根问底/">停下来，问问自己——Vue-刨根问底</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/08/19/Vue-刨根问底/" class="archive-article-date">
+  	<time datetime="2019-08-19T01:32:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="为什么官方建议数据异步请求在mounted事件进行"><a href="#为什么官方建议数据异步请求在mounted事件进行" class="headerlink" title="为什么官方建议数据异步请求在mounted事件进行?"></a>为什么官方建议数据异步请求在<code>mounted</code>事件进行?</h2><p>很多人觉得在<code>created</code> 事件里面把数据请求到，然后一起生成虚拟 <code>DOM</code>，再渲染会更好。实际上呢，请求是需要时间的，而且这个时间具有不稳定性，很可能 vue 的虚拟 DOM 准备好了，你的数据才请求到，然后又得更新一遍虚拟<code>DOM</code>，再渲染，极大地延长了白屏时间，用户体验很不好。<strong>而在 mounted 事件请求数据呢，静态页面会先渲染好，等数据好了，再更新部分 DOM 即可。</strong></p>
+<h2 id="子组件修改父组件传过来的值"><a href="#子组件修改父组件传过来的值" class="headerlink" title="子组件修改父组件传过来的值"></a>子组件修改父组件传过来的值</h2><p>v-model 在使用的时候很像双向绑定的，但是 Vue 是单项数据流，<code>v-model</code> 只是语法糖而已：父组件用<code>v-bind</code>将值传给子组件，子组件通过<code>change/input</code>事件触发修改父组件的值。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"inputValue"</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 等价于 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">:value</span>=<span class="string">"inputValue"</span> @<span class="attr">change</span>=<span class="string">"inputValue"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>v-model 不仅仅能在<code>input</code>上用，在组件上也能使用<code>vue</code>组件间传递数据是单向的，即数据总是由父组件传递到子组件，子组件在其内部可以有自己维护的数据，但它无权修改父组件传递给它的数据，我们也可以参照<code>v-model</code>语法糖进行修改父组件的值，但是每次都这样写太麻烦了，vue 提供了一个修饰符<code>.sync</code>,用法如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">child</span> <span class="attr">:value.sync</span>=<span class="string">"inputValue"</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 子组件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span>&#123;</span></span><br><span class="line">    props:&#123;</span><br><span class="line"><span class="javascript">      <span class="comment">//props可以设置值得类型，默认值，是否必传以及校验函</span></span></span><br><span class="line">      value:&#123;</span><br><span class="line"><span class="javascript">        type: [<span class="built_in">String</span>, <span class="built_in">Number</span>],</span></span><br><span class="line"><span class="javascript">        required: <span class="literal">true</span></span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="javascript">    <span class="comment">//用一个变量中转，子组件中就用_value就不会直接修改父组件的值</span></span></span><br><span class="line">    computed: &#123;</span><br><span class="line">      _value: &#123;</span><br><span class="line"><span class="javascript">        <span class="keyword">get</span>() &#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span> <span class="keyword">this</span>.value;</span></span><br><span class="line">        &#125;,</span><br><span class="line"><span class="javascript">        <span class="keyword">set</span>(val) &#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.$emit(<span class="string">'update:value'</span>, val);</span></span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/myBlog/2019/08/19/Vue-刨根问底/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/08/19/Vue-刨根问底/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Vue,初次见面" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/08/13/Vue,初次见面/">你累吗？来来来，安利框架——Vue-初次见面</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/08/13/Vue,初次见面/" class="archive-article-date">
+  	<time datetime="2019-08-13T07:49:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="初探-Vue-js"><a href="#初探-Vue-js" class="headerlink" title="初探 Vue.js"></a>初探 Vue.js</h1><h2 id="渐进式的开发框架"><a href="#渐进式的开发框架" class="headerlink" title="渐进式的开发框架"></a>渐进式的开发框架</h2><p>通过不同的项目引用不同的模块</p>
+<ul>
+<li>声明式渲染</li>
+<li>组件系统</li>
+<li>客户端路由</li>
+<li>大规模状态管理</li>
+<li>构建工具</li>
+</ul>
+<h2 id="Vue-的特点"><a href="#Vue-的特点" class="headerlink" title="Vue 的特点"></a>Vue 的特点</h2><h3 id="响应的数据绑定"><a href="#响应的数据绑定" class="headerlink" title="响应的数据绑定"></a>响应的数据绑定</h3><ul>
+<li>当数据发生改变，自动更新视图</li>
+<li>利用<code>Object.definePrototype</code>中的<code>getter/setter</code>代理数据</li>
+</ul>
+<h3 id="视图组件"><a href="#视图组件" class="headerlink" title="视图组件"></a>视图组件</h3><ul>
+<li>UI 页面映射组件树</li>
+<li>组件可重用，可维护</li>
+</ul>
+<h3 id="虚拟-DOM"><a href="#虚拟-DOM" class="headerlink" title="虚拟 DOM"></a>虚拟 DOM</h3><ol>
+<li>提供一种方便的的工具，使得开发效率得到保证</li>
+<li>保证最小化 DOM 操作，使得执行效率得到保证</li>
+</ol>
+        
+          <a class="article-more-a" href="/myBlog/2019/08/13/Vue,初次见面/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/08/13/Vue,初次见面/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-记一次小程序开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/08/11/记一次小程序开发/">今天天气怎么样——记一次小程序开发</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/08/11/记一次小程序开发/" class="archive-article-date">
+  	<time datetime="2019-08-11T13:06:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在上周看了微信小程序的介绍后，就想着要开发一个服务于自己的小程序，也在另一方面可以有一次小程序的开发实践经验。</p>
+<h2 id="微信小程序"><a href="#微信小程序" class="headerlink" title="微信小程序"></a>微信小程序</h2><p>小程序是一种<strong>不需要下载安装即可使用</strong>的应用(其实是需要下载的,只不过是非常小的一个应用,加载时间可忽略)</p>
+<p>应用将无处不在，随时可用，但又无需安装卸载。</p>
+<ul>
+<li>小程序适用简单的，用完即走的应用</li>
+<li>小程序适合低频的应用</li>
+<li>小程序适合性能要求不高的应用</li>
+</ul>
+<p><strong>小程序是单向数据绑定</strong></p>
+<h2 id="萌生想法"><a href="#萌生想法" class="headerlink" title="萌生想法"></a>萌生想法</h2><blockquote>
+<p>如果你想看实例源代码可以移步<a href="https://github.com/powerdong/weatherProgram" target="_blank" rel="noopener">天气小程序 git 仓库</a></p>
+</blockquote>
+<p>之前在学习网络请求时有过请求一个天气接口，获取到了天气的相关信息</p>
+<p>由此，想利用现有的知识构建一个天气小程序。</p>
+<h2 id="开始实施"><a href="#开始实施" class="headerlink" title="开始实施"></a>开始实施</h2><ul>
+<li>到<a href="https://mp.weixin.qq.com/" target="_blank" rel="noopener">微信公众平台</a>注册一个账号</li>
+<li>在左侧的开发选项中的<strong>开发设置</strong>中找到<code>AppID</code></li>
+<li>下载<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html" target="_blank" rel="noopener">微信 web 开发者工具</a></li>
+<li>登陆工具后创建项目，将之前复制的<code>AppID</code>填写到对应的内容项中。</li>
+</ul>
+<p>在新创建的文件夹中以<code>app</code>开头的文件都是全局配置文件，首先在<code>app.json</code>中的<code>pages</code>属性中增加<code>&quot;pages/index/index&quot;</code>保存后会自动生成相应的文件，<code>index</code>文件夹作为我们的首页。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"pages"</span>: [</span><br><span class="line">    <span class="string">"pages/index/index"</span>, //首页</span><br><span class="line">    <span class="string">"pages/place/index"</span> //搜索页</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"window"</span>: &#123;</span><br><span class="line">    "backgroundTextStyle": "light", //下拉 loading 的样式</span><br><span class="line">    "navigationBarBackgroundColor": "#0078D7", //顶部导航的背景颜色</span><br><span class="line">    "navigationBarTitleText": "通天气", //通用导航标题</span><br><span class="line">    "navigationBarTextStyle": "white" // 导航标题颜色</span><br><span class="line">  &#125;,</span><br><span class="line">  "permission": &#123;</span><br><span class="line">    "scope.userLocation": &#123;</span><br><span class="line">      // 使用wx.getLocation时需要配置</span><br><span class="line">      "desc": "你的位置信息将用于定位城市天气信息的展示" //请求位置信息时要展示的</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  "sitemapLocation": "sitemap.json" //指明sitemap.json位置</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>首先查看了当前一些天气小程序(腾讯天气，彩云天气，墨迹天气等)，吸取该小程序的页面搭建样式，从华为手机的桌面天气应用中也有学习</p>
+<h3 id="收集素材"><a href="#收集素材" class="headerlink" title="收集素材"></a>收集素材</h3><blockquote>
+<p>本小程序计划天气样式使用字体图标</p>
+</blockquote>
+<p>从 <a href="https://www.iconfont.cn/" target="_blank" rel="noopener">iconfont</a> 网站上查询到了一些图标，然后下载到本地，配置到 <code>app.wxss</code> 用来页面引用</p>
+<p>在一个<a href="http://bapaboli.lofter.com/post/910b8_6499be" target="_blank" rel="noopener">设计网站</a>收集了一些天气背景图，裁剪后用于显示，美化页面</p>
+        
+          <a class="article-more-a" href="/myBlog/2019/08/11/记一次小程序开发/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/08/11/记一次小程序开发/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Webpack-前端工程化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -158,13 +914,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/09/19/Webpack-前端工程化/">Webpack-前端工程化</a>
+      <a class="article-title" href="/myBlog/2019/07/23/Webpack-前端工程化/">蛋糕分割整合工具——Webpack-前端工程化</a>
     </h1>
   
 
         
-        <a href="/myBlog/2019/09/19/Webpack-前端工程化/" class="archive-article-date">
-  	<time datetime="2019-09-19T00:13:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-19</time>
+        <a href="/myBlog/2019/07/23/Webpack-前端工程化/" class="archive-article-date">
+  	<time datetime="2019-07-23T00:13:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-23</time>
 </a>
         
       </header>
@@ -185,7 +941,7 @@
 <li>解决发布流程问题</li>
 </ul>
         
-          <a class="article-more-a" href="/myBlog/2019/09/19/Webpack-前端工程化/#more">more >></a>
+          <a class="article-more-a" href="/myBlog/2019/07/23/Webpack-前端工程化/#more">more >></a>
         
       
 
@@ -224,7 +980,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/09/19/Webpack-前端工程化/">展开全文 >></a>
+          <a class="article-more-a" href="/myBlog/2019/07/23/Webpack-前端工程化/">展开全文 >></a>
         </p>
       
 
@@ -261,13 +1017,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/09/17/Web-modules-前端模块化/">Web-modules 前端模块化</a>
+      <a class="article-title" href="/myBlog/2019/07/20/Web-modules-前端模块化/">你一块，我一块——Web-modules 前端模块化</a>
     </h1>
   
 
         
-        <a href="/myBlog/2019/09/17/Web-modules-前端模块化/" class="archive-article-date">
-  	<time datetime="2019-09-17T00:07:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-17</time>
+        <a href="/myBlog/2019/07/20/Web-modules-前端模块化/" class="archive-article-date">
+  	<time datetime="2019-07-20T00:07:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-20</time>
 </a>
         
       </header>
@@ -293,7 +1049,7 @@
 <li>高可维护性</li>
 </ul>
         
-          <a class="article-more-a" href="/myBlog/2019/09/17/Web-modules-前端模块化/#more">more >></a>
+          <a class="article-more-a" href="/myBlog/2019/07/20/Web-modules-前端模块化/#more">more >></a>
         
       
 
@@ -332,7 +1088,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/09/17/Web-modules-前端模块化/">展开全文 >></a>
+          <a class="article-more-a" href="/myBlog/2019/07/20/Web-modules-前端模块化/">展开全文 >></a>
         </p>
       
 
@@ -369,13 +1125,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/09/10/HTML5-DeviceMotionEvent/">HTML5-DeviceMotionEvent</a>
+      <a class="article-title" href="/myBlog/2019/07/18/HTML5-DeviceMotionEvent/">你知道指北针吗?——HTML5-DeviceMotionEvent</a>
     </h1>
   
 
         
-        <a href="/myBlog/2019/09/10/HTML5-DeviceMotionEvent/" class="archive-article-date">
-  	<time datetime="2019-09-10T02:36:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-10</time>
+        <a href="/myBlog/2019/07/18/HTML5-DeviceMotionEvent/" class="archive-article-date">
+  	<time datetime="2019-07-18T02:36:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-18</time>
 </a>
         
       </header>
@@ -398,7 +1154,7 @@
 <p>安卓端不支持显示 <code>webkitCompassHeading</code> 和 <code>webkitCompassAccuracy</code> 小伙伴可以通过苹果手机访问获取</p>
 </blockquote>
         
-          <a class="article-more-a" href="/myBlog/2019/09/10/HTML5-DeviceMotionEvent/#more">more >></a>
+          <a class="article-more-a" href="/myBlog/2019/07/18/HTML5-DeviceMotionEvent/#more">more >></a>
         
       
 
@@ -437,715 +1193,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/09/10/HTML5-DeviceMotionEvent/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HTML5-Geolocation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/09/10/HTML5-Geolocation/">HTML5-Geolocation</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/09/10/HTML5-Geolocation/" class="archive-article-date">
-  	<time datetime="2019-09-10T01:36:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>HTML5 提供了 <strong>geolocation API</strong>，用于提供位置相关服务。</p>
-<p>地理位置 API 通过<code>window.navigator.geolocation</code>提供。在使用之前需要进行判断该对象是否存在，如果存在的话，那么位置信息可用</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="string">"geolocation"</span> <span class="keyword">in</span> navigator) &#123;</span><br><span class="line">  <span class="comment">/* 地理位置信息可用 */</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">/* 地理位置信息不可用 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/myBlog/2019/09/10/HTML5-Geolocation/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/09/10/HTML5-Geolocation/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HTML5-拖拽上传文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/09/08/HTML5-拖拽上传文件/">HTML5-拖拽上传文件</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/09/08/HTML5-拖拽上传文件/" class="archive-article-date">
-  	<time datetime="2019-09-08T01:41:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>当我们学习了 HTML 提供的原生拖放(drag &amp; drop)后,是时候想一想这个东西<strong>可以用来作什么</strong>，<strong>可以在什么时候使用</strong>，<strong>使用的场景</strong>等等</p>
-<h2 id="场景分析"><a href="#场景分析" class="headerlink" title="场景分析"></a>场景分析</h2><p>当我们在注册成功一个账户时，一般网站会让我们上传我们的用户头像，或者在实名认证的时候会涉及到身份证图片上传到等，这时候我们可以使用<code>input</code>提供的<code>file</code>属性进行选择本地文件进行上传。</p>
-<p><img src="http://www-faq.stor.sinaapp.com/06ebdd14b6cccb47deb6.png" alt="实名认证"></p>
-<p>我们再想一下，当在电脑端的情况下，当用户打开文件选择框时再寻找图片对应的文件夹，再进行选取文件的时候是不是会有点麻烦呢？我们可不可以让用户找到图片文件，直接引入实现上传呢？答案是可以的。</p>
-<h2 id="怎么做"><a href="#怎么做" class="headerlink" title="怎么做"></a>怎么做</h2><p>经过这些分析后，我们可以尝试使用 HTML5 提供的拖拽，使得目标元素增加读取文件功能，然后使用 ajax 实现图片上传。</p>
-<p>谈一谈我们需要使用到的技术:</p>
-<ul>
-<li><strong>Drag &amp; Drop</strong>: HTML5 基于拖拽的事件机制</li>
-<li><strong>File API</strong>: 可以很方便的让 Web 应用访问文件对象，File API 包括 FileList、Blob、File、FileReader、URI scheme，本文主要讲解拖拽上传中用到的 FileList 和 FileReader 接口。</li>
-<li><strong>FormData</strong>: FormData 是基于 XMLHttpRequest Level 2 的新接口，可以方便 web 应用模拟 Form 表单数据，最重要的是它支持文件的二进制流数据，这样我们就能够通过它来实现 AJAX 向后端发送文件数据了。</li>
-</ul>
-        
-          <a class="article-more-a" href="/myBlog/2019/09/08/HTML5-拖拽上传文件/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/09/08/HTML5-拖拽上传文件/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HTML5-拖拽" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/09/07/HTML5-拖拽/">HTML5-拖拽</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/09/07/HTML5-拖拽/" class="archive-article-date">
-  	<time datetime="2019-09-07T01:58:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>拖放（drag &amp;&amp; drop）在我们平时的工作中，经常遇到。它表示我们日常的抓取和拖放到另一个位置的过程。<strong>常用于各种拖动操作中</strong></p>
-<h2 id="创建元素"><a href="#创建元素" class="headerlink" title="创建元素"></a>创建元素</h2><p>首先我们需要创建可拖动元素</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"drag"</span> <span class="attr">draggable</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="拖拽相关的事件"><a href="#拖拽相关的事件" class="headerlink" title="拖拽相关的事件"></a>拖拽相关的事件</h2><p>在元素进行拖拽中会触发各种事件，</p>
-<ul>
-<li>被拖拽元素拖拽开始时，会触发<code>dragstart</code>事件</li>
-<li>被拖拽元素拖拽完成时，会触发<code>dragend</code>事件</li>
-<li>当被拖拽元素进入到目标元素时时，会触发<code>dragenter</code>事件</li>
-<li>被拖拽元素在目标元素上移动时，会触发<code>dragover</code>事件</li>
-<li>被拖拽元素在目标元素上同时鼠标放开时，会触发<code>drop</code>事件<ul>
-<li><strong>需要阻止 <code>dragover</code> 的默认行为才会触发 <code>drop</code> 事件</strong></li>
-</ul>
-</li>
-</ul>
-<h2 id="DragEvent-事件对象"><a href="#DragEvent-事件对象" class="headerlink" title="DragEvent 事件对象"></a>DragEvent 事件对象</h2><ul>
-<li>传值<ul>
-<li><code>e.dataTransfer.setData(&#39;name&#39;,e.target.id)</code></li>
-</ul>
-</li>
-<li>取值<ul>
-<li><code>e.dataTransfer.getData(&#39;name&#39;)</code>
-        
-          <a class="article-more-a" href="/myBlog/2019/09/07/HTML5-拖拽/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/09/07/HTML5-拖拽/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HTML5-客户端存储" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/09/06/HTML5-客户端存储/">HTML5-客户端存储</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/09/06/HTML5-客户端存储/" class="archive-article-date">
-  	<time datetime="2019-09-05T23:53:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在前端开发过程中，为了方便服务器更方便的交互或者提升用户体验，我们会在客户端(用户)的本地保存一部分数据，比如<code>cookie/Storage</code>。在设备不能上网的情况下，我们可以通过使用本地存储是的程序正常运行。</p>
-<p>开发离线 Web 应用需要几个步骤，首先是确保应用知道设备能否上网，再做出下一步操作。最好有一块本地存储的数据，无论设备能否上网，都不妨碍读写。</p>
-<p>HTML5 及其相关的 API 让离线开发应用成为了现实。</p>
-<h2 id="离线检测"><a href="#离线检测" class="headerlink" title="离线检测"></a>离线检测</h2><p>要知道设备是否在连网状态，HTML5 定义了一个 <code>navigator.onLine</code> 属性，这个属性返回一个 Boolean 值。</p>
-<ul>
-<li>当为 true 时，表示设备处于在线状态(能上网)</li>
-<li>当为 false 表示当前设备处于离线状态(不能上网)</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (navigator.onLine) &#123;</span><br><span class="line">  <span class="comment">// 在线 正常工作</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">// 离线 执行离线任务</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>由于 <code>navigator.onLine</code> 存在一定的兼容性问题，因此除了 <code>navigator.onLine</code> 属性之外，为了更好的确定网络是否可用，HTML5 还定义了两个事件 <strong><code>online</code></strong> 和 <strong><code>offline</code></strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"online"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 在线 正常工作</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"offline"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 离线 执行离线任务</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>在实际应用中，最好在页面加载后，先取得应用的状态，然后通过上述两个事件执行后续的函数。</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/myBlog/2019/09/06/HTML5-客户端存储/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">缓存</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/09/06/HTML5-客户端存储/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HTML5-requestAnimationFrame" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/09/03/HTML5-requestAnimationFrame/">HTML5-requestAnimationFrame</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/09/03/HTML5-requestAnimationFrame/" class="archive-article-date">
-  	<time datetime="2019-09-03T01:17:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在 Web 应用中，实现动画效果的方法比较多，JavaScript 中可以通过定时器 setTimeout 来实现，Css3 可以使用 transition 和 animation 来实现，HTML5 中的 canvas 也可以实现。除此之外，HTML5 还提供了一个专门用于请求动画的 API，即 <code>requestAnimationFrame(rAF)</code> 顾名思义就是请求动画帧。</p>
-<h2 id="屏幕绘制频率"><a href="#屏幕绘制频率" class="headerlink" title="屏幕绘制频率"></a>屏幕绘制频率</h2><p><strong>屏幕绘制频率</strong>即图像在屏幕上更新的速度，也是屏幕上图像每秒钟出现的次数，它的单位是赫兹(HZ),对于一般的笔记本电脑，这个频率大概是60HZ。因此，<strong>当你对着电脑屏幕什么也不做的情况下，显示器也会以以每秒60次的频率在不断地更新屏幕上的图像</strong>，那么我们为什么感觉不到这个变化呢？那是因为人的眼睛有 <strong><a href="https://baike.baidu.com/item/%E8%A7%86%E8%A7%89%E6%9A%82%E7%95%99/5125149?fr=aladdin" target="_blank" rel="noopener">视觉停留效应</a></strong> 即前一刻画面留在大脑印象还没消失，紧接着后幅画面就跟上来了，这中间只隔了16.7ms(1000/60≈16.7)，所以会让你误以为屏幕上的图像是静止不动的。</p>
-        
-          <a class="article-more-a" href="/myBlog/2019/09/03/HTML5-requestAnimationFrame/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/09/03/HTML5-requestAnimationFrame/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HTML5-多媒体" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/09/01/HTML5-多媒体/">HTML5-多媒体</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/09/01/HTML5-多媒体/" class="archive-article-date">
-  	<time datetime="2019-09-01T01:11:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Web-中的音频和视频"><a href="#Web-中的音频和视频" class="headerlink" title="Web 中的音频和视频"></a>Web 中的音频和视频</h2><blockquote>
-<p>自 21 世纪初以来，我们的带宽开始能够支持任意类型的视频在早些时候，传统的 web 技术（如 HTML ）不能够在 Web 中嵌入音频和视频，所以一些像 Flash 的专利技术在处理这些内容上变得很受欢迎。这些技术能够正常的工作，但是却有着一系列的问题，包括无法很好的支持 HTML/CSS 特性、安全问题，以及可行性问题。</p>
-</blockquote>
-<p>传统的解决方案能够解决许多这样的问题，前提是它能够正确的工作,幸运的是，几年之后 HTML5 标准提出，其中有许多的新特性，包括 <code>&lt;video&gt;</code> 和 <code>&lt;audio&gt;</code> 标签，以及一些 JavaScript 和 APIs 用于对其进行控制。</p>
-<h2 id="lt-audio-gt-音频标签"><a href="#lt-audio-gt-音频标签" class="headerlink" title="&lt;audio&gt; 音频标签"></a><code>&lt;audio&gt;</code> 音频标签</h2><p>我们可以在 html 文件中使用 <code>&lt;audio&gt;</code> 标签来插入一个音频文件。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- src 属性指向你想要嵌入网页当中的资源 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">src</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><h4 id="autoplay-自动播放"><a href="#autoplay-自动播放" class="headerlink" title="autoplay 自动播放"></a><code>autoplay</code> 自动播放</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 这个属性会使音频和视频内容立即播放，即使页面的其他部分还没有加载完全。 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">autoplay</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/myBlog/2019/09/01/HTML5-多媒体/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/09/01/HTML5-多媒体/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HTML5-SVG" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/08/30/HTML5-SVG/">HTML5-SVG</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/08/30/HTML5-SVG/" class="archive-article-date">
-  	<time datetime="2019-08-30T00:16:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>可缩放矢量图形（英语：Scalable Vector Graphics，SVG）是一种基于可扩展标记语言（XML），用于描述二维矢量图形的图形格式。SVG由W3C制定，是一个开放标准。</p>
-</blockquote>
-<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><ul>
-<li>图表</li>
-<li>图标 icon</li>
-<li>动效</li>
-<li>矢量图</li>
-</ul>
-<h2 id="SVG-的优势"><a href="#SVG-的优势" class="headerlink" title="SVG 的优势"></a>SVG 的优势</h2><p>由于 SVG 图像是矢量图像，可以<strong>无线缩放</strong>，而且在图像质量下降方面没有任何问题。因为 SVG 图像是使用 <strong>XML标记</strong> 构建的，浏览器通过每个点和线来打印他们，而不是用预定义的像素填充某些空间。这确保 SVG 图像可以适应不同的屏幕大小和分辨率。</p>
-<p>由于是在 XML 中定义的，SVG 图像比 JPG 或 PNG 图像更灵活，而且我们可以使用Css 和 JavaScript 进行交互。</p>
-<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 定义绘图区域 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">"500px"</span> <span class="attr">height</span>=<span class="string">"500px"</span>&gt;</span><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/myBlog/2019/08/30/HTML5-SVG/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/08/30/HTML5-SVG/">展开全文 >></a>
+          <a class="article-more-a" href="/myBlog/2019/07/18/HTML5-DeviceMotionEvent/">展开全文 >></a>
         </p>
       
 
@@ -1214,7 +1262,7 @@
 		toc_hide_index: true,
 		root: "/myBlog/",
 		innerArchive: true,
-		showTags: true
+		showTags: false
 	}
 </script>
 
@@ -1268,14 +1316,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
@@ -1288,11 +1328,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1304,19 +1356,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1324,11 +1364,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+                <a href="javascript:void(0)" class="js-tag color3">TS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1336,7 +1388,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1344,7 +1400,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
             
             <div class="clearfix"></div>

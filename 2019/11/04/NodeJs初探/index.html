@@ -9,13 +9,13 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>NodeJs初探 | PowerDong-分享技术&amp;生活</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="首先我们先了解一下 NodeJs 是什么NodeJs 是什么 Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行时。  NodeJs 并不是一门语言，Js 才是语言，NodeJs 是一个 JS 的 runtime，是一个运行时。 阻塞I/O 时进程休眠，等待进程完成后进入到进入一步 非阻塞I/O 时函数立即返回，进程不等待 I/O 完成 NodeJs 好在哪里 前">
+  <meta name="description" content="首先我们先了解一下 NodeJs 是什么NodeJs 是什么 Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行时。   什么是 V8？ V8 JavaScript 引擎是 Google 用于其 Chrome 浏览器的底层 JavaScript 引擎 Google 使用 V8 创建了一个用 C++ 编写的超快解释器，该解释器拥有另一个独特特征；您可以下载该引擎并将">
 <meta name="keywords" content="笔记,NodeJs">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NodeJs初探">
 <meta property="og:url" content="http://yoursite.com/2019/11/04/NodeJs初探/index.html">
 <meta property="og:site_name" content="PowerDong-分享技术&amp;生活">
-<meta property="og:description" content="首先我们先了解一下 NodeJs 是什么NodeJs 是什么 Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行时。  NodeJs 并不是一门语言，Js 才是语言，NodeJs 是一个 JS 的 runtime，是一个运行时。 阻塞I/O 时进程休眠，等待进程完成后进入到进入一步 非阻塞I/O 时函数立即返回，进程不等待 I/O 完成 NodeJs 好在哪里 前">
+<meta property="og:description" content="首先我们先了解一下 NodeJs 是什么NodeJs 是什么 Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行时。   什么是 V8？ V8 JavaScript 引擎是 Google 用于其 Chrome 浏览器的底层 JavaScript 引擎 Google 使用 V8 创建了一个用 C++ 编写的超快解释器，该解释器拥有另一个独特特征；您可以下载该引擎并将">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s2.ax1x.com/2019/11/04/KvU50U.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/11/04/KvaQ9s.png">
@@ -24,10 +24,10 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/11/04/KvnutS.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/11/04/KvnBc9.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/11/04/KvU50U.png">
-<meta property="og:updated_time" content="2019-11-04T04:08:02.205Z">
+<meta property="og:updated_time" content="2019-11-18T01:26:14.255Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NodeJs初探">
-<meta name="twitter:description" content="首先我们先了解一下 NodeJs 是什么NodeJs 是什么 Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行时。  NodeJs 并不是一门语言，Js 才是语言，NodeJs 是一个 JS 的 runtime，是一个运行时。 阻塞I/O 时进程休眠，等待进程完成后进入到进入一步 非阻塞I/O 时函数立即返回，进程不等待 I/O 完成 NodeJs 好在哪里 前">
+<meta name="twitter:description" content="首先我们先了解一下 NodeJs 是什么NodeJs 是什么 Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行时。   什么是 V8？ V8 JavaScript 引擎是 Google 用于其 Chrome 浏览器的底层 JavaScript 引擎 Google 使用 V8 创建了一个用 C++ 编写的超快解释器，该解释器拥有另一个独特特征；您可以下载该引擎并将">
 <meta name="twitter:image" content="https://s2.ax1x.com/2019/11/04/KvU50U.png">
   
   <link rel="alternative" href="/atom.xml" title="PowerDong-分享技术&amp;生活" type="application/atom+xml">
@@ -182,7 +182,18 @@
 <h2 id="首先我们先了解一下-NodeJs-是什么"><a href="#首先我们先了解一下-NodeJs-是什么" class="headerlink" title="首先我们先了解一下 NodeJs 是什么"></a>首先我们先了解一下 NodeJs 是什么</h2><h3 id="NodeJs-是什么"><a href="#NodeJs-是什么" class="headerlink" title="NodeJs 是什么"></a>NodeJs 是什么</h3><blockquote>
 <p>Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行时。</p>
 </blockquote>
+<ul>
+<li><strong>什么是 V8？</strong></li>
+<li>V8 JavaScript 引擎是 Google 用于其 Chrome 浏览器的底层 JavaScript 引擎</li>
+<li>Google 使用 V8 创建了一个用 C++ 编写的超快解释器，该解释器拥有另一个独特特征；您可以下载该引擎并将其嵌入任何 应用程序。V8 JavaScript 引擎并不仅限于在一个浏览器中运行。因此，Node 实际上会使用 Google 编写的 V8 JavaScript 引擎，并将其重建为可在服务器上使用。</li>
+</ul>
 <p>NodeJs 并不是一门语言，Js 才是语言，NodeJs 是一个 JS 的 runtime，是一个运行时。</p>
+<h3 id="Node-可以用来做什么"><a href="#Node-可以用来做什么" class="headerlink" title="Node 可以用来做什么"></a>Node 可以用来做什么</h3><ul>
+<li><strong>Node 非常适合以下情况</strong>：</li>
+<li>在响应客户端之前，您预计可能有很高的流量，但所需的服务器端逻辑和处理不一定很多。</li>
+<li>Node 是一个程序，作为一个可以将其作为基础进行构建的可扩展 JavaScript 平台，Node 还能完成更多的任务。</li>
+<li>Node 完成了它提供高度可伸缩服务器的目标。它使用了 Google 的一个非常快速的 JavaScript 引擎，即 V8 引擎。它使用一个事件驱动设计来保持代码最小且易于阅读。所有这些因素促成了 Node 的理想目标，即编写一个高度可伸缩的解决方案变得比较容易。</li>
+</ul>
 <h3 id="阻塞"><a href="#阻塞" class="headerlink" title="阻塞"></a>阻塞</h3><p>I/O 时进程休眠，等待进程完成后进入到进入一步</p>
 <h3 id="非阻塞"><a href="#非阻塞" class="headerlink" title="非阻塞"></a>非阻塞</h3><p>I/O 时函数立即返回，进程不等待 I/O 完成</p>
 <h2 id="NodeJs-好在哪里"><a href="#NodeJs-好在哪里" class="headerlink" title="NodeJs 好在哪里"></a>NodeJs 好在哪里</h2><ul>
@@ -567,7 +578,7 @@
 		toc_hide_index: true,
 		root: "/myBlog/",
 		innerArchive: true,
-		showTags: true
+		showTags: false
 	}
 </script>
 
@@ -621,14 +632,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
@@ -641,11 +644,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -657,19 +668,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -677,15 +676,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+                <a href="javascript:void(0)" class="js-tag color3">TS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
+                <a href="javascript:void(0)" class="js-tag color3">开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -693,7 +704,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
               </li>
              
               <li class="article-tag-list-item">

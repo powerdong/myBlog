@@ -151,35 +151,131 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-HTML5-Canvas" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-瀑布流" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/08/27/HTML5-Canvas/">HTML5-Canvas</a>
+      <a class="article-title" href="/myBlog/2019/07/18/瀑布流/">瀑布流(无限滚动)</a>
     </h1>
   
 
         
-        <a href="/myBlog/2019/08/27/HTML5-Canvas/" class="archive-article-date">
-  	<time datetime="2019-08-27T00:11:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-27</time>
+        <a href="/myBlog/2019/07/18/瀑布流/" class="archive-article-date">
+  	<time datetime="2019-07-18T00:49:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Canvas 是 HTML5 新增的一个标签属性，一个可以使用脚本在其中绘制图像的 HTML 元素。它可以用来制作照片或者制作简单的动画，甚至可以进行实时的视频处理和渲染。Canvas 是由 HTML 代码配合高度和宽度属性而定义出的可绘制区域。JavaScript 代码可以访问该区域，类似于其他通用的 API，通过一套完整的绘图函数来动态生成图形。</p>
-<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><ol>
-<li>游戏</li>
-<li>图表</li>
-<li>动画</li>
-<li>HTML5 动效(codepen.io)</li>
-</ol>
+        <h2 id="瀑布流"><a href="#瀑布流" class="headerlink" title="瀑布流"></a>瀑布流</h2><blockquote>
+<p>瀑布流:又称瀑布流式布局。是比较流行的一种网站页面布局，视觉表现为参差不齐的多栏布局，随着页面滚动条向下滚动，这种布局还会不断加载数据块并附加至当前尾部。</p>
+</blockquote>
+<p><img src="https://www.w3cplus.com/sites/default/files/blogs/2017/1704/pinterest-masonry.png" alt="瀑布流"></p>
+<p>我们要创建一个瀑布流插件，尽量的可以再多处使用。</p>
+<h3 id="开始布局"><a href="#开始布局" class="headerlink" title="开始布局"></a>开始布局</h3><p>首先先创建好一个外层标签，用来包裹我们的图片元素</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"water"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>所有的瀑布流元素都会存放到这个<code>div</code>标签中<br>在添加图片时需要动态设置新图片的位置，由于图片高度不定，这里采用绝对定位方式布局。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#water</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/myBlog/2019/08/27/HTML5-Canvas/#more">more >></a>
+          <a class="article-more-a" href="/myBlog/2019/07/18/瀑布流/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/07/18/瀑布流/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-HTML5-Geolocation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/07/16/HTML5-Geolocation/">你在哪啊？我在这啊——HTML5-Geolocation</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/07/16/HTML5-Geolocation/" class="archive-article-date">
+  	<time datetime="2019-07-16T01:36:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>HTML5 提供了 <strong>geolocation API</strong>，用于提供位置相关服务。</p>
+<p>地理位置 API 通过<code>window.navigator.geolocation</code>提供。在使用之前需要进行判断该对象是否存在，如果存在的话，那么位置信息可用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="string">"geolocation"</span> <span class="keyword">in</span> navigator) &#123;</span><br><span class="line">  <span class="comment">/* 地理位置信息可用 */</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">/* 地理位置信息不可用 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/myBlog/2019/07/16/HTML5-Geolocation/#more">more >></a>
         
       
 
@@ -218,7 +314,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/08/27/HTML5-Canvas/">展开全文 >></a>
+          <a class="article-more-a" href="/myBlog/2019/07/16/HTML5-Geolocation/">展开全文 >></a>
         </p>
       
 
@@ -248,172 +344,42 @@
 
 
   
-    <article id="post-浏览器渲染原理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-CSS相关" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/08/22/浏览器渲染原理/">浏览器渲染原理</a>
+      <a class="article-title" href="/myBlog/2019/07/16/CSS相关/">CSS相关</a>
     </h1>
   
 
         
-        <a href="/myBlog/2019/08/22/浏览器渲染原理/" class="archive-article-date">
-  	<time datetime="2019-08-22T00:24:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-22</time>
+        <a href="/myBlog/2019/07/16/CSS相关/" class="archive-article-date">
+  	<time datetime="2019-07-16T01:20:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p>提到页面渲染，最重要的就是关键渲染路径</p>
-<p>通常我们在编写页面时，只需要编写 HTML、Css、JavaScript 屏幕上就会显示出漂亮的页面，但浏览器是如何使用我们的代码在屏幕上渲染像素的呢?<br>浏览器将 HTML、Css、JavaScript 转换为屏幕上所呈现的实际像素，这期间所经历的一系列步骤，叫做<strong>关键渲染路径(Critical Rendering Path)</strong></p>
-<h2 id="浏览器渲染页面的过程"><a href="#浏览器渲染页面的过程" class="headerlink" title="浏览器渲染页面的过程"></a>浏览器渲染页面的过程</h2><p>从耗时的角度，浏览器请求，加载，渲染一个页面，时间花在下面五项</p>
+        <h2 id="CSS-盒模型-在不同浏览器的差异"><a href="#CSS-盒模型-在不同浏览器的差异" class="headerlink" title="CSS 盒模型,在不同浏览器的差异"></a>CSS 盒模型,在不同浏览器的差异</h2><p><strong>W3C 中的盒子模型的宽：包括 margin + border + padding + width;</strong></p>
+<p><code>W = margin * 2 + border * 2 + padding * 2 + width;</code><br><code>H = margin * 2 + border * 2 + padding * 2 + hight;</code></p>
+<p><strong>IE 中的盒子模型的宽：包括 margin + border + padding + width;</strong></p>
+<p><code>W = margin * 2 + width;</code><br><code>H = margin * 2 + height;</code></p>
+<p><strong>两者的区别</strong></p>
 <ul>
-<li>DNS 查询</li>
-<li>TCP 连接</li>
-<li>HTTP 请求及响应</li>
-<li>服务器响应</li>
-<li>客户端渲染</li>
+<li>IE 盒子模型的 content 部分包含了 border 和 padding。</li>
 </ul>
-<p>本文讨论第五个部分，即<strong>浏览器对内容的渲染</strong></p>
-        
-          <a class="article-more-a" href="/myBlog/2019/08/22/浏览器渲染原理/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">渲染</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/08/22/浏览器渲染原理/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Css3-0-布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/08/20/Css3-0-布局/">Css3.0-布局</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/08/20/Css3-0-布局/" class="archive-article-date">
-  	<time datetime="2019-08-20T00:25:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Css3-布局"><a href="#Css3-布局" class="headerlink" title="Css3 布局"></a>Css3 布局</h2><h3 id="display-flex-弹性盒子"><a href="#display-flex-弹性盒子" class="headerlink" title="display:flex 弹性盒子"></a>display:flex 弹性盒子</h3><p>flex 为复合属性，且必须配合父元素 <code>display: flex</code> 使用</p>
-<blockquote>
-<p>弹性盒模型是 css3 的一种新的布局方式，是一种当前页面需要适应不同的屏幕大小及设备类型时确保拥有恰当的行为的布局方式。</p>
-</blockquote>
+<p><strong>那么应该选择哪种盒子模型呢？</strong></p>
 <ul>
-<li><p><strong>以下 6 个属性设置在项目(子元素)上</strong></p>
-<ul>
-<li>flex-grow: 放大比例<ul>
-<li>根据所设置的比例分配盒子所剩余的空间</li>
-<li>左右两栏布局</li>
-<li>默认值 0</li>
+<li>当然是“标准 w3c 盒子模型”了。</li>
+<li>在网页顶部加上<code>doctype</code>声明,所有的浏览器都会采用标准的 w3c 盒子模型去解释你的盒子,网页就能在各个浏览器中显示一致了。</li>
 </ul>
-</li>
-<li>flex-shrink: 缩小比例<ul>
-<li>多出盒子的部分，按照比例的大小砍掉相应的大小</li>
-<li>即比例越大，被砍的越大</li>
-<li>默认值 1</li>
-</ul>
-</li>
-<li>flex-basis: 伸缩基准值(项目占据主轴的空间)<ul>
-<li>该属性设置元素的宽度或高度，当然 width 也可以用来设置宽度</li>
-<li><strong>如果元素上同时出现了 width 和 flex-basis，那么 flex-basis 会覆盖 width 的值</strong></li>
-</ul>
-</li>
-<li>flex: 是 flex-grow, flex-shrink 和 flex-basis 的简写<ul>
-<li>常用简化写法: <code>flex: 1 =&gt; flex: 1 1 0%</code></li>
-<li><strong>注意：</strong>flexbox 布局和原来的布局是两个概念，部分 Css 属性在 flexbox 盒子里面不起作用，(<code>float</code>、<code>clear</code>、<code>column</code>、<code>vertical-align</code>)等</li>
-</ul>
-</li>
-<li>order: 排列顺序<ul>
-<li>数值越小，排列越靠前</li>
-<li>默认为 0</li>
-</ul>
-</li>
-<li>align-self: 单个项目对齐方式<ul>
-<li>可覆盖 <code>align-items</code> 属性</li>
-<li>默认值为 auto，表示继承父元素的 <code>align-items</code> 属性，如果没有父元素，则等同于 <code>stretch</code></li>
-<li>align-self:auto | flex-start | flex-end | center | baseline | stretch</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<h2 id="CSS-所有选择器及其优先级、使用场景-哪些可以继承-如何运用-at-规则"><a href="#CSS-所有选择器及其优先级、使用场景-哪些可以继承-如何运用-at-规则" class="headerlink" title="CSS 所有选择器及其优先级、使用场景,哪些可以继承,如何运用 at 规则"></a>CSS 所有选择器及其优先级、使用场景,哪些可以继承,如何运用 at 规则</h2><h3 id="优先级是如何计算的？"><a href="#优先级是如何计算的？" class="headerlink" title="优先级是如何计算的？"></a>优先级是如何计算的？</h3><p>优先级就是分配给指定的 CSS 声明的一个权重,它由匹配的选择器中的每一种选择器类型的数值决定。<br>而当优先级与多个 CSS 声明中任意一个声明的优先级相等的时候,CSS 中最后的那个声明会被应用到元素上。<br>当同一个元素有多个声明的时候,优先级才会有意义。因为每一个直接作用于元素的 CSS 规则总是会接管/覆盖(take over)该元素从祖先元素继承而来的规则。</p>
         
-          <a class="article-more-a" href="/myBlog/2019/08/20/Css3-0-布局/#more">more >></a>
+          <a class="article-more-a" href="/myBlog/2019/07/16/CSS相关/#more">more >></a>
         
       
 
@@ -452,7 +418,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/08/20/Css3-0-布局/">展开全文 >></a>
+          <a class="article-more-a" href="/myBlog/2019/07/16/CSS相关/">展开全文 >></a>
         </p>
       
 
@@ -482,76 +448,37 @@
 
 
   
-    <article id="post-Css3-0-动画" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-HTML相关" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/08/19/Css3-0-动画/">Css3.0-动画</a>
+      <a class="article-title" href="/myBlog/2019/07/16/HTML相关/">HTML相关</a>
     </h1>
   
 
         
-        <a href="/myBlog/2019/08/19/Css3-0-动画/" class="archive-article-date">
-  	<time datetime="2019-08-19T03:24:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-19</time>
+        <a href="/myBlog/2019/07/16/HTML相关/" class="archive-article-date">
+  	<time datetime="2019-07-16T00:26:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Css3-动画"><a href="#Css3-动画" class="headerlink" title="Css3 动画"></a>Css3 动画</h2><h3 id="transform-形状变换"><a href="#transform-形状变换" class="headerlink" title="transform 形状变换"></a>transform 形状变换</h3><blockquote>
-<p>CSS3 转换可以可以对元素进行移动、缩放、转动、拉长或拉伸。</p>
-</blockquote>
+        <h2 id="从规范的角度理解HTML-从分类和语义的角度使用标签"><a href="#从规范的角度理解HTML-从分类和语义的角度使用标签" class="headerlink" title="从规范的角度理解HTML,从分类和语义的角度使用标签"></a>从规范的角度理解HTML,从分类和语义的角度使用标签</h2><h3 id="HTML语义化是什么"><a href="#HTML语义化是什么" class="headerlink" title="HTML语义化是什么?"></a>HTML语义化是什么?</h3><p>语义化是指根据内容的结构化(内容语义化),选择合适的标签(代码语义化),便于开发者阅读和写出更优雅的代码的同时,让浏览器的爬虫和机器很好地解析。</p>
+<h3 id="为什么要语义化"><a href="#为什么要语义化" class="headerlink" title="为什么要语义化?"></a>为什么要语义化?</h3><blockquote>
 <ul>
-<li><code>transform</code> 可以实现元素的形状，角度，位置等的变化。<ul>
-<li><code>rotate(ndeg)</code> 以 x/y/z 为轴进行选装，默认为 z<ul>
-<li><code>rotateX(ndeg)</code></li>
-<li><code>rotateY(ndeg)</code></li>
-<li><code>rotateZ(ndeg)</code></li>
-<li><code>rotate3d(x, y, z, angle)</code></li>
+<li>有利于SEO(搜索引擎优化(Search Engine Optimization)),有助于爬虫爬取更多有效的信息,爬虫是依赖于标签来确定上下文和各个关键字的权重</li>
+<li>语义化的HTML在没有CSS的情况下也能呈现较好的内容结构和代码结构</li>
+<li>方便其他设备的解析</li>
+<li>便于团队开发和维护</li>
 </ul>
-</li>
-<li><code>scale(n)</code> 以 x/y 为轴进行缩放<ul>
-<li><code>scale(x, y)</code> 接受两个值，如果第二个参数未提供，则第二个参数使用第一个参数的值</li>
-<li><code>scaleX(n)</code>, <code>scaleY(n)</code> 值是数字表示倍数，不加任何单位</li>
-<li><code>scaleZ(n)</code></li>
-<li><code>scale3d(x, y, z)</code></li>
-</ul>
-</li>
-<li><code>skew(ndeg)</code> 对元素进行倾斜扭曲<ul>
-<li><code>skew(x, y)</code> 接受两个值，第一个参数对应 X 轴，第二个参数对应 Y 轴。如果第二个参数未提供，则默认值是 0</li>
-<li><code>skewX()</code>, <code>skewY()</code></li>
-</ul>
-</li>
-<li><code>translate()</code> 可以移动的距离，相对于自身位置<ul>
-<li><code>translate(x,[y])</code></li>
-<li><code>translateX()</code></li>
-<li><code>translateY()</code></li>
-<li><code>translateZ()</code></li>
-<li><code>translate3d(x, y, z)</code></li>
-</ul>
-</li>
-<li><code>transform-origin</code> 变换原点<ul>
-<li>任何一个元素都有一个中心点，默认情况下，其中心点是居于元素 X 轴和 Y 轴的 50% 处。</li>
-<li>值用百分比或关键字(top center)表示</li>
-</ul>
-</li>
-<li><code>transform-style</code>: 指定嵌套元素是怎样在三维空间中呈现<ul>
-<li>flat 2D 平面呈现</li>
-<li>preserve-3d 3D 空间中呈现</li>
-<li><strong>使用此属性必须先使用 <code>transform</code> 属性</strong></li>
-<li><strong>需要设置在父元素中，高于任何嵌套的变形元素</strong></li>
-<li><strong>设置了 <code>transform-style: preserve-3d</code> 的元素，就不能防止子元素溢出设置 <code>overflow: hidden</code>；否则会导致 preserve-3d 失效</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+</blockquote>
         
-          <a class="article-more-a" href="/myBlog/2019/08/19/Css3-0-动画/#more">more >></a>
+          <a class="article-more-a" href="/myBlog/2019/07/16/HTML相关/#more">more >></a>
         
       
 
@@ -565,7 +492,101 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Css</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/07/16/HTML相关/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-执行机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/07/15/执行机制/">执行机制</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/07/15/执行机制/" class="archive-article-date">
+  	<time datetime="2019-07-15T00:44:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="为何-try-里面放-return-finally-还会执行-理解其内部机制"><a href="#为何-try-里面放-return-finally-还会执行-理解其内部机制" class="headerlink" title="为何 try 里面放 return,finally 还会执行,理解其内部机制"></a>为何 try 里面放 return,finally 还会执行,理解其内部机制</h2><p>try-catch 是捕捉异常的神奇,不管是调试还是防止软件崩溃,都离不开它。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">    &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">        condole.log(<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(test());</span><br><span class="line">&lt;!-- <span class="number">1</span>  <span class="number">2</span> --&gt;</span><br><span class="line"><span class="comment">//结果：它按顺序执行了</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在 try 中加入 return 语句</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'try'</span>;</span><br><span class="line">    &#125;<span class="keyword">catch</span>(e)&#123;</span><br><span class="line">        <span class="comment">//TODO</span></span><br><span class="line">    &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(test());</span><br><span class="line">&lt;!-- <span class="number">1</span> <span class="number">2</span> <span class="keyword">try</span> --&gt;</span><br><span class="line"><span class="comment">//在 try和 catch的代码块中,如果碰到 return语句,那么在 return之前,会先执行finally中的内容</span></span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/myBlog/2019/07/15/执行机制/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -590,7 +611,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/08/19/Css3-0-动画/">展开全文 >></a>
+          <a class="article-more-a" href="/myBlog/2019/07/15/执行机制/">展开全文 >></a>
         </p>
       
 
@@ -620,37 +641,33 @@
 
 
   
-    <article id="post-Css3-0-选择器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-原型和原型链" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/08/17/Css3-0-选择器/">Css3.0-选择器</a>
+      <a class="article-title" href="/myBlog/2019/07/14/原型和原型链/">原型和原型链</a>
     </h1>
   
 
         
-        <a href="/myBlog/2019/08/17/Css3-0-选择器/" class="archive-article-date">
-  	<time datetime="2019-08-17T00:23:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-17</time>
+        <a href="/myBlog/2019/07/14/原型和原型链/" class="archive-article-date">
+  	<time datetime="2019-07-14T11:05:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Css3-选择器"><a href="#Css3-选择器" class="headerlink" title="Css3 选择器"></a>Css3 选择器</h2><p>CSS 选择器用于选择你想要的元素的样式的模式。</p>
-<h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><ul>
-<li><code>[target=-blank]</code> 选择所有使用<code>target=&quot;-blank&quot;</code>的元素</li>
-<li><code>[title~=flower]</code> 选择标题属性包含单词”flower”的所有元素</li>
-<li><code>[lang|=en]</code> 选择 lang 属性以 en 为开头的所有元素 (<strong>以单词开头</strong>)</li>
-<li><code>a[src^=&quot;https&quot;]</code> 选择每一个 src 属性的值以”https”开头的元素(<strong>以字母开头</strong>)</li>
-<li><code>a[src$=&quot;.pdf&quot;]</code> 选择每一个 src 属性的值以”.pdf”结尾的元素</li>
-<li><code>a[src*=&quot;run&quot;]</code> 选择每一个 src 属性的值包含子字符串”run”的元素</li>
-</ul>
+        <h2 id="理解原型设计模式以及-JavaScript-中的原型规则"><a href="#理解原型设计模式以及-JavaScript-中的原型规则" class="headerlink" title="理解原型设计模式以及 JavaScript 中的原型规则"></a>理解原型设计模式以及 JavaScript 中的原型规则</h2><h3 id="什么是原型模式"><a href="#什么是原型模式" class="headerlink" title="什么是原型模式"></a>什么是原型模式</h3><p><strong>原型模式(Prototype pattern)</strong>:<code>通俗点讲就是创建一个共享的原型,并通过拷贝这些原型创建新的对象。 用于创建重复的对象,这种类型的设计模式属于创建型模式,它提供了一种创建对象得比错选择。</code></p>
+<h3 id="实现原型模式"><a href="#实现原型模式" class="headerlink" title="实现原型模式"></a>实现原型模式</h3><p>我们可以通过 JavaScript 特有的原型集成特性去实现原型模式,也就是创建一个对象作为另一个对象的 prototype 属性值,我们可以通过 Object.create(prototype,optionalDescriptorObjects)来实现原型继承。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fatherPrototype = &#123;</span><br><span class="line">  init: <span class="function"><span class="keyword">function</span>(<span class="params">money</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.selfMoney = money;</span><br><span class="line">  &#125;,</span><br><span class="line">  getMoney: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"取钱"</span> + <span class="keyword">this</span>.selfMoney);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sonMoney</span>(<span class="params">Smoney</span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">  F.prototype = fatherPrototype;</span><br><span class="line">  <span class="keyword">var</span> f = <span class="keyword">new</span> F();</span><br><span class="line">  f.init(Smoney);</span><br><span class="line">  <span class="keyword">return</span> f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sonGetMoney = sonMoney(<span class="string">"20"</span>);</span><br><span class="line">sonGetMoney.getMoney();</span><br><span class="line"><span class="comment">//儿子取钱取得是他爹的</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>原型模式,就是创建一个共享的原型,通过拷贝这个原型来创建新的类,用于创建重复的对象,带来性能上的提升。</strong></p>
         
-          <a class="article-more-a" href="/myBlog/2019/08/17/Css3-0-选择器/#more">more >></a>
+          <a class="article-more-a" href="/myBlog/2019/07/14/原型和原型链/#more">more >></a>
         
       
 
@@ -664,7 +681,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Css</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -689,7 +706,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/08/17/Css3-0-选择器/">展开全文 >></a>
+          <a class="article-more-a" href="/myBlog/2019/07/14/原型和原型链/">展开全文 >></a>
         </p>
       
 
@@ -719,55 +736,39 @@
 
 
   
-    <article id="post-CSS3-0-属性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-HTML5-拖拽上传文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/08/15/CSS3-0-属性/">Css3.0-属性</a>
+      <a class="article-title" href="/myBlog/2019/07/14/HTML5-拖拽上传文件/">你从这，到那——HTML5-拖拽上传文件</a>
     </h1>
   
 
         
-        <a href="/myBlog/2019/08/15/CSS3-0-属性/" class="archive-article-date">
-  	<time datetime="2019-08-15T00:42:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-15</time>
+        <a href="/myBlog/2019/07/14/HTML5-拖拽上传文件/" class="archive-article-date">
+  	<time datetime="2019-07-14T01:41:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="什么是-Css3-0"><a href="#什么是-Css3-0" class="headerlink" title="什么是 Css3.0"></a>什么是 Css3.0</h2><p>Css3 是 Css2 的升级版本，3 只是版本号，它在 Css2.1 的基础上增加了很多强大的新功能。</p>
-<h2 id="Css3-前缀"><a href="#Css3-前缀" class="headerlink" title="Css3 前缀"></a>Css3 前缀</h2><p>在编写 Css3 样式时，不同的浏览器可能需要不同的前缀。他表示该 Css 属性或规则尚未成为 W3C 标准的一部分，是浏览器的私有属性。</p>
-<table>
-<thead>
-<tr>
-<th align="center">前缀</th>
-<th align="center">浏览器</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">-webkit-</td>
-<td align="center">Chrome 和 Safari</td>
-</tr>
-<tr>
-<td align="center">-moz-</td>
-<td align="center">Firefox</td>
-</tr>
-<tr>
-<td align="center">-ms-</td>
-<td align="center">IE</td>
-</tr>
-<tr>
-<td align="center">-o-</td>
-<td align="center">Opera</td>
-</tr>
-</tbody></table>
-<h2 id="Css3-的功能"><a href="#Css3-的功能" class="headerlink" title="Css3 的功能"></a>Css3 的功能</h2><p>提供了更加强大且精准的选择器，提供了多种背景填充方案，可以实现渐变颜色，可以改变元素的形状、角度等，可以加阴影效果，报纸布局，弹性盒子，ie6 混杂模式的盒模型，新的计量单位，动画效果等等…</p>
+        <p>当我们学习了 HTML 提供的原生拖放(drag &amp; drop)后,是时候想一想这个东西<strong>可以用来作什么</strong>，<strong>可以在什么时候使用</strong>，<strong>使用的场景</strong>等等</p>
+<h2 id="场景分析"><a href="#场景分析" class="headerlink" title="场景分析"></a>场景分析</h2><p>当我们在注册成功一个账户时，一般网站会让我们上传我们的用户头像，或者在实名认证的时候会涉及到身份证图片上传到等，这时候我们可以使用<code>input</code>提供的<code>file</code>属性进行选择本地文件进行上传。</p>
+<p><img src="http://www-faq.stor.sinaapp.com/06ebdd14b6cccb47deb6.png" alt="实名认证"></p>
+<p>我们再想一下，当在电脑端的情况下，当用户打开文件选择框时再寻找图片对应的文件夹，再进行选取文件的时候是不是会有点麻烦呢？我们可不可以让用户找到图片文件，直接引入实现上传呢？答案是可以的。</p>
+<h2 id="怎么做"><a href="#怎么做" class="headerlink" title="怎么做"></a>怎么做</h2><p>经过这些分析后，我们可以尝试使用 HTML5 提供的拖拽，使得目标元素增加读取文件功能，然后使用 ajax 实现图片上传。</p>
+<p>谈一谈我们需要使用到的技术:</p>
+<ul>
+<li><strong>Drag &amp; Drop</strong>: HTML5 基于拖拽的事件机制</li>
+<li><strong>File API</strong>: 可以很方便的让 Web 应用访问文件对象，File API 包括 FileList、Blob、File、FileReader、URI scheme，本文主要讲解拖拽上传中用到的 FileList 和 FileReader 接口。</li>
+<li><strong>FormData</strong>: FormData 是基于 XMLHttpRequest Level 2 的新接口，可以方便 web 应用模拟 Form 表单数据，最重要的是它支持文件的二进制流数据，这样我们就能够通过它来实现 AJAX 向后端发送文件数据了。</li>
+</ul>
         
-          <a class="article-more-a" href="/myBlog/2019/08/15/CSS3-0-属性/#more">more >></a>
+          <a class="article-more-a" href="/myBlog/2019/07/14/HTML5-拖拽上传文件/#more">more >></a>
         
       
 
@@ -781,7 +782,254 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Css</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/07/14/HTML5-拖拽上传文件/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-HTML5-拖拽" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/07/13/HTML5-拖拽/">你到这，你到那——HTML5-拖拽</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/07/13/HTML5-拖拽/" class="archive-article-date">
+  	<time datetime="2019-07-13T01:58:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>拖放（drag &amp;&amp; drop）在我们平时的工作中，经常遇到。它表示我们日常的抓取和拖放到另一个位置的过程。<strong>常用于各种拖动操作中</strong></p>
+<h2 id="创建元素"><a href="#创建元素" class="headerlink" title="创建元素"></a>创建元素</h2><p>首先我们需要创建可拖动元素</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"drag"</span> <span class="attr">draggable</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="拖拽相关的事件"><a href="#拖拽相关的事件" class="headerlink" title="拖拽相关的事件"></a>拖拽相关的事件</h2><p>在元素进行拖拽中会触发各种事件，</p>
+<ul>
+<li>被拖拽元素拖拽开始时，会触发<code>dragstart</code>事件</li>
+<li>被拖拽元素拖拽完成时，会触发<code>dragend</code>事件</li>
+<li>当被拖拽元素进入到目标元素时时，会触发<code>dragenter</code>事件</li>
+<li>被拖拽元素在目标元素上移动时，会触发<code>dragover</code>事件</li>
+<li>被拖拽元素在目标元素上同时鼠标放开时，会触发<code>drop</code>事件<ul>
+<li><strong>需要阻止 <code>dragover</code> 的默认行为才会触发 <code>drop</code> 事件</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="DragEvent-事件对象"><a href="#DragEvent-事件对象" class="headerlink" title="DragEvent 事件对象"></a>DragEvent 事件对象</h2><ul>
+<li>传值<ul>
+<li><code>e.dataTransfer.setData(&#39;name&#39;,e.target.id)</code></li>
+</ul>
+</li>
+<li>取值<ul>
+<li><code>e.dataTransfer.getData(&#39;name&#39;)</code>
+        
+          <a class="article-more-a" href="/myBlog/2019/07/13/HTML5-拖拽/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/07/13/HTML5-拖拽/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-语法和API" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/07/12/语法和API/">语法和API</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/07/12/语法和API/" class="archive-article-date">
+  	<time datetime="2019-07-12T11:00:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="理解-ECMAScript-和-JavaScript-的关系"><a href="#理解-ECMAScript-和-JavaScript-的关系" class="headerlink" title="理解 ECMAScript 和 JavaScript 的关系"></a>理解 ECMAScript 和 JavaScript 的关系</h2><ul>
+<li><strong>Ecma International</strong><ul>
+<li>一个制定技术标准的组织</li>
+</ul>
+</li>
+<li><strong>ECMA-262</strong><ul>
+<li>由 Ecma International 发布。它包含了脚本语言的标准。</li>
+<li>不妨把 ECMA-262 看做 ECMAScript 的编号。</li>
+</ul>
+</li>
+<li><strong>ECMAScript</strong><ul>
+<li>由 ECMA-262 制定的标准,用于实现通用的脚本语言。</li>
+<li>ECMAScript 提供了脚本语言需要遵守的规则、细节和规范</li>
+</ul>
+</li>
+<li><strong>JavaScript</strong><ul>
+<li>通用脚本编程语言,它遵循了 ECMAScript 标准<ul>
+<li>换句话说,JavaScript 是 ECMAScript 的方言。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>JavaScript 引擎</strong><ul>
+<li>理解并执行 JavaScript 代码的解释器</li>
+<li>浏览器中会有 JavaScript 引擎,比如 Chrome 有 V8,Firefox 有 SpiderMonkey,Edge 有 Chakra。JavaScript 引擎处理 JavaScript 代码,类似于人对语言的处理。</li>
+</ul>
+</li>
+<li><strong>浏览器性能差异</strong><ul>
+<li>两个浏览器都可以理解 JavaScript 代码,但是其中一个浏览器会快一些,因为它的 JavaScript 引擎的实现方式更加高效。</li>
+</ul>
+</li>
+<li><strong>浏览器支持差异</strong><ul>
+<li>尽管浏览器的 JavaScript 引擎都能理解 JavaScript,但是有些浏览器的理解能力更强 ,它们对 JavaScript 的支持是不一样的。</li>
+</ul>
+</li>
+<li><strong>ECMAScript 6</strong><ul>
+<li>ECMA-262 的第六个版本(同义词：ES6、ES2015andECMAScript 2015)</li>
+</ul>
+</li>
+<li><strong>先有鸡还是先有蛋</strong><ul>
+<li>JavaScript 是 1996 年创造的,它在 1997 年提交给 Ecma International,因此才有了 ECMAScript。同时 JavaScript 遵循 ECMAScript 标准,因此 JavaScript 是 ECMAScript 的实例。</li>
+<li>因此：ECMAScript 是基于 JavaScript 的,而 JavaScript 也是基于 ECMAScript 的,两个密不可分。</li>
+</ul>
+</li>
+</ul>
+        
+          <a class="article-more-a" href="/myBlog/2019/07/12/语法和API/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -806,7 +1054,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/08/15/CSS3-0-属性/">展开全文 >></a>
+          <a class="article-more-a" href="/myBlog/2019/07/12/语法和API/">展开全文 >></a>
         </p>
       
 
@@ -836,37 +1084,30 @@
 
 
   
-    <article id="post-Cookie-和-Session" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-HTML5-requestAnimationFrame" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/08/13/Cookie-和-Session/">Cookie 和 Session</a>
+      <a class="article-title" href="/myBlog/2019/07/11/HTML5-requestAnimationFrame/">动画神器——HTML5-requestAnimationFrame</a>
     </h1>
   
 
         
-        <a href="/myBlog/2019/08/13/Cookie-和-Session/" class="archive-article-date">
-  	<time datetime="2019-08-13T00:41:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-13</time>
+        <a href="/myBlog/2019/07/11/HTML5-requestAnimationFrame/" class="archive-article-date">
+  	<time datetime="2019-07-11T01:17:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><h3 id="什么是-Cookie"><a href="#什么是-Cookie" class="headerlink" title="什么是 Cookie"></a>什么是 Cookie</h3><p>Cookie 是由服务端生成，发送给 User-Agent(一般是浏览器)，(服务器告诉浏览器设置一下 Cookie)，浏览器会将 Cookie 以 key/value 保存到某个目录下的文本文件内，下次请求同一网站时就发送该 Cookie 给服务器(前提是浏览器设置为启用 Cookie)。</p>
-<blockquote>
-<p>Cookie 就是一个小型文件(浏览器对 Cookie 的内存大小是有限制的——用来记录一些信息)</p>
-</blockquote>
-<h3 id="为什么会有-Cookie"><a href="#为什么会有-Cookie" class="headerlink" title="为什么会有 Cookie"></a>为什么会有 Cookie</h3><p>Web 应用程序是使用 HTTP 协议传输数据的。<br><strong>HTTP 协议是无状态的协议。</strong><br>一旦数据交换完毕，客户端与服务端的连接就会关闭，再次交换数据需要建立新的连接。这就意味着服务器无法从连接上跟踪会话。</p>
-<blockquote>
-<p>用户在登陆页面后，一段时间内重新打开页面不用输入自动登录(<strong>Cookie 具有保质期</strong>)</p>
-</blockquote>
-<h3 id="Cookie-的原理"><a href="#Cookie-的原理" class="headerlink" title="Cookie 的原理"></a>Cookie 的原理</h3><p>第一次访问网站的时候，浏览器发出请求，服务器响应请求后，会将 Cookie 放到响应请求中，在浏览器第二次发请求时，会把 Cookie 带过去，服务端会辨别用户身份，当然<strong>服务器也可以修改 Cookie 内容。</strong></p>
+        <p>在 Web 应用中，实现动画效果的方法比较多，JavaScript 中可以通过定时器 setTimeout 来实现，Css3 可以使用 transition 和 animation 来实现，HTML5 中的 canvas 也可以实现。除此之外，HTML5 还提供了一个专门用于请求动画的 API，即 <code>requestAnimationFrame(rAF)</code> 顾名思义就是请求动画帧。</p>
+<h2 id="屏幕绘制频率"><a href="#屏幕绘制频率" class="headerlink" title="屏幕绘制频率"></a>屏幕绘制频率</h2><p><strong>屏幕绘制频率</strong>即图像在屏幕上更新的速度，也是屏幕上图像每秒钟出现的次数，它的单位是赫兹(HZ),对于一般的笔记本电脑，这个频率大概是60HZ。因此，<strong>当你对着电脑屏幕什么也不做的情况下，显示器也会以以每秒60次的频率在不断地更新屏幕上的图像</strong>，那么我们为什么感觉不到这个变化呢？那是因为人的眼睛有 <strong><a href="https://baike.baidu.com/item/%E8%A7%86%E8%A7%89%E6%9A%82%E7%95%99/5125149?fr=aladdin" target="_blank" rel="noopener">视觉停留效应</a></strong> 即前一刻画面留在大脑印象还没消失，紧接着后幅画面就跟上来了，这中间只隔了16.7ms(1000/60≈16.7)，所以会让你误以为屏幕上的图像是静止不动的。</p>
         
-          <a class="article-more-a" href="/myBlog/2019/08/13/Cookie-和-Session/#more">more >></a>
+          <a class="article-more-a" href="/myBlog/2019/07/11/HTML5-requestAnimationFrame/#more">more >></a>
         
       
 
@@ -880,11 +1121,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">缓存</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
         		</li>
       		
 		</ul>
@@ -905,362 +1146,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/08/13/Cookie-和-Session/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-网络-JSONP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/08/11/网络-JSONP/">网络-JSONP</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/08/11/网络-JSONP/" class="archive-article-date">
-  	<time datetime="2019-08-11T00:27:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>说到 AJAX 就会不可避免的面临两个问题。</p>
-<ul>
-<li>AJAX 以何种格式来交换数据?</li>
-<li>跨域的需求如何解决?</li>
-</ul>
-<p>在这里总结了<strong>解决跨域问题的几种方法</strong></p>
-<ol>
-<li>Flash</li>
-<li>服务器代理中转</li>
-<li>JSONP</li>
-<li>document.domain(针对基础域名相同的情况)</li>
-</ol>
-<p>但到目前为止最推崇或者说是首选的方案还是用<strong>JSON 来传数据，靠 JSONP 来跨域。</strong></p>
-<p>JSON 和 JSONP 虽然只有一个字母的差别，但其实他们根本不是一回事。</p>
-<ul>
-<li><strong><a href="https://baike.baidu.com/item/JSON" target="_blank" rel="noopener">JSON</a>是一种轻量级的数据交换格式</strong></li>
-<li><strong><a href="https://baike.baidu.com/item/JSONP" target="_blank" rel="noopener">JSONP</a>是一种依靠开发人员的聪明才智创造出的一种非官方跨域数据交互协议,是<a href="https://baike.baidu.com/item/JSON" target="_blank" rel="noopener">JSON</a>的一种“使用模式”，可用于解决主流浏览器的跨域数据访问的问题</strong></li>
-<li>一个是描述信息的格式，一个是信息传递双方约定的方法</li>
-</ul>
-<h2 id="什么是-JSON"><a href="#什么是-JSON" class="headerlink" title="什么是 JSON"></a>什么是 JSON</h2><p>JSON 是 JavaScript Object Notation 的缩写，它是一种数据交换格式。在 JSON 中，一共有 6 种数据类型：<strong>Number</strong>，<strong>Boolean</strong>，<strong>String</strong>，<strong>Null</strong>，<strong>Array</strong>，<strong>Object</strong>以及这些数据类型的任意组合。</p>
-<p>由于 JSON 非常简单，很快就风靡 Web 世界，并且成为 ECMA 标准。几乎所有编程语言都有解析 JSON 的库，而在 JavaScript 中，我们可以直接使用 JSON,因为 JavaScript 内置了 JSON 的解析。</p>
-        
-          <a class="article-more-a" href="/myBlog/2019/08/11/网络-JSONP/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JSONP</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">网络</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/08/11/网络-JSONP/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-网络-HTTP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/07/29/网络-HTTP/">网络-HTTP</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/07/29/网络-HTTP/" class="archive-article-date">
-  	<time datetime="2019-07-29T01:23:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><blockquote>
-<p><a href="https://baike.baidu.com/item/HTTP/243074" target="_blank" rel="noopener">超文本传输协议(HTTP)</a>(HyperText Transfer Protocol)是用于传输诸如 HTML 的超媒体文档的应用层协议，是互联网上应用最为广泛的一种网络协议。</p>
-</blockquote>
-<h2 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h2><blockquote>
-<p><a href="https://baike.baidu.com/item/https/285356?fr=aladdin" target="_blank" rel="noopener">HTTPS</a>(Hypertext Transfer Protocol Secure)(安全的 HTTP)是 HTTP 协议加密版本。它通常使用 SSL 或者 TLS 来加密客户端和服务器之间的所有通信。是以安全为目标的 HTTP 通道。</p>
-</blockquote>
-<h2 id="HTTP-请求报文，响应报文"><a href="#HTTP-请求报文，响应报文" class="headerlink" title="HTTP(请求报文，响应报文)"></a>HTTP(请求报文，响应报文)</h2><p>HTTP 通过报文进行沟通</p>
-<h3 id="请求报文"><a href="#请求报文" class="headerlink" title="请求报文"></a>请求报文</h3><blockquote>
-<p>客户端向服务器发起请求时会生成一段请求报文，请求报文是由<strong>请求方法</strong>，<strong>URL</strong>，<strong>协议版本</strong>，可选的请求首部字段和内容实体构成。</p>
-</blockquote>
-<p>一旦连接建立，用户代理可以发送请求(用户代理通常是 Web 浏览器，但也可以是其他的(例如爬虫))。客户端请求由一系列文本指令组成，并使用 CRLF 分隔，它们被划分为三个块:</p>
-<ul>
-<li>第一行包括请求方法及请求参数:<ul>
-<li>文档路径，不包括协议和域名的绝对路径 URL</li>
-<li>使用的 HTTP 协议版本</li>
-</ul>
-</li>
-<li>接下来的行每一行都表示一个 HTTP 首部，为服务器提供关于所需数据的信息(例如语言，或 MIME 类型)，或是一些改变请求行为的数据(例如当数据已经被缓存，就不再应答)。这些 HTTP 首部组成一个空行结束的一个块。</li>
-<li>最后一行是可选数据块，包含更多数据，主要被 POST 方法所使用</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 发送表单的结果 --&gt;</span><br><span class="line">POST / contact_form.php HTTP/1.1</span><br><span class="line">HOST: developer.mozilla.org</span><br><span class="line">Content-length:64</span><br><span class="line">Content-Type: application/x-www-form-urlencoded</span><br><span class="line"></span><br><span class="line">name=lambda&amp;age=18</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://user-gold-cdn.xitu.io/2019/8/17/16c9da3039654154?w=875&h=513&f=png&s=419945" alt="e1O3rD.png"></p>
-        
-          <a class="article-more-a" href="/myBlog/2019/07/29/网络-HTTP/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">网络</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTTP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/07/29/网络-HTTP/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-网络-TCP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/07/22/网络-TCP/">网络-TCP</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/07/22/网络-TCP/" class="archive-article-date">
-  	<time datetime="2019-07-22T00:35:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h2><p>浏览器有一个很重要的概念————同源策略</p>
-<blockquote>
-<p><strong>同源策略</strong>限制了从同一个源加载的文档或脚本如何与来自另一个源的资源进行交互。这是一个用于隔离潜在恶意文件的重要安全机制。</p>
-</blockquote>
-<p>同源是指：<strong>域名</strong>、<strong>协议</strong>、<strong>端口</strong>相同。不同源的客户端脚本(<code>js</code>、<code>ActionScript</code>)在没明确授权的情况下，不能读写对方的资源。</p>
-<p><img src="https://s2.ax1x.com/2019/07/22/eCseMQ.png" alt="eCseMQ.png"></p>
-<ul>
-<li><p><code>http</code> 与 <code>https</code> 下的默认端口可省略</p>
-<ul>
-<li><code>http</code> =&gt; 80</li>
-<li><code>https</code> =&gt; 443</li>
-</ul>
-</li>
-</ul>
-<p><strong>域名是倒着解析的</strong></p>
-<ol>
-<li><code>.com</code>顶级域名</li>
-<li><code>baidu.com</code> (一)二级域名</li>
-<li><code>zhidao.baidu.com</code> (二)三级域名</li>
-<li><code>www</code> 二级域名前缀，表示万维网维护的</li>
-<li><code>www.baidu.com</code> 属于特殊的三级域名</li>
-</ol>
-<blockquote>
-<p><code>zhidao.baidu.com</code> 属于百度自己维护的网络地址</p>
-</blockquote>
-<ul>
-<li>com、org、net 属于顶级域名，是在全世界范围内解析的，cn、hk 是在一个地区解析的。<ul>
-<li>cn 中国</li>
-<li>.com (商业机构)</li>
-<li>.net (从事互联网服务的机构)</li>
-<li>.org (非盈利性组织)</li>
-<li>.com.cn (国内商业机构)</li>
-<li>.net.cn (国内互联网机构)</li>
-<li>.org.cn (国内非盈利性组织)</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>如果把 IP 地址比作一间房子，端口就是出入这间房子的门。真正的房子只有几个门，但是一个 IP 地址的端口可以有多个。</p>
-<p>浏览网页服务默认的<a href="https://baike.baidu.com/item/%E7%AB%AF%E5%8F%A3%E5%8F%B7" target="_blank" rel="noopener">端口号</a>都是 80,因此只需输入网址即可，不用输入”:80”</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/myBlog/2019/07/22/网络-TCP/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">网络</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">TCP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/07/22/网络-TCP/">展开全文 >></a>
+          <a class="article-more-a" href="/myBlog/2019/07/11/HTML5-requestAnimationFrame/">展开全文 >></a>
         </p>
       
 
@@ -1329,7 +1215,7 @@
 		toc_hide_index: true,
 		root: "/myBlog/",
 		innerArchive: true,
-		showTags: true
+		showTags: false
 	}
 </script>
 
@@ -1383,14 +1269,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
@@ -1403,11 +1281,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1419,19 +1309,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1439,11 +1317,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+                <a href="javascript:void(0)" class="js-tag color3">TS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1451,7 +1341,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1459,7 +1353,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
             
             <div class="clearfix"></div>

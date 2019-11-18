@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="PowerDong-分享技术&amp;生活">
 <meta property="og:description" content="CSS 盒模型,在不同浏览器的差异W3C 中的盒子模型的宽：包括 margin + border + padding + width; W = margin * 2 + border * 2 + padding * 2 + width;H = margin * 2 + border * 2 + padding * 2 + hight; IE 中的盒子模型的宽：包括 margin + border">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-16T01:31:45.951Z">
+<meta property="og:updated_time" content="2019-11-18T13:56:20.479Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS相关">
 <meta name="twitter:description" content="CSS 盒模型,在不同浏览器的差异W3C 中的盒子模型的宽：包括 margin + border + padding + width; W = margin * 2 + border * 2 + padding * 2 + width;H = margin * 2 + border * 2 + padding * 2 + hight; IE 中的盒子模型的宽：包括 margin + border">
@@ -234,6 +234,14 @@
 <li><strong>只有</strong>在需要覆盖全站或外部 CSS(例如引用 ExtJs 或者 YUI)的特定页面中使用<code>!important</code></li>
 <li><strong>永远不要</strong>在全站范围的 css 上使用<code>!important</code></li>
 <li><strong>永远不要</strong>在你的插件上使用<code>!important</code></li>
+</ul>
+<h3 id="CSS-优化、提高性能的方法有哪些？"><a href="#CSS-优化、提高性能的方法有哪些？" class="headerlink" title="CSS 优化、提高性能的方法有哪些？"></a>CSS 优化、提高性能的方法有哪些？</h3><ul>
+<li>关键选择器（key selector）。选择器的最后面的部分为关键选择器（即用来匹配目标元素的部分）</li>
+<li>如果规则拥有 ID 选择器作为其关键选择器，则不要为规则增加标签</li>
+<li>过滤掉无关的规则（这样样式系统就不会浪费时间去匹配它们了）</li>
+<li>提取项目的通用公有样式，增强可复用性，按模块编写组件</li>
+<li>增强项目的协同开发性、可维护性和可扩展性</li>
+<li>使用预处理工具或构建工具（gulp 对 css 进行语法检查、自动补前缀、打包压缩、自动优雅降级）</li>
 </ul>
 <h3 id="类和-ID-选择器的使用场景"><a href="#类和-ID-选择器的使用场景" class="headerlink" title="类和 ID 选择器的使用场景"></a>类和 ID 选择器的使用场景</h3><ul>
 <li>使用场景<ul>
@@ -525,6 +533,12 @@
 </ul>
 </li>
 </ul>
+<h4 id="position-的值-relative-和-absolute-定位原点是？"><a href="#position-的值-relative-和-absolute-定位原点是？" class="headerlink" title="position 的值 relative 和 absolute 定位原点是？"></a>position 的值 relative 和 absolute 定位原点是？</h4><ul>
+<li><code>absolute</code> 生成绝对定位的元素，相对于值不为 static 的第一个父元素进行定位。</li>
+<li><code>fixed</code> （老 IE 不支持） 生成绝对定位的元素，相对于浏览器窗口进行定位。</li>
+<li><code>relative</code> 生成相对定位的元素，相对于其正常位置进行定位。 static 默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right z-index 声明）。</li>
+<li><code>inherit</code> 规定从父元素继承 position 属性的值。</li>
+</ul>
 <h3 id="CSS-雪碧图"><a href="#CSS-雪碧图" class="headerlink" title="CSS 雪碧图"></a>CSS 雪碧图</h3><blockquote>
 <p>雪碧图也叫 CSS 精灵,是一 CSS 图像合成技术</p>
 </blockquote>
@@ -639,6 +653,12 @@
 <li>它会跟随内部元素的宽度显示</li>
 </ul>
 </li>
+</ul>
+<h3 id="BFC-作用"><a href="#BFC-作用" class="headerlink" title="BFC 作用"></a>BFC 作用</h3><ul>
+<li><strong>BFC 最大的一个作用就是：在页面上有一个独立隔离容器，容器内的元素和容器外的元素布局不会相互影响</strong></li>
+<li>解决上外边距重叠;重叠的两个 box 都开启 bfc;</li>
+<li>解决浮动引起高度塌陷;容器盒子开启 bfc</li>
+<li>解决文字环绕图片;左边图片 div,右边文字容器 p,将 p 容器开启 bfc</li>
 </ul>
 <h2 id="CSS-函数复用代码-实现特殊效果"><a href="#CSS-函数复用代码-实现特殊效果" class="headerlink" title="CSS 函数复用代码,实现特殊效果"></a>CSS 函数复用代码,实现特殊效果</h2><h3 id="主要目标"><a href="#主要目标" class="headerlink" title="主要目标"></a>主要目标</h3><ul>
 <li>面向组件<ul>
@@ -809,6 +829,12 @@
 <p><strong>3. 例子</strong></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 简单属性 */</span></span><br><span class="line"><span class="selector-class">.myClass</span> &#123;</span><br><span class="line">  <span class="attribute">-webkit-animation-name</span>: fadeIn;</span><br><span class="line">  <span class="attribute">-moz-animation-name</span>: fadeIn;</span><br><span class="line">  <span class="attribute">-o-animation-name</span>: fadeIn;</span><br><span class="line">  <span class="attribute">-ms-animation-name</span>: fadeIn;</span><br><span class="line">  <span class="attribute">animation-name</span>: fadeIn; <span class="comment">/* 不带前缀的放到最后 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 复杂属性 keyframes */</span></span><br><span class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> fadeIn &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  100% &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> fadeIn &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  100% &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">@-<span class="keyword">o</span>-<span class="keyword">keyframes</span> fadeIn &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  100% &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">@-<span class="keyword">ms</span>-<span class="keyword">keyframes</span> fadeIn &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  100% &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 不带前缀的放到最后 */</span></span><br><span class="line">@<span class="keyword">keyframes</span> fadeIn &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  100% &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="如何修改-chrome-记住密码后自动填充表单的黄色背景-？"><a href="#如何修改-chrome-记住密码后自动填充表单的黄色背景-？" class="headerlink" title="如何修改 chrome 记住密码后自动填充表单的黄色背景 ？"></a>如何修改 chrome 记住密码后自动填充表单的黄色背景 ？</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-webkit-autofill</span>,</span><br><span class="line"><span class="selector-tag">textarea</span><span class="selector-pseudo">:-webkit-autofill</span>,</span><br><span class="line"><span class="selector-tag">select</span><span class="selector-pseudo">:-webkit-autofill</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="built_in">rgb</span>(250, 255, 189); <span class="comment">/* #FAFFBD; */</span></span><br><span class="line">  <span class="attribute">background-image</span>: none;</span><br><span class="line">  <span class="attribute">color</span>: <span class="built_in">rgb</span>(0, 0, 0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="让页面里的字体变清晰，变细用-CSS-怎么做？"><a href="#让页面里的字体变清晰，变细用-CSS-怎么做？" class="headerlink" title="让页面里的字体变清晰，变细用 CSS 怎么做？"></a>让页面里的字体变清晰，变细用 CSS 怎么做？</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">-webkit-font-smoothing</span>: <span class="selector-tag">antialiased</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="让-overflow-scroll-平滑滚动？"><a href="#让-overflow-scroll-平滑滚动？" class="headerlink" title="让 overflow:scroll 平滑滚动？"></a>让 overflow:scroll 平滑滚动？</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">-webkit-overflow-scrolling</span>: <span class="selector-tag">touch</span>;</span><br></pre></td></tr></table></figure>
+
 <h3 id="不同-API-在不同浏览器下的兼容性情况"><a href="#不同-API-在不同浏览器下的兼容性情况" class="headerlink" title="不同 API 在不同浏览器下的兼容性情况"></a>不同 API 在不同浏览器下的兼容性情况</h3><p>请查阅<a href="https://caniuse.com/" target="_blank" rel="noopener">Can I use</a></p>
 <hr>
 <blockquote>
@@ -946,11 +972,11 @@
   
 <nav id="article-nav">
   
-    <a href="/myBlog/2019/07/17/响应式布局/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/myBlog/2019/07/16/HTML5-Geolocation/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          响应式布局
+          你在哪啊？我在这啊——HTML5-Geolocation
         
       </div>
     </a>
@@ -1047,7 +1073,7 @@
 		toc_hide_index: true,
 		root: "/myBlog/",
 		innerArchive: true,
-		showTags: true
+		showTags: false
 	}
 </script>
 
@@ -1101,14 +1127,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
@@ -1121,11 +1139,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1137,19 +1167,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1157,11 +1175,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+                <a href="javascript:void(0)" class="js-tag color3">TS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1169,7 +1199,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1177,7 +1211,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
             
             <div class="clearfix"></div>

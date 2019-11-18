@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/09/21/nvT4bQ.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/09/21/nvbIVe.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/09/21/nvqCPs.png">
-<meta property="og:updated_time" content="2019-09-21T01:06:50.255Z">
+<meta property="og:updated_time" content="2019-11-18T01:27:31.054Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Webpack-前端工程化">
 <meta name="twitter:description" content="历史状况Web 前端开发这几年发展非常迅速，非常多的开发框架和构建工具的涌现，敬爱的前端攻城狮，可能你昨天还在用的工具、插件，到了今天可能就过时了。到了今天，外面的世界已经变了。  当你在遇到一个 Bug 需要修复时，没有比工程化推广更迫切的事情了  需要解决的问题工具和语言虽然差异大，但是解决的都是相似的问题，大概有以下几点  扩展 JavaScript、HTML、Css 本身的语言能力 解决重">
@@ -230,6 +230,15 @@
 <h2 id="为什么要用-WebPack"><a href="#为什么要用-WebPack" class="headerlink" title="为什么要用 WebPack"></a>为什么要用 WebPack</h2><p><img src="https://s2.ax1x.com/2019/09/20/nOT1sJ.png" alt="nOT1sJ.png"></p>
 <p>前端需要模块化:JS 模块化不仅仅是为了提高代码复用性，多人协作开发项目，更是为了让资源文件更合理的进行缓存</p>
 <p>当在 WebPack 处理后，输出的静态文件只剩下 JS、png、Css、jpg</p>
+<h3 id="Webpack-是什么，有什么好处"><a href="#Webpack-是什么，有什么好处" class="headerlink" title="Webpack 是什么，有什么好处"></a>Webpack 是什么，有什么好处</h3><ul>
+<li>WebPack 可以看做是模块打包机：它做的事情是，分析你的项目结构，找到 JavaScript 模块以及其它的一些浏览器不能直接运行的拓展语言（Sass，TypeScript 等），并将其打包为合适的格式以供浏览器使用。</li>
+<li>为了简化开发的复杂度</li>
+<li>模块化，让我们可以把复杂的程序细化为小的文件;</li>
+<li>CSS modules</li>
+<li>sass，less 等 CSS 预处理器</li>
+<li>webpack-plugins</li>
+<li>插件（Plugins）是用来拓展 Webpack 功能的，它们会在整个构建过程中生效，执行相关的任务。</li>
+</ul>
 <h3 id="WebPack-功能特性"><a href="#WebPack-功能特性" class="headerlink" title="WebPack 功能特性"></a>WebPack 功能特性</h3><ul>
 <li>支持 CommonJS 和 AMD 模块，意思就是我们基本可以无痛迁移旧项目</li>
 <li>支持模块加载器和插件机制，可对模块灵活定制</li>
@@ -312,6 +321,7 @@
 <p>Use webpack with a development server that provides live reloading. This should be used for development only.</p>
 </blockquote>
 <p>安装：<code>npm install webpack-dev-server --save-dev</code></p>
+<h3 id="Webpack-是如何打包的"><a href="#Webpack-是如何打包的" class="headerlink" title="Webpack 是如何打包的"></a>Webpack 是如何打包的</h3><p>WebPack 根据 <code>webPack.config.js</code>中的入口文件，在入口文件里识别模块依赖，不管这里的模块依赖是用CommonJS写的，还是用 ES6 Module 规范写的，WebPack会自动进行分析，并通过转换、编译代码、打包成最终的文件。(<strong>最终的文件是基于Webpack自己实现的ES5代码，所以可以跑在浏览器</strong>)</p>
 <p><a href="https://imgchr.com/i/nvqCPs" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/09/21/nvqCPs.png" alt="nvqCPs.png"></a></p>
 <hr>
 <blockquote>
@@ -550,7 +560,7 @@
 		toc_hide_index: true,
 		root: "/myBlog/",
 		innerArchive: true,
-		showTags: true
+		showTags: false
 	}
 </script>
 
@@ -604,14 +614,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
@@ -624,11 +626,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -640,19 +650,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -660,15 +658,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+                <a href="javascript:void(0)" class="js-tag color3">TS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
+                <a href="javascript:void(0)" class="js-tag color3">开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -676,7 +686,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
               </li>
              
               <li class="article-tag-list-item">

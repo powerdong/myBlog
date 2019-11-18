@@ -9,19 +9,19 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>JavaScript手写代码 | PowerDong-分享技术&amp;生活</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 实现一个new操作符 new 操作符做了这些事: 它创建了一个全新的对象 它会被执行[[Prototype]](也就是__proto__)链接 它使this指向新创建的对象 通过 new 创建的每个对象将最终被[[Prototype]]链接到这个函数的 prototype 对象上 如果函数没有返回对象类型 Object(包含 Function、Array、Date、RegExp、Error)">
+  <meta name="description" content="1. 实现一个new操作符 过程  创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。 属性和方法被加入到 this 引用的对象中。 新创建的对象由 this 所引用，并且最后隐式的返回 this 。   new 操作符做了这些事:  它创建了一个全新的对象 它会被执行[[Prototype]](也就是__proto__)链接 它使this指向新创建的对象 通过 new 创">
 <meta name="keywords" content="JS,代码">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript手写代码">
 <meta property="og:url" content="http://yoursite.com/2019/06/26/JavaScript手写代码/index.html">
 <meta property="og:site_name" content="PowerDong-分享技术&amp;生活">
-<meta property="og:description" content="1. 实现一个new操作符 new 操作符做了这些事: 它创建了一个全新的对象 它会被执行[[Prototype]](也就是__proto__)链接 它使this指向新创建的对象 通过 new 创建的每个对象将最终被[[Prototype]]链接到这个函数的 prototype 对象上 如果函数没有返回对象类型 Object(包含 Function、Array、Date、RegExp、Error)">
+<meta property="og:description" content="1. 实现一个new操作符 过程  创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。 属性和方法被加入到 this 引用的对象中。 新创建的对象由 this 所引用，并且最后隐式的返回 this 。   new 操作符做了这些事:  它创建了一个全新的对象 它会被执行[[Prototype]](也就是__proto__)链接 它使this指向新创建的对象 通过 new 创">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/3/28/169c500344dfe50a?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
-<meta property="og:updated_time" content="2019-07-18T09:43:04.965Z">
+<meta property="og:updated_time" content="2019-11-18T13:47:17.885Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript手写代码">
-<meta name="twitter:description" content="1. 实现一个new操作符 new 操作符做了这些事: 它创建了一个全新的对象 它会被执行[[Prototype]](也就是__proto__)链接 它使this指向新创建的对象 通过 new 创建的每个对象将最终被[[Prototype]]链接到这个函数的 prototype 对象上 如果函数没有返回对象类型 Object(包含 Function、Array、Date、RegExp、Error)">
+<meta name="twitter:description" content="1. 实现一个new操作符 过程  创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。 属性和方法被加入到 this 引用的对象中。 新创建的对象由 this 所引用，并且最后隐式的返回 this 。   new 操作符做了这些事:  它创建了一个全新的对象 它会被执行[[Prototype]](也就是__proto__)链接 它使this指向新创建的对象 通过 new 创">
 <meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/3/28/169c500344dfe50a?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
   
   <link rel="alternative" href="/atom.xml" title="PowerDong-分享技术&amp;生活" type="application/atom+xml">
@@ -173,7 +173,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="1-实现一个new操作符"><a href="#1-实现一个new操作符" class="headerlink" title="1. 实现一个new操作符"></a>1. 实现一个<code>new</code>操作符</h2><ul>
-<li>new 操作符做了这些事:<ul>
+<li><p><strong>过程</strong></p>
+<ol>
+<li>创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。</li>
+<li>属性和方法被加入到 this 引用的对象中。</li>
+<li>新创建的对象由 this 所引用，并且最后隐式的返回 this 。</li>
+</ol>
+</li>
+<li><p>new 操作符做了这些事:</p>
+<ul>
 <li>它创建了一个全新的对象</li>
 <li>它会被执行<code>[[Prototype]]</code>(也就是<code>__proto__</code>)链接</li>
 <li>它使<code>this</code>指向新创建的对象</li>
@@ -311,6 +319,12 @@
 <h3 id="简约版实现"><a href="#简约版实现" class="headerlink" title="简约版实现"></a>简约版实现</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 简约版</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepCopy</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 判断是否是简单数据类型</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> obj === <span class="string">"object"</span>) &#123;</span><br><span class="line">    <span class="comment">// 复杂数据类型</span></span><br><span class="line">    <span class="keyword">var</span> result = obj.constructor === <span class="built_in">Array</span> ? [] : &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">in</span> obj) &#123;</span><br><span class="line">      result[i] = <span class="keyword">typeof</span> obj[i] == <span class="string">"object"</span> ? deepCopy(obj[i]) : obj[i];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 简单数据类型，直接赋值</span></span><br><span class="line">    <span class="keyword">var</span> result = obj;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="11-实现一个instanceOf"><a href="#11-实现一个instanceOf" class="headerlink" title="11. 实现一个instanceOf"></a>11. 实现一个<code>instanceOf</code></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myInstanceOf</span>(<span class="params">left, right</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> proto = left.__proto__;</span><br><span class="line">  <span class="keyword">let</span> prototype = right.prototype;</span><br><span class="line">  <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (proto === <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (proto === prototype) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    proto = proto.__proto__;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="12-数组去重"><a href="#12-数组去重" class="headerlink" title="12. 数组去重"></a>12. 数组去重</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// indexOf实现</span></span><br><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>, <span class="number">1</span>, <span class="string">'1'</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> res = []</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = array.length; i &lt; len; i++) &#123;</span><br><span class="line">    <span class="keyword">var</span> current = array[i]</span><br><span class="line">    <span class="keyword">if</span> (res.indexOf(current) === <span class="number">-1</span>) &#123;</span><br><span class="line">      res.push(current)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(unique(array))</span><br><span class="line"></span><br><span class="line"><span class="comment">// 排序后去重</span></span><br><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>, <span class="number">1</span>, <span class="string">'1'</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> res = []</span><br><span class="line">  <span class="keyword">var</span> sortedArray = array.concat().sort()</span><br><span class="line">  <span class="keyword">var</span> seen</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = sortedArray.length; i &lt; len; i++) &#123;</span><br><span class="line">    <span class="comment">// 如果是第一个元素或者相邻的元素不相同</span></span><br><span class="line">    <span class="keyword">if</span> (!i || seen !== sortedArray[i]) &#123;</span><br><span class="line">      res.push(sortedArray[i])</span><br><span class="line">    &#125;</span><br><span class="line">    seen = sortedArray[i]</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(unique(array))</span><br><span class="line"></span><br><span class="line"><span class="comment">// filter实现</span></span><br><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="string">'1'</span>]</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> res = array.filter(<span class="function"><span class="keyword">function</span>(<span class="params">item, index, array</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> array.indexOf(item) === index</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(unique(array))</span><br><span class="line"></span><br><span class="line"><span class="comment">// 排序去重</span></span><br><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="string">'1'</span>]</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> array</span><br><span class="line">    .concat()</span><br><span class="line">    .sort()</span><br><span class="line">    .filter(<span class="function"><span class="keyword">function</span>(<span class="params">item, index, array</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> !index || item !== array[index - <span class="number">1</span>]</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(unique(array))</span><br><span class="line"></span><br><span class="line"><span class="comment">// Object键值对</span></span><br><span class="line"><span class="keyword">var</span> array = [&#123; <span class="attr">value</span>: <span class="number">1</span> &#125;, &#123; <span class="attr">value</span>: <span class="number">1</span> &#125;, &#123; <span class="attr">value</span>: <span class="number">2</span> &#125;]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> obj = &#123;&#125;</span><br><span class="line">  <span class="keyword">return</span> array.filter(<span class="function"><span class="keyword">function</span>(<span class="params">item, index, array</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> item + <span class="built_in">JSON</span>.stringify(item))</span><br><span class="line">    <span class="keyword">return</span> obj.hasOwnProperty(<span class="keyword">typeof</span> item + <span class="built_in">JSON</span>.stringify(item))</span><br><span class="line">      ? <span class="literal">false</span></span><br><span class="line">      : (obj[<span class="keyword">typeof</span> item + <span class="built_in">JSON</span>.stringify(item)] = <span class="literal">true</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(unique(array)) <span class="comment">// [&#123;value: 1&#125;, &#123;value: 2&#125;]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6 Set实现</span></span><br><span class="line"><span class="keyword">var</span> unique = <span class="function">(<span class="params">a</span>) =&gt;</span> [...new <span class="built_in">Set</span>(a)]</span><br></pre></td></tr></table></figure>
+
+<h2 id="13-将浮点数点左边的数每三位添加一个逗号"><a href="#13-将浮点数点左边的数每三位添加一个逗号" class="headerlink" title="13. 将浮点数点左边的数每三位添加一个逗号"></a>13. 将浮点数点左边的数每三位添加一个逗号</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如 12000000.11 转化为 12,000,000.11?</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">commafy</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    num &amp;&amp;</span><br><span class="line">    num.toString().replace(<span class="regexp">/(\d)(?=(\d&#123;3&#125;)+\.)/g</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$<span class="number">1</span>, $<span class="number">2</span></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> $<span class="number">2</span> + <span class="string">','</span></span><br><span class="line">    &#125;)</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="如何判断一个对象是否属于某个类？"><a href="#如何判断一个对象是否属于某个类？" class="headerlink" title="如何判断一个对象是否属于某个类？"></a>如何判断一个对象是否属于某个类？</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.toString.call()</span><br></pre></td></tr></table></figure>
 
 <hr>
 <blockquote>
@@ -452,14 +466,14 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Vue,逐步了解
+          你有喘息的机会吗?——Vue,逐步了解
         
       </div>
     </a>
   
   
-    <a href="/myBlog/2019/06/25/Vue,初次见面/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Vue,初次见面</div>
+    <a href="/myBlog/2019/06/25/Css3-0-选择器/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">请不要拐弯抹角 —— CSS3 选择器</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -486,7 +500,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-实现一个new操作符"><span class="toc-number">1.</span> <span class="toc-text">1. 实现一个new操作符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-实现一个JSON-stringify"><span class="toc-number">2.</span> <span class="toc-text">2. 实现一个JSON.stringify</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-实现一个JSON-parse"><span class="toc-number">3.</span> <span class="toc-text">3. 实现一个JSON.parse</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-第一种：直接调用-eval"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 第一种：直接调用 eval</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-第二种：Function"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 第二种：Function</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-实现一个call或apply"><span class="toc-number">4.</span> <span class="toc-text">4. 实现一个call或apply</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-Function-call按套路实现"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 Function.call按套路实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-1-简单版"><span class="toc-number">4.1.1.</span> <span class="toc-text">4.1.1 简单版</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-2-完善版"><span class="toc-number">4.1.2.</span> <span class="toc-text">4.1.2 完善版</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-Function-apply的模拟实现"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 Function.apply的模拟实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-实现一个Function-bind"><span class="toc-number">5.</span> <span class="toc-text">5. 实现一个Function.bind()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-实现一个继承"><span class="toc-number">6.</span> <span class="toc-text">6. 实现一个继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-实现一个-JS-函数柯里化"><span class="toc-number">7.</span> <span class="toc-text">7. 实现一个 JS 函数柯里化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-通用版"><span class="toc-number">7.1.</span> <span class="toc-text">7.1 通用版</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-ES6写法"><span class="toc-number">7.2.</span> <span class="toc-text">7.2 ES6写法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-手写一个Promise"><span class="toc-number">8.</span> <span class="toc-text">8. 手写一个Promise</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-Promise流程图分析"><span class="toc-number">8.1.</span> <span class="toc-text">8.1 Promise流程图分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-手写"><span class="toc-number">8.2.</span> <span class="toc-text">8.2 手写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-大厂专供版"><span class="toc-number">8.3.</span> <span class="toc-text">8.3 大厂专供版</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-防抖-Debounce-和-节流-Throttle"><span class="toc-number">9.</span> <span class="toc-text">9 防抖 (Debounce) 和 节流 (Throttle)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#9-1-防抖-Debounce-实现"><span class="toc-number">9.1.</span> <span class="toc-text">9.1 防抖 (Debounce) 实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#原理及实现"><span class="toc-number">9.1.1.</span> <span class="toc-text">原理及实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2-节流-Throttle-实现"><span class="toc-number">9.2.</span> <span class="toc-text">9.2 节流 (Throttle) 实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#原理及实现-1"><span class="toc-number">9.2.1.</span> <span class="toc-text">原理及实现</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-手写一个深拷贝"><span class="toc-number">10.</span> <span class="toc-text">10. 手写一个深拷贝</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-乞丐版"><span class="toc-number">10.1.</span> <span class="toc-text">10.1 乞丐版</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-2-网传圣杯模式"><span class="toc-number">10.2.</span> <span class="toc-text">10.2 网传圣杯模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简约版实现"><span class="toc-number">10.3.</span> <span class="toc-text">简约版实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-实现一个instanceOf"><span class="toc-number">11.</span> <span class="toc-text">11. 实现一个instanceOf</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-实现一个new操作符"><span class="toc-number">1.</span> <span class="toc-text">1. 实现一个new操作符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-实现一个JSON-stringify"><span class="toc-number">2.</span> <span class="toc-text">2. 实现一个JSON.stringify</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-实现一个JSON-parse"><span class="toc-number">3.</span> <span class="toc-text">3. 实现一个JSON.parse</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-第一种：直接调用-eval"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 第一种：直接调用 eval</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-第二种：Function"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 第二种：Function</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-实现一个call或apply"><span class="toc-number">4.</span> <span class="toc-text">4. 实现一个call或apply</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-Function-call按套路实现"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 Function.call按套路实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-1-简单版"><span class="toc-number">4.1.1.</span> <span class="toc-text">4.1.1 简单版</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-2-完善版"><span class="toc-number">4.1.2.</span> <span class="toc-text">4.1.2 完善版</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-Function-apply的模拟实现"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 Function.apply的模拟实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-实现一个Function-bind"><span class="toc-number">5.</span> <span class="toc-text">5. 实现一个Function.bind()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-实现一个继承"><span class="toc-number">6.</span> <span class="toc-text">6. 实现一个继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-实现一个-JS-函数柯里化"><span class="toc-number">7.</span> <span class="toc-text">7. 实现一个 JS 函数柯里化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-通用版"><span class="toc-number">7.1.</span> <span class="toc-text">7.1 通用版</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-ES6写法"><span class="toc-number">7.2.</span> <span class="toc-text">7.2 ES6写法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-手写一个Promise"><span class="toc-number">8.</span> <span class="toc-text">8. 手写一个Promise</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-Promise流程图分析"><span class="toc-number">8.1.</span> <span class="toc-text">8.1 Promise流程图分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-手写"><span class="toc-number">8.2.</span> <span class="toc-text">8.2 手写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-大厂专供版"><span class="toc-number">8.3.</span> <span class="toc-text">8.3 大厂专供版</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-防抖-Debounce-和-节流-Throttle"><span class="toc-number">9.</span> <span class="toc-text">9 防抖 (Debounce) 和 节流 (Throttle)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#9-1-防抖-Debounce-实现"><span class="toc-number">9.1.</span> <span class="toc-text">9.1 防抖 (Debounce) 实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#原理及实现"><span class="toc-number">9.1.1.</span> <span class="toc-text">原理及实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2-节流-Throttle-实现"><span class="toc-number">9.2.</span> <span class="toc-text">9.2 节流 (Throttle) 实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#原理及实现-1"><span class="toc-number">9.2.1.</span> <span class="toc-text">原理及实现</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-手写一个深拷贝"><span class="toc-number">10.</span> <span class="toc-text">10. 手写一个深拷贝</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-乞丐版"><span class="toc-number">10.1.</span> <span class="toc-text">10.1 乞丐版</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-2-网传圣杯模式"><span class="toc-number">10.2.</span> <span class="toc-text">10.2 网传圣杯模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简约版实现"><span class="toc-number">10.3.</span> <span class="toc-text">简约版实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-实现一个instanceOf"><span class="toc-number">11.</span> <span class="toc-text">11. 实现一个instanceOf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-数组去重"><span class="toc-number">12.</span> <span class="toc-text">12. 数组去重</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-将浮点数点左边的数每三位添加一个逗号"><span class="toc-number">13.</span> <span class="toc-text">13. 将浮点数点左边的数每三位添加一个逗号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何判断一个对象是否属于某个类？"><span class="toc-number">14.</span> <span class="toc-text">如何判断一个对象是否属于某个类？</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -562,7 +576,7 @@
 		toc_hide_index: true,
 		root: "/myBlog/",
 		innerArchive: true,
-		showTags: true
+		showTags: false
 	}
 </script>
 
@@ -616,14 +630,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
@@ -636,11 +642,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -652,19 +670,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -672,11 +678,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+                <a href="javascript:void(0)" class="js-tag color3">TS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -684,7 +702,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -692,7 +714,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
             
             <div class="clearfix"></div>

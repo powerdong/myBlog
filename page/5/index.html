@@ -151,658 +151,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Js隐式类型转换" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/07/04/Js隐式类型转换/">深究Js隐式类型转换</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/07/04/Js隐式类型转换/" class="archive-article-date">
-  	<time datetime="2019-07-04T00:17:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>凡事都有个来源和起因，这个题不是我在哪篇文章看到的，也不是我瞎乱造出来的，是在看一个重学 Js 类型转换视频中老师使用<code>console.log({} + [])</code> 在控制台输出了<code>[object Object]</code>，不过看了人家的视频自己也需要动手敲一下嘛，于是我没有在编辑器里边编辑，偷了个懒直接在控制台里边编辑打印。巧了 竟然返回结果不一样！！<br><img src="https://s2.ax1x.com/2019/07/04/ZN3qi9.png" alt="ZN3qi9.png"></p>
-<p>对结果出乎意料，本着实事求是的精神，探寻事物的本质，不断努力追根溯源，总算明白了最后的结果，最后的收获总算把 js 的隐式类型转换刨根问底的搞清楚了，也更加深入的明白了为什么 Js 是弱类型语言了。</p>
-<h2 id="开胃小菜"><a href="#开胃小菜" class="headerlink" title="开胃小菜"></a>开胃小菜</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Number</span>(&#123;<span class="number">1</span>:<span class="number">2</span>&#125;)</span><br><span class="line">[] + &#123;&#125;</span><br><span class="line">[] + <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="number">2</span> + [<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="number">10</span> + <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="literal">null</span> + <span class="literal">undefined</span></span><br><span class="line">[] - <span class="number">5</span></span><br><span class="line"><span class="string">'6'</span> * []</span><br><span class="line"><span class="literal">null</span> % <span class="literal">true</span></span><br><span class="line"><span class="literal">true</span>/[<span class="number">7</span>]</span><br><span class="line"><span class="string">"A"</span> - <span class="string">"A"</span> + <span class="number">2</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/myBlog/2019/07/04/Js隐式类型转换/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">试题</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/07/04/Js隐式类型转换/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-作用域和闭包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/07/01/作用域和闭包/">作用域和闭包</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/07/01/作用域和闭包/" class="archive-article-date">
-  	<time datetime="2019-07-01T00:17:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="理解词法作用域和动态作用域"><a href="#理解词法作用域和动态作用域" class="headerlink" title="理解词法作用域和动态作用域"></a>理解词法作用域和动态作用域</h2><h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><p>作用域是指程序源代码中定义变量的区域。<br>作用域规定了如何查找变量,也就是确定当前执行代码对变量的访问权限。<br>JavaScript 采用词法作用域(lexical scoping),也就是静态作用域。</p>
-<h3 id="静态作用域与动态作用域"><a href="#静态作用域与动态作用域" class="headerlink" title="静态作用域与动态作用域"></a>静态作用域与动态作用域</h3><p>因为 JavaScript 采用的是词法作用域,函数的作用域在函数定义的时候就决定了,而词法作用域相对的是动态作用域,函数的作用域是在函数调用的时候才决定的。</p>
-<h2 id="理解-JavaScript-的作用域和作用域链"><a href="#理解-JavaScript-的作用域和作用域链" class="headerlink" title="理解 JavaScript 的作用域和作用域链"></a>理解 JavaScript 的作用域和作用域链</h2><h3 id="什么是作用域？"><a href="#什么是作用域？" class="headerlink" title="什么是作用域？"></a>什么是作用域？</h3><p>作用域是在运行时代码中的某些特定部分中变量,函数和对象的可访问性。换句话说,作用于决定了代码区块中变量和其他资源的可见性。<br>作用域就是一个独立的地盘,让变量不会外泄,暴露出去。<br>作用域最大的用处就是隔离变量,不同作用域下同名变量不会有冲突。<br>ES6 之前 JavaScript 没有块级作用域,只有全局作用域和函数作用域。ES6 的到来,为我们提供了’块级作用域’,可通过新增命令 let 和 const 来体现。</p>
-<ul>
-<li>全局作用域和函数作用域<ul>
-<li>最外层函数和最外层函数外面定义的变量拥有全局作用域</li>
-<li>所有未定义直接赋值的变量自动声明为拥有全局作用域</li>
-<li>所有 window 对象的属性拥有全局作用域</li>
-</ul>
-</li>
-</ul>
-        
-          <a class="article-more-a" href="/myBlog/2019/07/01/作用域和闭包/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/07/01/作用域和闭包/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-记一次小程序开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/06/29/记一次小程序开发/">记一次小程序开发</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/06/29/记一次小程序开发/" class="archive-article-date">
-  	<time datetime="2019-06-29T13:06:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在上周看了微信小程序的介绍后，就想着要开发一个服务于自己的小程序，也在另一方面可以有一次小程序的开发实践经验。</p>
-<h2 id="微信小程序"><a href="#微信小程序" class="headerlink" title="微信小程序"></a>微信小程序</h2><p>小程序是一种<strong>不需要下载安装即可使用</strong>的应用(其实是需要下载的,只不过是非常小的一个应用,加载时间可忽略)</p>
-<p>应用将无处不在，随时可用，但又无需安装卸载。</p>
-<ul>
-<li>小程序适用简单的，用完即走的应用</li>
-<li>小程序适合低频的应用</li>
-<li>小程序适合性能要求不高的应用</li>
-</ul>
-<p><strong>小程序是单向数据绑定</strong></p>
-<h2 id="萌生想法"><a href="#萌生想法" class="headerlink" title="萌生想法"></a>萌生想法</h2><blockquote>
-<p>如果你想看实例源代码可以移步<a href="https://github.com/powerdong/weatherProgram" target="_blank" rel="noopener">天气小程序 git 仓库</a></p>
-</blockquote>
-<p>之前在学习网络请求时有过请求一个天气接口，获取到了天气的相关信息</p>
-<p>由此，想利用现有的知识构建一个天气小程序。</p>
-<h2 id="开始实施"><a href="#开始实施" class="headerlink" title="开始实施"></a>开始实施</h2><ul>
-<li>到<a href="https://mp.weixin.qq.com/" target="_blank" rel="noopener">微信公众平台</a>注册一个账号</li>
-<li>在左侧的开发选项中的<strong>开发设置</strong>中找到<code>AppID</code></li>
-<li>下载<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html" target="_blank" rel="noopener">微信 web 开发者工具</a></li>
-<li>登陆工具后创建项目，将之前复制的<code>AppID</code>填写到对应的内容项中。</li>
-</ul>
-<p>在新创建的文件夹中以<code>app</code>开头的文件都是全局配置文件，首先在<code>app.json</code>中的<code>pages</code>属性中增加<code>&quot;pages/index/index&quot;</code>保存后会自动生成相应的文件，<code>index</code>文件夹作为我们的首页。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"pages"</span>: [</span><br><span class="line">    <span class="string">"pages/index/index"</span>, //首页</span><br><span class="line">    <span class="string">"pages/place/index"</span> //搜索页</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"window"</span>: &#123;</span><br><span class="line">    "backgroundTextStyle": "light", //下拉 loading 的样式</span><br><span class="line">    "navigationBarBackgroundColor": "#0078D7", //顶部导航的背景颜色</span><br><span class="line">    "navigationBarTitleText": "通天气", //通用导航标题</span><br><span class="line">    "navigationBarTextStyle": "white" // 导航标题颜色</span><br><span class="line">  &#125;,</span><br><span class="line">  "permission": &#123;</span><br><span class="line">    "scope.userLocation": &#123;</span><br><span class="line">      // 使用wx.getLocation时需要配置</span><br><span class="line">      "desc": "你的位置信息将用于定位城市天气信息的展示" //请求位置信息时要展示的</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  "sitemapLocation": "sitemap.json" //指明sitemap.json位置</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>首先查看了当前一些天气小程序(腾讯天气，彩云天气，墨迹天气等)，吸取该小程序的页面搭建样式，从华为手机的桌面天气应用中也有学习</p>
-<h3 id="收集素材"><a href="#收集素材" class="headerlink" title="收集素材"></a>收集素材</h3><blockquote>
-<p>本小程序计划天气样式使用字体图标</p>
-</blockquote>
-<p>从 <a href="https://www.iconfont.cn/" target="_blank" rel="noopener">iconfont</a> 网站上查询到了一些图标，然后下载到本地，配置到 <code>app.wxss</code> 用来页面引用</p>
-<p>在一个<a href="http://bapaboli.lofter.com/post/910b8_6499be" target="_blank" rel="noopener">设计网站</a>收集了一些天气背景图，裁剪后用于显示，美化页面</p>
-        
-          <a class="article-more-a" href="/myBlog/2019/06/29/记一次小程序开发/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/06/29/记一次小程序开发/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-执行上下文" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/06/27/执行上下文/">执行上下文</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/06/27/执行上下文/" class="archive-article-date">
-  	<time datetime="2019-06-27T01:49:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>首先明确几个概念:</strong></p>
-<ul>
-<li><code>EC</code>:函数执行环境(或执行上下文)</li>
-<li><code>ECS</code>:执行环境栈</li>
-<li><code>VO</code>:变量对象</li>
-<li><code>AO</code>:活动对象</li>
-<li><code>scope chain</code>: 作用域链</li>
-</ul>
-<h2 id="EC-执行上下文"><a href="#EC-执行上下文" class="headerlink" title="EC (执行上下文)"></a>EC (执行上下文)</h2><blockquote>
-<p>每当控制器转到 ECMAScript 可执行代码的时候，就会进入到一个执行上下文</p>
-</blockquote>
-<p>那什么是可执行代码呢?</p>
-<h3 id="可执行代码的类型"><a href="#可执行代码的类型" class="headerlink" title="可执行代码的类型"></a>可执行代码的类型</h3><ul>
-<li>全局代码(<code>Global code</code>)<ul>
-<li>这种类型的代码是在”程序”级处理的:例如加载外部的 js 文件或者本地<code>&lt;script&gt;&lt;/script&gt;</code>标签内的代码。<strong>全局代码不包括任何 function 体内的代码</strong>。这个是默认的代码运行环境，一旦代码被载入，引擎最先进入的就是这个环境。</li>
-</ul>
-</li>
-<li>函数代码(<code>Function code</code>)<ul>
-<li>任何一个函数体内的代码，但是需要注意的是，<strong>具体的函数体内的代码是不包括内部函数的代码。</strong></li>
-</ul>
-</li>
-<li>Eval 代码(<code>Eval code</code>)<ul>
-<li>eval 内部的代码</li>
-</ul>
-</li>
-</ul>
-        
-          <a class="article-more-a" href="/myBlog/2019/06/27/执行上下文/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">试题</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/06/27/执行上下文/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-事件循环" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/06/26/事件循环/">事件循环</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/06/26/事件循环/" class="archive-article-date">
-  	<time datetime="2019-06-26T11:57:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="事件循环和Promise"><a href="#事件循环和Promise" class="headerlink" title="事件循环和Promise"></a>事件循环和Promise</h2><blockquote>
-<p>JS 运行的环境称之为宿主环境。</p>
-</blockquote>
-<p>宿主环境有浏览器，服务器，桌面等…</p>
-<blockquote>
-<p>执行栈: (call stack),一个数据结构，用于存放各种函数的执行环境，没一个函数执行之前，它的相关信息会加入到执行栈。</p>
-</blockquote>
-<p>函数调用之前，创建执行环境，然后加入到执行栈；函数调用之后，销毁执行环境。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function A() &#123;</span><br><span class="line">  console.log(&quot;a&quot;); //  3  创建console函数环境</span><br><span class="line">  function B() &#123;</span><br><span class="line">    console.log(&quot;b&quot;); // 5  创建console函数环境</span><br><span class="line">  &#125;</span><br><span class="line">  B(); //  4  创建B函数环境</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(&quot;global&quot;); // 1 函数环境</span><br><span class="line"></span><br><span class="line">A(); // 2  创建A函数环境</span><br><span class="line"></span><br><span class="line">console.log(&quot;global over&quot;); //  6   创建console环境</span><br></pre></td></tr></table></figure>
-
-<p><strong>JS 引擎永远执行的是执行栈的最顶部。</strong></p>
-<blockquote>
-<p><strong>异步函数</strong>:某些函数不会立即执行，需要等到某个时机才会执行，这样的函数称之为异步函数。<br>比如事件处理函数。异步函数的执行时机，会被宿主环境控制。</p>
-</blockquote>
-<h3 id="浏览器宿主环境中包含-5-个线程"><a href="#浏览器宿主环境中包含-5-个线程" class="headerlink" title="浏览器宿主环境中包含 5 个线程"></a>浏览器宿主环境中包含 5 个线程</h3><ol>
-<li><strong>JS 引擎</strong>：负责执行执行栈的最顶部代码</li>
-<li><strong>GUI 线程</strong>：负责渲染页面 (<code>DOMContentLoaded</code>,<code>onLoad</code>)</li>
-<li><strong>事件监听线程</strong>：负责监听各种事件 (鼠标，键盘)</li>
-</ol>
-        
-          <a class="article-more-a" href="/myBlog/2019/06/26/事件循环/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">试题</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/06/26/事件循环/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Vue-逐步了解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/06/26/Vue-逐步了解/">Vue,逐步了解</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/06/26/Vue-逐步了解/" class="archive-article-date">
-  	<time datetime="2019-06-26T02:05:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="声明式渲染"><a href="#声明式渲染" class="headerlink" title="声明式渲染"></a>声明式渲染</h2><ul>
-<li>命令式编程:命令”机器”如何去做事情(how),这样不管你想要的是什么(what),它都会按照你的命令实现</li>
-<li>声明式编程:告诉”机器”你想要的是什么(what)，让机器想出如何去做(how)</li>
-</ul>
-<h2 id="三大模板"><a href="#三大模板" class="headerlink" title="三大模板"></a>三大模板</h2><h3 id="html-模板"><a href="#html-模板" class="headerlink" title="html 模板"></a>html 模板</h3>
-
-<p>v-html=”标签”</p>
-<h3 id="字符串模板"><a href="#字符串模板" class="headerlink" title="字符串模板"></a>字符串模板</h3><p>template:”<div>hello world</div>“
-使用模板字符串拼接</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"x/template"</span> <span class="attr">id</span>=<span class="string">"demo"</span>&gt;</span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line">      hello world&#123;&#123;id&#125;&#125;</span><br><span class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    template: <span class="string">"#demo"</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/myBlog/2019/06/26/Vue-逐步了解/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/06/26/Vue-逐步了解/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-JavaScript手写代码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -824,7 +172,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="1-实现一个new操作符"><a href="#1-实现一个new操作符" class="headerlink" title="1. 实现一个new操作符"></a>1. 实现一个<code>new</code>操作符</h2><ul>
-<li>new 操作符做了这些事:<ul>
+<li><p><strong>过程</strong></p>
+<ol>
+<li>创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。</li>
+<li>属性和方法被加入到 this 引用的对象中。</li>
+<li>新创建的对象由 this 所引用，并且最后隐式的返回 this 。</li>
+</ol>
+</li>
+<li><p>new 操作符做了这些事:</p>
+<ul>
 <li>它创建了一个全新的对象</li>
 <li>它会被执行<code>[[Prototype]]</code>(也就是<code>__proto__</code>)链接</li>
 <li>它使<code>this</code>指向新创建的对象</li>
@@ -903,48 +259,37 @@
 
 
   
-    <article id="post-Vue,初次见面" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Css3-0-选择器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/06/25/Vue,初次见面/">Vue,初次见面</a>
+      <a class="article-title" href="/myBlog/2019/06/25/Css3-0-选择器/">请不要拐弯抹角 —— CSS3 选择器</a>
     </h1>
   
 
         
-        <a href="/myBlog/2019/06/25/Vue,初次见面/" class="archive-article-date">
-  	<time datetime="2019-06-25T07:49:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-25</time>
+        <a href="/myBlog/2019/06/25/Css3-0-选择器/" class="archive-article-date">
+  	<time datetime="2019-06-25T00:23:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="初探-Vue-js"><a href="#初探-Vue-js" class="headerlink" title="初探 Vue.js"></a>初探 Vue.js</h1><h2 id="渐进式的开发框架"><a href="#渐进式的开发框架" class="headerlink" title="渐进式的开发框架"></a>渐进式的开发框架</h2><p>通过不同的项目引用不同的模块</p>
-<ul>
-<li>声明式渲染</li>
-<li>组件系统</li>
-<li>客户端路由</li>
-<li>大规模状态管理</li>
-<li>构建工具</li>
+        <h2 id="Css3-选择器"><a href="#Css3-选择器" class="headerlink" title="Css3 选择器"></a>Css3 选择器</h2><p>CSS 选择器用于选择你想要的元素的样式的模式。</p>
+<h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><ul>
+<li><code>[target=-blank]</code> 选择所有使用<code>target=&quot;-blank&quot;</code>的元素</li>
+<li><code>[title~=flower]</code> 选择标题属性包含单词”flower”的所有元素</li>
+<li><code>[lang|=en]</code> 选择 lang 属性以 en 为开头的所有元素 (<strong>以单词开头</strong>)</li>
+<li><code>a[src^=&quot;https&quot;]</code> 选择每一个 src 属性的值以”https”开头的元素(<strong>以字母开头</strong>)</li>
+<li><code>a[src$=&quot;.pdf&quot;]</code> 选择每一个 src 属性的值以”.pdf”结尾的元素</li>
+<li><code>a[src*=&quot;run&quot;]</code> 选择每一个 src 属性的值包含子字符串”run”的元素</li>
 </ul>
-<h2 id="Vue-的特点"><a href="#Vue-的特点" class="headerlink" title="Vue 的特点"></a>Vue 的特点</h2><h3 id="响应的数据绑定"><a href="#响应的数据绑定" class="headerlink" title="响应的数据绑定"></a>响应的数据绑定</h3><ul>
-<li>当数据发生改变，自动更新视图</li>
-<li>利用<code>Object.definePrototype</code>中的<code>getter/setter</code>代理数据</li>
-</ul>
-<h3 id="视图组件"><a href="#视图组件" class="headerlink" title="视图组件"></a>视图组件</h3><ul>
-<li>UI 页面映射组件树</li>
-<li>组件可重用，可维护</li>
-</ul>
-<h3 id="虚拟-DOM"><a href="#虚拟-DOM" class="headerlink" title="虚拟 DOM"></a>虚拟 DOM</h3><ol>
-<li>提供一种方便的的工具，使得开发效率得到保证</li>
-<li>保证最小化 DOM 操作，使得执行效率得到保证</li>
-</ol>
         
-          <a class="article-more-a" href="/myBlog/2019/06/25/Vue,初次见面/#more">more >></a>
+          <a class="article-more-a" href="/myBlog/2019/06/25/Css3-0-选择器/#more">more >></a>
         
       
 
@@ -958,11 +303,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Css</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
@@ -983,7 +328,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/06/25/Vue,初次见面/">展开全文 >></a>
+          <a class="article-more-a" href="/myBlog/2019/06/25/Css3-0-选择器/">展开全文 >></a>
         </p>
       
 
@@ -1146,29 +491,485 @@
 
 
   
-    <article id="post-开始我的博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-CSS3-0-属性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/06/23/开始我的博客/">开始我的博客</a>
+      <a class="article-title" href="/myBlog/2019/06/23/CSS3-0-属性/">想炫吗？—— CSS3 属性</a>
     </h1>
   
 
         
-        <a href="/myBlog/2019/06/23/开始我的博客/" class="archive-article-date">
-  	<time datetime="2019-06-23T01:52:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-23</time>
+        <a href="/myBlog/2019/06/23/CSS3-0-属性/" class="archive-article-date">
+  	<time datetime="2019-06-23T00:42:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天完成了配置相应的主题和功能，开始了写博客之旅。</p>
-<p>加油！！！</p>
+        <h2 id="什么是-Css3-0"><a href="#什么是-Css3-0" class="headerlink" title="什么是 Css3.0"></a>什么是 Css3.0</h2><p>Css3 是 Css2 的升级版本，3 只是版本号，它在 Css2.1 的基础上增加了很多强大的新功能。</p>
+<h2 id="Css3-前缀"><a href="#Css3-前缀" class="headerlink" title="Css3 前缀"></a>Css3 前缀</h2><p>在编写 Css3 样式时，不同的浏览器可能需要不同的前缀。他表示该 Css 属性或规则尚未成为 W3C 标准的一部分，是浏览器的私有属性。</p>
+<table>
+<thead>
+<tr>
+<th align="center">前缀</th>
+<th align="center">浏览器</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-webkit-</td>
+<td align="center">Chrome 和 Safari</td>
+</tr>
+<tr>
+<td align="center">-moz-</td>
+<td align="center">Firefox</td>
+</tr>
+<tr>
+<td align="center">-ms-</td>
+<td align="center">IE</td>
+</tr>
+<tr>
+<td align="center">-o-</td>
+<td align="center">Opera</td>
+</tr>
+</tbody></table>
+<h2 id="Css3-的功能"><a href="#Css3-的功能" class="headerlink" title="Css3 的功能"></a>Css3 的功能</h2><p>提供了更加强大且精准的选择器，提供了多种背景填充方案，可以实现渐变颜色，可以改变元素的形状、角度等，可以加阴影效果，报纸布局，弹性盒子，ie6 混杂模式的盒模型，新的计量单位，动画效果等等…</p>
+        
+          <a class="article-more-a" href="/myBlog/2019/06/23/CSS3-0-属性/#more">more >></a>
+        
+      
 
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Css</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/06/23/CSS3-0-属性/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-网络-CDN" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/06/20/网络-CDN/">快点！再快点！——CDN</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/06/20/网络-CDN/" class="archive-article-date">
+  	<time datetime="2019-06-20T01:37:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://s2.ax1x.com/2019/11/10/MnT3Ks.png" alt="MnT3Ks.png"></p>
+<h3 id="如何理解-CDN-的"><a href="#如何理解-CDN-的" class="headerlink" title="如何理解 CDN 的"></a>如何理解 CDN 的</h3><p><strong>CDN:</strong> 中文名叫做「内容分发网络」，是将源站内容分发至最接近用户的节点，使用户可就近取得所需内容，提高用户访问的响应速度和成功率。解决因分布、带宽、服务器性能带来的访问延迟问题，适用于站点加速、点播、直播等场景。</p>
+<h3 id="访问原理"><a href="#访问原理" class="headerlink" title="访问原理"></a>访问原理</h3><ul>
+<li>首先我们在地址栏键入一个网址，浏览器发现本地没有关于这个网址的 DNS 缓存，所以向网站的 DNS 服务器发起请求。</li>
+<li>网站的 DNS 服务器设置了 CNAME，指向了某个 CDN 服务器，也就是我们常见的阿里云、腾讯云、Cloudflare 之类的，去请求 CDN 中的智能 DNS 均衡负载系统。</li>
+<li>均衡负载系统解析域名，把对用户响应最快的节点返回给用户，然后用户向该节点发出请求。<ul>
+<li>根据用户IP地址，判断哪一个边缘节点距用户最近；</li>
+<li>根据用户所请求的URL中携带的内容名称，判断哪一个边缘节点上有用户所需内容</li>
+</ul>
+</li>
+<li>如果是第一次访问该内容，CDN 服务器会向源站请求数据并缓存，否则的话，直接在缓存节点中找到该数据，将请求结果发给用户。</li>
+<li>对于最简单的 CDN 系统而言，只要一台 DNS 调度服务器和一个节点服务器即可，但在复杂的应用中，会存在多级缓存，多台 Cache 来协同工作。</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/11/18/Ms7AHO.png" alt="Ms7AHO.png"></p>
+<blockquote>
+<p>CDN 这个东西本质就是一个缓存，只是这个缓存离你特别特别的近，作为用户还是开发都能从中享受到一点福利<br>CDN全局负载均衡设备与CDN区域负载均衡设备根据用户IP地址，将域名解析成相应节点中缓存服务器的IP地址，实现用户就近访问，从而提高服务端响应内容的速度</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/myBlog/2019/06/20/网络-CDN/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">cdn</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/06/20/网络-CDN/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Cookie" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/06/18/Cookie/">拿个小本本记下——Cookie</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/06/18/Cookie/" class="archive-article-date">
+  	<time datetime="2019-06-18T13:29:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><h3 id="什么是-Cookie"><a href="#什么是-Cookie" class="headerlink" title="什么是 Cookie"></a>什么是 Cookie</h3><p>Cookie 是由服务端生成，发送给 User-Agent(一般是浏览器)，(服务器告诉浏览器设置一下 Cookie)，浏览器会将 Cookie 以 key/value 保存到某个目录下的文本文件内，下次请求同一网站时就发送该 Cookie 给服务器(前提是浏览器设置为启用 Cookie)。</p>
+<blockquote>
+<p>Cookie 就是一个小型文件(浏览器对 Cookie 的内存大小是有限制的——用来记录一些信息)</p>
+</blockquote>
+<h3 id="为什么会有-Cookie"><a href="#为什么会有-Cookie" class="headerlink" title="为什么会有 Cookie"></a>为什么会有 Cookie</h3><p>Web 应用程序是使用 HTTP 协议传输数据的。<br><strong>HTTP 协议是无状态的协议。</strong><br>一旦数据交换完毕，客户端与服务端的连接就会关闭，再次交换数据需要建立新的连接。这就意味着服务器无法从连接上跟踪会话。</p>
+<blockquote>
+<p>用户在登陆页面后，一段时间内重新打开页面不用输入自动登录(<strong>Cookie 具有保质期</strong>)</p>
+</blockquote>
+<h3 id="Cookie-的原理"><a href="#Cookie-的原理" class="headerlink" title="Cookie 的原理"></a>Cookie 的原理</h3><p>第一次访问网站的时候，浏览器发出请求，服务器响应请求后，会将 Cookie 放到响应请求中，在浏览器第二次发请求时，会把 Cookie 带过去，服务端会辨别用户身份，当然<strong>服务器也可以修改 Cookie 内容。</strong></p>
+        
+          <a class="article-more-a" href="/myBlog/2019/06/18/Cookie/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">cookie</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/06/18/Cookie/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-网络-HTTP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/06/17/网络-HTTP/">喜怒哀乐多状态——HTTP状态码</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/06/17/网络-HTTP/" class="archive-article-date">
+  	<time datetime="2019-06-17T01:23:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><blockquote>
+<p><a href="https://baike.baidu.com/item/HTTP/243074" target="_blank" rel="noopener">超文本传输协议(HTTP)</a>(HyperText Transfer Protocol)是用于传输诸如 HTML 的超媒体文档的应用层协议，是互联网上应用最为广泛的一种网络协议。</p>
+</blockquote>
+<ul>
+<li><strong>超文本传输协议（HTTP）的设计目的是保证客户机与服务器之间的通信。</strong> HTTP 的工作方式是客户机与服务器之间的请求-应答协议。web 浏览器可能是客户端，而计算机上的网络应用程序也可能作为服务器端</li>
+</ul>
+<h3 id="http-方法"><a href="#http-方法" class="headerlink" title="http 方法"></a>http 方法</h3><ul>
+<li><strong>HEAD</strong>: 与 GET 相同，但只返回 HTTP 报头，不返回文档主体</li>
+<li><strong>PUT</strong>:上传指定的 URI 表示</li>
+<li><strong>DELETE</strong>: 删除指定资源</li>
+<li><strong>OPTIONS</strong>: 返回服务器支持的 HTTP 方法</li>
+<li><strong>CONNECT</strong>: 把请求连接转换到透明的 TCP/IP 通道</li>
+<li><strong>POST</strong>: 向指定的资源提交要被处理的数</li>
+</ul>
+<h2 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h2><blockquote>
+<p><a href="https://baike.baidu.com/item/https/285356?fr=aladdin" target="_blank" rel="noopener">HTTPS</a>(Hypertext Transfer Protocol Secure)(安全的 HTTP)是 HTTP 协议加密版本。它通常使用 SSL 或者 TLS 来加密客户端和服务器之间的所有通信。是以安全为目标的 HTTP 通道。</p>
+</blockquote>
+<h2 id="HTTP-请求报文，响应报文"><a href="#HTTP-请求报文，响应报文" class="headerlink" title="HTTP(请求报文，响应报文)"></a>HTTP(请求报文，响应报文)</h2><p>HTTP 通过报文进行沟通</p>
+<h3 id="请求报文"><a href="#请求报文" class="headerlink" title="请求报文"></a>请求报文</h3><blockquote>
+<p>客户端向服务器发起请求时会生成一段请求报文，请求报文是由<strong>请求方法</strong>，<strong>URL</strong>，<strong>协议版本</strong>，可选的请求首部字段和内容实体构成。</p>
+</blockquote>
+<p>一旦连接建立，用户代理可以发送请求(用户代理通常是 Web 浏览器，但也可以是其他的(例如爬虫))。客户端请求由一系列文本指令组成，并使用 CRLF 分隔，它们被划分为三个块:</p>
+<ul>
+<li>第一行包括请求方法及请求参数:<ul>
+<li>文档路径，不包括协议和域名的绝对路径 URL</li>
+<li>使用的 HTTP 协议版本</li>
+</ul>
+</li>
+<li>接下来的行每一行都表示一个 HTTP 首部，为服务器提供关于所需数据的信息(例如语言，或 MIME 类型)，或是一些改变请求行为的数据(例如当数据已经被缓存，就不再应答)。这些 HTTP 首部组成一个空行结束的一个块。</li>
+<li>最后一行是可选数据块，包含更多数据，主要被 POST 方法所使用</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 发送表单的结果 --&gt;</span><br><span class="line">POST / contact_form.php HTTP/1.1</span><br><span class="line">HOST: developer.mozilla.org</span><br><span class="line">Content-length:64</span><br><span class="line">Content-Type: application/x-www-form-urlencoded</span><br><span class="line"></span><br><span class="line">name=lambda&amp;age=18</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2019/8/17/16c9da3039654154?w=875&h=513&f=png&s=419945" alt="e1O3rD.png"></p>
+        
+          <a class="article-more-a" href="/myBlog/2019/06/17/网络-HTTP/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">网络</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTTP</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/06/17/网络-HTTP/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-TCP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/06/14/TCP/">你会爱上我的(ಥ_ಥ) ——TCP详解</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/06/14/TCP/" class="archive-article-date">
+  	<time datetime="2019-06-14T13:26:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="当你在浏览器里输入一个-url-发生了什么"><a href="#当你在浏览器里输入一个-url-发生了什么" class="headerlink" title="当你在浏览器里输入一个 url 发生了什么"></a>当你在浏览器里输入一个 url 发生了什么</h2><p><strong>简单归纳</strong></p>
+<ol>
+<li>浏览器通过 DNS 域名解析到服务 IP(<small>ping <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a></small>)</li>
+<li>客户端(浏览器)通过 TCP 协议建立到服务器的 TCP 连接(<small>三次握手</small>)</li>
+<li>客户端(浏览器)向 web 服务器端(HTTP 服务器)发送 HTTP 协议包，请求服务器里的资源文档</li>
+<li>服务器向客户端发送 HTTP 协议应答包</li>
+<li>客户端和服务器断开(<small>四次挥手</small>)，客户端开始解释处理 HTML 文档</li>
+</ol>
+<p><img src="https://s2.ax1x.com/2019/07/24/eAfVk8.png" alt="eAfVk8.png"></p>
+        
+          <a class="article-more-a" href="/myBlog/2019/06/14/TCP/#more">more >></a>
+        
       
 
       
@@ -1180,7 +981,250 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/06/23/开始我的博客/">展开全文 >></a>
+          <a class="article-more-a" href="/myBlog/2019/06/14/TCP/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-同源策略" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/06/13/同源策略/">隔壁老王想篡位？门都没有——同源策略</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/06/13/同源策略/" class="archive-article-date">
+  	<time datetime="2019-06-13T00:35:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h2><p>浏览器有一个很重要的概念————同源策略</p>
+<blockquote>
+<p><strong>同源策略</strong>限制了从同一个源加载的文档或脚本如何与来自另一个源的资源进行交互。这是一个用于隔离潜在恶意文件的重要安全机制。</p>
+</blockquote>
+<p>同源是指：<strong>域名</strong>、<strong>协议</strong>、<strong>端口</strong>相同。不同源的客户端脚本(<code>js</code>、<code>ActionScript</code>)在没明确授权的情况下，不能读写对方的资源。</p>
+<p><img src="https://s2.ax1x.com/2019/07/22/eCseMQ.png" alt="eCseMQ.png"></p>
+<ul>
+<li><p><code>http</code> 与 <code>https</code> 下的默认端口可省略</p>
+<ul>
+<li><code>http</code> =&gt; 80</li>
+<li><code>https</code> =&gt; 443</li>
+</ul>
+</li>
+</ul>
+<p><strong>域名是倒着解析的</strong></p>
+<ol>
+<li><code>.com</code>顶级域名</li>
+<li><code>baidu.com</code> (一)二级域名</li>
+<li><code>zhidao.baidu.com</code> (二)三级域名</li>
+<li><code>www</code> 二级域名前缀，表示万维网维护的</li>
+<li><code>www.baidu.com</code> 属于特殊的三级域名</li>
+</ol>
+<blockquote>
+<p><code>zhidao.baidu.com</code> 属于百度自己维护的网络地址</p>
+</blockquote>
+<ul>
+<li>com、org、net 属于顶级域名，是在全世界范围内解析的，cn、hk 是在一个地区解析的。<ul>
+<li>cn 中国</li>
+<li>.com (商业机构)</li>
+<li>.net (从事互联网服务的机构)</li>
+<li>.org (非盈利性组织)</li>
+<li>.com.cn (国内商业机构)</li>
+<li>.net.cn (国内互联网机构)</li>
+<li>.org.cn (国内非盈利性组织)</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>如果把 IP 地址比作一间房子，端口就是出入这间房子的门。真正的房子只有几个门，但是一个 IP 地址的端口可以有多个。</p>
+<p>浏览网页服务默认的<a href="https://baike.baidu.com/item/%E7%AB%AF%E5%8F%A3%E5%8F%B7" target="_blank" rel="noopener">端口号</a>都是 80,因此只需输入网址即可，不用输入”:80”</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/myBlog/2019/06/13/同源策略/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">TCP</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">网络</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/06/13/同源策略/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-闭包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/05/15/闭包/">悄悄的带走了你的东西——闭包详解</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/05/15/闭包/" class="archive-article-date">
+  	<time datetime="2019-05-15T13:22:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="闭包的实现原理和作用"><a href="#闭包的实现原理和作用" class="headerlink" title="闭包的实现原理和作用"></a>闭包的实现原理和作用</h2><p>闭包是指有权访问另一个函数作用域中变量的函数，创建闭包的最常见的方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量,利用闭包可以突破作用链域，将函数内部的变量和方法传递到外部。</p>
+<h3 id="闭包："><a href="#闭包：" class="headerlink" title="闭包："></a>闭包：</h3><blockquote>
+<p>当内部函数被保存到外部时会产生闭包。闭包会导致原有作用域链不释放,造成内存泄漏。</p>
+</blockquote>
+<h3 id="闭包的作用："><a href="#闭包的作用：" class="headerlink" title="闭包的作用："></a>闭包的作用：</h3><ul>
+<li>实现公有变量 =&gt; 累加器</li>
+<li>可以做缓存,存储结构</li>
+<li>可以实现封装,属性私有化</li>
+<li>模块化开发,防止污染全局变量</li>
+</ul>
+<h3 id="如何快速判断闭包："><a href="#如何快速判断闭包：" class="headerlink" title="如何快速判断闭包："></a>如何快速判断闭包：</h3><ul>
+<li>三个特点：<ul>
+<li>闭包一定具有嵌套函数</li>
+<li>内层函数一定操作了外层函数的局部变量</li>
+<li>外层函数,将内层函数返回到外部,变量接住(全局变量)</li>
+</ul>
+</li>
+</ul>
+<h3 id="闭包的执行结果"><a href="#闭包的执行结果" class="headerlink" title="闭包的执行结果"></a>闭包的执行结果</h3><ul>
+<li>外层函数被调用几次,就有几个受保护的局部变量副本</li>
+<li>来自一个闭包的函数被调用几次,受保护的局部变量就变化几次</li>
+</ul>
+        
+          <a class="article-more-a" href="/myBlog/2019/05/15/闭包/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/05/15/闭包/">展开全文 >></a>
         </p>
       
 
@@ -1249,7 +1293,7 @@
 		toc_hide_index: true,
 		root: "/myBlog/",
 		innerArchive: true,
-		showTags: true
+		showTags: false
 	}
 </script>
 
@@ -1303,14 +1347,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
@@ -1323,11 +1359,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1339,19 +1387,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1359,11 +1395,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+                <a href="javascript:void(0)" class="js-tag color3">TS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1371,7 +1419,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1379,7 +1431,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
             
             <div class="clearfix"></div>
