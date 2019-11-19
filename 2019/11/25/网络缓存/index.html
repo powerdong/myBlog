@@ -22,7 +22,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/11/13/MYAWJH.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/11/13/MYAfWd.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/11/13/MYZiRJ.png">
-<meta property="og:updated_time" content="2019-11-18T01:30:51.826Z">
+<meta property="og:updated_time" content="2019-11-18T14:05:15.313Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网络缓存">
 <meta name="twitter:description" content="请求头和响应头都知道哪些？如何设置缓存？浏览器缓存？请求报文1.请求报文：一般分为三部分：请求行、请求头和请求体，但是要注意请求头和请求体之间的空行也是 HTTP 请求规范内容。请求行分为三部分，方法、资源路径和协议版本  常见请求头： 123456789101112131415161718192021222324252627282930Accept: text/html,image/*浏览器可以">
@@ -181,6 +181,9 @@
 <p>常见请求头：</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">Accept:</span> text/html,image/*</span><br><span class="line">浏览器可以接收的类型</span><br><span class="line">Accept-<span class="symbol">Charset:</span> ISO-<span class="number">8859</span>-<span class="number">1</span></span><br><span class="line">浏览器可以接收的编码类型</span><br><span class="line">Accept-<span class="symbol">Encoding:</span> gzip,compress</span><br><span class="line">浏览器可以接收压缩编码类型</span><br><span class="line">Accept-<span class="symbol">Language:</span> en-us,zh-cn</span><br><span class="line">浏览器可以接收的语言和国家类型</span><br><span class="line"><span class="symbol">Host:</span> www.lks.<span class="symbol">cn:</span><span class="number">80</span></span><br><span class="line">浏览器请求的主机和端口</span><br><span class="line"><span class="symbol">Referer:</span> <span class="symbol">http:</span>/<span class="regexp">/www.lks.cn/index</span>.html</span><br><span class="line">请求来自于哪个页面</span><br><span class="line">User-<span class="symbol">Agent:</span> Mozilla/<span class="number">4.0</span> compatible; MSIE <span class="number">5.5</span>; Windows NT <span class="number">5.0</span></span><br><span class="line">浏览器相关信息</span><br><span class="line">If-Modified-<span class="symbol">Since:</span> Tue, <span class="number">11</span> Jul <span class="number">2000</span> <span class="number">18</span><span class="symbol">:</span><span class="number">23</span><span class="symbol">:</span><span class="number">51</span> GMT</span><br><span class="line">某个页面缓存时间</span><br><span class="line">Cookie：</span><br><span class="line">浏览器暂存服务器发送的信息</span><br><span class="line"><span class="symbol">Connection:</span> close1.<span class="number">0</span>/Keep-Alive1.<span class="number">1</span></span><br><span class="line">HTTP请求的版本的特点</span><br><span class="line"><span class="symbol">Date:</span> Tue, <span class="number">11</span> Jul <span class="number">2000</span> <span class="number">18</span><span class="symbol">:</span><span class="number">23</span><span class="symbol">:</span><span class="number">51</span>GMT</span><br><span class="line">请求网站的时间</span><br><span class="line"><span class="symbol">Allow:</span>GET</span><br><span class="line">请求的方法 GET 常见的还有POST</span><br><span class="line">Keep-Alive：<span class="number">5</span></span><br><span class="line">连接的时间；<span class="number">5</span></span><br><span class="line">Connection：keep-alive</span><br><span class="line">是否是长连接</span><br><span class="line">Cache-Control：max-age=<span class="number">300</span></span><br><span class="line">缓存的最长时间 <span class="number">300</span></span><br></pre></td></tr></table></figure>
 
+<a id="more"></a>
+
+
 <h3 id="响应报文"><a href="#响应报文" class="headerlink" title="响应报文"></a>响应报文</h3><p>2.响应报文:也分为三部分：响应行、响应头和响应体，响应头和响应体直接的空行也是 HTTP 的规范。响应行也分为三部分，协议版本，状态码和状态码描述。</p>
 <p><img src="https://s2.ax1x.com/2019/11/13/MYAEsP.png" alt="MYAEsP.png"></p>
 <h4 id="常见的响应头"><a href="#常见的响应头" class="headerlink" title="常见的响应头"></a>常见的响应头</h4><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">Location: http:<span class="comment">//www.lks.cn/index.html</span></span><br><span class="line">控制浏览器显示哪个页面</span><br><span class="line">Server:apache nginx</span><br><span class="line">服务器的类型</span><br><span class="line">Content-Encoding: gzip</span><br><span class="line">服务器发送的压缩编码方式</span><br><span class="line">Content-Length: <span class="number">80</span></span><br><span class="line">服务器发送显示的字节码长度</span><br><span class="line">Content-Language: zh-cn</span><br><span class="line">服务器发送内容的语言和国家名</span><br><span class="line">Content-<span class="built_in">Type</span>: image/jpeg; charset=UTF<span class="number">-8</span></span><br><span class="line">服务器发送内容的类型和编码类型</span><br><span class="line">Last-Modified: Tue, <span class="number">11</span> Jul <span class="number">2000</span> <span class="number">18</span>:<span class="number">23</span>:<span class="number">51</span>GMT</span><br><span class="line">服务器最后一次修改的时间</span><br><span class="line">Refresh: <span class="number">1</span>;url=http:<span class="comment">//www.lks.cn</span></span><br><span class="line">控制浏览器<span class="number">1</span>秒钟后转发URL所指向的页面</span><br><span class="line">Content-Disposition: attachment; filename=lks.jpg</span><br><span class="line">服务器控制浏览器发下载方式打开文件</span><br><span class="line">Transfer-Encoding: chunked</span><br><span class="line">服务器分块传递数据到客户端</span><br><span class="line"><span class="built_in">Set</span>-Cookie:SS=Q0=<span class="number">5</span>Lb_nQ; path=/search</span><br><span class="line">服务器发送Cookie相关的信息</span><br><span class="line">Expires: <span class="number">-1</span></span><br><span class="line">资源的过期时间，提供给浏览器缓存数据,<span class="number">-1</span>永远过期</span><br><span class="line">Cache-Control: no-cache</span><br><span class="line">告诉浏览器，一定要回服务器校验，不管有没有缓存数据。</span><br><span class="line">Pragma: no-cache</span><br><span class="line">服务器控制浏览器不要缓存网页</span><br><span class="line">Connection: close/Keep-AliveHTTP</span><br><span class="line">请求的版本的特点</span><br><span class="line">Date: Tue, <span class="number">11</span> Jul <span class="number">2000</span> <span class="number">18</span>:<span class="number">23</span>:<span class="number">51</span> GMT</span><br><span class="line">响应网站的时间</span><br><span class="line">ETag：“ihfdgkdgnp98hdfg”</span><br><span class="line">资源实体的标识(唯一标识，类似md5值，文件有修改md5就不一样)</span><br></pre></td></tr></table></figure>
@@ -253,8 +256,6 @@
 <li><p>ctrl+F5：所有的请求都是重新发送，重新从 server 读取内容，一点 cache 都没有读为了防止在 server 的 cache 里读取，<br>在 ctrl+f5 刷新时，request 的 header 里还加了特殊字段，<br>会加 pragma：no-cache cache control：no-cache。<br>这两个就是告诉服务器到浏览器中间的所有节点，<br>没有 cache，看到这个中间节点也不查自己的 cache，保证请求都是从 server 获得的。</p>
 </li>
 </ul>
-<a id="more"></a>
-
 <hr>
 <blockquote>
 <p>‘摘抄’不是单纯的“粘贴-&gt;复制”，而是眼到，手到，心到的一字一句敲打下来。</p>
@@ -550,6 +551,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
@@ -562,35 +579,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">代码</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -599,10 +596,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">工程化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -618,6 +611,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">TS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">TCP</a>
               </li>
              
@@ -626,7 +623,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -634,23 +631,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
               </li>
              
               <li class="article-tag-list-item">
