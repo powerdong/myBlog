@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/09/21/nvT4bQ.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/09/21/nvbIVe.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/09/21/nvqCPs.png">
-<meta property="og:updated_time" content="2019-11-18T13:09:30.490Z">
+<meta property="og:updated_time" content="2019-11-21T12:10:02.702Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="蛋糕分割整合工具——Webpack-前端工程化">
 <meta name="twitter:description" content="历史状况Web 前端开发这几年发展非常迅速，非常多的开发框架和构建工具的涌现，敬爱的前端攻城狮，可能你昨天还在用的工具、插件，到了今天可能就过时了。到了今天，外面的世界已经变了。  当你在遇到一个 Bug 需要修复时，没有比工程化推广更迫切的事情了  需要解决的问题工具和语言虽然差异大，但是解决的都是相似的问题，大概有以下几点  扩展 JavaScript、HTML、Css 本身的语言能力 解决重">
@@ -323,6 +323,14 @@
 <p>安装：<code>npm install webpack-dev-server --save-dev</code></p>
 <h3 id="Webpack-是如何打包的"><a href="#Webpack-是如何打包的" class="headerlink" title="Webpack 是如何打包的"></a>Webpack 是如何打包的</h3><p>WebPack 根据 <code>webPack.config.js</code>中的入口文件，在入口文件里识别模块依赖，不管这里的模块依赖是用CommonJS写的，还是用 ES6 Module 规范写的，WebPack会自动进行分析，并通过转换、编译代码、打包成最终的文件。(<strong>最终的文件是基于Webpack自己实现的ES5代码，所以可以跑在浏览器</strong>)</p>
 <p><a href="https://imgchr.com/i/nvqCPs" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/09/21/nvqCPs.png" alt="nvqCPs.png"></a></p>
+<h3 id="Webpack-热更新实现原理"><a href="#Webpack-热更新实现原理" class="headerlink" title="Webpack 热更新实现原理?"></a>Webpack 热更新实现原理?</h3><ul>
+<li>Webpack 编译期，为需要热更新的 entry 注入热更新代码(EventSource 通信)</li>
+<li>页面首次打开后，服务端与客户端通过 EventSource 建立通信渠道，把下一次的 hash 返回前端</li>
+<li>客户端获取到 hash，这个 hash 将作为下一次请求服务端 hot-update.js 和 hot-update.json 的 hash</li>
+<li>修改页面代码后，Webpack 监听到文件修改后，开始编译，编译完成后，发送 build 消息给客户端</li>
+<li>客户端获取到 hash，成功后客户端构造 hot-update.js script 链接，然后插入主文档</li>
+<li>hot-update.js 插入成功后，执行 hotAPI 的 createRecord 和 reload 方法，获取到 Vue 组件的 render 方法，重新 render 组件， 继而实现 UI 无刷新更新。</li>
+</ul>
 <hr>
 <blockquote>
 <p>‘摘抄’不是单纯的“粘贴-&gt;复制”，而是眼到，手到，心到的一字一句敲打下来。</p>
@@ -622,11 +630,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -642,6 +650,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">代码</a>
               </li>
              
@@ -650,15 +662,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">模块化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -686,19 +694,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -706,7 +702,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">

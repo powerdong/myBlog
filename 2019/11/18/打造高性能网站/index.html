@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="PowerDong-分享技术&amp;生活">
 <meta property="og:description" content="如何解决网站性能 减少 HTTP 请求数量 控制资源文件加载优先级 利用浏览器缓存 使用 CDN 减少重排 雪碧图(也是为了减少 http 请求) 合并脚本和样式表  为什么要减少网络请求 HTTP 请求建立和释放需要时间 浏览器对同一个域名的并发数量有限制">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-18T01:47:00.146Z">
+<meta property="og:updated_time" content="2019-11-21T12:15:20.468Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="打造高性能网站">
 <meta name="twitter:description" content="如何解决网站性能 减少 HTTP 请求数量 控制资源文件加载优先级 利用浏览器缓存 使用 CDN 减少重排 雪碧图(也是为了减少 http 请求) 合并脚本和样式表  为什么要减少网络请求 HTTP 请求建立和释放需要时间 浏览器对同一个域名的并发数量有限制">
@@ -210,6 +210,28 @@
 <li>区分用户是计算机还是人的公共全自动程序。可以防止恶意破解密码、刷票、论坛灌水</li>
 <li>有效防止黑客对某一个特定注册用户用特定程序暴力破解方式进行不断的登陆尝试。</li>
 </ul>
+<h2 id="把-script-标签-放在页面的最底部的-body-封闭之前-和封闭之后有什么区别？浏览器会如何解析它们？"><a href="#把-script-标签-放在页面的最底部的-body-封闭之前-和封闭之后有什么区别？浏览器会如何解析它们？" class="headerlink" title="把 script 标签 放在页面的最底部的 body 封闭之前 和封闭之后有什么区别？浏览器会如何解析它们？"></a>把 script 标签 放在页面的最底部的 body 封闭之前 和封闭之后有什么区别？浏览器会如何解析它们？</h2><p><strong>之前推荐的方法（已过时）：</strong> 之前解决这个问题的方法是把 script 标签放到 body 标签之后 ，这确保了解析到<code>&lt;/body&gt;</code>之前都不会被 script 中断。这个方法是有问题的: 浏览器在整个文档解析完成之前都不能下载 script 文件，如果文档很大的话，解析完 HTML，用户依然要等待 script 文件下载并执行完成之后，才能操作这个网站。</p>
+<p><strong>现在推荐的解决方案：</strong> 现在浏览器 script 标签支持 <code>async</code> 和 <code>defer</code> 属性. 应用这些属性当 script 被下载时，浏览器更安全而且可以并行下载（下载 script 并不阻断 HTML 解析）。</p>
+<ol>
+<li><code>async</code> 标记的 Script 异步执行下载，并执行。这意味着 script 下载时并不阻塞 HTML 的解析，并且下载结束 script 马上执行。</li>
+<li><code>defer</code> 标签的 script 顺序执行。这种方式也不会阻断浏览器解析 HTML。<ul>
+<li>跟 <code>async</code> 不同, <code>defer</code> scripts 在整个文档里的 script 都被下载完才顺序执行。</li>
+</ul>
+</li>
+</ol>
+<h2 id="你有用过哪些前端性能优化的方法？"><a href="#你有用过哪些前端性能优化的方法？" class="headerlink" title="你有用过哪些前端性能优化的方法？"></a>你有用过哪些前端性能优化的方法？</h2><ol>
+<li>减少 http 请求次数：CSS Sprites, JS、CSS 源码压缩、图片大小控制合适；网页 Gzip，CDN 托管，data 缓存 ，图片服务器。</li>
+<li>前端模板 JS+数据，减少由于 HTML 标签导致的带宽浪费，前端用变量保存 AJAX 请求结果，每次操作本地变量，不用请求，减少请求次数</li>
+<li>用 innerHTML 代替 DOM 操作，减少 DOM 操作次数，优化 javascript 性能。</li>
+<li>当需要设置的样式很多时设置 className 而不是直接操作 style。</li>
+<li>少用全局变量、缓存 DOM 节点查找的结果。减少 IO 读取操作。</li>
+<li>避免使用 CSS Expression（css 表达式)又称 Dynamic properties(动态属性)。</li>
+<li>图片预加载，将样式表放在顶部，将脚本放在底部 加上时间戳。</li>
+<li>避免在页面的主体布局中使用 table，table 要等其中的内容完全下载之后才会显示出来，显示比 div+css 布局慢。</li>
+</ol>
+<p>对普通的网站有一个统一的思路，就是尽量向前端优化、减少数据库操作、减少磁盘 IO。向前端优化指的是，<strong>在不影响功能和体验的情况下，能在浏览器执行的不要在服务端执行</strong>，能在缓存服务器上直接返回的不要到应用服务器，程序能直接取得的结果不要到外部取得，本机内能取得的数据不要到远程取，内存能取到的不要到磁盘取，缓存中有的不要去数据库查询。减少数据库操作指减少更新次数、缓存结果减少查询次数、将数据库执行的操作尽可能的让你的程序完成（例如 join 查询），减少磁盘 IO 指尽量不使用文件系统作为缓存、减少读写文件次数等。程序优化永远要优化慢的部分，换语言是无法“优化”的。</p>
+<h2 id="移动端-html-标签几个体验优化"><a href="#移动端-html-标签几个体验优化" class="headerlink" title="移动端 html 标签几个体验优化"></a>移动端 html 标签几个体验优化</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span>,</span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">overflow-x</span>: hidden;</span><br><span class="line">  <span class="comment">/* 手机上写会有兼容性问题，如果子级如果是绝对定位有运动到屏幕外的话 ios7 系统会出现留白 */</span></span><br><span class="line">  <span class="attribute">-webkit-overflow-scrolling</span>: touch;</span><br><span class="line">  <span class="comment">/* 流畅滚动,ios7下会有滑一下滑不动的情况，所以需要写上/ */</span></span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="comment">/* 直接子级如果是绝对定位有运动到屏幕外的话，会出现留白  */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <hr>
 <blockquote>
 <p>‘摘抄’不是单纯的“粘贴-&gt;复制”，而是眼到，手到，心到的一字一句敲打下来。</p>
@@ -483,11 +505,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -503,6 +525,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">代码</a>
               </li>
              
@@ -511,15 +537,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">模块化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -547,19 +569,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -567,7 +577,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">

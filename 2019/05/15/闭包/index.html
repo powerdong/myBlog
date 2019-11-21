@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="PowerDong-分享技术&amp;生活">
 <meta property="og:description" content="闭包的实现原理和作用闭包是指有权访问另一个函数作用域中变量的函数，创建闭包的最常见的方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量,利用闭包可以突破作用链域，将函数内部的变量和方法传递到外部。 闭包： 当内部函数被保存到外部时会产生闭包。闭包会导致原有作用域链不释放,造成内存泄漏。  闭包的作用： 实现公有变量 =&amp;gt; 累加器 可以做缓存,存储结构 可以实现封装,属性">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-18T13:44:46.267Z">
+<meta property="og:updated_time" content="2019-11-21T12:14:27.194Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="悄悄的带走了你的东西——闭包详解">
 <meta name="twitter:description" content="闭包的实现原理和作用闭包是指有权访问另一个函数作用域中变量的函数，创建闭包的最常见的方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量,利用闭包可以突破作用链域，将函数内部的变量和方法传递到外部。 闭包： 当内部函数被保存到外部时会产生闭包。闭包会导致原有作用域链不释放,造成内存泄漏。  闭包的作用： 实现公有变量 =&amp;gt; 累加器 可以做缓存,存储结构 可以实现封装,属性">
@@ -188,13 +188,26 @@
 </ul>
 </li>
 </ul>
+<a id="more"></a>
+
+<h2 id="闭包使用的优缺点"><a href="#闭包使用的优缺点" class="headerlink" title="闭包使用的优缺点"></a>闭包使用的优缺点</h2><ul>
+<li>优点：<ul>
+<li>1.保护函数内部变量的安全，加强了封装性</li>
+<li>2.在内存中维持一个变量</li>
+<li>3.设计私有方法和变量</li>
+<li>4.可以读取函数内部的变量</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>1.导致内存泄漏，使用不当会造成额外的内存占用</li>
+<li>2.可以改变父函数的变量，所以使用时要谨慎</li>
+</ul>
+</li>
+</ul>
 <h3 id="闭包的执行结果"><a href="#闭包的执行结果" class="headerlink" title="闭包的执行结果"></a>闭包的执行结果</h3><ul>
 <li>外层函数被调用几次,就有几个受保护的局部变量副本</li>
 <li>来自一个闭包的函数被调用几次,受保护的局部变量就变化几次</li>
 </ul>
-<a id="more"></a>
-
-
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 累加器*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">demo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    count++;</span><br><span class="line">    <span class="built_in">console</span>.log(count);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> demo;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> counter = add();</span><br><span class="line">counter();</span><br></pre></td></tr></table></figure>
 
 <h2 id="理解堆栈溢出和内存泄漏的原理-如何防止"><a href="#理解堆栈溢出和内存泄漏的原理-如何防止" class="headerlink" title="理解堆栈溢出和内存泄漏的原理,如何防止"></a>理解堆栈溢出和内存泄漏的原理,如何防止</h2><p>内存泄漏(memory leak)的堆积最终会导致内存溢出(out of memory)</p>
@@ -529,11 +542,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -549,6 +562,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">代码</a>
               </li>
              
@@ -557,15 +574,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">模块化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -593,19 +606,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -613,7 +614,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">

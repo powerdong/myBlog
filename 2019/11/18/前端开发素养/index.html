@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="PowerDong-分享技术&amp;生活">
 <meta property="og:description" content="可读性高的代码如何理解 表层上的改进：在命名方法（变量名，方法名），变量声明，代码格式，注释等方面的改进。 控制流和逻辑的改进：在控制流，逻辑表达式上让代码变得更容易理解。使用符合人类自然语言的表达习惯 结构上的改进：善于抽取逻辑，借助自然语言的描述来改善代码。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-18T01:49:55.268Z">
+<meta property="og:updated_time" content="2019-11-21T12:08:06.501Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端开发需要了解的东西">
 <meta name="twitter:description" content="可读性高的代码如何理解 表层上的改进：在命名方法（变量名，方法名），变量声明，代码格式，注释等方面的改进。 控制流和逻辑的改进：在控制流，逻辑表达式上让代码变得更容易理解。使用符合人类自然语言的表达习惯 结构上的改进：善于抽取逻辑，借助自然语言的描述来改善代码。">
@@ -190,6 +190,29 @@
 <li>搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO</li>
 <li>使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。</li>
 </ul>
+<h2 id="列举几条-JavaScript-的基本代码规范"><a href="#列举几条-JavaScript-的基本代码规范" class="headerlink" title="列举几条 JavaScript 的基本代码规范"></a>列举几条 JavaScript 的基本代码规范</h2><ol>
+<li>不要在同一行声明多个变量</li>
+<li>如果你不知道数组的长度，使用 push</li>
+<li>请使用 <code>===</code>/<code>!==</code> 来比较 true/false 或者数值</li>
+<li>对字符串使用单引号 <code>&#39;&#39;</code>(因为大多时候我们的字符串。特别 html 会出现”)</li>
+<li>使用对象字面量替代 <code>new Array</code> 这种形式</li>
+<li>绝对不要在一个非函数块里声明一个函数，把那个函数赋给一个变量。浏览器允许你这么做，但是它们解析不同</li>
+<li>不要使用全局函数</li>
+<li>总是使用 var 来声明变量，如果不这么做将导致产生全局变量，我们要避免污染全局命名空间</li>
+<li>Switch 语句必须带有 default 分支</li>
+<li>使用多行注释，包括描述，指定类型以及参数值和返回值</li>
+<li>函数不应该有时候有返回值，有时候没有返回值</li>
+<li>语句结束一定要加分号</li>
+<li>for 循环必须使用大括号</li>
+<li>if 语句必须使用大括号</li>
+<li>for-in 循环中的变量应该使用 let 关键字明确限定作用域，从而避免作用域污染</li>
+<li>避免单个字符名，让你的变量名有描述意义</li>
+<li>当命名对象、函数和实例时使用驼峰命名规则</li>
+<li>给对象原型分配方法，而不是用一个新的对象覆盖原型，覆盖原型会使继承出现问题</li>
+</ol>
+<h2 id="检测浏览器版本版本有哪些方式？"><a href="#检测浏览器版本版本有哪些方式？" class="headerlink" title="检测浏览器版本版本有哪些方式？"></a>检测浏览器版本版本有哪些方式？</h2><p>功能检测、userAgent 特征检测</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">比如：navigator.userAgent</span><br><span class="line">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;</span><br></pre></td></tr></table></figure>
+
 <hr>
 <blockquote>
 <p>‘摘抄’不是单纯的“粘贴-&gt;复制”，而是眼到，手到，心到的一字一句敲打下来。</p>
@@ -489,11 +512,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -509,6 +532,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">代码</a>
               </li>
              
@@ -517,15 +544,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">模块化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -553,19 +576,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -573,7 +584,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">

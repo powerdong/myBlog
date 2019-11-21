@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="PowerDong-分享技术&amp;生活">
 <meta property="og:description" content="CSS 盒模型,在不同浏览器的差异W3C 中的盒子模型的宽：包括 margin + border + padding + width; W = margin * 2 + border * 2 + padding * 2 + width;H = margin * 2 + border * 2 + padding * 2 + hight; IE 中的盒子模型的宽：包括 margin + border">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-18T13:56:20.479Z">
+<meta property="og:updated_time" content="2019-11-21T12:01:59.703Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS相关">
 <meta name="twitter:description" content="CSS 盒模型,在不同浏览器的差异W3C 中的盒子模型的宽：包括 margin + border + padding + width; W = margin * 2 + border * 2 + padding * 2 + width;H = margin * 2 + border * 2 + padding * 2 + hight; IE 中的盒子模型的宽：包括 margin + border">
@@ -728,6 +728,12 @@
 <li><p>Sass 支持<strong>条件语句</strong>，可以使用 if{}else{},for{}循环等，而 Less 不支持。</p>
 </li>
 </ul>
+<h2 id="页面导入样式时，使用-link-和-import-有什么区别？"><a href="#页面导入样式时，使用-link-和-import-有什么区别？" class="headerlink" title="页面导入样式时，使用 link 和@import 有什么区别？"></a>页面导入样式时，使用 link 和@import 有什么区别？</h2><ol>
+<li>link 属于 XHTML 标签，除了加载 CSS 外，还能用于定义 RSS, 定义 rel 连接属性等作用；而 <code>@import</code> 是 CSS 提供的，只能用于加载 CSS;</li>
+<li>页面被加载的时，link 会同时被加载，而 <code>@import</code> 引用的 CSS 会等到页面被加载完再加载;</li>
+<li><code>@import</code> 是 CSS2.1 提出的，只在 IE5 以上才能被识别，而 link 是 XHTML 标签，无兼容问题;</li>
+<li>link 支持使用 js 控制 DOM 去改变样式，而 <code>@import</code> 不支持;</li>
+</ol>
 <h2 id="CSS-模块化方案、如何配置按需加载、如何防止-CSS-阻塞渲染"><a href="#CSS-模块化方案、如何配置按需加载、如何防止-CSS-阻塞渲染" class="headerlink" title="CSS 模块化方案、如何配置按需加载、如何防止 CSS 阻塞渲染"></a>CSS 模块化方案、如何配置按需加载、如何防止 CSS 阻塞渲染</h2><h3 id="如何解决-css-命名问题"><a href="#如何解决-css-命名问题" class="headerlink" title="如何解决 css 命名问题?"></a>如何解决 css 命名问题?</h3><p>使用有意义的或通用的 ID 和 Class 命名。ID 和 Class 的命名应反映该元素的功能或使用通用名称，而不要用抽象的隐晦的命名。反应元素的使用目的是首选；使用通用的名称代表该元素不表示特定的意义，与其同级元素无异，通常是用于辅助命名，使用通用性或通用的名称可以更适用于文档或模板变化的情况。</p>
 <p>从性能上考虑应该尽量减少选择器的层级。</p>
 <h3 id="如何构建结构清晰的-Css？"><a href="#如何构建结构清晰的-Css？" class="headerlink" title="如何构建结构清晰的 Css？"></a>如何构建结构清晰的 Css？</h3><p><strong>首先了解一下 BEM</strong></p>
@@ -1135,11 +1141,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1155,6 +1161,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">代码</a>
               </li>
              
@@ -1163,15 +1173,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">模块化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1199,19 +1205,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1219,7 +1213,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">

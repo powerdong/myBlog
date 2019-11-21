@@ -24,7 +24,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/11/04/KvnutS.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/11/04/KvnBc9.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/11/04/KvU50U.png">
-<meta property="og:updated_time" content="2019-11-18T13:15:53.177Z">
+<meta property="og:updated_time" content="2019-11-21T12:12:15.684Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="有理想，有抱负，冲——NodeJs">
 <meta name="twitter:description" content="首先我们先了解一下 NodeJs 是什么NodeJs 是什么 Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行时。   什么是 V8？ V8 JavaScript 引擎是 Google 用于其 Chrome 浏览器的底层 JavaScript 引擎 Google 使用 V8 创建了一个用 C++ 编写的超快解释器，该解释器拥有另一个独特特征；您可以下载该引擎并将">
@@ -341,6 +341,21 @@
 <h3 id="util-模块"><a href="#util-模块" class="headerlink" title="util 模块"></a>util 模块</h3><p>可以使用 util 模块是函数 promise 化，通过 promise 解决回调地狱</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> promisify = <span class="built_in">require</span>(<span class="string">'util'</span>).promisify</span><br><span class="line"><span class="keyword">const</span> read = promisify(fs.readFile) <span class="comment">// 现在的read就是一个promise对象</span></span><br><span class="line">read(<span class="string">'文件名'</span>)</span><br><span class="line">  .then(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
 
+<h2 id="如何判断当前脚本运行在浏览器还是-node-环境中？（阿里）"><a href="#如何判断当前脚本运行在浏览器还是-node-环境中？（阿里）" class="headerlink" title="如何判断当前脚本运行在浏览器还是 node 环境中？（阿里）"></a>如何判断当前脚本运行在浏览器还是 node 环境中？（阿里）</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span> === <span class="built_in">window</span> ? <span class="string">'browser'</span> : <span class="string">'node'</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="对-Node-的优点和缺点提出了自己的看法？"><a href="#对-Node-的优点和缺点提出了自己的看法？" class="headerlink" title="对 Node 的优点和缺点提出了自己的看法？"></a>对 Node 的优点和缺点提出了自己的看法？</h2><ul>
+<li><p><strong>（优点）</strong></p>
+<ul>
+<li>因为 Node 是基于事件驱动和无阻塞的，所以非常适合处理并发请求， 因此构建在 Node 上的代理服务器相比其他技术实现（如 Ruby）的服务器表现要好得多。</li>
+<li>此外，与 Node 代理服务器交互的客户端代码是由 javascript 语言编写的， 因此客户端和服务器端都用同一种语言编写，这是非常美妙的事情。</li>
+</ul>
+</li>
+<li><p><strong>（缺点）</strong></p>
+<ul>
+<li>Node 是一个相对新的开源项目，所以不太稳定，它总是一直在变， 而且缺少足够多的第三方库支持。看起来，就像是 Ruby/Rails 当年的样子。</li>
+</ul>
+</li>
+</ul>
 <hr>
 <blockquote>
 <p>‘摘抄’不是单纯的“粘贴-&gt;复制”，而是眼到，手到，心到的一字一句敲打下来。</p>
@@ -640,11 +655,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -660,6 +675,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">代码</a>
               </li>
              
@@ -668,15 +687,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">模块化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -704,19 +719,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -724,7 +727,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/8/17/16c9da3039654154?w=875&h=513&f=png&s=419945">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/8/17/16c9da302dbe7d5d?w=880&h=520&f=png&s=191932">
-<meta property="og:updated_time" content="2019-11-18T13:28:18.661Z">
+<meta property="og:updated_time" content="2019-11-21T12:13:31.115Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="喜怒哀乐多状态——HTTP状态码">
 <meta name="twitter:description" content="HTTP 超文本传输协议(HTTP)(HyperText Transfer Protocol)是用于传输诸如 HTML 的超媒体文档的应用层协议，是互联网上应用最为广泛的一种网络协议。   超文本传输协议（HTTP）的设计目的是保证客户机与服务器之间的通信。 HTTP 的工作方式是客户机与服务器之间的请求-应答协议。web 浏览器可能是客户端，而计算机上的网络应用程序也可能作为服务器端  http">
@@ -329,6 +329,31 @@
 <blockquote>
 <p><strong>网站如何统计用户从何点击而来?</strong><br>Referer: 如果从浏览器地址栏里直接输入地址请求头没有 Referer</p>
 </blockquote>
+<h2 id="Ajax-解决浏览器缓存问题"><a href="#Ajax-解决浏览器缓存问题" class="headerlink" title="Ajax 解决浏览器缓存问题"></a>Ajax 解决浏览器缓存问题</h2><ol>
+<li>在 ajax 发送请求前加上 <code>anyAjaxObj.setRequestHeader(&quot;If-Modified-Since&quot;,&quot;0&quot;)</code></li>
+<li>在 ajax 发送请求前加上 <code>anyAjaxObj.setRequestHeader(&quot;Cache-Control&quot;,&quot;no-cache&quot;)</code></li>
+<li>在 URL 后面加上一个随机数： <code>&quot;fresh=&quot; + Math.random();</code></li>
+<li>在 URL 后面加上时间戳：<code>&quot;nowtime=&quot; + new Date().getTime();</code></li>
+<li>如果是使用 jQuery，直接这样就可以了 <code>$.ajaxSetup({cache:false})</code>这样页面的所有 ajax 都会执行这条语句就是不需要保存缓存记录。</li>
+</ol>
+<h2 id="ajax-实现原理及方法使用"><a href="#ajax-实现原理及方法使用" class="headerlink" title="ajax 实现原理及方法使用"></a>ajax 实现原理及方法使用</h2><ul>
+<li><strong>readyState 属性有五个状态值。</strong><ul>
+<li>0：是 uninitialized，未初始化。已经创建了 XMLHttpRequest 对象但是未初始化。</li>
+<li>1：是 loading.已经开始准备好要发送了。</li>
+<li>2：已经发送，但是还没有收到响应。</li>
+<li>3：正在接受响应，但是还不完整。</li>
+<li>4：接受响应完毕。</li>
+</ul>
+</li>
+<li>responseText：服务器返回的响应文本。只有当 readyState&gt;=3 的时候才有值，根据</li>
+<li>readyState 的状态值，可以知道，当 readyState=3，返回的响应文本不完整，只有<ul>
+<li>readyState=4，完全返回，才能接受全部的响应文本。</li>
+</ul>
+</li>
+<li>responseXML：response as Dom Document object。响应信息是 xml，可以解析为 Dom 对象。</li>
+<li>status：服务器的 Http 状态码，若是 200，则表示 OK，404，表示为未找到。</li>
+<li>statusText：服务器 http 状态码的文本。比如 OK，Not Found。</li>
+</ul>
 <hr>
 <blockquote>
 <p>‘摘抄’不是单纯的“粘贴-&gt;复制”，而是眼到，手到，心到的一字一句敲打下来。</p>
@@ -628,11 +653,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -648,6 +673,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">代码</a>
               </li>
              
@@ -656,15 +685,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">模块化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -692,19 +717,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -712,7 +725,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
