@@ -151,6 +151,98 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-HTML5-requestAnimationFrame" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/07/11/HTML5-requestAnimationFrame/">动画神器——HTML5-requestAnimationFrame</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/07/11/HTML5-requestAnimationFrame/" class="archive-article-date">
+  	<time datetime="2019-07-11T01:17:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在 Web 应用中，实现动画效果的方法比较多，JavaScript 中可以通过定时器 setTimeout 来实现，Css3 可以使用 transition 和 animation 来实现，HTML5 中的 canvas 也可以实现。除此之外，HTML5 还提供了一个专门用于请求动画的 API，即 <code>requestAnimationFrame(rAF)</code> 顾名思义就是请求动画帧。</p>
+<h2 id="屏幕绘制频率"><a href="#屏幕绘制频率" class="headerlink" title="屏幕绘制频率"></a>屏幕绘制频率</h2><p><strong>屏幕绘制频率</strong>即图像在屏幕上更新的速度，也是屏幕上图像每秒钟出现的次数，它的单位是赫兹(HZ),对于一般的笔记本电脑，这个频率大概是60HZ。因此，<strong>当你对着电脑屏幕什么也不做的情况下，显示器也会以以每秒60次的频率在不断地更新屏幕上的图像</strong>，那么我们为什么感觉不到这个变化呢？那是因为人的眼睛有 <strong><a href="https://baike.baidu.com/item/%E8%A7%86%E8%A7%89%E6%9A%82%E7%95%99/5125149?fr=aladdin" target="_blank" rel="noopener">视觉停留效应</a></strong> 即前一刻画面留在大脑印象还没消失，紧接着后幅画面就跟上来了，这中间只隔了16.7ms(1000/60≈16.7)，所以会让你误以为屏幕上的图像是静止不动的。</p>
+        
+          <a class="article-more-a" href="/myBlog/2019/07/11/HTML5-requestAnimationFrame/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/07/11/HTML5-requestAnimationFrame/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-HTML5-多媒体" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -351,19 +443,19 @@
 
 
   
-    <article id="post-我的第一个vue实例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Vue-我的第一个vue实例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/07/07/我的第一个vue实例/">我的第一个vue实例</a>
+      <a class="article-title" href="/myBlog/2019/07/07/Vue-我的第一个vue实例/">我的第一个vue实例</a>
     </h1>
   
 
         
-        <a href="/myBlog/2019/07/07/我的第一个vue实例/" class="archive-article-date">
+        <a href="/myBlog/2019/07/07/Vue-我的第一个vue实例/" class="archive-article-date">
   	<time datetime="2019-07-07T11:09:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-07</time>
 </a>
         
@@ -397,7 +489,7 @@
 <p>初始化完成后我们就可以在 src 目录下进行编写相关的代码</p>
 <p>之后建议先在 git 上面创建远程仓库，进行远程与本地连接，用来版本控制，也可以较安全的编辑代码，防止因为出错还可以使用 git 的回流功能返回之前的代码。</p>
         
-          <a class="article-more-a" href="/myBlog/2019/07/07/我的第一个vue实例/#more">more >></a>
+          <a class="article-more-a" href="/myBlog/2019/07/07/Vue-我的第一个vue实例/#more">more >></a>
         
       
 
@@ -436,7 +528,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/07/07/我的第一个vue实例/">展开全文 >></a>
+          <a class="article-more-a" href="/myBlog/2019/07/07/Vue-我的第一个vue实例/">展开全文 >></a>
         </p>
       
 
@@ -563,19 +655,19 @@
 
 
   
-    <article id="post-浏览器渲染原理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-http-浏览器渲染原理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/07/03/浏览器渲染原理/">我是怎么来的？——浏览器渲染原理</a>
+      <a class="article-title" href="/myBlog/2019/07/03/http-浏览器渲染原理/">我是怎么来的？——浏览器渲染原理</a>
     </h1>
   
 
         
-        <a href="/myBlog/2019/07/03/浏览器渲染原理/" class="archive-article-date">
+        <a href="/myBlog/2019/07/03/http-浏览器渲染原理/" class="archive-article-date">
   	<time datetime="2019-07-03T00:24:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-03</time>
 </a>
         
@@ -595,7 +687,7 @@
 </ul>
 <p>本文讨论第五个部分，即<strong>浏览器对内容的渲染</strong></p>
         
-          <a class="article-more-a" href="/myBlog/2019/07/03/浏览器渲染原理/#more">more >></a>
+          <a class="article-more-a" href="/myBlog/2019/07/03/http-浏览器渲染原理/#more">more >></a>
         
       
 
@@ -634,7 +726,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/07/03/浏览器渲染原理/">展开全文 >></a>
+          <a class="article-more-a" href="/myBlog/2019/07/03/http-浏览器渲染原理/">展开全文 >></a>
         </p>
       
 
@@ -664,19 +756,19 @@
 
 
   
-    <article id="post-响应式布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Css-响应式布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/07/01/响应式布局/">由大变小，你行吗 —— 移动端</a>
+      <a class="article-title" href="/myBlog/2019/07/01/Css-响应式布局/">由大变小，你行吗 —— 移动端</a>
     </h1>
   
 
         
-        <a href="/myBlog/2019/07/01/响应式布局/" class="archive-article-date">
+        <a href="/myBlog/2019/07/01/Css-响应式布局/" class="archive-article-date">
   	<time datetime="2019-07-01T00:25:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-01</time>
 </a>
         
@@ -698,7 +790,7 @@
 
 <h3 id="设置媒体查询"><a href="#设置媒体查询" class="headerlink" title="设置媒体查询"></a>设置媒体查询</h3><p><code>css3</code>媒体查询可以让我们针对不同的媒体类型定义不同的样式，当重置浏览器窗口大小的过程中，页面也会根据浏览器的宽度和高度重新渲染页面。</p>
         
-          <a class="article-more-a" href="/myBlog/2019/07/01/响应式布局/#more">more >></a>
+          <a class="article-more-a" href="/myBlog/2019/07/01/Css-响应式布局/#more">more >></a>
         
       
 
@@ -737,7 +829,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/07/01/响应式布局/">展开全文 >></a>
+          <a class="article-more-a" href="/myBlog/2019/07/01/Css-响应式布局/">展开全文 >></a>
         </p>
       
 
@@ -905,19 +997,19 @@
 
 
   
-    <article id="post-执行上下文" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-js-执行上下文" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/06/27/执行上下文/">执行上下文</a>
+      <a class="article-title" href="/myBlog/2019/06/27/js-执行上下文/">执行上下文</a>
     </h1>
   
 
         
-        <a href="/myBlog/2019/06/27/执行上下文/" class="archive-article-date">
+        <a href="/myBlog/2019/06/27/js-执行上下文/" class="archive-article-date">
   	<time datetime="2019-06-27T01:49:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-27</time>
 </a>
         
@@ -952,7 +1044,7 @@
 </li>
 </ul>
         
-          <a class="article-more-a" href="/myBlog/2019/06/27/执行上下文/#more">more >></a>
+          <a class="article-more-a" href="/myBlog/2019/06/27/js-执行上下文/#more">more >></a>
         
       
 
@@ -995,7 +1087,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/06/27/执行上下文/">展开全文 >></a>
+          <a class="article-more-a" href="/myBlog/2019/06/27/js-执行上下文/">展开全文 >></a>
         </p>
       
 
@@ -1025,19 +1117,19 @@
 
 
   
-    <article id="post-事件循环" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-js-事件循环" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/06/26/事件循环/">事件循环</a>
+      <a class="article-title" href="/myBlog/2019/06/26/js-事件循环/">事件循环</a>
     </h1>
   
 
         
-        <a href="/myBlog/2019/06/26/事件循环/" class="archive-article-date">
+        <a href="/myBlog/2019/06/26/js-事件循环/" class="archive-article-date">
   	<time datetime="2019-06-26T11:57:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-26</time>
 </a>
         
@@ -1065,7 +1157,7 @@
 <li><strong>事件监听线程</strong>：负责监听各种事件 (鼠标，键盘)</li>
 </ol>
         
-          <a class="article-more-a" href="/myBlog/2019/06/26/事件循环/#more">more >></a>
+          <a class="article-more-a" href="/myBlog/2019/06/26/js-事件循环/#more">more >></a>
         
       
 
@@ -1108,109 +1200,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/06/26/事件循环/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Vue-逐步了解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/06/26/Vue-逐步了解/">你有喘息的机会吗?——Vue,逐步了解</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/06/26/Vue-逐步了解/" class="archive-article-date">
-  	<time datetime="2019-06-26T02:05:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="声明式渲染"><a href="#声明式渲染" class="headerlink" title="声明式渲染"></a>声明式渲染</h2><ul>
-<li>命令式编程:命令”机器”如何去做事情(how),这样不管你想要的是什么(what),它都会按照你的命令实现</li>
-<li>声明式编程:告诉”机器”你想要的是什么(what)，让机器想出如何去做(how)</li>
-</ul>
-<h2 id="三大模板"><a href="#三大模板" class="headerlink" title="三大模板"></a>三大模板</h2><h3 id="html-模板"><a href="#html-模板" class="headerlink" title="html 模板"></a>html 模板</h3>
-
-<p>v-html=”标签”</p>
-<h3 id="字符串模板"><a href="#字符串模板" class="headerlink" title="字符串模板"></a>字符串模板</h3><p>template:”<div>hello world</div>“
-使用模板字符串拼接</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"x/template"</span> <span class="attr">id</span>=<span class="string">"demo"</span>&gt;</span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line">      hello world&#123;&#123;id&#125;&#125;</span><br><span class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    template: <span class="string">"#demo"</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/myBlog/2019/06/26/Vue-逐步了解/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/06/26/Vue-逐步了解/">展开全文 >></a>
+          <a class="article-more-a" href="/myBlog/2019/06/26/js-事件循环/">展开全文 >></a>
         </p>
       
 
@@ -1242,7 +1232,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/myBlog/page/3/">&laquo; Prev</a><a class="page-number" href="/myBlog/">1</a><a class="page-number" href="/myBlog/page/2/">2</a><a class="page-number" href="/myBlog/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/myBlog/page/5/">5</a><a class="page-number" href="/myBlog/page/6/">6</a><a class="extend next" rel="next" href="/myBlog/page/5/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/myBlog/page/3/">&laquo; Prev</a><a class="page-number" href="/myBlog/">1</a><a class="page-number" href="/myBlog/page/2/">2</a><a class="page-number" href="/myBlog/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/myBlog/page/5/">5</a><a class="page-number" href="/myBlog/page/6/">6</a><a class="page-number" href="/myBlog/page/7/">7</a><a class="extend next" rel="next" href="/myBlog/page/5/">Next &raquo;</a>
     </nav>
   
 
@@ -1341,15 +1331,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">cookie</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JS</a>
+                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1357,15 +1343,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">试题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1373,7 +1351,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">试题</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1385,15 +1367,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
+                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1413,7 +1391,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1421,11 +1407,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
+                <a href="javascript:void(0)" class="js-tag color3">TS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
