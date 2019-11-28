@@ -270,7 +270,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>可缩放矢量图形（英语：Scalable Vector Graphics，SVG）是一种基于可扩展标记语言（XML），用于描述二维矢量图形的图形格式。SVG由W3C制定，是一个开放标准。</p>
+<p>可缩放矢量图形（英语：Scalable Vector Graphics，SVG）是一种基于可扩展标记语言（XML），用于描述二维矢量图形的图形格式。SVG 由 W3C 制定，是一个开放标准。</p>
 </blockquote>
 <h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><ul>
 <li>图表</li>
@@ -278,8 +278,8 @@
 <li>动效</li>
 <li>矢量图</li>
 </ul>
-<h2 id="SVG-的优势"><a href="#SVG-的优势" class="headerlink" title="SVG 的优势"></a>SVG 的优势</h2><p>由于 SVG 图像是矢量图像，可以<strong>无线缩放</strong>，而且在图像质量下降方面没有任何问题。因为 SVG 图像是使用 <strong>XML标记</strong> 构建的，浏览器通过每个点和线来打印他们，而不是用预定义的像素填充某些空间。这确保 SVG 图像可以适应不同的屏幕大小和分辨率。</p>
-<p>由于是在 XML 中定义的，SVG 图像比 JPG 或 PNG 图像更灵活，而且我们可以使用Css 和 JavaScript 进行交互。</p>
+<h2 id="SVG-的优势"><a href="#SVG-的优势" class="headerlink" title="SVG 的优势"></a>SVG 的优势</h2><p>由于 SVG 图像是矢量图像，可以<strong>无线缩放</strong>，而且在图像质量下降方面没有任何问题。因为 SVG 图像是使用 <strong>XML 标记</strong> 构建的，浏览器通过每个点和线来打印他们，而不是用预定义的像素填充某些空间。这确保 SVG 图像可以适应不同的屏幕大小和分辨率。</p>
+<p>由于是在 XML 中定义的，SVG 图像比 JPG 或 PNG 图像更灵活，而且我们可以使用 Css 和 JavaScript 进行交互。</p>
 <h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 定义绘图区域 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">"500px"</span> <span class="attr">height</span>=<span class="string">"500px"</span>&gt;</span><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/myBlog/2019/07/09/HTML5-SVG/#more">more >></a>
@@ -1136,40 +1136,46 @@
 
 
   
-    <article id="post-Vue-逐步了解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-JavaScript手写代码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/06/26/Vue-逐步了解/">你有喘息的机会吗?——Vue,逐步了解</a>
+      <a class="article-title" href="/myBlog/2019/06/26/JavaScript手写代码/">JavaScript手写代码</a>
     </h1>
   
 
         
-        <a href="/myBlog/2019/06/26/Vue-逐步了解/" class="archive-article-date">
-  	<time datetime="2019-06-26T02:05:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-26</time>
+        <a href="/myBlog/2019/06/26/JavaScript手写代码/" class="archive-article-date">
+  	<time datetime="2019-06-26T00:21:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="声明式渲染"><a href="#声明式渲染" class="headerlink" title="声明式渲染"></a>声明式渲染</h2><ul>
-<li>命令式编程:命令”机器”如何去做事情(how),这样不管你想要的是什么(what),它都会按照你的命令实现</li>
-<li>声明式编程:告诉”机器”你想要的是什么(what)，让机器想出如何去做(how)</li>
+        <h2 id="1-实现一个new操作符"><a href="#1-实现一个new操作符" class="headerlink" title="1. 实现一个new操作符"></a>1. 实现一个<code>new</code>操作符</h2><ul>
+<li><p><strong>过程</strong></p>
+<ol>
+<li>创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。</li>
+<li>属性和方法被加入到 this 引用的对象中。</li>
+<li>新创建的对象由 this 所引用，并且最后隐式的返回 this 。</li>
+</ol>
+</li>
+<li><p>new 操作符做了这些事:</p>
+<ul>
+<li>它创建了一个全新的对象</li>
+<li>它会被执行<code>[[Prototype]]</code>(也就是<code>__proto__</code>)链接</li>
+<li>它使<code>this</code>指向新创建的对象</li>
+<li>通过 new 创建的每个对象将最终被<code>[[Prototype]]</code>链接到这个函数的 prototype 对象上</li>
+<li>如果函数没有返回对象类型 Object(包含 Function、Array、Date、RegExp、Error)，那么 new 表达式中的函数调用将返回该对象引用</li>
 </ul>
-<h2 id="三大模板"><a href="#三大模板" class="headerlink" title="三大模板"></a>三大模板</h2><h3 id="html-模板"><a href="#html-模板" class="headerlink" title="html 模板"></a>html 模板</h3>
-
-<p>v-html=”标签”</p>
-<h3 id="字符串模板"><a href="#字符串模板" class="headerlink" title="字符串模板"></a>字符串模板</h3><p>template:”<div>hello world</div>“
-使用模板字符串拼接</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"x/template"</span> <span class="attr">id</span>=<span class="string">"demo"</span>&gt;</span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line">      hello world&#123;&#123;id&#125;&#125;</span><br><span class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    template: <span class="string">"#demo"</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
         
-          <a class="article-more-a" href="/myBlog/2019/06/26/Vue-逐步了解/#more">more >></a>
+          <a class="article-more-a" href="/myBlog/2019/06/26/JavaScript手写代码/#more">more >></a>
         
       
 
@@ -1183,11 +1189,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">代码</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
         		</li>
       		
 		</ul>
@@ -1199,7 +1205,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        			<a href="/myBlog/categories/代码//" class="article-tag-list-link color3">代码</a>
         		</li>
       		
 		</ul>
@@ -1208,7 +1214,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/06/26/Vue-逐步了解/">展开全文 >></a>
+          <a class="article-more-a" href="/myBlog/2019/06/26/JavaScript手写代码/">展开全文 >></a>
         </p>
       
 
@@ -1240,7 +1246,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/myBlog/page/3/">&laquo; Prev</a><a class="page-number" href="/myBlog/">1</a><a class="page-number" href="/myBlog/page/2/">2</a><a class="page-number" href="/myBlog/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/myBlog/page/5/">5</a><a class="page-number" href="/myBlog/page/6/">6</a><a class="page-number" href="/myBlog/page/7/">7</a><a class="extend next" rel="next" href="/myBlog/page/5/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/myBlog/page/3/">&laquo; Prev</a><a class="page-number" href="/myBlog/">1</a><a class="page-number" href="/myBlog/page/2/">2</a><a class="page-number" href="/myBlog/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/myBlog/page/5/">5</a><a class="page-number" href="/myBlog/page/6/">6</a><a class="extend next" rel="next" href="/myBlog/page/5/">Next &raquo;</a>
     </nav>
   
 
@@ -1339,6 +1345,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">代码</a>
               </li>
              
@@ -1347,15 +1357,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1367,7 +1369,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1379,7 +1381,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
+                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1395,7 +1397,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1407,7 +1409,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1419,19 +1425,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">TS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TS</a>
+                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
             
             <div class="clearfix"></div>

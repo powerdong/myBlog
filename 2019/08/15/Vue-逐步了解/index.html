@@ -7,20 +7,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>HTML相关 | PowerDong-分享技术&amp;生活</title>
+  <title>你有喘息的机会吗?——Vue,逐步了解 | PowerDong-分享技术&amp;生活</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="可以使用 Canvas API、SVG 等绘制高性能的动画Canvas 最佳实践（性能篇） 高性能 SVG 优化清单   ‘摘抄’不是单纯的“粘贴-&amp;gt;复制”，而是眼到，手到，心到的一字一句敲打下来。   博客声明:所有转载的文章、图片仅用于作者本人收藏学习目的，被要求或认为适当时，将标注署名与来源。若不愿某一作品被转用，请及时通知本站，本站将予以及时删除。">
-<meta name="keywords" content="笔记,HTML">
+  <meta name="description" content="声明式渲染 命令式编程:命令”机器”如何去做事情(how),这样不管你想要的是什么(what),它都会按照你的命令实现 声明式编程:告诉”机器”你想要的是什么(what)，让机器想出如何去做(how)  三大模板html 模板  v-html=”标签” 字符串模板template:”hello world“ 使用模板字符串拼接 12345&amp;lt;script type=&quot;x/template&quot; i">
+<meta name="keywords" content="笔记,Vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTML相关">
-<meta property="og:url" content="http://yoursite.com/2019/07/16/HTML相关/index.html">
+<meta property="og:title" content="你有喘息的机会吗?——Vue,逐步了解">
+<meta property="og:url" content="http://yoursite.com/2019/08/15/Vue-逐步了解/index.html">
 <meta property="og:site_name" content="PowerDong-分享技术&amp;生活">
-<meta property="og:description" content="可以使用 Canvas API、SVG 等绘制高性能的动画Canvas 最佳实践（性能篇） 高性能 SVG 优化清单   ‘摘抄’不是单纯的“粘贴-&amp;gt;复制”，而是眼到，手到，心到的一字一句敲打下来。   博客声明:所有转载的文章、图片仅用于作者本人收藏学习目的，被要求或认为适当时，将标注署名与来源。若不愿某一作品被转用，请及时通知本站，本站将予以及时删除。">
+<meta property="og:description" content="声明式渲染 命令式编程:命令”机器”如何去做事情(how),这样不管你想要的是什么(what),它都会按照你的命令实现 声明式编程:告诉”机器”你想要的是什么(what)，让机器想出如何去做(how)  三大模板html 模板  v-html=”标签” 字符串模板template:”hello world“ 使用模板字符串拼接 12345&amp;lt;script type=&quot;x/template&quot; i">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-23T03:17:25.589Z">
+<meta property="og:updated_time" content="2019-11-28T01:54:09.098Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HTML相关">
-<meta name="twitter:description" content="可以使用 Canvas API、SVG 等绘制高性能的动画Canvas 最佳实践（性能篇） 高性能 SVG 优化清单   ‘摘抄’不是单纯的“粘贴-&amp;gt;复制”，而是眼到，手到，心到的一字一句敲打下来。   博客声明:所有转载的文章、图片仅用于作者本人收藏学习目的，被要求或认为适当时，将标注署名与来源。若不愿某一作品被转用，请及时通知本站，本站将予以及时删除。">
+<meta name="twitter:title" content="你有喘息的机会吗?——Vue,逐步了解">
+<meta name="twitter:description" content="声明式渲染 命令式编程:命令”机器”如何去做事情(how),这样不管你想要的是什么(what),它都会按照你的命令实现 声明式编程:告诉”机器”你想要的是什么(what)，让机器想出如何去做(how)  三大模板html 模板  v-html=”标签” 字符串模板template:”hello world“ 使用模板字符串拼接 12345&amp;lt;script type=&quot;x/template&quot; i">
   
   <link rel="alternative" href="/atom.xml" title="PowerDong-分享技术&amp;生活" type="application/atom+xml">
   
@@ -150,32 +150,83 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-HTML相关" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Vue-逐步了解" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      HTML相关
+      你有喘息的机会吗?——Vue,逐步了解
     </h1>
   
 
         
-        <a href="/myBlog/2019/07/16/HTML相关/" class="archive-article-date">
-  	<time datetime="2019-07-16T00:26:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-16</time>
+        <a href="/myBlog/2019/08/15/Vue-逐步了解/" class="archive-article-date">
+  	<time datetime="2019-08-15T02:05:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="可以使用-Canvas-API、SVG-等绘制高性能的动画"><a href="#可以使用-Canvas-API、SVG-等绘制高性能的动画" class="headerlink" title="可以使用 Canvas API、SVG 等绘制高性能的动画"></a>可以使用 Canvas API、SVG 等绘制高性能的动画</h2><p><a href="http://taobaofed.org/blog/2016/02/22/canvas-performance/" target="_blank" rel="noopener">Canvas 最佳实践（性能篇）</a></p>
-<p><a href="http://svgtrick.com/tricks/36a0ec0ceae53384be137cbd099f3004" target="_blank" rel="noopener">高性能 SVG 优化清单</a></p>
+        <h2 id="声明式渲染"><a href="#声明式渲染" class="headerlink" title="声明式渲染"></a>声明式渲染</h2><ul>
+<li>命令式编程:命令”机器”如何去做事情(how),这样不管你想要的是什么(what),它都会按照你的命令实现</li>
+<li>声明式编程:告诉”机器”你想要的是什么(what)，让机器想出如何去做(how)</li>
+</ul>
+<h2 id="三大模板"><a href="#三大模板" class="headerlink" title="三大模板"></a>三大模板</h2><h3 id="html-模板"><a href="#html-模板" class="headerlink" title="html 模板"></a>html 模板</h3>
+
+<p>v-html=”标签”</p>
+<h3 id="字符串模板"><a href="#字符串模板" class="headerlink" title="字符串模板"></a>字符串模板</h3><p>template:”<div>hello world</div>“
+使用模板字符串拼接</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"x/template"</span> <span class="attr">id</span>=<span class="string">"demo"</span>&gt;</span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line">      hello world&#123;&#123;id&#125;&#125;</span><br><span class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    template: <span class="string">"#demo"</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h3 id="render-函数-效率更高"><a href="#render-函数-效率更高" class="headerlink" title="render 函数(效率更高)"></a>render 函数(效率更高)</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue = (&#123;</span><br><span class="line">    render(createElement)&#123;</span><br><span class="line">        <span class="keyword">var</span> dom = createElement(<span class="string">"div"</span>,&#123;</span><br><span class="line">            attrs:&#123;</span><br><span class="line">                <span class="comment">// 添加属性</span></span><br><span class="line">                id:<span class="string">"demo"</span></span><br><span class="line">            &#125;,</span><br><span class="line">            class:&#123;</span><br><span class="line">                <span class="comment">// 添加class</span></span><br><span class="line">                vue1:<span class="literal">true</span>,</span><br><span class="line">                vue2:<span class="literal">false</span></span><br><span class="line">            &#125;,</span><br><span class="line">            domPros:&#123;</span><br><span class="line">                <span class="comment">// 会覆盖子元素</span></span><br><span class="line">                innerHTML:<span class="string">"&lt;div&gt;HTML&lt;/div&gt;"</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,[<span class="string">"hello"</span>,createElement(<span class="string">"p"</span>,[<span class="string">"world"</span>])]);</span><br><span class="line">        <span class="comment">// 渲染dom</span></span><br><span class="line">        <span class="keyword">return</span> dom</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="组件基础"><a href="#组件基础" class="headerlink" title="组件基础"></a>组件基础</h2><h3 id="基本实例"><a href="#基本实例" class="headerlink" title="基本实例"></a>基本实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//定义一个名为button-counter的新组件</span><br><span class="line">Vue.component(&apos;button-counter&apos;,&#123;</span><br><span class="line">    data:function()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            count : 0</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    template:&apos;&lt;button v-on:click=&quot;count++&quot;&gt;clicked me &#123;&#123;count&#125;&#125; +1&lt;/button&gt;&apos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>组件是可复用的 Vue 实例，且带有一个名字。我们可以在一个通过<code>new Vue</code>创建的 Vue 根实例中，把这个组件作为自定义元素来使用。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"demo"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button-counter</span>&gt;</span><span class="tag">&lt;/<span class="name">button-counter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#demo'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="组件的复用"><a href="#组件的复用" class="headerlink" title="组件的复用"></a>组件的复用</h3><p>可以将组件进行任意次数的复用</p>
+<ul>
+<li><code>data</code>必须是一个函数<ul>
+<li>在定义组件时，<code>data</code>并不是像之前提供一个对象</li>
+<li>一个组件的<code>data</code>选项必须是一个函数，每个实例维护一份被返回对象的独立的拷贝</li>
+</ul>
+</li>
+</ul>
+<h3 id="通过Prop向子组件传递数据"><a href="#通过Prop向子组件传递数据" class="headerlink" title="通过Prop向子组件传递数据"></a>通过<code>Prop</code>向子组件传递数据</h3><p><code>Prop</code>是你可以在组件上注册的一些自定义特性。当一个值传递给一个<code>prop</code>特性的时候，他就变成了那个组件实例的一个属性。我们可以用一个<code>props</code>选项将其包含在该组件可接受的<code>prop</code>列表中。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'blog-post'</span>,&#123;</span><br><span class="line">    props:[<span class="string">'title],</span></span><br><span class="line"><span class="string">    template:'</span>&lt;h3&gt;&#123;&#123;title&#125;&#125;&lt;<span class="regexp">/h3&gt;</span></span><br><span class="line"><span class="regexp">&#125;)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="组件注册"><a href="#组件注册" class="headerlink" title="组件注册"></a>组件注册</h2><h3 id="组件名"><a href="#组件名" class="headerlink" title="组件名"></a>组件名</h3><p>在注册一个组件的时候，我们始终需要给它一个名字。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'my-component-name'</span>, &#123;</span><br><span class="line">  <span class="comment">// template: "&lt;div&gt;我是一个组件&lt;/div&gt;",</span></span><br><span class="line">  <span class="comment">// template:`&lt;div&gt;我是一个组件  &lt;/div&gt;`</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>该组件名就是<code>Vue.component</code>的第一个参数(推荐字母全小写且必须包含一个连字符)</p>
+<h3 id="全局注册"><a href="#全局注册" class="headerlink" title="全局注册"></a>全局注册</h3><p>只使用<code>Vue.component</code>来创建组件。这些组件是<strong>全局注册的</strong>。在它们注册后可以用在任何新创建的 Vue 根实例(<code>new Vue</code>)的模板中。在组件内部也可以相互使用。</p>
+<h3 id="局部注册"><a href="#局部注册" class="headerlink" title="局部注册"></a>局部注册</h3><p>全局注册往往是不够理想的。全局注册所有的组件意味着即便你已经不再使用一个组件了，它仍然会包含在最终的构建结果中。这造成用户下载的 JavaScript 的无谓的增加。</p>
+<p>可以通过普通的 JavaScript 对象来定义组件。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ComponentA = &#123;</span><br><span class="line">  template:<span class="string">`&lt;div&gt;我是局部组件&lt;/div&gt;`</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> ComponentB = &#123;</span><br><span class="line">  <span class="comment">/* ... */</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el:<span class="string">"#demo,</span></span><br><span class="line"><span class="string">  components:&#123;</span></span><br><span class="line"><span class="string">    "</span>component<span class="string">":&#123;</span></span><br><span class="line"><span class="string">      template:`&lt;div&gt;我是局部组件&lt;/div&gt;`</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;)</span></span><br></pre></td></tr></table></figure>
+
+<p>然后在 <code>components</code> 选项中定义你想要使用的组件：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  components: &#123;</span><br><span class="line">    <span class="string">'component-a'</span>: ComponentA,</span><br><span class="line">    <span class="string">'component-b'</span>: ComponentB</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Prop"><a href="#Prop" class="headerlink" title="Prop"></a>Prop</h2><h3 id="Prop-的大小写"><a href="#Prop-的大小写" class="headerlink" title="Prop 的大小写"></a>Prop 的大小写</h3><p>HTML 中的特性名是大小写不敏感的，所以浏览器会把所有的大写字符解释为小写字符。这意味着在使用 DOM 中的模板时，camelCase 的 prop 名需要使用其等价的 kebab-case 命名。</p>
+<h3 id="Prop-类型"><a href="#Prop-类型" class="headerlink" title="Prop 类型"></a>Prop 类型</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">props: [<span class="string">'title'</span>, <span class="string">'likes'</span>, <span class="string">'isPublished'</span>, <span class="string">'commentIds'</span>, <span class="string">'author'</span>]</span><br></pre></td></tr></table></figure>
+
+<p>如果希望每个 prop 都有指定的值类型，可以用对象的形式列出 prop。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">props: &#123;</span><br><span class="line">  title: &#123;</span><br><span class="line">    <span class="comment">// 类型</span></span><br><span class="line">    type:<span class="built_in">String</span>,</span><br><span class="line">    <span class="comment">// 默认值</span></span><br><span class="line">    <span class="keyword">default</span>:<span class="string">"hello"</span>,</span><br><span class="line">    <span class="comment">// 是否必填</span></span><br><span class="line">    required:<span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  likes: &#123;</span><br><span class="line">    <span class="comment">//多个可能的类型</span></span><br><span class="line">    type:[<span class="built_in">String</span>,<span class="built_in">Number</span>]</span><br><span class="line">  &#125;,</span><br><span class="line">  isPublished: <span class="built_in">Boolean</span>,</span><br><span class="line">  commentIds: <span class="built_in">Array</span>,</span><br><span class="line">  author: <span class="built_in">Object</span>,</span><br><span class="line">  callback: <span class="built_in">Function</span>,</span><br><span class="line">  contactsPromise: <span class="built_in">Promise</span> <span class="comment">// or any other constructor</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="传递静态或动态的-Prop"><a href="#传递静态或动态的-Prop" class="headerlink" title="传递静态或动态的 Prop"></a>传递静态或动态的 Prop</h3><p>可以给 prop 传入一个静态的值，也可以通过<code>v-bind</code>动态赋值</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 静态 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">blog-post</span> <span class="attr">title</span>=<span class="string">"My journey with Vue"</span>&gt;</span><span class="tag">&lt;/<span class="name">blog-post</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 动态 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">blog-post</span> <span class="attr">v-bind:title</span>=<span class="string">"post.title"</span>&gt;</span><span class="tag">&lt;/<span class="name">blog-post</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <hr>
-<blockquote>
-<p>‘摘抄’不是单纯的“粘贴-&gt;复制”，而是眼到，手到，心到的一字一句敲打下来。</p>
-</blockquote>
 <blockquote>
 <p>博客声明:所有转载的文章、图片仅用于作者本人收藏学习目的，被要求或认为适当时，将标注署名与来源。若不愿某一作品被转用，请及时通知本站，本站将予以及时删除。</p>
 </blockquote>
@@ -227,7 +278,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
         		</li>
       		
 		</ul>
@@ -294,7 +345,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/16/HTML相关/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/15/Vue-逐步了解/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -308,18 +359,18 @@
   
 <nav id="article-nav">
   
-    <a href="/myBlog/2019/07/16/HTML5-Geolocation/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/myBlog/2019/08/19/Vue-刨根问底/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          你在哪啊？我在这啊——HTML5-Geolocation
+          停下来，问问自己——Vue-刨根问底
         
       </div>
     </a>
   
   
-    <a href="/myBlog/2019/07/15/js-执行机制/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">执行机制</div>
+    <a href="/myBlog/2019/08/13/Vue-初次见面/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">你累吗？来来来，安利框架——Vue-初次见面</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -338,19 +389,6 @@
             </div>
         </div>
         
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#可以使用-Canvas-API、SVG-等绘制高性能的动画"><span class="toc-number">1.</span> <span class="toc-text">可以使用 Canvas API、SVG 等绘制高性能的动画</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
         
     </div>
 </aside>
@@ -484,6 +522,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">代码</a>
               </li>
              
@@ -492,15 +534,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -512,7 +546,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -524,7 +558,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
+                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -540,7 +574,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -552,7 +586,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -564,19 +602,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">TS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TS</a>
+                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
             
             <div class="clearfix"></div>

@@ -678,6 +678,108 @@
 
 
   
+    <article id="post-Vue-逐步了解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/08/15/Vue-逐步了解/">你有喘息的机会吗?——Vue,逐步了解</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/08/15/Vue-逐步了解/" class="archive-article-date">
+  	<time datetime="2019-08-15T02:05:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="声明式渲染"><a href="#声明式渲染" class="headerlink" title="声明式渲染"></a>声明式渲染</h2><ul>
+<li>命令式编程:命令”机器”如何去做事情(how),这样不管你想要的是什么(what),它都会按照你的命令实现</li>
+<li>声明式编程:告诉”机器”你想要的是什么(what)，让机器想出如何去做(how)</li>
+</ul>
+<h2 id="三大模板"><a href="#三大模板" class="headerlink" title="三大模板"></a>三大模板</h2><h3 id="html-模板"><a href="#html-模板" class="headerlink" title="html 模板"></a>html 模板</h3>
+
+<p>v-html=”标签”</p>
+<h3 id="字符串模板"><a href="#字符串模板" class="headerlink" title="字符串模板"></a>字符串模板</h3><p>template:”<div>hello world</div>“
+使用模板字符串拼接</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"x/template"</span> <span class="attr">id</span>=<span class="string">"demo"</span>&gt;</span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line">      hello world&#123;&#123;id&#125;&#125;</span><br><span class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    template: <span class="string">"#demo"</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/myBlog/2019/08/15/Vue-逐步了解/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/08/15/Vue-逐步了解/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Vue-初次见面" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1121,114 +1223,9 @@
 
 
   
-    <article id="post-HTML5-DeviceMotionEvent" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/07/18/HTML5-DeviceMotionEvent/">你知道指北针吗?——HTML5-DeviceMotionEvent</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/07/18/HTML5-DeviceMotionEvent/" class="archive-article-date">
-  	<time datetime="2019-07-18T02:36:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="事件介绍"><a href="#事件介绍" class="headerlink" title="事件介绍"></a>事件介绍</h2><ol>
-<li><code>deviceorientation</code> 提供设备的物理方向信息，表示为一系列本地坐标系的旋角。</li>
-<li><code>devicemotion</code> 提供设备的加速信息，表示为定义在设备上的坐标系中的卡尔迪坐标。其还提供了设备在坐标系中的自转速率。若可行的话，事件应该提供设备重心处的加速信息。</li>
-<li><code>compassneedscalibration</code> 用于通知 Web 站点使用罗盘信息校准上述事件。</li>
-</ol>
-<h2 id="用法简介"><a href="#用法简介" class="headerlink" title="用法简介"></a>用法简介</h2><h3 id="deviceorientation"><a href="#deviceorientation" class="headerlink" title="deviceorientation"></a>deviceorientation</h3><p>注册一个 <strong>deviceorientation</strong> 事件的接收器</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"deviceorientation"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e);</span><br><span class="line">  <span class="comment">// 处理event.alpha、event.beta及event.gamma</span></span><br><span class="line">  <span class="built_in">document</span>.querySelector(<span class="string">"#item"</span>).innerHTML = <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;p&gt; 设备沿z轴上的旋转角度<span class="subst">$&#123;e.alpha&#125;</span> &lt;/p&gt;</span></span><br><span class="line"><span class="string">  &lt;p&gt; 设备在x轴上的旋转角度，描述设备由前向后旋转的情况 <span class="subst">$&#123;e.beta&#125;</span>  &lt;/p&gt;</span></span><br><span class="line"><span class="string">  &lt;p&gt;表示设备在y轴上的旋转角度，描述设备由左向右旋转的情况<span class="subst">$&#123;e.gamma&#125;</span> &lt;/p&gt;</span></span><br><span class="line"><span class="string">  &lt;p&gt;与北方向的角度差值，正北为0度，正东为90度，正南为180度，正西为270度<span class="subst">$&#123;e.webkitCompassHeading&#125;</span>&lt;/p&gt;</span></span><br><span class="line"><span class="string">  &lt;p&gt;指北针的精确度，表示偏差为正负多少度<span class="subst">$&#123;e.webkitCompassAccuracy&#125;</span> &lt;/p&gt;</span></span><br><span class="line"><span class="string">  `</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>需要在手机端使用</p>
-</blockquote>
-<p><img src="https://s2.ax1x.com/2019/09/10/nNsGMF.png" alt="nNsGMF.png"></p>
-<blockquote>
-<p>安卓端不支持显示 <code>webkitCompassHeading</code> 和 <code>webkitCompassAccuracy</code> 小伙伴可以通过苹果手机访问获取</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/myBlog/2019/07/18/HTML5-DeviceMotionEvent/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/07/18/HTML5-DeviceMotionEvent/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/myBlog/">&laquo; Prev</a><a class="page-number" href="/myBlog/">1</a><span class="page-number current">2</span><a class="page-number" href="/myBlog/page/3/">3</a><a class="page-number" href="/myBlog/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/myBlog/page/7/">7</a><a class="extend next" rel="next" href="/myBlog/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/myBlog/">&laquo; Prev</a><a class="page-number" href="/myBlog/">1</a><span class="page-number current">2</span><a class="page-number" href="/myBlog/page/3/">3</a><a class="page-number" href="/myBlog/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/myBlog/page/6/">6</a><a class="extend next" rel="next" href="/myBlog/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -1327,6 +1324,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">代码</a>
               </li>
              
@@ -1335,15 +1336,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1355,7 +1348,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1367,7 +1360,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
+                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1383,7 +1376,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1395,7 +1388,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1407,19 +1404,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">TS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TS</a>
+                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
             
             <div class="clearfix"></div>
