@@ -7,22 +7,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>停下来，问问自己——Vue-刨根问底 | PowerDong-分享技术&amp;生活</title>
+  <title>实操实干——vue实例记录 | PowerDong-分享技术&amp;生活</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="为什么官方建议数据异步请求在mounted事件进行?很多人觉得在created 事件里面把数据请求到，然后一起生成虚拟 DOM，再渲染会更好。实际上呢，请求是需要时间的，而且这个时间具有不稳定性，很可能 vue 的虚拟 DOM 准备好了，你的数据才请求到，然后又得更新一遍虚拟DOM，再渲染，极大地延长了白屏时间，用户体验很不好。而在 mounted 事件请求数据呢，静态页面会先渲染好，等数据好了，">
+  <meta name="description" content="初出茅庐摸不着头脑 vue 的入门学习阶段告一段落了，刚刚学完的 vue 还热乎着，趁着这个热乎劲随即找了一个 vueDemo 进行练习。然而没有什么头绪，然后阅读了作者的源码，重新到官网上看了相关的例子和介绍，感觉自己目前立马需要做一个例子来练练手。 寻找资源 如果你想看实例源代码可以移步我的第一个 Vue 实例 git 仓库  然后到慕课网找相关的 vue 项目教学，找到了一个基于 Vue2.">
 <meta name="keywords" content="笔记,Vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="停下来，问问自己——Vue-刨根问底">
-<meta property="og:url" content="http://yoursite.com/2019/08/19/Vue-刨根问底/index.html">
+<meta property="og:title" content="实操实干——vue实例记录">
+<meta property="og:url" content="http://yoursite.com/2019/08/20/Vue-我的第一个vue实例/index.html">
 <meta property="og:site_name" content="PowerDong-分享技术&amp;生活">
-<meta property="og:description" content="为什么官方建议数据异步请求在mounted事件进行?很多人觉得在created 事件里面把数据请求到，然后一起生成虚拟 DOM，再渲染会更好。实际上呢，请求是需要时间的，而且这个时间具有不稳定性，很可能 vue 的虚拟 DOM 准备好了，你的数据才请求到，然后又得更新一遍虚拟DOM，再渲染，极大地延长了白屏时间，用户体验很不好。而在 mounted 事件请求数据呢，静态页面会先渲染好，等数据好了，">
+<meta property="og:description" content="初出茅庐摸不着头脑 vue 的入门学习阶段告一段落了，刚刚学完的 vue 还热乎着，趁着这个热乎劲随即找了一个 vueDemo 进行练习。然而没有什么头绪，然后阅读了作者的源码，重新到官网上看了相关的例子和介绍，感觉自己目前立马需要做一个例子来练练手。 寻找资源 如果你想看实例源代码可以移步我的第一个 Vue 实例 git 仓库  然后到慕课网找相关的 vue 项目教学，找到了一个基于 Vue2.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://s2.ax1x.com/2019/12/08/QdCN9I.png">
-<meta property="og:updated_time" content="2019-12-08T14:06:50.270Z">
+<meta property="og:updated_time" content="2019-12-08T14:16:18.506Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="停下来，问问自己——Vue-刨根问底">
-<meta name="twitter:description" content="为什么官方建议数据异步请求在mounted事件进行?很多人觉得在created 事件里面把数据请求到，然后一起生成虚拟 DOM，再渲染会更好。实际上呢，请求是需要时间的，而且这个时间具有不稳定性，很可能 vue 的虚拟 DOM 准备好了，你的数据才请求到，然后又得更新一遍虚拟DOM，再渲染，极大地延长了白屏时间，用户体验很不好。而在 mounted 事件请求数据呢，静态页面会先渲染好，等数据好了，">
-<meta name="twitter:image" content="https://s2.ax1x.com/2019/12/08/QdCN9I.png">
+<meta name="twitter:title" content="实操实干——vue实例记录">
+<meta name="twitter:description" content="初出茅庐摸不着头脑 vue 的入门学习阶段告一段落了，刚刚学完的 vue 还热乎着，趁着这个热乎劲随即找了一个 vueDemo 进行练习。然而没有什么头绪，然后阅读了作者的源码，重新到官网上看了相关的例子和介绍，感觉自己目前立马需要做一个例子来练练手。 寻找资源 如果你想看实例源代码可以移步我的第一个 Vue 实例 git 仓库  然后到慕课网找相关的 vue 项目教学，找到了一个基于 Vue2.">
   
   <link rel="alternative" href="/atom.xml" title="PowerDong-分享技术&amp;生活" type="application/atom+xml">
   
@@ -152,90 +150,249 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Vue-刨根问底" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Vue-我的第一个vue实例" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      停下来，问问自己——Vue-刨根问底
+      实操实干——vue实例记录
     </h1>
   
 
         
-        <a href="/myBlog/2019/08/19/Vue-刨根问底/" class="archive-article-date">
-  	<time datetime="2019-08-19T01:32:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-19</time>
+        <a href="/myBlog/2019/08/20/Vue-我的第一个vue实例/" class="archive-article-date">
+  	<time datetime="2019-08-20T11:09:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="为什么官方建议数据异步请求在mounted事件进行"><a href="#为什么官方建议数据异步请求在mounted事件进行" class="headerlink" title="为什么官方建议数据异步请求在mounted事件进行?"></a>为什么官方建议数据异步请求在<code>mounted</code>事件进行?</h2><p>很多人觉得在<code>created</code> 事件里面把数据请求到，然后一起生成虚拟 <code>DOM</code>，再渲染会更好。实际上呢，请求是需要时间的，而且这个时间具有不稳定性，很可能 vue 的虚拟 DOM 准备好了，你的数据才请求到，然后又得更新一遍虚拟<code>DOM</code>，再渲染，极大地延长了白屏时间，用户体验很不好。<strong>而在 mounted 事件请求数据呢，静态页面会先渲染好，等数据好了，再更新部分 DOM 即可。</strong></p>
-<h2 id="子组件修改父组件传过来的值"><a href="#子组件修改父组件传过来的值" class="headerlink" title="子组件修改父组件传过来的值"></a>子组件修改父组件传过来的值</h2><p>v-model 在使用的时候很像双向绑定的，但是 Vue 是单项数据流，<code>v-model</code> 只是语法糖而已：父组件用<code>v-bind</code>将值传给子组件，子组件通过<code>change/input</code>事件触发修改父组件的值。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"inputValue"</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 等价于 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">:value</span>=<span class="string">"inputValue"</span> @<span class="attr">change</span>=<span class="string">"inputValue"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>v-model 不仅仅能在<code>input</code>上用，在组件上也能使用<code>vue</code>组件间传递数据是单向的，即数据总是由父组件传递到子组件，子组件在其内部可以有自己维护的数据，但它无权修改父组件传递给它的数据，我们也可以参照<code>v-model</code>语法糖进行修改父组件的值，但是每次都这样写太麻烦了，vue 提供了一个修饰符<code>.sync</code>,用法如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">child</span> <span class="attr">:value.sync</span>=<span class="string">"inputValue"</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 子组件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span>&#123;</span></span><br><span class="line">    props:&#123;</span><br><span class="line"><span class="javascript">      <span class="comment">//props可以设置值得类型，默认值，是否必传以及校验函</span></span></span><br><span class="line">      value:&#123;</span><br><span class="line"><span class="javascript">        type: [<span class="built_in">String</span>, <span class="built_in">Number</span>],</span></span><br><span class="line"><span class="javascript">        required: <span class="literal">true</span></span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="javascript">    <span class="comment">//用一个变量中转，子组件中就用_value就不会直接修改父组件的值</span></span></span><br><span class="line">    computed: &#123;</span><br><span class="line">      _value: &#123;</span><br><span class="line"><span class="javascript">        <span class="keyword">get</span>() &#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span> <span class="keyword">this</span>.value;</span></span><br><span class="line">        &#125;,</span><br><span class="line"><span class="javascript">        <span class="keyword">set</span>(val) &#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.$emit(<span class="string">'update:value'</span>, val);</span></span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+        <p>初出茅庐摸不着头脑</p>
+<p>vue 的入门学习阶段告一段落了，刚刚学完的 vue 还热乎着，趁着这个热乎劲随即找了一个 vueDemo 进行练习。然而没有什么头绪，然后阅读了作者的源码，重新到官网上看了相关的例子和介绍，感觉自己目前立马需要做一个例子来练练手。</p>
+<h2 id="寻找资源"><a href="#寻找资源" class="headerlink" title="寻找资源"></a>寻找资源</h2><blockquote>
+<p>如果你想看实例源代码可以移步<a href="https://github.com/powerdong/vuePractice" target="_blank" rel="noopener">我的第一个 Vue 实例 git 仓库</a></p>
+</blockquote>
+<p>然后到慕课网找相关的 vue 项目教学，找到了一个基于 <code>Vue2.5 开发的去哪儿网 App</code>，看了项目介绍和评价，感觉适合现阶段的我去练习。</p>
+<p>随机立马跟随老师的节奏，进行重学 vue，认真学习每一节的课程，记录相关的笔记，又重新看了相关的文档，第二次看和第一次看确实有些不同的见解。经过几天的学习，基础入门阶段已经完成，进入课程的第二阶段，就是项目实践阶段。</p>
+<h2 id="着手实践"><a href="#着手实践" class="headerlink" title="着手实践"></a>着手实践</h2><p>首先进行项目环境搭建，这里采用 vue 官方提供的 <code>vue-cli</code> 这个脚手架工具，用的默认 <code>webpack</code> 打包工具，初始化了本地项目。</p>
+<blockquote>
+<p>如果没有安装 <code>node</code> 的话需要到 <code>node</code> 官方下载安装。</p>
+</blockquote>
+<p>成功安装完 node 后，执行下面命令进行全局安装这个包</p>
+<blockquote>
+<p><code>npm install -g vue</code></p>
+</blockquote>
+<p>安装之后，你就可以在命令行中访问 <code>vue</code> 命令。你可以通过简单运行 <code>vue</code>，看看是否展示出了一份所有可用命令的帮助信息，来验证它是否安装成功。</p>
+<blockquote>
+<p><code>vue -V</code> 可以查看当前 vue 版本号</p>
+</blockquote>
+<p>打开你创建的项目文件夹，在命令行输入(意思是使用 webpack 打包工具初始化’demo’这个项目包)</p>
+<blockquote>
+<p><code>vue init webpack demo</code></p>
+</blockquote>
+<p>初始化完成后我们就可以在 src 目录下进行编写相关的代码</p>
+<p>之后建议先在 git 上面创建远程仓库，进行远程与本地连接，用来版本控制，也可以较安全的编辑代码，防止因为出错还可以使用 git 的回流功能返回之前的代码。</p>
 <a id="more"></a>
 
-<h2 id="Vue-双向绑定的原理"><a href="#Vue-双向绑定的原理" class="headerlink" title="Vue 双向绑定的原理"></a>Vue 双向绑定的原理</h2><p><code>v-model</code> 是 Vue 2.2.0 添加的，在此之前 Vue 只支持单向数据流</p>
-<p><img src="https://s2.ax1x.com/2019/12/08/QdCN9I.png" alt="QdCN9I.png"></p>
-<p>Vue 是采用数据劫持结合发布者-订阅者模式的方式，通过<code>Object.defineProperty()</code>来劫持各个属性的<code>setter</code>,<code>getter</code>，在数据变动时发布消息给订阅者，触发相应的监听回调。</p>
-<h3 id="双向绑定实现"><a href="#双向绑定实现" class="headerlink" title="双向绑定实现"></a>双向绑定实现</h3><p>如果想实现显示文字根据输入 input 变化，实现一个简单版的</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"a"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"b"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> obj = &#123;&#125;</span></span><br><span class="line"><span class="javascript">  <span class="built_in">Object</span>.defineProperty(obj, <span class="string">'hello'</span>, &#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">get</span>() &#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">`方法被调用`</span>)</span></span><br><span class="line">    &#125;,</span><br><span class="line"><span class="javascript">    <span class="keyword">set</span>(newVal) &#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">document</span>.getElementById(<span class="string">'a'</span>).value = newVal</span></span><br><span class="line"><span class="javascript">      <span class="built_in">document</span>.getElementById(<span class="string">'b'</span>).innerHTML = newVal</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"><span class="javascript">  <span class="built_in">document</span>.addEventListener(<span class="string">'keyup'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span></span><br><span class="line">    obj.hello = e.target.value</span><br><span class="line">  &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="拆解任务，实现-vue-的双向数据绑定"><a href="#拆解任务，实现-vue-的双向数据绑定" class="headerlink" title="拆解任务，实现 vue 的双向数据绑定"></a>拆解任务，实现 vue 的双向数据绑定</h3><p>我们最终实现下面 vue 的效果</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-model</span>=<span class="string">"text"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">    id: <span class="string">'app'</span>,</span></span><br><span class="line">    data: &#123;</span><br><span class="line"><span class="javascript">      text: <span class="string">'hello world'</span></span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ol>
-<li>输入框的文本与文本节点的 data 数据绑定</li>
-<li>输入框的内容发生变化时，data 中的数据也发生变化，实现 view-&gt;model 的变化</li>
-<li>data 中的数据发生变化时，文本节点的内容同步发生变化，实现 model-&gt;view 的变化</li>
-</ol>
-<p>要实现 1 的要求，则又涉及到了 dom 的编译，其中有一个 DocumentFragment 的知识点。</p>
-<h3 id="DocumentFragment"><a href="#DocumentFragment" class="headerlink" title="DocumentFragment"></a>DocumentFragment</h3><p>众所周知，vue 吸收了 react 虚拟 DOM 的优点，使用 DocumentFragment 处理节点，其性能和速度远胜于直接操作 dom。vue 进行编译时，就是将所有挂载在 dom 上的子节点进行劫持到使用 DocumentFragment 处理节点，等到所有操作都执行完毕，将 DocumentFragment 再一模一样返回到挂载的目标上。</p>
-<p>先实现一段劫持函数，将要操作的 dom 全部劫持到 DocumentFragment 中，然后再 append 会原位置。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-model</span>=<span class="string">"text"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> app = <span class="built_in">document</span>.getElementById(<span class="string">'app'</span>)</span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> nodeToFragment = <span class="function">(<span class="params">node</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> flag = <span class="built_in">document</span>.createDocumentFragment()</span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> child</span></span><br><span class="line"><span class="javascript">    <span class="keyword">while</span> ((child = node.firstChild)) &#123;</span></span><br><span class="line"><span class="javascript">      flag.appendChild(child) <span class="comment">//不断劫持挂载元素下的所有dom节点到创建的DocumentFragment</span></span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="javascript">    <span class="keyword">return</span> flag</span></span><br><span class="line">  &#125;</span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> dom = nodeToFragment(app)</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="数据初始化绑定"><a href="#数据初始化绑定" class="headerlink" title="数据初始化绑定"></a>数据初始化绑定</h3><p>当已经获取到所有的 dom 元素之后，则需要对数据进行初始化绑定，这里简单涉及到了模板的编译。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 编译 HTML 模板</span></span><br><span class="line"><span class="keyword">const</span> compile = <span class="function">(<span class="params">node, vm</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> regex = <span class="regexp">/\&#123;\&#123;(.\*)\&#125;\&#125;/</span> <span class="comment">//为临时正则表达式，为 demo 而生</span></span><br><span class="line">  <span class="comment">//如果节点类型为元素的话</span></span><br><span class="line">  <span class="keyword">if</span> (node.nodeType === <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> attrs = node.attributes</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; attrs.length; i++) &#123;</span><br><span class="line">      <span class="keyword">let</span> attr = attrs[i]</span><br><span class="line">      <span class="keyword">if</span> (attr.nodeName === <span class="string">'v-model'</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> name = attr.nodeValue</span><br><span class="line">        node.addEventListener(<span class="string">'input'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">          vm.data[name] = e.target.value</span><br><span class="line">        &#125;)</span><br><span class="line">        node.value = vm.data[name]</span><br><span class="line">        node.removeAttribute(<span class="string">'v-model'</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//如果节点类型为文本的话</span></span><br><span class="line">  <span class="keyword">if</span> (node.nodeType === <span class="number">3</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (regex.test(node.nodeValue)) &#123;</span><br><span class="line">      <span class="keyword">let</span> name = <span class="built_in">RegExp</span>.$<span class="number">1</span> <span class="comment">//获取匹配的字符串，又学到了。。。</span></span><br><span class="line">      name = name.trim()</span><br><span class="line">      node.nodeValue = vm.data[name]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//劫持挂载元素到虚拟dom</span></span><br><span class="line"><span class="keyword">let</span> nodeToFragment = <span class="function">(<span class="params">node, vm</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> flag = <span class="built_in">document</span>.createDocumentFragment()</span><br><span class="line">  <span class="keyword">let</span> child</span><br><span class="line">  <span class="keyword">while</span> ((child = node.firstChild)) &#123;</span><br><span class="line">    compile(child, vm) <span class="comment">//绑定数据，插入到虚拟DOM中</span></span><br><span class="line">    flag.appendChild(child)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> flag</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//初始化</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Vue</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(option) &#123;</span><br><span class="line">    <span class="keyword">this</span>.data = option.data</span><br><span class="line">    <span class="keyword">let</span> id = option.el</span><br><span class="line">    <span class="keyword">let</span> dom = nodeToFragment(<span class="built_in">document</span>.getElementById(id), <span class="keyword">this</span>)</span><br><span class="line">    <span class="built_in">document</span>.getElementById(id).appendChild(dom)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'app'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    text: <span class="string">'hello world'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>通过以上代码先实现了第一个要求，文本框和文本节点已经出现了 hello world 了</p>
-<h3 id="响应式的数据绑定"><a href="#响应式的数据绑定" class="headerlink" title="响应式的数据绑定"></a>响应式的数据绑定</h3><p>接下来我们要实现数据双向绑定的第一步，即 view-&gt;model 的绑定。根据之前那个简单的例子看到，我们可以通过 input 事件实时获取 input 中的值，接着将通过 Object.defineProperty 这个方法将 data 中的 text 设置为 vm 的访问器属性。当我们将获取到的 input 值设置 vm.data.text 时，通过 set 方法，实现了数据层的绑定。在这一步，set 中要做的操作是更新属性的值。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> defineReactive = <span class="function">(<span class="params">obj,key,val</span>) =&gt;</span> &#123;</span><br><span class="line">   <span class="built_in">Object</span>.defineProperty(obj,key,&#123;</span><br><span class="line">      <span class="keyword">get</span>(val)&#123;</span><br><span class="line">         <span class="keyword">return</span> val;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">set</span>(newVal,oldVal)&#123;</span><br><span class="line">         <span class="keyword">if</span>(newVal === oldVal) <span class="keyword">return</span>;</span><br><span class="line">         val = newVal;</span><br><span class="line">         <span class="built_in">console</span>.log(<span class="string">`我获取到了新<span class="subst">$&#123;val&#125;</span>,并成功设置`</span>);</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//监听所有 data 传递进来的数据，将他们绑定到原型 vm 上面</span></span><br><span class="line"><span class="keyword">let</span> observe = <span class="function">(<span class="params">obj,vm</span>) =&gt;</span> &#123;</span><br><span class="line">   <span class="built_in">Object</span>.keys(obj).forEach(<span class="function">(<span class="params">key</span>)=&gt;</span>&#123;</span><br><span class="line">      defineReactive(vm.data,key,obj[key]);</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="订阅-发布模式（subscribe-amp-publish）"><a href="#订阅-发布模式（subscribe-amp-publish）" class="headerlink" title="订阅/发布模式（subscribe&amp;publish）"></a>订阅/发布模式（subscribe&amp;publish）</h3><p>text 属性变化了，set 方法触发了，可以通过 view 层的改变实时改变数据，可是并没有改变文本节点的数据。一个新的知识点：订阅发布模式。</p>
-<p>订阅发布模式定义了一种一对多的关系，让多个观察者同时监听一个主题对象，这个主体对象的改变会通知所有观察者对象。</p>
-<p>发布者发出通知=&gt;主题对象收到通知并推送给订阅者=&gt;订阅者执行操作</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 三个订阅者</span></span><br><span class="line"><span class="keyword">let</span> sub1 = &#123;</span><br><span class="line">  update() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> sub2 = &#123;</span><br><span class="line">  update() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">2</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> sub3 = &#123;</span><br><span class="line">  update() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">3</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 一个主题发布器</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dep</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="keyword">this</span>.subs = [sub1, sub2, sub3]</span><br><span class="line">  &#125;</span><br><span class="line">  notify() &#123;</span><br><span class="line">    subs.forEach(<span class="function">(<span class="params">sub</span>) =&gt;</span> &#123;</span><br><span class="line">      sub.update()</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> dep = <span class="keyword">new</span> Dep()</span><br><span class="line"><span class="comment">// 一个发布者</span></span><br><span class="line"><span class="keyword">const</span> pub = &#123;</span><br><span class="line">  publish() &#123;</span><br><span class="line">    dep.notify()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">pub.publish()</span><br></pre></td></tr></table></figure>
-
-<p>上图为一个简单实例，发布者执行发布命令，所有这个主题的订阅者执行更新操作。接下去我们要做的就是，当 set 方法触发后，input 作为发布者，改变了 text 属性；而文本节点作为订阅者，在收到消息后执行更新操作。</p>
-<h3 id="双向绑定的实现"><a href="#双向绑定的实现" class="headerlink" title="双向绑定的实现"></a>双向绑定的实现</h3><ol>
-<li>每次 new 一个新的 vue 对象时，主要是做了两件事，一件是监听数据：observer(监听数据)，第二个是编译 HTML，HTML，nodeToFragment(id)。</li>
-<li>在监听数据的过程中，会为 data 中的每一个属性生成一个主题对象。</li>
-<li>而在编译 HTML 的过程中，会为每个与数据绑定的相关节点生成一个订阅者 watcher，订阅者 watcher 会将自己订阅到相应属性的 dep 中。</li>
-<li>在前面的方法中已经实现了：修改输入框内容=&gt;再时间回调中修改属性值=&gt;触发属性的 set 方法。</li>
-<li>接下来要做的是发出通知 dep.notify=&gt;发出订阅者的 update 方法=&gt;更新视图。</li>
-</ol>
-<p>那么如何将 watcher 添加到关联属性的 dep 中呢。</p>
-<p>编译 HTML 过程中，为每一个与 data 关联的节点生成一个 watcher，那么 watcher 中又发生了什么？</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 每一个属性节点的 watcher</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Watcher</span></span>&#123;</span><br><span class="line">   <span class="keyword">constructor</span>(vm,node,name)&#123;</span><br><span class="line">      Dep.target = <span class="keyword">this</span>;</span><br><span class="line">      <span class="keyword">this</span>.name = name;</span><br><span class="line">      <span class="keyword">this</span>.node = node;</span><br><span class="line">      <span class="keyword">this</span>.vm = vm;</span><br><span class="line">      <span class="keyword">this</span>.update();</span><br><span class="line">      Dep.target = <span class="literal">null</span>;</span><br><span class="line">   &#125;</span><br><span class="line">   update()&#123;</span><br><span class="line">      <span class="comment">//获得最新值，然后更新视图</span></span><br><span class="line">      <span class="keyword">this</span>.get();</span><br><span class="line">      <span class="keyword">this</span>.node.nodeValue = <span class="keyword">this</span>.value;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">get</span>()&#123;</span><br><span class="line">      <span class="keyword">this</span>.value = <span class="keyword">this</span>.vm.data[<span class="keyword">this</span>.name];</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line">在编译 HTML 的过程中，生成 watcher</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> compile = (node,vm)&#123;</span><br><span class="line">   <span class="comment">// ......</span></span><br><span class="line">   <span class="comment">//如果节点类型为文本的话</span></span><br><span class="line">   <span class="keyword">if</span>(node.nodeType === <span class="number">3</span>)&#123;</span><br><span class="line">      <span class="keyword">if</span>(regex.test(node.nodeValue))&#123;</span><br><span class="line">         <span class="keyword">let</span> name = <span class="built_in">RegExp</span>.$<span class="number">1</span>;</span><br><span class="line">         name = name.trim();</span><br><span class="line">         node.nodeValue = vm.data[name];</span><br><span class="line">         <span class="comment">//在编译过程中，每发现一个属性，则新建一个 watcher</span></span><br><span class="line">         <span class="keyword">new</span> Watcher(vm,node,name);<span class="comment">//在此处添加订阅者</span></span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h3 id="文件夹的解释"><a href="#文件夹的解释" class="headerlink" title="文件夹的解释"></a>文件夹的解释</h3><p>配置完相关的配置后，老师进行了项目目录的解释，对不同文件的内容进行了相关的解释</p>
 <ul>
-<li>首先将自己赋给了一个全局变量 Dep.target;然后执行了 update 方法，进而执行了 get 方法，读取了 vm 的访问器属性，从而触发了访问器属性的 get 方法，get 方法将相应的 watcher 添加到对应访问器属性的 dep 中</li>
-<li>再次，获取属性的值，然后更新视图</li>
-<li>最后将 dep.target 设置为空，是因为这是个全局变量也是 watcher 与 dep 之间唯一的桥梁，任何时间都只能保证只有一个值。</li>
+<li>项目的编写在 src 文件夹下面进行</li>
+<li>项目由 <code>index.html</code> 进行显示</li>
+<li><code>router</code> 文件夹用来配置路由相关的配置</li>
+<li>在 <code>build</code> 文件夹中有一个 <code>webpack.base.conf.js</code> 文件里边 <code>alias</code> 属性可以自定义文件路径的简写形式</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 一个主题发布器</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dep</span>()</span>&#123;</span><br><span class="line">   <span class="keyword">constructor</span>()&#123;</span><br><span class="line">      <span class="keyword">this</span>.subs = [];</span><br><span class="line">   &#125;</span><br><span class="line">   notify()&#123;</span><br><span class="line">      <span class="keyword">this</span>.subs.forEach(<span class="function">(<span class="params">sub</span>) =&gt;</span> &#123;</span><br><span class="line">         sub.update();</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   addSub(sub)&#123;</span><br><span class="line">      <span class="keyword">this</span>.subs.push(sub);</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> defineReactive = <span class="function">(<span class="params">obj,key,val</span>) =&gt;</span> &#123;</span><br><span class="line">   <span class="keyword">let</span> dep = <span class="keyword">new</span> Dep();</span><br><span class="line">   <span class="built_in">Object</span>.defineProperty(obk,key,&#123;</span><br><span class="line">      <span class="keyword">get</span>()&#123;</span><br><span class="line">         <span class="comment">//在此处将所有的监测器 watcher 添加进发布器，每一个属性都有自己的发布器</span></span><br><span class="line">         <span class="keyword">if</span>(dep.target) dep.addSub(dep.target);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">set</span>(newVal,oldVal)&#123;</span><br><span class="line">         <span class="keyword">if</span>(newVal === oldVal) <span class="keyword">return</span>;</span><br><span class="line">         val = newVal;</span><br><span class="line">         dep.notify();</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>至此，hello world 双向绑定就基本实现了。文本内容会随输入框内容同步变化，在控制器中修改 vm.text 的值，会同步反映到文本内容中。</p>
-<hr>
+<p>因为我自己使用的是 less 语法，在编译过程中报错，提醒我需要安装相关的配置 <code>loader</code>，所以我安装了 <code>less</code> 和 <code>less-loader</code> 两个个配置项</p>
 <blockquote>
-<p>‘摘抄’不是单纯的“粘贴-&gt;复制”，而是眼到，手到，心到的一字一句敲打下来。</p>
+<p><code>npm install less less-loader --save</code></p>
 </blockquote>
+<p>这次开发的是一个移动端的页面，在 <code>index.html</code> 中的 <code>&lt;meta name=&quot;viewport&quot;&gt;</code> 的标签中添加了<code>minimum-scale=1.0,maximum-scale=1.0,er-scalable=no&quot;</code>配置，使<strong>用户在访问页面时不能进行放大和缩小</strong>。</p>
+<ul>
+<li>引入了重置页面的<code>reset.css</code>文件</li>
+<li>在移动端开发时出现的<code>1px border</code>问题引入了<code>border.css</code>文件</li>
+<li>增加了项目所需要的字体文件。</li>
+</ul>
+<h3 id="正式开发"><a href="#正式开发" class="headerlink" title="正式开发"></a>正式开发</h3><blockquote>
+<p>接下来就是正式的开发了，项目采用页面分组件进行构建开发。</p>
+</blockquote>
+<p>首先需要创建一个首页文件，因为这次项目的页面较多，所以在目录下创建了 <code>pages</code> 文件夹来存放各个页面。<br>在 <code>pages</code> 文件夹下创建了 <code>home</code> 文件夹，用来存放主页的相关组件，创建一个父组件 <code>Home.vue</code>。通过父组件来引入多个子组件来管理页面。<br>创建好了父组件后，在组件中定义组件的名字，然后需要在 <code>router</code> 文件夹下的 <code>index.js</code> 文件中配置。</p>
+<ol>
+<li><p>引入<code>vue</code>和<code>vue-router</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import Router from &apos;vue-router&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用<code>router</code>(<strong><code>Vue.use(Router)</code></strong>)</p>
+</li>
+<li><p>引入父组件(<strong><code>import Home from &#39;@/pages/home/Home&#39;</code></strong>)</p>
+</li>
+<li><p>然后在配置中设置在根目录<code>&#39;/&#39;</code>下展示主页组件，定义要展示组件的名字</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">path: <span class="string">'/'</span>,</span><br><span class="line">name: <span class="string">'Home'</span>,</span><br><span class="line">component: Home</span><br></pre></td></tr></table></figure>
+
+<p>测试成功后就开始进行页面的编写。</p>
+</li>
+</ol>
+<p>通过在主页父组件 <code>Home.vue</code> 中引入不同的组件然后再将子组件插到父组件的展示区域中进行展示。这里通过创建<code>components</code>文件夹用来管理使用自定义的组件。</p>
+<ul>
+<li>父组件使用(<strong><code>import moduleName from &#39;module&#39;;</code></strong>)方式进行引入组件</li>
+<li>在父组件要使用子组件，需要声明<code>components:{HomeHeader}</code></li>
+<li>然后就可以在展示区写入自定义组件的标签名了<ul>
+<li>这里需要注意 <code>HTML</code> 中的特性名是大小写不敏感的，所以浏览器会把所有的大写字符解释为小写字符。</li>
+<li>这意味着在使用 <code>DOM</code> 中的模板时，<code>camelCase</code> 的 <code>prop</code> 名需要使用其等价的 <code>kebab-case</code> 命名。</li>
+</ul>
+</li>
+<li>引入子组件后在子组件中编写相关组件的页面和样式</li>
+</ul>
+<blockquote>
+<p>在子组件中编写样式时，为了防止子组件样式对全局的污染，可以在<code>&lt;style&gt;</code>标签中加入<code>scoped</code>键值(<strong><code>&lt;style lang=&quot;less&quot; scoped&gt;&lt;/style&gt;</code></strong>),可以防止污染情况的发生。</p>
+</blockquote>
+<p>在编写页面的背景颜色时，由于想到页面的主题色可能多次使用，随即在样式文件夹下创建了一个全局样式。<br>由于样式文件夹引用需要跳到其他路径下，防止页面的阅读体验，所以在配置文件中设置了自定义的路径选择方式。</p>
+<blockquote>
+<p>在引入外部的 less 文件时需要注意需要在 <code>url</code> 地址前面加上<code>~</code>就是这个样子(<strong><code>@import &#39;~styles/global.less&#39;;</code></strong>)这样才能编译正确，不会报错。</p>
+</blockquote>
+<h3 id="Vue-的轮播组件"><a href="#Vue-的轮播组件" class="headerlink" title="Vue 的轮播组件"></a>Vue 的轮播组件</h3><p>首页中的轮播图样式使用了<code>Vue-Awesome-Swiper</code>组件。</p>
+<p>首先是进行安装</p>
+<blockquote>
+<p><code>npm install vue-awesome-swiper --save</code></p>
+</blockquote>
+<p>使用的话需要进行引入，由于想到可能会多个页面都会这个组件，索性将组件引入到<code>main.js</code>文件中。</p>
+<blockquote>
+<p><code>import VueAwesomeSwiper from &#39;vue-awesome-swiper&#39;</code><br><code>import &#39;swiper/dist/css/swiper.css&#39;</code><br><code>Vue.use(VueAwesomeSwiper)</code></p>
+</blockquote>
+<p>在需要轮播的位置使用<code>Vue-Awesome-Swiper</code>提供的模板</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">swiper</span> <span class="attr">:options</span>=<span class="string">"swiperOption"</span> <span class="attr">ref</span>=<span class="string">"mySwiper"</span> @<span class="attr">someSwiperEvent</span>=<span class="string">"callback"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- slides --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">swiper-slide</span>&gt;</span>I'm Slide 1<span class="tag">&lt;/<span class="name">swiper-slide</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"swiper-pagination"</span> <span class="attr">slot</span>=<span class="string">"pagination"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">swiper</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  name: <span class="string">'carrousel'</span>,</span><br><span class="line">  data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      swiperOption: &#123;</span><br><span class="line">        pagination: <span class="string">'.swiper-pagination'</span>,</span><br><span class="line">        <span class="comment">// 是否循环滚动</span></span><br><span class="line">        loop: <span class="literal">true</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在设置图片索引的小圆点样式时遇到的问题就是类名也已经加上了 ，但是样式就是没有生效，最后发现原因的产生竟然是<code>&lt;style scoped&gt;&lt;/style&gt;</code>中<code>scoped</code>属性。</p>
+<blockquote>
+<p>该属性的作用是用来绑定当前样式不被污染，同时也就意味着在创建新的元素后，该元素样式是进入不到 style 总查找样式的。</p>
+</blockquote>
+<p>了解到了 vue 中的<strong>样式穿透</strong>，也是解决样式问题的常用方式之一。sass/less 使用样式穿透的方式可能会有所不同。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* stylus的样式穿透 使用&gt;&gt;&gt; */</span></span><br><span class="line"></span><br><span class="line">外层 &gt;&gt;&gt; 第三方组件 </span><br><span class="line"></span><br><span class="line"><span class="selector-class">.wrapper</span> &gt;&gt;&gt; <span class="selector-class">.swiper-pagination-bullet-active</span></span><br><span class="line"><span class="selector-tag">background</span>: <span class="selector-id">#fff</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* sass和less的样式穿透 使用/deep/ */</span></span><br><span class="line"></span><br><span class="line">外层 /deep/ 第三方组件 &#123;</span><br><span class="line">&#125;</span><br><span class="line">.wrapper /deep/ .swiper-pagination-bullet-active &#123;</span><br><span class="line">  <span class="selector-tag">background</span>: <span class="selector-id">#fff</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样就可以正确的显示样式了。</p>
+<h3 id="父子组件通信"><a href="#父子组件通信" class="headerlink" title="父子组件通信"></a>父子组件通信</h3><p>结束了主页的编写后需要进行 ajax 访问服务器得到数据进行动态渲染。<code>Vue</code>建议使用<code>axios</code></p>
+<ul>
+<li>我们需要首先安装<code>axios</code>这个包。<blockquote>
+<p><code>npm install axios</code></p>
+</blockquote>
+</li>
+<li>安装完成后引入包。我们可以只在父组件使用 ajax 进行通信，得到数据后向子组件传值。<blockquote>
+<p><code>import axios from &#39;axios&#39;;</code></p>
+</blockquote>
+</li>
+</ul>
+<p>在调用<code>axios</code>建议使用<code>mounted</code>这个生命周期钩子函数。<strong>它是在页面渲染完成时执行</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">methods:&#123;</span><br><span class="line">    getInfo()&#123;</span><br><span class="line">        axios.get(<span class="string">'url'</span>,&#123;</span><br><span class="line">            传入参数</span><br><span class="line">            params:&#123;</span><br><span class="line">                key:value</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">        .then(<span class="keyword">this</span>.successCallback)</span><br><span class="line">    &#125;,</span><br><span class="line">    successCallback(res)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">mounted()&#123;</span><br><span class="line">    <span class="keyword">this</span>.getInfo();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过<code>axios</code>成功获取到数据后将本地数据修改。</p>
+<h4 id="父子组件之间传值"><a href="#父子组件之间传值" class="headerlink" title="父子组件之间传值"></a>父子组件之间传值</h4><p>进行父子间通信时父组件向子组件传值，子组件进行接收</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//父组件传值</span></span><br><span class="line">&lt;children :childData=<span class="string">"fatherData"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">children</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">data()&#123;</span><br><span class="line">    <span class="keyword">return</span>&#123;</span><br><span class="line">        fatherData:[]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 子组件接收可定义类型 使用</span></span><br><span class="line">props:&#123;</span><br><span class="line">    childData:&#123;</span><br><span class="line">        <span class="comment">// 类型</span></span><br><span class="line">        type:<span class="built_in">String</span>,</span><br><span class="line">        <span class="comment">// 默认值</span></span><br><span class="line">        <span class="keyword">default</span>:<span class="string">"hello"</span>,</span><br><span class="line">        <span class="comment">// 是否必填</span></span><br><span class="line">        required:<span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="父子组件传事件"><a href="#父子组件传事件" class="headerlink" title="父子组件传事件"></a>父子组件传事件</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 子组件定义真实事件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"childrenClick"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line">methods:&#123; childrenClick()&#123;</span><br><span class="line"><span class="comment">&lt;!-- 通过$emit向外传事件，第一个参数是父级使用的名字，第二个参数可以传数据 --&gt;</span></span><br><span class="line">this.$emit("fatherHandle",value) &#125; &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 父组件定义事件操作 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">children</span> @<span class="attr">fatherHandle</span>=<span class="string">"fatherClick"</span>&gt;</span><span class="tag">&lt;/<span class="name">children</span>&gt;</span></span><br><span class="line"></span><br><span class="line">methods:&#123; fatherClick()&#123; console.log('触发子组件的点击事件') &#125; &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="搜索框逻辑"><a href="#搜索框逻辑" class="headerlink" title="搜索框逻辑"></a>搜索框逻辑</h3><blockquote>
+<p>通过<code>v-model</code>实现对<code>input</code>搜索框内数据的双向绑定。</p>
+</blockquote>
+<p>在<code>Vue</code>中的<code>watch</code>监听数据的每次变化，这里使用<code>watch</code>侦听器，监听<code>input</code>搜索框内的数据变化。<br>但是由于输入内容太过频繁，搜索事件调用频繁，对页面性能也有一定的影响，这里使用了<strong>函数防抖机制</strong>。
+这里对搜索的内容项注册了点击事件<code>@click=&quot;handleClick&quot;</code>需要实现点击后跳传到首页。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">handleClick()&#123;</span><br><span class="line">    <span class="keyword">this</span>.$router.push(<span class="string">"/"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Vuex-使用实现数据通信"><a href="#Vuex-使用实现数据通信" class="headerlink" title="Vuex 使用实现数据通信"></a>Vuex 使用实现数据通信</h3><p>Vuex 是一个专为 Vue.js 应用程序开发的<strong>状态管理模式</strong></p>
+<ul>
+<li>首先是安装 vuex<blockquote>
+<p><code>npm install vuex</code></p>
+</blockquote>
+</li>
+<li>为了更好的管理，我们选择在 src 文件夹下创建一个 store 文件夹存放 vuex 相关的文件。</li>
+<li>创建好了之后我们在<code>main.js</code>文件中引入创建的 store，而且需要在 vue 实例中使用<code>store</code><blockquote>
+<p><code>import store from &#39;./store&#39;</code></p>
+</blockquote>
+</li>
+<li>这里在引入的 store 文件夹后会自动寻找该目录下的<code>index.js</code>文件</li>
+<li>在<code>index.js</code>文件中配置 vuex。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span>;</span><br><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">    <span class="comment">// 存放数据</span></span><br><span class="line">    state:&#123;</span><br><span class="line">        city:<span class="string">"上海"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 定义方法</span></span><br><span class="line">    mutations:&#123;</span><br><span class="line">        <span class="comment">// state存放的是数据  第二个参数是传过来的参数</span></span><br><span class="line">        changeCity(state,city)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>在 <code>vue</code> 组件中通过 <code>map</code> 映射关系使用 <code>vuex</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123;mapState, mapMutations&#125; <span class="keyword">from</span> <span class="string">'vuex'</span>;</span><br><span class="line"></span><br><span class="line">computed: &#123;</span><br><span class="line">    ...mapState(&#123;</span><br><span class="line">    <span class="comment">// 映射 this.currentCity 为 store.state.city</span></span><br><span class="line">    currentCity:<span class="string">'city'</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">methods: &#123;</span><br><span class="line">      changeState(city)&#123;</span><br><span class="line">          <span class="keyword">this</span>.changeCity(city);</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="comment">//将 `this.changeCity()` 映射为 `this.$store.commit('changeCity')`</span></span><br><span class="line">      ...mapMutations([<span class="string">'changeCity'</span>])</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
+<h3 id="在动态组件上使用-keep-alive"><a href="#在动态组件上使用-keep-alive" class="headerlink" title="在动态组件上使用 keep-alive"></a>在动态组件上使用 keep-alive</h3><p>在从主页跳转至城市列表页时需要<strong>多次发送 ajax 请求</strong>，这样对服务器是很不友好的，我们可以使用<code>keep-alive</code>对动态组件进行包裹，使那些标签的组件实例能够被在它们第一次被创建的时候缓存下来。</p>
+<p>我们可以在<code>App.vue</code>中将<code>&lt;router-view /&gt;</code>包裹起来</p>
+<p><code>&lt;keep-alive&gt;</code> 包裹动态组件时，<strong>会缓存不活动的组件实例，而不是销毁它们。</strong></p>
+<blockquote>
+<p>这里使用 <code>deactivated</code> 钩子函数，不能使用 <code>beforeDestroy</code> <code>destroy</code></p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">keep-alive</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">router-view</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">keep-alive</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>当你使用了 <code>keep-alive</code>生命周期函数中会多出一组钩子函数<code>activated</code>、<code>deactivated</code>。</p>
+<p>通过<code>activated</code> 实现在页面加载时时执行，<code>deactivated</code>在离开页面时执行，为防止缓存不必要的内容。</p>
+<h3 id="动态路由绑定"><a href="#动态路由绑定" class="headerlink" title="动态路由绑定"></a>动态路由绑定</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    path:<span class="string">'/detail/:id'</span>,</span><br><span class="line">    name:<span class="string">'Detail'</span>,</span><br><span class="line">    component:Detail</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过<code>&lt;router-link :to=&quot;&#39;/detail/&#39; + item.id&quot;&gt;</code>实现动态跳转路由</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    path:<span class="string">'/detail'</span>,</span><br><span class="line">    name:<span class="string">'Detail'</span>,</span><br><span class="line">    component:Detail</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过 <code>this.$router.push({ name: &#39;Detail&#39;, params: { id } })</code> 可以使得地址栏不显示 id 信息，并且可以通过 this.$route.params 获取到值</p>
+<blockquote>
+<p>要注意这时候在 path 中不能再写 <code>/:id</code></p>
+</blockquote>
+<h3 id="巧妙使用递归组件"><a href="#巧妙使用递归组件" class="headerlink" title="巧妙使用递归组件"></a>巧妙使用递归组件</h3><p>当你需要构建一个文件目录树，可以试着使用递归组件。</p>
+<p>实现方法就是在组件内使用自己</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">detail-list</span> <span class="attr">:list</span>=<span class="string">"item.children"</span>&gt;</span><span class="tag">&lt;/<span class="name">detail-list</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="vue-路由懒加载"><a href="#vue-路由懒加载" class="headerlink" title="vue 路由懒加载"></a>vue 路由懒加载</h3><p>当打包构建应用时，JavaScript 包会变得非常大，影响页面加载。如果我们能把不同路由对应的组件分割成不同的代码块，然后当路由被访问的时候才加载对应组件，这样就更加高效了。</p>
+<ul>
+<li>首先，可以将异步组件定义为返回一个 Promise 的工厂函数 (该函数返回的 Promise 应该 resolve 组件本身)<ul>
+<li><code>const Foo = () =&gt; Promise.resolve({ /* 组件定义对象 */ })</code></li>
+</ul>
+</li>
+<li>第二，在 Webpack 2 中，我们可以使用动态 import 语法来定义代码分块点 (split point)<ul>
+<li><code>import(&#39;./Foo.vue&#39;) // 返回 Promise</code></li>
+</ul>
+</li>
+</ul>
+<p>结合这两者，这就是如何定义一个能够被 Webpack 自动代码分割的异步组件。</p>
+<blockquote>
+<p><code>const Foo = () =&gt; import(&#39;./Foo.vue&#39;)</code></p>
+</blockquote>
+<p>在路由配置中什么都不需要改变，只需要像往常一样使用 Foo</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">  routes: [&#123; <span class="attr">path</span>: <span class="string">'/foo'</span>, <span class="attr">component</span>: Foo &#125;]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>这里我尝试使用定义一个函数，通过传入参数方式定义引入组件的位置</p>
+<blockquote>
+<p><code>const _import_ = file =&gt; import(&#39;@/pages/&#39; + file + &#39;index&#39;)</code></p>
+</blockquote>
+<p>这里使用<code>file</code>变量，可以在<code>component</code>使用子组件时调用<code>_import_</code>函数，将文件夹名字传进去。类似这样</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">  routes: [</span><br><span class="line">    &#123;</span><br><span class="line">      path: <span class="string">'/foo'</span>,</span><br><span class="line">      component: _import_(<span class="string">'home'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="真机调试"><a href="#真机调试" class="headerlink" title="真机调试"></a>真机调试</h3><ul>
+<li>windows 用户可以在命令行内输入<code>ipconfig</code></li>
+<li>Mac 用户输入<code>ifconfig</code></li>
+</ul>
+<p>找到<strong>IPv4 地址</strong>对应的 IP 地址。(例如 192.168.0.1)<br>在浏览器地址中输入<code>192.168.0.1:8080/</code></p>
+<p><strong>如果出现无法访问情况可以看下文设置</strong></p>
+<p>默认情况下<code>npm run dev</code>并不能实现使用本地 ip 访问项目</p>
+<p>可以在<code>package.json</code>中的<code>script</code>属性中的<code>dev</code>中增加<code>--host 0.0.0.0</code>类似这个样子:</p>
+<blockquote>
+<p><code>&quot;dev&quot;: &quot;webpack-dev-server --inline --host 0.0.0.0 --progress --config build/webpack.dev.conf.js&quot;,</code></p>
+</blockquote>
+<p>设置后重新在浏览器中访问，正常后可在手机上访问该地址，<strong>不过测试的手机需要和电脑连接在同一局域网下</strong></p>
+<h3 id="低版本手机浏览器不支持-ES6-的-Promise"><a href="#低版本手机浏览器不支持-ES6-的-Promise" class="headerlink" title="低版本手机浏览器不支持 ES6 的 Promise"></a>低版本手机浏览器不支持 ES6 的 Promise</h3><p>如果在手机浏览器中访问出现白屏情况，需要考虑是否是低版本浏览器情况下不支持 ES6 特性情况</p>
+<p><strong>解决办法</strong></p>
+<ul>
+<li>安装<code>babel-polyfill</code>包<blockquote>
+<p><code>npm install babel-polyfill</code></p>
+</blockquote>
+</li>
+<li>在<code>main.js</code>引入<code>babel-polyfill</code><blockquote>
+<p><code>import &#39;babel-polyfill&#39;</code></p>
+</blockquote>
+</li>
+</ul>
+<hr>
 <blockquote>
 <p>博客声明:所有转载的文章、图片仅用于作者本人收藏学习目的，被要求或认为适当时，将标注署名与来源。若不愿某一作品被转用，请及时通知本站，本站将予以及时删除。</p>
 </blockquote>
@@ -354,7 +511,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/19/Vue-刨根问底/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/20/Vue-我的第一个vue实例/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -368,18 +525,18 @@
   
 <nav id="article-nav">
   
-    <a href="/myBlog/2019/08/20/Vue-我的第一个vue实例/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/myBlog/2019/08/26/md-前端需要了解的设计模式(1)/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          实操实干——vue实例记录
+          不要花里胡哨，要一套一套——设计模式(1)
         
       </div>
     </a>
   
   
-    <a href="/myBlog/2019/08/15/Vue-逐步了解/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">你有喘息的机会吗?——Vue,逐步了解</div>
+    <a href="/myBlog/2019/08/19/Vue-刨根问底/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">停下来，问问自己——Vue-刨根问底</div>
       <i class="icon-circle-right"></i>
     </a>
   
