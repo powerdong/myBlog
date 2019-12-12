@@ -22,7 +22,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/12/02/Qn8PNq.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/12/02/Qn8A3T.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/12/05/QGan5q.png">
-<meta property="og:updated_time" content="2019-12-07T03:15:29.700Z">
+<meta property="og:updated_time" content="2019-12-12T03:28:33.772Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="左膀右臂一个不少——React初探">
 <meta name="twitter:description" content="React 初探React 是一个用于构建用户界面的 JavaScript 库。 React 家族介绍 React.js 用 React 的语法，编写一些网页的交互效果   React.Native 用 React 的语法，编写原生的 APP 应用   React VR 用 React 的语法，开发 VR 或全景应用    React VS Vue    React Vue    灵活性更大，处">
@@ -354,7 +354,50 @@
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">WarningBanner</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!props.warn) &#123;</span><br><span class="line">    <span class="comment">// 根据 warn 的值进行条件渲染</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span> Welcome my blog<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>在组件的 render 方法中返回 null 并不会影响组件的生命周期。</p>
-<hr>
+<h2 id="列表-amp-Key"><a href="#列表-amp-Key" class="headerlink" title="列表 &amp; Key"></a>列表 &amp; Key</h2><h3 id="渲染多个组件"><a href="#渲染多个组件" class="headerlink" title="渲染多个组件"></a>渲染多个组件</h3><p>我们在 React 中可以通过 JavaScript 的 Map 函数渲染多个组件内容</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">NumberList</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> numbers = props.numbers</span><br><span class="line">  <span class="keyword">const</span> listItems = numbers.map(<span class="function">(<span class="params">number</span>) =&gt;</span> &#123;</span><br><span class="line">    ;<span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;number&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="comment">// 我们把整个listItems插入到ul元素中</span></span><br><span class="line">    &lt;ul&gt;&#123;listItems&#125;&lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">  )</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">const numbers = [1, 2, 3, 4, 5, 6]</span></span><br><span class="line"><span class="regexp">ReactDOM.render(</span></span><br><span class="line"><span class="regexp">  &lt;NumberList numbers=&#123;numbers&#125;/</span>&gt;</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'root)</span></span><br><span class="line"><span class="string">)</span></span><br></pre></td></tr></table></figure>
+
+<p>当我们在运行这段代码，将会看到一个警告，<code>a key should be provided for list items</code>,意思是当你创建一个元素时，必须包括一个特殊的 key 属性。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;li key=&#123;number.toString()&#125;&gt;&#123;number&#125;&lt;<span class="regexp">/li&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="key"><a href="#key" class="headerlink" title="key"></a>key</h3><p>key 帮助 React 识别哪些元素改变了，比如被添加或删除。因此应当给数组中的每一个元素赋予一个确定的标识</p>
+<blockquote>
+<p>key 值用来在更改数据时，虚拟 DOM 可以更好的找到之前的数据作对比</p>
+</blockquote>
+<p>为什么不推荐使用 index 作为 key 值?</p>
+<blockquote>
+<p>当数组中的某一项删除后，会影响其他元素的 index(key)值，这样对后来的比对工作带来很大的压力，可以使用 item 作为 key 值【建议使用比较稳定的值作为 key 值】</p>
+</blockquote>
+<h4 id="什么是虚拟-DOM"><a href="#什么是虚拟-DOM" class="headerlink" title="什么是虚拟 DOM"></a>什么是虚拟 DOM</h4><ul>
+<li>一个 JS 对象，用它来描述真实 DOM</li>
+<li>减少对真实 DOM 的创建，以及真实 DOM 的对比，取而代之，创建的是一个 JS 对象，对比的也是 JS 对象，性能会后很大的提升</li>
+<li>DOM 替换更新时新旧对比，只替换更改过的区域</li>
+<li><strong>性能提升</strong>、<strong>使得跨端应用得以实现</strong></li>
+</ul>
+<h3 id="用-key-提取组件"><a href="#用-key-提取组件" class="headerlink" title="用 key 提取组件"></a>用 key 提取组件</h3><blockquote>
+<p>元素的 key 只有放在就近的数组上下文中才有意义。</p>
+</blockquote>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ListItem</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 这里不需要指定 key</span></span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;props.value&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">NumberList</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> numbers = props.numbers</span><br><span class="line">  <span class="keyword">const</span> listItems = numbers.map(<span class="function">(<span class="params">number</span>) =&gt;</span> (</span><br><span class="line">    &lt;ListItem key=&#123;numbers.toString()&#125; value=&#123;number&#125; /&gt;</span><br><span class="line">  ))</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">ul</span>&gt;</span>&#123;listItems&#125;<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;NumberList numbers=&#123;numbers&#125; /&gt;,</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p><strong>在 map()方法中的元素需要设置 key 属性</strong></p>
+<h3 id="key-只是在兄弟节点之间必须唯一"><a href="#key-只是在兄弟节点之间必须唯一" class="headerlink" title="key 只是在兄弟节点之间必须唯一"></a>key 只是在兄弟节点之间必须唯一</h3><p>数组元素中使用的 key 在其兄弟节点之间应该是独一无二的。然而，他们不需要是全局唯一的。当我们生成两个不同的数组时，我们可以使用相同的 key 值</p>
+<p>当在组件中需要时使用 key 值时，使用其他属性名显式传递这个值</p>
+<blockquote>
+<p>如果一个<code>map()</code>嵌套了太多层级，可能需要提取组件</p>
+</blockquote>
+<h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><p>在 React 中，HTML 表单元素的工作方式和其他的 DOM 元素有些不同，这是因为表单元素通常会保持一些内部的 state。</p>
+<h3 id="受控组件"><a href="#受控组件" class="headerlink" title="受控组件"></a>受控组件</h3><p>在 React 中，可变状态(mutable state)通常保存在组件的 state 属性中，并且只能通过使用<code>setState()</code>来更新</p>
+<p>渲染表单的 React 组件还控制着用户输入过程中表单发生的操作，被 React 以这种方式控制取值的表单输入元素就叫做”受控组价”</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NameForm</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props)</span><br><span class="line">    <span class="keyword">this</span>.state = &#123; <span class="attr">value</span>: <span class="string">''</span> &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.handleChange = <span class="keyword">this</span>.handleChange.bind(<span class="keyword">this</span>)</span><br><span class="line">    <span class="keyword">this</span>.handleSubmit = <span class="keyword">this</span>.handleSubmit.bind(<span class="keyword">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleChange(event) &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123; <span class="attr">value</span>: event.target.value &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleSubmit(event) &#123;</span><br><span class="line">    alert(<span class="string">'提交的名字: '</span> + <span class="keyword">this</span>.state.value)</span><br><span class="line">    event.preventDefault()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;form onSubmit=&#123;<span class="keyword">this</span>.handleSubmit&#125;&gt;</span><br><span class="line">        &lt;label&gt;</span><br><span class="line">          名字:</span><br><span class="line">          &lt;input</span><br><span class="line">            type=<span class="string">"text"</span></span><br><span class="line">            <span class="comment">// 表单上设置value属性，使得React的state成为唯一的数据源</span></span><br><span class="line">            value=&#123;<span class="keyword">this</span>.state.value&#125;</span><br><span class="line">            <span class="comment">// 每次变化会触发函数，因此显示的值将随着用户输入而更新</span></span><br><span class="line">            onChange=&#123;<span class="keyword">this</span>.handleChange&#125;</span><br><span class="line">          /&gt;</span><br><span class="line">        &lt;<span class="regexp">/label&gt;</span></span><br><span class="line"><span class="regexp">        &lt;input type="submit" value="提交" /</span>&gt;</span><br><span class="line">      &lt;<span class="regexp">/form&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="textarea-标签"><a href="#textarea-标签" class="headerlink" title="textarea 标签"></a>textarea 标签</h3><p>在 React 中，<code>&lt;textarea&gt;</code> 使用 value 属性代替。这样，可以使得使用 <code>&lt;textarea&gt;</code> 的表单和使用单行 input 的表单非常类似</p>
+<h3 id="select-标签"><a href="#select-标签" class="headerlink" title="select 标签"></a>select 标签</h3><p>React 并不会使用 selected 属性，而是在根 select 标签上使用 value 属性。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FlavorForm</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props)</span><br><span class="line">    <span class="keyword">this</span>.state = &#123; <span class="attr">value</span>: <span class="string">'coconut'</span> &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.handleChange = <span class="keyword">this</span>.handleChange.bind(<span class="keyword">this</span>)</span><br><span class="line">    <span class="keyword">this</span>.handleSubmit = <span class="keyword">this</span>.handleSubmit.bind(<span class="keyword">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleChange(event) &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123; <span class="attr">value</span>: event.target.value &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleSubmit(event) &#123;</span><br><span class="line">    alert(<span class="string">'你喜欢的风味是: '</span> + <span class="keyword">this</span>.state.value)</span><br><span class="line">    event.preventDefault()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;form onSubmit=&#123;<span class="keyword">this</span>.handleSubmit&#125;&gt;</span><br><span class="line">        &lt;label&gt;</span><br><span class="line">          选择你喜欢的风味: <span class="comment">// 这里设置选中的值</span></span><br><span class="line">          &lt;select value=&#123;<span class="keyword">this</span>.state.value&#125; onChange=&#123;<span class="keyword">this</span>.handleChange&#125;&gt;</span><br><span class="line">            &lt;option value=<span class="string">"grapefruit"</span>&gt;葡萄柚&lt;<span class="regexp">/option&gt;</span></span><br><span class="line"><span class="regexp">            &lt;option value="lime"&gt;酸橙&lt;/</span>option&gt;</span><br><span class="line">            &lt;option value=<span class="string">"coconut"</span>&gt;椰子&lt;<span class="regexp">/option&gt;</span></span><br><span class="line"><span class="regexp">            &lt;option value="mango"&gt;芒果&lt;/</span>option&gt;</span><br><span class="line">          &lt;<span class="regexp">/select&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>label&gt;</span><br><span class="line">        &lt;input type=<span class="string">"submit"</span> value=<span class="string">"提交"</span> /&gt;</span><br><span class="line">      &lt;<span class="regexp">/form&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="受控输入空值"><a href="#受控输入空值" class="headerlink" title="受控输入空值"></a>受控输入空值</h3><p>在受控组件上指定 value 的 prop 可以防止用户更改输入。如果指定了 value，但输入仍可编辑，则可能是意外地将 value 设置为 undefined 或 null。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">value</span>=<span class="string">"hi"</span> /&gt;</span>, mountNode)</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">setTimeout(function() &#123;</span></span><br><span class="line"><span class="xml">  // 输入最初被锁定，但在短时间延迟后变为可编辑。</span></span><br><span class="line">  ReactDOM.render(&lt;input value=&#123;null&#125; /&gt;, mountNode)</span><br><span class="line">&#125;, 1000)</span><br></pre></td></tr></table></figure>
+
+<h2 id="状态提升"><a href="#状态提升" class="headerlink" title="状态提升"></a>状态提升</h2><hr>
 <blockquote>
 <p>‘摘抄’不是单纯的“粘贴-&gt;复制”，而是眼到，手到，心到的一字一句敲打下来。</p>
 </blockquote>
@@ -511,6 +554,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#React-初探"><span class="toc-number">1.</span> <span class="toc-text">React 初探</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#React-家族介绍"><span class="toc-number">1.1.</span> <span class="toc-text">React 家族介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-VS-Vue"><span class="toc-number">1.2.</span> <span class="toc-text">React VS Vue</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#从-Hello-World-开始-React-之旅"><span class="toc-number">1.3.</span> <span class="toc-text">从 Hello World 开始 React 之旅</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSX"><span class="toc-number">1.4.</span> <span class="toc-text">JSX</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么使用-JSX"><span class="toc-number">1.4.1.</span> <span class="toc-text">为什么使用 JSX</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#JSX-中嵌入表达式"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">JSX 中嵌入表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JSX-特定属性"><span class="toc-number">1.4.1.2.</span> <span class="toc-text">JSX 特定属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JSX-防止注入攻击"><span class="toc-number">1.4.1.3.</span> <span class="toc-text">JSX 防止注入攻击</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#元素渲染"><span class="toc-number">1.5.</span> <span class="toc-text">元素渲染</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#更新已渲染的元素"><span class="toc-number">1.5.1.</span> <span class="toc-text">更新已渲染的元素</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组件-amp-Props"><span class="toc-number">1.6.</span> <span class="toc-text">组件 &amp; Props</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#函数组件与-class-组件"><span class="toc-number">1.6.1.</span> <span class="toc-text">函数组件与 class 组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#渲染组件"><span class="toc-number">1.6.2.</span> <span class="toc-text">渲染组件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#渲染流程"><span class="toc-number">1.6.2.1.</span> <span class="toc-text">渲染流程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组合组件"><span class="toc-number">1.6.3.</span> <span class="toc-text">组合组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提取组件"><span class="toc-number">1.6.4.</span> <span class="toc-text">提取组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Props-的只读性"><span class="toc-number">1.6.5.</span> <span class="toc-text">Props 的只读性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#State-amp-生命周期"><span class="toc-number">1.7.</span> <span class="toc-text">State &amp; 生命周期</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#将函数组件转换成-class-组件"><span class="toc-number">1.7.1.</span> <span class="toc-text">将函数组件转换成 class 组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#向-class-组件中添加局部的-state"><span class="toc-number">1.7.2.</span> <span class="toc-text">向 class 组件中添加局部的 state</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将生命周期方法添加到-Class-中"><span class="toc-number">1.7.3.</span> <span class="toc-text">将生命周期方法添加到 Class 中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正确使用-State"><span class="toc-number">1.7.4.</span> <span class="toc-text">正确使用 State</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件处理"><span class="toc-number">1.8.</span> <span class="toc-text">事件处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#向事件处理程序传递参数"><span class="toc-number">1.8.1.</span> <span class="toc-text">向事件处理程序传递参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条件渲染"><span class="toc-number">1.9.</span> <span class="toc-text">条件渲染</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#元素变量"><span class="toc-number">1.9.1.</span> <span class="toc-text">元素变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#与运算符-amp-amp"><span class="toc-number">1.9.2.</span> <span class="toc-text">与运算符 &amp;&amp;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三目运算符"><span class="toc-number">1.9.3.</span> <span class="toc-text">三目运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#阻止组件渲染"><span class="toc-number">1.9.4.</span> <span class="toc-text">阻止组件渲染</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#列表-amp-Key"><span class="toc-number">1.10.</span> <span class="toc-text">列表 &amp; Key</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#渲染多个组件"><span class="toc-number">1.10.1.</span> <span class="toc-text">渲染多个组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#key"><span class="toc-number">1.10.2.</span> <span class="toc-text">key</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是虚拟-DOM"><span class="toc-number">1.10.2.1.</span> <span class="toc-text">什么是虚拟 DOM</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用-key-提取组件"><span class="toc-number">1.10.3.</span> <span class="toc-text">用 key 提取组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#key-只是在兄弟节点之间必须唯一"><span class="toc-number">1.10.4.</span> <span class="toc-text">key 只是在兄弟节点之间必须唯一</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#表单"><span class="toc-number">1.11.</span> <span class="toc-text">表单</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#受控组件"><span class="toc-number">1.11.1.</span> <span class="toc-text">受控组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#textarea-标签"><span class="toc-number">1.11.2.</span> <span class="toc-text">textarea 标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#select-标签"><span class="toc-number">1.11.3.</span> <span class="toc-text">select 标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#受控输入空值"><span class="toc-number">1.11.4.</span> <span class="toc-text">受控输入空值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#状态提升"><span class="toc-number">1.12.</span> <span class="toc-text">状态提升</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -688,15 +744,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">安全</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
+                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -708,15 +760,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">模块化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">cdn</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -724,15 +780,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TS</a>
+                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -741,6 +793,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">TS</a>
               </li>
             
             <div class="clearfix"></div>
