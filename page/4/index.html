@@ -151,6 +151,107 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-HTML5-拖拽上传文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/07/14/HTML5-拖拽上传文件/">你从这，到那——HTML5-拖拽上传文件</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/07/14/HTML5-拖拽上传文件/" class="archive-article-date">
+  	<time datetime="2019-07-14T01:41:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>当我们学习了 HTML 提供的原生拖放(drag &amp; drop)后,是时候想一想这个东西<strong>可以用来作什么</strong>，<strong>可以在什么时候使用</strong>，<strong>使用的场景</strong>等等</p>
+<h2 id="场景分析"><a href="#场景分析" class="headerlink" title="场景分析"></a>场景分析</h2><p>当我们在注册成功一个账户时，一般网站会让我们上传我们的用户头像，或者在实名认证的时候会涉及到身份证图片上传到等，这时候我们可以使用<code>input</code>提供的<code>file</code>属性进行选择本地文件进行上传。</p>
+<p><img src="http://www-faq.stor.sinaapp.com/06ebdd14b6cccb47deb6.png" alt="实名认证"></p>
+<p>我们再想一下，当在电脑端的情况下，当用户打开文件选择框时再寻找图片对应的文件夹，再进行选取文件的时候是不是会有点麻烦呢？我们可不可以让用户找到图片文件，直接引入实现上传呢？答案是可以的。</p>
+<h2 id="怎么做"><a href="#怎么做" class="headerlink" title="怎么做"></a>怎么做</h2><p>经过这些分析后，我们可以尝试使用 HTML5 提供的拖拽，使得目标元素增加读取文件功能，然后使用 ajax 实现图片上传。</p>
+<p>谈一谈我们需要使用到的技术:</p>
+<ul>
+<li><strong>Drag &amp; Drop</strong>: HTML5 基于拖拽的事件机制</li>
+<li><strong>File API</strong>: 可以很方便的让 Web 应用访问文件对象，File API 包括 FileList、Blob、File、FileReader、URI scheme，本文主要讲解拖拽上传中用到的 FileList 和 FileReader 接口。</li>
+<li><strong>FormData</strong>: FormData 是基于 XMLHttpRequest Level 2 的新接口，可以方便 web 应用模拟 Form 表单数据，最重要的是它支持文件的二进制流数据，这样我们就能够通过它来实现 AJAX 向后端发送文件数据了。</li>
+</ul>
+        
+          <a class="article-more-a" href="/myBlog/2019/07/14/HTML5-拖拽上传文件/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/07/14/HTML5-拖拽上传文件/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-HTML5-拖拽" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1123,115 +1224,6 @@
 
 
   
-    <article id="post-Css3-0-动画" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/06/28/Css3-0-动画/">动起来，这样比较炫—— CSS3 动画</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/06/28/Css3-0-动画/" class="archive-article-date">
-  	<time datetime="2019-06-28T03:24:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://s2.ax1x.com/2019/11/24/ML33fs.png" alt="ML33fs.png"></p>
-<h2 id="Css3-动画"><a href="#Css3-动画" class="headerlink" title="Css3 动画"></a>Css3 动画</h2><ul>
-<li><strong>transition</strong><ul>
-<li>transition-property 规定设置过渡效果的 CSS 属性的名称。</li>
-<li>transition-duration 规定完成过渡效果需要多少秒或毫秒。</li>
-<li>transition-timing-function 规定速度效果的速度曲线。</li>
-<li>transition-delay 定义过渡效果何时开始。</li>
-</ul>
-</li>
-<li><strong>animation</strong>属性可以像 Flash 制作动画一样，通过控制关键帧来控制动画的每一步，实现更为复杂的动画效果。<ul>
-<li>animation 实现动画效果主要由两部分组成：<ul>
-<li>通过类似 Flash 动画中的帧来声明一个动画；</li>
-<li>在 animation 属性中调用关键帧声明的动画。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>translate 3D 建模效果</li>
-</ul>
-        
-          <a class="article-more-a" href="/myBlog/2019/06/28/Css3-0-动画/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Css</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/06/28/Css3-0-动画/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/myBlog/page/3/">&laquo; Prev</a><a class="page-number" href="/myBlog/">1</a><a class="page-number" href="/myBlog/page/2/">2</a><a class="page-number" href="/myBlog/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/myBlog/page/5/">5</a><a class="page-number" href="/myBlog/page/6/">6</a><a class="page-number" href="/myBlog/page/7/">7</a><a class="extend next" rel="next" href="/myBlog/page/5/">Next &raquo;</a>
@@ -1333,11 +1325,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1349,10 +1341,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
@@ -1361,15 +1349,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">模块化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1378,6 +1366,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">tcp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1393,11 +1389,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1405,7 +1401,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1417,10 +1413,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
@@ -1429,11 +1421,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">TS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
             
             <div class="clearfix"></div>
