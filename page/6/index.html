@@ -151,6 +151,137 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-http-同源策略" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/06/13/http-同源策略/">隔壁老王想篡位？门都没有——同源策略</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/06/13/http-同源策略/" class="archive-article-date">
+  	<time datetime="2019-06-13T00:35:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h2><p>浏览器有一个很重要的概念————同源策略</p>
+<blockquote>
+<p><strong>同源策略</strong>限制了从同一个源加载的文档或脚本如何与来自另一个源的资源进行交互。这是一个用于隔离潜在恶意文件的重要安全机制。</p>
+</blockquote>
+<p>同源是指：<strong>域名</strong>、<strong>协议</strong>、<strong>端口</strong>相同。不同源的客户端脚本(<code>js</code>、<code>ActionScript</code>)在没明确授权的情况下，不能读写对方的资源。</p>
+<p><img src="https://s2.ax1x.com/2019/07/22/eCseMQ.png" alt="eCseMQ.png"></p>
+<ul>
+<li><p><code>http</code> 与 <code>https</code> 下的默认端口可省略</p>
+<ul>
+<li><code>http</code> =&gt; 80</li>
+<li><code>https</code> =&gt; 443</li>
+</ul>
+</li>
+</ul>
+<p><strong>域名是倒着解析的</strong></p>
+<ol>
+<li><code>.com</code>顶级域名</li>
+<li><code>baidu.com</code> (一)二级域名</li>
+<li><code>zhidao.baidu.com</code> (二)三级域名</li>
+<li><code>www</code> 二级域名前缀，表示万维网维护的</li>
+<li><code>www.baidu.com</code> 属于特殊的三级域名</li>
+</ol>
+<blockquote>
+<p><code>zhidao.baidu.com</code> 属于百度自己维护的网络地址</p>
+</blockquote>
+<ul>
+<li>com、org、net 属于顶级域名，是在全世界范围内解析的，cn、hk 是在一个地区解析的。<ul>
+<li>cn 中国</li>
+<li>.com (商业机构)</li>
+<li>.net (从事互联网服务的机构)</li>
+<li>.org (非盈利性组织)</li>
+<li>.com.cn (国内商业机构)</li>
+<li>.net.cn (国内互联网机构)</li>
+<li>.org.cn (国内非盈利性组织)</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>如果把 IP 地址比作一间房子，端口就是出入这间房子的门。真正的房子只有几个门，但是一个 IP 地址的端口可以有多个。</p>
+<p>浏览网页服务默认的<a href="https://baike.baidu.com/item/%E7%AB%AF%E5%8F%A3%E5%8F%B7" target="_blank" rel="noopener">端口号</a>都是 80,因此只需输入网址即可，不用输入”:80”</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/myBlog/2019/06/13/http-同源策略/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">TCP</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">网络</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/06/13/http-同源策略/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-js-闭包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1121,107 +1252,6 @@
 
 
   
-    <article id="post-HTML-标签" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/04/25/HTML-标签/">开启前端之路——HTML 标签</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/04/25/HTML-标签/" class="archive-article-date">
-  	<time datetime="2019-04-25T01:33:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://s2.ax1x.com/2019/11/23/MHgDXD.png" alt="MHgDXD.png"></p>
-<p><strong>HTML</strong>（超文本标记语言——HyperText Markup Language）是构成 Web 世界的一砖一瓦。它定义了网页内容的含义和结构。除 HTML 以外的其它技术则通常用来描述一个网页的表现与展示效果（如 <code>CSS</code>），或功能与行为（如 <code>JavaScript</code>）。</p>
-<p>为了创建网站，你应该了解 <strong>HTML —— 用于定义一个网页结构的基本技术。</strong> HTML 用于表示你的网页内容是应该被理解为段落、列表、头部、链接、图像、多媒体播放器、表单或是其他众多可用的元素之一亦或是你定义的新元素。</p>
-<h2 id="从规范的角度理解-HTML-从分类和语义的角度使用标签"><a href="#从规范的角度理解-HTML-从分类和语义的角度使用标签" class="headerlink" title="从规范的角度理解 HTML,从分类和语义的角度使用标签"></a>从规范的角度理解 HTML,从分类和语义的角度使用标签</h2><p><img src="https://s2.ax1x.com/2019/11/23/MHggAA.png" alt="MHggAA.png"></p>
-<h3 id="HTML-语义化是什么"><a href="#HTML-语义化是什么" class="headerlink" title="HTML 语义化是什么?"></a>HTML 语义化是什么?</h3><p>语义化是指根据内容的结构化(内容语义化),选择合适的标签(代码语义化),便于开发者阅读和写出更优雅的代码的同时,让浏览器的爬虫和机器很好地解析。</p>
-<h3 id="为什么要语义化"><a href="#为什么要语义化" class="headerlink" title="为什么要语义化?"></a>为什么要语义化?</h3><ul>
-<li>有利于 <strong>SEO(搜索引擎优化(Search Engine Optimization))</strong>,有助于爬虫爬取更多有效的信息,爬虫是依赖于标签来确定上下文和各个关键字的权重</li>
-<li><strong>语义化的 HTML 在没有 CSS 的情况下也能呈现较好的内容结构和代码结构</strong></li>
-<li>方便其他设备的解析</li>
-<li>便于团队开发和维护</li>
-</ul>
-        
-          <a class="article-more-a" href="/myBlog/2019/04/25/HTML-标签/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/04/25/HTML-标签/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/myBlog/page/5/">&laquo; Prev</a><a class="page-number" href="/myBlog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/myBlog/page/4/">4</a><a class="page-number" href="/myBlog/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/myBlog/page/7/">7</a><a class="extend next" rel="next" href="/myBlog/page/7/">Next &raquo;</a>
@@ -1323,11 +1353,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1355,6 +1385,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">模块化</a>
               </li>
              
@@ -1367,7 +1401,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1383,11 +1417,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">cdn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1399,14 +1437,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
@@ -1415,11 +1445,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TS</a>
+                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">TS</a>
               </li>
             
             <div class="clearfix"></div>
