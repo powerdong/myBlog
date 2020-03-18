@@ -18,7 +18,7 @@
 <meta property="og:description" content="引入提到页面渲染，最重要的就是关键渲染路径 通常我们在编写页面时，只需要编写 HTML、Css、JavaScript 屏幕上就会显示出漂亮的页面，但浏览器是如何使用我们的代码在屏幕上渲染像素的呢?浏览器将 HTML、Css、JavaScript 转换为屏幕上所呈现的实际像素，这期间所经历的一系列步骤，叫做关键渲染路径(Critical Rendering Path) 浏览器渲染页面的过程从耗时的角">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/24/mymf3T.png">
-<meta property="og:updated_time" content="2019-11-23T02:19:16.520Z">
+<meta property="og:updated_time" content="2020-03-18T11:45:16.789Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我是怎么来的？——浏览器渲染原理">
 <meta name="twitter:description" content="引入提到页面渲染，最重要的就是关键渲染路径 通常我们在编写页面时，只需要编写 HTML、Css、JavaScript 屏幕上就会显示出漂亮的页面，但浏览器是如何使用我们的代码在屏幕上渲染像素的呢?浏览器将 HTML、Css、JavaScript 转换为屏幕上所呈现的实际像素，这期间所经历的一系列步骤，叫做关键渲染路径(Critical Rendering Path) 浏览器渲染页面的过程从耗时的角">
@@ -187,7 +187,7 @@
 
 <ol>
 <li>处理 HTML 生成 DOM 树</li>
-<li>处理 Css 生成 CssDOM 树</li>
+<li>处理 Css 生成 CssOM 树</li>
 <li>将两树合并成 render 树</li>
 <li>对 render 树进行布局计算</li>
 <li>将 render 树中的每个节点绘制到屏幕上</li>
@@ -208,12 +208,25 @@
 </blockquote>
 <p>当 HTML 解析器被脚本阻塞时，解析器虽然会停止构建 DOM，但仍会识别该脚本后面的资源，并进行预加载。</p>
 <ol>
-<li><strong>默认情况下，Css 被视为阻塞渲染的资源，这意味着浏览器将不会渲染任何已处理的内容，直到 CssDOM 构建完毕</strong></li>
-<li>JavaScript 不仅可以读取和修改 DOM 属性，还可以读取和修改 CssDOM 属性</li>
-</ol>
-<blockquote>
+<li><strong>默认情况下，Css 被视为阻塞渲染的资源，这意味着浏览器将不会渲染任何已处理的内容，直到 CssDOM 构建完毕</strong><ul>
+<li>DOM 树和 CssOM 解析是互不影响的，因此，Css 不会阻塞 DOM 的解析</li>
+<li>当 Css 还有构建完成时，页面时不会渲染到页面的，因此Css会阻塞DOM的渲染</li>
+<li>这可能是浏览器的一种机制，如果在加载Css的时候，可能会修改下面的DOM节点样式，如果Css加载不阻塞DOM的话，那么当Css加载完成之后，DOM树又得重绘或重排了，这就造成不必要的损耗。</li>
+</ul>
+</li>
+<li>JavaScript 不仅可以读取和修改 DOM 属性，还可以读取和修改 CssDOM 属性<ul>
+<li>故在JS脚本执行前，浏览器必须保证到Css文件完全加载并解析完成。这就导致了JS执行的延迟，也因此导致HTML解析和渲染延迟<blockquote>
 <p>存在阻塞的 Css 资源时，浏览器会延迟 JavaScript 的执行和 DOM 构建</p>
 </blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul>
+<li><strong>Css 加载不会阻塞 DOM 树的解析</strong></li>
+<li><strong>Css 加载会阻塞 DOM 树的解析</strong></li>
+<li><strong>Css 加载会阻塞后面 JS 语句的执行</strong></li>
+</ul>
 <ol>
 <li><strong>当浏览器遇到一个 script 标记时，DOM 构建将暂停，直至脚本完成执行</strong></li>
 <li>JavaScript 可以查询和修改 DOM 与 CssDOM</li>
@@ -555,11 +568,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -583,11 +596,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
+                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -599,15 +612,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">兼容</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">tcp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -619,11 +632,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
+                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -643,7 +652,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" class="js-tag color4">tcp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -652,6 +661,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
