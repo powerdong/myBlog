@@ -18,7 +18,7 @@
 <meta property="og:description" content="引入提到页面渲染，最重要的就是关键渲染路径 通常我们在编写页面时，只需要编写 HTML、Css、JavaScript 屏幕上就会显示出漂亮的页面，但浏览器是如何使用我们的代码在屏幕上渲染像素的呢?浏览器将 HTML、Css、JavaScript 转换为屏幕上所呈现的实际像素，这期间所经历的一系列步骤，叫做关键渲染路径(Critical Rendering Path) 浏览器渲染页面的过程从耗时的角">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/24/mymf3T.png">
-<meta property="og:updated_time" content="2020-03-18T11:45:16.789Z">
+<meta property="og:updated_time" content="2020-03-21T12:46:00.728Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我是怎么来的？——浏览器渲染原理">
 <meta name="twitter:description" content="引入提到页面渲染，最重要的就是关键渲染路径 通常我们在编写页面时，只需要编写 HTML、Css、JavaScript 屏幕上就会显示出漂亮的页面，但浏览器是如何使用我们的代码在屏幕上渲染像素的呢?浏览器将 HTML、Css、JavaScript 转换为屏幕上所呈现的实际像素，这期间所经历的一系列步骤，叫做关键渲染路径(Critical Rendering Path) 浏览器渲染页面的过程从耗时的角">
@@ -210,7 +210,7 @@
 <ol>
 <li><strong>默认情况下，Css 被视为阻塞渲染的资源，这意味着浏览器将不会渲染任何已处理的内容，直到 CssDOM 构建完毕</strong><ul>
 <li>DOM 树和 CssOM 解析是互不影响的，因此，Css 不会阻塞 DOM 的解析</li>
-<li>当 Css 还有构建完成时，页面时不会渲染到页面的，因此Css会阻塞DOM的渲染</li>
+<li>当 Css 还有构建完成时，不会渲染到页面的，因此Css会阻塞DOM的渲染</li>
 <li>这可能是浏览器的一种机制，如果在加载Css的时候，可能会修改下面的DOM节点样式，如果Css加载不阻塞DOM的话，那么当Css加载完成之后，DOM树又得重绘或重排了，这就造成不必要的损耗。</li>
 </ul>
 </li>
@@ -568,11 +568,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -604,11 +604,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">tcp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">开发</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -620,10 +628,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">TCP</a>
               </li>
              
@@ -632,15 +636,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">cdn</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -648,11 +644,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
+                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">tcp</a>
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -664,15 +660,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TS</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">TS</a>
               </li>
             
             <div class="clearfix"></div>
