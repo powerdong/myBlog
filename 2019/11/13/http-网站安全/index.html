@@ -9,18 +9,28 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>保护好自己——网站安全，预防 | PowerDong-分享技术&amp;生活</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="‘摘抄’不是单纯的“粘贴-&amp;gt;复制”，而是眼到，手到，心到的一字一句敲打下来。   博客声明:所有转载的文章、图片仅用于作者本人收藏学习目的，被要求或认为适当时，将标注署名与来源。若不愿某一作品被转用，请及时通知本站，本站将予以及时删除。">
+  <meta name="description" content="关于前端的安全问题，我们不能归之避之，安全，是一个很大的话题，各种安全问题的类型也种类繁多。如果我们把安全问题按照所发生的的区域来进行分类的话，那么 所有发生在后端服务器、应用、服务当中的安全问题就是“后端安全问题”，所有发生在浏览器、单页面应用、Web 页面当中的安全问题则算是“前端安全问题”   比如说：SQL 注入漏洞发生在后端应用中，是后端安全问题跨站脚本攻击(XSS)则是前端安全问题，因">
 <meta name="keywords" content="笔记,安全">
 <meta property="og:type" content="article">
 <meta property="og:title" content="保护好自己——网站安全，预防">
 <meta property="og:url" content="http://yoursite.com/2019/11/13/http-网站安全/index.html">
 <meta property="og:site_name" content="PowerDong-分享技术&amp;生活">
-<meta property="og:description" content="‘摘抄’不是单纯的“粘贴-&amp;gt;复制”，而是眼到，手到，心到的一字一句敲打下来。   博客声明:所有转载的文章、图片仅用于作者本人收藏学习目的，被要求或认为适当时，将标注署名与来源。若不愿某一作品被转用，请及时通知本站，本站将予以及时删除。">
+<meta property="og:description" content="关于前端的安全问题，我们不能归之避之，安全，是一个很大的话题，各种安全问题的类型也种类繁多。如果我们把安全问题按照所发生的的区域来进行分类的话，那么 所有发生在后端服务器、应用、服务当中的安全问题就是“后端安全问题”，所有发生在浏览器、单页面应用、Web 页面当中的安全问题则算是“前端安全问题”   比如说：SQL 注入漏洞发生在后端应用中，是后端安全问题跨站脚本攻击(XSS)则是前端安全问题，因">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-23T02:18:11.011Z">
+<meta property="og:image" content="https://s1.ax1x.com/2020/04/06/GsKe6s.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/04/06/GsKK00.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/04/06/GsK3hF.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/04/06/GsKJ1J.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/04/06/GsKLBq.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/04/06/GsKs9e.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/04/06/GsMSCF.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/04/06/GsMCv9.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/04/06/GsMmCD.png">
+<meta property="og:updated_time" content="2020-04-06T02:59:05.213Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="保护好自己——网站安全，预防">
-<meta name="twitter:description" content="‘摘抄’不是单纯的“粘贴-&amp;gt;复制”，而是眼到，手到，心到的一字一句敲打下来。   博客声明:所有转载的文章、图片仅用于作者本人收藏学习目的，被要求或认为适当时，将标注署名与来源。若不愿某一作品被转用，请及时通知本站，本站将予以及时删除。">
+<meta name="twitter:description" content="关于前端的安全问题，我们不能归之避之，安全，是一个很大的话题，各种安全问题的类型也种类繁多。如果我们把安全问题按照所发生的的区域来进行分类的话，那么 所有发生在后端服务器、应用、服务当中的安全问题就是“后端安全问题”，所有发生在浏览器、单页面应用、Web 页面当中的安全问题则算是“前端安全问题”   比如说：SQL 注入漏洞发生在后端应用中，是后端安全问题跨站脚本攻击(XSS)则是前端安全问题，因">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/04/06/GsKe6s.png">
   
   <link rel="alternative" href="/atom.xml" title="PowerDong-分享技术&amp;生活" type="application/atom+xml">
   
@@ -170,8 +180,186 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
+        <p>关于前端的安全问题，我们不能归之避之，安全，是一个很大的话题，各种安全问题的类型也种类繁多。如果我们把安全问题按照所发生的的区域来进行分类的话，那么 <strong>所有发生在后端服务器、应用、服务当中的安全问题就是“后端安全问题”，所有发生在浏览器、单页面应用、Web 页面当中的安全问题则算是“前端安全问题”</strong></p>
+<p><img src="https://s1.ax1x.com/2020/04/06/GsKe6s.png" alt="GsKe6s.png"></p>
+<blockquote>
+<p>比如说：SQL 注入漏洞发生在后端应用中，是后端安全问题<br>跨站脚本攻击(XSS)则是前端安全问题，因为它发生在用户的浏览器里</p>
+</blockquote>
+<h2 id="八大前端安全问题"><a href="#八大前端安全问题" class="headerlink" title="八大前端安全问题"></a>八大前端安全问题</h2><ul>
+<li><a href="#%e5%85%ab%e5%a4%a7%e5%89%8d%e7%ab%af%e5%ae%89%e5%85%a8%e9%97%ae%e9%a2%98">八大前端安全问题</a><ul>
+<li><a href="#%e8%80%81%e7%94%9f%e5%b8%b8%e8%b0%88%e7%9a%84-xss">老生常谈的 XSS</a><ul>
+<li><a href="#%e5%a6%82%e4%bd%95%e9%98%b2%e5%be%a1">如何防御</a></li>
+<li><a href="#%e5%85%b6%e4%bb%96%e9%98%b2%e5%be%a1%e6%8e%aa%e6%96%bd">其他防御措施</a></li>
+</ul>
+</li>
+<li><a href="#%e8%ad%a6%e6%83%95-iframe-%e5%b8%a6%e6%9d%a5%e7%9a%84%e9%a3%8e%e9%99%a9">警惕 iframe 带来的风险</a><ul>
+<li><a href="#%e5%a6%82%e4%bd%95%e9%98%b2%e5%be%a1-1">如何防御</a></li>
+</ul>
+</li>
+<li><a href="#%e5%88%ab%e8%a2%ab%e7%82%b9%e5%87%bb%e5%8a%ab%e6%8c%81%e4%ba%86">别被点击劫持了</a><ul>
+<li><a href="#%e5%a6%82%e4%bd%95%e9%98%b2%e5%be%a1-2">如何防御</a></li>
+</ul>
+</li>
+<li><a href="#%e9%94%99%e8%af%af%e7%9a%84%e5%86%85%e5%ae%b9%e6%8e%a8%e6%96%ad">错误的内容推断</a><ul>
+<li><a href="#%e5%a6%82%e4%bd%95%e9%98%b2%e5%be%a1-3">如何防御</a></li>
+</ul>
+</li>
+<li><a href="#%e9%98%b2%e7%81%ab%e9%98%b2%e7%9b%97%e9%98%b2%e7%8c%aa%e9%98%9f%e5%8f%8b%e4%b8%8d%e5%ae%89%e5%85%a8%e7%9a%84%e7%ac%ac%e4%b8%89%e6%96%b9%e4%be%9d%e8%b5%96%e5%8c%85">防火防盗防猪队友：不安全的第三方依赖包</a></li>
+<li><a href="#%e7%94%a8%e4%ba%86-https-%e4%b9%9f%e5%8f%af%e8%83%bd%e6%8e%89%e5%9d%91%e9%87%8c">用了 HTTPS 也可能掉坑里</a><ul>
+<li><a href="#%e5%a6%82%e4%bd%95%e9%98%b2%e5%be%a1-4">如何防御</a></li>
+</ul>
+</li>
+<li><a href="#%e6%9c%ac%e5%9c%b0%e5%ad%98%e5%82%a8%e6%95%b0%e6%8d%ae%e6%b3%84%e9%9c%b2">本地存储数据泄露</a><ul>
+<li><a href="#%e5%a6%82%e4%bd%95%e9%98%b2%e5%be%a1-5">如何防御</a></li>
+</ul>
+</li>
+<li><a href="#%e7%bc%ba%e5%a4%b1%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%ae%8c%e6%95%b4%e6%80%a7%e6%a0%a1%e9%aa%8c">缺失静态资源完整性校验</a><ul>
+<li><a href="#%e5%a6%82%e4%bd%95%e9%98%b2%e5%be%a1-6">如何防御</a></li>
+</ul>
+</li>
+<li><a href="#csrf-%e8%b7%a8%e7%ab%99%e8%af%b7%e6%b1%82%e4%bc%aa%e9%80%a0">CSRF 跨站请求伪造</a><ul>
+<li><a href="#%e5%a6%82%e4%bd%95%e9%98%b2%e5%be%a1-7">如何防御</a></li>
+</ul>
+</li>
+<li><a href="#%e6%97%b6%e5%88%bb%e8%b0%a8%e8%ae%b0">时刻谨记</a></li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
 
+<h3 id="老生常谈的-XSS"><a href="#老生常谈的-XSS" class="headerlink" title="老生常谈的 XSS"></a>老生常谈的 XSS</h3><p><img src="https://s1.ax1x.com/2020/04/06/GsKK00.png" alt="GsKK00.png"></p>
+<p>XSS 是跨站脚本攻击 (Cross-Site Scripting) 的简称，XSS 这类安全问题发生的本质原因在于，浏览器错误的将攻击者提供的用户输入数据当做 JavaScript 脚本执行</p>
+<ul>
+<li><strong>XSS 有几种不同的分类方法</strong><ul>
+<li>按照恶意输入的脚本是否在应用中存储<ul>
+<li>XSS 被划分为 <strong>存储型 XSS</strong> 和 <strong>反射型 XSS</strong></li>
+</ul>
+</li>
+<li>按照是否和服务器有交互<ul>
+<li>XSS 被划分为 <strong>Server Side XSS</strong> 和 <strong>DOM based XSS</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>无论怎么分类，XSS 漏洞始终是威胁用户的一个安全隐患。攻击者可以利用 XSS 漏洞来窃取包括用户身份信息在内的各种敏感信息，修改 Web 页面以欺骗用户，甚至控制受害者浏览器，或者和其他漏洞结合起来形成蠕虫攻击，等等。</p>
+</blockquote>
+<h4 id="如何防御"><a href="#如何防御" class="headerlink" title="如何防御"></a>如何防御</h4><p>防御 XSS 最佳的做法就是对数据进行严格的输出编码，使得攻击者提供的数据不再被浏览器认为是脚本而被误执行。<br>例如<code>&lt;script&gt;</code>进行 HTML 编码后会变成<code>&amp;lt;script&amp;gt</code>,而这段数据就会被浏览器认为只是一段普通的字符串，而不会被当做脚本执行了</p>
+<blockquote>
+<p>需要根据输出数据所在的上下文来进行相应的编码</p>
+</blockquote>
+<ul>
+<li>如果放在 HTML 元素中，因此进行的是 HTML 编码</li>
+<li>如果放置在 URL 中，则需要进行 URL 编码</li>
+<li>此外还有 JavaScript 编码、CSS 编码、HTML 属性编码、JSON 编码等等</li>
+</ul>
+<h4 id="其他防御措施"><a href="#其他防御措施" class="headerlink" title="其他防御措施"></a>其他防御措施</h4><ul>
+<li>设置 CSP HTTP Header<ul>
+<li>需要配置你的网络服务器返回 <code>Content-Security-Policy</code> HTTP 头部</li>
+<li><code>&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#39;self&#39;; img-src https://*; child-src &#39;none&#39;;&quot;&gt;</code></li>
+</ul>
+</li>
+<li>输入验证</li>
+<li>开启浏览器 XSS 防御<ul>
+<li>浏览器默认有开启</li>
+<li>关闭 Chrome XSS 防御 <code>&quot;浏览器安装路径\chrome.exe&quot; --args --disable-xss-auditor</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="警惕-iframe-带来的风险"><a href="#警惕-iframe-带来的风险" class="headerlink" title="警惕 iframe 带来的风险"></a>警惕 iframe 带来的风险</h3><p><img src="https://s1.ax1x.com/2020/04/06/GsK3hF.png" alt="GsK3hF.png"></p>
+<p>有时候我们前端页面需要用到第三方提供的页面组件，通常会以 iframe 的方式引入。</p>
+<blockquote>
+<p>使用 iframe 在页面上添加第三方提供的广告、天气预报、社交分享插件等等</p>
+</blockquote>
+<p>iframe 在给我们的页面带来更多丰富的内容和能力的同时，也带来了不少的安全隐患。</p>
+<p>因为 iframe 中的内容是由第三方提供的，默认情况下他们不受我们的控制，<strong>他们可以在 iframe 中运行 JavaScript 脚本、Flash 插件、弹出对话框等等，这可能会破坏前端用户体验</strong></p>
+<p>如果说 iframe 中的域名因为过期而被恶意攻击者攻击，或者第三方被黑客攻击，iframe 中的内容被替换掉，从而利用用户浏览器中的安全漏洞下载安装木马、恶意勒索软件等等，这问题可就大了</p>
+<h4 id="如何防御-1"><a href="#如何防御-1" class="headerlink" title="如何防御"></a>如何防御</h4><p>在 HTML5 中，iframe 有了一个叫做 <code>sandbox</code> 的安全属性，通过它可以对 iframe 的行为进行各种限制，充分实现”最小权限”原则。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">sandbox</span> <span class="attr">src</span>=<span class="string">"..."</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果只是添加上这个属性而保持属性值为空，那么浏览器将会对 iframe 实施最严厉的限制，<strong>基本上就是除了允许显示静态资源之外，其他什么都做不了。</strong>比如不准提交表单、不准弹窗、不准执行脚本等。</p>
+<ul>
+<li><strong>sandbox 丰富的配置参数</strong><ul>
+<li><code>allow-forms</code>: 允许 iframe 中提交 from 表单</li>
+<li><code>allow-popups</code>: 允许 iframe 中弹出新的窗口或者标签页</li>
+<li><code>allow-scripts</code>: 允许 iframe 中执行 JavaScript</li>
+<li><code>allow-same-origin</code>: 允许 iframe 中的网页开启同源策略</li>
+</ul>
+</li>
+</ul>
+<h3 id="别被点击劫持了"><a href="#别被点击劫持了" class="headerlink" title="别被点击劫持了"></a>别被点击劫持了</h3><p><img src="https://s1.ax1x.com/2020/04/06/GsKJ1J.png" alt="GsKJ1J.png"></p>
+<p>这是一种欺骗性比较强，同时也需要用户高度参与才能完成的一种攻击</p>
+<ol>
+<li>攻击者精心构造了一个诱导用户点击的内容</li>
+<li>将我们的页面放到 iframe 当中</li>
+<li>利用 <code>z-index</code> 等 CSS 样式将这个 iframe 叠加到小游戏的垂直方向的正上方</li>
+<li>把 iframe 设置为 100% 透明度</li>
+<li>受害者访问到这个页面后，肉眼看到的是一个小游戏，如果收到诱导进行了点击的话，实际上点击到的却是 iframe 中的我们的页面</li>
+</ol>
+<p><strong>点击劫持的危害在于，攻击利用了受害者的用户身份，在其不知情的情况下进行一些操作。</strong></p>
+<h4 id="如何防御-2"><a href="#如何防御-2" class="headerlink" title="如何防御"></a>如何防御</h4><ul>
+<li>使用 <code>X-Frame-Options: DENY</code> 这个 HTTP header 来明确告知浏览器，不要把当前 HTTP 响应中的内容在 HTML Frame 中显示出来</li>
+</ul>
+<h3 id="错误的内容推断"><a href="#错误的内容推断" class="headerlink" title="错误的内容推断"></a>错误的内容推断</h3><blockquote>
+<p>某网站允许用户在评论里上传图片，攻击者在上传图片的时候，看似提交的是个图片文件，实则是个含有 JavaScript 的脚本文件。</p>
+<p>接下来，受害者在访问这段评论的时候，浏览器会去请求这个伪装成图片的 JavaScript 脚本，那么就会把这个图片文件当做 JavaScript 脚本执行，于是攻击也就成功了</p>
+</blockquote>
+<p><strong>问题的关键在于，后端服务器在返回的响应中设置的 <code>Content-Type-Header</code> 仅仅只是给浏览器提供当前响应内容类型的建议，而浏览器有可能会自作主张的根据响应中的实际内容去推断内容的类型</strong></p>
+<h4 id="如何防御-3"><a href="#如何防御-3" class="headerlink" title="如何防御"></a>如何防御</h4><p>通过设置 <code>X-Content-Type-Options</code> 这个 HTTP Header 明确禁止浏览器去推断响应类型</p>
+<h3 id="防火防盗防猪队友：不安全的第三方依赖包"><a href="#防火防盗防猪队友：不安全的第三方依赖包" class="headerlink" title="防火防盗防猪队友：不安全的第三方依赖包"></a>防火防盗防猪队友：不安全的第三方依赖包</h3><p><img src="https://s1.ax1x.com/2020/04/06/GsKLBq.png" alt="GsKLBq.png"></p>
+<p>据统计，一个应用有将近 80% 的代码其实来自第三方组件，依赖的类库等</p>
+<p>这样做的好处显而易见，但是与此同时安全风险也在不断累积——应用使用了如此多的第三方代码，不论应用自己的代码安全性有多高，一旦这些来自第三方的代码有安全漏洞，那么对应用整体的安全性依然会造成严峻的挑战</p>
+<h3 id="用了-HTTPS-也可能掉坑里"><a href="#用了-HTTPS-也可能掉坑里" class="headerlink" title="用了 HTTPS 也可能掉坑里"></a>用了 HTTPS 也可能掉坑里</h3><p><img src="https://s1.ax1x.com/2020/04/06/GsKs9e.png" alt="GsKs9e.png"></p>
+<p>为了保证信息在传输过程中不被泄露，保证传输安全，使用 TLS 或者通俗的讲，使用 HTTPS 已经是当前的标准配置了。然而，即使是服务端开启了 HTTPS，也还是存在安全隐患，<strong>黑客可以利用 <code>SSL Stripping</code> 这种攻击手段，强制让 HTTPS 降级回 HTTP，从而继续进行中间人攻击</strong></p>
+<p>问题的本质来自于浏览器发出第一次请求就被攻击者拦截了下来并做了修改，根本不给浏览器和服务器进行 HTTPS 通信的机会。</p>
+<ul>
+<li>用户在浏览器里输入 URL 的时候往往不是从 <code>https://</code> 开始的，而是直接从域名开始输入</li>
+<li>然后浏览器向服务器发起 HTTP 通信</li>
+<li>由于攻击者的存在，他把服务器端返回的跳转到 HTTPS 页面的响应拦截了</li>
+<li>并且代替客户端和服务端进行后续的通信</li>
+<li>由于这一切都是暗中进行的，所以使用前端应用的用户对此毫无察觉</li>
+</ul>
+<h4 id="如何防御-4"><a href="#如何防御-4" class="headerlink" title="如何防御"></a>如何防御</h4><p>解决这个安全问题的办法是使用 <code>HSTS (HTTP Strict Transport Security)</code>，通过<code>Strict-Transport-Security: max-age=&lt;seconds&gt;; includeSubDomains; preload</code> 头部设置来告知浏览器在和网站进行通信的时候强制性使用 HTTPS，而不是通过明文的 HTTP 通信</p>
+<p>这里的“强制性”表现为浏览器无论在何种情况下都直接向服务器发起 HTTPS 请求，而不再像以往那样从 HTTP 跳转到 HTTPS。</p>
+<p>另外，当遇到证书或者链接不安全的时候，则首先警告用户，并且不再让用户选择是否继续进行不安全的通信</p>
+<h3 id="本地存储数据泄露"><a href="#本地存储数据泄露" class="headerlink" title="本地存储数据泄露"></a>本地存储数据泄露</h3><p><img src="https://s1.ax1x.com/2020/04/06/GsMSCF.png" alt="GsMSCF.png"></p>
+<p>随着单页面应用的大量出现，存储在前端的数据量也在逐渐增多</p>
+<p>前端应用是完全暴露在用户以及攻击者面前的，在前端存储任何敏感，机密的数据，都会面临泄露的风险，就算在前端通过 JS 脚本对数据进行加密基本也无济于事</p>
+<h4 id="如何防御-5"><a href="#如何防御-5" class="headerlink" title="如何防御"></a>如何防御</h4><p>推荐的做法是<strong>尽可能不在前端存这些与用户相关的私密数据</strong></p>
+<h3 id="缺失静态资源完整性校验"><a href="#缺失静态资源完整性校验" class="headerlink" title="缺失静态资源完整性校验"></a>缺失静态资源完整性校验</h3><p><img src="https://s1.ax1x.com/2020/04/06/GsMCv9.png" alt="GsMCv9.png"></p>
+<p>出于性能考虑，前端应用通常会把一些静态资源存放在 CDN(Content Delivery Networks) 上面，例如 JavaScript 脚本和 Stylesheet 文件，这么做可以显著提高前端应用的访问速度，但同时却隐含了一个新的安全风险</p>
+<p>如果攻击者劫持了 CDN，或者对 CDN 中的资源进行了污染，那么我们的前端应用拿到的就是有问题的 JS 脚本或者 Stylesheet 文件，使得攻击者可以肆意篡改我们的前端页面，对用户实施攻击。</p>
+<h4 id="如何防御-6"><a href="#如何防御-6" class="headerlink" title="如何防御"></a>如何防御</h4><p>防御这种攻击的办法是使用浏览器提供的 SRI (Sub Resource Integrity) 功能。</p>
+<p>HTML 页面中通过 <code>&lt;script&gt;</code> 和 <code>&lt;link&gt;</code> 元素所指定的资源文件，每个资源文件都可以有一个 SRI 值， 它由两部分组成，减号(-) 左侧是生成 SRI 值用到的哈希算法名，右侧是经过 Base64 编码后的该资源文件的 Hash 值</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">“https://example.js”</span> <span class="attr">integrity</span>=<span class="string">“sha384-eivAQsRgJIi2KsTdSnfoEGIRTo25NCAqjNJNZalV63WKX3Y51adIzLT4So1pk5tX”</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>浏览器在处理这个 script 元素的时候，就会检查对应的 JS 脚本文件的完整性，看其是否和 script 元素中的 integrity 属性指定的 SRI 值一致，如果不匹配，浏览器则会终止对这个 JS 脚本的处理</p>
+<h3 id="CSRF-跨站请求伪造"><a href="#CSRF-跨站请求伪造" class="headerlink" title="CSRF 跨站请求伪造"></a>CSRF 跨站请求伪造</h3><p><img src="https://s1.ax1x.com/2020/04/06/GsMmCD.png" alt="GsMmCD.png"></p>
+<blockquote>
+<p>CSRF（Cross-site request forgery 跨站请求伪造，也被称为“One Click Attack”或者 Session Riding，通常缩写为 CSRF 或者 XSRF，是一种对网站的恶意利用。</p>
+</blockquote>
+<p>会造成用户的登陆状态被盗用，完成业务的请求等</p>
+<h4 id="如何防御-7"><a href="#如何防御-7" class="headerlink" title="如何防御"></a>如何防御</h4><ul>
+<li><strong>合理使用 post 和 get</strong><ul>
+<li>日常开发中，遵循提交业务严格按照 post 请求，更不要使用 jsonp 去做提交型接口</li>
+</ul>
+</li>
+<li>最简单的办法就是加验证码，这样除了用户，黑客的网站是获取不到用户本次的 session 的验证码的</li>
+<li>cookies 设置 sameSite 属性的值为 strict，这样只有同源网站的请求才会带上 cookies <strong>此方案有浏览器兼容问题</strong></li>
+<li>另一种方式，就是在用访问的页面中，都种下验证用的 token，用户所有的提交都必须带上本次页面中生成的 token<ul>
+<li>服务端随机生成 token，保存在服务端 session 中，同时保存到客户端中，客户端发送请求时，把 token 带到 HTTP 请求头或参数中，服务端接收到请求中，验证请求中的 token 与 session 中的是否一致</li>
+</ul>
+</li>
+</ul>
+<h3 id="时刻谨记"><a href="#时刻谨记" class="headerlink" title="时刻谨记"></a>时刻谨记</h3><ol>
+<li>开发时要提防用户产生的内容，要对用户输入信息进行层层层检测</li>
+<li>注意对用户的输出内容进行过滤</li>
+<li>重要的内容记得要加密传输</li>
+<li>get 请求和 post 请求，严格遵守规范</li>
+<li>对于 URL 上携带的信息，要谨慎使用</li>
+<li><strong>心中时刻记着，自己的网站哪里可能有危险</strong></li>
+</ol>
 <hr>
 <blockquote>
 <p>‘摘抄’不是单纯的“粘贴-&gt;复制”，而是眼到，手到，心到的一字一句敲打下来。</p>
@@ -471,11 +659,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">BFC</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -483,7 +675,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -492,10 +684,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">试题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -519,7 +707,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -531,15 +723,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">安全</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">网络</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -559,15 +747,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
