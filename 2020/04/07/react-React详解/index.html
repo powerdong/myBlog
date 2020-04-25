@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://s1.ax1x.com/2020/04/25/JrzCZT.png">
 <meta property="og:image" content="https://s1.ax1x.com/2020/04/25/Jsp1xA.png">
 <meta property="og:image" content="https://s1.ax1x.com/2020/04/25/Jsp8KI.png">
-<meta property="og:updated_time" content="2020-04-25T01:09:29.371Z">
+<meta property="og:updated_time" content="2020-04-25T01:15:59.322Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一个哪行——React详解">
 <meta name="twitter:description" content="刚开始 定义一个组件 1import React, &amp;#123; Component, Fragment &amp;#125; form &apos;react&apos;  创建一个组件 1234567891011121314151617181920class TodoList extends Component &amp;#123;  render() &amp;#123;    return (      &amp;lt;Fragment&amp;g">
@@ -189,7 +189,7 @@
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component, Fragment &#125; form <span class="string">'react'</span></span><br></pre></td></tr></table></figure>
 
 <p>创建一个组件</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoList</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;Fragment&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">          &lt;input</span><br><span class="line">            value=&#123;<span class="keyword">this</span>.state.inputValue&#125;</span><br><span class="line">            onChange=&#123;<span class="keyword">this</span>.handleChange.bind(<span class="keyword">this</span>)&#125;</span><br><span class="line">          /&gt;</span><br><span class="line">          &lt;button onClick=&#123;<span class="keyword">this</span>.handleBtnCLick.bind(<span class="keyword">this</span>)&#125;&gt;提交&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>div&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">          &lt;li&gt;&lt;/li&gt;</span><br><span class="line">        &lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>Fragment&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> TodoList</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoList</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;Fragment&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">          &lt;input</span><br><span class="line">            value=&#123;<span class="keyword">this</span>.state.inputValue&#125;</span><br><span class="line">            onChange=&#123;<span class="keyword">this</span>.handleChange.bind(<span class="keyword">this</span>)&#125;</span><br><span class="line">          /&gt;</span><br><span class="line">          &lt;button onClick=&#123;<span class="keyword">this</span>.handleBtnCLick.bind(<span class="keyword">this</span>)&#125;&gt;提交&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>div&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">          &lt;li&gt;<span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">        &lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>Fragment&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> TodoList</span><br></pre></td></tr></table></figure>
 
 <p>使用 Fragment 替代最外层的 <code>&lt;div&gt;</code> 使得最外层标签隐藏</p>
 <a id="more"></a>
@@ -219,29 +219,25 @@
 <li><p>当你想在页面中展示未转义的 html 内容使用</p>
 <ul>
 <li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dangerouslySetInnerHTML=&#123;&#123;__html: item&#125;&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><blockquote>
+
+<blockquote>
 <p>这种的未转义会造成 XSS 攻击 慎用！</p>
 </blockquote>
+</li>
+</ul>
 </li>
 <li><p>在<code>&lt;label&gt;</code>标签上使用<code>for</code>时，应使用 <code>htmlFor</code></p>
 </li>
 </ul>
-<h3 id="父子传值"><a href="#父子传值" class="headerlink" title="父子传值"></a>父子传值</h3><h4 id="父传子"><a href="#父传子" class="headerlink" title="父传子"></a>父传子</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Parent</span></span><br><span class="line"><span class="comment">// 父组件通过属性的方式传值</span></span><br><span class="line">;&lt;ul&gt;</span><br><span class="line">  &#123;this.state.list.map((item) =&gt; (</span><br><span class="line">    &lt;TodoItem</span><br><span class="line">      content=&#123;item&#125;</span><br><span class="line">      index=&#123;index&#125;</span><br><span class="line">      handleDelItem=&#123;this.handleDelItem.bind(this)&#125;</span><br><span class="line">    /&gt;</span><br><span class="line">  ))&#125;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">// Children</span><br><span class="line">// 子组件通过 this.props. 的方式接受使用</span><br><span class="line">class TodoItem extends Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return &lt;div&gt;&#123;this.props.content&#125;&lt;/div&gt;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="父子传值"><a href="#父子传值" class="headerlink" title="父子传值"></a>父子传值</h3><h4 id="父传子"><a href="#父传子" class="headerlink" title="父传子"></a>父传子</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Parent</span></span><br><span class="line"><span class="comment">// 父组件通过属性的方式传值</span></span><br><span class="line">;<span class="xml"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="xml">  &#123;this.state.list.map((item) =&gt; (</span></span><br><span class="line">    &lt;TodoItem</span><br><span class="line">      content=&#123;item&#125;</span><br><span class="line">      index=&#123;index&#125;</span><br><span class="line">      handleDelItem=&#123;this.handleDelItem.bind(this)&#125;</span><br><span class="line">    /&gt;</span><br><span class="line">  ))&#125;</span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">// Children</span></span><br><span class="line"><span class="xml">// 子组件通过 this.props. 的方式接受使用</span></span><br><span class="line"><span class="xml">class TodoItem extends Component &#123;</span></span><br><span class="line"><span class="xml">  render() &#123;</span></span><br><span class="line"><span class="xml">    return <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;this.props.content&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="子传父"><a href="#子传父" class="headerlink" title="子传父"></a>子传父</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Children</span></span><br><span class="line"><span class="comment">// 子组件通过 this.props. 的方式接受使用</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoItem</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props)</span><br><span class="line">    <span class="keyword">this</span>.handleClick = <span class="keyword">this</span>.handleClick.bind(<span class="keyword">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> &lt;div onClick=&#123;this.handleClick&#125;&gt;&#123;this.props.content&#125;&lt;/div&gt;</span><br><span class="line">  &#125;</span><br><span class="line">  handleClick() &#123;</span><br><span class="line">    <span class="keyword">const</span> index = <span class="keyword">this</span>.props.index</span><br><span class="line">    <span class="comment">// 子组件调用父组件传过来的方法，通过调用该方法实现删除操作</span></span><br><span class="line">    <span class="keyword">this</span>.props.handleDelItem(index)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="子传父"><a href="#子传父" class="headerlink" title="子传父"></a>子传父</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Children</span></span><br><span class="line"><span class="comment">// 子组件通过 this.props. 的方式接受使用</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoItem</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props)</span><br><span class="line">    <span class="keyword">this</span>.handleClick = <span class="keyword">this</span>.handleClick.bind(<span class="keyword">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">onClick</span>=<span class="string">&#123;this.handleClick&#125;</span>&gt;</span>&#123;this.props.content&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  &#125;</span><br><span class="line">  handleClick() &#123;</span><br><span class="line">    <span class="keyword">const</span> index = <span class="keyword">this</span>.props.index</span><br><span class="line">    <span class="comment">// 子组件调用父组件传过来的方法，通过调用该方法实现删除操作</span></span><br><span class="line">    <span class="keyword">this</span>.props.handleDelItem(index)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="代码优化"><a href="#代码优化" class="headerlink" title="代码优化"></a>代码优化</h3><ol>
-<li><p>在 constructor 中进行 this 绑定</p>
-</li>
-<li><p>通过解构赋值的方式提取 props state 的值</p>
-</li>
-<li><p>JSX 部分不要出现逻辑代码，如果出现建议拆分出来成为一个函数</p>
-</li>
-<li><p>setState 时使用函数返回的方式修改</p>
-</li>
+<li>在 constructor 中进行 this 绑定</li>
+<li>通过解构赋值的方式提取 props state 的值</li>
+<li>JSX 部分不要出现逻辑代码，如果出现建议拆分出来成为一个函数</li>
+<li>setState 时使用函数返回的方式修改</li>
 </ol>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> value = e.target.value</span><br><span class="line"><span class="keyword">this</span>.setState(<span class="function">(<span class="params">prevState</span>) =&gt;</span> (&#123;</span><br><span class="line">  inputValue: value,</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>
 
@@ -289,16 +285,11 @@
 </blockquote>
 <h3 id="什么是虚拟-DOM"><a href="#什么是虚拟-DOM" class="headerlink" title="什么是虚拟 DOM"></a>什么是虚拟 DOM</h3><p><img src="https://s1.ax1x.com/2020/04/25/JsSvD0.png" alt="JsSvD0.png"></p>
 <ol>
-<li><p>State 数据</p>
-</li>
-<li><p>JSX 模板</p>
-</li>
-<li><p>数据 + 模板 结合，生成真实 DOM，来显示</p>
-</li>
-<li><p>State 发生改变</p>
-</li>
-<li><p>数据 + 模板 结合，生成真实 DOM，替换原始的 DOM</p>
-</li>
+<li>State 数据</li>
+<li>JSX 模板</li>
+<li>数据 + 模板 结合，生成真实 DOM，来显示</li>
+<li>State 发生改变</li>
+<li>数据 + 模板 结合，生成真实 DOM，替换原始的 DOM</li>
 </ol>
 <ul>
 <li>缺陷：<ul>
@@ -310,48 +301,31 @@
 </ul>
 <hr>
 <ol>
-<li><p>State 数据</p>
-</li>
-<li><p>JSX 模板</p>
-</li>
-<li><p>数据 + 模板 结合，生成真实 DOM，来显示</p>
-</li>
-<li><p>State 发生改变</p>
-</li>
-<li><p>数据 + 模板 结合，生成真实 DOM，并不直接替换原始的 DOM</p>
-</li>
-<li><p>新的 DOM 和原始的 DOM 作比对，找差异</p>
-</li>
-<li><p>找出 <code>input</code> 框发生的变化</p>
-</li>
-<li><p>只用新的 DOM 中的 input 元素，替换掉老的 DOM 中的 <code>input</code> 元素</p>
-</li>
+<li>State 数据</li>
+<li>JSX 模板</li>
+<li>数据 + 模板 结合，生成真实 DOM，来显示</li>
+<li>State 发生改变</li>
+<li>数据 + 模板 结合，生成真实 DOM，并不直接替换原始的 DOM</li>
+<li>新的 DOM 和原始的 DOM 作比对，找差异</li>
+<li>找出 <code>input</code> 框发生的变化</li>
+<li>只用新的 DOM 中的 input 元素，替换掉老的 DOM 中的 <code>input</code> 元素</li>
 </ol>
 <ul>
-<li><p>缺陷：</p>
-<ul>
+<li>缺陷：<ul>
 <li>性能提升并不明显</li>
 </ul>
 </li>
 </ul>
 <hr>
 <ol>
-<li><p>State 数据</p>
-</li>
-<li><p>JSX 模板</p>
-</li>
-<li><p>生成虚拟 DOM (虚拟 DOM 就是一个 JS 对象，用它来描述真实 DOM) [<strong>损耗了性能</strong>]</p>
-</li>
-<li><p>用虚拟 DOM 的结构生成真实 DOM，来显示</p>
-</li>
-<li><p>State 发生变化</p>
-</li>
-<li><p>数据 + 模板 生成新的虚拟 DOM [<strong>极大的提升了性能</strong>]</p>
-</li>
-<li><p>比较两次的虚拟 DOM，找到区别 [<strong>极大的提升了性能</strong>]</p>
-</li>
-<li><p>直接操作 DOM，改变内容</p>
-</li>
+<li>State 数据</li>
+<li>JSX 模板</li>
+<li>生成虚拟 DOM (虚拟 DOM 就是一个 JS 对象，用它来描述真实 DOM) [<strong>损耗了性能</strong>]</li>
+<li>用虚拟 DOM 的结构生成真实 DOM，来显示</li>
+<li>State 发生变化</li>
+<li>数据 + 模板 生成新的虚拟 DOM [<strong>极大的提升了性能</strong>]</li>
+<li>比较两次的虚拟 DOM，找到区别 [<strong>极大的提升了性能</strong>]</li>
+<li>直接操作 DOM，改变内容</li>
 </ol>
 <ul>
 <li>减少了对真实 DOM 的创建，和真实 DOM 的对比，创建的和对比的都是 JS 对象</li>
@@ -360,12 +334,9 @@
 <p>JSX –&gt; createElement –&gt; JS 对象 –&gt; 真实 DOM</p>
 </blockquote>
 <ul>
-<li><p>好处</p>
-<ul>
-<li><p>性能提升了</p>
-</li>
-<li><p>它使得跨端应用得以实现。</p>
-</li>
+<li>好处<ul>
+<li>性能提升了</li>
+<li>它使得跨端应用得以实现。</li>
 </ul>
 </li>
 </ul>
@@ -381,7 +352,7 @@
 </ul>
 <h3 id="React-的-ref-使用"><a href="#React-的-ref-使用" class="headerlink" title="React 的 ref 使用"></a>React 的 ref 使用</h3><p>可以通过 <code>e.target</code> 的方式获取到触发事件的那个 DOM 节点</p>
 <p>可以通过<code>ref</code>的方式获取 DOM</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">;&lt;input</span><br><span class="line">  ref=&#123;(input) =&gt; &#123;</span><br><span class="line">    this.input = input</span><br><span class="line">  &#125;&#125;</span><br><span class="line">/&gt;</span><br><span class="line">// this.input 指向的就是input这个DOM</span><br><span class="line"></span><br><span class="line">// 之前使用 e.target 来获取</span><br><span class="line">// 现在可以直接使用 this.input 获取DOM</span><br><span class="line">console.log(this.input.value)</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">;<span class="xml"><span class="tag">&lt;<span class="name">input</span></span></span></span><br><span class="line"><span class="xml">  ref=&#123;(input) =&gt; &#123;</span></span><br><span class="line"><span class="xml">    this.input = input</span></span><br><span class="line"><span class="xml">  &#125;&#125;</span></span><br><span class="line"><span class="xml">/&gt;</span></span><br><span class="line"><span class="xml">// this.input 指向的就是input这个DOM</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">// 之前使用 e.target 来获取</span></span><br><span class="line"><span class="xml">// 现在可以直接使用 this.input 获取DOM</span></span><br><span class="line"><span class="xml">console.log(this.input.value)</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.setState(</span><br><span class="line">  (prev) =&gt; (&#123;</span><br><span class="line">    <span class="comment">// 这里用来更新 state 数据</span></span><br><span class="line">  &#125;),</span><br><span class="line">  () =&gt; &#123;</span><br><span class="line">    <span class="comment">// 这里是 setState 执行完成后执行的回调，因为setState是异步执行的</span></span><br><span class="line">  &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
@@ -486,30 +457,23 @@
 
 <h3 id="Redux-使用原则"><a href="#Redux-使用原则" class="headerlink" title="Redux 使用原则"></a>Redux 使用原则</h3><p><img src="https://s1.ax1x.com/2020/04/25/JspnUO.png" alt="JspnUO.png"></p>
 <ol>
-<li><p>Store 是唯一的</p>
-</li>
-<li><p>只有 Store 能够改变自己的内容 (reducer 只是处理后将新的 state 返回而已，更新还是 store 自己更新)</p>
-</li>
-<li><p>Reducer 必须是纯函数 (给定固定的输入，就一定会有固定的输出，而且不会有任何副作用)</p>
-</li>
+<li>Store 是唯一的</li>
+<li>只有 Store 能够改变自己的内容 (reducer 只是处理后将新的 state 返回而已，更新还是 store 自己更新)</li>
+<li>Reducer 必须是纯函数 (给定固定的输入，就一定会有固定的输出，而且不会有任何副作用)</li>
 </ol>
 <h3 id="Redux-中核心-API"><a href="#Redux-中核心-API" class="headerlink" title="Redux 中核心 API"></a>Redux 中核心 API</h3><ul>
-<li><p>createStore 创建 store</p>
-</li>
-<li><p>store.dispatch 向 store 派发 action</p>
-</li>
-<li><p>store.getState 获取 store 中的所有数据内容</p>
-</li>
-<li><p>store.subscribe 订阅 store 的改变，只要 store 发生改变，这个订阅的函数就会被执行，我们就可以获取到最新的 store 数据</p>
-</li>
+<li>createStore 创建 store</li>
+<li>store.dispatch 向 store 派发 action</li>
+<li>store.getState 获取 store 中的所有数据内容</li>
+<li>store.subscribe 订阅 store 的改变，只要 store 发生改变，这个订阅的函数就会被执行，我们就可以获取到最新的 store 数据</li>
 </ul>
-<h2 id="Redux-1"><a href="#Redux-1" class="headerlink" title="Redux ++"></a>Redux ++</h2><h3 id="普通组件"><a href="#普通组件" class="headerlink" title="普通组件"></a>普通组件</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoList</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> &lt;div&gt;普通组件&lt;/div&gt;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Redux-1"><a href="#Redux-1" class="headerlink" title="Redux ++"></a>Redux ++</h2><h3 id="普通组件"><a href="#普通组件" class="headerlink" title="普通组件"></a>普通组件</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoList</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>普通组件<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="UI-组件"><a href="#UI-组件" class="headerlink" title="UI 组件"></a>UI 组件</h3><p>负责页面的渲染，不关心逻辑怎么走。</p>
 <h3 id="容器组件"><a href="#容器组件" class="headerlink" title="容器组件"></a>容器组件</h3><p>负责页面的逻辑，并不关心页面长什么样子。</p>
 <p>父组件通过 <code>props</code> 向 UI 组件传递数据和事件，UI 组件的所有涉及到逻辑部分都通过事件派发出来，UI 组件内不做逻辑操作</p>
 <h3 id="无状态组件"><a href="#无状态组件" class="headerlink" title="无状态组件"></a>无状态组件</h3><p>当一个组件中只有一个 render 函数时，我们就可以用一个无状态组件定义这个组件</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> TodoListUI = <span class="function">(<span class="params">props</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> &lt;div&gt;无状态组件&lt;/div&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> TodoListUI = <span class="function">(<span class="params">props</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>无状态组件<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>性能比较高，因为他只是一个函数，普通的组件，是一个 JS”类”，这个里边还有 React 的一些生命周期函数，和 render， 所要执行的东西较多。</p>
 <p><strong>当在做一个 UI 组件的时候，他只负责页面渲染的时候，不做任何页面操作的时候，一般可以通过无状态组件定义。</strong></p>
@@ -860,11 +824,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color3">代码</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">代码</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -880,11 +844,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
+                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -900,15 +864,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">tcp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">TCP</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">tcp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -924,10 +892,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
@@ -940,10 +904,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
@@ -952,11 +912,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">TS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
             
             <div class="clearfix"></div>
