@@ -151,6 +151,101 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-js-原型和原型链" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/07/14/js-原型和原型链/">原型和原型链</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/07/14/js-原型和原型链/" class="archive-article-date">
+  	<time datetime="2019-07-14T11:05:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="理解原型设计模式以及-JavaScript-中的原型规则"><a href="#理解原型设计模式以及-JavaScript-中的原型规则" class="headerlink" title="理解原型设计模式以及 JavaScript 中的原型规则"></a>理解原型设计模式以及 JavaScript 中的原型规则</h2><h3 id="什么是原型模式"><a href="#什么是原型模式" class="headerlink" title="什么是原型模式"></a>什么是原型模式</h3><p><strong>原型模式(Prototype pattern)</strong>:<code>通俗点讲就是创建一个共享的原型,并通过拷贝这些原型创建新的对象。 用于创建重复的对象,这种类型的设计模式属于创建型模式,它提供了一种创建对象得比错选择。</code></p>
+<h3 id="实现原型模式"><a href="#实现原型模式" class="headerlink" title="实现原型模式"></a>实现原型模式</h3><p>我们可以通过 JavaScript 特有的原型集成特性去实现原型模式,也就是创建一个对象作为另一个对象的 prototype 属性值,我们可以通过 Object.create(prototype,optionalDescriptorObjects)来实现原型继承。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fatherPrototype = &#123;</span><br><span class="line">  init: <span class="function"><span class="keyword">function</span>(<span class="params">money</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.selfMoney = money;</span><br><span class="line">  &#125;,</span><br><span class="line">  getMoney: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"取钱"</span> + <span class="keyword">this</span>.selfMoney);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sonMoney</span>(<span class="params">Smoney</span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">  F.prototype = fatherPrototype;</span><br><span class="line">  <span class="keyword">var</span> f = <span class="keyword">new</span> F();</span><br><span class="line">  f.init(Smoney);</span><br><span class="line">  <span class="keyword">return</span> f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sonGetMoney = sonMoney(<span class="string">"20"</span>);</span><br><span class="line">sonGetMoney.getMoney();</span><br><span class="line"><span class="comment">//儿子取钱取得是他爹的</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>原型模式,就是创建一个共享的原型,通过拷贝这个原型来创建新的类,用于创建重复的对象,带来性能上的提升。</strong></p>
+        
+          <a class="article-more-a" href="/myBlog/2019/07/14/js-原型和原型链/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/07/14/js-原型和原型链/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-HTML5-拖拽上传文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1094,136 +1189,6 @@
 
 
   
-    <article id="post-Css-响应式布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/07/01/Css-响应式布局/">由大变小，你行吗 —— 移动端</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/07/01/Css-响应式布局/" class="archive-article-date">
-  	<time datetime="2019-07-01T00:25:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>响应式布局指的是同一个页面在不同屏幕尺寸下有不同的布局。传统的开发方式是 PC 端开发一套，手机端再开发一套，而使用响应式布局只要开发一套就够，缺点是<code>css</code>比较重。对于不同的屏幕大小，大致可分为<code>iPhone5/SE</code>,<code>iphone6/7/8</code>,<code>iphone 6/7/8 plus</code>,<code>ipad pro</code>,<code>dell台式宽屏(1440 X 900)</code>。</p>
-<ul>
-<li>响应式设计与自适应设计的区别<ul>
-<li>响应式开发一套界面，通过监测视口分辨率，针对不同客户端在客户端做代码处理，来展示不同的布局和内容</li>
-<li>自适应需要开发多套界面，通过检测视口分辨率，来判断当前访问的设备是 PC 端、平板、手机，从而请求服务层，返回不同的页面。</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://s2.ax1x.com/2019/07/17/ZqJWJH.jpg" alt="ZqJWJH.jpg"></p>
-<h2 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h2><blockquote>
-<p>为了更好的体验，是向不同设备提供不同的样式的一种方式，它为每种类型的用户提供了最佳的体验</p>
-</blockquote>
-<h3 id="为什么会有媒体查询"><a href="#为什么会有媒体查询" class="headerlink" title="为什么会有媒体查询"></a>为什么会有媒体查询</h3><p>移动设备的快速普及完全颠覆了 Web 设计领域</p>
-<p>用户不再仅在用户不再仅在传统桌面系统上查看 Web 内容，他们越来越多地使用具有各种尺寸的智能电话、平板电脑和其他设备。</p>
-<p>Web 设计人员的挑战是确保他们的网站不仅在大屏幕上看起来不错，在小型的电话以及介于它们之间的各种设备上看起来也不错。</p>
-<h2 id="物理像素和设备独立像素"><a href="#物理像素和设备独立像素" class="headerlink" title="物理像素和设备独立像素"></a>物理像素和设备独立像素</h2><p><img src="https://s2.ax1x.com/2019/11/24/MLM7ee.png" alt="MLM7ee.png"></p>
-<h3 id="物理像素"><a href="#物理像素" class="headerlink" title="物理像素"></a>物理像素</h3><p>一个物理像素是显示器(手机屏幕)上最小的物理显示单元，在操作系统的调度下，每一个设备像素都有自己的颜色值和亮度值</p>
-<h3 id="设备独立像素"><a href="#设备独立像素" class="headerlink" title="设备独立像素"></a>设备独立像素</h3><p>设备独立像素(也叫目睹无关像素)，可以认为是计算机坐标系统中的一个点，这个点代表一个可以有程序使用的虚拟像素(Css 像素)，然后由相关系统转换为物理像素</p>
-<h3 id="设备像素比"><a href="#设备像素比" class="headerlink" title="设备像素比"></a>设备像素比</h3><p>设备像素比(device pixel ratio) 设备像素比(简称 dpr)定义了物理像素和设备独立像素的对应关系，它的值可以按如下的公式得到</p>
-<blockquote>
-<p>设备像素比 = 物理像素 / 设备独立像素</p>
-</blockquote>
-<p>JavaScript 中可以通过<code>window.devicePixelRatio</code>得到</p>
-<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>以 iPhone6 为例</p>
-<ul>
-<li>设备宽高为 375 * 667，可以理解为设备独立像素(Css 像素)</li>
-<li>dpr 为 2，根据上面的计算公式，其物理像素就应该 _ 2，为 750 _ 1334</li>
-</ul>
-<p>1 Css 像素在 PC 端显示器需要用(<code>1*1</code>)个栅格点表示，在 iPhone6 中则需要 4(<code>2*2</code>)个</p>
-<p>也就是在不同的屏幕上，<strong>(普通屏幕 VS retina 屏幕)，Css 像素所呈现的大小(物理尺寸)是一致的，不同的是一个 Css 像素所对应不同的对象的物理像素个数是不一致的</strong></p>
-<p>在普通的屏幕下，1 个 Css 像素对应的 1 个物理像素为 1:1。在 retina 屏幕下，1 个 Css 像素对应 4 个物理像素 1:4</p>
-<h3 id="位图像素"><a href="#位图像素" class="headerlink" title="位图像素"></a>位图像素</h3><p>1 个位图像素是栅格图像（如：png，jpg，gif 等）最小的数据单元。每一个位图像素都包含这一些资深的现实信息（如：显示位置，颜色值，透明度等）</p>
-<p>在普通屏幕下是没问题的，但是在 retina 屏幕下就会出现位图像素点不够，从而导致图片模糊的情况</p>
-<p><strong>对于 dpr = 2 的, 1 个位图像素对应于 4 个物理像素，由于单个位图像素不以再进一步分割，所以只能就近取色，从而导致图片模糊</strong></p>
-<p><strong>解决办法使用分辨率大两倍的图片</strong><br>如 <code>200*300</code> img 标签，就需要提供 <code>400*600</code> 的图片.由此一来位图像素点的个数是原来的 4 倍，在 retina 屏幕下，位图像素点个数就可以物理像素点个数形成 1:1 的比例，图片自然就清晰了。</p>
-<p><strong>这里还有另一个问题，如果如果普通屏幕下，也用了两倍图片，会怎样呢？</strong><br>很明显，在普通屏幕下，200×300(px) img 标签，所对应的物理像素个数就是 200×300 个，而两倍图片的位图像素个数则是 200×300*4，所以就出现一个物理像素点对应 4 个位图像素点，所以它的取色也只能通过一定的算法(显示结果就是一张只有原图像素总数四分之一，我们称这个过程叫做 downsampling)，肉眼看上去虽然图片不会模糊，但是会觉得图片缺少一些锐利度，或者是有点色差(但还是可以接受的)。</p>
-<h2 id="响应式布局的实现步骤"><a href="#响应式布局的实现步骤" class="headerlink" title="响应式布局的实现步骤"></a>响应式布局的实现步骤</h2><h3 id="设置-Meta-标签"><a href="#设置-Meta-标签" class="headerlink" title="设置 Meta 标签"></a>设置 Meta 标签</h3><p>大多数移动浏览器将 HTML 页面放大为宽的视图(viewport)以符合屏幕分辨率。你可以使用视图的<code>meta</code>标签来进行重置。下面的视图标签告诉浏览器，使用的设备的宽度作为视图宽度，并禁止初始的缩放。在<code>&lt;head&gt;</code>标签里加入这个<code>meta</code>标签。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span></span></span><br><span class="line"><span class="tag">  <span class="attr">name</span>=<span class="string">"viewport"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"</span></span></span><br><span class="line"><span class="tag">/&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- user-scalable = no 属性能够解决 iPad 切换横屏之后触摸才能回到具体尺寸的问题。 --&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="设置媒体查询"><a href="#设置媒体查询" class="headerlink" title="设置媒体查询"></a>设置媒体查询</h3><p><code>css3</code>媒体查询可以让我们针对不同的媒体类型定义不同的样式，当重置浏览器窗口大小的过程中，页面也会根据浏览器的宽度和高度重新渲染页面。</p>
-        
-          <a class="article-more-a" href="/myBlog/2019/07/01/Css-响应式布局/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Css</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/07/01/Css-响应式布局/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/myBlog/page/3/">&laquo; Prev</a><a class="page-number" href="/myBlog/">1</a><a class="page-number" href="/myBlog/page/2/">2</a><a class="page-number" href="/myBlog/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/myBlog/page/5/">5</a><a class="page-number" href="/myBlog/page/6/">6</a><a class="page-number" href="/myBlog/page/7/">7</a><a class="extend next" rel="next" href="/myBlog/page/5/">Next &raquo;</a>
@@ -1333,11 +1298,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">代码</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color3">代码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1353,6 +1318,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">开发</a>
               </li>
              
@@ -1361,11 +1334,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
+                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1385,23 +1362,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1421,15 +1386,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">TS</a>
               </li>
             
             <div class="clearfix"></div>

@@ -151,6 +151,133 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-front-浏览器兼容性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/11/08/front-浏览器兼容性/">我是个好人——浏览器兼容性</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/11/08/front-浏览器兼容性/" class="archive-article-date">
+  	<time datetime="2019-11-08T13:19:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用-hack-的技巧-？"><a href="#经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用-hack-的技巧-？" class="headerlink" title="经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用 hack 的技巧 ？"></a>经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用 hack 的技巧 ？</h2><ul>
+<li><p>png24 位的图片在 iE6 浏览器上出现背景，解决方案是做成 png8.</p>
+</li>
+<li><p>浏览器默认的 margin 和 padding 不同。解决方案是加一个全局的<code>*{margin:0padding:0;}</code>来统一。</p>
+</li>
+<li><p>IE6 双边距 bug:块属性标签 float 后，又有横行的 margin 情况下，在 ie6 显示 margin 比设置的大。</p>
+</li>
+<li><p>浮动 ie 产生的双倍距离 <code>#box{ float:left; width:10px; margin:0 0 0 100px;}</code></p>
+<ul>
+<li>这种情况之下 IE 会产生 20px 的距离，解决方案是在 float 的标签样式控制中加入 <code>*display:inline;</code>将其转化为行内属性。(<code>*</code>这个符号只有 ie6 会识别)</li>
+</ul>
+</li>
+<li><p>渐进识别的方式，从总体中逐渐排除局部。</p>
+<ul>
+<li>首先，巧妙的使用“\9”这一标记，将 IE 游览器从所有情况中分离出来</li>
+<li>接着，再次使用“+”将 IE8 和 IE7、IE6 分离开来，这样 IE8 已经独立识别。</li>
+<li><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.bb&#123; background-color:red;/所有识别/</span><br><span class="line">background-color:#00deff\9; /IE6、7、8识别/</span><br><span class="line">+background-color:#a200ff;/IE6、7识别/</span><br><span class="line">_background-color:#1e0bd1;/IE6识别/ &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>IE 下,可以使用获取常规属性的方法来获取自定义属性, 也可以使用 getAttribute()获取自定义属性;</p>
+</li>
+<li><p>Firefox 下,只能使用 getAttribute()获取自定义属性。 解决方法:统一通过 getAttribute()获取自定义属性。</p>
+</li>
+<li><p>IE 下,even 对象有 x,y 属性,但是没有 pageX,pageY 属性; Firefox 下,event 对象有 pageX,pageY 属性,但是没有 x,y 属性。</p>
+<ul>
+<li><strong>解决方法：（条件注释）缺点是在 IE 浏览器下可能会增加额外的 HTTP 请求数。</strong></li>
+</ul>
+</li>
+<li><p><strong>Chrome 中文界面下默认会将小于 12px 的文本强制按照 12px 显示, 可通过加入 CSS 属性 -webkit-text-size-adjust: none;</strong></p>
+</li>
+<li><p>解决超链接访问过后 hover 样式就不出现了 被点击访问过的超链接样式不在具有 hover 和 active 了</p>
+<ul>
+<li>解决方法是改变 CSS 属性的排列顺序: <code>L-V-H-A : a:link {} a:visited {} a:hover {} a:active {}</code></li>
+</ul>
+</li>
+</ul>
+        
+          <a class="article-more-a" href="/myBlog/2019/11/08/front-浏览器兼容性/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">兼容</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/11/08/front-浏览器兼容性/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-js-懒加载详解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1095,102 +1222,6 @@
 
 
   
-    <article id="post-Vue-刨根问底" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/08/19/Vue-刨根问底/">停下来，问问自己——Vue-刨根问底</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/08/19/Vue-刨根问底/" class="archive-article-date">
-  	<time datetime="2019-08-19T01:32:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="为什么官方建议数据异步请求在mounted事件进行"><a href="#为什么官方建议数据异步请求在mounted事件进行" class="headerlink" title="为什么官方建议数据异步请求在mounted事件进行?"></a>为什么官方建议数据异步请求在<code>mounted</code>事件进行?</h2><p>很多人觉得在<code>created</code> 事件里面把数据请求到，然后一起生成虚拟 <code>DOM</code>，再渲染会更好。实际上呢，请求是需要时间的，而且这个时间具有不稳定性，很可能 vue 的虚拟 DOM 准备好了，你的数据才请求到，然后又得更新一遍虚拟<code>DOM</code>，再渲染，极大地延长了白屏时间，用户体验很不好。<strong>而在 mounted 事件请求数据呢，静态页面会先渲染好，等数据好了，再更新部分 DOM 即可。</strong></p>
-<h2 id="子组件修改父组件传过来的值"><a href="#子组件修改父组件传过来的值" class="headerlink" title="子组件修改父组件传过来的值"></a>子组件修改父组件传过来的值</h2><p>v-model 在使用的时候很像双向绑定的，但是 Vue 是单项数据流，<code>v-model</code> 只是语法糖而已：父组件用<code>v-bind</code>将值传给子组件，子组件通过<code>change/input</code>事件触发修改父组件的值。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"inputValue"</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 等价于 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">:value</span>=<span class="string">"inputValue"</span> @<span class="attr">change</span>=<span class="string">"inputValue"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>v-model 不仅仅能在<code>input</code>上用，在组件上也能使用<code>vue</code>组件间传递数据是单向的，即数据总是由父组件传递到子组件，子组件在其内部可以有自己维护的数据，但它无权修改父组件传递给它的数据，我们也可以参照<code>v-model</code>语法糖进行修改父组件的值，但是每次都这样写太麻烦了，vue 提供了一个修饰符<code>.sync</code>,用法如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">child</span> <span class="attr">:value.sync</span>=<span class="string">"inputValue"</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 子组件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span>&#123;</span></span><br><span class="line">    props:&#123;</span><br><span class="line"><span class="javascript">      <span class="comment">//props可以设置值得类型，默认值，是否必传以及校验函</span></span></span><br><span class="line">      value:&#123;</span><br><span class="line"><span class="javascript">        type: [<span class="built_in">String</span>, <span class="built_in">Number</span>],</span></span><br><span class="line"><span class="javascript">        required: <span class="literal">true</span></span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="javascript">    <span class="comment">//用一个变量中转，子组件中就用_value就不会直接修改父组件的值</span></span></span><br><span class="line">    computed: &#123;</span><br><span class="line">      _value: &#123;</span><br><span class="line"><span class="javascript">        <span class="keyword">get</span>() &#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span> <span class="keyword">this</span>.value;</span></span><br><span class="line">        &#125;,</span><br><span class="line"><span class="javascript">        <span class="keyword">set</span>(val) &#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.$emit(<span class="string">'update:value'</span>, val);</span></span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/myBlog/2019/08/19/Vue-刨根问底/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/08/19/Vue-刨根问底/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/myBlog/">&laquo; Prev</a><a class="page-number" href="/myBlog/">1</a><span class="page-number current">2</span><a class="page-number" href="/myBlog/page/3/">3</a><a class="page-number" href="/myBlog/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/myBlog/page/7/">7</a><a class="extend next" rel="next" href="/myBlog/page/3/">Next &raquo;</a>
@@ -1300,11 +1331,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">代码</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color3">代码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1320,6 +1351,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">开发</a>
               </li>
              
@@ -1328,11 +1367,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
+                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1352,23 +1395,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">模块化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1388,15 +1419,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">TS</a>
               </li>
             
             <div class="clearfix"></div>
