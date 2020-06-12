@@ -151,6 +151,103 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-HTML5-Canvas" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/07/07/HTML5-Canvas/">你会画小猪佩奇吗？—— canvas</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/07/07/HTML5-Canvas/" class="archive-article-date">
+  	<time datetime="2019-07-07T00:11:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Canvas 是 HTML5 新增的一个标签属性，一个可以使用脚本在其中绘制图像的 HTML 元素。它可以用来制作照片或者制作简单的动画，甚至可以进行实时的视频处理和渲染。Canvas 是由 HTML 代码配合高度和宽度属性而定义出的可绘制区域。JavaScript 代码可以访问该区域，类似于其他通用的 API，通过一套完整的绘图函数来动态生成图形。</p>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><ol>
+<li>游戏</li>
+<li>图表</li>
+<li>动画</li>
+<li>HTML5 动效(codepen.io)</li>
+</ol>
+        
+          <a class="article-more-a" href="/myBlog/2019/07/07/HTML5-Canvas/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/07/07/HTML5-Canvas/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-http-浏览器渲染原理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1192,113 +1289,6 @@
 
 
   
-    <article id="post-http-网络-CDN" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/06/20/http-网络-CDN/">快点！再快点！——CDN</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/06/20/http-网络-CDN/" class="archive-article-date">
-  	<time datetime="2019-06-20T01:37:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://s2.ax1x.com/2019/11/10/MnT3Ks.png" alt="MnT3Ks.png"></p>
-<h3 id="如何理解-CDN-的"><a href="#如何理解-CDN-的" class="headerlink" title="如何理解 CDN 的"></a>如何理解 CDN 的</h3><p><strong>CDN:</strong> 中文名叫做「内容分发网络」，是将源站内容分发至最接近用户的节点，使用户可就近取得所需内容，提高用户访问的响应速度和成功率。解决因分布、带宽、服务器性能带来的访问延迟问题，适用于站点加速、点播、直播等场景。</p>
-<h3 id="访问原理"><a href="#访问原理" class="headerlink" title="访问原理"></a>访问原理</h3><ul>
-<li>首先我们在地址栏键入一个网址，浏览器发现本地没有关于这个网址的 DNS 缓存，所以向网站的 DNS 服务器发起请求。</li>
-<li>网站的 DNS 服务器设置了 CNAME，指向了某个 CDN 服务器，也就是我们常见的阿里云、腾讯云、Cloudflare 之类的，去请求 CDN 中的智能 DNS 均衡负载系统。</li>
-<li>均衡负载系统解析域名，把对用户响应最快的节点返回给用户，然后用户向该节点发出请求。<ul>
-<li>根据用户IP地址，判断哪一个边缘节点距用户最近；</li>
-<li>根据用户所请求的URL中携带的内容名称，判断哪一个边缘节点上有用户所需内容</li>
-</ul>
-</li>
-<li>如果是第一次访问该内容，CDN 服务器会向源站请求数据并缓存，否则的话，直接在缓存节点中找到该数据，将请求结果发给用户。</li>
-<li>对于最简单的 CDN 系统而言，只要一台 DNS 调度服务器和一个节点服务器即可，但在复杂的应用中，会存在多级缓存，多台 Cache 来协同工作。</li>
-</ul>
-<p><img src="https://s2.ax1x.com/2019/11/18/Ms7AHO.png" alt="Ms7AHO.png"></p>
-<blockquote>
-<p>CDN 这个东西本质就是一个缓存，只是这个缓存离你特别特别的近，作为用户还是开发都能从中享受到一点福利<br>CDN全局负载均衡设备与CDN区域负载均衡设备根据用户IP地址，将域名解析成相应节点中缓存服务器的IP地址，实现用户就近访问，从而提高服务端响应内容的速度</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/myBlog/2019/06/20/http-网络-CDN/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">cdn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/06/20/http-网络-CDN/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/myBlog/page/4/">&laquo; Prev</a><a class="page-number" href="/myBlog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/myBlog/page/3/">3</a><a class="page-number" href="/myBlog/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/myBlog/page/6/">6</a><a class="page-number" href="/myBlog/page/7/">7</a><a class="extend next" rel="next" href="/myBlog/page/6/">Next &raquo;</a>
@@ -1400,15 +1390,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">BFC</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">代码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1428,11 +1418,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">模块化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
+                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1444,7 +1438,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1452,7 +1446,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1464,19 +1458,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">cdn</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1488,7 +1478,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1496,7 +1486,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1555,7 +1545,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">就读于兰州交通大学&lt;br&gt;&lt;br&gt;专业：  产品设计&lt;br&gt;&lt;br&gt;联系方式：&lt;br&gt;&lt;br&gt;QQ:782999873&lt;br&gt;&lt;br&gt;微信:19893170798&lt;br&gt;</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">就读于兰州交通大学&lt;br&gt;&lt;br&gt;联系方式：&lt;br&gt;&lt;br&gt;QQ:782999873&lt;br&gt;&lt;br&gt;微信:lambda-hd&lt;br&gt;</div>
   	  	
     	</section>
     

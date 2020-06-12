@@ -151,6 +151,94 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-front-打造高性能网站" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/11/18/front-打造高性能网站/">打造高性能网站</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/11/18/front-打造高性能网站/" class="archive-article-date">
+  	<time datetime="2019-11-18T01:28:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="如何解决网站性能"><a href="#如何解决网站性能" class="headerlink" title="如何解决网站性能"></a>如何解决网站性能</h2><ul>
+<li>减少 HTTP 请求数量</li>
+<li>控制资源文件加载优先级</li>
+<li>利用浏览器缓存</li>
+<li>使用 CDN</li>
+<li>减少重排</li>
+<li>雪碧图(也是为了减少 http 请求)</li>
+<li>合并脚本和样式表</li>
+</ul>
+<h3 id="CSS-雪碧图"><a href="#CSS-雪碧图" class="headerlink" title="CSS 雪碧图"></a>CSS 雪碧图</h3><blockquote>
+<p>雪碧图也叫 CSS 精灵,是一 CSS 图像合成技术</p>
+</blockquote>
+<p><strong>CSS 雪碧图应用原理:</strong></p>
+<p>其实就是 截取 大图一部分显示,而这部分就是一个小图</p>
+<p><strong>使用雪碧图可以减少网络请求的次数，加快允许的速度</strong><br>通过 <code>background-position</code>，去定位图片在屏幕的哪个位置</p>
+<p><strong>优缺点</strong></p>
+<ul>
+<li>优点:调用简单,维护方便,</li>
+<li>缺点:请求文件过多,引发性能问题<br>每个小图标都单独调用一图片,即意味着每个小图标的显示都产生一个 HTTP 请求,一般情况下每次创建一个 HTTP 请求,请求到的内容往往是次要的,性能代销主要在请求、以及响应阶段。</li>
+</ul>
+<h3 id="为什么要减少网络请求"><a href="#为什么要减少网络请求" class="headerlink" title="为什么要减少网络请求"></a>为什么要减少网络请求</h3><ul>
+<li>HTTP 请求建立和释放需要时间</li>
+<li>浏览器对同一个域名的并发数量有限制</li>
+</ul>
+        
+          <a class="article-more-a" href="/myBlog/2019/11/18/front-打造高性能网站/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/11/18/front-打造高性能网站/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-http-网站安全" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1147,101 +1235,6 @@
 
 
   
-    <article id="post-md-前端需要了解的设计模式(1)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/08/26/md-前端需要了解的设计模式(1)/">不要花里胡哨，要一套一套——设计模式(1)</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/08/26/md-前端需要了解的设计模式(1)/" class="archive-article-date">
-  	<time datetime="2019-08-26T00:02:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本专题将会介绍当前前端需要了解的设计模式，通过理解面向对象，UML 类图的关系展现，设计原则介绍，各个模式如何使用五个方面进行讨论学习。</p>
-<p><strong>JS中的设计模式请访问<a href="https://powerdong.github.io/myBlog/2019/09/28/%E5%89%8D%E7%AB%AF%E9%9C%80%E8%A6%81%E4%BA%86%E8%A7%A3%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-2/" target="_blank" rel="noopener">前端需要了解的设计模式(2)</a></strong></p>
-<p>当你开始一个新项目时，你不会立即开始编码。首先必须定义项目的目的和范围，然后列出项目功能和项目说明书。在你可以编码或者你正在处理更复杂的项目之后，你应该选择最适合你项目的设计模式。</p>
-<h2 id="什么是设计模式"><a href="#什么是设计模式" class="headerlink" title="什么是设计模式"></a>什么是设计模式</h2><p>在软件工程中，设计模式是软件设计中常见问题可重用的解决方案。设计模式代表着经验丰富的软件开发人员使用的最佳实践。设计模式可以被认为是编程模板。</p>
-<h2 id="设计模式的目的"><a href="#设计模式的目的" class="headerlink" title="设计模式的目的"></a>设计模式的目的</h2><p>设计模式是为了更好的代码重用性，可读性，可靠性，可维护性。</p>
-        
-          <a class="article-more-a" href="/myBlog/2019/08/26/md-前端需要了解的设计模式(1)/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">module</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/08/26/md-前端需要了解的设计模式(1)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/myBlog/">&laquo; Prev</a><a class="page-number" href="/myBlog/">1</a><span class="page-number current">2</span><a class="page-number" href="/myBlog/page/3/">3</a><a class="page-number" href="/myBlog/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/myBlog/page/7/">7</a><a class="extend next" rel="next" href="/myBlog/page/3/">Next &raquo;</a>
@@ -1343,15 +1336,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">BFC</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">代码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1371,11 +1364,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">模块化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
+                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1387,7 +1384,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1395,7 +1392,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1407,19 +1404,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">cdn</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1431,7 +1424,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1439,7 +1432,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1498,7 +1491,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">就读于兰州交通大学&lt;br&gt;&lt;br&gt;专业：  产品设计&lt;br&gt;&lt;br&gt;联系方式：&lt;br&gt;&lt;br&gt;QQ:782999873&lt;br&gt;&lt;br&gt;微信:19893170798&lt;br&gt;</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">就读于兰州交通大学&lt;br&gt;&lt;br&gt;联系方式：&lt;br&gt;&lt;br&gt;QQ:782999873&lt;br&gt;&lt;br&gt;微信:lambda-hd&lt;br&gt;</div>
   	  	
     	</section>
     

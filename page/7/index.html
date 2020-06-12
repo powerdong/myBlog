@@ -151,6 +151,145 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Css-页面常用布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2019/05/01/Css-页面常用布局/">万事开头难？——深入学习前端常见布局</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2019/05/01/Css-页面常用布局/" class="archive-article-date">
+  	<time datetime="2019-05-01T00:51:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Css3-布局"><a href="#Css3-布局" class="headerlink" title="Css3 布局"></a>Css3 布局</h2><p><img src="https://s2.ax1x.com/2019/11/24/MLlHPA.png" alt="MLlHPA.png"></p>
+<h3 id="display-flex-弹性盒子"><a href="#display-flex-弹性盒子" class="headerlink" title="display:flex 弹性盒子"></a>display:flex 弹性盒子</h3><p>flex 为复合属性，且必须配合父元素 <code>display: flex</code> 使用</p>
+<blockquote>
+<p>弹性盒模型是 css3 的一种新的布局方式，是一种当前页面需要适应不同的屏幕大小及设备类型时确保拥有恰当的行为的布局方式。</p>
+</blockquote>
+<p><img src="https://s2.ax1x.com/2019/11/24/MLljr8.png" alt="MLljr8.png"></p>
+<ul>
+<li><p><strong>以下 6 个属性设置在项目(子元素)上</strong></p>
+<ul>
+<li>flex-grow: 放大比例<ul>
+<li>根据所设置的比例分配盒子所剩余的空间</li>
+<li>左右两栏布局</li>
+<li>默认值 0</li>
+</ul>
+</li>
+<li>flex-shrink: 缩小比例<ul>
+<li>多出盒子的部分，按照比例的大小砍掉相应的大小</li>
+<li>即比例越大，被砍的越大</li>
+<li>默认值 1</li>
+</ul>
+</li>
+<li>flex-basis: 伸缩基准值(项目占据主轴的空间)<ul>
+<li>该属性设置元素的宽度或高度，当然 width 也可以用来设置宽度</li>
+<li><strong>如果元素上同时出现了 width 和 flex-basis，那么 flex-basis 会覆盖 width 的值</strong></li>
+</ul>
+</li>
+<li>flex: 是 flex-grow, flex-shrink 和 flex-basis 的简写<ul>
+<li>常用简化写法: <code>flex: 1 =&gt; flex: 1 1 0%</code></li>
+<li><strong>注意：</strong>flexbox 布局和原来的布局是两个概念，部分 Css 属性在 flexbox 盒子里面不起作用，(<code>float</code>、<code>clear</code>、<code>column</code>、<code>vertical-align</code>)等</li>
+</ul>
+</li>
+<li>order: 排列顺序<ul>
+<li>数值越小，排列越靠前</li>
+<li>默认为 0</li>
+</ul>
+</li>
+<li>align-self: 单个项目对齐方式<ul>
+<li>可覆盖 <code>align-items</code> 属性</li>
+<li>默认值为 auto，表示继承父元素的 <code>align-items</code> 属性，如果没有父元素，则等同于 <code>stretch</code></li>
+<li>align-self:auto | flex-start | flex-end | center | baseline | stretch</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+        
+          <a class="article-more-a" href="/myBlog/2019/05/01/Css-页面常用布局/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Css</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">代码</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2019/05/01/Css-页面常用布局/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Css- BFC剖析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -844,15 +983,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">BFC</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">代码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -872,11 +1011,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">模块化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
+                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -888,7 +1031,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -896,7 +1039,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -908,19 +1051,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">cdn</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -932,7 +1071,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -940,7 +1079,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -999,7 +1138,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">就读于兰州交通大学&lt;br&gt;&lt;br&gt;专业：  产品设计&lt;br&gt;&lt;br&gt;联系方式：&lt;br&gt;&lt;br&gt;QQ:782999873&lt;br&gt;&lt;br&gt;微信:19893170798&lt;br&gt;</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">就读于兰州交通大学&lt;br&gt;&lt;br&gt;联系方式：&lt;br&gt;&lt;br&gt;QQ:782999873&lt;br&gt;&lt;br&gt;微信:lambda-hd&lt;br&gt;</div>
   	  	
     	</section>
     

@@ -151,6 +151,309 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-react-Router" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myBlog/2020/04/23/react-Router/">页面路由——React-Router</a>
+    </h1>
+  
+
+        
+        <a href="/myBlog/2020/04/23/react-Router/" class="archive-article-date">
+  	<time datetime="2020-04-23T07:46:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://s1.ax1x.com/2020/05/24/YzA0oD.png" alt="YzA0oD.png"></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>React Router 是一个基于 React 之上的强大路由库，它可以让你向应用中快速地添加视图和数据流，同时保持页面与 URL 之间的同步。</p>
+<h3 id="使用-React-Router"><a href="#使用-React-Router" class="headerlink" title="使用 React Router"></a>使用 React Router</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123; render &#125; <span class="keyword">from</span> <span class="string">'react-dom'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 首先我们需要导入一些组件...</span></span><br><span class="line"><span class="keyword">import</span> &#123; Router, Route, Link &#125; <span class="keyword">from</span> <span class="string">'react-router'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 然后我们从应用中删除一堆代码和</span></span><br><span class="line"><span class="comment">// 增加一些 &lt;Link&gt; 元素...</span></span><br><span class="line"><span class="keyword">const</span> App = React.createClass(&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;App&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">        &#123;/</span>* 把 &lt;a&gt; 变成 &lt;Link&gt; *<span class="regexp">/&#125;</span></span><br><span class="line"><span class="regexp">        &lt;ul&gt;</span></span><br><span class="line"><span class="regexp">          &lt;li&gt;&lt;Link to="/</span>about<span class="string">"&gt;About&lt;/Link&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">          &lt;li&gt;&lt;Link to="</span>/inbox<span class="string">"&gt;Inbox&lt;/Link&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;/ul&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        &#123;/*</span></span><br><span class="line"><span class="string">          接着用 `this.props.children` 替换 `&lt;Child&gt;`</span></span><br><span class="line"><span class="string">          router 会帮我们找到这个 children</span></span><br><span class="line"><span class="string">        */&#125;</span></span><br><span class="line"><span class="string">        &#123;this.props.children&#125;</span></span><br><span class="line"><span class="string">      &lt;/div&gt;</span></span><br><span class="line"><span class="string">    )</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// 最后，我们用一些 &lt;Route&gt; 来渲染 &lt;Router&gt;。</span></span><br><span class="line"><span class="string">// 这些就是路由提供的我们想要的东西。</span></span><br><span class="line"><span class="string">React.render((</span></span><br><span class="line"><span class="string">  &lt;Router&gt;</span></span><br><span class="line"><span class="string">    &lt;Route path="</span>/<span class="string">" component=&#123;App&#125;&gt;</span></span><br><span class="line"><span class="string">      &lt;Route path="</span>about<span class="string">" component=&#123;About&#125; /&gt;</span></span><br><span class="line"><span class="string">      &lt;Route path="</span>inbox<span class="string">" component=&#123;Inbox&#125; /&gt;</span></span><br><span class="line"><span class="string">    &lt;/Route&gt;</span></span><br><span class="line"><span class="string">  &lt;/Router&gt;</span></span><br><span class="line"><span class="string">), document.body)</span></span><br></pre></td></tr></table></figure>
+
+<p>如果你不熟悉 JSX，也可以用普通对象来替代。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> routes = &#123;</span><br><span class="line">    path: <span class="string">'/'</span>,</span><br><span class="line">    component: App,</span><br><span class="line">    childRoutes: [</span><br><span class="line">        &#123;<span class="attr">path</span>: <span class="string">'about'</span>, <span class="attr">component</span>: About&#125;,</span><br><span class="line">        &#123;<span class="attr">path</span>: <span class="string">'inbox'</span>, <span class="attr">component</span>: Inbox&#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br><span class="line">React.render(<span class="xml"><span class="tag">&lt;<span class="name">Router</span> <span class="attr">routes</span>=<span class="string">&#123;routes&#125;</span> /&gt;</span>, document.body)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="获取-URL-参数"><a href="#获取-URL-参数" class="headerlink" title="获取 URL 参数"></a>获取 URL 参数</h3><p>为了从服务器获取 message 数据，我们首先需要知道它的信息。当渲染组件时，React Router 会自动向 Route 组件中注入一些有用的信息，尤其是路径中动态部分的参数。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Message = React.createClass(&#123;</span><br><span class="line"></span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    <span class="comment">// 来自于路径 `/inbox/messages/:id`</span></span><br><span class="line">    <span class="keyword">const</span> id = <span class="keyword">this</span>.props.params.id</span><br><span class="line"></span><br><span class="line">    fetchMessage(id, <span class="function"><span class="keyword">function</span> (<span class="params">err, message</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.setState(&#123; <span class="attr">message</span>: message &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>也可以通过 query 字符串来访问参数。比如访问 <code>/foo?bar=baz</code>可以通过访问 <code>this.props.location.query.bar</code> 从 Route 组件中获取 <code>&#39;baz&#39;</code>的值</p>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p><img src="https://s1.ax1x.com/2020/05/24/YzAfw8.png" alt="YzAfw8.png"></p>
+<h3 id="添加首页"><a href="#添加首页" class="headerlink" title="添加首页"></a>添加首页</h3><p>当URL为<code>/</code>时，我们想渲染一个在 <code>App</code>中的组件。不过此时，App 的 render中的<code>this.prop.children</code>还是undefined。这种情况下我们可以使用 <code>IndexRoute</code>来设置一个默认页面。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; IndexRoute &#125; <span class="keyword">from</span> <span class="string">'react-router'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Dashboard = React.createClass(&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Welcome to the app!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">React.render((</span><br><span class="line">  &lt;Router&gt;</span><br><span class="line">    &lt;Route path=<span class="string">"/"</span> component=&#123;App&#125;&gt;</span><br><span class="line">      &#123;<span class="comment">/* 当 url 为 / 时渲染 Dashboard */</span>&#125;</span><br><span class="line">      &lt;IndexRoute component=&#123;Dashboard&#125; /&gt;</span><br><span class="line">      &lt;Route path=<span class="string">"about"</span> component=&#123;About&#125; /&gt;</span><br><span class="line">      &lt;Route path=<span class="string">"inbox"</span> component=&#123;Inbox&#125;&gt;</span><br><span class="line">        &lt;Route path=<span class="string">"messages/:id"</span> component=&#123;Message&#125; /&gt;</span><br><span class="line">      &lt;<span class="regexp">/Route&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>Route&gt;</span><br><span class="line">  &lt;<span class="regexp">/Router&gt;</span></span><br><span class="line"><span class="regexp">), document.body)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="让-UI-从-URL-中解耦出来"><a href="#让-UI-从-URL-中解耦出来" class="headerlink" title="让 UI 从 URL 中解耦出来"></a>让 UI 从 URL 中解耦出来</h3><p>通过在定义 path 中使用 <code>/messages/:id</code> 替换 <code>messages/:id</code> 在多层前套路由中使用绝对路径的能力让我们对 URL 拥有绝对的掌握。我们无需在 URL 中添加更多的层级。</p>
+<h3 id="兼容旧的-URL"><a href="#兼容旧的-URL" class="headerlink" title="兼容旧的 URL"></a>兼容旧的 URL</h3><p>使用 <code>&lt;Redirect&gt;</code> 使URL重定向。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Redirect &#125; <span class="keyword">from</span> <span class="string">'react-router'</span></span><br><span class="line"></span><br><span class="line">React.render((</span><br><span class="line">  &lt;Router&gt;</span><br><span class="line">    &lt;Route path=<span class="string">"/"</span> component=&#123;App&#125;&gt;</span><br><span class="line">      &lt;IndexRoute component=&#123;Dashboard&#125; /&gt;</span><br><span class="line">      &lt;Route path=<span class="string">"about"</span> component=&#123;About&#125; /&gt;</span><br><span class="line">      &lt;Route path=<span class="string">"inbox"</span> component=&#123;Inbox&#125;&gt;</span><br><span class="line">        &lt;Route path=<span class="string">"/messages/:id"</span> component=&#123;Message&#125; /&gt;</span><br><span class="line"></span><br><span class="line">        &#123;<span class="comment">/* 跳转 /inbox/messages/:id 到 /messages/:id */</span>&#125;</span><br><span class="line">        &lt;Redirect <span class="keyword">from</span>=<span class="string">"messages/:id"</span> to=<span class="string">"/messages/:id"</span> /&gt;</span><br><span class="line">      &lt;<span class="regexp">/Route&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>Route&gt;</span><br><span class="line">  &lt;<span class="regexp">/Router&gt;</span></span><br><span class="line"><span class="regexp">), document.body)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="进入和离开-Hook"><a href="#进入和离开-Hook" class="headerlink" title="进入和离开 Hook"></a>进入和离开 Hook</h3><p>Route 可以定义 <code>onEnter</code> 和 <code>onLeave</code> 两个 hook，这些 hook 会在页面跳转确认时触发一次。这些 hook 对于一些情况非常的有用，例如权限验证或者在路由跳转前将一些数据持久化保存起来。</p>
+<p>在路由跳转过程中</p>
+<ul>
+<li><p><code>onLeave</code> 会在所有将离开的路由中触发，从最下层的路由开始直到最外层路由结束。</p>
+</li>
+<li><p><code>onEnter</code> 会在将进入的路由时触发。</p>
+</li>
+</ul>
+<h3 id="替换配置方式"><a href="#替换配置方式" class="headerlink" title="替换配置方式"></a>替换配置方式</h3><p>如果你不想使用 JSX，也可以直接使用原生的 route 数组对象。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> routeConfig = [</span><br><span class="line">  &#123; <span class="attr">path</span>: <span class="string">'/'</span>,</span><br><span class="line">    component: App,</span><br><span class="line">    indexRoute: &#123; <span class="attr">component</span>: Dashboard &#125;,</span><br><span class="line">    childRoutes: [</span><br><span class="line">      &#123; <span class="attr">path</span>: <span class="string">'about'</span>, <span class="attr">component</span>: About &#125;,</span><br><span class="line">      &#123; <span class="attr">path</span>: <span class="string">'inbox'</span>,</span><br><span class="line">        component: Inbox,</span><br><span class="line">        childRoutes: [</span><br><span class="line">          &#123; <span class="attr">path</span>: <span class="string">'/messages/:id'</span>, <span class="attr">component</span>: Message &#125;,</span><br><span class="line">          &#123; <span class="attr">path</span>: <span class="string">'messages/:id'</span>,</span><br><span class="line">            onEnter: <span class="function"><span class="keyword">function</span> (<span class="params">nextState, replaceState</span>) </span>&#123;</span><br><span class="line">              replaceState(<span class="literal">null</span>, <span class="string">'/messages/'</span> + nextState.params.id)</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">React.render(<span class="xml"><span class="tag">&lt;<span class="name">Router</span> <span class="attr">routes</span>=<span class="string">&#123;routeConfig&#125;</span> /&gt;</span>, document.body)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="路由匹配原理"><a href="#路由匹配原理" class="headerlink" title="路由匹配原理"></a>路由匹配原理</h2><p>路由拥有三个属性来决定是否匹配一个URL</p>
+<ul>
+<li>嵌套关系</li>
+<li>路径语法</li>
+<li>优先级</li>
+</ul>
+<h3 id="嵌套关系"><a href="#嵌套关系" class="headerlink" title="嵌套关系"></a>嵌套关系</h3><p>当一个给定的 URL 被调用时，整个集合中(命中的部分)都会被渲染。嵌套路由被描述成一种树形结构</p>
+<h3 id="路径语法"><a href="#路径语法" class="headerlink" title="路径语法"></a>路径语法</h3><p>匹配一个(或一部分)URL的一个字符串模式。大部分的路由路径都可以直接按照字面量理解，除了下边的特殊符号</p>
+<ul>
+<li><code>:paramName</code> - 匹配一段位于 <code>/</code>、<code>?</code>或<code>#</code>之后的URL</li>
+<li><code>()</code> - 在它内的内容被认为是可选的</li>
+<li><code>*</code> - 匹配任意字符直到命中下一个字符或者整个 URL 的末尾</li>
+</ul>
+<h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><p>路由算法会根据定义的顺序自顶向下匹配路由</p>
+<h2 id="Histories"><a href="#Histories" class="headerlink" title="Histories"></a>Histories</h2><p>React Router是建立在 history 上的。简而言之，一个 history 知道如何去监听浏览器地址栏的变化，并解析这个 URL 转化为 location 对象，然后 router 使用它匹配到路由，最后正确的渲染页面。</p>
+<ul>
+<li>browserHistory</li>
+<li>hashHistory</li>
+<li>createMemoryHistory</li>
+</ul>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; browserHistory &#125; <span class="keyword">from</span> <span class="string">'react-router'</span></span><br><span class="line"></span><br><span class="line">render(</span><br><span class="line">  &lt;Router history=&#123;browserHistory&#125; routes=&#123;routes&#125; /&gt;,</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'app'</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="browserHistory"><a href="#browserHistory" class="headerlink" title="browserHistory"></a>browserHistory</h3><p>他使用浏览器中 History API 用于处理 URL</p>
+<h4 id="服务器配置"><a href="#服务器配置" class="headerlink" title="服务器配置"></a><a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/Histories.html" target="_blank" rel="noopener">服务器配置</a></h4><p>服务器需要做好处理 URL 的准备。处理应用启动最初的/这样的请求是没问题的，但当用户来回跳转并在<code>/account/123</code>刷新时，服务器就会收到来自 <code>account/123</code>的请求，这时需要处理这个 URL 并响应对应的 JavaScript 代码。</p>
+<h3 id="hashHistory"><a href="#hashHistory" class="headerlink" title="hashHistory"></a>hashHistory</h3><p>Hash History 使用 URL 中的 hash <code>#</code> 部分去创建形如<code>example.com/#/some/path</code> 的路由。</p>
+<h4 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h4><p>Hash History 不需要服务器任何配置就可以运行，但是我们不推荐在实际线上环境中使用，因为每一个 web 应用都应该渴望使用 browserHistory。</p>
+<h4 id="传递参数"><a href="#传递参数" class="headerlink" title="传递参数"></a>传递参数</h4><p>当一个 History 通过应用程序中的 push 或 replace跳转时，他可以在新的 location中存储 location state而不显示在 URL 中，这就像是在一个 HTML 中 post 的表单数据。</p>
+<h3 id="createMemoryHistory"><a href="#createMemoryHistory" class="headerlink" title="createMemoryHistory"></a>createMemoryHistory</h3><p>Memory History 不会在地址栏被操作或读取。同时它也非常适合测试和其他渲染环境</p>
+<p>和另外两种 history 的一点不同是必须创建它，这种方式便于测试。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> history = createMemoryHistory(location)</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123; render &#125; <span class="keyword">from</span> <span class="string">'react-dom'</span></span><br><span class="line"><span class="keyword">import</span> &#123; browserHistory, Router, Route, IndexRoute &#125; <span class="keyword">from</span> <span class="string">'react-router'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'../components/App'</span></span><br><span class="line"><span class="keyword">import</span> Home <span class="keyword">from</span> <span class="string">'../components/Home'</span></span><br><span class="line"><span class="keyword">import</span> About <span class="keyword">from</span> <span class="string">'../components/About'</span></span><br><span class="line"><span class="keyword">import</span> Features <span class="keyword">from</span> <span class="string">'../components/Features'</span></span><br><span class="line"></span><br><span class="line">render(</span><br><span class="line">  &lt;Router history=&#123;browserHistory&#125;&gt;</span><br><span class="line">    &lt;Route path=<span class="string">'/'</span> component=&#123;App&#125;&gt;</span><br><span class="line">      &lt;IndexRoute component=&#123;Home&#125; /&gt;</span><br><span class="line">      &lt;Route path=<span class="string">'about'</span> component=&#123;About&#125; /&gt;</span><br><span class="line">      &lt;Route path=<span class="string">'features'</span> component=&#123;Features&#125; /&gt;</span><br><span class="line">    &lt;<span class="regexp">/Route&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>Router&gt;,</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'app'</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="默认路由-IndexRoute-与-IndexLink"><a href="#默认路由-IndexRoute-与-IndexLink" class="headerlink" title="默认路由 (IndexRoute) 与 IndexLink"></a>默认路由 <code>(IndexRoute)</code> 与 <code>IndexLink</code></h3><h4 id="默认路由-IndexRoute"><a href="#默认路由-IndexRoute" class="headerlink" title="默认路由 (IndexRoute)"></a>默认路由 <code>(IndexRoute)</code></h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;Router&gt;</span><br><span class="line">  &lt;Route path=<span class="string">"/"</span> component=&#123;App&#125;&gt;</span><br><span class="line">    &lt;IndexRoute component=&#123;Home&#125;/&gt;</span><br><span class="line">    &lt;Route path=<span class="string">"accounts"</span> component=&#123;Accounts&#125;/&gt;</span><br><span class="line">    &lt;Route path=<span class="string">"statements"</span> component=&#123;Statements&#125;/&gt;</span><br><span class="line">  &lt;<span class="regexp">/Route&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>Router&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Index-Links"><a href="#Index-Links" class="headerlink" title="Index Links"></a>Index Links</h4><p>如果你在这个 app 中使用 <code>&lt;Link to=&quot;/&quot;&gt;Home&lt;/Link&gt;</code> , 它会一直处于激活状态，因为所有的 URL 的开头都是 <code>/</code> 。 这确实是个问题，因为我们仅仅希望在 <code>Home</code> 被渲染后，激活并链接到它。</p>
+<p>如果需要在 <code>Home</code> 路由被渲染后才激活的指向 <code>/</code> 的链接，请使用 <code>&lt;IndexLink to=&quot;/&quot;&gt;Home&lt;/IndexLink&gt;</code></p>
+<h2 id="高级用法"><a href="#高级用法" class="headerlink" title="高级用法"></a>高级用法</h2><p><img src="https://s1.ax1x.com/2020/05/24/YzAqO0.png" alt="YzAqO0.png"></p>
+<h3 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h3><p>React Router 适用于小型网站，也可以支持大型网站。</p>
+<p>对于大型应用来说，一个首当其冲的问题就是所需加载的 JavaScript 的大小。程序应当只加载渲染页所需的 JavaScript。</p>
+<p>路由是个非常适于做代码分拆的地方：他的责任就是配置好每个 view</p>
+<p>React Router 里的路径匹配以及组件加载都是异步完成，不仅允许你延迟加载组件，并且可以延迟加载路由配置。在首次加载包中你只需要有一个路径定义，路由会自动解析剩下的路径。</p>
+<p>Route 可以定义 <code>getChildRoutes</code>，<code>getIndexRoute</code>和<code>getComponents</code>这几个函数。他们都是异步执行，并且只有在需要的时候才被调用。称之为“逐渐匹配”。</p>
+<p>匹配 URL 并只加载该 URL 对应页面所需的路径配置和组件。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> CourseRoute = &#123;</span><br><span class="line">  path: <span class="string">'course/:courseId'</span>,</span><br><span class="line"></span><br><span class="line">  getChildRoutes(location, callback) &#123;</span><br><span class="line">    <span class="built_in">require</span>.ensure([], <span class="function"><span class="keyword">function</span> (<span class="params">require</span>) </span>&#123;</span><br><span class="line">      callback(<span class="literal">null</span>, [</span><br><span class="line">        <span class="built_in">require</span>(<span class="string">'./routes/Announcements'</span>),</span><br><span class="line">        <span class="built_in">require</span>(<span class="string">'./routes/Assignments'</span>),</span><br><span class="line">        <span class="built_in">require</span>(<span class="string">'./routes/Grades'</span>),</span><br><span class="line">      ])</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  getIndexRoute(location, callback) &#123;</span><br><span class="line">    <span class="built_in">require</span>.ensure([], <span class="function"><span class="keyword">function</span> (<span class="params">require</span>) </span>&#123;</span><br><span class="line">      callback(<span class="literal">null</span>, <span class="built_in">require</span>(<span class="string">'./components/Index'</span>))</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  getComponents(location, callback) &#123;</span><br><span class="line">    <span class="built_in">require</span>.ensure([], <span class="function"><span class="keyword">function</span> (<span class="params">require</span>) </span>&#123;</span><br><span class="line">      callback(<span class="literal">null</span>, <span class="built_in">require</span>(<span class="string">'./components/Course'</span>))</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="跳转前确认"><a href="#跳转前确认" class="headerlink" title="跳转前确认"></a>跳转前确认</h3><p>React Router 它提供一个 <code>routerWillLeave</code> 钩子，使得组件可以拦截正在发生的跳转，或在离开 route 前提示用户。</p>
+<ol>
+<li><code>return false</code> 取消此次跳转</li>
+<li><code>return</code>返回提示信息，在离开 route前提示用户进行确认。</li>
+</ol>
+<p>通过在 route 组件中引入 <code>Lifecycle</code> mixin 来安装这钩子</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Lifecycle &#125; <span class="keyword">from</span> <span class="string">'react-router'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Home = React.createClass(&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 假设 Home 是一个 route 组件，它可能会使用</span></span><br><span class="line">  <span class="comment">// Lifecycle mixin 去获得一个 routerWillLeave 方法。</span></span><br><span class="line">  mixins: [ Lifecycle ],</span><br><span class="line"></span><br><span class="line">  routerWillLeave(nextLocation) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">this</span>.state.isSaved)</span><br><span class="line">      <span class="keyword">return</span> <span class="string">'Your work is not saved! Are you sure you want to leave?'</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="服务端渲染"><a href="#服务端渲染" class="headerlink" title="服务端渲染"></a>服务端渲染</h3><p>服务端渲染与客户端渲染有些许不同</p>
+<ul>
+<li>发生错误时发送一个 500 的响应</li>
+<li>需要重定向时发送一个 30x 的响应</li>
+<li>在渲染之前获得数据（用 router 帮你完成这点）</li>
+</ul>
+<p>为了迎合这一需求，需要在 <code>&lt;Router /&gt;</code>API 下一层使用</p>
+<ul>
+<li>使用 <code>match</code> 在渲染之前根据 location 匹配 route</li>
+<li>使用 <code>RoutingContext</code> 同步渲染route组件</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; renderToString &#125; <span class="keyword">from</span> <span class="string">'react-dom/server'</span></span><br><span class="line"><span class="keyword">import</span> &#123; match, RoutingContext &#125; <span class="keyword">from</span> <span class="string">'react-router'</span></span><br><span class="line"><span class="keyword">import</span> routes <span class="keyword">from</span> <span class="string">'./routes'</span></span><br><span class="line"></span><br><span class="line">serve(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 注意！这里的 req.url 应该是从初始请求中获得的</span></span><br><span class="line">  <span class="comment">// 完整的 URL 路径，包括查询字符串。</span></span><br><span class="line">  match(&#123; routes, <span class="attr">location</span>: req.url &#125;, (error, redirectLocation, renderProps) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (error) &#123;</span><br><span class="line">      res.send(<span class="number">500</span>, error.message)</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (redirectLocation) &#123;</span><br><span class="line">      res.redirect(<span class="number">302</span>, redirectLocation.pathname + redirectLocation.search)</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (renderProps) &#123;</span><br><span class="line">      res.send(<span class="number">200</span>, renderToString(<span class="xml"><span class="tag">&lt;<span class="name">RoutingContext</span> &#123;<span class="attr">...renderProps</span>&#125; /&gt;</span>))</span></span><br><span class="line"><span class="xml">    &#125; else &#123;</span></span><br><span class="line"><span class="xml">      res.send(404, 'Not found')</span></span><br><span class="line"><span class="xml">    &#125;</span></span><br><span class="line"><span class="xml">  &#125;)</span></span><br><span class="line"><span class="xml">&#125;)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="组件生命周期"><a href="#组件生命周期" class="headerlink" title="组件生命周期"></a>组件生命周期</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route path=<span class="string">"/"</span> component=&#123;App&#125;&gt;</span><br><span class="line">  &lt;IndexRoute component=&#123;Home&#125;/&gt;</span><br><span class="line">  &lt;Route path=<span class="string">"invoices/:invoiceId"</span> component=&#123;Invoice&#125;/&gt;</span><br><span class="line">  &lt;Route path=<span class="string">"accounts/:accountId"</span> component=&#123;Account&#125;/&gt;</span><br><span class="line">&lt;<span class="regexp">/Route&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>路由切换时，组件生命周期的变化情况</p>
+<p>1.当用户打开应用 <code>&#39;/&#39;</code> 页面</p>
+<table>
+<thead>
+<tr>
+<th align="center">组件</th>
+<th align="center">生命周期</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">APP</td>
+<td align="center">componentDidMount</td>
+</tr>
+<tr>
+<td align="center">Home</td>
+<td align="center">componentDidMount</td>
+</tr>
+<tr>
+<td align="center">Invoice</td>
+<td align="center">N/A</td>
+</tr>
+<tr>
+<td align="center">Account</td>
+<td align="center">N/A</td>
+</tr>
+</tbody></table>
+<p>2.当用户从 <code>&#39;/&#39;</code>跳转到 <code>&#39;/invoice/123&#39;</code></p>
+<table>
+<thead>
+<tr>
+<th align="center">组件</th>
+<th align="center">生命周期</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">App</td>
+<td align="center">componentWillReceiveProps, componentDidUpdate</td>
+</tr>
+<tr>
+<td align="center">Home</td>
+<td align="center">componentWillUnmount</td>
+</tr>
+<tr>
+<td align="center">Invoice</td>
+<td align="center">componentDidMount</td>
+</tr>
+<tr>
+<td align="center">Account</td>
+<td align="center">N/A</td>
+</tr>
+</tbody></table>
+<ul>
+<li>App 从 router 中接收到新的 props，所以触发了两个生命周期方法</li>
+<li>Home 不再被渲染，所以它将被移除</li>
+<li>Invoice 首次被挂载</li>
+</ul>
+<p>3.当用户从 <code>/invoice/123</code> 跳转到 <code>/invoice/789</code></p>
+<table>
+<thead>
+<tr>
+<th align="center">组件</th>
+<th align="center">生命周期</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">App</td>
+<td align="center">componentWillReceiveProps, componentDidUpdate</td>
+</tr>
+<tr>
+<td align="center">Home</td>
+<td align="center">N/A</td>
+</tr>
+<tr>
+<td align="center">Invoice</td>
+<td align="center">componentWillReceiveProps, componentDidUpdate</td>
+</tr>
+<tr>
+<td align="center">Account</td>
+<td align="center">N/A</td>
+</tr>
+</tbody></table>
+<p>4.当从 <code>/invoice/789</code> 跳转到 <code>/accounts/123</code></p>
+<table>
+<thead>
+<tr>
+<th align="center">组件</th>
+<th align="center">生命周期</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">App</td>
+<td align="center">componentWillReceiveProps, componentDidUpdate</td>
+</tr>
+<tr>
+<td align="center">Home</td>
+<td align="center">N/A</td>
+</tr>
+<tr>
+<td align="center">Invoice</td>
+<td align="center">componentWillUnmount</td>
+</tr>
+<tr>
+<td align="center">Account</td>
+<td align="center">componentDidMount</td>
+</tr>
+</tbody></table>
+<h4 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h4><p>我们在 <code>Invoice</code> 组件里实现一个简单的数据获取功能</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> Invoice = React.createClass(&#123;</span><br><span class="line"></span><br><span class="line">  getInitialState () &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      invoice: <span class="literal">null</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  componentDidMount () &#123;</span><br><span class="line">    <span class="comment">// 上面的步骤2，在此初始化数据</span></span><br><span class="line">    <span class="keyword">this</span>.fetchInvoice()</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  componentDidUpdate (prevProps) &#123;</span><br><span class="line">    <span class="comment">// 上面步骤3，通过参数更新数据</span></span><br><span class="line">    <span class="keyword">let</span> oldId = prevProps.params.invoiceId</span><br><span class="line">    <span class="keyword">let</span> newId = <span class="keyword">this</span>.props.params.invoiceId</span><br><span class="line">    <span class="keyword">if</span> (newId !== oldId)</span><br><span class="line">      <span class="keyword">this</span>.fetchInvoice()</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  componentWillUnmount () &#123;</span><br><span class="line">    <span class="comment">// 上面步骤四，在组件移除前忽略正在进行中的请求</span></span><br><span class="line">    <span class="keyword">this</span>.ignoreLastFetch = <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  fetchInvoice () &#123;</span><br><span class="line">    <span class="keyword">let</span> url = <span class="string">`/api/invoices/<span class="subst">$&#123;<span class="keyword">this</span>.props.params.invoiceId&#125;</span>`</span></span><br><span class="line">    <span class="keyword">this</span>.request = fetch(url, (err, data) =&gt; &#123;</span><br><span class="line">      <span class="keyword">if</span> (!<span class="keyword">this</span>.ignoreLastFetch)</span><br><span class="line">        <span class="keyword">this</span>.setState(&#123; <span class="attr">invoice</span>: data.invoice &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  render () &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">InvoiceView</span> <span class="attr">invoice</span>=<span class="string">&#123;this.state.invoice&#125;/</span>&gt;</span></span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">&#125;)</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<blockquote>
+<p>‘摘抄’不是单纯的“粘贴-&gt;复制”，而是眼到，手到，心到的一字一句敲打下来。</p>
+</blockquote>
+<blockquote>
+<p>博客声明:所有转载的文章、图片仅用于作者本人收藏学习目的，被要求或认为适当时，将标注署名与来源。若不愿某一作品被转用，请及时通知本站，本站将予以及时删除。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/myBlog/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/myBlog/2020/04/23/react-Router/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-react-Redux" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1051,94 +1354,6 @@
 
 
   
-    <article id="post-front-打造高性能网站" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myBlog/2019/11/18/front-打造高性能网站/">打造高性能网站</a>
-    </h1>
-  
-
-        
-        <a href="/myBlog/2019/11/18/front-打造高性能网站/" class="archive-article-date">
-  	<time datetime="2019-11-18T01:28:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="如何解决网站性能"><a href="#如何解决网站性能" class="headerlink" title="如何解决网站性能"></a>如何解决网站性能</h2><ul>
-<li>减少 HTTP 请求数量</li>
-<li>控制资源文件加载优先级</li>
-<li>利用浏览器缓存</li>
-<li>使用 CDN</li>
-<li>减少重排</li>
-<li>雪碧图(也是为了减少 http 请求)</li>
-<li>合并脚本和样式表</li>
-</ul>
-<h3 id="CSS-雪碧图"><a href="#CSS-雪碧图" class="headerlink" title="CSS 雪碧图"></a>CSS 雪碧图</h3><blockquote>
-<p>雪碧图也叫 CSS 精灵,是一 CSS 图像合成技术</p>
-</blockquote>
-<p><strong>CSS 雪碧图应用原理:</strong></p>
-<p>其实就是 截取 大图一部分显示,而这部分就是一个小图</p>
-<p><strong>使用雪碧图可以减少网络请求的次数，加快允许的速度</strong><br>通过 <code>background-position</code>，去定位图片在屏幕的哪个位置</p>
-<p><strong>优缺点</strong></p>
-<ul>
-<li>优点:调用简单,维护方便,</li>
-<li>缺点:请求文件过多,引发性能问题<br>每个小图标都单独调用一图片,即意味着每个小图标的显示都产生一个 HTTP 请求,一般情况下每次创建一个 HTTP 请求,请求到的内容往往是次要的,性能代销主要在请求、以及响应阶段。</li>
-</ul>
-<h3 id="为什么要减少网络请求"><a href="#为什么要减少网络请求" class="headerlink" title="为什么要减少网络请求"></a>为什么要减少网络请求</h3><ul>
-<li>HTTP 请求建立和释放需要时间</li>
-<li>浏览器对同一个域名的并发数量有限制</li>
-</ul>
-        
-          <a class="article-more-a" href="/myBlog/2019/11/18/front-打造高性能网站/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/myBlog/2019/11/18/front-打造高性能网站/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/myBlog/page/2/">2</a><a class="page-number" href="/myBlog/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/myBlog/page/7/">7</a><a class="extend next" rel="next" href="/myBlog/page/2/">Next &raquo;</a>
@@ -1240,15 +1455,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">BFC</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">代码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1268,11 +1483,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">模块化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工程化</a>
+                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1284,7 +1503,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1292,7 +1511,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1304,19 +1523,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">cdn</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1328,7 +1543,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1336,7 +1551,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1395,7 +1610,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">就读于兰州交通大学&lt;br&gt;&lt;br&gt;专业：  产品设计&lt;br&gt;&lt;br&gt;联系方式：&lt;br&gt;&lt;br&gt;QQ:782999873&lt;br&gt;&lt;br&gt;微信:19893170798&lt;br&gt;</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">就读于兰州交通大学&lt;br&gt;&lt;br&gt;联系方式：&lt;br&gt;&lt;br&gt;QQ:782999873&lt;br&gt;&lt;br&gt;微信:lambda-hd&lt;br&gt;</div>
   	  	
     	</section>
     
